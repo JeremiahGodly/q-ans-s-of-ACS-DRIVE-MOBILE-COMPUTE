@@ -33,28 +33,29 @@
     <style>
         
 /* ==========================================================================
-   THEME PALETTE 1 (DEFAULT): Deep Charcoal & Warm Ivory (Night / Low-Light)
-   - Background: Deep Charcoal / Dark Slate (#0b0f19 / #121824)
-   - Primary Text: Soft Warm Ivory / Light Gray (#e2e8f0 / #cbd5e1)
-   - Low blue-light, high-contrast, zero-glare comfort in dim environments
+   THEME PALETTE 1: Soft Charcoal & Warm Slate (Refined Dark Mode)
+   - Background: Soft Neutral Dark Charcoal (#10141c)
+   - Surface / Cards: Dark Slate Inset (#161c27 / #1d2432)
+   - Primary Text: Soft Warm Ivory / Silver (#e5eaf2 / #cbd3de)
+   - Reduced blue tint, low-glare borders, comfortable contrast (12.6:1)
    ========================================================================== */
 :root, [data-theme="dark"] {
-    --theme-name: "Night Mode";
-    --bg-base: #0b0f19;
-    --bg-surface: #121824;
-    --bg-card: #182234;
-    --bg-card-hover: #1f2b42;
-    --bg-accent: #223250;
+    --theme-name: "Soft Charcoal";
+    --bg-base: #10141c;
+    --bg-surface: #161c27;
+    --bg-card: #1d2432;
+    --bg-card-hover: #242d3e;
+    --bg-accent: #2a3548;
     
-    --border-subtle: #223049;
+    --border-subtle: #293448;
     --border-focus: #38bdf8;
     
-    --text-main: #f1f5f9;
-    --text-body: #cbd5e1;
-    --text-muted: #94a3b8;
+    --text-main: #e5eaf2;
+    --text-body: #cbd3de;
+    --text-muted: #919db0;
     --text-faint: #64748b;
     
-    --header-bg: #0d1322;
+    --header-bg: #131822;
     --card-shadow: rgba(0, 0, 0, 0.4);
     --display-block-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.35);
 
@@ -91,24 +92,201 @@
 }
 
 /* ==========================================================================
-   THEME PALETTE 2: Warm Slate & Off-White (Day / Reading Mode)
+   THEME PALETTE 2: Warm Espresso / Sepia Dark (Kindle-Style Comfort)
+   - Background: Deep Warm Roasted Earth Charcoal (#151311)
+   - Surface / Cards: Warm Amber-Black (#1d1a17 / #24201c)
+   - Primary Text: Antique Warm Cream & Oatmeal (#ede5da / #d6cdbf)
+   - Zero blue-light emission, maximum optical relaxation in the dark
+   ========================================================================== */
+[data-theme="warm"] {
+    --theme-name: "Warm Espresso";
+    --bg-base: #151311;
+    --bg-surface: #1d1a17;
+    --bg-card: #24201c;
+    --bg-card-hover: #2c2723;
+    --bg-accent: #332d28;
+    
+    --border-subtle: #3a332a;
+    --border-focus: #f59e0b;
+    
+    --text-main: #ede5da;
+    --text-body: #d6cdbf;
+    --text-muted: #a39888;
+    --text-faint: #706758;
+    
+    --header-bg: #1a1714;
+    --card-shadow: rgba(0, 0, 0, 0.45);
+    --display-block-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+
+    --brand-text-grad: linear-gradient(90deg, #fef3c7, #f59e0b);
+
+    /* Subject Themes - Warm Harmonized */
+    --acs-color: #38bdf8;
+    --acs-glow: rgba(56, 189, 248, 0.2);
+    --acs-gradient: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    
+    --drive-color: #f59e0b;
+    --drive-glow: rgba(245, 158, 11, 0.25);
+    --drive-gradient: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+    
+    --mobile-color: #34d399;
+    --mobile-glow: rgba(52, 211, 153, 0.2);
+    --mobile-gradient: linear-gradient(135deg, #059669 0%, #34d399 100%);
+    
+    --hero-acs-grad: radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 70%);
+    --hero-drive-grad: radial-gradient(circle at top right, rgba(245, 158, 11, 0.15), transparent 70%);
+    --hero-mobile-grad: radial-gradient(circle at top right, rgba(52, 211, 153, 0.12), transparent 70%);
+
+    --badge-3m-bg: rgba(56, 189, 248, 0.15);
+    --badge-3m-color: #7dd3fc;
+    --badge-7m-bg: rgba(245, 158, 11, 0.18);
+    --badge-7m-color: #fcd34d;
+    --badge-type-bg: rgba(52, 211, 153, 0.15);
+    --badge-type-color: #6ee7b7;
+
+    --placeholder-bg: rgba(0, 0, 0, 0.3);
+    --placeholder-border: rgba(245, 158, 11, 0.2);
+
+    --top-btn-grad: linear-gradient(135deg, #d97706, #b45309);
+}
+
+/* ==========================================================================
+   THEME PALETTE 3: Forest Night (Deep Pine & Soft Mint)
+   - Background: Deep Evergreen Botanical Slate (#0b1311)
+   - Surface / Cards: Dark Pine Inset (#121c19 / #182622)
+   - Primary Text: Soft Mint Ivory & Muted Sage (#e2ece8 / #c4d6ce)
+   - Green wavelengths (555nm) produce the lowest optical accommodation strain
+   ========================================================================== */
+[data-theme="forest"] {
+    --theme-name: "Forest Night";
+    --bg-base: #0b1311;
+    --bg-surface: #121c19;
+    --bg-card: #182622;
+    --bg-card-hover: #1f312c;
+    --bg-accent: #263c36;
+    
+    --border-subtle: #29423b;
+    --border-focus: #34d399;
+    
+    --text-main: #e2ece8;
+    --text-body: #c4d6ce;
+    --text-muted: #8ea89f;
+    --text-faint: #5d756d;
+    
+    --header-bg: #0f1815;
+    --card-shadow: rgba(0, 0, 0, 0.45);
+    --display-block-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+
+    --brand-text-grad: linear-gradient(90deg, #d1fae5, #34d399);
+
+    /* Subject Themes - Forest Harmonized */
+    --acs-color: #38bdf8;
+    --acs-glow: rgba(56, 189, 248, 0.2);
+    --acs-gradient: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    
+    --drive-color: #fbbf24;
+    --drive-glow: rgba(251, 191, 36, 0.2);
+    --drive-gradient: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+    
+    --mobile-color: #10b981;
+    --mobile-glow: rgba(16, 185, 129, 0.25);
+    --mobile-gradient: linear-gradient(135deg, #059669 0%, #34d399 100%);
+    
+    --hero-acs-grad: radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 70%);
+    --hero-drive-grad: radial-gradient(circle at top right, rgba(251, 191, 36, 0.12), transparent 70%);
+    --hero-mobile-grad: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 70%);
+
+    --badge-3m-bg: rgba(56, 189, 248, 0.15);
+    --badge-3m-color: #7dd3fc;
+    --badge-7m-bg: rgba(251, 191, 36, 0.15);
+    --badge-7m-color: #fde68a;
+    --badge-type-bg: rgba(16, 185, 129, 0.15);
+    --badge-type-color: #6ee7b7;
+
+    --placeholder-bg: rgba(0, 0, 0, 0.3);
+    --placeholder-border: rgba(52, 211, 153, 0.2);
+
+    --top-btn-grad: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* ==========================================================================
+   THEME PALETTE 4: Midnight OLED (Minimalist True Black)
+   - Background: Pure Deep Black (#060709)
+   - Surface / Cards: Dark Graphite Inset (#0f1115 / #15181f)
+   - Primary Text: Moonlight Silver (#e6e8ee / #c1c5ce)
+   - Prevents high-contrast blooming while achieving zero OLED light emission
+   ========================================================================== */
+[data-theme="oled"] {
+    --theme-name: "Midnight OLED";
+    --bg-base: #060709;
+    --bg-surface: #0f1115;
+    --bg-card: #15181f;
+    --bg-card-hover: #1c202a;
+    --bg-accent: #232835;
+    
+    --border-subtle: #242935;
+    --border-focus: #60a5fa;
+    
+    --text-main: #e6e8ee;
+    --text-body: #c1c5ce;
+    --text-muted: #818796;
+    --text-faint: #555b68;
+    
+    --header-bg: #090b0e;
+    --card-shadow: rgba(0, 0, 0, 0.7);
+    --display-block-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+
+    --brand-text-grad: linear-gradient(90deg, #f8fafc, #60a5fa);
+
+    /* Subject Themes */
+    --acs-color: #60a5fa;
+    --acs-glow: rgba(96, 165, 250, 0.2);
+    --acs-gradient: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+    
+    --drive-color: #f59e0b;
+    --drive-glow: rgba(245, 158, 11, 0.2);
+    --drive-gradient: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+    
+    --mobile-color: #34d399;
+    --mobile-glow: rgba(52, 211, 153, 0.2);
+    --mobile-gradient: linear-gradient(135deg, #059669 0%, #34d399 100%);
+    
+    --hero-acs-grad: radial-gradient(circle at top right, rgba(96, 165, 250, 0.12), transparent 70%);
+    --hero-drive-grad: radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 70%);
+    --hero-mobile-grad: radial-gradient(circle at top right, rgba(52, 211, 153, 0.12), transparent 70%);
+
+    --badge-3m-bg: rgba(96, 165, 250, 0.15);
+    --badge-3m-color: #93c5fd;
+    --badge-7m-bg: rgba(245, 158, 11, 0.15);
+    --badge-7m-color: #fcd34d;
+    --badge-type-bg: rgba(52, 211, 153, 0.15);
+    --badge-type-color: #6ee7b7;
+
+    --placeholder-bg: #0b0c10;
+    --placeholder-border: #242935;
+
+    --top-btn-grad: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+/* ==========================================================================
+   THEME PALETTE 5: Warm Slate & Off-White (Day / Reading Mode)
    - Background: Soft Warm Off-White / Cream Paper (#f4f4f0)
    - Primary Text: Dark Slate Gray (#0f172a / #1e293b) — No pure black on white
    - Meets WCAG AAA 11.5:1 contrast, paper-like low-glare reading
    ========================================================================== */
 [data-theme="light"] {
     --theme-name: "Day Mode";
-    --bg-base: #f4f4f0;       /* Soft Warm Off-White / Cream paper */
-    --bg-surface: #ffffff;    /* Clean Off-White Surface Card */
-    --bg-card: #f8fafc;       /* Muted light slate inset */
+    --bg-base: #f4f4f0;
+    --bg-surface: #ffffff;
+    --bg-card: #f8fafc;
     --bg-card-hover: #f1f5f9;
     --bg-accent: #e2e8f0;
     
-    --border-subtle: #cbd5e1; /* Soft neutral border */
+    --border-subtle: #cbd5e1;
     --border-focus: #0284c7;
     
-    --text-main: #0f172a;     /* Dark Slate Gray */
-    --text-body: #1e293b;     /* Dark Slate Gray (WCAG AAA contrast, zero pure-black glare) */
+    --text-main: #0f172a;
+    --text-body: #1e293b;
     --text-muted: #475569;
     --text-faint: #64748b;
     
@@ -118,16 +296,16 @@
 
     --brand-text-grad: linear-gradient(90deg, #0f172a, #0284c7);
 
-    /* Subject Themes - Tuned for Light Reading */
-    --acs-color: #0284c7;     /* Muted Deep Blue */
+    /* Subject Themes */
+    --acs-color: #0284c7;
     --acs-glow: rgba(2, 132, 199, 0.2);
     --acs-gradient: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
     
-    --drive-color: #d97706;   /* Rich Warm Amber */
+    --drive-color: #d97706;
     --drive-glow: rgba(217, 119, 6, 0.2);
     --drive-gradient: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
     
-    --mobile-color: #0d9488;  /* Muted Teal */
+    --mobile-color: #0d9488;
     --mobile-glow: rgba(13, 148, 136, 0.2);
     --mobile-gradient: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
     
@@ -149,24 +327,24 @@
 }
 
 /* ==========================================================================
-   THEME PALETTE 3: Sage & Soft Olive (Cool Focus Palette / Eye Comfort)
+   THEME PALETTE 6: Sage & Soft Olive (Cool Focus Palette / Eye Comfort)
    - Background: Pale Sage / Muted Mint Tint (#ebf3f1)
    - Primary Text: Deep Forest / Dark Charcoal (#1c2a26 / #233530)
    - Cool, muted greens and blues promote sustained focus and lower fatigue
    ========================================================================== */
 [data-theme="sage"] {
     --theme-name: "Sage Focus Mode";
-    --bg-base: #ebf3f1;       /* Pale Sage / Muted Mint Tint */
-    --bg-surface: #f4faf8;    /* Soothing Pale Mint Surface */
-    --bg-card: #e2edea;       /* Soft Olive / Sage Inset */
+    --bg-base: #ebf3f1;
+    --bg-surface: #f4faf8;
+    --bg-card: #e2edea;
     --bg-card-hover: #d5e4df;
     --bg-accent: #cadbd5;
     
-    --border-subtle: #b6cec5; /* Soft Muted Sage Border */
+    --border-subtle: #b6cec5;
     --border-focus: #059669;
     
-    --text-main: #1c2a26;     /* Deep Forest / Dark Charcoal */
-    --text-body: #233530;     /* Deep Forest Slate - restful, low cognitive tension */
+    --text-main: #1c2a26;
+    --text-body: #233530;
     --text-muted: #3d534c;
     --text-faint: #5c746d;
     
@@ -176,16 +354,16 @@
 
     --brand-text-grad: linear-gradient(90deg, #1c2a26, #047857);
 
-    /* Subject Themes - Tuned for Sage / Forest Harmony */
-    --acs-color: #0e7490;     /* Deep Cyan / Sea Slate */
+    /* Subject Themes */
+    --acs-color: #0e7490;
     --acs-glow: rgba(14, 116, 144, 0.2);
     --acs-gradient: linear-gradient(135deg, #0e7490 0%, #06b6d4 100%);
     
-    --drive-color: #b45309;   /* Earthy Warm Ochre */
+    --drive-color: #b45309;
     --drive-glow: rgba(180, 83, 9, 0.2);
     --drive-gradient: linear-gradient(135deg, #92400e 0%, #d97706 100%);
     
-    --mobile-color: #047857;  /* Deep Emerald Sage */
+    --mobile-color: #047857;
     --mobile-glow: rgba(4, 120, 87, 0.2);
     --mobile-gradient: linear-gradient(135deg, #065f46 0%, #10b981 100%);
     
@@ -357,29 +535,30 @@ header.site-header {
 }
 
 /* Theme Switcher Controls */
+/* Theme Switcher Controls */
 .theme-switcher-wrapper {
     display: flex;
     align-items: center;
-    background: var(--bg-base);
+    background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    padding: 0.2rem;
-    gap: 0.2rem;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 9px;
+    padding: 0.18rem;
+    gap: 0.15rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .theme-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.28rem;
     background: transparent;
     border: 1px solid transparent;
     color: var(--text-muted);
     font-family: var(--font-main);
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     font-weight: 600;
-    padding: 0.35rem 0.65rem;
-    border-radius: 7px;
+    padding: 0.28rem 0.52rem;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s ease;
     white-space: nowrap;
@@ -391,10 +570,24 @@ header.site-header {
 }
 
 .theme-btn.active {
-    background: var(--bg-surface);
+    background: var(--bg-card);
     color: var(--text-main);
     border-color: var(--border-focus);
-    box-shadow: 0 2px 8px var(--card-shadow);
+    box-shadow: 0 1px 5px var(--card-shadow);
+}
+
+.theme-btn .theme-icon {
+    font-size: 0.88rem;
+    line-height: 1;
+}
+
+@media (max-width: 960px) {
+    .theme-btn .theme-name {
+        display: none;
+    }
+    .theme-btn {
+        padding: 0.32rem 0.45rem;
+    }
 }
 
 .theme-btn .theme-icon {
@@ -1054,16 +1247,28 @@ footer.site-footer {
             </nav>
 
             <!-- Theme Switcher Controls (Night, Day, Sage) -->
-            <div class="theme-switcher-wrapper" role="radiogroup" aria-label="Reading & Study Theme Selector">
-                <button class="theme-btn active" data-theme-value="dark" title="Night Mode: Deep Charcoal & Warm Ivory (Low-Light Comfort)">
+            <div class="theme-switcher-wrapper" role="radiogroup" aria-label="Reading &amp; Study Theme Selector">
+                <button class="theme-btn active" data-theme-value="dark" title="Soft Charcoal: Neutral Soft Slate (Balanced Reading Contrast)">
                     <span class="theme-icon">🌙</span>
-                    <span class="theme-name">Night</span>
+                    <span class="theme-name">Charcoal</span>
                 </button>
-                <button class="theme-btn" data-theme-value="light" title="Day Mode: Warm Slate & Off-White Paper (Ergonomic Reading)">
+                <button class="theme-btn" data-theme-value="warm" title="Warm Espresso: Kindle-Style Sepia Dark (Zero Blue Light, Maximum Eye Comfort)">
+                    <span class="theme-icon">☕</span>
+                    <span class="theme-name">Espresso</span>
+                </button>
+                <button class="theme-btn" data-theme-value="forest" title="Forest Night: Calming Deep Pine &amp; Soft Mint (Lowest Eye Strain)">
+                    <span class="theme-icon">🌲</span>
+                    <span class="theme-name">Forest</span>
+                </button>
+                <button class="theme-btn" data-theme-value="oled" title="Midnight OLED: Minimalist True Black (Zero Light Bleed)">
+                    <span class="theme-icon">🌑</span>
+                    <span class="theme-name">OLED</span>
+                </button>
+                <button class="theme-btn" data-theme-value="light" title="Day Mode: Warm Slate &amp; Off-White Paper (Ergonomic Daylight Reading)">
                     <span class="theme-icon">☀️</span>
                     <span class="theme-name">Day</span>
                 </button>
-                <button class="theme-btn" data-theme-value="sage" title="Cool Focus Mode: Pale Sage & Deep Forest (Reduced Eye Fatigue)">
+                <button class="theme-btn" data-theme-value="sage" title="Cool Focus Mode: Pale Sage &amp; Deep Forest (Reduced Eye Fatigue)">
                     <span class="theme-icon">🍃</span>
                     <span class="theme-name">Sage</span>
                 </button>
@@ -6493,15 +6698,19 @@ function scrollToTop() {
 
 // ==========================================================================
 // Theme Switching Logic with LocalStorage Persistence
-// Palettes:
-// 1. 'dark'  : Deep Charcoal & Warm Ivory (Night Mode)
-// 2. 'light' : Warm Slate & Off-White Paper (Day Mode)
-// 3. 'sage'  : Sage & Soft Olive (Cool Focus Mode)
+// Ergonomic Palettes:
+// 1. 'dark'   : Soft Charcoal & Warm Slate (Refined Neutral Dark)
+// 2. 'warm'   : Warm Espresso (Kindle-Style Sepia Dark - Zero Blue Light)
+// 3. 'forest' : Forest Night (Deep Pine & Soft Mint - Lowest Eye Strain)
+// 4. 'oled'   : Midnight OLED (Minimalist True Black)
+// 5. 'light'  : Warm Slate & Off-White Paper (Day Mode)
+// 6. 'sage'   : Sage & Soft Olive (Cool Focus Mode)
 // ==========================================================================
 const THEME_STORAGE_KEY = 'ktu_portal_theme';
+const VALID_THEMES = ['dark', 'warm', 'forest', 'oled', 'light', 'sage'];
 
 function setTheme(themeName) {
-    if (!['dark', 'light', 'sage'].includes(themeName)) {
+    if (!VALID_THEMES.includes(themeName)) {
         themeName = 'dark';
     }
     document.documentElement.setAttribute('data-theme', themeName);

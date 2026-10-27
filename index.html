@@ -936,6 +936,194 @@ main.content-container {
     flex-shrink: 0;
 }
 
+/* =========================================================================
+   Sentence / (Equation) to Byhart Card - High Mark Weightage Exam Memo Box
+   ========================================================================= */
+.byheart-card {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(56, 189, 248, 0.04) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-left: 5px solid #f59e0b;
+    border-radius: 10px;
+    padding: 1.1rem 1.35rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.byheart-card:hover {
+    border-color: #fbbf24;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.22);
+}
+
+[data-theme="light"] .byheart-card {
+    background: linear-gradient(135deg, #fffdf5 0%, #fef9c3 100%);
+    border: 1px solid #fde047;
+    border-left: 5px solid #d97706;
+    box-shadow: 0 3px 12px rgba(217, 119, 6, 0.1);
+}
+
+[data-theme="warm"] .byheart-card {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(180, 83, 9, 0.06) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.38);
+    border-left: 5px solid #f59e0b;
+}
+
+[data-theme="forest"] .byheart-card {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.09) 0%, rgba(245, 158, 11, 0.05) 100%);
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    border-left: 5px solid #10b981;
+}
+
+[data-theme="oled"] .byheart-card {
+    background: #080808;
+    border: 1px solid #3d2f0a;
+    border-left: 5px solid #f59e0b;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="sage"] .byheart-card {
+    background: linear-gradient(135deg, #f4f8f6 0%, #e6f0ec 100%);
+    border: 1px solid #99c7b9;
+    border-left: 5px solid #0d9488;
+    box-shadow: 0 3px 12px rgba(13, 148, 136, 0.1);
+}
+
+.byheart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px dashed rgba(245, 158, 11, 0.3);
+}
+
+[data-theme="forest"] .byheart-header {
+    border-bottom-color: rgba(52, 211, 153, 0.3);
+}
+
+[data-theme="sage"] .byheart-header {
+    border-bottom-color: rgba(13, 148, 136, 0.3);
+}
+
+.byheart-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.byheart-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.byheart-title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #f59e0b;
+}
+
+[data-theme="light"] .byheart-title {
+    color: #b45309;
+}
+
+[data-theme="forest"] .byheart-title {
+    color: #34d399;
+}
+
+[data-theme="sage"] .byheart-title {
+    color: #0f766e;
+}
+
+.byheart-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(245, 158, 11, 0.18);
+    color: #fbbf24;
+    padding: 0.22rem 0.65rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+[data-theme="light"] .byheart-badge {
+    background: #fef08a;
+    color: #854d0e;
+    border-color: #facc15;
+}
+
+[data-theme="forest"] .byheart-badge {
+    background: rgba(16, 185, 129, 0.18);
+    color: #6ee7b7;
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+[data-theme="sage"] .byheart-badge {
+    background: #ccfbf1;
+    color: #115e59;
+    border-color: #5eead4;
+}
+
+.byheart-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.byheart-eq {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    overflow-x: auto;
+    font-size: 1.02rem;
+    text-align: center;
+}
+
+[data-theme="light"] .byheart-eq {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="sage"] .byheart-eq {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+}
+
+[data-theme="oled"] .byheart-eq {
+    background: #000000;
+    border-color: #222222;
+}
+
+.byheart-text {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.byheart-text strong {
+    color: #fbbf24;
+    font-weight: 700;
+}
+
+[data-theme="light"] .byheart-text strong {
+    color: #b45309;
+}
+
+[data-theme="forest"] .byheart-text strong {
+    color: #34d399;
+}
+
+[data-theme="sage"] .byheart-text strong {
+    color: #0f766e;
+}
+
 /* Card Body & Paragraph Styling */
 .card-body {
     display: flex;
@@ -1451,6 +1639,35 @@ body {
         word-break: break-word;
     }
 
+    /* Byheart Memo Card Mobile Optimization */
+    .byheart-card {
+        padding: 0.85rem 0.95rem;
+        border-radius: 8px;
+        border-left-width: 4px;
+    }
+    .byheart-header {
+        gap: 0.4rem;
+        margin-bottom: 0.6rem;
+        padding-bottom: 0.45rem;
+    }
+    .byheart-title {
+        font-size: 0.8rem;
+    }
+    .byheart-badge {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.48rem;
+    }
+    .byheart-text {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        text-align: left;
+    }
+    .byheart-eq {
+        padding: 0.45rem 0.55rem;
+        font-size: 0.9rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
     /* KaTeX Equations: smooth horizontal swipe without document overflow */
     .katex-display-block {
         margin: 0.85rem 0;
@@ -1690,6 +1907,20 @@ body {
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\dot{x}(t) = A x(t) + B u(t), \quad y(t) = C x(t) + D u(t)$$</div>
+                    <p class="byheart-text">The <strong>state</strong> of a dynamical system is the minimal set of variables $x_1(t), \dots, x_n(t)$ whose knowledge at $t = t_0$, along with the input $u(t)$ for $t \ge t_0$, completely determines the system's behavior for all future time $t > t_0$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In the foundational analysis of continuous and discrete dynamic systems, the state of a dynamical system is defined as the minimal set of variables such that the knowledge of these variables at an initial time instant, together with the complete specification of the input excitation for all subsequent times, completely determines the future state and output behavior of the system. Rather than treating physical systems as high-order input-output 'black boxes' as done in classical transfer function techniques, the state concept provides a comprehensive internal view of the system energy storage dynamics. Every physical system possesses inherent energy storage mechanisms, such as inductors and capacitors in electrical circuits, or masses and springs in mechanical structures. The state variables directly quantify the energy stored in these elements at any given instant.</p>
@@ -1735,6 +1966,20 @@ body {
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$x_1 = y, \; x_2 = \dot{y}, \; \dots, \; x_n = y^{(n-1)} \implies \dot{x}_n = -\sum_{i=0}^{n-1} a_i x_{i+1} + b_0 u$$</div>
+                    <p class="byheart-text">Phase variables are defined as the output variable and its successive $(n-1)$ time derivatives, yielding a companion matrix $A$ where the bottom row consists of the negated coefficients of the governing differential equation.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Phase variables represent a particular mathematical choice of state variables where each successive state variable is defined as the exact time derivative of the preceding state variable. When an $n$-th order linear physical system is described by a single scalar differential equation relating the output $y(t)$ to the control input $u(t)$, the output variable itself is chosen as the first state variable, denoted $x_1(t) = y(t)$. The second state variable is selected as the first derivative of the output, $x_2(t) = \dot{y}(t) = \dot{x}_1(t)$, the third state variable becomes the second derivative $x_3(t) = \ddot{y}(t) = \dot{x}_2(t)$, and this pattern proceeds systematically until the $n$-th state variable is defined as the $(n-1)$-th time derivative of the output, $x_n(t) = y^{(n-1)}(t) = \dot{x}_{n-1}(t)$.</p>
@@ -1780,6 +2025,20 @@ body {
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\dot{x}(t) = A x(t) + B u(t), \quad y(t) = C x(t) + D u(t)$$</div>
+                    <p class="byheart-text">In a state-space block diagram, state variables $x_i(t)$ are strictly the physical outputs of integrators ($1/s$), driven by integrator inputs $\dot{x}_i(t)$, with matrix $A$ providing internal state feedback and matrix $D$ providing direct input-to-output feedthrough.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">A continuous-time linear time-invariant dynamical system is mathematically governed by two fundamental matrix equations, namely the state differential equation $\dot{x}(t) = A x(t) + B u(t)$ and the algebraic output measurement equation $y(t) = C x(t) + D u(t)$. In this formulation, $x(t) \in \mathbb{R}^n$ represents the internal state vector, $u(t) \in \mathbb{R}^m$ denotes the control input vector, and $y(t) \in \mathbb{R}^p$ represents the observed system output vector. The system matrix $A$ dictates internal unforced dynamics, the input matrix $B$ couples external control inputs into state changes, the output matrix $C$ translates internal states into measurable outputs, and the direct transmission matrix $D$ represents instantaneous direct feedthrough from input to output.</p>
@@ -1825,6 +2084,20 @@ body {
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\bar{A} = P^{-1} A P, \quad \bar{B} = P^{-1} B, \quad \bar{C} = C P, \quad \bar{D} = D$$</div>
+                    <p class="byheart-text">State space models are non-unique because any non-singular coordinate transformation $x = P z$ creates an equivalent system that leaves the eigenvalues and transfer function $G(s) = C(sI-A)^{-1}B + D$ invariant.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The state space representation of any physical dynamic system is inherently non-unique, which means that an infinite variety of different state space models can represent the identical input-output physical behavior. The fundamental physical reality of a system—such as its input-output transfer function, impulse response, and natural dynamic modes—remains completely invariant regardless of the coordinate system chosen to describe the internal states. Because the state vector essentially represents a set of basis coordinates in an $n$-dimensional vector space, any non-singular linear coordinate transformation produces an equally valid alternative state space description.</p>
@@ -1870,6 +2143,20 @@ body {
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$G(s) = \frac{Y(s)}{U(s)} = C (sI - A)^{-1} B + D = \frac{C \operatorname{adj}(sI - A) B}{\det(sI - A)} + D$$</div>
+                    <p class="byheart-text">Applying Laplace transforms with zero initial conditions yields the transfer function $G(s)$, whose denominator roots $\det(sI - A) = 0$ directly define the invariant system poles and eigenvalues.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The mathematical derivation connecting the internal state space description to the classical external input-output transfer function represents a cornerstone of linear system theory. Consider a continuous-time linear time-invariant system governed by the standard matrix differential state equation $\dot{x}(t) = A x(t) + B u(t)$ and the static algebraic output equation $y(t) = C x(t) + D u(t)$, where $x(t) \in \mathbb{R}^n$ is the state vector, $u(t) \in \mathbb{R}^m$ is the control input, and $y(t) \in \mathbb{R}^p$ is the observed output. By fundamental definition, the transfer function $G(s)$ is the ratio of the Laplace transform of the output $Y(s)$ to the Laplace transform of the input $U(s)$, under the strict assumption that all initial state conditions are identically zero ($x(0) = 0$).</p>
@@ -1920,6 +2207,20 @@ This formulation reveals that the poles of the transfer function $G(s)$ are prec
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\begin{bmatrix} \dot{i}_L \\ \dot{v}_C \end{bmatrix} = \begin{bmatrix} -R/L & -1/L \\ 1/C & 0 \end{bmatrix} \begin{bmatrix} i_L \\ v_C \end{bmatrix} + \begin{bmatrix} 1/L \\ 0 \end{bmatrix} v_{in}(t)$$</div>
+                    <p class="byheart-text">State variables in electrical networks are naturally selected as the energy-storage states: inductor current $i_L(t)$ (magnetic energy) and capacitor voltage $v_C(t)$ (electrostatic energy), governed by $v_L = L \frac{di_L}{dt}$ and $i_C = C \frac{dv_C}{dt}$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">To establish the complete state-space mathematical model of an electrical network, one must identify the independent energy-storing elements and associate their physical variables with system states. Consider a classical series RLC circuit excited by an external time-varying voltage source $v(t)$, consisting of a resistor of resistance $R$, an inductor of inductance $L$, and a capacitor of capacitance $C$ all connected in a closed series loop. In any electrical circuit, the magnetic field energy stored in an inductor is given by $E_L = \frac{1}{2} L i_L^2$ and the electric field energy stored in a capacitor is given by $E_C = \frac{1}{2} C v_C^2$. Because electric charge and magnetic flux linkages cannot change instantaneously without requiring infinite power, the inductor current $i_L(t)$ and the capacitor voltage $v_C(t)$ represent the natural physical state variables of the electrical network.</p>
@@ -1981,6 +2282,20 @@ The characteristic polynomial of the unforced system is obtained from $\det(sI -
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\begin{bmatrix} \frac{di_a}{dt} \\ \frac{d\omega}{dt} \\ \frac{d\theta}{dt} \end{bmatrix} = \begin{bmatrix} -R_a/L_a & -K_b/L_a & 0 \\ K_t/J & -B/J & 0 \\ 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} i_a \\ \omega \\ \theta \end{bmatrix} + \begin{bmatrix} 1/L_a \\ 0 \\ 0 \end{bmatrix} v_a(t)$$</div>
+                    <p class="byheart-text">An armature-controlled DC motor couples electrical armature dynamics ($v_a = R_a i_a + L_a \frac{di_a}{dt} + e_b$) to mechanical rotor dynamics ($T_e = K_t i_a = J \dot{\omega} + B \omega$), with back-EMF feedback $e_b = K_b \omega$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">An armature-controlled direct-current (DC) motor represents one of the most prominent electromechanical actuators in industrial servomechanisms, robotics, and precision position control. In this operational mode, the field current is held strictly constant by a permanent magnet or a fixed DC field excitation source, ensuring that the magnetic flux per pole $\phi$ remains constant throughout operation. The speed and position of the motor are controlled entirely by varying the armature terminal voltage $e_a(t)$. The system comprises two distinct yet deeply coupled physical domains: an electrical circuit domain governing armature current flow, and a mechanical rotational domain governing rotor acceleration, inertia, and frictional resistance.</p>
@@ -2041,6 +2356,20 @@ $$\begin{bmatrix} \dot{i}_a(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\Lambda = M^{-1} A M = \operatorname{diag}(\lambda_1, \lambda_2, \dots, \lambda_n), \quad \dot{z} = \Lambda z + M^{-1} B u$$</div>
+                    <p class="byheart-text">Controllable canonical form organizes coefficients into a companion matrix for direct pole-placement, whereas Diagonal (Jordan) canonical form decouples system modes using the modal matrix of eigenvectors $M = [v_1 \; v_2 \; \dots \; v_n]$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The transformation of input-output transfer functions into structured canonical state space realizations is a central technique in modern control theory. Canonical forms reveal fundamental structural properties of dynamical systems, such as controllability, observability, and pole decoupling. Consider a third-order continuous-time dynamic system described by the rational transfer function:
@@ -2109,6 +2438,20 @@ The beauty of the diagonal canonical form is immediately evident: the system mat
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\begin{bmatrix} \frac{di_f}{dt} \\ \frac{d\omega}{dt} \end{bmatrix} = \begin{bmatrix} -R_f/L_f & 0 \\ K_{tf}/J & -B/J \end{bmatrix} \begin{bmatrix} i_f \\ \omega \end{bmatrix} + \begin{bmatrix} 1/L_f \\ 0 \end{bmatrix} v_f(t)$$</div>
+                    <p class="byheart-text">In field-controlled DC motors, armature current $I_a$ is held constant so torque $T_e = K_{tf} i_f$ is linearly driven by field current, completely eliminating back-EMF feedback into the electrical circuit.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In specialized precision instrumentation, low-power position controllers, and aerospace tracking servos, field-controlled direct-current (DC) motors are employed when the power demands of the control amplifier must be minimized. In this operational configuration, the armature circuit is supplied with a strictly constant direct current $I_a$, typically provided by a regulated DC current source. Motion control is achieved entirely by varying the field winding excitation voltage $e_f(t)$, which modulates the field current $i_f(t)$ and consequently controls the magnetic flux per pole $\phi(t)$. Because the field circuit operates at significantly lower current and power levels than the armature circuit, field control requires a much smaller and less expensive power electronic control amplifier.</p>
@@ -2179,6 +2522,20 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$x(t) = \mathcal{L}^{-1}\{(sI - A)^{-1}\} x(0) = e^{At} x(0) = \Phi(t) x(0)$$</div>
+                    <p class="byheart-text">The unforced (autonomous) state trajectory represents the Zero-Input Response (ZIR), computed by taking the inverse Laplace transform of the resolvent matrix $\Phi(s) = (sI - A)^{-1}$ multiplied by initial condition vector $x(0)$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">An autonomous or unforced continuous-time linear time-invariant dynamical system is governed by the homogeneous vector differential equation $\dot{x}(t) = A x(t)$, subject to an initial state vector specification $x(0) = x_0$ at time $t = 0$. Because external control excitation is absent ($u(t) = 0$), the entire subsequent trajectory of the system is determined exclusively by the dissipation or redistribution of its internally stored initial energy. Solving this vector differential equation using the Laplace transform technique transforms the calculus of coupled derivatives into linear matrix algebra.</p>
@@ -2224,6 +2581,20 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\Phi(0) = I, \quad \Phi^{-1}(t) = \Phi(-t), \quad \Phi(t_1 + t_2) = \Phi(t_1)\Phi(t_2), \quad [\Phi(t)]^k = \Phi(kt), \quad \dot{\Phi}(t) = A\Phi(t)$$</div>
+                    <p class="byheart-text">The state transition matrix $\Phi(t) = e^{At}$ satisfies group transition properties that map states continuously and reversibly across any sequence of time intervals.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The state transition matrix $\Phi(t) = e^{At}$ is the fundamental matrix operator that governs the transition of state trajectories in linear time-invariant systems. By definition, the matrix exponential is represented by the infinite power series expansion $e^{At} = I + A t + \frac{A^2 t^2}{2!} + \frac{A^3 t^3}{3!} + \dots = \sum_{k=0}^{\infty} \frac{A^k t^k}{k!}$, which converges uniformly for all finite matrices $A$ and time intervals $t$. This matrix operator exhibits several profound mathematical properties that reflect the physical reversibility and temporal invariance of linear dynamic systems.</p>
@@ -2270,6 +2641,20 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$x(k+1) = G x(k) + H u(k), \quad G = e^{AT}, \quad H = \left(\int_0^T e^{A\tau} d\tau\right) B, \quad G(z) = C (zI - G)^{-1} H + D$$</div>
+                    <p class="byheart-text">Discrete-time state equations discretized over sampling period $T$ with Zero-Order Hold (ZOH) are stable if and only if all eigenvalues of matrix $G$ lie strictly inside the unit circle $|\lambda_i| < 1$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In modern computer-controlled and sampled-data control systems, digital computers execute control algorithms at discrete, periodic sampling instants $t = k T$, where $T$ is the sampling interval and $k \in \{0, 1, 2, \dots\}$. A linear time-invariant discrete-time dynamical system is mathematically described by a pair of vector difference equations: the state transition difference equation $x(k+1) = A_d x(k) + B_d u(k)$, and the algebraic output equation $y(k) = C_d x(k) + D_d u(k)$. Here, $x(k) \in \mathbb{R}^n$ is the discrete state vector, $u(k) \in \mathbb{R}^m$ is the sampled control sequence, and $y(k) \in \mathbb{R}^p$ is the discrete output sequence. The fundamental memory element in discrete state systems is the unit delay operator $z^{-1}$, which replaces the continuous-time integrator $\frac{1}{s}$.</p>
@@ -2317,6 +2702,20 @@ The pulse transfer function matrix is therefore defined as $G(z) = \frac{Y(z)}{U
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$e^{At} = \sum_{k=0}^{n-1} \alpha_k(t) A^k, \quad \text{where } e^{\lambda_i t} = \sum_{k=0}^{n-1} \alpha_k(t) \lambda_i^k \quad (\text{for all eigenvalues } \lambda_i)$$</div>
+                    <p class="byheart-text">The Cayley-Hamilton theorem states that every square matrix satisfies its own characteristic equation, allowing any matrix exponential $e^{At}$ to be expressed as a finite polynomial of degree at most $(n-1)$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Cayley-Hamilton theorem represents one of the most powerful analytical methods for evaluating matrix functions without resorting to infinite series expansions or inverse Laplace transforms of high-order rational fractions. The theorem states that every square matrix satisfies its own characteristic equation. If the characteristic polynomial of an $n \times n$ matrix $A$ is given by $\Delta(\lambda) = \det(\lambda I - A) = \lambda^n + a_{n-1}\lambda^{n-1} + \dots + a_1\lambda + a_0 = 0$, substituting the matrix $A$ in place of the scalar variable $\lambda$ yields the matrix identity $A^n + a_{n-1}A^{n-1} + \dots + a_1 A + a_0 I = [0]$. This profound result enables any matrix power $A^m$ (where $m \ge n$), and consequently any analytic matrix function such as the exponential $e^{At}$, to be expressed as a finite polynomial in $A$ of degree at most $n-1$:
@@ -2389,6 +2788,20 @@ Evaluating at $t = 0$ yields $e^{A \cdot 0} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$x(t) = \underbrace{e^{A(t-t_0)} x(t_0)}_{\text{Zero-Input Response (ZIR)}} + \underbrace{\int_{t_0}^t e^{A(t-\tau)} B u(\tau) d\tau}_{\text{Zero-State Response (ZSR)}}$$</div>
+                    <p class="byheart-text">The complete solution of non-homogeneous LTI state equations is the linear superposition of the initial-condition response (ZIR) and the convolution integral of the forced input response (ZSR).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The total dynamic response of a continuous-time linear time-invariant system subjected to both non-zero initial conditions and external control excitations is governed by the complete non-homogeneous vector differential equation $\dot{x}(t) = A x(t) + B u(t)$, with initial state vector $x(0) = x_0$. Because the system is linear, the principle of superposition applies rigorously, ensuring that the total response can be partitioned into two mutually exclusive components: the Zero-Input Response (ZIR), which reflects the natural transient decay or oscillation driven entirely by initial energy storage, and the Zero-State Response (ZSR), which characterizes the forced motion driven by the control input when starting from completely relaxed initial conditions ($x(0) = 0$).</p>
@@ -2474,6 +2887,20 @@ This result illustrates an important physical insight: although the control inpu
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Pair } (A, B) \text{ is controllable} \iff \text{Dual pair } (A^T, C^T) \text{ is observable, where } Q_o(A, C) = [Q_c(A^T, C^T)]^T$$</div>
+                    <p class="byheart-text">Kalman's Duality Principle proves that controllability and observability are mathematical duals, allowing any observer design algorithm to solve a state feedback control problem on the transpose system.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Kalman's Duality Principle establishes a profound mathematical and structural symmetry between the concept of controllability and the concept of observability in linear dynamical systems. Formulated by Rudolf Kalman, the principle asserts that a system described by the pair $(A, B)$ is completely state controllable if and only if its dual transposed system described by the pair $(A^T, C^T)$ is completely state observable. In physical terms, controllability addresses the capability of external control inputs to transfer the internal state of a system to any desired configuration, whereas observability addresses the inverse problem of reconstructing the internal state of a system from measurements of external outputs.</p>
@@ -2519,6 +2946,20 @@ This result illustrates an important physical insight: although the control inpu
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\dot{z} = \Lambda z + \tilde{B} u, \quad y = \tilde{C} z + D u, \quad \text{where } \tilde{B} = M^{-1}B, \quad \tilde{C} = CM$$</div>
+                    <p class="byheart-text">By Gilbert's method, a diagonalized system with distinct eigenvalues is controllable if and only if matrix $\tilde{B}$ contains no all-zero rows, and observable if and only if matrix $\tilde{C}$ contains no all-zero columns.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Gilbert's method provides an intuitive, computationally efficient modal approach for testing the state controllability and observability of linear continuous-time systems without calculating high-order matrix powers or determinants. The method is rooted in transforming the system state space model into its canonical diagonal form (for systems with distinct eigenvalues) or Jordan canonical form (for systems with repeated eigenvalues). By decoupling the system into independent modal subsystems, Gilbert's criterion inspects the structural coupling between the external inputs and individual modes, as well as between individual modes and the external outputs.</p>
@@ -2564,6 +3005,20 @@ This result illustrates an important physical insight: although the control inpu
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\operatorname{rank}[\lambda_i I - A \quad B] = n \quad (\text{Controllability}), \qquad \operatorname{rank}\begin{bmatrix} \lambda_i I - A \\ C \end{bmatrix} = n \quad (\text{Observability}) \quad \forall \lambda_i \in \sigma(A)$$</div>
+                    <p class="byheart-text">The Popov-Belevitch-Hautus (PBH) test evaluates rank drop at each eigenvalue $\lambda_i$, identifying uncontrollable or unobservable modes directly without coordinate transformations.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Popov-Belevitch-Hautus (PBH) rank tests represent an elegant, algebraically direct frequency-domain method for evaluating the controllability and observability of individual dynamic modes without computing powers of the state matrix $A$ or executing coordinate diagonalization. Formulated independently by V. M. Popov, V. Belevitch, and M. L. J. Hautus, the PBH test focuses directly on the system matrix pencil evaluated at the eigenvalues of the system.</p>
@@ -2613,6 +3068,20 @@ Evaluating this rank at each eigenvalue $\lambda_i$, if $\text{rank}\begin{bmatr
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$K = \begin{bmatrix} 0 & 0 & \dots & 1 \end{bmatrix} Q_c^{-1} \phi_d(A), \quad \text{where } \phi_d(A) = A^n + \alpha_{n-1} A^{n-1} + \dots + \alpha_0 I$$</div>
+                    <p class="byheart-text">Ackermann's formula directly calculates the unique state feedback gain matrix $K$ that places all closed-loop eigenvalues of $(A - BK)$ at desired locations, provided the controllability matrix $Q_c$ has full rank $n$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">State feedback control represents the cornerstone of modern state-space synthesis, enabling control engineers to alter the dynamic response of an open-loop plant arbitrarily by placing closed-loop poles at pre-specified locations in the complex $s$-plane. In state feedback design, the control input is synthesized as a linear combination of all system state variables: $u(t) = -K x(t) + r(t)$, where $K = \begin{bmatrix} k_1 & k_2 & \dots & k_n \end{bmatrix}$ is the state feedback gain vector and $r(t)$ is an external reference setpoint. Substituting this control law into the open-loop state equation $\dot{x} = A x + B u$ yields the closed-loop autonomous system $\dot{x} = (A - B K)x$. The fundamental theorem of pole placement asserts that if and only if the system pair $(A, B)$ is completely state controllable, an arbitrary set of closed-loop eigenvalues can be realized through a unique feedback gain vector $K$.</p>
@@ -2691,6 +3160,20 @@ Applying this feedback gain vector shifts all three closed-loop poles to the exa
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\dot{\hat{x}} = A \hat{x} + B u + L (y - C \hat{x}), \quad \dot{e}(t) = (A - LC) e(t), \quad L = \phi_d(A) Q_o^{-1} \begin{bmatrix} 0 \\ \vdots \\ 1 \end{bmatrix}$$</div>
+                    <p class="byheart-text">A full-order Luenberger observer estimates internal states from measured outputs, with error dynamics decaying asymptotically to zero when observer gain matrix $L$ stabilizes $(A - LC)$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In the practical implementation of state feedback control systems, measuring every component of the state vector directly using physical sensors is often technically impossible, prohibitively expensive, or corrupted by severe measurement noise. To overcome this fundamental practical limitation, David Luenberger introduced the concept of a state observer (or state estimator). A full-order state observer is a deterministic dynamic algorithm running in real-time software that reconstructs an asymptotic estimate $\hat{x}(t)$ of the internal, unmeasurable state vector $x(t)$, utilizing only the known control input history $u(t)$ and the measured output history $y(t)$.</p>
@@ -2772,6 +3255,20 @@ According to the celebrated Separation Principle, when this observer is combined
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$f(x_1 + x_2) \ne f(x_1) + f(x_2), \quad f(\alpha x) \ne \alpha f(x) \implies \text{Superposition Principle Fails}$$</div>
+                    <p class="byheart-text">Nonlinear systems exhibit unique phenomena that cannot occur in linear systems: <strong>limit cycles</strong> (autonomous periodic orbits), <strong>jump resonance</strong>, <strong>subharmonic generation</strong>, and <strong>amplitude-dependent stability</strong>.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Non-linear dynamical systems exhibit a rich tapestry of complex behaviors that have no counterpart in linear system theory. The foundational cornerstone of linear systems—the principle of superposition, which asserts that the response to a combination of inputs is simply the sum of individual responses—fails completely in non-linear systems. Consequently, the stability, transient response, and frequency response of non-linear systems depend intimately on the amplitude and waveform of the excitation signal, rather than being exclusive properties of the system parameters. A non-linear system may be well-damped and asymptotically stable for small disturbance amplitudes, yet become wildly unstable when perturbed beyond a critical threshold.</p>
@@ -2817,6 +3314,20 @@ According to the celebrated Separation Principle, when this observer is combined
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$N(X)_{\text{ideal}} = \frac{4M}{\pi X}, \qquad N(X)_{\text{deadzone}} = \frac{4M}{\pi X} \sqrt{1 - \left(\frac{D}{X}\right)^2} \quad (X > D)$$</div>
+                    <p class="byheart-text">The describing function represents the equivalent complex fundamental harmonic gain $N(X) = \frac{Y_1 \angle \phi_1}{X}$ of the nonlinear element under sinusoidal excitation, neglecting higher harmonics.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The describing function of an ideal relay (on-off switching element) represents one of the most fundamental non-linear analytical models in control theory, frequently found in bang-bang thermal governors, position servomechanisms, and switched-mode power converters. An ideal relay produces an output $y(t) = +M$ whenever the input $x(t) > 0$, and $y(t) = -M$ whenever $x(t) < 0$, where $M$ represents the maximum output drive magnitude. When subjected to a sinusoidal input $x(t) = X \sin(\omega t)$, the output is an odd-symmetric, zero-mean square wave alternating between $+M$ and $-M$ with the identical fundamental frequency $\omega$.</p>
@@ -2868,6 +3379,20 @@ The describing function for a relay with dead-zone is therefore $N(X) = \frac{4M
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$N(X) = \frac{2k}{\pi} \left[ \arcsin\left(\frac{S}{X}\right) + \frac{S}{X}\sqrt{1 - \left(\frac{S}{X}\right)^2} \right] \quad (X \ge S), \qquad N(X) = k \quad (X < S)$$</div>
+                    <p class="byheart-text">For sinusoidal input exceeding saturation threshold $S$, the effective gain $N(X)$ drops monotonically below slope $k$ as amplitude $X$ increases, introducing zero phase shift ($\angle N(X) = 0^\circ$).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The describing function method is an approximate frequency-domain technique developed to analyze self-sustained oscillations and limit cycles in feedback systems containing a single, isolated, memoryless or memory-dependent non-linear element cascaded with a linear plant. The theoretical validity of the method rests upon the Low-Pass Filtering Hypothesis: because the linear plant $G(s)$ in physical engineering systems acts as a strong low-pass filter (having significantly higher attenuation at higher harmonic frequencies), when the non-linear element is driven by a sinusoidal input $x(t) = X \sin(\omega t)$, the higher harmonic components generated by the non-linearity are heavily attenuated as they circulate around the feedback loop. Therefore, only the fundamental harmonic component of the non-linear output is fed back, allowing the non-linear element to be replaced by an equivalent complex gain $N(X, \omega)$.</p>
@@ -2944,6 +3469,20 @@ This equation reveals that as the input amplitude $X$ increases far beyond the s
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$N(X) = k \left[ 1 - \frac{2}{\pi}\arcsin\left(\frac{D}{X}\right) - \frac{2D}{\pi X}\sqrt{1 - \left(\frac{D}{X}\right)^2} \right] \quad (X > D), \qquad N(X) = 0 \quad (X \le D)$$</div>
+                    <p class="byheart-text">Dead-zone non-linearity produces zero output until input amplitude exceeds dead-band $D$, beyond which the effective gain increases monotonically from 0 toward linear gain $k$ as $X \to \infty$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Dead-zone non-linearity (also known as dead-band or threshold non-linearity) is an inherent physical phenomenon commonly encountered in servomotors, hydraulic control valves, mechanical gear trains with backlash, and electronic operational amplifier input stages. In a system possessing dead-zone, the actuator produces absolutely zero output until the input magnitude exceeds a critical threshold $D$. Once the input magnitude exceeds $D$, the output responds linearly with slope $k$. The piecewise mathematical definition of symmetrical dead-zone is expressed as:
@@ -3010,6 +3549,20 @@ This analytical result reveals that as input amplitude $X$ grows very large comp
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$G(j\omega) = -\frac{1}{N(X)} \iff |G(j\omega)| \cdot |N(X)| = 1 \quad \text{and} \quad \angle G(j\omega) = -180^\circ - \angle N(X)$$</div>
+                    <p class="byheart-text">A sustained limit cycle occurs at the intersection of the linear plant Nyquist plot $G(j\omega)$ with the $-1/N(X)$ locus; the cycle is stable if increasing amplitude $X$ moves the point into the stable region.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In non-linear control engineering, the determination of limit cycles and the assessment of their orbital stability is accomplished by extending the classical Nyquist stability criterion through describing function analysis. Consider a closed-loop negative feedback system consisting of a non-linear element described by describing function $N(X)$ in cascade with a linear transfer function $G(s)$. The closed-loop characteristic equation is given by $1 + N(X) G(s) = 0$, which can be rearranged into the harmonic balance condition:
@@ -3102,6 +3655,20 @@ Thus, for gain $K = 2.5$, the system establishes a sustained, stable limit cycle
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\frac{dx_2}{dx_1} = \frac{f_2(x_1, x_2)}{f_1(x_1, x_2)} = \frac{0}{0} \quad \text{at equilibrium point } (x_1^*, x_2^*)$$</div>
+                    <p class="byheart-text">Singular points are classified by linearised Jacobian eigenvalues: <strong>Node</strong> (real, same sign), <strong>Saddle</strong> (real, opposite sign - always unstable), <strong>Focus</strong> (complex conjugates with non-zero real part), and <strong>Center</strong> (pure imaginary).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Phase plane analysis is a graphical state-space technique tailored for studying second-order continuous-time autonomous systems, whether linear or highly non-linear. The phase plane is a two-dimensional Cartesian coordinate plane whose axes correspond to the two state variables of the system, typically chosen as the system output position $x_1 = y$ along the horizontal axis and its first time derivative velocity $x_2 = \dot{y} = \dot{x}_1$ along the vertical axis. A single operational state at any given instant is represented by a coordinate point $(x_1, x_2)$, and the continuous locus traced by this state point as time advances from an initial condition is designated as a phase trajectory. The comprehensive family of all phase trajectories originating from various initial conditions forms the phase portrait, which reveals global stability, limit cycles, and transient dynamics without requiring closed-form analytical integration.</p>
@@ -3147,6 +3714,20 @@ Thus, for gain $K = 2.5$, the system establishes a sustained, stable limit cycle
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$V(x) = x^T P x > 0 \quad (\forall x \ne 0) \iff \Delta_1 > 0, \; \Delta_2 > 0, \; \dots, \; \Delta_n > 0$$</div>
+                    <p class="byheart-text">By Sylvester's criterion, a quadratic form $V(x) = x^T P x$ is positive definite if and only if all $n$ leading principal minors of the real symmetric matrix $P = P^T$ are strictly positive.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In the stability analysis of dynamical systems using Lyapunov's direct method, the concept of sign definiteness of a scalar function $V(x)$ serves as the mathematical foundation for generalizing physical energy. A continuous scalar function $V(x) = V(x_1, x_2, \dots, x_n)$ defined in a region $\Omega$ containing the origin is said to be positive definite if it satisfies two strict conditions: $V(0) = 0$ at the origin, and $V(x) > 0$ for all non-zero state vectors $x \ne 0$ in $\Omega$. Geometrically, a positive definite scalar function resembles a multi-dimensional bowl that reaches its absolute unique minimum strictly at the origin and rises continuously in all directions. If the function is non-negative everywhere ($V(x) \ge 0$), but can equal zero at points other than the origin, it is categorized as positive semi-definite.</p>
@@ -3194,6 +3775,20 @@ Furthermore, a quadratic form is negative definite if and only if its leading pr
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$V(x) = f(x)^T P f(x), \quad \dot{V}(x) = f(x)^T (J^T P + P J) f(x) < 0 \quad \text{where } J(x) = \frac{\partial f}{\partial x}$$</div>
+                    <p class="byheart-text">Krasovskii's method constructs a valid Lyapunov function directly from system vector fields $f(x)$, guaranteeing asymptotic stability if the symmetric matrix $\hat{F} = J^T P + P J$ is negative definite.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">While Lyapunov's Direct Method provides an unshakeable mathematical proof of stability, its chief practical difficulty in non-linear systems is that there exists no universal algorithmic formula for constructing a valid Lyapunov candidate function $V(x)$. Two prominent systematic analytical methods developed to generate Lyapunov functions for non-linear systems $\dot{x} = f(x)$ are Krasovskii's Method and the Variable Gradient Method.</p>
@@ -3239,6 +3834,20 @@ Furthermore, a quadratic form is negative definite if and only if its leading pr
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Slope } m = \frac{dx_2}{dx_1} = \frac{-x_1 - f(x_1, x_2)}{x_2} = N \implies x_2 = g(x_1, N) \quad (\text{Isocline Line})$$</div>
+                    <p class="byheart-text">The method of isoclines plots curves of constant trajectory slope $m = N$, drawing direction tangents across each isocline to trace phase trajectories and locate isolated limit cycles.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The systematic investigation of non-linear differential equations in the phase plane requires identifying all equilibrium singular points, linearizing the system dynamics in the immediate neighborhood of each singularity, classifying their local stability, and constructing the global phase portrait. Consider the non-linear second-order autonomous dynamical equation presented in the university examination:
@@ -3319,6 +3928,20 @@ For each chosen numerical slope $m$, this equation defines a parabola in the pha
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$A^T P + P A = -Q, \quad V(x) = x^T P x > 0, \quad \dot{V}(x) = -x^T Q x < 0$$</div>
+                    <p class="byheart-text">Lyapunov's direct theorem proves that a continuous LTI system $\dot{x} = Ax$ is asymptotically stable if and only if for any chosen symmetric positive definite matrix $Q > 0$, the Lyapunov equation yields a unique symmetric positive definite matrix $P > 0$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Lyapunov's Direct (or Second) Method represents the most universal and profound analytical framework for determining the stability of linear and non-linear dynamic systems without solving the underlying differential equations. Proposed by Aleksandr Lyapunov in 1892, the method generalizes the fundamental physical concept of energy: if a physical system has a state of minimum potential energy (the origin), and if the total rate of energy dissipation is continuously negative along every possible trajectory, the system must eventually shed all its energy and come to rest at the equilibrium point.</p>
@@ -3412,6 +4035,20 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Source} \longrightarrow \text{Power Modulator} \longrightarrow \text{Electric Motor} \longrightarrow \text{Load} \quad (\text{Regulated by Sensing \& Control Unit})$$</div>
+                    <p class="byheart-text">An electric drive integrates a power converter, electric motor, mechanical transmission, and closed-loop feedback controller to govern torque, speed, and position efficiently.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">An electric drive system is an integrated electromechanical apparatus designed to convert electrical energy into precisely controlled mechanical motion. The modern industrial electric drive comprises six fundamental interconnected subsystems: the primary power source, the power modulator, the electric motor, the mechanical load, the sensing unit, and the electronic control unit. The power source provides electrical energy at utility voltage and frequency, which may be either standard three-phase AC distribution or a dedicated DC bus. Because raw utility power cannot match the dynamically varying voltage and frequency demands of advanced motion profiles, the power modulator serves as the crucial power electronic interface between the source and the electric machine.</p>
@@ -3457,6 +4094,20 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\eta_{\text{electric}} > 90\%, \quad \text{Four-Quadrant Operation}, \quad \text{Zero Direct Tailpipe Emissions}$$</div>
+                    <p class="byheart-text">Electric drives surpass mechanical/thermal drives with superior conversion efficiency, instantaneous torque response, clean zero-emission operation, regenerative braking capability, and digital automation integration.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Electric drives have overwhelmingly superseded traditional mechanical, hydraulic, and internal combustion drive systems across global industries due to an unmatched array of operational, economic, and environmental advantages. From an operational perspective, electric motors are available in an exceptionally wide range of power ratings, extending from fractional milliwatt motors used in precision surgical instruments to massive multi-megawatt machines driving mine winders and steel mills. They exhibit high operational efficiency—typically exceeding 90 to 95 percent—which remains consistently elevated across broad speed and load variations, contrasting sharply with the poor partial-load efficiency of combustion engines.</p>
@@ -3502,6 +4153,20 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$T_L = T_{L0} + C \left(\frac{\omega}{\omega_n}\right)^k, \quad k=0 \text{ (Hoist)}, \; k=1 \text{ (Calender)}, \; k=2 \text{ (Fan/Pump)}, \; k=-1 \text{ (Lathe)}$$</div>
+                    <p class="byheart-text">Load torques are classified as <strong>active torques</strong> (retaining direction regardless of motion, like gravity) or <strong>passive torques</strong> (always opposing rotation, like friction and fluid drag), scaling as speed power exponent $k$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In the engineering analysis of electric drive systems, load torques are broadly classified based on their physical nature into two fundamental categories: active load torques and passive load torques. Active load torques are potential torques capable of driving the motor shaft autonomously under the influence of fundamental physical forces such as gravitational acceleration, elastic deformation, or mechanical tension. The sign of an active load torque remains invariant regardless of the direction of rotation of the drive shaft. A classic example is an overhead hoist or crane: whether the loaded cage is being lifted upward or lowered downward, gravity continuously exerts a downward force, meaning the load torque acts in the downward direction irrespective of shaft motion.</p>
@@ -3547,6 +4212,20 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\omega_{\text{crit}} = \sqrt{\frac{K_{sh}(J_M + J_L)}{J_M \cdot J_L}}, \qquad |\omega_{\text{operating}} - \omega_{\text{crit}}| \ge 0.20 \, \omega_{\text{crit}}$$</div>
+                    <p class="byheart-text">Critical speed occurs when rotational shaft speed excites the natural torsional frequency of the mechanical coupling, creating severe resonant torque oscillations and catastrophic shaft fracture.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The concept of critical speed in electric drives relates to the rotational frequency at which the mechanical angular velocity of the motor shaft coincides exactly with the natural fundamental frequency of transverse or torsional vibration of the rotating shaft-rotor-load assembly. Every real-world mechanical shaft possesses distributed mass, elasticity, and rotor unbalance. Even with precision manufacturing, the center of mass of the rotor never aligns perfectly with the geometric axis of rotation, creating an eccentric centrifugal unbalance force that increases quadratically with rotational speed ($F_c = m e \omega^2$).</p>
@@ -3592,6 +4271,20 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$T - T_L = J \frac{d\omega_m}{dt} + \frac{1}{2} \omega_m^2 \frac{dJ}{dt} \approx J \frac{d\omega_m}{dt}$$</div>
+                    <p class="byheart-text">The fundamental dynamic torque equation governs acceleration: positive dynamic torque ($T > T_L$) accelerates the motor, balanced torque ($T = T_L$) maintains steady speed, and negative torque ($T < T_L$) causes deceleration.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The mathematical analysis of motion in an electric drive system begins by establishing the dynamic equation of equilibrium connecting the electromagnetic torque developed by the electric motor, the counteracting mechanical load torque, and the inertial resistance of rotating masses. Consider an electric motor having an electromagnetic torque $T$ directly coupled to a mechanical load presenting a counteracting load torque $T_l$. Let the instantaneous angular speed of the combined rotor and load shaft be denoted by $\omega_m$ in radians per second, and let the total effective polar moment of inertia of all rotating components referred to the motor shaft be denoted by $J$, expressed in kilogram-meters squared ($\text{kg}\cdot\text{m}^2$).</p>
@@ -3657,6 +4350,20 @@ Summing all referred components yields the total effective moment of inertia $J 
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$P_m = T \cdot \omega_m \implies \begin{cases} \text{Q1: Forward Motoring } (+T, +\omega, P>0) & \text{Q2: Forward Braking } (-T, +\omega, P<0) \\ \text{Q3: Reverse Motoring } (-T, -\omega, P>0) & \text{Q4: Reverse Braking } (+T, -\omega, P<0) \end{cases}$$</div>
+                    <p class="byheart-text">Four-quadrant operation enables complete bidirectional motion and regenerative braking, where power $P_m = T \omega_m$ is positive during motoring quadrants (Q1 & Q3) and negative during braking energy recovery (Q2 & Q4).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Four-quadrant operation in the speed-torque ($\omega_m$ versus $T$) plane represents one of the most critical operational concepts in industrial electric drives. The Cartesian plane is divided into four distinct quadrants based on the algebraic signs of shaft angular velocity $\omega_m$ and electromagnetic motor torque $T$. Power delivered by the motor is given by $P = T \cdot \omega_m$. When torque and speed possess the identical algebraic sign, power is positive ($P > 0$), signifying that electrical energy is converted into mechanical motion; this is Motoring. Conversely, when torque and speed have opposite algebraic signs, power is negative ($P < 0$), signifying that mechanical kinetic or potential energy is converted back into electrical power; this is Braking or Regenerating.</p>
@@ -3714,6 +4421,20 @@ When a fully loaded cage is lowered downward at negative speed ($\omega_m < 0$),
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\frac{dT_L}{d\omega_m} - \frac{dT}{d\omega_m} > 0 \iff \frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m} \quad (\text{at equilibrium } T = T_L)$$</div>
+                    <p class="byheart-text">An electric drive operating point is steady-state stable if a small disturbance increase in speed creates a retarding net torque ($T_L > T$), naturally restoring the drive to equilibrium speed.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Steady-state stability in an electric drive system denotes the intrinsic ability of the motor-load combination to maintain an equilibrium operating speed under steady conditions, and to automatically return to that equilibrium speed following small, transient mechanical perturbations in load torque or speed. An operating point where motor electromagnetic torque matches load torque ($T = T_l$) is an equilibrium state, but it is not necessarily stable. If a tiny momentary deceleration causes net decelerating torque to develop, the drive will stall; conversely, if a tiny acceleration produces net accelerating torque, the drive will run away. Determining the mathematical condition that guarantees asymptotic stability around an equilibrium point requires small-signal perturbation analysis.</p>
@@ -3785,6 +4506,20 @@ In graphical terms, when plotting $T$ and $T_l$ versus speed $\omega_m$, stabili
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\theta(t) = \theta_{ss} (1 - e^{-t/\tau_h}) + \theta_0 e^{-t/\tau_h}, \quad \tau_h = \frac{C_{th}}{A \cdot h}, \quad P_{\text{rated}} \ge P_{\text{rms}} = \sqrt{\frac{\sum P_i^2 t_i}{\sum t_i}}$$</div>
+                    <p class="byheart-text">Motor thermal selection ensures steady-state temperature rise $\theta_{ss} = P_{\text{loss}}/(A \cdot h)$ does not exceed the insulation class thermal rating ($B, F, H$) under continuous and fluctuating duty cycles.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The selection of the appropriate motor power rating represents an essential engineering task in industrial drive design. An undersized electric motor will suffer excessive thermal heating, accelerating insulation thermal degradation and causing premature motor failure. An oversized motor incurs unnecessarily high capital expenditure, operates with poor efficiency and low power factor, and increases electrical distribution losses. The power rating is governed entirely by the permissible temperature rise limit of the motor winding insulation (Class A, B, F, or H).</p>
@@ -3854,6 +4589,20 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\omega_m = \frac{V_a - I_a R_a}{K \phi} \implies \begin{cases} \text{Below Base Speed: } V_a \text{ variation at rated } \phi \implies \text{Constant Torque Mode} \\ \text{Above Base Speed: } \phi \text{ reduction at rated } V_a \implies \text{Constant Power Mode} \end{cases}$$</div>
+                    <p class="byheart-text">DC drive speed control operates in <strong>Constant Torque</strong> mode up to base speed by varying armature voltage $V_a$, and in <strong>Constant Power</strong> mode above base speed by weakening field flux $\phi$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The speed control of a separately excited direct current motor across wide speed ranges is accomplished by dividing operation into two distinct operational regimes: Armature Voltage Control below base speed, and Field Weakening Control above base speed. The steady-state angular speed of a separately excited DC motor is governed by the fundamental electromotive force equation $\omega_m = \frac{V_a - I_a R_a}{K \phi}$, where $V_a$ is the armature terminal voltage, $I_a$ is the armature current, $R_a$ is the armature winding resistance, and $K \phi$ is the magnetic flux per pole scaled by machine design constants. The base speed $\omega_{base}$ is defined as the motor rotational speed achieved when rated armature voltage and rated field current are applied simultaneously under rated load conditions.</p>
@@ -3899,6 +4648,20 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$V_{dc} = \frac{3\sqrt{3}V_m}{2\pi}(1 + \cos\alpha) \ge 0 \quad (\forall \alpha \in [0^\circ, 180^\circ])$$</div>
+                    <p class="byheart-text">Semi-converters use freewheeling diodes that clamp the output voltage to non-negative values ($V_{dc} \ge 0$), restricting drive operation to single-quadrant motoring and preventing regenerative braking.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Three-phase semi-converters (half-controlled bridge rectifiers) are deployed for medium to high power DC motor drives ranging from approximately $15\text{ kW}$ to several hundred kilowatts where operation is confined strictly to Quadrant 1 (Forward Motoring). The power circuit consists of three controlled thyristors in the upper half of the bridge and three uncontrolled power diodes in the lower half (or vice versa), accompanied by a freewheeling diode connected across the motor armature terminals. Compared to fully controlled converters, semi-converters feature lower capital cost, simpler gate firing control circuitry, and higher input power factor at reduced output voltages.</p>
@@ -3944,6 +4707,20 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$V_a = \frac{2V_m}{\pi}\cos\alpha, \quad \omega_m = \frac{\frac{2V_m}{\pi}\cos\alpha - I_a R_a}{K_t \phi} \quad (\text{Continuous Conduction})$$</div>
+                    <p class="byheart-text">A single-phase full converter allows two-quadrant operation: rectification/motoring for firing angle $\alpha < 90^\circ$ and inversion/regenerative braking into the AC mains for $\alpha > 90^\circ$ with reversed armature connections.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Single-phase fully controlled bridge rectifiers are widely utilized for the variable speed control of separately excited DC motors in fractional to medium kilowatt industrial applications. The power circuit consists of a four-thyristor full bridge ($T_1, T_2, T_3, T_4$) supplied from an AC voltage source $v_s(t) = V_m \sin(\omega t)$, feeding the armature circuit of a separately excited DC motor represented by armature resistance $R_a$, winding inductance $L_a$, and induced back-EMF $E_b = K_b \omega_m$. Thyristor pairs $(T_1, T_2)$ and $(T_3, T_4)$ are triggered symmetrically at firing angle $\alpha$ in positive and negative supply half-cycles, respectively.</p>
@@ -4032,6 +4809,20 @@ Because $\alpha_2 = 120.3^\circ > 90^\circ$, the converter operates in the inver
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$V_a = \frac{3\sqrt{3}V_m}{\pi}\cos\alpha, \quad \omega_m = \frac{\frac{3\sqrt{3}V_m}{\pi}\cos\alpha - I_a R_a}{K_t \phi}$$</div>
+                    <p class="byheart-text">Three-phase full converters provide six-pulse output with high ripple frequency ($300\text{ Hz}$), maintaining continuous armature conduction across wide load ranges with lower harmonic heating and higher motor efficiency.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Three-phase fully controlled bridge rectifiers represent the standard industrial drive converter for high-power DC motor drives ranging from tens of kilowatts up to several megawatts, such as in steel rolling mills, paper machines, and mine hoists. Compared to single-phase converters, three-phase full converters deliver three decisive advantages: the output voltage ripple frequency is six times the line frequency ($300\text{ Hz}$ for $50\text{ Hz}$ supply), which drastically reduces armature current ripple and eliminates the need for bulky smoothing reactors; continuous conduction is maintained across virtually the entire load range down to light loads; and the converter draws balanced currents from all three phases of the AC utility grid.</p>
@@ -4095,6 +4886,20 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$V_a = \delta V_s = \left(\frac{t_{on}}{T}\right) V_s, \quad \omega_m = \frac{\delta V_s - I_a R_a}{K_t \phi} \quad (0 \le \delta \le 1)$$</div>
+                    <p class="byheart-text">A Class-A step-down (buck) chopper controls motor speed smoothly in Quadrant 1 with high energy efficiency, rapid dynamic response, and low armature current ripple.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The variable speed motoring control of a separately excited DC motor from a fixed-voltage DC power supply is accomplished using a Class-A step-down (buck) DC-to-DC chopper. The power circuit consists of a high-speed controllable power semiconductor switch (such as an IGBT or MOSFET) connected in series between the positive DC supply rail $V_s$ and the motor armature circuit, complemented by a freewheeling diode connected in anti-parallel across the motor armature terminals. The armature circuit is modeled as the series combination of armature resistance $R_a$, armature winding inductance $L_a$, and rotational back-EMF $E_b$. The chopper is operated with a fixed switching period $T$ and a controllable conduction time $t_{on}$, defining the duty ratio $\delta = \frac{t_{on}}{T}$.</p>
@@ -4140,6 +4945,20 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$V_s = \frac{E_b}{1 - \delta} \implies I_a = \frac{E_b - (1-\delta)V_s}{R_a} \quad (\text{Quadrant 2 Operation})$$</div>
+                    <p class="byheart-text">A Class-B step-up (boost) chopper uses the motor armature inductance to boost induced back-EMF $E_b$ above DC source voltage $V_s$, pumping regenerative braking energy back to the DC supply.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Regenerative braking of a separately excited DC motor operating from a fixed DC bus is realized using a Class-B step-up (boost) chopper circuit. In a standard motoring drive, electrical energy flows from the supply into the motor. During regenerative braking, the flow of electrical power must be reversed: the kinetic energy of the rotating rotor and mechanical load is converted by the motor (operating as an electromechanical generator) into electrical power and pumped back into the DC voltage source $V_s$. However, under normal operation, the rotational back-EMF $E_b$ induced in the armature is smaller than the supply voltage ($E_b < V_s$). A Class-B boost chopper overcomes this voltage deficit by using the armature winding inductance $L_a$ to step up the voltage.</p>
@@ -4185,6 +5004,20 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$V_a = \delta V_s \ge 0, \quad I_a > 0 \text{ (Motoring via } CH_1\text{-}D_2\text{)}, \quad I_a < 0 \text{ (Regeneration via } CH_2\text{-}D_1\text{)}$$</div>
+                    <p class="byheart-text">A two-quadrant Class-C chopper achieves seamless forward motoring (Q1) and forward regenerative braking (Q2) by alternately switching two complementary chopper legs without mechanical contactor reversal.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In advanced industrial motion control applications such as electric vehicles, battery-operated locomotives, and industrial hoists, an electric drive must transition rapidly between forward acceleration (motoring) and forward deceleration (regenerative braking). A Class-C two-quadrant chopper drive provides this capability by operating seamlessly in Quadrant 1 (Forward Motoring, where $V_a > 0, I_a > 0$) and Quadrant 2 (Forward Regenerative Braking, where $V_a > 0, I_a < 0$). The power electronic circuit employs two fully controllable semiconductor switches ($S_1, S_2$) and two anti-parallel freewheeling feedback diodes ($D_1, D_2$) connected in a half-bridge totem-pole configuration across a common DC voltage supply $V_s$.</p>
@@ -4248,6 +5081,20 @@ This derivation proves that by adjusting the duty ratio $\delta_2$, the braking 
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$V_a = (2\delta - 1)V_s, \quad -V_s \le V_a \le +V_s, \quad -I_{\max} \le I_a \le +I_{\max}$$</div>
+                    <p class="byheart-text">A four-quadrant Class-E H-bridge chopper provides instantaneous bidirectional control of both armature voltage and current, enabling smooth forward/reverse motoring and regenerative braking.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">A Class-E chopper (commonly known as a full-bridge or H-bridge DC chopper) represents the most versatile and comprehensive DC-to-DC converter configuration in electric drive technology, providing complete, seamless, bidirectional motion control across all four quadrants of the speed-torque plane without requiring mechanical reversing contactors or field current reversal. The power circuit employs four fully controllable power semiconductor switches ($S_1, S_2, S_3, S_4$) and four antiparallel feedback freewheeling diodes ($D_1, D_2, D_3, D_4$) arranged in an H-bridge configuration across a common DC voltage supply $V_s$, with the DC motor armature connected across the central cross-branch.</p>
@@ -4300,6 +5147,20 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\tau_{\text{current}} \approx 1\text{--}2\text{ ms} \ll \tau_{\text{speed}} \approx 30\text{--}100\text{ ms} \implies \text{Cascaded Loops with Inner Current Clamping}$$</div>
+                    <p class="byheart-text">Cascaded two-loop control uses an inner current loop to enforce instantaneous semiconductor overcurrent protection, nested inside a slower outer PI speed loop that ensures zero steady-state tracking error.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In high-performance industrial DC motor drives, open-loop speed control is entirely inadequate because of load-dependent speed droop, sluggish transient recovery, and the dangerous risk of catastrophic overcurrents during starting and load impacts. A separately excited DC motor has very small armature resistance $R_a$. If rated armature voltage is applied while the motor is stationary ($E_b = 0$), the starting inrush current would equal $I_{start} = \frac{V_a}{R_a}$, which can reach 10 to 25 times the rated full-load current. This would instantly destroy power electronic semiconductors and damage commutator brushes. To ensure rock-solid speed regulation while enforcing absolute overcurrent protection, industrial drives implement a Cascade Multi-Loop Closed-Loop Control Architecture.</p>
@@ -4362,6 +5223,20 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$T_e \propto V_s^2 \implies \text{Torque drops quadratically with stator voltage; } P_{cu2} = s P_g \implies \text{Severe Rotor Overheating}$$</div>
+                    <p class="byheart-text">Stator voltage speed control is restricted to high-slip induction motors driving fan/pump loads over narrow speed ranges because motor torque collapses with $V_s^2$ and causes excessive rotor copper dissipation.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Stator voltage control represents one of the simplest methods for adjusting the rotational speed of a three-phase squirrel-cage induction motor. The stator terminals are connected to the AC utility supply through an AC voltage controller consisting of pairs of antiparallel thyristors or triacs in each phase, allowing the RMS terminal voltage $V_s$ to be modulated by adjusting the thyristor firing angle $\alpha$ at constant supply frequency. However, this control technique suffers from severe physical limitations that restrict its deployment strictly to specialized low-power applications such as centrifugal pumps, cooling fans, and domestic blowers.</p>
@@ -4407,6 +5282,20 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{VSI: DC voltage link with capacitor (PWM voltage output); } \quad \text{CSI: DC current link with large inductor (inherent regeneration)}$$</div>
+                    <p class="byheart-text">VSI drives supply multiple parallel motors using fast IGBT switches with high power factor, whereas CSI drives provide rugged short-circuit ride-through and direct regenerative capability for high-power single motors.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Variable-frequency inverter-fed induction motor drives are classified based on the nature of their intermediate DC link into Voltage Source Inverter (VSI) drives and Current Source Inverter (CSI) drives. In a Voltage Source Inverter drive, the DC link features a large electrolytic filter capacitor connected in parallel across the bus, maintaining a stiff, ripple-free DC bus voltage with very low source impedance. The inverter modulates this voltage, imposing controlled voltage waveforms across the motor stator terminals, while the motor stator winding inductances determine the resulting phase currents.</p>
@@ -4452,6 +5341,20 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\phi_m \propto \frac{V_s}{f_s} = \text{constant} \implies T_{\max} = \frac{3}{2}\frac{V_s^2}{\omega_s (2\omega_s L_l)} \approx \text{constant breakdown torque}$$</div>
+                    <p class="byheart-text">Maintaining a constant $V/f$ ratio preserves constant air-gap magnetic flux and prevents core saturation, guaranteeing maximum available breakdown torque across the entire base speed range.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Variable-frequency speed control of three-phase induction motors represents the premier industrial motion control technique, enabling AC induction motors to emulate the superior torque-speed flexibility of DC drives. The fundamental basis of this technique is rooted in Faraday's law of electromagnetic induction. The RMS induced stator electromotive force (EMF) per phase $E_1$ in an induction motor is related to the supply frequency $f$ and the peak mutual air-gap magnetic flux per pole $\Phi_m$ by the fundamental relation:
@@ -4509,6 +5412,20 @@ Because $\frac{V_1}{f}$ is held constant, the maximum breakdown torque $T_{max}$
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$R_{eff} = R_{ext} (1 - \delta), \quad s \propto \frac{R_2 + R_{eff}}{V_s^2} \quad (0 \le \delta \le 1)$$</div>
+                    <p class="byheart-text">Rotor resistance chopper control smooths slip variation in wound-rotor induction motors without mechanical resistor stepping, but dissipates slip power as heat in external resistors.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In heavy-duty industrial applications requiring high starting torque and moderate speed regulation—such as mine winders, harbor cranes, steel rolling mills, and large crushers—wound-rotor (slip-ring) induction motors are widely deployed. Traditionally, speed control was achieved by connecting external resistor banks to the rotor slip rings through mechanical contactors or liquid rheostats. However, mechanical resistance switching is stepped, noisy, requires frequent maintenance, and suffers from poor reliability. Static Rotor Resistance Control solves these problems by utilizing power electronic semiconductors to provide smooth, stepless, maintenance-free resistance variation.</p>
@@ -4573,6 +5490,20 @@ This mathematical result proves that varying the chopper duty ratio $\delta$ alt
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$P_{\text{slip}} = s P_g; \quad \text{Kramer: Diode rectifier + line inverter (sub-synchronous); Scherbius: Cycloconverter (sub/super-synchronous)}$$</div>
+                    <p class="byheart-text">Slip power recovery schemes recover rotor slip power $s P_g$ and inject it back into the AC mains, achieving high operating efficiency in large-capacity pumps, fans, and wind turbines.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In conventional rotor resistance speed control of wound-rotor induction motors, speed reduction below synchronous speed is achieved by increasing rotor circuit resistance. However, the electrical power delivered across the air gap $P_{ag}$ is divided into mechanical shaft power $P_{mech} = (1-s)P_{ag}$ and slip power $P_{slip} = s P_{ag}$. In rotor resistance control, this entire slip power $s P_{ag}$ is dissipated as wasted heat within the resistors, resulting in poor operating efficiency at low speeds (efficiency $\eta \approx 1-s$). Slip Power Recovery Schemes eliminate this immense energy waste by extracting the slip frequency electrical power from the rotor slip rings, converting it, and feeding it back into the mechanical drive shaft or returning it directly to the AC utility grid.</p>
@@ -4635,6 +5566,20 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{True Sync: Inverter frequency set independently } \implies \text{Hunting/Stalling risk; Self-Controlled: Fired via Rotor Sensor } \implies \text{No Hunting}$$</div>
+                    <p class="byheart-text">In self-controlled mode, inverter switching pulses are triggered directly by rotor position sensors (encoder/Hall sensors), eliminating hunting oscillations and preventing synchronous motor pull-out.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Synchronous motor drives are operated in two distinct control paradigms: True Synchronous Mode (open-loop frequency control) and Self-Controlled Mode (closed-loop rotor position-synchronized control). In True Synchronous Mode, the motor stator windings are fed from an independent variable-frequency inverter whose output frequency is governed by an external reference oscillator, completely independent of the actual instantaneous rotational position of the rotor shaft. The motor behaves like an open-loop system: the stator magnetic field rotates at synchronous speed $\omega_s = \frac{4\pi f}{P}$, and the rotor magnetic poles must lock synchronously with this revolving field.</p>
@@ -4680,6 +5625,20 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Leading Power Factor } (\cos\phi > 0 \text{ leading}) \implies \text{Motor Back-EMF naturally commutates thyristor inverter switches}$$</div>
+                    <p class="byheart-text">Load-Commutated Inverter (LCI) drives over-excite the synchronous motor to draw leading current, allowing generated machine back-EMF to naturally turn off the inverter thyristors without auxiliary commutation circuits.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">A Load-Commutated Inverter (LCI) fed synchronous motor drive represents the premier drive topology for ultra-high-power industrial applications, such as multi-megawatt gas pipeline compressors, blast furnace blowers, boiler feed pumps, and naval ship propulsion systems, with power ratings extending from $1\text{ MW}$ to over $100\text{ MW}$. The system consists of a wound-field synchronous motor fed from a Current Source Inverter (CSI) comprising standard, inexpensive, highly robust line-grade thyristors.</p>
@@ -4725,6 +5684,20 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\begin{bmatrix} x_\alpha \\ x_\beta \end{bmatrix} = \frac{2}{3}\begin{bmatrix} 1 & -\frac{1}{2} & -\frac{1}{2} \\ 0 & \frac{\sqrt{3}}{2} & -\frac{\sqrt{3}}{2} \end{bmatrix}\begin{bmatrix} x_a \\ x_b \\ x_c \end{bmatrix}, \quad \begin{bmatrix} x_d \\ x_q \end{bmatrix} = \begin{bmatrix} \cos\theta_e & \sin\theta_e \\ -\sin\theta_e & \cos\theta_e \end{bmatrix}\begin{bmatrix} x_\alpha \\ x_\beta \end{bmatrix}$$</div>
+                    <p class="byheart-text">Clarke transformation converts three-phase stationary $abc$ coordinates into two-phase stationary $\alpha\beta$ coordinates, and Park transformation rotates them into a synchronously rotating $dq$ reference frame.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The primary mathematical challenge in the dynamic modeling and high-performance control of three-phase AC electric machines (both induction and synchronous motors) is that the stator winding inductances are continuous functions of the rotor position angle $\theta_r$. Because the rotor rotates continuously, the governing differential equations contain complex time-varying coefficients that couple all three phases together. To transform these non-linear, time-varying differential equations into simple linear equations with constant coefficients, coordinate reference frame transformations are indispensable. The two foundational transformations are Clarke's Transformation (three-phase to two-phase stationary) and Park's Transformation (stationary to synchronously rotating reference frame).</p>
@@ -4785,6 +5758,20 @@ $$\begin{bmatrix} v_\alpha \\ v_\beta \end{bmatrix} = \begin{bmatrix} \cos(\thet
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$V_{ref} = \frac{T_1}{T_s}V_1 + \frac{T_2}{T_s}V_2 + \frac{T_0}{T_s}V_0, \quad V_{out,\max} = \frac{V_{dc}}{\sqrt{3}} \approx 0.577 V_{dc} \quad (15.5\% \text{ higher than SPWM})$$</div>
+                    <p class="byheart-text">Space Vector PWM synthesizes rotating reference voltage vectors from adjacent stationary active and zero vectors, achieving 15.5% higher DC bus voltage utilization and significantly lower current THD than SPWM.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Space Vector Pulse Width Modulation (SVPWM) is an advanced digital switching technique for three-phase Voltage Source Inverters (VSI) that has become the universal industry standard in modern variable frequency drives. Compared to traditional Sinusoidal PWM (SPWM), SVPWM treats the inverter and motor as a single unified system, synthesizing a continuous rotating voltage space vector. SVPWM delivers two massive advantages: it increases the maximum fundamental output voltage by 15.47 percent without entering overmodulation (achieving superior DC bus utilization), and it dramatically reduces current total harmonic distortion (THD) by generating symmetrical switching sequences that minimize high-frequency switching losses.</p>
@@ -4852,6 +5839,20 @@ This proves that Space Vector PWM yields a 15.47 percent increase in output volt
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\psi_{rq} = 0 \implies \psi_r = \psi_{rd} = L_m i_{sd}, \qquad T_e = \frac{3}{2} P \frac{L_m}{L_r} \psi_{rd} i_{sq} \propto i_{sd} \cdot i_{sq}$$</div>
+                    <p class="byheart-text">Field-Oriented Control aligns the rotor flux vector strictly along the $d$-axis ($\psi_{rq} = 0$), decoupling AC induction motor control into independent flux regulation ($i_{sd}$) and torque regulation ($i_{sq}$).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Field-Oriented Control (FOC), also known as Vector Control, represents the crowning achievement of modern electric motor drive technology. Invented by Felix Blaschke and Karl Hasse, FOC revolutionizes the dynamic performance of three-phase AC induction motors by overcoming their severe non-linear coupling, allowing an induction motor to be controlled with the decoupling, fast transient response, and precision of a separately excited DC machine. In a DC motor, decoupling is physically enforced by mechanical construction: the armature winding produces magnetic field $MMF$ strictly along the quadrature axis, while the field winding produces flux along the direct axis. Because these two fields are physically orthogonal at $90^\circ$ space angle, armature current $I_a$ controls electromagnetic torque independently without altering field flux $\phi_f$.</p>
@@ -4996,6 +5997,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Mobile Client} \xleftrightarrow{\quad \text{Wireless Link} \quad} \text{Mobile Middleware / Gateway} \xleftrightarrow{\quad \text{High-Speed Backbone} \quad} \text{Enterprise Server}$$</div>
+                    <p class="byheart-text">Mobile middleware bridges resource-constrained mobile devices and enterprise backend servers by abstracting protocol conversion, state caching, data transcoding, and offline synchronization.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In modern distributed mobile computing architectures, middleware represents an indispensable software abstraction layer situated strategically between the heterogeneous client applications operating on resource-constrained mobile devices and the underlying distributed operating systems, network transport protocols, and enterprise backend databases. Because mobile environments are characterized by extreme hardware heterogeneity, variable bandwidth, and intermittent connectivity, writing applications that interact directly with low-level network sockets is impractical and error-prone. Middleware masks this underlying heterogeneity by exposing standardized application programming interfaces (APIs) and unified communication protocols, enabling application developers to concentrate entirely on core business logic without worrying about the underlying physical network topology or device idiosyncrasies.</p>
@@ -5041,6 +6056,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Care-of-Address (CoA)} \iff \text{Home Agent (HA) Encapsulation/Tunneling} \iff \text{Foreign Agent (FA) / Mobile Node}$$</div>
+                    <p class="byheart-text">The Internet serves as the universal transport backbone for mobile computing, using Mobile IP tunneling to route packets seamlessly to mobile nodes regardless of their changing physical point of attachment.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Internet is designated as the ubiquitous network in mobile computing because it provides a universally accessible, pervasive, and protocol-agnostic communication infrastructure that interconnects billions of heterogeneous computing endpoints across the globe without regard to physical location, underlying transmission media, or access technologies. In the early eras of telecommunications, voice telephony, paging networks, and corporate computer networks operated on separate, proprietary physical infrastructures. The universal triumph of the Internet Protocol (IP) suite—specifically IPv4 and IPv6—established a single standardized network layer that unifies cellular data networks such as 4G LTE and 5G, wireless local area networks, satellite constellations, and wired optical backbones into a seamless global web.</p>
@@ -5086,6 +6115,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Access Network (Radio BS/AP)} \longrightarrow \text{Edge Network (MEC, Low-Latency Aggregation)} \longrightarrow \text{Core Network (HLR, GGSN/UPF)}$$</div>
+                    <p class="byheart-text">Mobile networks partition infrastructure into Access (over-the-air radio link), Edge (localized edge computing and content caching), and Core (centralized mobility management, authentication, and packet routing).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">To efficiently manage data traffic, maintain low latency, and support massive terminal scalability, contemporary mobile computing infrastructures partition network resources into three distinct functional segments: the Access Network, the Edge Network, and the Core Network. Each segment is engineered with specialized switching hardware, radio interfaces, and communication protocols optimized for its specific geographical scope and computational workload.</p>
@@ -5132,6 +6175,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Primary Constraints: Limited Battery Life, Scarce Bandwidth, Multipath Fading, Intermittent Connectivity, Security Risks}$$</div>
+                    <p class="byheart-text">Mobile computing environments are constrained by finite battery energy, highly variable wireless bandwidth, physical signal attenuation, frequent disconnections, and heightened physical and wireless security risks.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Mobile computing environments are constrained by severe physical, electrical, and environmental limitations that distinguish them fundamentally from traditional fixed desktop and server computing paradigms. These constraints are intrinsic to mobility and portability, requiring specialized software engineering strategies, lightweight protocols, and fault-tolerant architectural designs.</p>
@@ -5178,6 +6235,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Tier 1: Presentation (Thin/Smart Client)} \longleftrightarrow \text{Tier 2: Application / Middleware Logic} \longleftrightarrow \text{Tier 3: Enterprise Database}$$</div>
+                    <p class="byheart-text">Three-tier architecture separates presentation on the mobile device from application processing on intermediate servers and persistent data storage on enterprise databases, optimizing network utilization.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The three-tier architecture of mobile computing represents a modular, layered engineering framework designed to overcome the severe physical constraints of mobile devices—namely limited computational power, battery capacity, memory, and unreliable wireless network connectivity—by decoupling user interface rendering, business logic execution, and persistent enterprise data storage into three distinct, loosely coupled tiers. In this architectural paradigm, workloads are partitioned logically across Tier 1 (the Presentation Tier residing on the mobile client device), Tier 2 (the Application and Middleware Tier executing on intermediary enterprise application servers and gateways), and Tier 3 (the Data and Enterprise Storage Tier running on high-performance relational databases, mainframes, or cloud storage clusters).</p>
@@ -5224,6 +6295,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Key Axioms: Energy-Aware Scheduling, Adaptive Bandwidth Throttling, Offline Replication, End-to-End Security}$$</div>
+                    <p class="byheart-text">Mobile software engineering requires cross-layer optimization prioritizing aggressive battery conservation, bandwidth adaptation, asynchronous offline transaction queuing, and lightweight cryptography.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Architecting and engineering mobile computing systems requires a radical paradigm shift from traditional desktop and enterprise computing due to the severe environmental unpredictability, device portability constraints, and physical channel impairments intrinsic to mobile wireless environments. A robust mobile software system must balance multiple competing design considerations, spanning mobility management, energy conservation, bandwidth optimization, disconnected operations, security across untrusted air interfaces, and context adaptability.</p>
@@ -5271,6 +6356,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Context Tuple } \mathcal{C} = \langle \text{Location}, \text{Network Bandwidth}, \text{Battery Energy}, \text{Device Profile}, \text{User Activity} \rangle$$</div>
+                    <p class="byheart-text">Context-aware systems dynamically modify application behavior, media fidelity, and security rules based on real-time awareness of user location, device battery state, and available network bandwidth.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Context-aware computing in mobile environments refers to the capability of an application or system to perceive, interpret, and dynamically react to its changing operational environment—including user state, physical location, device hardware constraints, network conditions, and ambient surroundings—without requiring explicit, manual user intervention. To execute this sophisticated runtime adaptation systematically, enterprise mobile architectures implement a four-part management subsystem comprising the Client Context Manager, the Policy Manager, the Security Manager, and the Adaptability Manager.</p>
@@ -5318,6 +6417,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Transcoding: Modality Conversion (Text } \leftrightarrow \text{ Speech), Resolution Scaling, Format Compression (PNG } \to \text{ WebP)}$$</div>
+                    <p class="byheart-text">Content adaptation dynamically transforms, compresses, or transcodes media at intermediary proxies to match the specific screen resolution, memory limits, and network throughput of the client handset.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Content adaptation is the process of dynamically modifying digital media, documents, and web content to suit the specific physical constraints of the receiving client device, the transmission characteristics of the network connection, and the contextual preferences of the mobile user. Because content is predominantly authored for high-performance desktop computers connected to high-speed broadband networks, delivering unmodified desktop content to mobile terminals leads to catastrophic usability failures, excessive memory consumption, unrendered formatting, and severe network latency. Effective content adaptation requires evaluating a multidimensional set of adaptation attributes and applying appropriate transcoding transformations classified into syntactic, structural, and semantic categories.</p>
@@ -5365,6 +6478,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Seamless Mobility: Continuous Session State, Zero Packet Loss (Buffering/Bicasting), and Handover Latency } \le 50\text{ ms}$$</div>
+                    <p class="byheart-text">Seamless communication preserves active TCP sessions, multimedia streams, and security contexts during cellular handoffs without packet drops or noticeable interruption to the user.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Seamless communication in mobile and wireless computing represents the ideal operational paradigm wherein a mobile user maintains continuous, transparent, and uninterrupted data and voice sessions while traversing diverse geographical regions and migrating dynamically between heterogeneous wireless access networks—such as transitioning from an office Wi-Fi hotspot to a public 5G cellular network, or roaming internationally across foreign carrier infrastructures. In a truly seamless communication environment, handovers and network re-attachments occur without perceptible latency, packet loss, connection resets, or manual re-authentication by the user. Achieving this transparent mobility requires maintaining several fundamental operational facets across both visited and home network domains.</p>
@@ -5423,6 +6550,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{GEO: } 35,786\text{ km (latency } \sim 250\text{ ms, 3 cover Earth); LEO: } 500\text{--}1500\text{ km (latency } \sim 20\text{ ms, dense constellation)}$$</div>
+                    <p class="byheart-text">Geostationary (GEO) satellites provide stationary global coverage with high propagation delay, Medium Earth Orbit (MEO) serves GPS navigation, and Low Earth Orbit (LEO) delivers low-latency mobile broadband.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Satellite communication systems play a pivotal role in global telecommunications and mobile computing by extending voice, data, and broadcast services to maritime, airborne, and remote terrestrial regions where deploying terrestrial cellular towers or subsea fiber cables is economically unfeasible. Satellite systems are classified into three primary orbital regimes based on their altitude above the Earth's equator: Geostationary Earth Orbit (GEO), Medium Earth Orbit (MEO), and Low Earth Orbit (LEO), each possessing distinct physical, electromagnetic, and operational propagation characteristics.</p>
@@ -5469,6 +6610,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{IMEI (Handset Hardware ID)}, \quad \text{IMSI (SIM Subscriber ID in HLR)}, \quad \text{MSISDN (Dialable Phone Number)}, \quad \text{TMSI (Temporary ID over Air)}$$</div>
+                    <p class="byheart-text">IMEI identifies the physical device hardware, IMSI uniquely identifies the subscriber in the network database, MSISDN is the public dialable phone number, and TMSI safeguards user identity against radio eavesdropping.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In modern cellular telecommunication systems, robust identification mechanisms are required to distinguish physical mobile hardware from logical subscriber identities, ensure accurate billing, facilitate global routing, and protect subscriber privacy across broadcast radio channels. The four fundamental identifiers standardized in cellular networks are the International Mobile Equipment Identity (IMEI), the International Mobile Subscriber Identity (IMSI), the Mobile Station International Subscriber Directory Number (MSISDN), and the Temporary Mobile Subscriber Identity (TMSI).</p>
@@ -5516,6 +6671,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{SS7 ISUP Signaling: Initial Address Message (IAM) } \longrightarrow \text{ Address Complete Message (ACM / Ringback) } \longrightarrow \text{ Answer (ANM)}$$</div>
+                    <p class="byheart-text">Call progress indication uses out-of-band telecom signaling messages to update the caller on setup phases (Dialing, Network Routing, Remote Ringing, Busy Tone, or Call Queued).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Call progress indication represents the standardized collection of audible acoustic tones, synthesized voice announcements, and out-of-band signaling messages generated by cellular and public switched telephone networks to keep the calling subscriber informed about the status, routing milestones, and potential impediments encountered during an outgoing call setup attempt. Without call progress feedback, a caller would experience disorienting dead silence while the network executes radio resource allocation, roaming lookups, and distant terminal alerting.</p>
@@ -5562,6 +6731,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Shannon: } C = B \log_2(1 + \text{SINR}); \quad \text{CDMA: Orthogonal Walsh Codes } \sum c_i(t)c_j(t) = 0 \text{ sharing time \& frequency}$$</div>
+                    <p class="byheart-text">Multiple access schemes allocate radio resources by splitting frequency channels (FDMA), time slots (TDMA), unique mathematical spreading codes (CDMA), or directional antenna beams (SDMA).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Multiple access procedures constitute the foundational radio transmission methodologies that enable a multitude of geographically distributed mobile subscribers to simultaneously share a finite, common electromagnetic frequency spectrum without causing catastrophic mutual interference. Because wireless spectrum is an exceptionally scarce and expensive natural resource, telecommunication engineers have devised four fundamental multiple access paradigms: Frequency Division Multiple Access (FDMA), Time Division Multiple Access (TDMA), Code Division Multiple Access (CDMA), and Space Division Multiple Access (SDMA).</p>
@@ -5615,6 +6798,20 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{MS (Handset + SIM)} \longleftrightarrow \text{BSS (BTS + BSC)} \longleftrightarrow \text{NSS (MSC + HLR + VLR + AUC + EIR)} \longleftrightarrow \text{PSTN / ISDN}$$</div>
+                    <p class="byheart-text">GSM architecture is divided into the Mobile Station (MS), Base Station Subsystem (BSS) for radio management, and Network and Switching Subsystem (NSS) for call routing, subscriber mobility, and authentication.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Global System for Mobile Communication (GSM) is a standardized second-generation (2G) digital cellular telecommunications architecture engineered to deliver highly secure, scalable, and international mobile telephony and circuit-switched data services. The comprehensive GSM network model is structured into four major interconnected subsystems: the Mobile Station (MS), the Base Station Subsystem (BSS), the Network and Switching Subsystem (NSS), and the Operation and Support Subsystem (OSS), supported by four critical authoritative database registers.</p>
@@ -5662,6 +6859,20 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{MTC: GMSC queries HLR } \longrightarrow \text{ HLR requests MSRN from VLR } \longrightarrow \text{ GMSC routes call to serving MSC} \longrightarrow \text{ MS Paged}$$</div>
+                    <p class="byheart-text">Mobile Originated Calls (MOC) are routed directly by the local serving MSC, whereas Mobile Terminated Calls (MTC) require querying the HLR to obtain a temporary Mobile Station Roaming Number (MSRN).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Call routing in the Global System for Mobile Communication (GSM) is fundamentally more sophisticated than fixed-line telephony because the network cannot infer the physical location of the destination subscriber from their dialed telephone number. The GSM network must dynamically track subscriber mobility and execute precise signaling handshakes to route Mobile Originating Calls (MOC) initiated by a mobile station and Mobile Terminating Calls (MTC) received by a mobile terminal.</p>
@@ -5709,6 +6920,20 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Telecom Trunk (E1/T1/SIP) } \longrightarrow \text{ IVR Media Gateway (DTMF Decoder / TTS / ASR) } \longleftrightarrow \text{ Database Server}$$</div>
+                    <p class="byheart-text">Interactive Voice Response (IVR) systems decode dual-tone multi-frequency (DTMF) keypad signals and spoken voice inputs to guide callers through interactive audio menus and query enterprise databases.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Interactive Voice Response (IVR) is an automated telephony subsystem that enables callers to interact with enterprise databases and computing services through pre-recorded voice prompts, real-time text-to-speech synthesis, and dual-tone multi-frequency (DTMF) keypad inputs or natural spoken language commands. In modern mobile computing and telecommunication ecosystems, IVR acts as a ubiquitous voice portal, permitting users on any standard telephone or mobile handset to access complex information systems without requiring a specialized smartphone application, internet data connection, or human customer service agent.</p>
@@ -5756,6 +6981,20 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Authentication: } \text{SRES} = A3(K_i, \text{RAND}); \quad \text{Key Gen: } K_c = A8(K_i, \text{RAND}); \quad \text{Stream Cipher: } \text{Data} \oplus A5(K_c)$$</div>
+                    <p class="byheart-text">GSM security keeps the subscriber secret key $K_i$ confidential on the SIM card, using challenge-response algorithm A3 for network authentication, A8 to generate cipher key $K_c$, and A5 for over-the-air voice encryption.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The security architecture of the Global System for Mobile Communication (GSM) was engineered to deliver robust confidentiality, subscriber identity protection, and billing integrity across untrusted, broadcast radio channels. Prior first-generation analog cellular systems suffered from rampant eavesdropping using basic radio scanners and widespread subscription cloning fraud. GSM eradicated these vulnerabilities by introducing a rigorous cryptographic challenge-response authentication protocol and physical air-interface stream encryption based on three specialized mathematical algorithms: the A3 authentication algorithm, the A8 cipher key generation algorithm, and the A5 stream cipher algorithm.</p>
@@ -5820,6 +7059,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{SMS Transmission: Control Channels (SDCCH / SACCH) } \implies \text{Zero impact on dedicated traffic channels (TCH)}$$</div>
+                    <p class="byheart-text">SMS operates as a store-and-forward signaling service, transferring short text messages over cellular signaling control channels without interrupting or reserving voice traffic channels.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Short Message Service (SMS) represents one of the most commercially successful and architecturally resilient data transmission mechanisms ever standardized in cellular telecommunications. Designed as an integral feature of the GSM standard, SMS enables the bidirectional exchange of alphanumeric text messages of up to 160 characters (using 7-bit default alphabet encoding) between mobile stations and external computing entities. The enduring dominance of SMS stems from several foundational architectural strengths that distinguish it fundamentally from voice telephony and packet data services.</p>
@@ -5866,6 +7119,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Max Throughput: } 171.2\text{ kbps (CS-4, 8 slots); Bottlenecks: Dynamic channel coding, high latency, voice priority pre-emption}$$</div>
+                    <p class="byheart-text">GPRS packet data speeds are constrained by shared radio slot contention, distance-dependent channel coding schemes (CS-1 to CS-4), and circuit-switched voice calls preempting data channels.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">While General Packet Radio Service (GPRS) revolutionized mobile communications by introducing true packet-switched data connectivity and 'always-on' internet access to second-generation (2G) cellular networks, its operational performance is constrained by severe architectural and radio interface limitations that prevent it from supporting modern multimedia and broadband applications.</p>
@@ -5912,6 +7179,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{CDR Charging: S-CDR generated at SGSN (Radio/Mobility) } + \text{ G-CDR generated at GGSN (Data Volume \& External IP)}$$</div>
+                    <p class="byheart-text">GPRS charges subscribers primarily for data volume transferred (megabytes) rather than connection duration, combining SGSN mobility records and GGSN volume records into unified billing files.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Charging and billing in General Packet Radio Service (GPRS) represents a fundamental paradigm shift from legacy second-generation circuit-switched cellular networks. In traditional GSM voice telephony, billing is calculated strictly as a function of call duration and geographical distance because an exclusive physical circuit is dedicated to the user regardless of whether speech is occurring. In GPRS, subscribers maintain persistent 'always-on' packet sessions where radio channels are consumed only when data packets are actively transmitted or received. Consequently, GPRS charging architectures support flexible, multidimensional billing models incorporating data volume, connection duration, Quality of Service (QoS), and accessed service content.</p>
@@ -5958,6 +7239,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{SMS-MT Delivery: SMSC } \longrightarrow \text{ SMS-GMSC } \xrightarrow{\text{HLR Routing Info}} \text{ Serving MSC/VLR } \xrightarrow{\text{SDCCH Paging}} \text{ MS}$$</div>
+                    <p class="byheart-text">SMS relies on the Short Message Service Center (SMSC) to store messages until the destination phone is reachable, querying the HLR for current location before delivering over signaling channels.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Short Message Service (SMS) is an architecturally sophisticated, point-to-point and point-to-multipoint asynchronous data transmission subsystem embedded into the Global System for Mobile Communication. The network architecture of SMS is engineered to ensure guaranteed delivery of textual payloads without requiring real-time channel synchronization between communicating endpoints. The core functional entities of the SMS architecture encompass the Mobile Station (MS), the Base Station Subsystem (BSS), the Mobile Switching Center (MSC), the Home Location Register (HLR), the Visitor Location Register (VLR), the Short Message Service Gateway MSC (SMS-GMSC), the Short Message Service Interworking MSC (SMS-IWMSC), and the Short Message Service Center (SMSC). External enterprise application servers interface with the SMSC using the Short Message Peer-to-Peer (SMPP) protocol.</p>
@@ -6005,6 +7300,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{MS} \xrightarrow{\text{Um (MAC/RLC)}} \text{BSS} \xrightarrow{\text{Gb (Frame Relay)}} \text{SGSN} \xrightarrow{\text{Gn (GTP/UDP/IP)}} \text{GGSN} \xrightarrow{\text{Gi}} \text{Public Internet}$$</div>
+                    <p class="byheart-text">GPRS adds packet switching to GSM networks via the Serving GPRS Support Node (SGSN) for mobility tracking and ciphering, and Gateway GPRS Support Node (GGSN) for external IP routing.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">General Packet Radio Service (GPRS) is a non-voice, packet-switched overlay extension engineered on top of the pre-existing second-generation GSM circuit-switched cellular infrastructure. By decoupling packet transmission from dedicated physical voice circuits, GPRS enables efficient, 'always-on' connectivity where radio bandwidth is consumed dynamically on demand, providing data rates up to $115\text{ kbps}$ and enabling mobile internet browsing, corporate email synchronization, and telemetry applications. The GPRS architecture introduces three fundamental network nodes into the cellular ecosystem: the Packet Control Unit (PCU), the Serving GPRS Support Node (SGSN), and the Gateway GPRS Support Node (GGSN).</p>
@@ -6053,6 +7362,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{QoS Profile} = \langle \text{Service Precedence (1-3)}, \; \text{Delay Class (1-4)}, \; \text{Reliability Class (1-5)}, \; \text{Peak/Mean Throughput} \rangle$$</div>
+                    <p class="byheart-text">GPRS negotiates QoS profiles between the mobile terminal and network to guarantee bounded packet delay, acceptable packet loss rates, and prioritized transmission for delay-critical traffic.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Quality of Service (QoS) in General Packet Radio Service (GPRS) represents the standardized technical framework that allows mobile network operators to negotiate, allocate, and enforce differentiated transmission service tiers across heterogeneous data applications. Because packet data traffic is intrinsically diverse—ranging from latency-intolerant real-time interactive traffic to throughput-sensitive bulk file transfers and background telemetry—a uniform 'best-effort' transmission model is inadequate for commercial telecommunications. GPRS standardizes an explicit QoS profile defined across five primary parameters negotiated dynamically during PDP Context Activation: Service Precedence (Priority), Reliability Class, Delay Class, Peak Throughput Class, and Mean Throughput Class.</p>
@@ -6111,6 +7434,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Infrastructure BSS: Mobile nodes communicate via Access Point (AP); IBSS: Peer-to-peer ad-hoc communication without AP}$$</div>
+                    <p class="byheart-text">Infrastructure WLAN connects mobile devices to wired networks through access points with centralized coordination, whereas IBSS forms spontaneous peer-to-peer networks without fixed infrastructure.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The IEEE 802.11 standard for Wireless Local Area Networks (WLAN) defines two fundamental operational topologies that dictate how mobile wireless stations discover, associate, and exchange data frames across the radio frequency channel: Infrastructure Mode and Independent Basic Service Set (IBSS), commonly known as Ad-Hoc Mode. These two paradigms differ fundamentally in their reliance on centralized coordinating hardware, geographical scalability, and routing complexity.</p>
@@ -6156,6 +7493,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Priority Hierarchy: } \text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS} \implies \text{Shorter waiting interval guarantees higher channel access priority}$$</div>
+                    <p class="byheart-text">IEEE 802.11 regulates media access using differential time gaps: SIFS gives top priority to ACKs/CTS, PIFS provides medium priority for polling, and DIFS governs asynchronous distributed data contention.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In the IEEE 802.11 Medium Access Control (MAC) layer, the Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA) protocol governs shared access to the wireless medium. Because wireless transceivers cannot reliably detect collisions while actively transmitting—owing to the physical reality that transmitted signal power completely drowns out weak incoming signals from distant nodes—the standard enforces deterministic prioritization of frame transmissions through precise quiet time intervals known as Interframe Spaces (IFS). An Interframe Space is a mandatory waiting period during which the wireless channel must remain continuously idle before a station is permitted to transmit a specific category of frame. By assigning shorter waiting intervals to high-priority control frames and longer waiting intervals to standard data frames, IEEE 802.11 establishes an elegant, collision-resistant medium access priority hierarchy.</p>
@@ -6205,6 +7556,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Wi-Fi: Unlicensed 2.4/5 GHz band, high local bit-rate, low range; 3G: Licensed spectrum, macrocells, QoS, seamless mobility}$$</div>
+                    <p class="byheart-text">Wi-Fi provides low-cost, high-speed local broadband over unlicensed spectrum with contention-based access, while cellular networks provide high-mobility, licensed spectrum with deterministic QoS and handoff.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Wi-Fi (based on the IEEE 802.11 standards suite) and 3G Cellular Networks (based on 3GPP UMTS/WCDMA and 3GPP2 CDMA2000 standards) represent two historically divergent, yet increasingly convergent, wireless communication paradigms engineered to solve distinct telecommunications problems. While Wi-Fi originated as an unlicensed, localized, high-throughput wireless extension of wired computer local area networks (LANs), 3G cellular was conceived as a globally licensed, highly regulated, wide-area telecommunication utility designed primarily to deliver continuous, mobility-managed voice and data services across vast geographical territories. A comprehensive technical comparison across physical spectrum, architecture, coverage, medium access, quality of service, and mobility illuminates their fundamental engineering differences.</p>
@@ -6252,6 +7617,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Handshake: } \text{Sender} \xrightarrow{\text{RTS}} \text{Receiver} \xrightarrow{\text{CTS}} \text{Sender} \implies \text{Overcomes Hidden Terminal}; \quad \text{NAV (Network Allocation Vector)}$$</div>
+                    <p class="byheart-text">RTS/CTS exchange reserves the wireless channel by broadcasting transmission duration in the Network Allocation Vector (NAV), silencing hidden neighbors and preventing carrier-sense collisions.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In wireless local area networks operating under the Carrier Sense Multiple Access (CSMA) protocol, the physical propagation characteristics of radio waves—namely distance-dependent signal attenuation, free-space path loss, and physical obstructions—introduce two severe operational anomalies that severely degrade network performance: the Hidden Terminal Problem and the Exposed Terminal Problem. Because a wireless transceiver's physical carrier sensing mechanism can only detect electromagnetic energy in its immediate local vicinity, traditional CSMA cannot guarantee that a transmission will be received successfully at a distant destination node.</p>
@@ -6300,6 +7679,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{PSTN Exchange } \longleftrightarrow \text{ Radio Base Station (RBS) } \xleftarrow{\text{Microwave / RF Link}} \text{ Fixed Wireless Terminal (FWT) at Subscriber Premise}$$</div>
+                    <p class="byheart-text">WLL replaces traditional copper wire local loops with fixed point-to-multipoint microwave radio links, delivering rapid, cost-effective telephone and data deployment in rural and suburban areas.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Wireless Local Loop (WLL), frequently designated as Fixed Wireless Access (FWA) or Radio in the Loop (RITL), represents a transformative telecommunication deployment paradigm that replaces the traditional physical copper wire 'last-mile' telephone connection between the central telephone exchange and customer subscriber premises with high-reliability wireless radio frequency links. In legacy fixed telecommunications, deploying copper twisted-pair cables or optical fiber trenches across the final mile to individual residential homes and rural businesses accounts for over seventy percent of total telecommunications infrastructure capital investment. WLL circumvents the enormous labor, right-of-way permitting, and civil engineering costs of physical trenching, providing rapid, cost-effective, and highly reliable voice telephony and high-speed broadband data access.</p>
@@ -6348,6 +7741,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Evolution: WEP (Weak 24-bit IV, RC4) } \longrightarrow \text{ WPA (TKIP per-packet key) } \longrightarrow \text{ WPA2 (AES-CCMP 128-bit block cipher)}$$</div>
+                    <p class="byheart-text">WEP was broken due to small 24-bit IV reuse; WPA introduced temporal key integrity (TKIP), and WPA2 established robust enterprise security via AES-CCMP and 802.1X EAP authentication.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Because wireless local area networks propagate data frames through open, unbounded atmospheric space, any adversary equipped with a commodity Wi-Fi network interface card operating in promiscuous monitor mode can capture transmitted frames, inject malicious packets, or attempt unauthorized network penetration. To safeguard confidentiality, integrity, and access control, the IEEE 802.11 working group and the Wi-Fi Alliance have engineered a successive series of security protocols over the past three decades: Wired Equivalent Privacy (WEP), Wi-Fi Protected Access (WPA), Wi-Fi Protected Access 2 (WPA2 / IEEE 802.11i), and Wi-Fi Protected Access 3 (WPA3).</p>
@@ -6395,6 +7802,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{HIPERLAN/1: Non-preemptive Priority Multiple Access (EY-NPMA); HIPERLAN/2: TDMA/TDD centralized dynamic scheduling in 5 GHz band}$$</div>
+                    <p class="byheart-text">HIPERLAN/1 utilizes Elimination-Yield contention access for peer-to-peer high-speed traffic, while HIPERLAN/2 employs connection-oriented TDMA/TDD frames with guaranteed ATM/Ethernet QoS.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">High Performance Radio Local Area Network (HIPERLAN) represents a standardized family of high-speed wireless local area network technologies developed by the European Telecommunications Standards Institute (ETSI) under the Project RES 10 (Radio Equipment and Systems) and Broadband Radio Access Networks (BRAN) committees. Engineered as a high-performance European alternative to the American IEEE 802.11 standards suite, HIPERLAN was designed from inception to deliver high data rates, robust Quality of Service (QoS) guarantees, and seamless transmission of time-sensitive multimedia streams across the uncoordinated $5\text{ GHz}$ radio spectrum. The HIPERLAN family comprises two primary standards with fundamentally different architectural paradigms: HIPERLAN Type 1 and HIPERLAN Type 2.</p>
@@ -6454,6 +7875,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Security Pillars: Confidentiality (Encryption), Integrity (Hashing/MAC), Availability (Redundancy), Authentication, and Non-Repudiation (Digital Signatures)}$$</div>
+                    <p class="byheart-text">Information security guarantees data privacy (Confidentiality), unauthorized modification detection (Integrity), system accessibility (Availability), and verifiable author proof (Authentication & Non-Repudiation).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In mobile computing and telecommunication systems, information security is engineered around a comprehensive multidimensional assurance framework known as the Extended CIA Triad, augmented by the critical security principles of Authenticity, Non-Repudiation, and Authorization. Because mobile devices communicate across open, broadcast electromagnetic channels and frequently traverse untrusted public networks, maintaining security demands rigorous adherence to these foundational tenets.</p>
@@ -6499,6 +7934,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Passive Attacks (Eavesdropping, Traffic Analysis) vs Active Attacks (Masquerade, Replay, Message Modification, Denial of Service)}$$</div>
+                    <p class="byheart-text">Passive attacks threaten confidentiality by silently intercepting wireless transmissions without altering data, whereas active attacks compromise integrity and availability by injecting forged or altered packets.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Security threats in mobile computing environments are categorized based on the operational state of the target information asset into Static Attacks and Dynamic Attacks. Information assets reside either in a quiescent, stored state—termed Data-at-Rest—or in an active, propagating transmission state—termed Data-in-Transit. Understanding the fundamental operational differences between static and dynamic threat models is essential for architecting multi-layered mobile defense strategies.</p>
@@ -6544,6 +7993,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{TLS Architecture: Handshake Protocol (mutual auth \& key exchange) + Record Protocol (symmetric encryption \& HMAC data integrity)}$$</div>
+                    <p class="byheart-text">TLS operates above the transport layer providing authenticated end-to-end encryption, while WTLS adapts TLS for low-bandwidth mobile handsets using compact headers and elliptic curves.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">To protect sensitive mobile applications against hostile eavesdropping, packet alteration, and credential theft across untrusted public networks, mobile architectures rely upon robust transport-layer and network-layer cryptographic protocols, specifically Secure Sockets Layer (SSL), Transport Layer Security (TLS), and Mobile Virtual Private Networks (Mobile VPN).</p>
@@ -6590,6 +8053,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$n = p \cdot q, \quad \phi(n) = (p-1)(q-1), \quad e \cdot d \equiv 1 \pmod{\phi(n)}, \quad C = M^e \pmod n, \quad M = C^d \pmod n$$</div>
+                    <p class="byheart-text">RSA security relies on the computational difficulty of factoring the product of two large prime numbers $n = pq$, using public encryption key $(e, n)$ and private decryption key $(d, n)$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Public Key Cryptography, also designated as asymmetric cryptography, is a foundational mathematical paradigm in information security that overcomes the critical vulnerability of symmetric cryptosystems: the requirement for communicating parties to exchange a shared secret key across an insecure channel before initiating encrypted communications. Conceived by Whitfield Diffie and Martin Hellman, public key systems utilize an asymmetric key pair composed of a mathematically coupled Public Key (made freely accessible to the entire world) and a Private Key (kept strictly confidential by the owner). Encryption performed using the public key can only be reversed and decrypted using the corresponding private key, and vice versa. The most globally celebrated, mathematically rigorous, and commercially ubiquitous implementation of public key cryptography is the RSA Cryptosystem, invented in 1977 by Ron Rivest, Adi Shamir, and Leonard Adleman.</p>
@@ -6679,6 +8156,20 @@ The decrypted plaintext $m' = 2$ matches the original message $m = 2$ perfectly,
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$Y_A = \alpha^{X_A} \pmod q, \quad Y_B = \alpha^{X_B} \pmod q, \quad K = (Y_B)^{X_A} \pmod q = (Y_A)^{X_B} \pmod q = \alpha^{X_A X_B} \pmod q$$</div>
+                    <p class="byheart-text">Diffie-Hellman enables two parties to establish a shared secret key $K$ over an insecure channel based on the discrete logarithm problem, vulnerable to Man-in-the-Middle if unauthenticated.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Diffie-Hellman Key Exchange algorithm, invented in 1976 by Whitfield Diffie and Martin Hellman, is a seminal cryptographic protocol that solved one of the oldest, most intractable problems in communications security: enabling two communicating entities, who share no prior secret credentials, to establish a shared, secret cryptographic key over an entirely insecure, publicly monitored communication channel. The derived shared key can subsequently be utilized to encrypt bulk data communications using high-speed symmetric ciphers such as AES. The mathematical security of the Diffie-Hellman protocol rests upon the one-way hardness of computing Discrete Logarithms over finite cyclic Galois fields.</p>
@@ -6777,6 +8268,20 @@ Both Alice and Bob have independently and successfully derived the exact identic
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\Delta f = \frac{1}{T_{\text{sym}}}, \quad \int_0^{T_{\text{sym}}} \cos(2\pi f_i t)\cos(2\pi f_j t) dt = 0 \; (i \ne j), \quad T_{\text{total}} = T_{\text{sym}} + T_{CP}$$</div>
+                    <p class="byheart-text">OFDM divides broadband channels into densely spaced orthogonal narrowband subcarriers, adding a Cyclic Prefix (CP) to eliminate Intersymbol Interference (ISI) and multipath fading.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Orthogonal Frequency Division Multiplexing (OFDM) is a multicarrier digital modulation and physical-layer transmission methodology that has established itself as the dominant air-interface standard for modern broadband wireless communications, underpinning IEEE 802.11a/g/n/ac/ax/be (Wi-Fi 6 and 7), 4G LTE, 5G New Radio (NR), and digital terrestrial broadcasting. As wireless broadband systems demand data rates exceeding hundreds of megabits per second, traditional single-carrier modulation systems suffer from severe Inter-Symbol Interference (ISI) caused by frequency-selective multipath fading, requiring prohibitively complex time-domain equalizers. OFDM eradicates this bottleneck by converting a single high-rate broadband data stream into thousands of parallel, low-rate narrowband subcarriers that undergo flat fading, drastically simplifying receiver equalization.</p>
@@ -6838,6 +8343,20 @@ This combination of spectral efficiency, resilience against multipath fading, an
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{MBMS: Point-to-Multipoint transmission sharing single radio bearer; MPLS: Label Switched Path (LSP) fast packet forwarding via 32-bit labels}$$</div>
+                    <p class="byheart-text">MBMS conserves cellular bandwidth by broadcasting multimedia data simultaneously to unlimited subscribers on a shared carrier, accelerated by MPLS label switching in the core.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">As mobile computing transitioned from simple text and voice services into rich multimedia ecosystems—such as live stadium video streaming, real-time weather alerts, software over-the-air firmware updates, and emergency mass notifications—traditional point-to-point (unicast) transmission models became catastrophic bottlenecks. In a pure unicast architecture, if one thousand mobile subscribers in a single cellular cell request the same live broadcast of a soccer match, the base station must transmit one thousand identical high-bitrate data streams over separate radio channels, completely exhausting the cell's physical radio spectrum and core transmission bandwidth. To overcome this fundamental scalability bottleneck, 3GPP standardized Multimedia Broadcast and Multicast Services (MBMS), while core network backbones deployed Multiprotocol Label Switching (MPLS) to provide deterministic, high-throughput traffic engineering.</p>
@@ -6886,6 +8405,20 @@ This combination of spectral efficiency, resilience against multipath fading, an
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Evolution: 2G (Voice/TDMA, 64 kbps) } \to \text{ 3G (CDMA, 2 Mbps) } \to \text{ 4G (All-IP/OFDMA, 100 Mbps) } \to \text{ 5G (eMBB/URLLC/mMTC, 10-20 Gbps)}$$</div>
+                    <p class="byheart-text">Mobile networks evolved from circuit-switched analog/digital voice (1G/2G) to wideband data (3G), flat All-IP OFDMA (4G LTE), and service-based network slicing supporting sub-millisecond URLLC and massive IoT (5G).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The evolution of cellular telecommunications across successive technology generations—from second-generation (2G) digital networks to modern fifth-generation (5G) New Radio systems—represents one of the most profound technological progressions in human history. Over four decades, mobile systems transformed from low-speed, circuit-switched voice pipelines into intelligent, ultra-high-speed, cloud-native digital ecosystems supporting massive connectivity, artificial intelligence, and industrial automation. A rigorous comparison across 2G, 3G, 4G, and 5G reveals fundamental transitions in core network architecture, radio access technology, latency, data rates, and primary service paradigms.</p>

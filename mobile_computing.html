@@ -935,6 +935,194 @@ main.content-container {
     flex-shrink: 0;
 }
 
+/* =========================================================================
+   Sentence / (Equation) to Byhart Card - High Mark Weightage Exam Memo Box
+   ========================================================================= */
+.byheart-card {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(56, 189, 248, 0.04) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-left: 5px solid #f59e0b;
+    border-radius: 10px;
+    padding: 1.1rem 1.35rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.byheart-card:hover {
+    border-color: #fbbf24;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.22);
+}
+
+[data-theme="light"] .byheart-card {
+    background: linear-gradient(135deg, #fffdf5 0%, #fef9c3 100%);
+    border: 1px solid #fde047;
+    border-left: 5px solid #d97706;
+    box-shadow: 0 3px 12px rgba(217, 119, 6, 0.1);
+}
+
+[data-theme="warm"] .byheart-card {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(180, 83, 9, 0.06) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.38);
+    border-left: 5px solid #f59e0b;
+}
+
+[data-theme="forest"] .byheart-card {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.09) 0%, rgba(245, 158, 11, 0.05) 100%);
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    border-left: 5px solid #10b981;
+}
+
+[data-theme="oled"] .byheart-card {
+    background: #080808;
+    border: 1px solid #3d2f0a;
+    border-left: 5px solid #f59e0b;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="sage"] .byheart-card {
+    background: linear-gradient(135deg, #f4f8f6 0%, #e6f0ec 100%);
+    border: 1px solid #99c7b9;
+    border-left: 5px solid #0d9488;
+    box-shadow: 0 3px 12px rgba(13, 148, 136, 0.1);
+}
+
+.byheart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px dashed rgba(245, 158, 11, 0.3);
+}
+
+[data-theme="forest"] .byheart-header {
+    border-bottom-color: rgba(52, 211, 153, 0.3);
+}
+
+[data-theme="sage"] .byheart-header {
+    border-bottom-color: rgba(13, 148, 136, 0.3);
+}
+
+.byheart-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.byheart-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.byheart-title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #f59e0b;
+}
+
+[data-theme="light"] .byheart-title {
+    color: #b45309;
+}
+
+[data-theme="forest"] .byheart-title {
+    color: #34d399;
+}
+
+[data-theme="sage"] .byheart-title {
+    color: #0f766e;
+}
+
+.byheart-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(245, 158, 11, 0.18);
+    color: #fbbf24;
+    padding: 0.22rem 0.65rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+[data-theme="light"] .byheart-badge {
+    background: #fef08a;
+    color: #854d0e;
+    border-color: #facc15;
+}
+
+[data-theme="forest"] .byheart-badge {
+    background: rgba(16, 185, 129, 0.18);
+    color: #6ee7b7;
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+[data-theme="sage"] .byheart-badge {
+    background: #ccfbf1;
+    color: #115e59;
+    border-color: #5eead4;
+}
+
+.byheart-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.byheart-eq {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    overflow-x: auto;
+    font-size: 1.02rem;
+    text-align: center;
+}
+
+[data-theme="light"] .byheart-eq {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="sage"] .byheart-eq {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+}
+
+[data-theme="oled"] .byheart-eq {
+    background: #000000;
+    border-color: #222222;
+}
+
+.byheart-text {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.byheart-text strong {
+    color: #fbbf24;
+    font-weight: 700;
+}
+
+[data-theme="light"] .byheart-text strong {
+    color: #b45309;
+}
+
+[data-theme="forest"] .byheart-text strong {
+    color: #34d399;
+}
+
+[data-theme="sage"] .byheart-text strong {
+    color: #0f766e;
+}
+
 /* Card Body & Paragraph Styling */
 .card-body {
     display: flex;
@@ -1450,6 +1638,35 @@ body {
         word-break: break-word;
     }
 
+    /* Byheart Memo Card Mobile Optimization */
+    .byheart-card {
+        padding: 0.85rem 0.95rem;
+        border-radius: 8px;
+        border-left-width: 4px;
+    }
+    .byheart-header {
+        gap: 0.4rem;
+        margin-bottom: 0.6rem;
+        padding-bottom: 0.45rem;
+    }
+    .byheart-title {
+        font-size: 0.8rem;
+    }
+    .byheart-badge {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.48rem;
+    }
+    .byheart-text {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        text-align: left;
+    }
+    .byheart-eq {
+        padding: 0.45rem 0.55rem;
+        font-size: 0.9rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
     /* KaTeX Equations: smooth horizontal swipe without document overflow */
     .katex-display-block {
         margin: 0.85rem 0;
@@ -1714,6 +1931,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Mobile Client} \xleftrightarrow{\quad \text{Wireless Link} \quad} \text{Mobile Middleware / Gateway} \xleftrightarrow{\quad \text{High-Speed Backbone} \quad} \text{Enterprise Server}$$</div>
+                    <p class="byheart-text">Mobile middleware bridges resource-constrained mobile devices and enterprise backend servers by abstracting protocol conversion, state caching, data transcoding, and offline synchronization.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In modern distributed mobile computing architectures, middleware represents an indispensable software abstraction layer situated strategically between the heterogeneous client applications operating on resource-constrained mobile devices and the underlying distributed operating systems, network transport protocols, and enterprise backend databases. Because mobile environments are characterized by extreme hardware heterogeneity, variable bandwidth, and intermittent connectivity, writing applications that interact directly with low-level network sockets is impractical and error-prone. Middleware masks this underlying heterogeneity by exposing standardized application programming interfaces (APIs) and unified communication protocols, enabling application developers to concentrate entirely on core business logic without worrying about the underlying physical network topology or device idiosyncrasies.</p>
@@ -1759,6 +1990,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Care-of-Address (CoA)} \iff \text{Home Agent (HA) Encapsulation/Tunneling} \iff \text{Foreign Agent (FA) / Mobile Node}$$</div>
+                    <p class="byheart-text">The Internet serves as the universal transport backbone for mobile computing, using Mobile IP tunneling to route packets seamlessly to mobile nodes regardless of their changing physical point of attachment.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Internet is designated as the ubiquitous network in mobile computing because it provides a universally accessible, pervasive, and protocol-agnostic communication infrastructure that interconnects billions of heterogeneous computing endpoints across the globe without regard to physical location, underlying transmission media, or access technologies. In the early eras of telecommunications, voice telephony, paging networks, and corporate computer networks operated on separate, proprietary physical infrastructures. The universal triumph of the Internet Protocol (IP) suite—specifically IPv4 and IPv6—established a single standardized network layer that unifies cellular data networks such as 4G LTE and 5G, wireless local area networks, satellite constellations, and wired optical backbones into a seamless global web.</p>
@@ -1804,6 +2049,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Access Network (Radio BS/AP)} \longrightarrow \text{Edge Network (MEC, Low-Latency Aggregation)} \longrightarrow \text{Core Network (HLR, GGSN/UPF)}$$</div>
+                    <p class="byheart-text">Mobile networks partition infrastructure into Access (over-the-air radio link), Edge (localized edge computing and content caching), and Core (centralized mobility management, authentication, and packet routing).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">To efficiently manage data traffic, maintain low latency, and support massive terminal scalability, contemporary mobile computing infrastructures partition network resources into three distinct functional segments: the Access Network, the Edge Network, and the Core Network. Each segment is engineered with specialized switching hardware, radio interfaces, and communication protocols optimized for its specific geographical scope and computational workload.</p>
@@ -1850,6 +2109,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Primary Constraints: Limited Battery Life, Scarce Bandwidth, Multipath Fading, Intermittent Connectivity, Security Risks}$$</div>
+                    <p class="byheart-text">Mobile computing environments are constrained by finite battery energy, highly variable wireless bandwidth, physical signal attenuation, frequent disconnections, and heightened physical and wireless security risks.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Mobile computing environments are constrained by severe physical, electrical, and environmental limitations that distinguish them fundamentally from traditional fixed desktop and server computing paradigms. These constraints are intrinsic to mobility and portability, requiring specialized software engineering strategies, lightweight protocols, and fault-tolerant architectural designs.</p>
@@ -1896,6 +2169,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Tier 1: Presentation (Thin/Smart Client)} \longleftrightarrow \text{Tier 2: Application / Middleware Logic} \longleftrightarrow \text{Tier 3: Enterprise Database}$$</div>
+                    <p class="byheart-text">Three-tier architecture separates presentation on the mobile device from application processing on intermediate servers and persistent data storage on enterprise databases, optimizing network utilization.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The three-tier architecture of mobile computing represents a modular, layered engineering framework designed to overcome the severe physical constraints of mobile devices—namely limited computational power, battery capacity, memory, and unreliable wireless network connectivity—by decoupling user interface rendering, business logic execution, and persistent enterprise data storage into three distinct, loosely coupled tiers. In this architectural paradigm, workloads are partitioned logically across Tier 1 (the Presentation Tier residing on the mobile client device), Tier 2 (the Application and Middleware Tier executing on intermediary enterprise application servers and gateways), and Tier 3 (the Data and Enterprise Storage Tier running on high-performance relational databases, mainframes, or cloud storage clusters).</p>
@@ -1942,6 +2229,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Key Axioms: Energy-Aware Scheduling, Adaptive Bandwidth Throttling, Offline Replication, End-to-End Security}$$</div>
+                    <p class="byheart-text">Mobile software engineering requires cross-layer optimization prioritizing aggressive battery conservation, bandwidth adaptation, asynchronous offline transaction queuing, and lightweight cryptography.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Architecting and engineering mobile computing systems requires a radical paradigm shift from traditional desktop and enterprise computing due to the severe environmental unpredictability, device portability constraints, and physical channel impairments intrinsic to mobile wireless environments. A robust mobile software system must balance multiple competing design considerations, spanning mobility management, energy conservation, bandwidth optimization, disconnected operations, security across untrusted air interfaces, and context adaptability.</p>
@@ -1989,6 +2290,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Context Tuple } \mathcal{C} = \langle \text{Location}, \text{Network Bandwidth}, \text{Battery Energy}, \text{Device Profile}, \text{User Activity} \rangle$$</div>
+                    <p class="byheart-text">Context-aware systems dynamically modify application behavior, media fidelity, and security rules based on real-time awareness of user location, device battery state, and available network bandwidth.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Context-aware computing in mobile environments refers to the capability of an application or system to perceive, interpret, and dynamically react to its changing operational environment—including user state, physical location, device hardware constraints, network conditions, and ambient surroundings—without requiring explicit, manual user intervention. To execute this sophisticated runtime adaptation systematically, enterprise mobile architectures implement a four-part management subsystem comprising the Client Context Manager, the Policy Manager, the Security Manager, and the Adaptability Manager.</p>
@@ -2036,6 +2351,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Transcoding: Modality Conversion (Text } \leftrightarrow \text{ Speech), Resolution Scaling, Format Compression (PNG } \to \text{ WebP)}$$</div>
+                    <p class="byheart-text">Content adaptation dynamically transforms, compresses, or transcodes media at intermediary proxies to match the specific screen resolution, memory limits, and network throughput of the client handset.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Content adaptation is the process of dynamically modifying digital media, documents, and web content to suit the specific physical constraints of the receiving client device, the transmission characteristics of the network connection, and the contextual preferences of the mobile user. Because content is predominantly authored for high-performance desktop computers connected to high-speed broadband networks, delivering unmodified desktop content to mobile terminals leads to catastrophic usability failures, excessive memory consumption, unrendered formatting, and severe network latency. Effective content adaptation requires evaluating a multidimensional set of adaptation attributes and applying appropriate transcoding transformations classified into syntactic, structural, and semantic categories.</p>
@@ -2083,6 +2412,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Seamless Mobility: Continuous Session State, Zero Packet Loss (Buffering/Bicasting), and Handover Latency } \le 50\text{ ms}$$</div>
+                    <p class="byheart-text">Seamless communication preserves active TCP sessions, multimedia streams, and security contexts during cellular handoffs without packet drops or noticeable interruption to the user.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Seamless communication in mobile and wireless computing represents the ideal operational paradigm wherein a mobile user maintains continuous, transparent, and uninterrupted data and voice sessions while traversing diverse geographical regions and migrating dynamically between heterogeneous wireless access networks—such as transitioning from an office Wi-Fi hotspot to a public 5G cellular network, or roaming internationally across foreign carrier infrastructures. In a truly seamless communication environment, handovers and network re-attachments occur without perceptible latency, packet loss, connection resets, or manual re-authentication by the user. Achieving this transparent mobility requires maintaining several fundamental operational facets across both visited and home network domains.</p>
@@ -2141,6 +2484,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{GEO: } 35,786\text{ km (latency } \sim 250\text{ ms, 3 cover Earth); LEO: } 500\text{--}1500\text{ km (latency } \sim 20\text{ ms, dense constellation)}$$</div>
+                    <p class="byheart-text">Geostationary (GEO) satellites provide stationary global coverage with high propagation delay, Medium Earth Orbit (MEO) serves GPS navigation, and Low Earth Orbit (LEO) delivers low-latency mobile broadband.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Satellite communication systems play a pivotal role in global telecommunications and mobile computing by extending voice, data, and broadcast services to maritime, airborne, and remote terrestrial regions where deploying terrestrial cellular towers or subsea fiber cables is economically unfeasible. Satellite systems are classified into three primary orbital regimes based on their altitude above the Earth's equator: Geostationary Earth Orbit (GEO), Medium Earth Orbit (MEO), and Low Earth Orbit (LEO), each possessing distinct physical, electromagnetic, and operational propagation characteristics.</p>
@@ -2187,6 +2544,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{IMEI (Handset Hardware ID)}, \quad \text{IMSI (SIM Subscriber ID in HLR)}, \quad \text{MSISDN (Dialable Phone Number)}, \quad \text{TMSI (Temporary ID over Air)}$$</div>
+                    <p class="byheart-text">IMEI identifies the physical device hardware, IMSI uniquely identifies the subscriber in the network database, MSISDN is the public dialable phone number, and TMSI safeguards user identity against radio eavesdropping.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In modern cellular telecommunication systems, robust identification mechanisms are required to distinguish physical mobile hardware from logical subscriber identities, ensure accurate billing, facilitate global routing, and protect subscriber privacy across broadcast radio channels. The four fundamental identifiers standardized in cellular networks are the International Mobile Equipment Identity (IMEI), the International Mobile Subscriber Identity (IMSI), the Mobile Station International Subscriber Directory Number (MSISDN), and the Temporary Mobile Subscriber Identity (TMSI).</p>
@@ -2234,6 +2605,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{SS7 ISUP Signaling: Initial Address Message (IAM) } \longrightarrow \text{ Address Complete Message (ACM / Ringback) } \longrightarrow \text{ Answer (ANM)}$$</div>
+                    <p class="byheart-text">Call progress indication uses out-of-band telecom signaling messages to update the caller on setup phases (Dialing, Network Routing, Remote Ringing, Busy Tone, or Call Queued).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Call progress indication represents the standardized collection of audible acoustic tones, synthesized voice announcements, and out-of-band signaling messages generated by cellular and public switched telephone networks to keep the calling subscriber informed about the status, routing milestones, and potential impediments encountered during an outgoing call setup attempt. Without call progress feedback, a caller would experience disorienting dead silence while the network executes radio resource allocation, roaming lookups, and distant terminal alerting.</p>
@@ -2280,6 +2665,20 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Shannon: } C = B \log_2(1 + \text{SINR}); \quad \text{CDMA: Orthogonal Walsh Codes } \sum c_i(t)c_j(t) = 0 \text{ sharing time \& frequency}$$</div>
+                    <p class="byheart-text">Multiple access schemes allocate radio resources by splitting frequency channels (FDMA), time slots (TDMA), unique mathematical spreading codes (CDMA), or directional antenna beams (SDMA).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Multiple access procedures constitute the foundational radio transmission methodologies that enable a multitude of geographically distributed mobile subscribers to simultaneously share a finite, common electromagnetic frequency spectrum without causing catastrophic mutual interference. Because wireless spectrum is an exceptionally scarce and expensive natural resource, telecommunication engineers have devised four fundamental multiple access paradigms: Frequency Division Multiple Access (FDMA), Time Division Multiple Access (TDMA), Code Division Multiple Access (CDMA), and Space Division Multiple Access (SDMA).</p>
@@ -2333,6 +2732,20 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{MS (Handset + SIM)} \longleftrightarrow \text{BSS (BTS + BSC)} \longleftrightarrow \text{NSS (MSC + HLR + VLR + AUC + EIR)} \longleftrightarrow \text{PSTN / ISDN}$$</div>
+                    <p class="byheart-text">GSM architecture is divided into the Mobile Station (MS), Base Station Subsystem (BSS) for radio management, and Network and Switching Subsystem (NSS) for call routing, subscriber mobility, and authentication.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Global System for Mobile Communication (GSM) is a standardized second-generation (2G) digital cellular telecommunications architecture engineered to deliver highly secure, scalable, and international mobile telephony and circuit-switched data services. The comprehensive GSM network model is structured into four major interconnected subsystems: the Mobile Station (MS), the Base Station Subsystem (BSS), the Network and Switching Subsystem (NSS), and the Operation and Support Subsystem (OSS), supported by four critical authoritative database registers.</p>
@@ -2380,6 +2793,20 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{MTC: GMSC queries HLR } \longrightarrow \text{ HLR requests MSRN from VLR } \longrightarrow \text{ GMSC routes call to serving MSC} \longrightarrow \text{ MS Paged}$$</div>
+                    <p class="byheart-text">Mobile Originated Calls (MOC) are routed directly by the local serving MSC, whereas Mobile Terminated Calls (MTC) require querying the HLR to obtain a temporary Mobile Station Roaming Number (MSRN).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Call routing in the Global System for Mobile Communication (GSM) is fundamentally more sophisticated than fixed-line telephony because the network cannot infer the physical location of the destination subscriber from their dialed telephone number. The GSM network must dynamically track subscriber mobility and execute precise signaling handshakes to route Mobile Originating Calls (MOC) initiated by a mobile station and Mobile Terminating Calls (MTC) received by a mobile terminal.</p>
@@ -2427,6 +2854,20 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Telecom Trunk (E1/T1/SIP) } \longrightarrow \text{ IVR Media Gateway (DTMF Decoder / TTS / ASR) } \longleftrightarrow \text{ Database Server}$$</div>
+                    <p class="byheart-text">Interactive Voice Response (IVR) systems decode dual-tone multi-frequency (DTMF) keypad signals and spoken voice inputs to guide callers through interactive audio menus and query enterprise databases.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Interactive Voice Response (IVR) is an automated telephony subsystem that enables callers to interact with enterprise databases and computing services through pre-recorded voice prompts, real-time text-to-speech synthesis, and dual-tone multi-frequency (DTMF) keypad inputs or natural spoken language commands. In modern mobile computing and telecommunication ecosystems, IVR acts as a ubiquitous voice portal, permitting users on any standard telephone or mobile handset to access complex information systems without requiring a specialized smartphone application, internet data connection, or human customer service agent.</p>
@@ -2474,6 +2915,20 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Authentication: } \text{SRES} = A3(K_i, \text{RAND}); \quad \text{Key Gen: } K_c = A8(K_i, \text{RAND}); \quad \text{Stream Cipher: } \text{Data} \oplus A5(K_c)$$</div>
+                    <p class="byheart-text">GSM security keeps the subscriber secret key $K_i$ confidential on the SIM card, using challenge-response algorithm A3 for network authentication, A8 to generate cipher key $K_c$, and A5 for over-the-air voice encryption.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The security architecture of the Global System for Mobile Communication (GSM) was engineered to deliver robust confidentiality, subscriber identity protection, and billing integrity across untrusted, broadcast radio channels. Prior first-generation analog cellular systems suffered from rampant eavesdropping using basic radio scanners and widespread subscription cloning fraud. GSM eradicated these vulnerabilities by introducing a rigorous cryptographic challenge-response authentication protocol and physical air-interface stream encryption based on three specialized mathematical algorithms: the A3 authentication algorithm, the A8 cipher key generation algorithm, and the A5 stream cipher algorithm.</p>
@@ -2538,6 +2993,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{SMS Transmission: Control Channels (SDCCH / SACCH) } \implies \text{Zero impact on dedicated traffic channels (TCH)}$$</div>
+                    <p class="byheart-text">SMS operates as a store-and-forward signaling service, transferring short text messages over cellular signaling control channels without interrupting or reserving voice traffic channels.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Short Message Service (SMS) represents one of the most commercially successful and architecturally resilient data transmission mechanisms ever standardized in cellular telecommunications. Designed as an integral feature of the GSM standard, SMS enables the bidirectional exchange of alphanumeric text messages of up to 160 characters (using 7-bit default alphabet encoding) between mobile stations and external computing entities. The enduring dominance of SMS stems from several foundational architectural strengths that distinguish it fundamentally from voice telephony and packet data services.</p>
@@ -2584,6 +3053,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Max Throughput: } 171.2\text{ kbps (CS-4, 8 slots); Bottlenecks: Dynamic channel coding, high latency, voice priority pre-emption}$$</div>
+                    <p class="byheart-text">GPRS packet data speeds are constrained by shared radio slot contention, distance-dependent channel coding schemes (CS-1 to CS-4), and circuit-switched voice calls preempting data channels.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">While General Packet Radio Service (GPRS) revolutionized mobile communications by introducing true packet-switched data connectivity and 'always-on' internet access to second-generation (2G) cellular networks, its operational performance is constrained by severe architectural and radio interface limitations that prevent it from supporting modern multimedia and broadband applications.</p>
@@ -2630,6 +3113,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{CDR Charging: S-CDR generated at SGSN (Radio/Mobility) } + \text{ G-CDR generated at GGSN (Data Volume \& External IP)}$$</div>
+                    <p class="byheart-text">GPRS charges subscribers primarily for data volume transferred (megabytes) rather than connection duration, combining SGSN mobility records and GGSN volume records into unified billing files.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Charging and billing in General Packet Radio Service (GPRS) represents a fundamental paradigm shift from legacy second-generation circuit-switched cellular networks. In traditional GSM voice telephony, billing is calculated strictly as a function of call duration and geographical distance because an exclusive physical circuit is dedicated to the user regardless of whether speech is occurring. In GPRS, subscribers maintain persistent 'always-on' packet sessions where radio channels are consumed only when data packets are actively transmitted or received. Consequently, GPRS charging architectures support flexible, multidimensional billing models incorporating data volume, connection duration, Quality of Service (QoS), and accessed service content.</p>
@@ -2676,6 +3173,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{SMS-MT Delivery: SMSC } \longrightarrow \text{ SMS-GMSC } \xrightarrow{\text{HLR Routing Info}} \text{ Serving MSC/VLR } \xrightarrow{\text{SDCCH Paging}} \text{ MS}$$</div>
+                    <p class="byheart-text">SMS relies on the Short Message Service Center (SMSC) to store messages until the destination phone is reachable, querying the HLR for current location before delivering over signaling channels.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Short Message Service (SMS) is an architecturally sophisticated, point-to-point and point-to-multipoint asynchronous data transmission subsystem embedded into the Global System for Mobile Communication. The network architecture of SMS is engineered to ensure guaranteed delivery of textual payloads without requiring real-time channel synchronization between communicating endpoints. The core functional entities of the SMS architecture encompass the Mobile Station (MS), the Base Station Subsystem (BSS), the Mobile Switching Center (MSC), the Home Location Register (HLR), the Visitor Location Register (VLR), the Short Message Service Gateway MSC (SMS-GMSC), the Short Message Service Interworking MSC (SMS-IWMSC), and the Short Message Service Center (SMSC). External enterprise application servers interface with the SMSC using the Short Message Peer-to-Peer (SMPP) protocol.</p>
@@ -2723,6 +3234,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{MS} \xrightarrow{\text{Um (MAC/RLC)}} \text{BSS} \xrightarrow{\text{Gb (Frame Relay)}} \text{SGSN} \xrightarrow{\text{Gn (GTP/UDP/IP)}} \text{GGSN} \xrightarrow{\text{Gi}} \text{Public Internet}$$</div>
+                    <p class="byheart-text">GPRS adds packet switching to GSM networks via the Serving GPRS Support Node (SGSN) for mobility tracking and ciphering, and Gateway GPRS Support Node (GGSN) for external IP routing.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">General Packet Radio Service (GPRS) is a non-voice, packet-switched overlay extension engineered on top of the pre-existing second-generation GSM circuit-switched cellular infrastructure. By decoupling packet transmission from dedicated physical voice circuits, GPRS enables efficient, 'always-on' connectivity where radio bandwidth is consumed dynamically on demand, providing data rates up to $115\text{ kbps}$ and enabling mobile internet browsing, corporate email synchronization, and telemetry applications. The GPRS architecture introduces three fundamental network nodes into the cellular ecosystem: the Packet Control Unit (PCU), the Serving GPRS Support Node (SGSN), and the Gateway GPRS Support Node (GGSN).</p>
@@ -2771,6 +3296,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{QoS Profile} = \langle \text{Service Precedence (1-3)}, \; \text{Delay Class (1-4)}, \; \text{Reliability Class (1-5)}, \; \text{Peak/Mean Throughput} \rangle$$</div>
+                    <p class="byheart-text">GPRS negotiates QoS profiles between the mobile terminal and network to guarantee bounded packet delay, acceptable packet loss rates, and prioritized transmission for delay-critical traffic.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Quality of Service (QoS) in General Packet Radio Service (GPRS) represents the standardized technical framework that allows mobile network operators to negotiate, allocate, and enforce differentiated transmission service tiers across heterogeneous data applications. Because packet data traffic is intrinsically diverse—ranging from latency-intolerant real-time interactive traffic to throughput-sensitive bulk file transfers and background telemetry—a uniform 'best-effort' transmission model is inadequate for commercial telecommunications. GPRS standardizes an explicit QoS profile defined across five primary parameters negotiated dynamically during PDP Context Activation: Service Precedence (Priority), Reliability Class, Delay Class, Peak Throughput Class, and Mean Throughput Class.</p>
@@ -2829,6 +3368,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Infrastructure BSS: Mobile nodes communicate via Access Point (AP); IBSS: Peer-to-peer ad-hoc communication without AP}$$</div>
+                    <p class="byheart-text">Infrastructure WLAN connects mobile devices to wired networks through access points with centralized coordination, whereas IBSS forms spontaneous peer-to-peer networks without fixed infrastructure.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The IEEE 802.11 standard for Wireless Local Area Networks (WLAN) defines two fundamental operational topologies that dictate how mobile wireless stations discover, associate, and exchange data frames across the radio frequency channel: Infrastructure Mode and Independent Basic Service Set (IBSS), commonly known as Ad-Hoc Mode. These two paradigms differ fundamentally in their reliance on centralized coordinating hardware, geographical scalability, and routing complexity.</p>
@@ -2874,6 +3427,20 @@ This encryption completely shields voice and data payloads from eavesdropping ov
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Priority Hierarchy: } \text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS} \implies \text{Shorter waiting interval guarantees higher channel access priority}$$</div>
+                    <p class="byheart-text">IEEE 802.11 regulates media access using differential time gaps: SIFS gives top priority to ACKs/CTS, PIFS provides medium priority for polling, and DIFS governs asynchronous distributed data contention.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In the IEEE 802.11 Medium Access Control (MAC) layer, the Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA) protocol governs shared access to the wireless medium. Because wireless transceivers cannot reliably detect collisions while actively transmitting—owing to the physical reality that transmitted signal power completely drowns out weak incoming signals from distant nodes—the standard enforces deterministic prioritization of frame transmissions through precise quiet time intervals known as Interframe Spaces (IFS). An Interframe Space is a mandatory waiting period during which the wireless channel must remain continuously idle before a station is permitted to transmit a specific category of frame. By assigning shorter waiting intervals to high-priority control frames and longer waiting intervals to standard data frames, IEEE 802.11 establishes an elegant, collision-resistant medium access priority hierarchy.</p>
@@ -2923,6 +3490,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Wi-Fi: Unlicensed 2.4/5 GHz band, high local bit-rate, low range; 3G: Licensed spectrum, macrocells, QoS, seamless mobility}$$</div>
+                    <p class="byheart-text">Wi-Fi provides low-cost, high-speed local broadband over unlicensed spectrum with contention-based access, while cellular networks provide high-mobility, licensed spectrum with deterministic QoS and handoff.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Wi-Fi (based on the IEEE 802.11 standards suite) and 3G Cellular Networks (based on 3GPP UMTS/WCDMA and 3GPP2 CDMA2000 standards) represent two historically divergent, yet increasingly convergent, wireless communication paradigms engineered to solve distinct telecommunications problems. While Wi-Fi originated as an unlicensed, localized, high-throughput wireless extension of wired computer local area networks (LANs), 3G cellular was conceived as a globally licensed, highly regulated, wide-area telecommunication utility designed primarily to deliver continuous, mobility-managed voice and data services across vast geographical territories. A comprehensive technical comparison across physical spectrum, architecture, coverage, medium access, quality of service, and mobility illuminates their fundamental engineering differences.</p>
@@ -2970,6 +3551,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Handshake: } \text{Sender} \xrightarrow{\text{RTS}} \text{Receiver} \xrightarrow{\text{CTS}} \text{Sender} \implies \text{Overcomes Hidden Terminal}; \quad \text{NAV (Network Allocation Vector)}$$</div>
+                    <p class="byheart-text">RTS/CTS exchange reserves the wireless channel by broadcasting transmission duration in the Network Allocation Vector (NAV), silencing hidden neighbors and preventing carrier-sense collisions.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In wireless local area networks operating under the Carrier Sense Multiple Access (CSMA) protocol, the physical propagation characteristics of radio waves—namely distance-dependent signal attenuation, free-space path loss, and physical obstructions—introduce two severe operational anomalies that severely degrade network performance: the Hidden Terminal Problem and the Exposed Terminal Problem. Because a wireless transceiver's physical carrier sensing mechanism can only detect electromagnetic energy in its immediate local vicinity, traditional CSMA cannot guarantee that a transmission will be received successfully at a distant destination node.</p>
@@ -3018,6 +3613,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{PSTN Exchange } \longleftrightarrow \text{ Radio Base Station (RBS) } \xleftarrow{\text{Microwave / RF Link}} \text{ Fixed Wireless Terminal (FWT) at Subscriber Premise}$$</div>
+                    <p class="byheart-text">WLL replaces traditional copper wire local loops with fixed point-to-multipoint microwave radio links, delivering rapid, cost-effective telephone and data deployment in rural and suburban areas.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Wireless Local Loop (WLL), frequently designated as Fixed Wireless Access (FWA) or Radio in the Loop (RITL), represents a transformative telecommunication deployment paradigm that replaces the traditional physical copper wire 'last-mile' telephone connection between the central telephone exchange and customer subscriber premises with high-reliability wireless radio frequency links. In legacy fixed telecommunications, deploying copper twisted-pair cables or optical fiber trenches across the final mile to individual residential homes and rural businesses accounts for over seventy percent of total telecommunications infrastructure capital investment. WLL circumvents the enormous labor, right-of-way permitting, and civil engineering costs of physical trenching, providing rapid, cost-effective, and highly reliable voice telephony and high-speed broadband data access.</p>
@@ -3066,6 +3675,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Evolution: WEP (Weak 24-bit IV, RC4) } \longrightarrow \text{ WPA (TKIP per-packet key) } \longrightarrow \text{ WPA2 (AES-CCMP 128-bit block cipher)}$$</div>
+                    <p class="byheart-text">WEP was broken due to small 24-bit IV reuse; WPA introduced temporal key integrity (TKIP), and WPA2 established robust enterprise security via AES-CCMP and 802.1X EAP authentication.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Because wireless local area networks propagate data frames through open, unbounded atmospheric space, any adversary equipped with a commodity Wi-Fi network interface card operating in promiscuous monitor mode can capture transmitted frames, inject malicious packets, or attempt unauthorized network penetration. To safeguard confidentiality, integrity, and access control, the IEEE 802.11 working group and the Wi-Fi Alliance have engineered a successive series of security protocols over the past three decades: Wired Equivalent Privacy (WEP), Wi-Fi Protected Access (WPA), Wi-Fi Protected Access 2 (WPA2 / IEEE 802.11i), and Wi-Fi Protected Access 3 (WPA3).</p>
@@ -3113,6 +3736,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{HIPERLAN/1: Non-preemptive Priority Multiple Access (EY-NPMA); HIPERLAN/2: TDMA/TDD centralized dynamic scheduling in 5 GHz band}$$</div>
+                    <p class="byheart-text">HIPERLAN/1 utilizes Elimination-Yield contention access for peer-to-peer high-speed traffic, while HIPERLAN/2 employs connection-oriented TDMA/TDD frames with guaranteed ATM/Ethernet QoS.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">High Performance Radio Local Area Network (HIPERLAN) represents a standardized family of high-speed wireless local area network technologies developed by the European Telecommunications Standards Institute (ETSI) under the Project RES 10 (Radio Equipment and Systems) and Broadband Radio Access Networks (BRAN) committees. Engineered as a high-performance European alternative to the American IEEE 802.11 standards suite, HIPERLAN was designed from inception to deliver high data rates, robust Quality of Service (QoS) guarantees, and seamless transmission of time-sensitive multimedia streams across the uncoordinated $5\text{ GHz}$ radio spectrum. The HIPERLAN family comprises two primary standards with fundamentally different architectural paradigms: HIPERLAN Type 1 and HIPERLAN Type 2.</p>
@@ -3172,6 +3809,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Security Pillars: Confidentiality (Encryption), Integrity (Hashing/MAC), Availability (Redundancy), Authentication, and Non-Repudiation (Digital Signatures)}$$</div>
+                    <p class="byheart-text">Information security guarantees data privacy (Confidentiality), unauthorized modification detection (Integrity), system accessibility (Availability), and verifiable author proof (Authentication & Non-Repudiation).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">In mobile computing and telecommunication systems, information security is engineered around a comprehensive multidimensional assurance framework known as the Extended CIA Triad, augmented by the critical security principles of Authenticity, Non-Repudiation, and Authorization. Because mobile devices communicate across open, broadcast electromagnetic channels and frequently traverse untrusted public networks, maintaining security demands rigorous adherence to these foundational tenets.</p>
@@ -3217,6 +3868,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Passive Attacks (Eavesdropping, Traffic Analysis) vs Active Attacks (Masquerade, Replay, Message Modification, Denial of Service)}$$</div>
+                    <p class="byheart-text">Passive attacks threaten confidentiality by silently intercepting wireless transmissions without altering data, whereas active attacks compromise integrity and availability by injecting forged or altered packets.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Security threats in mobile computing environments are categorized based on the operational state of the target information asset into Static Attacks and Dynamic Attacks. Information assets reside either in a quiescent, stored state—termed Data-at-Rest—or in an active, propagating transmission state—termed Data-in-Transit. Understanding the fundamental operational differences between static and dynamic threat models is essential for architecting multi-layered mobile defense strategies.</p>
@@ -3262,6 +3927,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{TLS Architecture: Handshake Protocol (mutual auth \& key exchange) + Record Protocol (symmetric encryption \& HMAC data integrity)}$$</div>
+                    <p class="byheart-text">TLS operates above the transport layer providing authenticated end-to-end encryption, while WTLS adapts TLS for low-bandwidth mobile handsets using compact headers and elliptic curves.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">To protect sensitive mobile applications against hostile eavesdropping, packet alteration, and credential theft across untrusted public networks, mobile architectures rely upon robust transport-layer and network-layer cryptographic protocols, specifically Secure Sockets Layer (SSL), Transport Layer Security (TLS), and Mobile Virtual Private Networks (Mobile VPN).</p>
@@ -3308,6 +3987,20 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$n = p \cdot q, \quad \phi(n) = (p-1)(q-1), \quad e \cdot d \equiv 1 \pmod{\phi(n)}, \quad C = M^e \pmod n, \quad M = C^d \pmod n$$</div>
+                    <p class="byheart-text">RSA security relies on the computational difficulty of factoring the product of two large prime numbers $n = pq$, using public encryption key $(e, n)$ and private decryption key $(d, n)$.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Public Key Cryptography, also designated as asymmetric cryptography, is a foundational mathematical paradigm in information security that overcomes the critical vulnerability of symmetric cryptosystems: the requirement for communicating parties to exchange a shared secret key across an insecure channel before initiating encrypted communications. Conceived by Whitfield Diffie and Martin Hellman, public key systems utilize an asymmetric key pair composed of a mathematically coupled Public Key (made freely accessible to the entire world) and a Private Key (kept strictly confidential by the owner). Encryption performed using the public key can only be reversed and decrypted using the corresponding private key, and vice versa. The most globally celebrated, mathematically rigorous, and commercially ubiquitous implementation of public key cryptography is the RSA Cryptosystem, invented in 1977 by Ron Rivest, Adi Shamir, and Leonard Adleman.</p>
@@ -3397,6 +4090,20 @@ The decrypted plaintext $m' = 2$ matches the original message $m = 2$ perfectly,
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$Y_A = \alpha^{X_A} \pmod q, \quad Y_B = \alpha^{X_B} \pmod q, \quad K = (Y_B)^{X_A} \pmod q = (Y_A)^{X_B} \pmod q = \alpha^{X_A X_B} \pmod q$$</div>
+                    <p class="byheart-text">Diffie-Hellman enables two parties to establish a shared secret key $K$ over an insecure channel based on the discrete logarithm problem, vulnerable to Man-in-the-Middle if unauthenticated.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The Diffie-Hellman Key Exchange algorithm, invented in 1976 by Whitfield Diffie and Martin Hellman, is a seminal cryptographic protocol that solved one of the oldest, most intractable problems in communications security: enabling two communicating entities, who share no prior secret credentials, to establish a shared, secret cryptographic key over an entirely insecure, publicly monitored communication channel. The derived shared key can subsequently be utilized to encrypt bulk data communications using high-speed symmetric ciphers such as AES. The mathematical security of the Diffie-Hellman protocol rests upon the one-way hardness of computing Discrete Logarithms over finite cyclic Galois fields.</p>
@@ -3495,6 +4202,20 @@ Both Alice and Bob have independently and successfully derived the exact identic
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\Delta f = \frac{1}{T_{\text{sym}}}, \quad \int_0^{T_{\text{sym}}} \cos(2\pi f_i t)\cos(2\pi f_j t) dt = 0 \; (i \ne j), \quad T_{\text{total}} = T_{\text{sym}} + T_{CP}$$</div>
+                    <p class="byheart-text">OFDM divides broadband channels into densely spaced orthogonal narrowband subcarriers, adding a Cyclic Prefix (CP) to eliminate Intersymbol Interference (ISI) and multipath fading.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">Orthogonal Frequency Division Multiplexing (OFDM) is a multicarrier digital modulation and physical-layer transmission methodology that has established itself as the dominant air-interface standard for modern broadband wireless communications, underpinning IEEE 802.11a/g/n/ac/ax/be (Wi-Fi 6 and 7), 4G LTE, 5G New Radio (NR), and digital terrestrial broadcasting. As wireless broadband systems demand data rates exceeding hundreds of megabits per second, traditional single-carrier modulation systems suffer from severe Inter-Symbol Interference (ISI) caused by frequency-selective multipath fading, requiring prohibitively complex time-domain equalizers. OFDM eradicates this bottleneck by converting a single high-rate broadband data stream into thousands of parallel, low-rate narrowband subcarriers that undergo flat fading, drastically simplifying receiver equalization.</p>
@@ -3556,6 +4277,20 @@ This combination of spectral efficiency, resilience against multipath fading, an
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{MBMS: Point-to-Multipoint transmission sharing single radio bearer; MPLS: Label Switched Path (LSP) fast packet forwarding via 32-bit labels}$$</div>
+                    <p class="byheart-text">MBMS conserves cellular bandwidth by broadcasting multimedia data simultaneously to unlimited subscribers on a shared carrier, accelerated by MPLS label switching in the core.</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">As mobile computing transitioned from simple text and voice services into rich multimedia ecosystems—such as live stadium video streaming, real-time weather alerts, software over-the-air firmware updates, and emergency mass notifications—traditional point-to-point (unicast) transmission models became catastrophic bottlenecks. In a pure unicast architecture, if one thousand mobile subscribers in a single cellular cell request the same live broadcast of a soccer match, the base station must transmit one thousand identical high-bitrate data streams over separate radio channels, completely exhausting the cell's physical radio spectrum and core transmission bandwidth. To overcome this fundamental scalability bottleneck, 3GPP standardized Multimedia Broadcast and Multicast Services (MBMS), while core network backbones deployed Multiprotocol Label Switching (MPLS) to provide deterministic, high-throughput traffic engineering.</p>
@@ -3604,6 +4339,20 @@ This combination of spectral efficiency, resilience against multipath fading, an
             </div>
         </header>
         <div class="card-body">
+            
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">⚡</span>
+                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                    </div>
+                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                </div>
+                <div class="byheart-body">
+                    <div class="byheart-eq">$$\text{Evolution: 2G (Voice/TDMA, 64 kbps) } \to \text{ 3G (CDMA, 2 Mbps) } \to \text{ 4G (All-IP/OFDMA, 100 Mbps) } \to \text{ 5G (eMBB/URLLC/mMTC, 10-20 Gbps)}$$</div>
+                    <p class="byheart-text">Mobile networks evolved from circuit-switched analog/digital voice (1G/2G) to wideband data (3G), flat All-IP OFDMA (4G LTE), and service-based network slicing supporting sub-millisecond URLLC and massive IoT (5G).</p>
+                </div>
+            </div>
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 <p class="answer-para">The evolution of cellular telecommunications across successive technology generations—from second-generation (2G) digital networks to modern fifth-generation (5G) New Radio systems—represents one of the most profound technological progressions in human history. Over four decades, mobile systems transformed from low-speed, circuit-switched voice pipelines into intelligent, ultra-high-speed, cloud-native digital ecosystems supporting massive connectivity, artificial intelligence, and industrial automation. A rigorous comparison across 2G, 3G, 4G, and 5G reveals fundamental transitions in core network architecture, radio access technology, latency, data rates, and primary service paradigms.</p>

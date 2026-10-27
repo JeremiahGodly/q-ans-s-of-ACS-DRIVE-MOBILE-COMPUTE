@@ -20,6 +20,7 @@ import sys, os, html
 from gen_acs import ACS_MODULES
 from gen_drive import DRIVE_MODULES
 from gen_mobile import MOBILE_SYLLABUS, MOBILE_MODULES
+from byheart_data import get_byheart_card_html
 
 def render_image_box(img_path, img_caption):
     exists = os.path.exists(img_path)
@@ -67,6 +68,7 @@ def render_question_card(q, subject_class):
     yt_btn = render_youtube_btn(q["yt_query"], q["title"])
     img_box = render_image_box(q["img_path"], q["img_caption"])
     content_html = format_paragraphs(q["answer"])
+    byheart_box = get_byheart_card_html(q["qid"])
 
     return f"""
     <article class="question-card {subject_class}" id="{q['qid']}" data-marks="{q['marks']}" data-title="{html.escape(q['title'].lower())}">
@@ -82,6 +84,7 @@ def render_question_card(q, subject_class):
             </div>
         </header>
         <div class="card-body">
+            {byheart_box}
             <div class="answer-section">
                 <h4 class="answer-heading">Elaborated Conceptual Solution:</h4>
                 {content_html}
@@ -1044,6 +1047,194 @@ main.content-container {
     flex-shrink: 0;
 }
 
+/* =========================================================================
+   Sentence / (Equation) to Byhart Card - High Mark Weightage Exam Memo Box
+   ========================================================================= */
+.byheart-card {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(56, 189, 248, 0.04) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-left: 5px solid #f59e0b;
+    border-radius: 10px;
+    padding: 1.1rem 1.35rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.byheart-card:hover {
+    border-color: #fbbf24;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.22);
+}
+
+[data-theme="light"] .byheart-card {
+    background: linear-gradient(135deg, #fffdf5 0%, #fef9c3 100%);
+    border: 1px solid #fde047;
+    border-left: 5px solid #d97706;
+    box-shadow: 0 3px 12px rgba(217, 119, 6, 0.1);
+}
+
+[data-theme="warm"] .byheart-card {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(180, 83, 9, 0.06) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.38);
+    border-left: 5px solid #f59e0b;
+}
+
+[data-theme="forest"] .byheart-card {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.09) 0%, rgba(245, 158, 11, 0.05) 100%);
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    border-left: 5px solid #10b981;
+}
+
+[data-theme="oled"] .byheart-card {
+    background: #080808;
+    border: 1px solid #3d2f0a;
+    border-left: 5px solid #f59e0b;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="sage"] .byheart-card {
+    background: linear-gradient(135deg, #f4f8f6 0%, #e6f0ec 100%);
+    border: 1px solid #99c7b9;
+    border-left: 5px solid #0d9488;
+    box-shadow: 0 3px 12px rgba(13, 148, 136, 0.1);
+}
+
+.byheart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px dashed rgba(245, 158, 11, 0.3);
+}
+
+[data-theme="forest"] .byheart-header {
+    border-bottom-color: rgba(52, 211, 153, 0.3);
+}
+
+[data-theme="sage"] .byheart-header {
+    border-bottom-color: rgba(13, 148, 136, 0.3);
+}
+
+.byheart-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.byheart-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.byheart-title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #f59e0b;
+}
+
+[data-theme="light"] .byheart-title {
+    color: #b45309;
+}
+
+[data-theme="forest"] .byheart-title {
+    color: #34d399;
+}
+
+[data-theme="sage"] .byheart-title {
+    color: #0f766e;
+}
+
+.byheart-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(245, 158, 11, 0.18);
+    color: #fbbf24;
+    padding: 0.22rem 0.65rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+[data-theme="light"] .byheart-badge {
+    background: #fef08a;
+    color: #854d0e;
+    border-color: #facc15;
+}
+
+[data-theme="forest"] .byheart-badge {
+    background: rgba(16, 185, 129, 0.18);
+    color: #6ee7b7;
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+[data-theme="sage"] .byheart-badge {
+    background: #ccfbf1;
+    color: #115e59;
+    border-color: #5eead4;
+}
+
+.byheart-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.byheart-eq {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    overflow-x: auto;
+    font-size: 1.02rem;
+    text-align: center;
+}
+
+[data-theme="light"] .byheart-eq {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="sage"] .byheart-eq {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+}
+
+[data-theme="oled"] .byheart-eq {
+    background: #000000;
+    border-color: #222222;
+}
+
+.byheart-text {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.byheart-text strong {
+    color: #fbbf24;
+    font-weight: 700;
+}
+
+[data-theme="light"] .byheart-text strong {
+    color: #b45309;
+}
+
+[data-theme="forest"] .byheart-text strong {
+    color: #34d399;
+}
+
+[data-theme="sage"] .byheart-text strong {
+    color: #0f766e;
+}
+
 /* Card Body & Paragraph Styling */
 .card-body {
     display: flex;
@@ -1557,6 +1748,35 @@ body {
         text-align: left;
         hyphens: auto;
         word-break: break-word;
+    }
+
+    /* Byheart Memo Card Mobile Optimization */
+    .byheart-card {
+        padding: 0.85rem 0.95rem;
+        border-radius: 8px;
+        border-left-width: 4px;
+    }
+    .byheart-header {
+        gap: 0.4rem;
+        margin-bottom: 0.6rem;
+        padding-bottom: 0.45rem;
+    }
+    .byheart-title {
+        font-size: 0.8rem;
+    }
+    .byheart-badge {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.48rem;
+    }
+    .byheart-text {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        text-align: left;
+    }
+    .byheart-eq {
+        padding: 0.45rem 0.55rem;
+        font-size: 0.9rem;
+        -webkit-overflow-scrolling: touch;
     }
 
     /* KaTeX Equations: smooth horizontal swipe without document overflow */

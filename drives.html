@@ -772,6 +772,94 @@ main.content-container {
     line-height: 1.7;
 }
 
+/* 3-Hour Exam Writing Strategy Banner */
+.exam-strategy-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.15rem;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-left: 5px solid #38bdf8;
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 2.25rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .exam-strategy-banner {
+    background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+    border-color: #bae6fd;
+    border-left-color: #0284c7;
+}
+
+[data-theme="warm"] .exam-strategy-banner {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(180, 83, 9, 0.05) 100%);
+    border-color: rgba(245, 158, 11, 0.35);
+    border-left-color: #f59e0b;
+}
+
+[data-theme="forest"] .exam-strategy-banner {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+    border-color: rgba(52, 211, 153, 0.35);
+    border-left-color: #10b981;
+}
+
+[data-theme="sage"] .exam-strategy-banner {
+    background: linear-gradient(135deg, #f0fdfa 0%, #f4f8f6 100%);
+    border-color: #99f6e4;
+    border-left-color: #0d9488;
+}
+
+[data-theme="oled"] .exam-strategy-banner {
+    background: #080808;
+    border-color: #1e293b;
+    border-left-color: #38bdf8;
+}
+
+.strategy-icon {
+    font-size: 1.85rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.strategy-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 0.4rem 0;
+    letter-spacing: -0.01em;
+}
+
+.strategy-content p {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: var(--text-body);
+    margin: 0;
+}
+
+.strategy-content strong {
+    color: var(--text-main);
+}
+
+@media (max-width: 640px) {
+    .exam-strategy-banner {
+        padding: 0.85rem 1rem;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+    .strategy-icon {
+        font-size: 1.4rem;
+    }
+    .strategy-content h4 {
+        font-size: 0.94rem;
+    }
+    .strategy-content p {
+        font-size: 0.86rem;
+        line-height: 1.55;
+    }
+}
+
 /* Module Sections */
 .module-section {
     margin-bottom: 3.5rem;
@@ -895,6 +983,34 @@ main.content-container {
     border: 1px solid var(--border-subtle);
 }
 
+.badge-time {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+[data-theme="light"] .badge-time {
+    background: #ecfdf5;
+    color: #047857;
+    border-color: #6ee7b7;
+}
+
+[data-theme="sage"] .badge-time {
+    background: #e6f4f1;
+    color: #0f766e;
+    border-color: #99f6e4;
+}
+
+[data-theme="oled"] .badge-time {
+    background: #002b1c;
+    color: #34d399;
+    border-color: #059669;
+}
+
 .card-title {
     font-size: 1.35rem;
     font-weight: 700;
@@ -906,7 +1022,179 @@ main.content-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 0.75rem;
     margin-top: 0.25rem;
+    flex-wrap: wrap;
+}
+
+/* Hide/Show Answer Toggle Button */
+.btn-toggle-answer {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.52rem 0.95rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: var(--font-main);
+    color: var(--text-main);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px var(--card-shadow);
+}
+
+.btn-toggle-answer:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+    border-color: var(--border-focus);
+    transform: translateY(-1px);
+}
+
+.question-card.answer-collapsed {
+    padding-bottom: 0.85rem;
+}
+
+.question-card.answer-collapsed .card-header {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.question-card.answer-collapsed .card-body {
+    display: none !important;
+}
+
+/* Card Interactive Timer Widget */
+.card-timer-widget {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--bg-surface);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 6px;
+    padding: 0.15rem 0.35rem;
+    transition: all 0.25s ease;
+}
+
+.timer-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #10b981;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.timer-toggle-btn:hover {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.timer-reset-btn {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.35rem;
+    color: var(--text-muted);
+}
+.timer-reset-btn:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+}
+
+.timer-action {
+    font-family: var(--font-main);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(16, 185, 129, 0.2);
+    padding: 0.1rem 0.38rem;
+    border-radius: 4px;
+}
+
+/* Timer State: Running */
+.card-timer-widget.timer-running {
+    border-color: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+    background: rgba(16, 185, 129, 0.12);
+    animation: timerPulse 2s infinite ease-in-out;
+}
+
+.card-timer-widget.timer-running .timer-action {
+    background: #10b981;
+    color: #064e3b;
+    font-weight: 800;
+}
+
+/* Timer State: Paused */
+.card-timer-widget.timer-paused {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+.card-timer-widget.timer-paused .timer-btn {
+    color: #f59e0b;
+}
+.card-timer-widget.timer-paused .timer-action {
+    background: #f59e0b;
+    color: #451a03;
+}
+
+/* Timer State: Warning (< 1 min) */
+.card-timer-widget.timer-warning {
+    border-color: #f59e0b;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    background: rgba(245, 158, 11, 0.15);
+}
+.card-timer-widget.timer-warning .timer-btn {
+    color: #fbbf24;
+}
+.card-timer-widget.timer-warning .timer-action {
+    background: #f59e0b;
+    color: #451a03;
+}
+
+/* Timer State: Expired (Time's Up) */
+.card-timer-widget.timer-expired {
+    border-color: #ef4444;
+    box-shadow: 0 0 14px rgba(239, 68, 68, 0.5);
+    background: rgba(239, 68, 68, 0.18);
+    animation: expiredFlash 1s infinite alternate;
+}
+.card-timer-widget.timer-expired .timer-btn {
+    color: #f87171;
+}
+.card-timer-widget.timer-expired .timer-action {
+    background: #ef4444;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+@keyframes timerPulse {
+    0%, 100% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.25); }
+    50% { box-shadow: 0 0 14px rgba(16, 185, 129, 0.5); }
+}
+
+@keyframes expiredFlash {
+    from { opacity: 1; }
+    to { opacity: 0.65; }
+}
+
+/* Global Collapse All Button */
+.global-collapse-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.global-collapse-btn.active-collapsed {
+    border-color: var(--border-focus);
+    background: var(--bg-card);
+    color: var(--text-main);
 }
 
 /* YouTube Link Button */
@@ -1065,6 +1353,52 @@ main.content-container {
     background: #ccfbf1;
     color: #115e59;
     border-color: #5eead4;
+}
+
+.byheart-badges-group {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.byheart-time-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    padding: 0.22rem 0.6rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+[data-theme="light"] .byheart-time-badge {
+    background: #e0f2fe;
+    color: #0284c7;
+    border-color: #7dd3fc;
+}
+
+[data-theme="forest"] .byheart-time-badge {
+    background: rgba(52, 211, 153, 0.15);
+    color: #34d399;
+    border-color: rgba(52, 211, 153, 0.35);
+}
+
+[data-theme="sage"] .byheart-time-badge {
+    background: #ccfbf1;
+    color: #0f766e;
+    border-color: #5eead4;
+}
+
+[data-theme="oled"] .byheart-time-badge {
+    background: #001f33;
+    color: #38bdf8;
+    border-color: #0284c7;
 }
 
 .byheart-body {
@@ -1829,11 +2163,27 @@ body {
                 </button>
             </div>
 
-            <a href="index.html" class="standalone-back-btn" title="Return to Master Portal">← 3-in-1 Portal</a>
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <button class="filter-btn global-collapse-btn" id="btn-toggle-all-answers" onclick="toggleAllAnswers()" title="Collapse all answers for Self-Test / Flashcard Exam Practice">
+                    <span class="btn-icon">👁️</span>
+                    <span class="btn-text">Collapse All Answers</span>
+                </button>
+                <a href="index.html" class="standalone-back-btn" title="Return to Master Portal">← 3-in-1 Portal</a>
+            </div>
         </div>
     </header>
 
     <main class="content-container">
+        <!-- 3-Hour Exam Writing Strategy Banner -->
+        <section class="exam-strategy-banner" aria-label="3-Hour Exam Time Budget">
+            <div class="strategy-icon" aria-hidden="true">⏱️</div>
+            <div class="strategy-content">
+                <h4>3-Hour Exam Time Budget (20 Questions / 100 Marks Strategy)</h4>
+                <p><strong>Part A (10 Short Answers &times; 3 Marks = 30M):</strong> Allocate <strong>5 mins per answer</strong> (50 mins total) &mdash; target &frac12; to 1 page highlighting the key formula and core definition.<br>
+                <strong>Part B (10 Essay Answers &times; 7 Marks = 70M):</strong> Allocate <strong>12 mins per answer</strong> (120 mins total) &mdash; target 1.5 to 2 pages with schematic circuit/block diagrams and step-by-step derivations.<br>
+                <strong>Strategy &amp; Review Buffer (10 mins):</strong> 5 mins at start for question choice planning + 5 mins at end for question numbering and equation verification.</p>
+            </div>
+        </section>
         
     <div class="subject-hero hero-drive">
         <span class="hero-badge">Course Code: EET413</span>
@@ -1849,14 +2199,22 @@ body {
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-drive" id="drive-q1" data-marks="3" data-title="elements and block diagram of modern electric drive systems">
+    <article class="question-card subject-drive" id="drive-q1" data-marks="3" data-title="draw the block diagram of a modern electric drive system and explain the functions of each constituent component.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q1" data-duration="300" data-qid="drive-q1">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q1')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q1')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q1</span>
             </div>
-            <h3 class="card-title">Elements and Block Diagram of Modern Electric Drive Systems</h3>
+            <h3 class="card-title">Draw the block diagram of a modern electric drive system and explain the functions of each constituent component.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=elements+block+diagram+electric+drive+system+power+modulator" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -1866,6 +2224,10 @@ body {
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q1')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -1876,11 +2238,14 @@ body {
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
-                    <div class="byheart-eq">$$\text{Source} \longrightarrow \text{Power Modulator} \longrightarrow \text{Electric Motor} \longrightarrow \text{Load} \quad (\text{Regulated by Sensing \& Control Unit})$$</div>
-                    <p class="byheart-text">An electric drive integrates a power converter, electric motor, mechanical transmission, and closed-loop feedback controller to govern torque, speed, and position efficiently.</p>
+                    <div class="byheart-eq">$$\text{Source} \longrightarrow \text{Power Modulator} \longrightarrow \text{Electric Motor} \longrightarrow \text{Load} \quad (\text{Closed-Loop Control})$$</div>
+                    <p class="byheart-text"><strong>Constituent Elements of an Electric Drive:</strong><br><strong>1. Power Source:</strong> 1-phase/3-phase AC utility grid or DC source/battery.<br><strong>2. Power Modulator:</strong> Regulates energy flow via converters/inverters (rectifiers, choppers, VSIs, cycloconverters).<br><strong>3. Electric Motor:</strong> Converts modulated electrical energy to controlled mechanical torque (DC, Induction, BLDC, Synchronous).<br><strong>4. Control & Sensing Unit:</strong> Measures current/speed/position and generates switching signals to enforce precision motion.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -1908,14 +2273,22 @@ body {
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q2" data-marks="3" data-title="advantages of electric drives in industrial motion control">
+    <article class="question-card subject-drive" id="drive-q2" data-marks="3" data-title="state and explain the major advantages of electric drives over conventional mechanical and thermal drive systems in industrial motion control.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q2" data-duration="300" data-qid="drive-q2">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q2')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q2')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q2</span>
             </div>
-            <h3 class="card-title">Advantages of Electric Drives in Industrial Motion Control</h3>
+            <h3 class="card-title">State and explain the major advantages of electric drives over conventional mechanical and thermal drive systems in industrial motion control.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=advantages+of+electric+drives+comparison+mechanical+steam+diesel" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -1925,6 +2298,10 @@ body {
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q2')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -1935,7 +2312,10 @@ body {
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\eta_{\text{electric}} > 90\%, \quad \text{Four-Quadrant Operation}, \quad \text{Zero Direct Tailpipe Emissions}$$</div>
@@ -1967,14 +2347,22 @@ body {
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q3" data-marks="3" data-title="classification and nature of industrial load torques">
+    <article class="question-card subject-drive" id="drive-q3" data-marks="3" data-title="classify industrial load torques with suitable mathematical expressions and torque-speed characteristics.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q3" data-duration="300" data-qid="drive-q3">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q3')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q3')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q3</span>
             </div>
-            <h3 class="card-title">Classification and Nature of Industrial Load Torques</h3>
+            <h3 class="card-title">Classify industrial load torques with suitable mathematical expressions and torque-speed characteristics.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=classification+nature+of+load+torque+active+passive+paper+mill+fan+hoist" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -1984,6 +2372,10 @@ body {
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q3')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -1994,11 +2386,14 @@ body {
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$T_L = T_{L0} + C \left(\frac{\omega}{\omega_n}\right)^k, \quad k=0 \text{ (Hoist)}, \; k=1 \text{ (Calender)}, \; k=2 \text{ (Fan/Pump)}, \; k=-1 \text{ (Lathe)}$$</div>
-                    <p class="byheart-text">Load torques are classified as <strong>active torques</strong> (retaining direction regardless of motion, like gravity) or <strong>passive torques</strong> (always opposing rotation, like friction and fluid drag), scaling as speed power exponent $k$.</p>
+                    <p class="byheart-text"><strong>Classification of Industrial Load Torques:</strong><br><strong>1. Active Load Torques:</strong> Torques that retain their sign/direction irrespective of rotation direction (e.g., gravitational torque in hoists $k=0$, tension in coilers).<br><strong>2. Passive Load Torques:</strong> Torques that always oppose motion (dry coulomb friction $k=0$, viscous friction $k=1$, centrifugal fans/pumps $T_L \propto \omega^2$ with $k=2$, constant power machine tools $T_L \propto 1/\omega$ with $k=-1$).</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -2026,14 +2421,22 @@ body {
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q3b" data-marks="3" data-title="concept of critical speed and torsional resonance in electric drives">
+    <article class="question-card subject-drive" id="drive-q3b" data-marks="3" data-title="explain the concept of critical speed and torsional resonance in electric drive shaft couplings.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q3b" data-duration="300" data-qid="drive-q3b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q3b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q3b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q3B</span>
             </div>
-            <h3 class="card-title">Concept of Critical Speed and Torsional Resonance in Electric Drives</h3>
+            <h3 class="card-title">Explain the concept of critical speed and torsional resonance in electric drive shaft couplings.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=critical+speed+in+electric+drives+mechanical+resonance+shaft+vibration" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2043,6 +2446,10 @@ body {
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q3b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2053,7 +2460,10 @@ body {
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\omega_{\text{crit}} = \sqrt{\frac{K_{sh}(J_M + J_L)}{J_M \cdot J_L}}, \qquad |\omega_{\text{operating}} - \omega_{\text{crit}}| \ge 0.20 \, \omega_{\text{crit}}$$</div>
@@ -2085,14 +2495,22 @@ body {
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q4" data-marks="7" data-title="mathematical derivation of the fundamental dynamic torque equation for rotational motion">
+    <article class="question-card subject-drive" id="drive-q4" data-marks="7" data-title="derive the fundamental dynamic torque equation governing the rotational motion of an electric motor driving a mechanical load.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q4" data-duration="720" data-qid="drive-q4">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q4')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q4')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q4</span>
             </div>
-            <h3 class="card-title">Mathematical Derivation of the Fundamental Dynamic Torque Equation for Rotational Motion</h3>
+            <h3 class="card-title">Derive the fundamental dynamic torque equation governing the rotational motion of an electric motor driving a mechanical load.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=fundamental+torque+equation+rotational+motion+derivation+electric+drives" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2102,6 +2520,10 @@ body {
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q4')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2112,7 +2534,10 @@ body {
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$T - T_L = J \frac{d\omega_m}{dt} + \frac{1}{2} \omega_m^2 \frac{dJ}{dt} \approx J \frac{d\omega_m}{dt}$$</div>
@@ -2164,14 +2589,22 @@ Summing all referred components yields the total effective moment of inertia $J 
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q5" data-marks="7" data-title="comprehensive four-quadrant operation of electric motor driving a hoist load">
+    <article class="question-card subject-drive" id="drive-q5" data-marks="7" data-title="explain with neat torque-speed diagrams the four-quadrant operation of an electric motor driving a hoist load.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q5" data-duration="720" data-qid="drive-q5">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q5')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q5')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q5</span>
             </div>
-            <h3 class="card-title">Comprehensive Four-Quadrant Operation of Electric Motor Driving a Hoist Load</h3>
+            <h3 class="card-title">Explain with neat torque-speed diagrams the four-quadrant operation of an electric motor driving a hoist load.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=four+quadrant+operation+electric+drive+hoist+load+speed+torque+plane" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2181,6 +2614,10 @@ Summing all referred components yields the total effective moment of inertia $J 
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q5')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2191,11 +2628,14 @@ Summing all referred components yields the total effective moment of inertia $J 
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$P_m = T \cdot \omega_m \implies \begin{cases} \text{Q1: Forward Motoring } (+T, +\omega, P>0) & \text{Q2: Forward Braking } (-T, +\omega, P<0) \\ \text{Q3: Reverse Motoring } (-T, -\omega, P>0) & \text{Q4: Reverse Braking } (+T, -\omega, P<0) \end{cases}$$</div>
-                    <p class="byheart-text">Four-quadrant operation enables complete bidirectional motion and regenerative braking, where power $P_m = T \omega_m$ is positive during motoring quadrants (Q1 & Q3) and negative during braking energy recovery (Q2 & Q4).</p>
+                    <p class="byheart-text"><strong>Four-Quadrant Operation of Hoist Drive:</strong><br><strong>Quadrant 1 (Forward Motoring):</strong> $+T, +\omega_m$ &mdash; Hoisting a loaded cage upward against gravity ($P_m > 0$).<br><strong>Quadrant 2 (Forward Braking):</strong> $-T, +\omega_m$ &mdash; Decelerating upward motion via regenerative braking ($P_m < 0$).<br><strong>Quadrant 3 (Reverse Motoring):</strong> $-T, -\omega_m$ &mdash; Driving an empty cage downward against friction ($P_m > 0$).<br><strong>Quadrant 4 (Reverse Braking):</strong> $+T, -\omega_m$ &mdash; Safely lowering a loaded cage under gravity with braking counter-torque ($P_m < 0$).</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -2235,14 +2675,22 @@ When a fully loaded cage is lowered downward at negative speed ($\omega_m < 0$),
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q6" data-marks="7" data-title="mathematical derivation of the condition for steady-state stability of an electric drive">
+    <article class="question-card subject-drive" id="drive-q6" data-marks="7" data-title="derive the mathematical condition for the steady-state stability of an electric drive operating point.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q6" data-duration="720" data-qid="drive-q6">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q6')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q6')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q6</span>
             </div>
-            <h3 class="card-title">Mathematical Derivation of the Condition for Steady-State Stability of an Electric Drive</h3>
+            <h3 class="card-title">Derive the mathematical condition for the steady-state stability of an electric drive operating point.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=steady+state+stability+electric+drive+condition+derivation+perturbation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2252,6 +2700,10 @@ When a fully loaded cage is lowered downward at negative speed ($\omega_m < 0$),
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q6')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2262,7 +2714,10 @@ When a fully loaded cage is lowered downward at negative speed ($\omega_m < 0$),
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\frac{dT_L}{d\omega_m} - \frac{dT}{d\omega_m} > 0 \iff \frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m} \quad (\text{at equilibrium } T = T_L)$$</div>
@@ -2320,14 +2775,22 @@ In graphical terms, when plotting $T$ and $T_l$ versus speed $\omega_m$, stabili
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q6b" data-marks="7" data-title="thermal heating and cooling dynamics and selection of motor power rating">
+    <article class="question-card subject-drive" id="drive-q6b" data-marks="7" data-title="explain the thermal heating and cooling dynamics of an electric motor and discuss the determination of motor power rating for continuous and intermittent loads.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q6b" data-duration="720" data-qid="drive-q6b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q6b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q6b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q6B</span>
             </div>
-            <h3 class="card-title">Thermal Heating and Cooling Dynamics and Selection of Motor Power Rating</h3>
+            <h3 class="card-title">Explain the thermal heating and cooling dynamics of an electric motor and discuss the determination of motor power rating for continuous and intermittent loads.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=thermal+heating+cooling+curve+motor+power+rating+derivation+electric+drives" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2337,6 +2800,10 @@ In graphical terms, when plotting $T$ and $T_l$ versus speed $\omega_m$, stabili
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q6b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2347,7 +2814,10 @@ In graphical terms, when plotting $T$ and $T_l$ versus speed $\omega_m$, stabili
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\theta(t) = \theta_{ss} (1 - e^{-t/\tau_h}) + \theta_0 e^{-t/\tau_h}, \quad \tau_h = \frac{C_{th}}{A \cdot h}, \quad P_{\text{rated}} \ge P_{\text{rms}} = \sqrt{\frac{\sum P_i^2 t_i}{\sum t_i}}$$</div>
@@ -2403,14 +2873,22 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-drive" id="drive-q7" data-marks="3" data-title="armature voltage control vs field weakening speed control in dc motor drives">
+    <article class="question-card subject-drive" id="drive-q7" data-marks="3" data-title="compare armature voltage control and field weakening speed control methods of a dc separately excited motor drive with torque-power capabilities.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q7" data-duration="300" data-qid="drive-q7">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q7')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q7')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q7</span>
             </div>
-            <h3 class="card-title">Armature Voltage Control vs Field Weakening Speed Control in DC Motor Drives</h3>
+            <h3 class="card-title">Compare armature voltage control and field weakening speed control methods of a DC separately excited motor drive with torque-power capabilities.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=armature+voltage+control+field+weakening+mode+DC+motor+drive+comparison" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2420,6 +2898,10 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q7')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2430,11 +2912,14 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\omega_m = \frac{V_a - I_a R_a}{K \phi} \implies \begin{cases} \text{Below Base Speed: } V_a \text{ variation at rated } \phi \implies \text{Constant Torque Mode} \\ \text{Above Base Speed: } \phi \text{ reduction at rated } V_a \implies \text{Constant Power Mode} \end{cases}$$</div>
-                    <p class="byheart-text">DC drive speed control operates in <strong>Constant Torque</strong> mode up to base speed by varying armature voltage $V_a$, and in <strong>Constant Power</strong> mode above base speed by weakening field flux $\phi$.</p>
+                    <p class="byheart-text"><strong>1. Armature Voltage Control (Below Base Speed):</strong> Variable $V_a$ with full rated flux $\phi$ provides <strong>Constant Torque</strong> ($T_{\max} = K \phi I_{a,\text{rated}}$), where power increases linearly with speed ($P \propto \omega$).<br><strong>2. Field Weakening Control (Above Base Speed):</strong> Rated $V_a$ with reduced field flux $\phi$ provides <strong>Constant Power</strong> ($P = V_a I_a = \text{constant}$), where developed torque decreases inversely with speed ($T \propto 1/\omega$).</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -2462,14 +2947,22 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q7b" data-marks="3" data-title="three-phase semi-converter fed dc motor drive: features and voltage expression">
+    <article class="question-card subject-drive" id="drive-q7b" data-marks="3" data-title="explain the operation of a three-phase semi-converter fed dc motor drive. why is regenerative braking not possible in semi-converter drives?">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q7b" data-duration="300" data-qid="drive-q7b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q7b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q7b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q7B</span>
             </div>
-            <h3 class="card-title">Three-Phase Semi-Converter Fed DC Motor Drive: Features and Voltage Expression</h3>
+            <h3 class="card-title">Explain the operation of a three-phase semi-converter fed DC motor drive. Why is regenerative braking not possible in semi-converter drives?</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=three+phase+semi+converter+fed+DC+motor+drive+circuit+waveforms" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2479,6 +2972,10 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q7b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2489,7 +2986,10 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$V_{dc} = \frac{3\sqrt{3}V_m}{2\pi}(1 + \cos\alpha) \ge 0 \quad (\forall \alpha \in [0^\circ, 180^\circ])$$</div>
@@ -2521,14 +3021,22 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q8" data-marks="7" data-title="single-phase fully controlled rectifier fed separately excited dc motor drive and firing angle calculations">
+    <article class="question-card subject-drive" id="drive-q8" data-marks="7" data-title="explain the operation of a single-phase fully controlled rectifier fed separately excited dc motor drive and derive the speed-torque relationship for continuous conduction.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q8" data-duration="720" data-qid="drive-q8">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q8')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q8')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q8</span>
             </div>
-            <h3 class="card-title">Single-Phase Fully Controlled Rectifier Fed Separately Excited DC Motor Drive and Firing Angle Calculations</h3>
+            <h3 class="card-title">Explain the operation of a single-phase fully controlled rectifier fed separately excited DC motor drive and derive the speed-torque relationship for continuous conduction.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=single+phase+full+converter+separately+excited+DC+motor+firing+angle+calculation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2538,6 +3046,10 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q8')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2548,7 +3060,10 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$V_a = \frac{2V_m}{\pi}\cos\alpha, \quad \omega_m = \frac{\frac{2V_m}{\pi}\cos\alpha - I_a R_a}{K_t \phi} \quad (\text{Continuous Conduction})$$</div>
@@ -2623,14 +3138,22 @@ Because $\alpha_2 = 120.3^\circ > 90^\circ$, the converter operates in the inver
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q8b" data-marks="7" data-title="three-phase full converter fed separately excited dc motor drive">
+    <article class="question-card subject-drive" id="drive-q8b" data-marks="7" data-title="explain the operation of a three-phase full converter fed dc drive and compare its performance with a single-phase converter drive.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q8b" data-duration="720" data-qid="drive-q8b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q8b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q8b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q8B</span>
             </div>
-            <h3 class="card-title">Three-Phase Full Converter Fed Separately Excited DC Motor Drive</h3>
+            <h3 class="card-title">Explain the operation of a three-phase full converter fed DC drive and compare its performance with a single-phase converter drive.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=three+phase+full+converter+fed+separately+excited+DC+motor+drive+derivation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2640,6 +3163,10 @@ Because $\alpha_2 = 120.3^\circ > 90^\circ$, the converter operates in the inver
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q8b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2650,7 +3177,10 @@ Because $\alpha_2 = 120.3^\circ > 90^\circ$, the converter operates in the inver
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$V_a = \frac{3\sqrt{3}V_m}{\pi}\cos\alpha, \quad \omega_m = \frac{\frac{3\sqrt{3}V_m}{\pi}\cos\alpha - I_a R_a}{K_t \phi}$$</div>
@@ -2700,14 +3230,22 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-drive" id="drive-q9" data-marks="3" data-title="motoring control of dc separately excited motor using class-a chopper">
+    <article class="question-card subject-drive" id="drive-q9" data-marks="3" data-title="explain the speed control of a separately excited dc motor using a class-a step-down chopper with neat circuit and waveform diagrams.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q9" data-duration="300" data-qid="drive-q9">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q9')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q9')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q9</span>
             </div>
-            <h3 class="card-title">Motoring Control of DC Separately Excited Motor using Class-A Chopper</h3>
+            <h3 class="card-title">Explain the speed control of a separately excited DC motor using a Class-A step-down chopper with neat circuit and waveform diagrams.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=class+a+step+down+chopper+separately+excited+DC+motor+motoring+control" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2717,6 +3255,10 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q9')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2727,7 +3269,10 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$V_a = \delta V_s = \left(\frac{t_{on}}{T}\right) V_s, \quad \omega_m = \frac{\delta V_s - I_a R_a}{K_t \phi} \quad (0 \le \delta \le 1)$$</div>
@@ -2759,14 +3304,22 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q9b" data-marks="3" data-title="regenerative braking control of dc motor using class-b step-up chopper">
+    <article class="question-card subject-drive" id="drive-q9b" data-marks="3" data-title="explain the regenerative braking control of a dc motor using a class-b step-up chopper with circuit and waveform analysis.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q9b" data-duration="300" data-qid="drive-q9b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q9b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q9b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q9B</span>
             </div>
-            <h3 class="card-title">Regenerative Braking Control of DC Motor using Class-B Step-Up Chopper</h3>
+            <h3 class="card-title">Explain the regenerative braking control of a DC motor using a Class-B step-up chopper with circuit and waveform analysis.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=class+b+step+up+boost+chopper+regenerative+braking+DC+motor" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2776,6 +3329,10 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q9b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2786,7 +3343,10 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$V_s = \frac{E_b}{1 - \delta} \implies I_a = \frac{E_b - (1-\delta)V_s}{R_a} \quad (\text{Quadrant 2 Operation})$$</div>
@@ -2818,14 +3378,22 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q10" data-marks="7" data-title="two-quadrant class-c chopper fed dc motor drive: motoring and regenerative braking">
+    <article class="question-card subject-drive" id="drive-q10" data-marks="7" data-title="explain the operation of a two-quadrant class-c chopper fed dc motor drive for motoring and regenerative braking modes.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q10" data-duration="720" data-qid="drive-q10">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q10')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q10')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q10</span>
             </div>
-            <h3 class="card-title">Two-Quadrant Class-C Chopper Fed DC Motor Drive: Motoring and Regenerative Braking</h3>
+            <h3 class="card-title">Explain the operation of a two-quadrant Class-C chopper fed DC motor drive for motoring and regenerative braking modes.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=class+c+chopper+fed+DC+motor+two+quadrant+motoring+regenerative+braking" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2835,6 +3403,10 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q10')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2845,7 +3417,10 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$V_a = \delta V_s \ge 0, \quad I_a > 0 \text{ (Motoring via } CH_1\text{-}D_2\text{)}, \quad I_a < 0 \text{ (Regeneration via } CH_2\text{-}D_1\text{)}$$</div>
@@ -2895,14 +3470,22 @@ This derivation proves that by adjusting the duty ratio $\delta_2$, the braking 
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q10b" data-marks="7" data-title="four-quadrant class-e chopper fed dc motor drive: h-bridge operation">
+    <article class="question-card subject-drive" id="drive-q10b" data-marks="7" data-title="explain the four-quadrant operation of a dc motor drive using a class-e h-bridge chopper.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q10b" data-duration="720" data-qid="drive-q10b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q10b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q10b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q10B</span>
             </div>
-            <h3 class="card-title">Four-Quadrant Class-E Chopper Fed DC Motor Drive: H-Bridge Operation</h3>
+            <h3 class="card-title">Explain the four-quadrant operation of a DC motor drive using a Class-E H-bridge chopper.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=four+quadrant+class+e+chopper+fed+DC+motor+h+bridge+operation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2912,6 +3495,10 @@ This derivation proves that by adjusting the duty ratio $\delta_2$, the braking 
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q10b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2922,7 +3509,10 @@ This derivation proves that by adjusting the duty ratio $\delta_2$, the braking 
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$V_a = (2\delta - 1)V_s, \quad -V_s \le V_a \le +V_s, \quad -I_{\max} \le I_a \le +I_{\max}$$</div>
@@ -2961,14 +3551,22 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q11" data-marks="7" data-title="closed-loop speed control architecture of dc motor drives with inner current control loop">
+    <article class="question-card subject-drive" id="drive-q11" data-marks="7" data-title="draw and explain the closed-loop speed control scheme of a dc motor drive with inner current control loop and anti-windup controller.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q11" data-duration="720" data-qid="drive-q11">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q11')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q11')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q11</span>
             </div>
-            <h3 class="card-title">Closed-Loop Speed Control Architecture of DC Motor Drives with Inner Current Control Loop</h3>
+            <h3 class="card-title">Draw and explain the closed-loop speed control scheme of a DC motor drive with inner current control loop and anti-windup controller.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=closed+loop+speed+control+DC+motor+inner+current+loop+outer+speed+loop+block+diagram" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2978,6 +3576,10 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q11')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2988,7 +3590,10 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\tau_{\text{current}} \approx 1\text{--}2\text{ ms} \ll \tau_{\text{speed}} \approx 30\text{--}100\text{ ms} \implies \text{Cascaded Loops with Inner Current Clamping}$$</div>
@@ -3037,14 +3642,22 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-drive" id="drive-q12" data-marks="3" data-title="limitations and application boundaries of stator voltage control in induction motors">
+    <article class="question-card subject-drive" id="drive-q12" data-marks="3" data-title="discuss the limitations and practical application boundaries of stator voltage control method in three-phase induction motor drives.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q12" data-duration="300" data-qid="drive-q12">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q12')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q12')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q12</span>
             </div>
-            <h3 class="card-title">Limitations and Application Boundaries of Stator Voltage Control in Induction Motors</h3>
+            <h3 class="card-title">Discuss the limitations and practical application boundaries of stator voltage control method in three-phase induction motor drives.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=stator+voltage+control+induction+motor+limitations+fan+load+why+narrow+speed+range" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3054,6 +3667,10 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q12')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3064,7 +3681,10 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$T_e \propto V_s^2 \implies \text{Torque drops quadratically with stator voltage; } P_{cu2} = s P_g \implies \text{Severe Rotor Overheating}$$</div>
@@ -3096,14 +3716,22 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q12b" data-marks="3" data-title="comparison between voltage source inverter (vsi) and current source inverter (csi) drives">
+    <article class="question-card subject-drive" id="drive-q12b" data-marks="3" data-title="compare voltage source inverter (vsi) and current source inverter (csi) fed induction motor drives.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q12b" data-duration="300" data-qid="drive-q12b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q12b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q12b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q12B</span>
             </div>
-            <h3 class="card-title">Comparison between Voltage Source Inverter (VSI) and Current Source Inverter (CSI) Drives</h3>
+            <h3 class="card-title">Compare Voltage Source Inverter (VSI) and Current Source Inverter (CSI) fed induction motor drives.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=compare+VSI+and+CSI+fed+induction+motor+drive+differences" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3113,6 +3741,10 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q12b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3123,7 +3755,10 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{VSI: DC voltage link with capacitor (PWM voltage output); } \quad \text{CSI: DC current link with large inductor (inherent regeneration)}$$</div>
@@ -3155,14 +3790,22 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q13" data-marks="7" data-title="comprehensive theory and derivation of constant v/f speed control of induction motors">
+    <article class="question-card subject-drive" id="drive-q13" data-marks="7" data-title="explain the principle and complete mathematical theory of constant v/f speed control of a three-phase induction motor drive.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q13" data-duration="720" data-qid="drive-q13">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q13')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q13')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q13</span>
             </div>
-            <h3 class="card-title">Comprehensive Theory and Derivation of Constant V/f Speed Control of Induction Motors</h3>
+            <h3 class="card-title">Explain the principle and complete mathematical theory of constant V/f speed control of a three-phase induction motor drive.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=constant+V/f+control+induction+motor+derivation+low+frequency+boost+field+weakening" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3172,6 +3815,10 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q13')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3182,7 +3829,10 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\phi_m \propto \frac{V_s}{f_s} = \text{constant} \implies T_{\max} = \frac{3}{2}\frac{V_s^2}{\omega_s (2\omega_s L_l)} \approx \text{constant breakdown torque}$$</div>
@@ -3226,14 +3876,22 @@ Because $\frac{V_1}{f}$ is held constant, the maximum breakdown torque $T_{max}$
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q14" data-marks="7" data-title="static rotor resistance speed control of wound-rotor induction motor">
+    <article class="question-card subject-drive" id="drive-q14" data-marks="7" data-title="explain static rotor resistance control of a wound-rotor induction motor using a diode bridge rectifier and chopper.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q14" data-duration="720" data-qid="drive-q14">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q14')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q14')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q14</span>
             </div>
-            <h3 class="card-title">Static Rotor Resistance Speed Control of Wound-Rotor Induction Motor</h3>
+            <h3 class="card-title">Explain static rotor resistance control of a wound-rotor induction motor using a diode bridge rectifier and chopper.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=static+rotor+resistance+control+induction+motor+derivation+effective+resistance+chopper" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3243,6 +3901,10 @@ Because $\frac{V_1}{f}$ is held constant, the maximum breakdown torque $T_{max}$
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q14')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3253,7 +3915,10 @@ Because $\frac{V_1}{f}$ is held constant, the maximum breakdown torque $T_{max}$
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$R_{eff} = R_{ext} (1 - \delta), \quad s \propto \frac{R_2 + R_{eff}}{V_s^2} \quad (0 \le \delta \le 1)$$</div>
@@ -3304,14 +3969,22 @@ This mathematical result proves that varying the chopper duty ratio $\delta$ alt
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q14b" data-marks="7" data-title="slip power recovery schemes: static kramer vs static scherbius systems">
+    <article class="question-card subject-drive" id="drive-q14b" data-marks="7" data-title="explain the working principle of slip power recovery schemes. compare static kramer drive with static scherbius drive.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q14b" data-duration="720" data-qid="drive-q14b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q14b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q14b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q14B</span>
             </div>
-            <h3 class="card-title">Slip Power Recovery Schemes: Static Kramer vs Static Scherbius Systems</h3>
+            <h3 class="card-title">Explain the working principle of slip power recovery schemes. Compare Static Kramer drive with Static Scherbius drive.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=slip+power+recovery+static+kramer+static+scherbius+drive+derivation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3321,6 +3994,10 @@ This mathematical result proves that varying the chopper duty ratio $\delta$ alt
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q14b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3331,7 +4008,10 @@ This mathematical result proves that varying the chopper duty ratio $\delta$ alt
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$P_{\text{slip}} = s P_g; \quad \text{Kramer: Diode rectifier + line inverter (sub-synchronous); Scherbius: Cycloconverter (sub/super-synchronous)}$$</div>
@@ -3380,14 +4060,22 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-drive" id="drive-q15" data-marks="3" data-title="true synchronous mode vs self-controlled mode in synchronous motor drives">
+    <article class="question-card subject-drive" id="drive-q15" data-marks="3" data-title="distinguish between true synchronous mode and self-controlled mode of inverter-fed synchronous motor drives.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q15" data-duration="300" data-qid="drive-q15">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q15')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q15')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q15</span>
             </div>
-            <h3 class="card-title">True Synchronous Mode vs Self-Controlled Mode in Synchronous Motor Drives</h3>
+            <h3 class="card-title">Distinguish between true synchronous mode and self-controlled mode of inverter-fed synchronous motor drives.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=true+synchronous+mode+vs+self+controlled+mode+synchronous+motor+drive" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3397,6 +4085,10 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q15')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3407,7 +4099,10 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{True Sync: Inverter frequency set independently } \implies \text{Hunting/Stalling risk; Self-Controlled: Fired via Rotor Sensor } \implies \text{No Hunting}$$</div>
@@ -3439,14 +4134,22 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q15b" data-marks="3" data-title="load-commutated inverter (lci) fed synchronous motor drives">
+    <article class="question-card subject-drive" id="drive-q15b" data-marks="3" data-title="explain the operation of a load-commutated inverter (lci) fed synchronous motor drive at leading power factor.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-drive-q15b" data-duration="300" data-qid="drive-q15b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q15b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q15b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: DRIVE-Q15B</span>
             </div>
-            <h3 class="card-title">Load-Commutated Inverter (LCI) Fed Synchronous Motor Drives</h3>
+            <h3 class="card-title">Explain the operation of a Load-Commutated Inverter (LCI) fed synchronous motor drive at leading power factor.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=load+commutated+inverter+LCI+synchronous+motor+drive+operation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3456,6 +4159,10 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q15b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3466,7 +4173,10 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Leading Power Factor } (\cos\phi > 0 \text{ leading}) \implies \text{Motor Back-EMF naturally commutates thyristor inverter switches}$$</div>
@@ -3498,14 +4208,22 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q16" data-marks="7" data-title="mathematical derivation of clarke and park coordinate reference frame transformations">
+    <article class="question-card subject-drive" id="drive-q16" data-marks="7" data-title="derive clarke and park coordinate reference frame transformations from three-phase stationary (a-b-c) to rotating (d-q) reference frame.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q16" data-duration="720" data-qid="drive-q16">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q16')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q16')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q16</span>
             </div>
-            <h3 class="card-title">Mathematical Derivation of Clarke and Park Coordinate Reference Frame Transformations</h3>
+            <h3 class="card-title">Derive Clarke and Park coordinate reference frame transformations from three-phase stationary (a-b-c) to rotating (d-q) reference frame.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=clarke+park+transformation+derivation+3+phase+to+dq+synchronous+frame" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3515,6 +4233,10 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q16')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3525,7 +4247,10 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\begin{bmatrix} x_\alpha \\ x_\beta \end{bmatrix} = \frac{2}{3}\begin{bmatrix} 1 & -\frac{1}{2} & -\frac{1}{2} \\ 0 & \frac{\sqrt{3}}{2} & -\frac{\sqrt{3}}{2} \end{bmatrix}\begin{bmatrix} x_a \\ x_b \\ x_c \end{bmatrix}, \quad \begin{bmatrix} x_d \\ x_q \end{bmatrix} = \begin{bmatrix} \cos\theta_e & \sin\theta_e \\ -\sin\theta_e & \cos\theta_e \end{bmatrix}\begin{bmatrix} x_\alpha \\ x_\beta \end{bmatrix}$$</div>
@@ -3572,14 +4297,22 @@ $$\begin{bmatrix} v_\alpha \\ v_\beta \end{bmatrix} = \begin{bmatrix} \cos(\thet
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q17" data-marks="7" data-title="space vector pulse width modulation (svpwm): principles, sector dwell times and dc bus utilization">
+    <article class="question-card subject-drive" id="drive-q17" data-marks="7" data-title="explain the principle of space vector pulse width modulation (svpwm). derive sector dwell times and explain switching sequence.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q17" data-duration="720" data-qid="drive-q17">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q17')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q17')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q17</span>
             </div>
-            <h3 class="card-title">Space Vector Pulse Width Modulation (SVPWM): Principles, Sector Dwell Times and DC Bus Utilization</h3>
+            <h3 class="card-title">Explain the principle of Space Vector Pulse Width Modulation (SVPWM). Derive sector dwell times and explain switching sequence.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=space+vector+PWM+SVPWM+sector+dwell+time+calculation+inverter+derivation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3589,6 +4322,10 @@ $$\begin{bmatrix} v_\alpha \\ v_\beta \end{bmatrix} = \begin{bmatrix} \cos(\thet
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q17')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3599,7 +4336,10 @@ $$\begin{bmatrix} v_\alpha \\ v_\beta \end{bmatrix} = \begin{bmatrix} \cos(\thet
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$V_{ref} = \frac{T_1}{T_s}V_1 + \frac{T_2}{T_s}V_2 + \frac{T_0}{T_s}V_0, \quad V_{out,\max} = \frac{V_{dc}}{\sqrt{3}} \approx 0.577 V_{dc} \quad (15.5\% \text{ higher than SPWM})$$</div>
@@ -3653,14 +4393,22 @@ This proves that Space Vector PWM yields a 15.47 percent increase in output volt
     </article>
     
 
-    <article class="question-card subject-drive" id="drive-q18" data-marks="7" data-title="field-oriented control (vector control) of three-phase induction motors">
+    <article class="question-card subject-drive" id="drive-q18" data-marks="7" data-title="explain the principle of field-oriented control (vector control) of a three-phase induction motor drive with block diagram.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-drive-q18" data-duration="720" data-qid="drive-q18">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q18')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('drive-q18')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: DRIVE-Q18</span>
             </div>
-            <h3 class="card-title">Field-Oriented Control (Vector Control) of Three-Phase Induction Motors</h3>
+            <h3 class="card-title">Explain the principle of Field-Oriented Control (Vector Control) of a three-phase induction motor drive with block diagram.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=field+oriented+control+vector+control+induction+motor+block+diagram+derivation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3670,6 +4418,10 @@ This proves that Space Vector PWM yields a 15.47 percent increase in output volt
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('drive-q18')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3680,7 +4432,10 @@ This proves that Space Vector PWM yields a 15.47 percent increase in output volt
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\psi_{rq} = 0 \implies \psi_r = \psi_{rd} = L_m i_{sd}, \qquad T_e = \frac{3}{2} P \frac{L_m}{L_r} \psi_{rd} i_{sq} \propto i_{sd} \cdot i_{sq}$$</div>
@@ -3766,6 +4521,145 @@ $$\omega_{sl} = \frac{L_m}{\tau_r \psi_r} i_{qs} = \frac{R_r}{L_r} \frac{i_{qs}}
             btn.addEventListener('click', () => setTheme(btn.getAttribute('data-theme-value')));
         });
         setTheme(localStorage.getItem(THEME_STORAGE_KEY) || 'dark');
+
+        // Interactive Exam Countdown Timers
+        const cardTimers = {};
+
+        function formatTimerMMSS(seconds) {
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        function toggleCardTimer(qid) {
+            const widget = document.getElementById('timer-' + qid);
+            if (!widget) return;
+            const duration = parseInt(widget.getAttribute('data-duration') || '300', 10);
+            
+            if (!cardTimers[qid]) {
+                cardTimers[qid] = {
+                    duration: duration,
+                    remaining: duration,
+                    intervalId: null,
+                    state: 'idle'
+                };
+            }
+            
+            const timer = cardTimers[qid];
+            const displaySpan = widget.querySelector('.timer-display');
+            const actionSpan = widget.querySelector('.timer-action');
+            const resetBtn = widget.querySelector('.timer-reset-btn');
+
+            if (timer.state === 'running') {
+                clearInterval(timer.intervalId);
+                timer.intervalId = null;
+                timer.state = 'paused';
+                actionSpan.textContent = 'Resume';
+                widget.classList.remove('timer-running');
+                widget.classList.add('timer-paused');
+            } else {
+                if (timer.state === 'expired') {
+                    timer.remaining = timer.duration;
+                    widget.classList.remove('timer-expired');
+                }
+                timer.state = 'running';
+                actionSpan.textContent = 'Pause';
+                if (resetBtn) resetBtn.style.display = 'inline-flex';
+                widget.classList.remove('timer-paused');
+                widget.classList.add('timer-running');
+
+                timer.intervalId = setInterval(() => {
+                    timer.remaining--;
+                    displaySpan.textContent = formatTimerMMSS(timer.remaining);
+
+                    if (timer.remaining <= 60 && timer.remaining > 0) {
+                        widget.classList.add('timer-warning');
+                    }
+
+                    if (timer.remaining <= 0) {
+                        clearInterval(timer.intervalId);
+                        timer.intervalId = null;
+                        timer.state = 'expired';
+                        displaySpan.textContent = '00:00';
+                        actionSpan.textContent = "Time's Up!";
+                        widget.classList.remove('timer-running', 'timer-warning');
+                        widget.classList.add('timer-expired');
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetCardTimer(qid) {
+            const widget = document.getElementById('timer-' + qid);
+            if (!widget || !cardTimers[qid]) return;
+            const timer = cardTimers[qid];
+            if (timer.intervalId) {
+                clearInterval(timer.intervalId);
+                timer.intervalId = null;
+            }
+            timer.remaining = timer.duration;
+            timer.state = 'idle';
+
+            const displaySpan = widget.querySelector('.timer-display');
+            const actionSpan = widget.querySelector('.timer-action');
+            const resetBtn = widget.querySelector('.timer-reset-btn');
+
+            displaySpan.textContent = formatTimerMMSS(timer.duration);
+            actionSpan.textContent = 'Start';
+            if (resetBtn) resetBtn.style.display = 'none';
+            widget.classList.remove('timer-running', 'timer-paused', 'timer-warning', 'timer-expired');
+        }
+
+        // Answer Collapse / Expand Toggle
+        function toggleAnswerCard(qid) {
+            const card = document.getElementById(qid);
+            if (!card) return;
+            const isCollapsed = card.classList.toggle('answer-collapsed');
+            const toggleBtn = card.querySelector('.btn-toggle-answer');
+            if (toggleBtn) {
+                if (isCollapsed) {
+                    toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> <span class="toggle-text">Show Answer</span>';
+                    toggleBtn.setAttribute('title', 'Show elaborated answer');
+                } else {
+                    toggleBtn.innerHTML = '<span class="toggle-icon">▲</span> <span class="toggle-text">Hide Answer</span>';
+                    toggleBtn.setAttribute('title', 'Hide elaborated answer');
+                }
+            }
+        }
+
+        let allAnswersCollapsed = false;
+        function toggleAllAnswers() {
+            allAnswersCollapsed = !allAnswersCollapsed;
+            const cards = document.querySelectorAll('.question-card');
+            const globalBtns = document.querySelectorAll('.global-collapse-btn');
+            
+            cards.forEach(card => {
+                const toggleBtn = card.querySelector('.btn-toggle-answer');
+                if (allAnswersCollapsed) {
+                    card.classList.add('answer-collapsed');
+                    if (toggleBtn) {
+                        toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> <span class="toggle-text">Show Answer</span>';
+                        toggleBtn.setAttribute('title', 'Show elaborated answer');
+                    }
+                } else {
+                    card.classList.remove('answer-collapsed');
+                    if (toggleBtn) {
+                        toggleBtn.innerHTML = '<span class="toggle-icon">▲</span> <span class="toggle-text">Hide Answer</span>';
+                        toggleBtn.setAttribute('title', 'Hide elaborated answer');
+                    }
+                }
+            });
+
+            globalBtns.forEach(btn => {
+                if (allAnswersCollapsed) {
+                    btn.innerHTML = '<span class="btn-icon">📖</span> <span class="btn-text">Expand All Answers</span>';
+                    btn.classList.add('active-collapsed');
+                } else {
+                    btn.innerHTML = '<span class="btn-icon">👁️</span> <span class="btn-text">Collapse All Answers</span>';
+                    btn.classList.remove('active-collapsed');
+                }
+            });
+        }
     </script>
 
     <footer class="site-footer">

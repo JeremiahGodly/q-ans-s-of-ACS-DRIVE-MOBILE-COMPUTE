@@ -772,6 +772,94 @@ main.content-container {
     line-height: 1.7;
 }
 
+/* 3-Hour Exam Writing Strategy Banner */
+.exam-strategy-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.15rem;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-left: 5px solid #38bdf8;
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 2.25rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .exam-strategy-banner {
+    background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+    border-color: #bae6fd;
+    border-left-color: #0284c7;
+}
+
+[data-theme="warm"] .exam-strategy-banner {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(180, 83, 9, 0.05) 100%);
+    border-color: rgba(245, 158, 11, 0.35);
+    border-left-color: #f59e0b;
+}
+
+[data-theme="forest"] .exam-strategy-banner {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+    border-color: rgba(52, 211, 153, 0.35);
+    border-left-color: #10b981;
+}
+
+[data-theme="sage"] .exam-strategy-banner {
+    background: linear-gradient(135deg, #f0fdfa 0%, #f4f8f6 100%);
+    border-color: #99f6e4;
+    border-left-color: #0d9488;
+}
+
+[data-theme="oled"] .exam-strategy-banner {
+    background: #080808;
+    border-color: #1e293b;
+    border-left-color: #38bdf8;
+}
+
+.strategy-icon {
+    font-size: 1.85rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.strategy-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 0.4rem 0;
+    letter-spacing: -0.01em;
+}
+
+.strategy-content p {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: var(--text-body);
+    margin: 0;
+}
+
+.strategy-content strong {
+    color: var(--text-main);
+}
+
+@media (max-width: 640px) {
+    .exam-strategy-banner {
+        padding: 0.85rem 1rem;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+    .strategy-icon {
+        font-size: 1.4rem;
+    }
+    .strategy-content h4 {
+        font-size: 0.94rem;
+    }
+    .strategy-content p {
+        font-size: 0.86rem;
+        line-height: 1.55;
+    }
+}
+
 /* Module Sections */
 .module-section {
     margin-bottom: 3.5rem;
@@ -895,6 +983,34 @@ main.content-container {
     border: 1px solid var(--border-subtle);
 }
 
+.badge-time {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+[data-theme="light"] .badge-time {
+    background: #ecfdf5;
+    color: #047857;
+    border-color: #6ee7b7;
+}
+
+[data-theme="sage"] .badge-time {
+    background: #e6f4f1;
+    color: #0f766e;
+    border-color: #99f6e4;
+}
+
+[data-theme="oled"] .badge-time {
+    background: #002b1c;
+    color: #34d399;
+    border-color: #059669;
+}
+
 .card-title {
     font-size: 1.35rem;
     font-weight: 700;
@@ -906,7 +1022,179 @@ main.content-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 0.75rem;
     margin-top: 0.25rem;
+    flex-wrap: wrap;
+}
+
+/* Hide/Show Answer Toggle Button */
+.btn-toggle-answer {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.52rem 0.95rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: var(--font-main);
+    color: var(--text-main);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px var(--card-shadow);
+}
+
+.btn-toggle-answer:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+    border-color: var(--border-focus);
+    transform: translateY(-1px);
+}
+
+.question-card.answer-collapsed {
+    padding-bottom: 0.85rem;
+}
+
+.question-card.answer-collapsed .card-header {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.question-card.answer-collapsed .card-body {
+    display: none !important;
+}
+
+/* Card Interactive Timer Widget */
+.card-timer-widget {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--bg-surface);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 6px;
+    padding: 0.15rem 0.35rem;
+    transition: all 0.25s ease;
+}
+
+.timer-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #10b981;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.timer-toggle-btn:hover {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.timer-reset-btn {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.35rem;
+    color: var(--text-muted);
+}
+.timer-reset-btn:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+}
+
+.timer-action {
+    font-family: var(--font-main);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(16, 185, 129, 0.2);
+    padding: 0.1rem 0.38rem;
+    border-radius: 4px;
+}
+
+/* Timer State: Running */
+.card-timer-widget.timer-running {
+    border-color: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+    background: rgba(16, 185, 129, 0.12);
+    animation: timerPulse 2s infinite ease-in-out;
+}
+
+.card-timer-widget.timer-running .timer-action {
+    background: #10b981;
+    color: #064e3b;
+    font-weight: 800;
+}
+
+/* Timer State: Paused */
+.card-timer-widget.timer-paused {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+.card-timer-widget.timer-paused .timer-btn {
+    color: #f59e0b;
+}
+.card-timer-widget.timer-paused .timer-action {
+    background: #f59e0b;
+    color: #451a03;
+}
+
+/* Timer State: Warning (< 1 min) */
+.card-timer-widget.timer-warning {
+    border-color: #f59e0b;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    background: rgba(245, 158, 11, 0.15);
+}
+.card-timer-widget.timer-warning .timer-btn {
+    color: #fbbf24;
+}
+.card-timer-widget.timer-warning .timer-action {
+    background: #f59e0b;
+    color: #451a03;
+}
+
+/* Timer State: Expired (Time's Up) */
+.card-timer-widget.timer-expired {
+    border-color: #ef4444;
+    box-shadow: 0 0 14px rgba(239, 68, 68, 0.5);
+    background: rgba(239, 68, 68, 0.18);
+    animation: expiredFlash 1s infinite alternate;
+}
+.card-timer-widget.timer-expired .timer-btn {
+    color: #f87171;
+}
+.card-timer-widget.timer-expired .timer-action {
+    background: #ef4444;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+@keyframes timerPulse {
+    0%, 100% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.25); }
+    50% { box-shadow: 0 0 14px rgba(16, 185, 129, 0.5); }
+}
+
+@keyframes expiredFlash {
+    from { opacity: 1; }
+    to { opacity: 0.65; }
+}
+
+/* Global Collapse All Button */
+.global-collapse-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.global-collapse-btn.active-collapsed {
+    border-color: var(--border-focus);
+    background: var(--bg-card);
+    color: var(--text-main);
 }
 
 /* YouTube Link Button */
@@ -1065,6 +1353,52 @@ main.content-container {
     background: #ccfbf1;
     color: #115e59;
     border-color: #5eead4;
+}
+
+.byheart-badges-group {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.byheart-time-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    padding: 0.22rem 0.6rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+[data-theme="light"] .byheart-time-badge {
+    background: #e0f2fe;
+    color: #0284c7;
+    border-color: #7dd3fc;
+}
+
+[data-theme="forest"] .byheart-time-badge {
+    background: rgba(52, 211, 153, 0.15);
+    color: #34d399;
+    border-color: rgba(52, 211, 153, 0.35);
+}
+
+[data-theme="sage"] .byheart-time-badge {
+    background: #ccfbf1;
+    color: #0f766e;
+    border-color: #5eead4;
+}
+
+[data-theme="oled"] .byheart-time-badge {
+    background: #001f33;
+    color: #38bdf8;
+    border-color: #0284c7;
 }
 
 .byheart-body {
@@ -1829,11 +2163,27 @@ body {
                 </button>
             </div>
 
-            <a href="index.html" class="standalone-back-btn" title="Return to Master Portal">← 3-in-1 Portal</a>
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <button class="filter-btn global-collapse-btn" id="btn-toggle-all-answers" onclick="toggleAllAnswers()" title="Collapse all answers for Self-Test / Flashcard Exam Practice">
+                    <span class="btn-icon">👁️</span>
+                    <span class="btn-text">Collapse All Answers</span>
+                </button>
+                <a href="index.html" class="standalone-back-btn" title="Return to Master Portal">← 3-in-1 Portal</a>
+            </div>
         </div>
     </header>
 
     <main class="content-container">
+        <!-- 3-Hour Exam Writing Strategy Banner -->
+        <section class="exam-strategy-banner" aria-label="3-Hour Exam Time Budget">
+            <div class="strategy-icon" aria-hidden="true">⏱️</div>
+            <div class="strategy-content">
+                <h4>3-Hour Exam Time Budget (20 Questions / 100 Marks Strategy)</h4>
+                <p><strong>Part A (10 Short Answers &times; 3 Marks = 30M):</strong> Allocate <strong>5 mins per answer</strong> (50 mins total) &mdash; target &frac12; to 1 page highlighting the key formula and core definition.<br>
+                <strong>Part B (10 Essay Answers &times; 7 Marks = 70M):</strong> Allocate <strong>12 mins per answer</strong> (120 mins total) &mdash; target 1.5 to 2 pages with schematic circuit/block diagrams and step-by-step derivations.<br>
+                <strong>Strategy &amp; Review Buffer (10 mins):</strong> 5 mins at start for question choice planning + 5 mins at end for question numbering and equation verification.</p>
+            </div>
+        </section>
         
     <div class="subject-hero hero-acs">
         <span class="hero-badge">Course Code: EET401</span>
@@ -1849,14 +2199,22 @@ body {
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-acs" id="acs-q1" data-marks="3" data-title="state space concepts: state, state variables, state vector, and state space">
+    <article class="question-card subject-acs" id="acs-q1" data-marks="3" data-title="explain the following state space concepts with appropriate mathematical expressions: (i) state, (ii) state variables, (iii) state vector, and (iv) state space.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q1" data-duration="300" data-qid="acs-q1">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q1')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q1')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q1</span>
             </div>
-            <h3 class="card-title">State Space Concepts: State, State Variables, State Vector, and State Space</h3>
+            <h3 class="card-title">Explain the following state space concepts with appropriate mathematical expressions: (i) State, (ii) State variables, (iii) State vector, and (iv) State space.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=state+space+analysis+state+variables+state+vector+state+space+control+systems" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -1866,6 +2224,10 @@ body {
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q1')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -1876,11 +2238,14 @@ body {
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
-                    <div class="byheart-eq">$$\dot{x}(t) = A x(t) + B u(t), \quad y(t) = C x(t) + D u(t)$$</div>
-                    <p class="byheart-text">The <strong>state</strong> of a dynamical system is the minimal set of variables $x_1(t), \dots, x_n(t)$ whose knowledge at $t = t_0$, along with the input $u(t)$ for $t \ge t_0$, completely determines the system's behavior for all future time $t > t_0$.</p>
+                    <div class="byheart-eq">$$\dot{\mathbf{x}}(t) = A \mathbf{x}(t) + B \mathbf{u}(t), \quad \mathbf{y}(t) = C \mathbf{x}(t) + D \mathbf{u}(t), \quad \mathbf{x}(t) \in \mathbb{R}^n$$</div>
+                    <p class="byheart-text"><strong>(i) State:</strong> The minimal set of variables $x_1(t), \dots, x_n(t)$ whose values at $t_0$, together with input $u(t)$ for $t \ge t_0$, uniquely determine the system state and output for all future time $t > t_0$.<br><strong>(ii) State Variables:</strong> The smallest set of linearly independent variables $\{x_i(t)\}$ representing dynamic energy storage states (inductor currents, capacitor voltages, position, velocity).<br><strong>(iii) State Vector:</strong> Column vector $\mathbf{x}(t) = [x_1(t), x_2(t), \dots, x_n(t)]^T \in \mathbb{R}^n$ grouping all $n$ state variables.<br><strong>(iv) State Space:</strong> The $n$-dimensional Euclidean vector space $\mathbb{R}^n$ whose orthogonal coordinate axes are formed by the state variables $x_1, x_2, \dots, x_n$.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -1908,14 +2273,22 @@ body {
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q2" data-marks="3" data-title="phase variables and continuous-time input-output formulation">
+    <article class="question-card subject-acs" id="acs-q2" data-marks="3" data-title="what are phase variables? formulate the continuous-time state-space representation of an n-th order differential equation using phase variables.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q2" data-duration="300" data-qid="acs-q2">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q2')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q2')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q2</span>
             </div>
-            <h3 class="card-title">Phase Variables and Continuous-Time Input-Output Formulation</h3>
+            <h3 class="card-title">What are phase variables? Formulate the continuous-time state-space representation of an n-th order differential equation using phase variables.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=phase+variables+state+space+modeling+control+systems" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -1925,6 +2298,10 @@ body {
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q2')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -1935,11 +2312,14 @@ body {
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$x_1 = y, \; x_2 = \dot{y}, \; \dots, \; x_n = y^{(n-1)} \implies \dot{x}_n = -\sum_{i=0}^{n-1} a_i x_{i+1} + b_0 u$$</div>
-                    <p class="byheart-text">Phase variables are defined as the output variable and its successive $(n-1)$ time derivatives, yielding a companion matrix $A$ where the bottom row consists of the negated coefficients of the governing differential equation.</p>
+                    <p class="byheart-text"><strong>Phase Variables Definition:</strong> State variables defined as the output variable and its successive $(n-1)$ time derivatives ($x_1=y, x_2=\dot{y}, \dots, x_n=y^{(n-1)}$).<br><strong>Companion Form:</strong> Produces companion matrix $A$ having 1s along the first super-diagonal and negated differential equation coefficients $[-a_0, -a_1, \dots, -a_{n-1}]$ along the bottom row.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -1967,14 +2347,22 @@ body {
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q3" data-marks="3" data-title="block diagram illustration of continuous-time lti state and output equations">
+    <article class="question-card subject-acs" id="acs-q3" data-marks="3" data-title="draw and explain the general block diagram representation of a continuous-time lti system described by state and output equations.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q3" data-duration="300" data-qid="acs-q3">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q3')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q3')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q3</span>
             </div>
-            <h3 class="card-title">Block Diagram Illustration of Continuous-Time LTI State and Output Equations</h3>
+            <h3 class="card-title">Draw and explain the general block diagram representation of a continuous-time LTI system described by state and output equations.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=block+diagram+state+equation+continuous+time+LTI+system" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -1984,6 +2372,10 @@ body {
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q3')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -1994,11 +2386,14 @@ body {
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\dot{x}(t) = A x(t) + B u(t), \quad y(t) = C x(t) + D u(t)$$</div>
-                    <p class="byheart-text">In a state-space block diagram, state variables $x_i(t)$ are strictly the physical outputs of integrators ($1/s$), driven by integrator inputs $\dot{x}_i(t)$, with matrix $A$ providing internal state feedback and matrix $D$ providing direct input-to-output feedthrough.</p>
+                    <p class="byheart-text"><strong>Integrators:</strong> State variables $x_i(t)$ are strictly the physical outputs of integrators ($1/s$), driven by derivative inputs $\dot{x}_i(t)$.<br><strong>Matrix Functions:</strong> Matrix $A$ ($n\times n$) provides internal state feedback, $B$ ($n\times m$) distributes external inputs, $C$ ($p\times n$) observes states to outputs, and $D$ ($p\times m$) provides direct feedthrough.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -2026,14 +2421,22 @@ body {
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q4" data-marks="3" data-title="justification of non-uniqueness of state space models via similarity transformation">
+    <article class="question-card subject-acs" id="acs-q4" data-marks="3" data-title="show that the state space representation of a dynamic system is not unique using similarity transformations. prove that eigenvalues remain invariant.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q4" data-duration="300" data-qid="acs-q4">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q4')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q4')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q4</span>
             </div>
-            <h3 class="card-title">Justification of Non-Uniqueness of State Space Models via Similarity Transformation</h3>
+            <h3 class="card-title">Show that the state space representation of a dynamic system is not unique using similarity transformations. Prove that eigenvalues remain invariant.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=non+uniqueness+of+state+space+similarity+transformation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2043,6 +2446,10 @@ body {
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q4')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2053,11 +2460,14 @@ body {
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
-                    <div class="byheart-eq">$$\bar{A} = P^{-1} A P, \quad \bar{B} = P^{-1} B, \quad \bar{C} = C P, \quad \bar{D} = D$$</div>
-                    <p class="byheart-text">State space models are non-unique because any non-singular coordinate transformation $x = P z$ creates an equivalent system that leaves the eigenvalues and transfer function $G(s) = C(sI-A)^{-1}B + D$ invariant.</p>
+                    <div class="byheart-eq">$$\bar{A} = P^{-1} A P, \quad \bar{B} = P^{-1} B, \quad \bar{C} = C P, \quad \bar{D} = D \implies \det(sI - \bar{A}) = \det(sI - A)$$</div>
+                    <p class="byheart-text"><strong>Non-Uniqueness:</strong> Any non-singular similarity transformation $x = P z$ creates an equivalent valid state space representation.<br><strong>System Invariants:</strong> System eigenvalues (roots of $\det(sI-A)=0$) and the transfer function $G(s) = C(sI-A)^{-1}B + D$ remain strictly invariant under coordinate transformations.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -2085,14 +2495,22 @@ body {
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q4b" data-marks="3" data-title="derivation of transfer function from state space equations">
+    <article class="question-card subject-acs" id="acs-q4b" data-marks="3" data-title="derive the transfer function matrix g(s) of a continuous-time lti system from its state-space model.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q4b" data-duration="300" data-qid="acs-q4b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q4b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q4b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q4B</span>
             </div>
-            <h3 class="card-title">Derivation of Transfer Function from State Space Equations</h3>
+            <h3 class="card-title">Derive the transfer function matrix G(s) of a continuous-time LTI system from its state-space model.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=derivation+of+transfer+function+from+state+space+model+C(sI-A)^-1B+D" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2102,6 +2520,10 @@ body {
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q4b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2112,7 +2534,10 @@ body {
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$G(s) = \frac{Y(s)}{U(s)} = C (sI - A)^{-1} B + D = \frac{C \operatorname{adj}(sI - A) B}{\det(sI - A)} + D$$</div>
@@ -2149,14 +2574,22 @@ This formulation reveals that the poles of the transfer function $G(s)$ are prec
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q5" data-marks="7" data-title="comprehensive state-space modeling of a series rlc circuit">
+    <article class="question-card subject-acs" id="acs-q5" data-marks="7" data-title="derive the state-space model of a series rlc circuit excited by an input voltage source, selecting the inductor current and capacitor voltage as state variables.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q5" data-duration="720" data-qid="acs-q5">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q5')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q5')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q5</span>
             </div>
-            <h3 class="card-title">Comprehensive State-Space Modeling of a Series RLC Circuit</h3>
+            <h3 class="card-title">Derive the state-space model of a series RLC circuit excited by an input voltage source, selecting the inductor current and capacitor voltage as state variables.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=state+space+modeling+series+RLC+circuit+derivation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2166,6 +2599,10 @@ This formulation reveals that the poles of the transfer function $G(s)$ are prec
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q5')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2176,7 +2613,10 @@ This formulation reveals that the poles of the transfer function $G(s)$ are prec
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\begin{bmatrix} \dot{i}_L \\ \dot{v}_C \end{bmatrix} = \begin{bmatrix} -R/L & -1/L \\ 1/C & 0 \end{bmatrix} \begin{bmatrix} i_L \\ v_C \end{bmatrix} + \begin{bmatrix} 1/L \\ 0 \end{bmatrix} v_{in}(t)$$</div>
@@ -2224,14 +2664,22 @@ The characteristic polynomial of the unforced system is obtained from $\det(sI -
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q6" data-marks="7" data-title="electromechanical derivation of the state model of an armature-controlled dc motor">
+    <article class="question-card subject-acs" id="acs-q6" data-marks="7" data-title="derive the electromechanical state-space model of an armature-controlled dc servomotor with necessary differential equations and block diagram.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q6" data-duration="720" data-qid="acs-q6">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q6')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q6')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q6</span>
             </div>
-            <h3 class="card-title">Electromechanical Derivation of the State Model of an Armature-Controlled DC Motor</h3>
+            <h3 class="card-title">Derive the electromechanical state-space model of an armature-controlled DC servomotor with necessary differential equations and block diagram.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=state+model+armature+controlled+DC+motor+derivation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2241,6 +2689,10 @@ The characteristic polynomial of the unforced system is obtained from $\det(sI -
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q6')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2251,7 +2703,10 @@ The characteristic polynomial of the unforced system is obtained from $\det(sI -
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\begin{bmatrix} \frac{di_a}{dt} \\ \frac{d\omega}{dt} \\ \frac{d\theta}{dt} \end{bmatrix} = \begin{bmatrix} -R_a/L_a & -K_b/L_a & 0 \\ K_t/J & -B/J & 0 \\ 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} i_a \\ \omega \\ \theta \end{bmatrix} + \begin{bmatrix} 1/L_a \\ 0 \\ 0 \end{bmatrix} v_a(t)$$</div>
@@ -2298,14 +2753,22 @@ $$\begin{bmatrix} \dot{i}_a(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q7" data-marks="7" data-title="canonical forms: derivation of diagonal and controllable forms from transfer functions">
+    <article class="question-card subject-acs" id="acs-q7" data-marks="7" data-title="derive the controllable canonical form and diagonal (jordan) canonical form from a given system transfer function.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q7" data-duration="720" data-qid="acs-q7">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q7')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q7')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q7</span>
             </div>
-            <h3 class="card-title">Canonical Forms: Derivation of Diagonal and Controllable Forms from Transfer Functions</h3>
+            <h3 class="card-title">Derive the controllable canonical form and diagonal (Jordan) canonical form from a given system transfer function.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=diagonal+canonical+form+transfer+function+state+space" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2315,6 +2778,10 @@ $$\begin{bmatrix} \dot{i}_a(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q7')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2325,7 +2792,10 @@ $$\begin{bmatrix} \dot{i}_a(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\Lambda = M^{-1} A M = \operatorname{diag}(\lambda_1, \lambda_2, \dots, \lambda_n), \quad \dot{z} = \Lambda z + M^{-1} B u$$</div>
@@ -2380,14 +2850,22 @@ The beauty of the diagonal canonical form is immediately evident: the system mat
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q7b" data-marks="7" data-title="state-space modeling of a field-controlled dc servomotor">
+    <article class="question-card subject-acs" id="acs-q7b" data-marks="7" data-title="derive the state space equations for a field-controlled dc motor and obtain its overall transfer function.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q7b" data-duration="720" data-qid="acs-q7b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q7b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q7b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q7B</span>
             </div>
-            <h3 class="card-title">State-Space Modeling of a Field-Controlled DC Servomotor</h3>
+            <h3 class="card-title">Derive the state space equations for a field-controlled DC motor and obtain its overall transfer function.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=field+controlled+DC+motor+state+space+model+derivation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2397,6 +2875,10 @@ The beauty of the diagonal canonical form is immediately evident: the system mat
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q7b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2407,7 +2889,10 @@ The beauty of the diagonal canonical form is immediately evident: the system mat
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\begin{bmatrix} \frac{di_f}{dt} \\ \frac{d\omega}{dt} \end{bmatrix} = \begin{bmatrix} -R_f/L_f & 0 \\ K_{tf}/J & -B/J \end{bmatrix} \begin{bmatrix} i_f \\ \omega \end{bmatrix} + \begin{bmatrix} 1/L_f \\ 0 \end{bmatrix} v_f(t)$$</div>
@@ -2464,14 +2949,22 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-acs" id="acs-q8" data-marks="3" data-title="derivation of solution of autonomous state equations using laplace transforms">
+    <article class="question-card subject-acs" id="acs-q8" data-marks="3" data-title="derive the solution of homogeneous (autonomous) continuous-time state equations using the laplace transform method.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q8" data-duration="300" data-qid="acs-q8">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q8')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q8')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q8</span>
             </div>
-            <h3 class="card-title">Derivation of Solution of Autonomous State Equations using Laplace Transforms</h3>
+            <h3 class="card-title">Derive the solution of homogeneous (autonomous) continuous-time state equations using the Laplace transform method.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=solution+autonomous+state+equation+laplace+transform+resolvent+matrix" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2481,6 +2974,10 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q8')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2491,7 +2988,10 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$x(t) = \mathcal{L}^{-1}\{(sI - A)^{-1}\} x(0) = e^{At} x(0) = \Phi(t) x(0)$$</div>
@@ -2523,14 +3023,22 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q9" data-marks="3" data-title="properties of the state transition matrix: statement and proofs">
+    <article class="question-card subject-acs" id="acs-q9" data-marks="3" data-title="define state transition matrix. state and prove any four important properties of the state transition matrix.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q9" data-duration="300" data-qid="acs-q9">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q9')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q9')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q9</span>
             </div>
-            <h3 class="card-title">Properties of the State Transition Matrix: Statement and Proofs</h3>
+            <h3 class="card-title">Define state transition matrix. State and prove any four important properties of the state transition matrix.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=properties+of+state+transition+matrix+proof+control+systems" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2540,6 +3048,10 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q9')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2550,11 +3062,14 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
-                    <div class="byheart-eq">$$\Phi(0) = I, \quad \Phi^{-1}(t) = \Phi(-t), \quad \Phi(t_1 + t_2) = \Phi(t_1)\Phi(t_2), \quad [\Phi(t)]^k = \Phi(kt), \quad \dot{\Phi}(t) = A\Phi(t)$$</div>
-                    <p class="byheart-text">The state transition matrix $\Phi(t) = e^{At}$ satisfies group transition properties that map states continuously and reversibly across any sequence of time intervals.</p>
+                    <div class="byheart-eq">$$\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\} = \sum_{k=0}^{\infty} \frac{A^k t^k}{k!}$$</div>
+                    <p class="byheart-text"><strong>Key Properties of State Transition Matrix:</strong><br><strong>1. Identity:</strong> $\Phi(0) = e^0 = I$<br><strong>2. Inverse / Time Reversal:</strong> $\Phi^{-1}(t) = \Phi(-t)$<br><strong>3. Group Property:</strong> $\Phi(t_1 + t_2) = \Phi(t_1)\Phi(t_2)$<br><strong>4. Power Property:</strong> $[\Phi(t)]^k = \Phi(kt)$<br><strong>5. Derivative:</strong> $\dot{\Phi}(t) = A \Phi(t) = \Phi(t) A$</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -2583,14 +3098,22 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q9b" data-marks="3" data-title="discrete-time state space analysis: pulse transfer function and state equations">
+    <article class="question-card subject-acs" id="acs-q9b" data-marks="3" data-title="derive the pulse transfer function and discrete state transition solution for a discrete-time lti state model with zero-order hold (zoh).">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q9b" data-duration="300" data-qid="acs-q9b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q9b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q9b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q9B</span>
             </div>
-            <h3 class="card-title">Discrete-Time State Space Analysis: Pulse Transfer Function and State Equations</h3>
+            <h3 class="card-title">Derive the pulse transfer function and discrete state transition solution for a discrete-time LTI state model with Zero-Order Hold (ZOH).</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=discrete+time+state+space+pulse+transfer+function+difference+equation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2600,6 +3123,10 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q9b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2610,7 +3137,10 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$x(k+1) = G x(k) + H u(k), \quad G = e^{AT}, \quad H = \left(\int_0^T e^{A\tau} d\tau\right) B, \quad G(z) = C (zI - G)^{-1} H + D$$</div>
@@ -2644,14 +3174,22 @@ The pulse transfer function matrix is therefore defined as $G(z) = \frac{Y(z)}{U
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q10" data-marks="7" data-title="computation of state transition matrix using cayley-hamilton theorem for systems with repeated and distinct eigenvalues">
+    <article class="question-card subject-acs" id="acs-q10" data-marks="7" data-title="explain the computation of state transition matrix e^{at} using cayley-hamilton theorem for both distinct and repeated eigenvalues.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q10" data-duration="720" data-qid="acs-q10">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q10')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q10')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q10</span>
             </div>
-            <h3 class="card-title">Computation of State Transition Matrix using Cayley-Hamilton Theorem for Systems with Repeated and Distinct Eigenvalues</h3>
+            <h3 class="card-title">Explain the computation of state transition matrix e^{At} using Cayley-Hamilton theorem for both distinct and repeated eigenvalues.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=cayley+hamilton+theorem+state+transition+matrix+2x2+3x3+step+by+step" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2661,6 +3199,10 @@ The pulse transfer function matrix is therefore defined as $G(z) = \frac{Y(z)}{U
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q10')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2671,7 +3213,10 @@ The pulse transfer function matrix is therefore defined as $G(z) = \frac{Y(z)}{U
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$e^{At} = \sum_{k=0}^{n-1} \alpha_k(t) A^k, \quad \text{where } e^{\lambda_i t} = \sum_{k=0}^{n-1} \alpha_k(t) \lambda_i^k \quad (\text{for all eigenvalues } \lambda_i)$$</div>
@@ -2730,14 +3275,22 @@ Evaluating at $t = 0$ yields $e^{A \cdot 0} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q11" data-marks="7" data-title="complete solution of non-homogeneous state equations and step response calculation">
+    <article class="question-card subject-acs" id="acs-q11" data-marks="7" data-title="derive the complete solution of non-homogeneous continuous-time state equations and determine the step response expression.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q11" data-duration="720" data-qid="acs-q11">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q11')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q11')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q11</span>
             </div>
-            <h3 class="card-title">Complete Solution of Non-Homogeneous State Equations and Step Response Calculation</h3>
+            <h3 class="card-title">Derive the complete solution of non-homogeneous continuous-time state equations and determine the step response expression.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=complete+solution+non+homogeneous+state+equation+convolution+integral+step+response" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2747,6 +3300,10 @@ Evaluating at $t = 0$ yields $e^{A \cdot 0} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q11')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2757,7 +3314,10 @@ Evaluating at $t = 0$ yields $e^{A \cdot 0} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$x(t) = \underbrace{e^{A(t-t_0)} x(t_0)}_{\text{Zero-Input Response (ZIR)}} + \underbrace{\int_{t_0}^t e^{A(t-\tau)} B u(\tau) d\tau}_{\text{Zero-State Response (ZSR)}}$$</div>
@@ -2829,14 +3389,22 @@ This result illustrates an important physical insight: although the control inpu
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-acs" id="acs-q12" data-marks="3" data-title="kalman&#x27;s duality principle between controllability and observability">
+    <article class="question-card subject-acs" id="acs-q12" data-marks="3" data-title="state and explain kalman&#x27;s duality principle relating state controllability and state observability.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q12" data-duration="300" data-qid="acs-q12">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q12')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q12')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q12</span>
             </div>
-            <h3 class="card-title">Kalman's Duality Principle between Controllability and Observability</h3>
+            <h3 class="card-title">State and explain Kalman's duality principle relating state controllability and state observability.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=kalman+duality+principle+controllability+observability+proof" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2846,6 +3414,10 @@ This result illustrates an important physical insight: although the control inpu
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q12')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2856,7 +3428,10 @@ This result illustrates an important physical insight: although the control inpu
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Pair } (A, B) \text{ is controllable} \iff \text{Dual pair } (A^T, C^T) \text{ is observable, where } Q_o(A, C) = [Q_c(A^T, C^T)]^T$$</div>
@@ -2888,14 +3463,22 @@ This result illustrates an important physical insight: although the control inpu
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q13" data-marks="3" data-title="gilbert&#x27;s method for testing controllability and observability">
+    <article class="question-card subject-acs" id="acs-q13" data-marks="3" data-title="explain gilbert&#x27;s method for determining the state controllability and state observability of an lti continuous system.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q13" data-duration="300" data-qid="acs-q13">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q13')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q13')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q13</span>
             </div>
-            <h3 class="card-title">Gilbert's Method for Testing Controllability and Observability</h3>
+            <h3 class="card-title">Explain Gilbert's method for determining the state controllability and state observability of an LTI continuous system.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=gilberts+method+controllability+observability+distinct+repeated+eigenvalues" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2905,6 +3488,10 @@ This result illustrates an important physical insight: although the control inpu
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q13')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2915,7 +3502,10 @@ This result illustrates an important physical insight: although the control inpu
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\dot{z} = \Lambda z + \tilde{B} u, \quad y = \tilde{C} z + D u, \quad \text{where } \tilde{B} = M^{-1}B, \quad \tilde{C} = CM$$</div>
@@ -2947,14 +3537,22 @@ This result illustrates an important physical insight: although the control inpu
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q13b" data-marks="3" data-title="popov-belevitch-hautus (pbh) rank tests for controllability and observability">
+    <article class="question-card subject-acs" id="acs-q13b" data-marks="3" data-title="state and explain the popov-belevitch-hautus (pbh) rank tests for testing controllability and observability.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q13b" data-duration="300" data-qid="acs-q13b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q13b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q13b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q13B</span>
             </div>
-            <h3 class="card-title">Popov-Belevitch-Hautus (PBH) Rank Tests for Controllability and Observability</h3>
+            <h3 class="card-title">State and explain the Popov-Belevitch-Hautus (PBH) rank tests for testing controllability and observability.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=PBH+rank+test+controllability+observability+Hautus+test" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2964,6 +3562,10 @@ This result illustrates an important physical insight: although the control inpu
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q13b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2974,7 +3576,10 @@ This result illustrates an important physical insight: although the control inpu
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\operatorname{rank}[\lambda_i I - A \quad B] = n \quad (\text{Controllability}), \qquad \operatorname{rank}\begin{bmatrix} \lambda_i I - A \\ C \end{bmatrix} = n \quad (\text{Observability}) \quad \forall \lambda_i \in \sigma(A)$$</div>
@@ -3010,14 +3615,22 @@ Evaluating this rank at each eigenvalue $\lambda_i$, if $\text{rank}\begin{bmatr
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q14" data-marks="7" data-title="state feedback controller design by pole placement using ackermann&#x27;s formula">
+    <article class="question-card subject-acs" id="acs-q14" data-marks="7" data-title="explain the design of a state feedback controller by pole placement technique and derive ackermann&#x27;s formula.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q14" data-duration="720" data-qid="acs-q14">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q14')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q14')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q14</span>
             </div>
-            <h3 class="card-title">State Feedback Controller Design by Pole Placement using Ackermann's Formula</h3>
+            <h3 class="card-title">Explain the design of a state feedback controller by pole placement technique and derive Ackermann's formula.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=state+feedback+controller+design+pole+placement+ackermann+formula+example" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3027,6 +3640,10 @@ Evaluating this rank at each eigenvalue $\lambda_i$, if $\text{rank}\begin{bmatr
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q14')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3037,7 +3654,10 @@ Evaluating this rank at each eigenvalue $\lambda_i$, if $\text{rank}\begin{bmatr
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$K = \begin{bmatrix} 0 & 0 & \dots & 1 \end{bmatrix} Q_c^{-1} \phi_d(A), \quad \text{where } \phi_d(A) = A^n + \alpha_{n-1} A^{n-1} + \dots + \alpha_0 I$$</div>
@@ -3102,14 +3722,22 @@ Applying this feedback gain vector shifts all three closed-loop poles to the exa
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q15" data-marks="7" data-title="full-order state observer design and error dynamics derivation">
+    <article class="question-card subject-acs" id="acs-q15" data-marks="7" data-title="explain the design procedure of a full-order luenberger state observer and derive its error dynamics.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q15" data-duration="720" data-qid="acs-q15">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q15')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q15')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q15</span>
             </div>
-            <h3 class="card-title">Full-Order State Observer Design and Error Dynamics Derivation</h3>
+            <h3 class="card-title">Explain the design procedure of a full-order Luenberger state observer and derive its error dynamics.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=full+order+observer+design+luenberger+error+dynamics+example" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3119,6 +3747,10 @@ Applying this feedback gain vector shifts all three closed-loop poles to the exa
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q15')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3129,7 +3761,10 @@ Applying this feedback gain vector shifts all three closed-loop poles to the exa
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\dot{\hat{x}} = A \hat{x} + B u + L (y - C \hat{x}), \quad \dot{e}(t) = (A - LC) e(t), \quad L = \phi_d(A) Q_o^{-1} \begin{bmatrix} 0 \\ \vdots \\ 1 \end{bmatrix}$$</div>
@@ -3197,14 +3832,22 @@ According to the celebrated Separation Principle, when this observer is combined
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-acs" id="acs-q16" data-marks="3" data-title="characteristics of non-linear systems: distinct physical phenomena">
+    <article class="question-card subject-acs" id="acs-q16" data-marks="3" data-title="explain the common physical non-linear phenomena observed in non-linear control systems that do not occur in linear systems.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q16" data-duration="300" data-qid="acs-q16">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q16')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q16')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q16</span>
             </div>
-            <h3 class="card-title">Characteristics of Non-Linear Systems: Distinct Physical Phenomena</h3>
+            <h3 class="card-title">Explain the common physical non-linear phenomena observed in non-linear control systems that do not occur in linear systems.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=characteristics+of+non+linear+systems+jump+resonance+limit+cycles" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3214,6 +3857,10 @@ According to the celebrated Separation Principle, when this observer is combined
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q16')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3224,11 +3871,14 @@ According to the celebrated Separation Principle, when this observer is combined
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$f(x_1 + x_2) \ne f(x_1) + f(x_2), \quad f(\alpha x) \ne \alpha f(x) \implies \text{Superposition Principle Fails}$$</div>
-                    <p class="byheart-text">Nonlinear systems exhibit unique phenomena that cannot occur in linear systems: <strong>limit cycles</strong> (autonomous periodic orbits), <strong>jump resonance</strong>, <strong>subharmonic generation</strong>, and <strong>amplitude-dependent stability</strong>.</p>
+                    <p class="byheart-text"><strong>Distinct Non-Linear Physical Phenomena:</strong><br><strong>1. Limit Cycles:</strong> Isolated, self-sustained closed periodic orbits in state space (stable or unstable).<br><strong>2. Jump Resonance:</strong> Discontinuous jump in amplitude and phase during continuous sinusoidal frequency sweeps.<br><strong>3. Subharmonics:</strong> Generation of steady output responses at integer fractions ($f/2, f/3$) of input frequency.<br><strong>4. Amplitude-Dependent Stability:</strong> System stability depends on initial state or excitation amplitude, unlike linear systems.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -3256,14 +3906,22 @@ According to the celebrated Separation Principle, when this observer is combined
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q16b" data-marks="3" data-title="describing function of ideal relay and relay with dead-zone">
+    <article class="question-card subject-acs" id="acs-q16b" data-marks="3" data-title="derive the describing function for an ideal relay and a relay with dead-zone non-linearity.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q16b" data-duration="300" data-qid="acs-q16b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q16b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q16b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q16B</span>
             </div>
-            <h3 class="card-title">Describing Function of Ideal Relay and Relay with Dead-Zone</h3>
+            <h3 class="card-title">Derive the describing function for an ideal relay and a relay with dead-zone non-linearity.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=describing+function+ideal+relay+relay+with+dead+zone+derivation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3273,6 +3931,10 @@ According to the celebrated Separation Principle, when this observer is combined
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q16b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3283,11 +3945,14 @@ According to the celebrated Separation Principle, when this observer is combined
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$N(X)_{\text{ideal}} = \frac{4M}{\pi X}, \qquad N(X)_{\text{deadzone}} = \frac{4M}{\pi X} \sqrt{1 - \left(\frac{D}{X}\right)^2} \quad (X > D)$$</div>
-                    <p class="byheart-text">The describing function represents the equivalent complex fundamental harmonic gain $N(X) = \frac{Y_1 \angle \phi_1}{X}$ of the nonlinear element under sinusoidal excitation, neglecting higher harmonics.</p>
+                    <p class="byheart-text"><strong>1. Ideal Relay:</strong> Output switches between $+M$ and $-M$; describing function $N(X) = \frac{4M}{\pi X}$ is pure real with zero phase shift ($\angle N(X) = 0^\circ$).<br><strong>2. Relay with Dead-Zone ($D$):</strong> Output is zero for input amplitude $X \le D$; for $X > D$, effective gain drops as amplitude increases with zero phase shift.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -3321,14 +3986,22 @@ The describing function for a relay with dead-zone is therefore $N(X) = \frac{4M
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q17" data-marks="7" data-title="derivation of the describing function for symmetrical saturation non-linearity">
+    <article class="question-card subject-acs" id="acs-q17" data-marks="7" data-title="derive the describing function expression n(x) for a symmetrical saturation non-linearity.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q17" data-duration="720" data-qid="acs-q17">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q17')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q17')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q17</span>
             </div>
-            <h3 class="card-title">Derivation of the Describing Function for Symmetrical Saturation Non-Linearity</h3>
+            <h3 class="card-title">Derive the describing function expression N(X) for a symmetrical saturation non-linearity.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=describing+function+derivation+saturation+nonlinearity+step+by+step" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3338,6 +4011,10 @@ The describing function for a relay with dead-zone is therefore $N(X) = \frac{4M
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q17')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3348,7 +4025,10 @@ The describing function for a relay with dead-zone is therefore $N(X) = \frac{4M
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$N(X) = \frac{2k}{\pi} \left[ \arcsin\left(\frac{S}{X}\right) + \frac{S}{X}\sqrt{1 - \left(\frac{S}{X}\right)^2} \right] \quad (X \ge S), \qquad N(X) = k \quad (X < S)$$</div>
@@ -3411,14 +4091,22 @@ This equation reveals that as the input amplitude $X$ increases far beyond the s
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q17b" data-marks="7" data-title="derivation of the describing function for dead-zone non-linearity">
+    <article class="question-card subject-acs" id="acs-q17b" data-marks="7" data-title="derive the describing function n(x) for a dead-zone non-linearity.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q17b" data-duration="720" data-qid="acs-q17b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q17b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q17b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q17B</span>
             </div>
-            <h3 class="card-title">Derivation of the Describing Function for Dead-Zone Non-Linearity</h3>
+            <h3 class="card-title">Derive the describing function N(X) for a dead-zone non-linearity.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=describing+function+dead+zone+non+linearity+derivation+step+by+step" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3428,6 +4116,10 @@ This equation reveals that as the input amplitude $X$ increases far beyond the s
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q17b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3438,7 +4130,10 @@ This equation reveals that as the input amplitude $X$ increases far beyond the s
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$N(X) = k \left[ 1 - \frac{2}{\pi}\arcsin\left(\frac{D}{X}\right) - \frac{2D}{\pi X}\sqrt{1 - \left(\frac{D}{X}\right)^2} \right] \quad (X > D), \qquad N(X) = 0 \quad (X \le D)$$</div>
@@ -3491,14 +4186,22 @@ This analytical result reveals that as input amplitude $X$ grows very large comp
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q18" data-marks="7" data-title="limit cycle determination and stability analysis for saturating feedback systems">
+    <article class="question-card subject-acs" id="acs-q18" data-marks="7" data-title="explain how the stability and frequency of limit cycles in non-linear feedback systems are determined using describing function and nyquist criterion.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q18" data-duration="720" data-qid="acs-q18">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q18')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q18')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q18</span>
             </div>
-            <h3 class="card-title">Limit Cycle Determination and Stability Analysis for Saturating Feedback Systems</h3>
+            <h3 class="card-title">Explain how the stability and frequency of limit cycles in non-linear feedback systems are determined using describing function and Nyquist criterion.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=limit+cycle+stability+analysis+describing+function+nyquist+plot+example" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3508,6 +4211,10 @@ This analytical result reveals that as input amplitude $X$ grows very large comp
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q18')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3518,7 +4225,10 @@ This analytical result reveals that as input amplitude $X$ grows very large comp
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$G(j\omega) = -\frac{1}{N(X)} \iff |G(j\omega)| \cdot |N(X)| = 1 \quad \text{and} \quad \angle G(j\omega) = -180^\circ - \angle N(X)$$</div>
@@ -3597,14 +4307,22 @@ Thus, for gain $K = 2.5$, the system establishes a sustained, stable limit cycle
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-acs" id="acs-q19" data-marks="3" data-title="phase plane concepts, phase trajectories, and singular points classification">
+    <article class="question-card subject-acs" id="acs-q19" data-marks="3" data-title="explain phase plane analysis, phase trajectory construction, and classification of singular points in second-order autonomous systems.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q19" data-duration="300" data-qid="acs-q19">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q19')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q19')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q19</span>
             </div>
-            <h3 class="card-title">Phase Plane Concepts, Phase Trajectories, and Singular Points Classification</h3>
+            <h3 class="card-title">Explain phase plane analysis, phase trajectory construction, and classification of singular points in second-order autonomous systems.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=phase+plane+analysis+singular+points+classification+node+focus+saddle" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3614,6 +4332,10 @@ Thus, for gain $K = 2.5$, the system establishes a sustained, stable limit cycle
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q19')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3624,11 +4346,14 @@ Thus, for gain $K = 2.5$, the system establishes a sustained, stable limit cycle
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\frac{dx_2}{dx_1} = \frac{f_2(x_1, x_2)}{f_1(x_1, x_2)} = \frac{0}{0} \quad \text{at equilibrium point } (x_1^*, x_2^*)$$</div>
-                    <p class="byheart-text">Singular points are classified by linearised Jacobian eigenvalues: <strong>Node</strong> (real, same sign), <strong>Saddle</strong> (real, opposite sign - always unstable), <strong>Focus</strong> (complex conjugates with non-zero real part), and <strong>Center</strong> (pure imaginary).</p>
+                    <p class="byheart-text"><strong>Classification of Singular Points by Linearized Eigenvalues:</strong><br><strong>1. Stable / Unstable Node:</strong> Real eigenvalues of same sign ($\lambda_1, \lambda_2 \in \mathbb{R}, \lambda_1\lambda_2 > 0$).<br><strong>2. Saddle Point:</strong> Real eigenvalues of opposite sign ($\lambda_1 > 0, \lambda_2 < 0$) &mdash; <em>always unstable</em>!<br><strong>3. Stable / Unstable Focus:</strong> Complex conjugate eigenvalues with real part ($\sigma \pm j\omega, \sigma \ne 0$).<br><strong>4. Center (Vortex):</strong> Purely imaginary conjugate eigenvalues ($\pm j\omega, \sigma = 0$) &mdash; closed concentric periodic orbits.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -3656,14 +4381,22 @@ Thus, for gain $K = 2.5$, the system establishes a sustained, stable limit cycle
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q20" data-marks="3" data-title="sign definiteness of scalar functions and sylvester&#x27;s criterion">
+    <article class="question-card subject-acs" id="acs-q20" data-marks="3" data-title="state sylvester&#x27;s criterion for testing the positive definiteness of quadratic scalar functions v(x) = x^t p x.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q20" data-duration="300" data-qid="acs-q20">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q20')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q20')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q20</span>
             </div>
-            <h3 class="card-title">Sign Definiteness of Scalar Functions and Sylvester's Criterion</h3>
+            <h3 class="card-title">State Sylvester's criterion for testing the positive definiteness of quadratic scalar functions V(x) = x^T P x.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=sign+definiteness+sylvester+criterion+positive+definite+quadratic+form" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3673,6 +4406,10 @@ Thus, for gain $K = 2.5$, the system establishes a sustained, stable limit cycle
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q20')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3683,11 +4420,14 @@ Thus, for gain $K = 2.5$, the system establishes a sustained, stable limit cycle
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$V(x) = x^T P x > 0 \quad (\forall x \ne 0) \iff \Delta_1 > 0, \; \Delta_2 > 0, \; \dots, \; \Delta_n > 0$$</div>
-                    <p class="byheart-text">By Sylvester's criterion, a quadratic form $V(x) = x^T P x$ is positive definite if and only if all $n$ leading principal minors of the real symmetric matrix $P = P^T$ are strictly positive.</p>
+                    <p class="byheart-text"><strong>Sylvester Criterion for Positive Definiteness:</strong> A real symmetric matrix $P = P^T$ is positive definite if and only if all $n$ leading principal minors $\Delta_k = \det(P_{k\times k})$ are strictly positive ($\Delta_1 > 0, \Delta_2 > 0, \dots, \Delta_n > 0$).<br><strong>Negative Definite:</strong> If and only if leading principal minors alternate signs starting negative ($\Delta_1 < 0, \Delta_2 > 0, \Delta_3 < 0, \dots$).</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -3717,14 +4457,22 @@ Furthermore, a quadratic form is negative definite if and only if its leading pr
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q20b" data-marks="3" data-title="generation of lyapunov functions: krasovskii&#x27;s and variable gradient methods">
+    <article class="question-card subject-acs" id="acs-q20b" data-marks="3" data-title="explain krasovskii&#x27;s method and variable gradient method for the construction of lyapunov functions.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-acs-q20b" data-duration="300" data-qid="acs-q20b">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q20b')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q20b')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: ACS-Q20B</span>
             </div>
-            <h3 class="card-title">Generation of Lyapunov Functions: Krasovskii's and Variable Gradient Methods</h3>
+            <h3 class="card-title">Explain Krasovskii's method and variable gradient method for the construction of Lyapunov functions.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=krasovskii+method+variable+gradient+method+lyapunov+function+generation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3734,6 +4482,10 @@ Furthermore, a quadratic form is negative definite if and only if its leading pr
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q20b')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3744,7 +4496,10 @@ Furthermore, a quadratic form is negative definite if and only if its leading pr
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$V(x) = f(x)^T P f(x), \quad \dot{V}(x) = f(x)^T (J^T P + P J) f(x) < 0 \quad \text{where } J(x) = \frac{\partial f}{\partial x}$$</div>
@@ -3776,14 +4531,22 @@ Furthermore, a quadratic form is negative definite if and only if its leading pr
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q21" data-marks="7" data-title="singular points analysis and phase portrait construction of a non-linear system">
+    <article class="question-card subject-acs" id="acs-q21" data-marks="7" data-title="construct the phase portrait and determine the singular points of a non-linear second-order system using the method of isoclines.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q21" data-duration="720" data-qid="acs-q21">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q21')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q21')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q21</span>
             </div>
-            <h3 class="card-title">Singular Points Analysis and Phase Portrait Construction of a Non-Linear System</h3>
+            <h3 class="card-title">Construct the phase portrait and determine the singular points of a non-linear second-order system using the method of isoclines.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=singular+points+phase+portrait+nonlinear+system+linearization+jacobian" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3793,6 +4556,10 @@ Furthermore, a quadratic form is negative definite if and only if its leading pr
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q21')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3803,7 +4570,10 @@ Furthermore, a quadratic form is negative definite if and only if its leading pr
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Slope } m = \frac{dx_2}{dx_1} = \frac{-x_1 - f(x_1, x_2)}{x_2} = N \implies x_2 = g(x_1, N) \quad (\text{Isocline Line})$$</div>
@@ -3870,14 +4640,22 @@ For each chosen numerical slope $m$, this equation defines a parabola in the pha
     </article>
     
 
-    <article class="question-card subject-acs" id="acs-q22" data-marks="7" data-title="lyapunov&#x27;s direct method: stability theorems and solution of matrix equation a^t p + p a = -q">
+    <article class="question-card subject-acs" id="acs-q22" data-marks="7" data-title="state and prove lyapunov&#x27;s direct method stability theorems for continuous-time autonomous lti systems using the matrix equation a^t p + p a = -q.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-acs-q22" data-duration="720" data-qid="acs-q22">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q22')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('acs-q22')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Derivation</span>
                 <span class="badge badge-qid">ID: ACS-Q22</span>
             </div>
-            <h3 class="card-title">Lyapunov's Direct Method: Stability Theorems and Solution of Matrix Equation A^T P + P A = -Q</h3>
+            <h3 class="card-title">State and prove Lyapunov's direct method stability theorems for continuous-time autonomous LTI systems using the matrix equation A^T P + P A = -Q.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=lyapunov+stability+direct+method+solve+matrix+equation+ATP+PA=-Q+example" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3887,6 +4665,10 @@ For each chosen numerical slope $m$, this equation defines a parabola in the pha
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('acs-q22')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3897,7 +4679,10 @@ For each chosen numerical slope $m$, this equation defines a parabola in the pha
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$A^T P + P A = -Q, \quad V(x) = x^T P x > 0, \quad \dot{V}(x) = -x^T Q x < 0$$</div>
@@ -3995,6 +4780,145 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
             btn.addEventListener('click', () => setTheme(btn.getAttribute('data-theme-value')));
         });
         setTheme(localStorage.getItem(THEME_STORAGE_KEY) || 'dark');
+
+        // Interactive Exam Countdown Timers
+        const cardTimers = {};
+
+        function formatTimerMMSS(seconds) {
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        function toggleCardTimer(qid) {
+            const widget = document.getElementById('timer-' + qid);
+            if (!widget) return;
+            const duration = parseInt(widget.getAttribute('data-duration') || '300', 10);
+            
+            if (!cardTimers[qid]) {
+                cardTimers[qid] = {
+                    duration: duration,
+                    remaining: duration,
+                    intervalId: null,
+                    state: 'idle'
+                };
+            }
+            
+            const timer = cardTimers[qid];
+            const displaySpan = widget.querySelector('.timer-display');
+            const actionSpan = widget.querySelector('.timer-action');
+            const resetBtn = widget.querySelector('.timer-reset-btn');
+
+            if (timer.state === 'running') {
+                clearInterval(timer.intervalId);
+                timer.intervalId = null;
+                timer.state = 'paused';
+                actionSpan.textContent = 'Resume';
+                widget.classList.remove('timer-running');
+                widget.classList.add('timer-paused');
+            } else {
+                if (timer.state === 'expired') {
+                    timer.remaining = timer.duration;
+                    widget.classList.remove('timer-expired');
+                }
+                timer.state = 'running';
+                actionSpan.textContent = 'Pause';
+                if (resetBtn) resetBtn.style.display = 'inline-flex';
+                widget.classList.remove('timer-paused');
+                widget.classList.add('timer-running');
+
+                timer.intervalId = setInterval(() => {
+                    timer.remaining--;
+                    displaySpan.textContent = formatTimerMMSS(timer.remaining);
+
+                    if (timer.remaining <= 60 && timer.remaining > 0) {
+                        widget.classList.add('timer-warning');
+                    }
+
+                    if (timer.remaining <= 0) {
+                        clearInterval(timer.intervalId);
+                        timer.intervalId = null;
+                        timer.state = 'expired';
+                        displaySpan.textContent = '00:00';
+                        actionSpan.textContent = "Time's Up!";
+                        widget.classList.remove('timer-running', 'timer-warning');
+                        widget.classList.add('timer-expired');
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetCardTimer(qid) {
+            const widget = document.getElementById('timer-' + qid);
+            if (!widget || !cardTimers[qid]) return;
+            const timer = cardTimers[qid];
+            if (timer.intervalId) {
+                clearInterval(timer.intervalId);
+                timer.intervalId = null;
+            }
+            timer.remaining = timer.duration;
+            timer.state = 'idle';
+
+            const displaySpan = widget.querySelector('.timer-display');
+            const actionSpan = widget.querySelector('.timer-action');
+            const resetBtn = widget.querySelector('.timer-reset-btn');
+
+            displaySpan.textContent = formatTimerMMSS(timer.duration);
+            actionSpan.textContent = 'Start';
+            if (resetBtn) resetBtn.style.display = 'none';
+            widget.classList.remove('timer-running', 'timer-paused', 'timer-warning', 'timer-expired');
+        }
+
+        // Answer Collapse / Expand Toggle
+        function toggleAnswerCard(qid) {
+            const card = document.getElementById(qid);
+            if (!card) return;
+            const isCollapsed = card.classList.toggle('answer-collapsed');
+            const toggleBtn = card.querySelector('.btn-toggle-answer');
+            if (toggleBtn) {
+                if (isCollapsed) {
+                    toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> <span class="toggle-text">Show Answer</span>';
+                    toggleBtn.setAttribute('title', 'Show elaborated answer');
+                } else {
+                    toggleBtn.innerHTML = '<span class="toggle-icon">▲</span> <span class="toggle-text">Hide Answer</span>';
+                    toggleBtn.setAttribute('title', 'Hide elaborated answer');
+                }
+            }
+        }
+
+        let allAnswersCollapsed = false;
+        function toggleAllAnswers() {
+            allAnswersCollapsed = !allAnswersCollapsed;
+            const cards = document.querySelectorAll('.question-card');
+            const globalBtns = document.querySelectorAll('.global-collapse-btn');
+            
+            cards.forEach(card => {
+                const toggleBtn = card.querySelector('.btn-toggle-answer');
+                if (allAnswersCollapsed) {
+                    card.classList.add('answer-collapsed');
+                    if (toggleBtn) {
+                        toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> <span class="toggle-text">Show Answer</span>';
+                        toggleBtn.setAttribute('title', 'Show elaborated answer');
+                    }
+                } else {
+                    card.classList.remove('answer-collapsed');
+                    if (toggleBtn) {
+                        toggleBtn.innerHTML = '<span class="toggle-icon">▲</span> <span class="toggle-text">Hide Answer</span>';
+                        toggleBtn.setAttribute('title', 'Hide elaborated answer');
+                    }
+                }
+            });
+
+            globalBtns.forEach(btn => {
+                if (allAnswersCollapsed) {
+                    btn.innerHTML = '<span class="btn-icon">📖</span> <span class="btn-text">Expand All Answers</span>';
+                    btn.classList.add('active-collapsed');
+                } else {
+                    btn.innerHTML = '<span class="btn-icon">👁️</span> <span class="btn-text">Collapse All Answers</span>';
+                    btn.classList.remove('active-collapsed');
+                }
+            });
+        }
     </script>
 
     <footer class="site-footer">

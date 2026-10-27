@@ -21,6 +21,7 @@ from gen_acs import ACS_MODULES
 from gen_drive import DRIVE_MODULES
 from gen_mobile import MOBILE_SYLLABUS, MOBILE_MODULES
 from byheart_data import get_byheart_card_html
+from exam_questions import EXAM_QUESTIONS_MAP
 
 def render_image_box(img_path, img_caption):
     exists = os.path.exists(img_path)
@@ -63,24 +64,40 @@ def format_paragraphs(text):
     return '\n'.join(formatted)
 
 def render_question_card(q, subject_class):
+    actual_question = EXAM_QUESTIONS_MAP.get(q["qid"], q["title"])
     marks_badge = f'<span class="badge badge-3m">3 Marks (Short Answer)</span>' if q["marks"] == 3 else f'<span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>'
+    duration_sec = 300 if q["marks"] == 3 else 720
+    duration_str = "05:00" if q["marks"] == 3 else "12:00"
+    timer_widget = f'''<div class="card-timer-widget" id="timer-{q['qid']}" data-duration="{duration_sec}" data-qid="{q['qid']}">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('{q['qid']}')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">{duration_str}</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('{q['qid']}')" title="Reset timer" style="display:none;">🔄</button>
+            </div>'''
     type_badge = f'<span class="badge badge-type">{q["type"]}</span>'
-    yt_btn = render_youtube_btn(q["yt_query"], q["title"])
+    yt_btn = render_youtube_btn(q["yt_query"], actual_question)
     img_box = render_image_box(q["img_path"], q["img_caption"])
     content_html = format_paragraphs(q["answer"])
-    byheart_box = get_byheart_card_html(q["qid"])
+    byheart_box = get_byheart_card_html(q["qid"], q["marks"])
 
     return f"""
-    <article class="question-card {subject_class}" id="{q['qid']}" data-marks="{q['marks']}" data-title="{html.escape(q['title'].lower())}">
+    <article class="question-card {subject_class}" id="{q['qid']}" data-marks="{q['marks']}" data-title="{html.escape(actual_question.lower())}">
         <header class="card-header">
             <div class="card-badges">
                 {marks_badge}
+                {timer_widget}
                 {type_badge}
                 <span class="badge badge-qid">ID: {q['qid'].upper()}</span>
             </div>
-            <h3 class="card-title">{q['title']}</h3>
+            <h3 class="card-title">{actual_question}</h3>
             <div class="card-action-bar">
                 {yt_btn}
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('{q['qid']}')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -884,6 +901,94 @@ main.content-container {
     line-height: 1.7;
 }
 
+/* 3-Hour Exam Writing Strategy Banner */
+.exam-strategy-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.15rem;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-left: 5px solid #38bdf8;
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 2.25rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .exam-strategy-banner {
+    background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+    border-color: #bae6fd;
+    border-left-color: #0284c7;
+}
+
+[data-theme="warm"] .exam-strategy-banner {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(180, 83, 9, 0.05) 100%);
+    border-color: rgba(245, 158, 11, 0.35);
+    border-left-color: #f59e0b;
+}
+
+[data-theme="forest"] .exam-strategy-banner {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+    border-color: rgba(52, 211, 153, 0.35);
+    border-left-color: #10b981;
+}
+
+[data-theme="sage"] .exam-strategy-banner {
+    background: linear-gradient(135deg, #f0fdfa 0%, #f4f8f6 100%);
+    border-color: #99f6e4;
+    border-left-color: #0d9488;
+}
+
+[data-theme="oled"] .exam-strategy-banner {
+    background: #080808;
+    border-color: #1e293b;
+    border-left-color: #38bdf8;
+}
+
+.strategy-icon {
+    font-size: 1.85rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.strategy-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 0.4rem 0;
+    letter-spacing: -0.01em;
+}
+
+.strategy-content p {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: var(--text-body);
+    margin: 0;
+}
+
+.strategy-content strong {
+    color: var(--text-main);
+}
+
+@media (max-width: 640px) {
+    .exam-strategy-banner {
+        padding: 0.85rem 1rem;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+    .strategy-icon {
+        font-size: 1.4rem;
+    }
+    .strategy-content h4 {
+        font-size: 0.94rem;
+    }
+    .strategy-content p {
+        font-size: 0.86rem;
+        line-height: 1.55;
+    }
+}
+
 /* Module Sections */
 .module-section {
     margin-bottom: 3.5rem;
@@ -1007,6 +1112,34 @@ main.content-container {
     border: 1px solid var(--border-subtle);
 }
 
+.badge-time {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+[data-theme="light"] .badge-time {
+    background: #ecfdf5;
+    color: #047857;
+    border-color: #6ee7b7;
+}
+
+[data-theme="sage"] .badge-time {
+    background: #e6f4f1;
+    color: #0f766e;
+    border-color: #99f6e4;
+}
+
+[data-theme="oled"] .badge-time {
+    background: #002b1c;
+    color: #34d399;
+    border-color: #059669;
+}
+
 .card-title {
     font-size: 1.35rem;
     font-weight: 700;
@@ -1018,7 +1151,179 @@ main.content-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 0.75rem;
     margin-top: 0.25rem;
+    flex-wrap: wrap;
+}
+
+/* Hide/Show Answer Toggle Button */
+.btn-toggle-answer {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.52rem 0.95rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: var(--font-main);
+    color: var(--text-main);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px var(--card-shadow);
+}
+
+.btn-toggle-answer:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+    border-color: var(--border-focus);
+    transform: translateY(-1px);
+}
+
+.question-card.answer-collapsed {
+    padding-bottom: 0.85rem;
+}
+
+.question-card.answer-collapsed .card-header {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.question-card.answer-collapsed .card-body {
+    display: none !important;
+}
+
+/* Card Interactive Timer Widget */
+.card-timer-widget {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--bg-surface);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 6px;
+    padding: 0.15rem 0.35rem;
+    transition: all 0.25s ease;
+}
+
+.timer-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #10b981;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.timer-toggle-btn:hover {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.timer-reset-btn {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.35rem;
+    color: var(--text-muted);
+}
+.timer-reset-btn:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+}
+
+.timer-action {
+    font-family: var(--font-main);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(16, 185, 129, 0.2);
+    padding: 0.1rem 0.38rem;
+    border-radius: 4px;
+}
+
+/* Timer State: Running */
+.card-timer-widget.timer-running {
+    border-color: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+    background: rgba(16, 185, 129, 0.12);
+    animation: timerPulse 2s infinite ease-in-out;
+}
+
+.card-timer-widget.timer-running .timer-action {
+    background: #10b981;
+    color: #064e3b;
+    font-weight: 800;
+}
+
+/* Timer State: Paused */
+.card-timer-widget.timer-paused {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+.card-timer-widget.timer-paused .timer-btn {
+    color: #f59e0b;
+}
+.card-timer-widget.timer-paused .timer-action {
+    background: #f59e0b;
+    color: #451a03;
+}
+
+/* Timer State: Warning (< 1 min) */
+.card-timer-widget.timer-warning {
+    border-color: #f59e0b;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    background: rgba(245, 158, 11, 0.15);
+}
+.card-timer-widget.timer-warning .timer-btn {
+    color: #fbbf24;
+}
+.card-timer-widget.timer-warning .timer-action {
+    background: #f59e0b;
+    color: #451a03;
+}
+
+/* Timer State: Expired (Time's Up) */
+.card-timer-widget.timer-expired {
+    border-color: #ef4444;
+    box-shadow: 0 0 14px rgba(239, 68, 68, 0.5);
+    background: rgba(239, 68, 68, 0.18);
+    animation: expiredFlash 1s infinite alternate;
+}
+.card-timer-widget.timer-expired .timer-btn {
+    color: #f87171;
+}
+.card-timer-widget.timer-expired .timer-action {
+    background: #ef4444;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+@keyframes timerPulse {
+    0%, 100% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.25); }
+    50% { box-shadow: 0 0 14px rgba(16, 185, 129, 0.5); }
+}
+
+@keyframes expiredFlash {
+    from { opacity: 1; }
+    to { opacity: 0.65; }
+}
+
+/* Global Collapse All Button */
+.global-collapse-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.global-collapse-btn.active-collapsed {
+    border-color: var(--border-focus);
+    background: var(--bg-card);
+    color: var(--text-main);
 }
 
 /* YouTube Link Button */
@@ -1177,6 +1482,52 @@ main.content-container {
     background: #ccfbf1;
     color: #115e59;
     border-color: #5eead4;
+}
+
+.byheart-badges-group {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.byheart-time-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    padding: 0.22rem 0.6rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+[data-theme="light"] .byheart-time-badge {
+    background: #e0f2fe;
+    color: #0284c7;
+    border-color: #7dd3fc;
+}
+
+[data-theme="forest"] .byheart-time-badge {
+    background: rgba(52, 211, 153, 0.15);
+    color: #34d399;
+    border-color: rgba(52, 211, 153, 0.35);
+}
+
+[data-theme="sage"] .byheart-time-badge {
+    background: #ccfbf1;
+    color: #0f766e;
+    border-color: #5eead4;
+}
+
+[data-theme="oled"] .byheart-time-badge {
+    background: #001f33;
+    color: #38bdf8;
+    border-color: #0284c7;
 }
 
 .byheart-body {
@@ -2070,6 +2421,151 @@ if (document.readyState === 'loading') {
 } else {
     initThemeSwitcher();
 }
+
+// =========================================================================
+// Interactive Exam Countdown Timers
+// =========================================================================
+const cardTimers = {};
+
+function formatTimerMMSS(seconds) {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+}
+
+function toggleCardTimer(qid) {
+    const widget = document.getElementById('timer-' + qid);
+    if (!widget) return;
+    const duration = parseInt(widget.getAttribute('data-duration') || '300', 10);
+    
+    if (!cardTimers[qid]) {
+        cardTimers[qid] = {
+            duration: duration,
+            remaining: duration,
+            intervalId: null,
+            state: 'idle'
+        };
+    }
+    
+    const timer = cardTimers[qid];
+    const displaySpan = widget.querySelector('.timer-display');
+    const actionSpan = widget.querySelector('.timer-action');
+    const resetBtn = widget.querySelector('.timer-reset-btn');
+
+    if (timer.state === 'running') {
+        // Pause
+        clearInterval(timer.intervalId);
+        timer.intervalId = null;
+        timer.state = 'paused';
+        actionSpan.textContent = 'Resume';
+        widget.classList.remove('timer-running');
+        widget.classList.add('timer-paused');
+    } else {
+        // Start or Resume
+        if (timer.state === 'expired') {
+            timer.remaining = timer.duration;
+            widget.classList.remove('timer-expired');
+        }
+        timer.state = 'running';
+        actionSpan.textContent = 'Pause';
+        if (resetBtn) resetBtn.style.display = 'inline-flex';
+        widget.classList.remove('timer-paused');
+        widget.classList.add('timer-running');
+
+        timer.intervalId = setInterval(() => {
+            timer.remaining--;
+            displaySpan.textContent = formatTimerMMSS(timer.remaining);
+
+            if (timer.remaining <= 60 && timer.remaining > 0) {
+                widget.classList.add('timer-warning');
+            }
+
+            if (timer.remaining <= 0) {
+                clearInterval(timer.intervalId);
+                timer.intervalId = null;
+                timer.state = 'expired';
+                displaySpan.textContent = '00:00';
+                actionSpan.textContent = "Time's Up!";
+                widget.classList.remove('timer-running', 'timer-warning');
+                widget.classList.add('timer-expired');
+            }
+        }, 1000);
+    }
+}
+
+function resetCardTimer(qid) {
+    const widget = document.getElementById('timer-' + qid);
+    if (!widget || !cardTimers[qid]) return;
+    const timer = cardTimers[qid];
+    if (timer.intervalId) {
+        clearInterval(timer.intervalId);
+        timer.intervalId = null;
+    }
+    timer.remaining = timer.duration;
+    timer.state = 'idle';
+
+    const displaySpan = widget.querySelector('.timer-display');
+    const actionSpan = widget.querySelector('.timer-action');
+    const resetBtn = widget.querySelector('.timer-reset-btn');
+
+    displaySpan.textContent = formatTimerMMSS(timer.duration);
+    actionSpan.textContent = 'Start';
+    if (resetBtn) resetBtn.style.display = 'none';
+    widget.classList.remove('timer-running', 'timer-paused', 'timer-warning', 'timer-expired');
+}
+
+// =========================================================================
+// Answer Collapse / Expand Toggle
+// =========================================================================
+function toggleAnswerCard(qid) {
+    const card = document.getElementById(qid);
+    if (!card) return;
+    const isCollapsed = card.classList.toggle('answer-collapsed');
+    const toggleBtn = card.querySelector('.btn-toggle-answer');
+    if (toggleBtn) {
+        if (isCollapsed) {
+            toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> <span class="toggle-text">Show Answer</span>';
+            toggleBtn.setAttribute('title', 'Show elaborated answer');
+        } else {
+            toggleBtn.innerHTML = '<span class="toggle-icon">▲</span> <span class="toggle-text">Hide Answer</span>';
+            toggleBtn.setAttribute('title', 'Hide elaborated answer');
+        }
+    }
+}
+
+let allAnswersCollapsed = false;
+function toggleAllAnswers() {
+    allAnswersCollapsed = !allAnswersCollapsed;
+    const cards = document.querySelectorAll('.question-card');
+    const globalBtns = document.querySelectorAll('.global-collapse-btn');
+    
+    cards.forEach(card => {
+        const toggleBtn = card.querySelector('.btn-toggle-answer');
+        if (allAnswersCollapsed) {
+            card.classList.add('answer-collapsed');
+            if (toggleBtn) {
+                toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> <span class="toggle-text">Show Answer</span>';
+                toggleBtn.setAttribute('title', 'Show elaborated answer');
+            }
+        } else {
+            card.classList.remove('answer-collapsed');
+            if (toggleBtn) {
+                toggleBtn.innerHTML = '<span class="toggle-icon">▲</span> <span class="toggle-text">Hide Answer</span>';
+                toggleBtn.setAttribute('title', 'Hide elaborated answer');
+            }
+        }
+    });
+
+    globalBtns.forEach(btn => {
+        if (allAnswersCollapsed) {
+            btn.innerHTML = '<span class="btn-icon">📖</span> <span class="btn-text">Expand All Answers</span>';
+            btn.classList.add('active-collapsed');
+        } else {
+            btn.innerHTML = '<span class="btn-icon">👁️</span> <span class="btn-text">Collapse All Answers</span>';
+            btn.classList.remove('active-collapsed');
+        }
+    });
+}
 """
 
 INDEX_TEMPLATE = """<!DOCTYPE html>
@@ -2180,6 +2676,10 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
                 <button class="filter-btn active" data-filter="all">All Questions</button>
                 <button class="filter-btn" data-filter="3m">3 Marks Only</button>
                 <button class="filter-btn" data-filter="7m">7/14 Marks Only</button>
+                <button class="filter-btn global-collapse-btn" id="btn-toggle-all-answers" onclick="toggleAllAnswers()" title="Collapse all answers for Self-Test / Flashcard Exam Practice">
+                    <span class="btn-icon">👁️</span>
+                    <span class="btn-text">Collapse All Answers</span>
+                </button>
                 <span class="stats-badge" id="stats-pill">{{GRAND_TOTAL}} Master Answers Available</span>
             </div>
         </div>
@@ -2187,6 +2687,17 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 
     <!-- Main Content Container containing 3 Integrated Views -->
     <main class="content-container">
+
+        <!-- 3-Hour Exam Writing Strategy Banner -->
+        <section class="exam-strategy-banner" aria-label="3-Hour Exam Time Budget">
+            <div class="strategy-icon" aria-hidden="true">⏱️</div>
+            <div class="strategy-content">
+                <h4>3-Hour Exam Time Budget (20 Questions / 100 Marks Strategy)</h4>
+                <p><strong>Part A (10 Short Answers &times; 3 Marks = 30M):</strong> Allocate <strong>5 mins per answer</strong> (50 mins total) &mdash; target &frac12; to 1 page highlighting the key formula and core definition.<br>
+                <strong>Part B (10 Essay Answers &times; 7 Marks = 70M):</strong> Allocate <strong>12 mins per answer</strong> (120 mins total) &mdash; target 1.5 to 2 pages with schematic circuit/block diagrams and step-by-step derivations.<br>
+                <strong>Strategy &amp; Review Buffer (10 mins):</strong> 5 mins at start for question choice planning + 5 mins at end for question numbering and equation verification.</p>
+            </div>
+        </section>
 
         <!-- VIEW 1: Advanced Control Systems (EET401) -->
         <div id="view-acs" class="subject-view active">
@@ -2322,11 +2833,27 @@ def generate_standalone_page(subject_key, subject_title, subject_code, subject_c
                 </button>
             </div>
 
-            <a href="index.html" class="standalone-back-btn" title="Return to Master Portal">← 3-in-1 Portal</a>
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <button class="filter-btn global-collapse-btn" id="btn-toggle-all-answers" onclick="toggleAllAnswers()" title="Collapse all answers for Self-Test / Flashcard Exam Practice">
+                    <span class="btn-icon">👁️</span>
+                    <span class="btn-text">Collapse All Answers</span>
+                </button>
+                <a href="index.html" class="standalone-back-btn" title="Return to Master Portal">← 3-in-1 Portal</a>
+            </div>
         </div>
     </header>
 
     <main class="content-container">
+        <!-- 3-Hour Exam Writing Strategy Banner -->
+        <section class="exam-strategy-banner" aria-label="3-Hour Exam Time Budget">
+            <div class="strategy-icon" aria-hidden="true">⏱️</div>
+            <div class="strategy-content">
+                <h4>3-Hour Exam Time Budget (20 Questions / 100 Marks Strategy)</h4>
+                <p><strong>Part A (10 Short Answers &times; 3 Marks = 30M):</strong> Allocate <strong>5 mins per answer</strong> (50 mins total) &mdash; target &frac12; to 1 page highlighting the key formula and core definition.<br>
+                <strong>Part B (10 Essay Answers &times; 7 Marks = 70M):</strong> Allocate <strong>12 mins per answer</strong> (120 mins total) &mdash; target 1.5 to 2 pages with schematic circuit/block diagrams and step-by-step derivations.<br>
+                <strong>Strategy &amp; Review Buffer (10 mins):</strong> 5 mins at start for question choice planning + 5 mins at end for question numbering and equation verification.</p>
+            </div>
+        </section>
         {{INNER_HTML}}
     </main>
 
@@ -2364,6 +2891,145 @@ def generate_standalone_page(subject_key, subject_title, subject_code, subject_c
             btn.addEventListener('click', () => setTheme(btn.getAttribute('data-theme-value')));
         });
         setTheme(localStorage.getItem(THEME_STORAGE_KEY) || 'dark');
+
+        // Interactive Exam Countdown Timers
+        const cardTimers = {};
+
+        function formatTimerMMSS(seconds) {
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        function toggleCardTimer(qid) {
+            const widget = document.getElementById('timer-' + qid);
+            if (!widget) return;
+            const duration = parseInt(widget.getAttribute('data-duration') || '300', 10);
+            
+            if (!cardTimers[qid]) {
+                cardTimers[qid] = {
+                    duration: duration,
+                    remaining: duration,
+                    intervalId: null,
+                    state: 'idle'
+                };
+            }
+            
+            const timer = cardTimers[qid];
+            const displaySpan = widget.querySelector('.timer-display');
+            const actionSpan = widget.querySelector('.timer-action');
+            const resetBtn = widget.querySelector('.timer-reset-btn');
+
+            if (timer.state === 'running') {
+                clearInterval(timer.intervalId);
+                timer.intervalId = null;
+                timer.state = 'paused';
+                actionSpan.textContent = 'Resume';
+                widget.classList.remove('timer-running');
+                widget.classList.add('timer-paused');
+            } else {
+                if (timer.state === 'expired') {
+                    timer.remaining = timer.duration;
+                    widget.classList.remove('timer-expired');
+                }
+                timer.state = 'running';
+                actionSpan.textContent = 'Pause';
+                if (resetBtn) resetBtn.style.display = 'inline-flex';
+                widget.classList.remove('timer-paused');
+                widget.classList.add('timer-running');
+
+                timer.intervalId = setInterval(() => {
+                    timer.remaining--;
+                    displaySpan.textContent = formatTimerMMSS(timer.remaining);
+
+                    if (timer.remaining <= 60 && timer.remaining > 0) {
+                        widget.classList.add('timer-warning');
+                    }
+
+                    if (timer.remaining <= 0) {
+                        clearInterval(timer.intervalId);
+                        timer.intervalId = null;
+                        timer.state = 'expired';
+                        displaySpan.textContent = '00:00';
+                        actionSpan.textContent = "Time's Up!";
+                        widget.classList.remove('timer-running', 'timer-warning');
+                        widget.classList.add('timer-expired');
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetCardTimer(qid) {
+            const widget = document.getElementById('timer-' + qid);
+            if (!widget || !cardTimers[qid]) return;
+            const timer = cardTimers[qid];
+            if (timer.intervalId) {
+                clearInterval(timer.intervalId);
+                timer.intervalId = null;
+            }
+            timer.remaining = timer.duration;
+            timer.state = 'idle';
+
+            const displaySpan = widget.querySelector('.timer-display');
+            const actionSpan = widget.querySelector('.timer-action');
+            const resetBtn = widget.querySelector('.timer-reset-btn');
+
+            displaySpan.textContent = formatTimerMMSS(timer.duration);
+            actionSpan.textContent = 'Start';
+            if (resetBtn) resetBtn.style.display = 'none';
+            widget.classList.remove('timer-running', 'timer-paused', 'timer-warning', 'timer-expired');
+        }
+
+        // Answer Collapse / Expand Toggle
+        function toggleAnswerCard(qid) {
+            const card = document.getElementById(qid);
+            if (!card) return;
+            const isCollapsed = card.classList.toggle('answer-collapsed');
+            const toggleBtn = card.querySelector('.btn-toggle-answer');
+            if (toggleBtn) {
+                if (isCollapsed) {
+                    toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> <span class="toggle-text">Show Answer</span>';
+                    toggleBtn.setAttribute('title', 'Show elaborated answer');
+                } else {
+                    toggleBtn.innerHTML = '<span class="toggle-icon">▲</span> <span class="toggle-text">Hide Answer</span>';
+                    toggleBtn.setAttribute('title', 'Hide elaborated answer');
+                }
+            }
+        }
+
+        let allAnswersCollapsed = false;
+        function toggleAllAnswers() {
+            allAnswersCollapsed = !allAnswersCollapsed;
+            const cards = document.querySelectorAll('.question-card');
+            const globalBtns = document.querySelectorAll('.global-collapse-btn');
+            
+            cards.forEach(card => {
+                const toggleBtn = card.querySelector('.btn-toggle-answer');
+                if (allAnswersCollapsed) {
+                    card.classList.add('answer-collapsed');
+                    if (toggleBtn) {
+                        toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> <span class="toggle-text">Show Answer</span>';
+                        toggleBtn.setAttribute('title', 'Show elaborated answer');
+                    }
+                } else {
+                    card.classList.remove('answer-collapsed');
+                    if (toggleBtn) {
+                        toggleBtn.innerHTML = '<span class="toggle-icon">▲</span> <span class="toggle-text">Hide Answer</span>';
+                        toggleBtn.setAttribute('title', 'Hide elaborated answer');
+                    }
+                }
+            });
+
+            globalBtns.forEach(btn => {
+                if (allAnswersCollapsed) {
+                    btn.innerHTML = '<span class="btn-icon">📖</span> <span class="btn-text">Expand All Answers</span>';
+                    btn.classList.add('active-collapsed');
+                } else {
+                    btn.innerHTML = '<span class="btn-icon">👁️</span> <span class="btn-text">Collapse All Answers</span>';
+                    btn.classList.remove('active-collapsed');
+                }
+            });
+        }
     </script>
 
     <footer class="site-footer">

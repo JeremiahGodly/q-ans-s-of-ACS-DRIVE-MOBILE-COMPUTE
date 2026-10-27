@@ -772,6 +772,94 @@ main.content-container {
     line-height: 1.7;
 }
 
+/* 3-Hour Exam Writing Strategy Banner */
+.exam-strategy-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.15rem;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-left: 5px solid #38bdf8;
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 2.25rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .exam-strategy-banner {
+    background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+    border-color: #bae6fd;
+    border-left-color: #0284c7;
+}
+
+[data-theme="warm"] .exam-strategy-banner {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(180, 83, 9, 0.05) 100%);
+    border-color: rgba(245, 158, 11, 0.35);
+    border-left-color: #f59e0b;
+}
+
+[data-theme="forest"] .exam-strategy-banner {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+    border-color: rgba(52, 211, 153, 0.35);
+    border-left-color: #10b981;
+}
+
+[data-theme="sage"] .exam-strategy-banner {
+    background: linear-gradient(135deg, #f0fdfa 0%, #f4f8f6 100%);
+    border-color: #99f6e4;
+    border-left-color: #0d9488;
+}
+
+[data-theme="oled"] .exam-strategy-banner {
+    background: #080808;
+    border-color: #1e293b;
+    border-left-color: #38bdf8;
+}
+
+.strategy-icon {
+    font-size: 1.85rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.strategy-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 0.4rem 0;
+    letter-spacing: -0.01em;
+}
+
+.strategy-content p {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: var(--text-body);
+    margin: 0;
+}
+
+.strategy-content strong {
+    color: var(--text-main);
+}
+
+@media (max-width: 640px) {
+    .exam-strategy-banner {
+        padding: 0.85rem 1rem;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+    .strategy-icon {
+        font-size: 1.4rem;
+    }
+    .strategy-content h4 {
+        font-size: 0.94rem;
+    }
+    .strategy-content p {
+        font-size: 0.86rem;
+        line-height: 1.55;
+    }
+}
+
 /* Module Sections */
 .module-section {
     margin-bottom: 3.5rem;
@@ -895,6 +983,34 @@ main.content-container {
     border: 1px solid var(--border-subtle);
 }
 
+.badge-time {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+[data-theme="light"] .badge-time {
+    background: #ecfdf5;
+    color: #047857;
+    border-color: #6ee7b7;
+}
+
+[data-theme="sage"] .badge-time {
+    background: #e6f4f1;
+    color: #0f766e;
+    border-color: #99f6e4;
+}
+
+[data-theme="oled"] .badge-time {
+    background: #002b1c;
+    color: #34d399;
+    border-color: #059669;
+}
+
 .card-title {
     font-size: 1.35rem;
     font-weight: 700;
@@ -906,7 +1022,179 @@ main.content-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 0.75rem;
     margin-top: 0.25rem;
+    flex-wrap: wrap;
+}
+
+/* Hide/Show Answer Toggle Button */
+.btn-toggle-answer {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.52rem 0.95rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: var(--font-main);
+    color: var(--text-main);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px var(--card-shadow);
+}
+
+.btn-toggle-answer:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+    border-color: var(--border-focus);
+    transform: translateY(-1px);
+}
+
+.question-card.answer-collapsed {
+    padding-bottom: 0.85rem;
+}
+
+.question-card.answer-collapsed .card-header {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.question-card.answer-collapsed .card-body {
+    display: none !important;
+}
+
+/* Card Interactive Timer Widget */
+.card-timer-widget {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--bg-surface);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 6px;
+    padding: 0.15rem 0.35rem;
+    transition: all 0.25s ease;
+}
+
+.timer-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #10b981;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.timer-toggle-btn:hover {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.timer-reset-btn {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.35rem;
+    color: var(--text-muted);
+}
+.timer-reset-btn:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+}
+
+.timer-action {
+    font-family: var(--font-main);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(16, 185, 129, 0.2);
+    padding: 0.1rem 0.38rem;
+    border-radius: 4px;
+}
+
+/* Timer State: Running */
+.card-timer-widget.timer-running {
+    border-color: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+    background: rgba(16, 185, 129, 0.12);
+    animation: timerPulse 2s infinite ease-in-out;
+}
+
+.card-timer-widget.timer-running .timer-action {
+    background: #10b981;
+    color: #064e3b;
+    font-weight: 800;
+}
+
+/* Timer State: Paused */
+.card-timer-widget.timer-paused {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+.card-timer-widget.timer-paused .timer-btn {
+    color: #f59e0b;
+}
+.card-timer-widget.timer-paused .timer-action {
+    background: #f59e0b;
+    color: #451a03;
+}
+
+/* Timer State: Warning (< 1 min) */
+.card-timer-widget.timer-warning {
+    border-color: #f59e0b;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    background: rgba(245, 158, 11, 0.15);
+}
+.card-timer-widget.timer-warning .timer-btn {
+    color: #fbbf24;
+}
+.card-timer-widget.timer-warning .timer-action {
+    background: #f59e0b;
+    color: #451a03;
+}
+
+/* Timer State: Expired (Time's Up) */
+.card-timer-widget.timer-expired {
+    border-color: #ef4444;
+    box-shadow: 0 0 14px rgba(239, 68, 68, 0.5);
+    background: rgba(239, 68, 68, 0.18);
+    animation: expiredFlash 1s infinite alternate;
+}
+.card-timer-widget.timer-expired .timer-btn {
+    color: #f87171;
+}
+.card-timer-widget.timer-expired .timer-action {
+    background: #ef4444;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+@keyframes timerPulse {
+    0%, 100% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.25); }
+    50% { box-shadow: 0 0 14px rgba(16, 185, 129, 0.5); }
+}
+
+@keyframes expiredFlash {
+    from { opacity: 1; }
+    to { opacity: 0.65; }
+}
+
+/* Global Collapse All Button */
+.global-collapse-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.global-collapse-btn.active-collapsed {
+    border-color: var(--border-focus);
+    background: var(--bg-card);
+    color: var(--text-main);
 }
 
 /* YouTube Link Button */
@@ -1065,6 +1353,52 @@ main.content-container {
     background: #ccfbf1;
     color: #115e59;
     border-color: #5eead4;
+}
+
+.byheart-badges-group {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.byheart-time-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    padding: 0.22rem 0.6rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+[data-theme="light"] .byheart-time-badge {
+    background: #e0f2fe;
+    color: #0284c7;
+    border-color: #7dd3fc;
+}
+
+[data-theme="forest"] .byheart-time-badge {
+    background: rgba(52, 211, 153, 0.15);
+    color: #34d399;
+    border-color: rgba(52, 211, 153, 0.35);
+}
+
+[data-theme="sage"] .byheart-time-badge {
+    background: #ccfbf1;
+    color: #0f766e;
+    border-color: #5eead4;
+}
+
+[data-theme="oled"] .byheart-time-badge {
+    background: #001f33;
+    color: #38bdf8;
+    border-color: #0284c7;
 }
 
 .byheart-body {
@@ -1829,11 +2163,27 @@ body {
                 </button>
             </div>
 
-            <a href="index.html" class="standalone-back-btn" title="Return to Master Portal">← 3-in-1 Portal</a>
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <button class="filter-btn global-collapse-btn" id="btn-toggle-all-answers" onclick="toggleAllAnswers()" title="Collapse all answers for Self-Test / Flashcard Exam Practice">
+                    <span class="btn-icon">👁️</span>
+                    <span class="btn-text">Collapse All Answers</span>
+                </button>
+                <a href="index.html" class="standalone-back-btn" title="Return to Master Portal">← 3-in-1 Portal</a>
+            </div>
         </div>
     </header>
 
     <main class="content-container">
+        <!-- 3-Hour Exam Writing Strategy Banner -->
+        <section class="exam-strategy-banner" aria-label="3-Hour Exam Time Budget">
+            <div class="strategy-icon" aria-hidden="true">⏱️</div>
+            <div class="strategy-content">
+                <h4>3-Hour Exam Time Budget (20 Questions / 100 Marks Strategy)</h4>
+                <p><strong>Part A (10 Short Answers &times; 3 Marks = 30M):</strong> Allocate <strong>5 mins per answer</strong> (50 mins total) &mdash; target &frac12; to 1 page highlighting the key formula and core definition.<br>
+                <strong>Part B (10 Essay Answers &times; 7 Marks = 70M):</strong> Allocate <strong>12 mins per answer</strong> (120 mins total) &mdash; target 1.5 to 2 pages with schematic circuit/block diagrams and step-by-step derivations.<br>
+                <strong>Strategy &amp; Review Buffer (10 mins):</strong> 5 mins at start for question choice planning + 5 mins at end for question numbering and equation verification.</p>
+            </div>
+        </section>
         
     <div class="subject-hero hero-mobile">
         <span class="hero-badge">Course Code: CST415</span>
@@ -1911,14 +2261,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-mobile" id="mobile-q1" data-marks="3" data-title="middleware components and gateways in mobile computing">
+    <article class="question-card subject-mobile" id="mobile-q1" data-marks="3" data-title="explain the functions of middleware components and gateways in mobile computing systems.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q1" data-duration="300" data-qid="mobile-q1">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q1')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q1')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q1</span>
             </div>
-            <h3 class="card-title">Middleware Components and Gateways in Mobile Computing</h3>
+            <h3 class="card-title">Explain the functions of middleware components and gateways in mobile computing systems.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=middleware+gateways+in+mobile+computing+functions+types" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -1928,6 +2286,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q1')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -1938,7 +2300,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Mobile Client} \xleftrightarrow{\quad \text{Wireless Link} \quad} \text{Mobile Middleware / Gateway} \xleftrightarrow{\quad \text{High-Speed Backbone} \quad} \text{Enterprise Server}$$</div>
@@ -1970,14 +2335,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q2" data-marks="3" data-title="the internet as the ubiquitous backbone of mobile computing">
+    <article class="question-card subject-mobile" id="mobile-q2" data-marks="3" data-title="explain the role of the internet as the ubiquitous backbone network in mobile computing and discuss mobile ip tunneling.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q2" data-duration="300" data-qid="mobile-q2">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q2')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q2')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q2</span>
             </div>
-            <h3 class="card-title">The Internet as the Ubiquitous Backbone of Mobile Computing</h3>
+            <h3 class="card-title">Explain the role of the Internet as the ubiquitous backbone network in mobile computing and discuss Mobile IP tunneling.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=internet+as+ubiquitous+network+mobile+computing" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -1987,6 +2360,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q2')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -1997,7 +2374,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Care-of-Address (CoA)} \iff \text{Home Agent (HA) Encapsulation/Tunneling} \iff \text{Foreign Agent (FA) / Mobile Node}$$</div>
@@ -2029,14 +2409,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q3" data-marks="3" data-title="network segmentation: core network, edge network, and access network">
+    <article class="question-card subject-mobile" id="mobile-q3" data-marks="3" data-title="explain network segmentation in mobile communication architectures: access network, edge network, and core network.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q3" data-duration="300" data-qid="mobile-q3">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q3')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q3')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q3</span>
             </div>
-            <h3 class="card-title">Network Segmentation: Core Network, Edge Network, and Access Network</h3>
+            <h3 class="card-title">Explain network segmentation in mobile communication architectures: access network, edge network, and core network.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=network+segmentation+core+edge+access+mobile+computing" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2046,6 +2434,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q3')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2056,7 +2448,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Access Network (Radio BS/AP)} \longrightarrow \text{Edge Network (MEC, Low-Latency Aggregation)} \longrightarrow \text{Core Network (HLR, GGSN/UPF)}$$</div>
@@ -2089,14 +2484,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q4" data-marks="3" data-title="intrinsic physical limitations of mobile computing environments">
+    <article class="question-card subject-mobile" id="mobile-q4" data-marks="3" data-title="discuss the intrinsic physical and technical limitations of mobile computing environments.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q4" data-duration="300" data-qid="mobile-q4">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q4')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q4')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q4</span>
             </div>
-            <h3 class="card-title">Intrinsic Physical Limitations of Mobile Computing Environments</h3>
+            <h3 class="card-title">Discuss the intrinsic physical and technical limitations of mobile computing environments.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=limitations+of+mobile+computing+environment+challenges" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2106,6 +2509,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q4')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2116,7 +2523,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Primary Constraints: Limited Battery Life, Scarce Bandwidth, Multipath Fading, Intermittent Connectivity, Security Risks}$$</div>
@@ -2149,14 +2559,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q5" data-marks="7" data-title="comprehensive three-tier architecture of mobile computing systems">
+    <article class="question-card subject-mobile" id="mobile-q5" data-marks="7" data-title="explain the comprehensive three-tier architecture of mobile computing systems with a neat architectural diagram.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q5" data-duration="720" data-qid="mobile-q5">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q5')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q5')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q5</span>
             </div>
-            <h3 class="card-title">Comprehensive Three-Tier Architecture of Mobile Computing Systems</h3>
+            <h3 class="card-title">Explain the comprehensive three-tier architecture of mobile computing systems with a neat architectural diagram.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=three+tier+architecture+mobile+computing+detailed+explanation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2166,6 +2584,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q5')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2176,7 +2598,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Tier 1: Presentation (Thin/Smart Client)} \longleftrightarrow \text{Tier 2: Application / Middleware Logic} \longleftrightarrow \text{Tier 3: Enterprise Database}$$</div>
@@ -2209,14 +2634,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q6" data-marks="7" data-title="comprehensive design considerations for mobile computing systems">
+    <article class="question-card subject-mobile" id="mobile-q6" data-marks="7" data-title="discuss the key architectural and software design considerations for developing mobile computing systems.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q6" data-duration="720" data-qid="mobile-q6">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q6')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q6')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q6</span>
             </div>
-            <h3 class="card-title">Comprehensive Design Considerations for Mobile Computing Systems</h3>
+            <h3 class="card-title">Discuss the key architectural and software design considerations for developing mobile computing systems.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=design+considerations+for+mobile+computing+systems+architecture" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2226,6 +2659,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q6')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2236,7 +2673,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Key Axioms: Energy-Aware Scheduling, Adaptive Bandwidth Throttling, Offline Replication, End-to-End Security}$$</div>
@@ -2270,14 +2710,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q7" data-marks="7" data-title="context-aware system management: client context, policy, security, and adaptability managers">
+    <article class="question-card subject-mobile" id="mobile-q7" data-marks="7" data-title="explain context-aware system management in mobile computing covering client context, policy, security, and adaptability managers.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q7" data-duration="720" data-qid="mobile-q7">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q7')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q7')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q7</span>
             </div>
-            <h3 class="card-title">Context-Aware System Management: Client Context, Policy, Security, and Adaptability Managers</h3>
+            <h3 class="card-title">Explain context-aware system management in mobile computing covering client context, policy, security, and adaptability managers.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=context+aware+mobile+computing+client+context+policy+security+adaptability+manager" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2287,6 +2735,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q7')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2297,7 +2749,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Context Tuple } \mathcal{C} = \langle \text{Location}, \text{Network Bandwidth}, \text{Battery Energy}, \text{Device Profile}, \text{User Activity} \rangle$$</div>
@@ -2331,14 +2786,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q8" data-marks="7" data-title="content adaptation attributes and classifications of transcoding (syntactic, structural, and semantic transcoding)">
+    <article class="question-card subject-mobile" id="mobile-q8" data-marks="7" data-title="what is content adaptation? classify and explain syntactic, structural, and semantic transcoding in mobile systems.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q8" data-duration="720" data-qid="mobile-q8">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q8')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q8')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q8</span>
             </div>
-            <h3 class="card-title">Content Adaptation Attributes and Classifications of Transcoding (Syntactic, Structural, and Semantic Transcoding)</h3>
+            <h3 class="card-title">What is content adaptation? Classify and explain syntactic, structural, and semantic transcoding in mobile systems.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=content+adaptation+transcoding+mobile+computing+syntactic+structural+semantic" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2348,6 +2811,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q8')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2358,7 +2825,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Transcoding: Modality Conversion (Text } \leftrightarrow \text{ Speech), Resolution Scaling, Format Compression (PNG } \to \text{ WebP)}$$</div>
@@ -2392,14 +2862,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q9" data-marks="7" data-title="seamless communication and essential facets maintained during seamless roaming">
+    <article class="question-card subject-mobile" id="mobile-q9" data-marks="7" data-title="what is seamless communication? discuss the essential facets that must be maintained during seamless mobile roaming and handoff.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q9" data-duration="720" data-qid="mobile-q9">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q9')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q9')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q9</span>
             </div>
-            <h3 class="card-title">Seamless Communication and Essential Facets Maintained During Seamless Roaming</h3>
+            <h3 class="card-title">What is seamless communication? Discuss the essential facets that must be maintained during seamless mobile roaming and handoff.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=seamless+communication+roaming+mobile+computing+handover+QoS" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2409,6 +2887,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q9')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2419,7 +2901,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Seamless Mobility: Continuous Session State, Zero Packet Loss (Buffering/Bicasting), and Handover Latency } \le 50\text{ ms}$$</div>
@@ -2464,14 +2949,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-mobile" id="mobile-q10" data-marks="3" data-title="comparative analysis of satellite systems: geo, leo, and meo">
+    <article class="question-card subject-mobile" id="mobile-q10" data-marks="3" data-title="provide a comparative analysis of geo, leo, and meo satellite systems in mobile communications.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q10" data-duration="300" data-qid="mobile-q10">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q10')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q10')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q10</span>
             </div>
-            <h3 class="card-title">Comparative Analysis of Satellite Systems: GEO, LEO, and MEO</h3>
+            <h3 class="card-title">Provide a comparative analysis of GEO, LEO, and MEO satellite systems in mobile communications.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=satellite+communication+GEO+LEO+MEO+comparison+mobile+computing" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2481,6 +2974,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q10')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2491,7 +2988,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{GEO: } 35,786\text{ km (latency } \sim 250\text{ ms, 3 cover Earth); LEO: } 500\text{--}1500\text{ km (latency } \sim 20\text{ ms, dense constellation)}$$</div>
@@ -2524,14 +3024,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q11" data-marks="3" data-title="mobile station identifiers: imei, imsi, msisdn, and tmsi">
+    <article class="question-card subject-mobile" id="mobile-q11" data-marks="3" data-title="explain the significance and format of mobile station identifiers: imei, imsi, msisdn, and tmsi.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q11" data-duration="300" data-qid="mobile-q11">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q11')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q11')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q11</span>
             </div>
-            <h3 class="card-title">Mobile Station Identifiers: IMEI, IMSI, MSISDN, and TMSI</h3>
+            <h3 class="card-title">Explain the significance and format of mobile station identifiers: IMEI, IMSI, MSISDN, and TMSI.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=IMEI+IMSI+MSISDN+TMSI+differences+mobile+computing+GSM" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2541,6 +3049,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q11')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2551,11 +3063,14 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
-                    <div class="byheart-eq">$$\text{IMEI (Handset Hardware ID)}, \quad \text{IMSI (SIM Subscriber ID in HLR)}, \quad \text{MSISDN (Dialable Phone Number)}, \quad \text{TMSI (Temporary ID over Air)}$$</div>
-                    <p class="byheart-text">IMEI identifies the physical device hardware, IMSI uniquely identifies the subscriber in the network database, MSISDN is the public dialable phone number, and TMSI safeguards user identity against radio eavesdropping.</p>
+                    <div class="byheart-eq">$$\text{IMEI (15-digit Handset ID)} \quad | \quad \text{IMSI (15-digit SIM ID)} \quad | \quad \text{MSISDN (Public Number)} \quad | \quad \text{TMSI (Temporary Air ID)}$$</div>
+                    <p class="byheart-text"><strong>Mobile Station Identifiers:</strong><br><strong>1. IMEI:</strong> 15-digit hardware serial number uniquely identifying the physical mobile terminal hardware (TAC + FAC + SNR + Spare).<br><strong>2. IMSI:</strong> 15-digit subscriber identity stored in SIM and HLR/AUC (MCC + MNC + MSIN).<br><strong>3. MSISDN:</strong> Dialable public telephone number routed via PSTN (CC + NDC + SN).<br><strong>4. TMSI:</strong> Temporary identity assigned by VLR to prevent eavesdropping and protect subscriber anonymity over the air interface.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -2585,14 +3100,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q12" data-marks="3" data-title="call progress indication mechanisms in cellular telephony">
+    <article class="question-card subject-mobile" id="mobile-q12" data-marks="3" data-title="explain call progress indication mechanisms and signaling protocols in cellular telephony.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q12" data-duration="300" data-qid="mobile-q12">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q12')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q12')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q12</span>
             </div>
-            <h3 class="card-title">Call Progress Indication Mechanisms in Cellular Telephony</h3>
+            <h3 class="card-title">Explain call progress indication mechanisms and signaling protocols in cellular telephony.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=call+progress+indication+cellular+networks+telecom+signaling" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2602,6 +3125,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q12')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2612,7 +3139,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{SS7 ISUP Signaling: Initial Address Message (IAM) } \longrightarrow \text{ Address Complete Message (ACM / Ringback) } \longrightarrow \text{ Answer (ANM)}$$</div>
@@ -2645,14 +3175,22 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q13" data-marks="7" data-title="comprehensive multiple access procedures: fdma, tdma, cdma, and sdma with mathematical principles">
+    <article class="question-card subject-mobile" id="mobile-q13" data-marks="7" data-title="explain multiple access techniques: fdma, tdma, cdma, and sdma with mathematical principles and comparative characteristics.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q13" data-duration="720" data-qid="mobile-q13">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q13')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q13')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q13</span>
             </div>
-            <h3 class="card-title">Comprehensive Multiple Access Procedures: FDMA, TDMA, CDMA, and SDMA with Mathematical Principles</h3>
+            <h3 class="card-title">Explain multiple access techniques: FDMA, TDMA, CDMA, and SDMA with mathematical principles and comparative characteristics.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=FDMA+TDMA+CDMA+SDMA+multiple+access+techniques+derivation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2662,6 +3200,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q13')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2672,7 +3214,10 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Shannon: } C = B \log_2(1 + \text{SINR}); \quad \text{CDMA: Orthogonal Walsh Codes } \sum c_i(t)c_j(t) = 0 \text{ sharing time \& frequency}$$</div>
@@ -2712,14 +3257,22 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q14" data-marks="7" data-title="comprehensive architecture of the global system for mobile communication (gsm) and network databases">
+    <article class="question-card subject-mobile" id="mobile-q14" data-marks="7" data-title="draw and explain the comprehensive architecture of the global system for mobile communications (gsm) and its network databases.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q14" data-duration="720" data-qid="mobile-q14">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q14')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q14')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q14</span>
             </div>
-            <h3 class="card-title">Comprehensive Architecture of the Global System for Mobile Communication (GSM) and Network Databases</h3>
+            <h3 class="card-title">Draw and explain the comprehensive architecture of the Global System for Mobile Communications (GSM) and its network databases.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=GSM+architecture+HLR+VLR+AUC+EIR+explanation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2729,6 +3282,10 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q14')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2739,7 +3296,10 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{MS (Handset + SIM)} \longleftrightarrow \text{BSS (BTS + BSC)} \longleftrightarrow \text{NSS (MSC + HLR + VLR + AUC + EIR)} \longleftrightarrow \text{PSTN / ISDN}$$</div>
@@ -2773,14 +3333,22 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q15" data-marks="7" data-title="gsm call routing (mtc and moc) and comprehensive distinction between handover and roaming">
+    <article class="question-card subject-mobile" id="mobile-q15" data-marks="7" data-title="explain mobile terminated call (mtc) and mobile originated call (moc) routing in gsm. distinguish between handover and roaming.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q15" data-duration="720" data-qid="mobile-q15">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q15')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q15')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q15</span>
             </div>
-            <h3 class="card-title">GSM Call Routing (MTC and MOC) and Comprehensive Distinction Between Handover and Roaming</h3>
+            <h3 class="card-title">Explain Mobile Terminated Call (MTC) and Mobile Originated Call (MOC) routing in GSM. Distinguish between handover and roaming.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=GSM+call+routing+MOC+MTC+handover+vs+roaming" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2790,6 +3358,10 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q15')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2800,7 +3372,10 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{MTC: GMSC queries HLR } \longrightarrow \text{ HLR requests MSRN from VLR } \longrightarrow \text{ GMSC routes call to serving MSC} \longrightarrow \text{ MS Paged}$$</div>
@@ -2834,14 +3409,22 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q16" data-marks="7" data-title="interactive voice response (ivr) architecture and call flow for a theatre ticket booking system">
+    <article class="question-card subject-mobile" id="mobile-q16" data-marks="7" data-title="draw and explain the interactive voice response (ivr) architecture and call flow for a telephone banking or theatre ticket booking system.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q16" data-duration="720" data-qid="mobile-q16">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q16')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q16')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q16</span>
             </div>
-            <h3 class="card-title">Interactive Voice Response (IVR) Architecture and Call Flow for a Theatre Ticket Booking System</h3>
+            <h3 class="card-title">Draw and explain the Interactive Voice Response (IVR) architecture and call flow for a telephone banking or theatre ticket booking system.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=IVR+architecture+theatre+ticket+booking+call+flow+VoiceXML" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2851,6 +3434,10 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q16')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2861,7 +3448,10 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Telecom Trunk (E1/T1/SIP) } \longrightarrow \text{ IVR Media Gateway (DTMF Decoder / TTS / ASR) } \longleftrightarrow \text{ Database Server}$$</div>
@@ -2895,14 +3485,22 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q17" data-marks="7" data-title="gsm security, authentication, and encryption: mathematical algorithms a3, a8, and a5">
+    <article class="question-card subject-mobile" id="mobile-q17" data-marks="7" data-title="explain gsm security architecture. describe the mathematical operations of authentication algorithm a3, cipher key generation a8, and encryption algorithm a5.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q17" data-duration="720" data-qid="mobile-q17">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q17')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q17')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q17</span>
             </div>
-            <h3 class="card-title">GSM Security, Authentication, and Encryption: Mathematical Algorithms A3, A8, and A5</h3>
+            <h3 class="card-title">Explain GSM security architecture. Describe the mathematical operations of authentication algorithm A3, cipher key generation A8, and encryption algorithm A5.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=GSM+security+authentication+algorithms+A3+A5+A8+COMP128" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2912,6 +3510,10 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q17')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -2922,11 +3524,14 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
-                    <div class="byheart-eq">$$\text{Authentication: } \text{SRES} = A3(K_i, \text{RAND}); \quad \text{Key Gen: } K_c = A8(K_i, \text{RAND}); \quad \text{Stream Cipher: } \text{Data} \oplus A5(K_c)$$</div>
-                    <p class="byheart-text">GSM security keeps the subscriber secret key $K_i$ confidential on the SIM card, using challenge-response algorithm A3 for network authentication, A8 to generate cipher key $K_c$, and A5 for over-the-air voice encryption.</p>
+                    <div class="byheart-eq">$$\text{Authentication: } \text{SRES} = A3(K_i, \text{RAND}), \quad \text{Key Gen: } K_c = A8(K_i, \text{RAND}), \quad \text{Encryption: } \text{Data} \oplus A5(K_c)$$</div>
+                    <p class="byheart-text"><strong>GSM Security Triad Algorithms:</strong><br><strong>1. A3 Algorithm (Authentication):</strong> SIM computes 32-bit $\text{SRES}$ from 128-bit challenge $\text{RAND}$ and secret key $K_i$; network authenticates if $\text{SRES}$ matches AUC.<br><strong>2. A8 Algorithm (Ciphering Key Generation):</strong> Computes 64-bit session key $K_c$ on SIM from $\text{RAND}$ and $K_i$ ($K_i$ never transmitted over radio).<br><strong>3. A5 Algorithm (Air Encryption):</strong> Hardware stream cipher that encrypts/decrypts TDMA radio bursts using $K_c$ and frame number.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -2973,14 +3578,22 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-mobile" id="mobile-q18" data-marks="3" data-title="strengths and architectural distinctiveness of the short message service (sms)">
+    <article class="question-card subject-mobile" id="mobile-q18" data-marks="3" data-title="explain the architectural distinctiveness and technical strengths of short message service (sms) over cellular signaling channels.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q18" data-duration="300" data-qid="mobile-q18">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q18')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q18')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q18</span>
             </div>
-            <h3 class="card-title">Strengths and Architectural Distinctiveness of the Short Message Service (SMS)</h3>
+            <h3 class="card-title">Explain the architectural distinctiveness and technical strengths of Short Message Service (SMS) over cellular signaling channels.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=SMS+architecture+strengths+mobile+computing" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -2990,6 +3603,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q18')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3000,7 +3617,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{SMS Transmission: Control Channels (SDCCH / SACCH) } \implies \text{Zero impact on dedicated traffic channels (TCH)}$$</div>
@@ -3033,14 +3653,22 @@ This encryption completely shields voice and data payloads from eavesdropping ov
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q19" data-marks="3" data-title="limitations and bottlenecks of general packet radio service (gprs)">
+    <article class="question-card subject-mobile" id="mobile-q19" data-marks="3" data-title="discuss the architectural limitations and throughput bottlenecks of general packet radio service (gprs).">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q19" data-duration="300" data-qid="mobile-q19">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q19')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q19')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q19</span>
             </div>
-            <h3 class="card-title">Limitations and Bottlenecks of General Packet Radio Service (GPRS)</h3>
+            <h3 class="card-title">Discuss the architectural limitations and throughput bottlenecks of General Packet Radio Service (GPRS).</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=GPRS+limitations+bottlenecks+mobile+computing" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3050,6 +3678,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q19')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3060,7 +3692,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Max Throughput: } 171.2\text{ kbps (CS-4, 8 slots); Bottlenecks: Dynamic channel coding, high latency, voice priority pre-emption}$$</div>
@@ -3093,14 +3728,22 @@ This encryption completely shields voice and data payloads from eavesdropping ov
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q20" data-marks="3" data-title="billing and charging mechanisms in gprs: volume, duration, qos, and cdr handling via cgf">
+    <article class="question-card subject-mobile" id="mobile-q20" data-marks="3" data-title="explain the billing and charging mechanisms in gprs based on data volume, duration, qos, and charging data records (cdrs).">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q20" data-duration="300" data-qid="mobile-q20">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q20')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q20')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q20</span>
             </div>
-            <h3 class="card-title">Billing and Charging Mechanisms in GPRS: Volume, Duration, QoS, and CDR Handling via CGF</h3>
+            <h3 class="card-title">Explain the billing and charging mechanisms in GPRS based on data volume, duration, QoS, and Charging Data Records (CDRs).</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=GPRS+billing+charging+mechanisms+volume+duration+QoS+CGF" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3110,6 +3753,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q20')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3120,7 +3767,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{CDR Charging: S-CDR generated at SGSN (Radio/Mobility) } + \text{ G-CDR generated at GGSN (Data Volume \& External IP)}$$</div>
@@ -3153,14 +3803,22 @@ This encryption completely shields voice and data payloads from eavesdropping ov
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q21" data-marks="7" data-title="comprehensive architecture and delivery mechanisms of sms (sm-mt, sm-mo, smpp) and location-based applications using sms">
+    <article class="question-card subject-mobile" id="mobile-q21" data-marks="7" data-title="explain the end-to-end architecture and message delivery mechanism of sms (sm-mt and sm-mo) and discuss location-based sms services.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q21" data-duration="720" data-qid="mobile-q21">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q21')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q21')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q21</span>
             </div>
-            <h3 class="card-title">Comprehensive Architecture and Delivery Mechanisms of SMS (SM-MT, SM-MO, SMPP) and Location-Based Applications Using SMS</h3>
+            <h3 class="card-title">Explain the end-to-end architecture and message delivery mechanism of SMS (SM-MT and SM-MO) and discuss location-based SMS services.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=SMS+architecture+delivery+flow+SM+MO+SM+MT+SMPP+location+based" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3170,6 +3828,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q21')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3180,7 +3842,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{SMS-MT Delivery: SMSC } \longrightarrow \text{ SMS-GMSC } \xrightarrow{\text{HLR Routing Info}} \text{ Serving MSC/VLR } \xrightarrow{\text{SDCCH Paging}} \text{ MS}$$</div>
@@ -3214,14 +3879,22 @@ This encryption completely shields voice and data payloads from eavesdropping ov
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q22" data-marks="7" data-title="comprehensive architecture, protocol stack, and network operations of gprs (sgsn, ggsn, pcu, gprs attach, pdp context activation)">
+    <article class="question-card subject-mobile" id="mobile-q22" data-marks="7" data-title="explain the comprehensive architecture, protocol stack, and packet routing operations of gprs including sgsn, ggsn, and pdp context activation.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q22" data-duration="720" data-qid="mobile-q22">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q22')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q22')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q22</span>
             </div>
-            <h3 class="card-title">Comprehensive Architecture, Protocol Stack, and Network Operations of GPRS (SGSN, GGSN, PCU, GPRS Attach, PDP Context Activation)</h3>
+            <h3 class="card-title">Explain the comprehensive architecture, protocol stack, and packet routing operations of GPRS including SGSN, GGSN, and PDP context activation.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=GPRS+architecture+protocol+stack+SGSN+GGSN+PDP+context+activation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3231,6 +3904,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q22')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3241,7 +3918,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{MS} \xrightarrow{\text{Um (MAC/RLC)}} \text{BSS} \xrightarrow{\text{Gb (Frame Relay)}} \text{SGSN} \xrightarrow{\text{Gn (GTP/UDP/IP)}} \text{GGSN} \xrightarrow{\text{Gi}} \text{Public Internet}$$</div>
@@ -3276,14 +3956,22 @@ This encryption completely shields voice and data payloads from eavesdropping ov
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q23" data-marks="7" data-title="quality of service (qos) parameters in gprs and packet data networks">
+    <article class="question-card subject-mobile" id="mobile-q23" data-marks="7" data-title="explain the quality of service (qos) parameters, classes, and profiles defined in gprs and packet data networks.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q23" data-duration="720" data-qid="mobile-q23">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q23')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q23')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q23</span>
             </div>
-            <h3 class="card-title">Quality of Service (QoS) Parameters in GPRS and Packet Data Networks</h3>
+            <h3 class="card-title">Explain the Quality of Service (QoS) parameters, classes, and profiles defined in GPRS and packet data networks.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=GPRS+QoS+parameters+precedence+reliability+delay+throughput" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3293,6 +3981,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q23')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3303,7 +3995,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{QoS Profile} = \langle \text{Service Precedence (1-3)}, \; \text{Delay Class (1-4)}, \; \text{Reliability Class (1-5)}, \; \text{Peak/Mean Throughput} \rangle$$</div>
@@ -3348,14 +4043,22 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-mobile" id="mobile-q24" data-marks="3" data-title="wlan architecture: infrastructure mode vs independent ad-hoc mode (ibss)">
+    <article class="question-card subject-mobile" id="mobile-q24" data-marks="3" data-title="compare ieee 802.11 wlan infrastructure basic service set (bss) mode with independent basic service set (ibss / ad-hoc) mode.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q24" data-duration="300" data-qid="mobile-q24">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q24')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q24')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q24</span>
             </div>
-            <h3 class="card-title">WLAN Architecture: Infrastructure Mode vs Independent Ad-Hoc Mode (IBSS)</h3>
+            <h3 class="card-title">Compare IEEE 802.11 WLAN Infrastructure Basic Service Set (BSS) mode with Independent Basic Service Set (IBSS / Ad-hoc) mode.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=WLAN+architecture+infrastructure+vs+ad+hoc+IBSS+IEEE+802.11" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3365,6 +4068,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q24')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3375,7 +4082,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Infrastructure BSS: Mobile nodes communicate via Access Point (AP); IBSS: Peer-to-peer ad-hoc communication without AP}$$</div>
@@ -3407,14 +4117,22 @@ This encryption completely shields voice and data payloads from eavesdropping ov
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q25" data-marks="3" data-title="interframe spaces (ifs) in ieee 802.11 medium access control: sifs, pifs, difs, and eifs">
+    <article class="question-card subject-mobile" id="mobile-q25" data-marks="3" data-title="explain the four interframe spaces (ifs) in ieee 802.11 mac: sifs, pifs, difs, and eifs, and their role in medium access priority.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q25" data-duration="300" data-qid="mobile-q25">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q25')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q25')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q25</span>
             </div>
-            <h3 class="card-title">Interframe Spaces (IFS) in IEEE 802.11 Medium Access Control: SIFS, PIFS, DIFS, and EIFS</h3>
+            <h3 class="card-title">Explain the four Interframe Spaces (IFS) in IEEE 802.11 MAC: SIFS, PIFS, DIFS, and EIFS, and their role in medium access priority.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=interframe+spaces+SIFS+PIFS+DIFS+EIFS+802.11+MAC" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3424,6 +4142,10 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q25')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3434,11 +4156,14 @@ This encryption completely shields voice and data payloads from eavesdropping ov
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Priority Hierarchy: } \text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS} \implies \text{Shorter waiting interval guarantees higher channel access priority}$$</div>
-                    <p class="byheart-text">IEEE 802.11 regulates media access using differential time gaps: SIFS gives top priority to ACKs/CTS, PIFS provides medium priority for polling, and DIFS governs asynchronous distributed data contention.</p>
+                    <p class="byheart-text"><strong>IEEE 802.11 Interframe Spaces (IFS):</strong><br><strong>1. SIFS (Shortest, 10 &mu;s):</strong> Highest priority for immediate response frames: ACK, CTS, and fragmented frames.<br><strong>2. PIFS (PCF IFS):</strong> Medium priority used exclusively by Access Point in Point Coordination Function for contention-free polling.<br><strong>3. DIFS (DCF IFS):</strong> Standard interval contending stations must wait after channel idle before initiating backoff counter in CSMA/CA.<br><strong>4. EIFS (Extended IFS):</strong> Longest waiting period applied whenever an invalid or corrupted packet frame is received.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -3470,14 +4195,22 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q26" data-marks="7" data-title="comparative technical analysis: wi-fi vs 3g / cellular networks">
+    <article class="question-card subject-mobile" id="mobile-q26" data-marks="7" data-title="provide a comprehensive comparative technical analysis between wi-fi (ieee 802.11) and 3g/cellular wireless networks.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q26" data-duration="720" data-qid="mobile-q26">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q26')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q26')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q26</span>
             </div>
-            <h3 class="card-title">Comparative Technical Analysis: Wi-Fi vs 3G / Cellular Networks</h3>
+            <h3 class="card-title">Provide a comprehensive comparative technical analysis between Wi-Fi (IEEE 802.11) and 3G/Cellular wireless networks.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=Wifi+vs+3G+cellular+network+comparison+differences" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3487,6 +4220,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q26')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3497,7 +4234,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Wi-Fi: Unlicensed 2.4/5 GHz band, high local bit-rate, low range; 3G: Licensed spectrum, macrocells, QoS, seamless mobility}$$</div>
@@ -3531,14 +4271,22 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q27" data-marks="7" data-title="hidden and exposed terminal problems and virtual carrier sensing via rts/cts handshaking">
+    <article class="question-card subject-mobile" id="mobile-q27" data-marks="7" data-title="explain the hidden terminal and exposed terminal problems in wireless networks. how does rts/cts handshaking resolve the hidden terminal issue?">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q27" data-duration="720" data-qid="mobile-q27">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q27')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q27')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q27</span>
             </div>
-            <h3 class="card-title">Hidden and Exposed Terminal Problems and Virtual Carrier Sensing via RTS/CTS Handshaking</h3>
+            <h3 class="card-title">Explain the hidden terminal and exposed terminal problems in wireless networks. How does RTS/CTS handshaking resolve the hidden terminal issue?</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=hidden+terminal+exposed+terminal+RTS+CTS+virtual+carrier+sensing+802.11" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3548,6 +4296,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q27')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3558,7 +4310,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Handshake: } \text{Sender} \xrightarrow{\text{RTS}} \text{Receiver} \xrightarrow{\text{CTS}} \text{Sender} \implies \text{Overcomes Hidden Terminal}; \quad \text{NAV (Network Allocation Vector)}$$</div>
@@ -3593,14 +4348,22 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q28" data-marks="7" data-title="comprehensive architecture and analysis of wireless local loop (wll)">
+    <article class="question-card subject-mobile" id="mobile-q28" data-marks="7" data-title="draw and explain the comprehensive architecture and operational advantages of wireless local loop (wll).">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q28" data-duration="720" data-qid="mobile-q28">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q28')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q28')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q28</span>
             </div>
-            <h3 class="card-title">Comprehensive Architecture and Analysis of Wireless Local Loop (WLL)</h3>
+            <h3 class="card-title">Draw and explain the comprehensive architecture and operational advantages of Wireless Local Loop (WLL).</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=wireless+local+loop+WLL+architecture+components+explanation" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3610,6 +4373,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q28')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3620,7 +4387,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{PSTN Exchange } \longleftrightarrow \text{ Radio Base Station (RBS) } \xleftarrow{\text{Microwave / RF Link}} \text{ Fixed Wireless Terminal (FWT) at Subscriber Premise}$$</div>
@@ -3655,14 +4425,22 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q29" data-marks="7" data-title="wlan security evolution: wep vulnerabilities, wpa, wpa2 (802.11i/ccmp), and wpa3 (sae)">
+    <article class="question-card subject-mobile" id="mobile-q29" data-marks="7" data-title="trace the security evolution in ieee 802.11 wlans: discuss wep vulnerabilities, wpa (tkip), wpa2 (aes-ccmp), and 802.1x authentication.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q29" data-duration="720" data-qid="mobile-q29">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q29')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q29')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q29</span>
             </div>
-            <h3 class="card-title">WLAN Security Evolution: WEP Vulnerabilities, WPA, WPA2 (802.11i/CCMP), and WPA3 (SAE)</h3>
+            <h3 class="card-title">Trace the security evolution in IEEE 802.11 WLANs: discuss WEP vulnerabilities, WPA (TKIP), WPA2 (AES-CCMP), and 802.1X authentication.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=WLAN+security+evolution+WEP+WPA+WPA2+CCMP+WPA3+SAE+vulnerabilities" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3672,6 +4450,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q29')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3682,7 +4464,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Evolution: WEP (Weak 24-bit IV, RC4) } \longrightarrow \text{ WPA (TKIP per-packet key) } \longrightarrow \text{ WPA2 (AES-CCMP 128-bit block cipher)}$$</div>
@@ -3716,14 +4501,22 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q30" data-marks="7" data-title="hiperlan communication models and medium access control: hiperlan 1 vs hiperlan 2">
+    <article class="question-card subject-mobile" id="mobile-q30" data-marks="7" data-title="explain hiperlan communication models. compare hiperlan/1 (ey-npma) with hiperlan/2 (centralized tdma/tdd).">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q30" data-duration="720" data-qid="mobile-q30">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q30')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q30')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q30</span>
             </div>
-            <h3 class="card-title">HIPERLAN Communication Models and Medium Access Control: HIPERLAN 1 vs HIPERLAN 2</h3>
+            <h3 class="card-title">Explain HIPERLAN communication models. Compare HIPERLAN/1 (EY-NPMA) with HIPERLAN/2 (centralized TDMA/TDD).</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=HIPERLAN+1+vs+HIPERLAN+2+architecture+EY-NPMA+comparison" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3733,6 +4526,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q30')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3743,7 +4540,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{HIPERLAN/1: Non-preemptive Priority Multiple Access (EY-NPMA); HIPERLAN/2: TDMA/TDD centralized dynamic scheduling in 5 GHz band}$$</div>
@@ -3789,14 +4589,22 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         </div>
         <div class="questions-grid">
             
-    <article class="question-card subject-mobile" id="mobile-q31" data-marks="3" data-title="foundational components of information security: the extended cia triad, authenticity, non-repudiation, and authorization">
+    <article class="question-card subject-mobile" id="mobile-q31" data-marks="3" data-title="explain the foundational pillars of information security: extended cia triad, authenticity, non-repudiation, and authorization in mobile systems.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q31" data-duration="300" data-qid="mobile-q31">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q31')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q31')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q31</span>
             </div>
-            <h3 class="card-title">Foundational Components of Information Security: The Extended CIA Triad, Authenticity, Non-Repudiation, and Authorization</h3>
+            <h3 class="card-title">Explain the foundational pillars of information security: extended CIA triad, authenticity, non-repudiation, and authorization in mobile systems.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=information+security+components+CIA+triad+authenticity+non+repudiation+authorization+mobile+computing" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3806,6 +4614,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q31')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3816,11 +4628,14 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
-                    <div class="byheart-eq">$$\text{Security Pillars: Confidentiality (Encryption), Integrity (Hashing/MAC), Availability (Redundancy), Authentication, and Non-Repudiation (Digital Signatures)}$$</div>
-                    <p class="byheart-text">Information security guarantees data privacy (Confidentiality), unauthorized modification detection (Integrity), system accessibility (Availability), and verifiable author proof (Authentication & Non-Repudiation).</p>
+                    <div class="byheart-eq">$$\text{Security Pillars: Confidentiality (AES/RSA), Integrity (SHA-256/HMAC), Availability (DDoS Defense), Auth \& Non-Repudiation (DSA)}$$</div>
+                    <p class="byheart-text"><strong>Foundational Information Security Pillars:</strong><br><strong>1. Confidentiality:</strong> Ensures sensitive transmitted data is unreadable to eavesdroppers via encryption.<br><strong>2. Integrity:</strong> Guarantees that data packets are not tampered with, altered, or injected in transit using cryptographic hash functions (SHA/HMAC).<br><strong>3. Availability:</strong> Assures that network services and spectrum remain accessible to legitimate users under peak load or attacks.<br><strong>4. Authenticity & Non-Repudiation:</strong> Verifies genuine claimant identity and prevents sender from denying authorship via digital signatures.</p>
                 </div>
             </div>
             <div class="answer-section">
@@ -3848,14 +4663,22 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q32" data-marks="3" data-title="classification of security attacks in mobile computing: static vs dynamic attacks on assets">
+    <article class="question-card subject-mobile" id="mobile-q32" data-marks="3" data-title="classify and explain security attacks in mobile computing into static and dynamic attacks on mobile assets.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q32" data-duration="300" data-qid="mobile-q32">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q32')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q32')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q32</span>
             </div>
-            <h3 class="card-title">Classification of Security Attacks in Mobile Computing: Static vs Dynamic Attacks on Assets</h3>
+            <h3 class="card-title">Classify and explain security attacks in mobile computing into static and dynamic attacks on mobile assets.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=security+attacks+classification+static+vs+dynamic+attacks+mobile+computing" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3865,6 +4688,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q32')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3875,7 +4702,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Passive Attacks (Eavesdropping, Traffic Analysis) vs Active Attacks (Masquerade, Replay, Message Modification, Denial of Service)}$$</div>
@@ -3907,14 +4737,22 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q33" data-marks="3" data-title="security protocols in mobile networks: ssl, tls architecture, and mobile virtual private networks (mobile vpn)">
+    <article class="question-card subject-mobile" id="mobile-q33" data-marks="3" data-title="explain ssl/tls protocol architecture and discuss its adaptation in mobile networks including wtls and mobile vpns.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
+                <div class="card-timer-widget" id="timer-mobile-q33" data-duration="300" data-qid="mobile-q33">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q33')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">05:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q33')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Short Answer</span>
                 <span class="badge badge-qid">ID: MOBILE-Q33</span>
             </div>
-            <h3 class="card-title">Security Protocols in Mobile Networks: SSL, TLS Architecture, and Mobile Virtual Private Networks (Mobile VPN)</h3>
+            <h3 class="card-title">Explain SSL/TLS protocol architecture and discuss its adaptation in mobile networks including WTLS and Mobile VPNs.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=SSL+TLS+architecture+mobile+VPN+mobile+security+protocols" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3924,6 +4762,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q33')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3934,7 +4776,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{TLS Architecture: Handshake Protocol (mutual auth \& key exchange) + Record Protocol (symmetric encryption \& HMAC data integrity)}$$</div>
@@ -3967,14 +4812,22 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q34" data-marks="7" data-title="public key cryptography and complete step-by-step numerical solving of the rsa cryptosystem">
+    <article class="question-card subject-mobile" id="mobile-q34" data-marks="7" data-title="explain the rsa public-key cryptosystem. solve a complete step-by-step numerical problem for key generation, encryption, and decryption.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q34" data-duration="720" data-qid="mobile-q34">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q34')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q34')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q34</span>
             </div>
-            <h3 class="card-title">Public Key Cryptography and Complete Step-by-Step Numerical Solving of the RSA Cryptosystem</h3>
+            <h3 class="card-title">Explain the RSA public-key cryptosystem. Solve a complete step-by-step numerical problem for key generation, encryption, and decryption.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=RSA+algorithm+step+by+step+numerical+example+p+3+q+11+e+7+encrypt+m+2" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -3984,6 +4837,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q34')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -3994,7 +4851,10 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$n = p \cdot q, \quad \phi(n) = (p-1)(q-1), \quad e \cdot d \equiv 1 \pmod{\phi(n)}, \quad C = M^e \pmod n, \quad M = C^d \pmod n$$</div>
@@ -4070,14 +4930,22 @@ The decrypted plaintext $m' = 2$ matches the original message $m = 2$ perfectly,
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q35" data-marks="7" data-title="diffie-hellman key exchange algorithm: mathematical derivation, security basis, and numerical example">
+    <article class="question-card subject-mobile" id="mobile-q35" data-marks="7" data-title="derive the diffie-hellman key exchange algorithm. explain the discrete logarithm problem and discuss vulnerability to man-in-the-middle attack.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q35" data-duration="720" data-qid="mobile-q35">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q35')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q35')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q35</span>
             </div>
-            <h3 class="card-title">Diffie-Hellman Key Exchange Algorithm: Mathematical Derivation, Security Basis, and Numerical Example</h3>
+            <h3 class="card-title">Derive the Diffie-Hellman key exchange algorithm. Explain the discrete logarithm problem and discuss vulnerability to Man-in-the-Middle attack.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=Diffie+Hellman+key+exchange+algorithm+numerical+example+discrete+logarithm" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -4087,6 +4955,10 @@ The decrypted plaintext $m' = 2$ matches the original message $m = 2$ perfectly,
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q35')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -4097,7 +4969,10 @@ The decrypted plaintext $m' = 2$ matches the original message $m = 2$ perfectly,
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$Y_A = \alpha^{X_A} \pmod q, \quad Y_B = \alpha^{X_B} \pmod q, \quad K = (Y_B)^{X_A} \pmod q = (Y_A)^{X_B} \pmod q = \alpha^{X_A X_B} \pmod q$$</div>
@@ -4182,14 +5057,22 @@ Both Alice and Bob have independently and successfully derived the exact identic
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q36" data-marks="7" data-title="orthogonal frequency division multiplexing (ofdm) in next-generation mobile networks: mathematical principles, subcarrier orthogonality, and cyclic prefix">
+    <article class="question-card subject-mobile" id="mobile-q36" data-marks="7" data-title="explain the mathematical principle of orthogonal frequency division multiplexing (ofdm). discuss subcarrier orthogonality and cyclic prefix (cp).">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q36" data-duration="720" data-qid="mobile-q36">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q36')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q36')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q36</span>
             </div>
-            <h3 class="card-title">Orthogonal Frequency Division Multiplexing (OFDM) in Next-Generation Mobile Networks: Mathematical Principles, Subcarrier Orthogonality, and Cyclic Prefix</h3>
+            <h3 class="card-title">Explain the mathematical principle of Orthogonal Frequency Division Multiplexing (OFDM). Discuss subcarrier orthogonality and Cyclic Prefix (CP).</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=OFDM+orthogonal+frequency+division+multiplexing+cyclic+prefix+IFFT+FFT+next+generation+networks" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -4199,6 +5082,10 @@ Both Alice and Bob have independently and successfully derived the exact identic
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q36')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -4209,7 +5096,10 @@ Both Alice and Bob have independently and successfully derived the exact identic
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\Delta f = \frac{1}{T_{\text{sym}}}, \quad \int_0^{T_{\text{sym}}} \cos(2\pi f_i t)\cos(2\pi f_j t) dt = 0 \; (i \ne j), \quad T_{\text{total}} = T_{\text{sym}} + T_{CP}$$</div>
@@ -4257,14 +5147,22 @@ This combination of spectral efficiency, resilience against multipath fading, an
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q37" data-marks="7" data-title="multimedia broadcast and multicast services (mbms) &amp; mpls in mobile networks">
+    <article class="question-card subject-mobile" id="mobile-q37" data-marks="7" data-title="explain multimedia broadcast and multicast services (mbms) in cellular networks and discuss mpls label switching in mobile core backbones.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q37" data-duration="720" data-qid="mobile-q37">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q37')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q37')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q37</span>
             </div>
-            <h3 class="card-title">Multimedia Broadcast and Multicast Services (MBMS) & MPLS in Mobile Networks</h3>
+            <h3 class="card-title">Explain Multimedia Broadcast and Multicast Services (MBMS) in cellular networks and discuss MPLS label switching in mobile core backbones.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=multimedia+broadcast+multicast+services+MBMS+MPLS+mobile+networks" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -4274,6 +5172,10 @@ This combination of spectral efficiency, resilience against multipath fading, an
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q37')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -4284,7 +5186,10 @@ This combination of spectral efficiency, resilience against multipath fading, an
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{MBMS: Point-to-Multipoint transmission sharing single radio bearer; MPLS: Label Switched Path (LSP) fast packet forwarding via 32-bit labels}$$</div>
@@ -4319,14 +5224,22 @@ This combination of spectral efficiency, resilience against multipath fading, an
     </article>
     
 
-    <article class="question-card subject-mobile" id="mobile-q38" data-marks="7" data-title="cellular network evolution: 2g to 5g architectural and functional comparison">
+    <article class="question-card subject-mobile" id="mobile-q38" data-marks="7" data-title="compare the architectural and functional evolution of cellular mobile communication networks from 2g to 5g.">
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
+                <div class="card-timer-widget" id="timer-mobile-q38" data-duration="720" data-qid="mobile-q38">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q38')" title="Start exam practice countdown">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-display">12:00</span>
+                    <span class="timer-action">Start</span>
+                </button>
+                <button class="timer-btn timer-reset-btn" onclick="resetCardTimer('mobile-q38')" title="Reset timer" style="display:none;">🔄</button>
+            </div>
                 <span class="badge badge-type">Long Answer / Derivation</span>
                 <span class="badge badge-qid">ID: MOBILE-Q38</span>
             </div>
-            <h3 class="card-title">Cellular Network Evolution: 2G to 5G Architectural and Functional Comparison</h3>
+            <h3 class="card-title">Compare the architectural and functional evolution of cellular mobile communication networks from 2G to 5G.</h3>
             <div class="card-action-bar">
                 
     <a href="https://www.youtube.com/results?search_query=cellular+network+evolution+2G+3G+4G+5G+architecture+comparison" target="_blank" rel="noopener noreferrer" class="yt-button" title="Watch video solution on YouTube">
@@ -4336,6 +5249,10 @@ This combination of spectral efficiency, resilience against multipath fading, an
         <span>Watch Video Solution</span>
     </a>
     
+                <button class="btn-toggle-answer" onclick="toggleAnswerCard('mobile-q38')" title="Toggle answer visibility">
+                    <span class="toggle-icon">▲</span>
+                    <span class="toggle-text">Hide Answer</span>
+                </button>
             </div>
         </header>
         <div class="card-body">
@@ -4346,7 +5263,10 @@ This combination of spectral efficiency, resilience against multipath fading, an
                         <span class="byheart-icon">⚡</span>
                         <span class="byheart-title">Sentence / (Equation) to Byhart</span>
                     </div>
-                    <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    <div class="byheart-badges-group">
+                        <span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
                 </div>
                 <div class="byheart-body">
                     <div class="byheart-eq">$$\text{Evolution: 2G (Voice/TDMA, 64 kbps) } \to \text{ 3G (CDMA, 2 Mbps) } \to \text{ 4G (All-IP/OFDMA, 100 Mbps) } \to \text{ 5G (eMBB/URLLC/mMTC, 10-20 Gbps)}$$</div>
@@ -4419,6 +5339,145 @@ This combination of spectral efficiency, resilience against multipath fading, an
             btn.addEventListener('click', () => setTheme(btn.getAttribute('data-theme-value')));
         });
         setTheme(localStorage.getItem(THEME_STORAGE_KEY) || 'dark');
+
+        // Interactive Exam Countdown Timers
+        const cardTimers = {};
+
+        function formatTimerMMSS(seconds) {
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        function toggleCardTimer(qid) {
+            const widget = document.getElementById('timer-' + qid);
+            if (!widget) return;
+            const duration = parseInt(widget.getAttribute('data-duration') || '300', 10);
+            
+            if (!cardTimers[qid]) {
+                cardTimers[qid] = {
+                    duration: duration,
+                    remaining: duration,
+                    intervalId: null,
+                    state: 'idle'
+                };
+            }
+            
+            const timer = cardTimers[qid];
+            const displaySpan = widget.querySelector('.timer-display');
+            const actionSpan = widget.querySelector('.timer-action');
+            const resetBtn = widget.querySelector('.timer-reset-btn');
+
+            if (timer.state === 'running') {
+                clearInterval(timer.intervalId);
+                timer.intervalId = null;
+                timer.state = 'paused';
+                actionSpan.textContent = 'Resume';
+                widget.classList.remove('timer-running');
+                widget.classList.add('timer-paused');
+            } else {
+                if (timer.state === 'expired') {
+                    timer.remaining = timer.duration;
+                    widget.classList.remove('timer-expired');
+                }
+                timer.state = 'running';
+                actionSpan.textContent = 'Pause';
+                if (resetBtn) resetBtn.style.display = 'inline-flex';
+                widget.classList.remove('timer-paused');
+                widget.classList.add('timer-running');
+
+                timer.intervalId = setInterval(() => {
+                    timer.remaining--;
+                    displaySpan.textContent = formatTimerMMSS(timer.remaining);
+
+                    if (timer.remaining <= 60 && timer.remaining > 0) {
+                        widget.classList.add('timer-warning');
+                    }
+
+                    if (timer.remaining <= 0) {
+                        clearInterval(timer.intervalId);
+                        timer.intervalId = null;
+                        timer.state = 'expired';
+                        displaySpan.textContent = '00:00';
+                        actionSpan.textContent = "Time's Up!";
+                        widget.classList.remove('timer-running', 'timer-warning');
+                        widget.classList.add('timer-expired');
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetCardTimer(qid) {
+            const widget = document.getElementById('timer-' + qid);
+            if (!widget || !cardTimers[qid]) return;
+            const timer = cardTimers[qid];
+            if (timer.intervalId) {
+                clearInterval(timer.intervalId);
+                timer.intervalId = null;
+            }
+            timer.remaining = timer.duration;
+            timer.state = 'idle';
+
+            const displaySpan = widget.querySelector('.timer-display');
+            const actionSpan = widget.querySelector('.timer-action');
+            const resetBtn = widget.querySelector('.timer-reset-btn');
+
+            displaySpan.textContent = formatTimerMMSS(timer.duration);
+            actionSpan.textContent = 'Start';
+            if (resetBtn) resetBtn.style.display = 'none';
+            widget.classList.remove('timer-running', 'timer-paused', 'timer-warning', 'timer-expired');
+        }
+
+        // Answer Collapse / Expand Toggle
+        function toggleAnswerCard(qid) {
+            const card = document.getElementById(qid);
+            if (!card) return;
+            const isCollapsed = card.classList.toggle('answer-collapsed');
+            const toggleBtn = card.querySelector('.btn-toggle-answer');
+            if (toggleBtn) {
+                if (isCollapsed) {
+                    toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> <span class="toggle-text">Show Answer</span>';
+                    toggleBtn.setAttribute('title', 'Show elaborated answer');
+                } else {
+                    toggleBtn.innerHTML = '<span class="toggle-icon">▲</span> <span class="toggle-text">Hide Answer</span>';
+                    toggleBtn.setAttribute('title', 'Hide elaborated answer');
+                }
+            }
+        }
+
+        let allAnswersCollapsed = false;
+        function toggleAllAnswers() {
+            allAnswersCollapsed = !allAnswersCollapsed;
+            const cards = document.querySelectorAll('.question-card');
+            const globalBtns = document.querySelectorAll('.global-collapse-btn');
+            
+            cards.forEach(card => {
+                const toggleBtn = card.querySelector('.btn-toggle-answer');
+                if (allAnswersCollapsed) {
+                    card.classList.add('answer-collapsed');
+                    if (toggleBtn) {
+                        toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> <span class="toggle-text">Show Answer</span>';
+                        toggleBtn.setAttribute('title', 'Show elaborated answer');
+                    }
+                } else {
+                    card.classList.remove('answer-collapsed');
+                    if (toggleBtn) {
+                        toggleBtn.innerHTML = '<span class="toggle-icon">▲</span> <span class="toggle-text">Hide Answer</span>';
+                        toggleBtn.setAttribute('title', 'Hide elaborated answer');
+                    }
+                }
+            });
+
+            globalBtns.forEach(btn => {
+                if (allAnswersCollapsed) {
+                    btn.innerHTML = '<span class="btn-icon">📖</span> <span class="btn-text">Expand All Answers</span>';
+                    btn.classList.add('active-collapsed');
+                } else {
+                    btn.innerHTML = '<span class="btn-icon">👁️</span> <span class="btn-text">Collapse All Answers</span>';
+                    btn.classList.remove('active-collapsed');
+                }
+            });
+        }
     </script>
 
     <footer class="site-footer">

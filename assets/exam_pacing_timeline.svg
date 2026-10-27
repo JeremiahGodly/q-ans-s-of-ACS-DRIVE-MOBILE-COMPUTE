@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pcBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="timeBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="25%" stop-color="#818cf8"/>
+      <stop offset="55%" stop-color="#c084fc"/>
+      <stop offset="85%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="480" fill="url(#pcBg)"/>
+
+  <!-- Title Section -->
+  <text x="50" y="55" font-family="'Inter', sans-serif" font-size="28" font-weight="900" fill="#ffffff">
+    THE 180-MINUTE / 30-PAGE CHRONO-PACING ARCHITECTURE
+  </text>
+  <text x="50" y="82" font-family="'Inter', sans-serif" font-size="15" font-weight="500" fill="#94a3b8">
+    Eliminating Panic, Writer's Cramp, and Time Choke with High-Yield Neuro-Pacing (Exact 6.0 min/page velocity)
+  </text>
+
+  <!-- Main Time Gradient Bar -->
+  <rect x="50" y="115" width="1000" height="18" rx="9" fill="url(#timeBar)"/>
+
+  <!-- Tick Marks & Time Labels -->
+  <g font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#64748b">
+    <text x="50" y="152">00:00 (START)</text>
+    <text x="105" y="152">00:10 (10m)</text>
+    <text x="360" y="152">01:00 (60m)</text>
+    <text x="640" y="152">01:50 (110m)</text>
+    <text x="900" y="152">02:40 (160m)</text>
+    <text x="1020" y="152" fill="#34d399">03:00 (180m)</text>
+  </g>
+
+  <!-- 5 Tactical Phase Blocks -->
+  <g transform="translate(50, 175)">
+    <!-- Phase 0: 0-10m -->
+    <g transform="translate(0, 0)">
+      <rect width="90" height="255" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="45" y="26" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#38bdf8" text-anchor="middle">PHASE 0</text>
+      <text x="45" y="44" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#94a3b8" text-anchor="middle">0 - 10 Min</text>
+      
+      <line x1="10" y1="56" x2="80" y2="56" stroke="#334155" stroke-width="1"/>
+      <text x="45" y="76" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Neuro-Triage</text>
+      <text x="10" y="105" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#cbd5e1">• Scan paper</text>
+      <text x="10" y="125" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#cbd5e1">• Choose 5 sets</text>
+      <text x="10" y="145" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#cbd5e1">• Margin notes</text>
+      <text x="10" y="165" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#cbd5e1">• Calm breath</text>
+
+      <rect x="8" y="200" width="74" height="40" rx="6" fill="#0284c7" fill-opacity="0.3"/>
+      <text x="45" y="217" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#38bdf8" text-anchor="middle">PAGES 0</text>
+      <text x="45" y="232" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#e0f2fe" text-anchor="middle">Mental Maps</text>
+    </g>
+
+    <!-- Phase 1: 10-60m -->
+    <g transform="translate(100, 0)">
+      <rect width="240" height="255" rx="10" fill="#1e293b" stroke="#818cf8" stroke-width="1.2"/>
+      <text x="120" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#818cf8" text-anchor="middle">PHASE 1 (10 - 60 Min)</text>
+      <text x="120" y="44" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">High Dopamine Blitzkrieg</text>
+      
+      <line x1="15" y1="56" x2="225" y2="56" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="78" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Module I &amp; II (Q1 &amp; Q2)</text>
+      <text x="15" y="105" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• Peak cognitive freshness</text>
+      <text x="15" y="125" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• Maximum handwriting neatness</text>
+      <text x="15" y="145" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• Heavy vector diagrams (Class-A/FOC/Kalman)</text>
+      <text x="15" y="165" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• 2 full 14-mark answers</text>
+
+      <rect x="15" y="195" width="210" height="45" rx="8" fill="#4338ca" fill-opacity="0.3"/>
+      <text x="120" y="215" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#a5b4fc" text-anchor="middle">PAGES 1 TO 9 (9 Pages)</text>
+      <text x="120" y="232" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#e0e7ff" text-anchor="middle">Target Pace: 5.5 min / page</text>
+    </g>
+
+    <!-- Phase 2: 60-110m -->
+    <g transform="translate(350, 0)">
+      <rect width="250" height="255" rx="10" fill="#1e293b" stroke="#c084fc" stroke-width="1.2"/>
+      <text x="125" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#c084fc" text-anchor="middle">PHASE 2 (60 - 110 Min)</text>
+      <text x="125" y="44" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">Steady Grapho-Motor Cruise</text>
+      
+      <line x1="15" y1="56" x2="235" y2="56" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="78" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Module III &amp; IV (Q3 &amp; Q4)</text>
+      <text x="15" y="105" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• Water sip at 60m (prevent dehydration)</text>
+      <text x="15" y="125" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• Mathematical derivations with framed boxes</text>
+      <text x="15" y="145" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• Structured bullet mechanics</text>
+      <text x="15" y="165" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• Moderate grip tension release</text>
+
+      <rect x="15" y="195" width="220" height="45" rx="8" fill="#7e22ce" fill-opacity="0.3"/>
+      <text x="125" y="215" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#d8b4fe" text-anchor="middle">PAGES 10 TO 18 (9 Pages)</text>
+      <text x="125" y="232" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#f3e8ff" text-anchor="middle">Cumulative: 18 Pages Locked</text>
+    </g>
+
+    <!-- Phase 3: 110-160m -->
+    <g transform="translate(610, 0)">
+      <rect width="250" height="255" rx="10" fill="#1e293b" stroke="#fb7185" stroke-width="1.2"/>
+      <text x="125" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#fb7185" text-anchor="middle">PHASE 3 (110 - 160 Min)</text>
+      <text x="125" y="44" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">The Final Strike Climax</text>
+      
+      <line x1="15" y1="56" x2="235" y2="56" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="78" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Module V &amp; Short Notes (Q5 &amp; Q6)</text>
+      <text x="15" y="105" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• High-speed comparison tables</text>
+      <text x="15" y="125" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• Protocol topologies &amp; waveforms</text>
+      <text x="15" y="145" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• Maximum space utilization</text>
+      <text x="15" y="165" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#cbd5e1">• Punchy closing summaries</text>
+
+      <rect x="15" y="195" width="220" height="45" rx="8" fill="#be123c" fill-opacity="0.3"/>
+      <text x="125" y="215" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#fda4af" text-anchor="middle">PAGES 19 TO 27 (9 Pages)</text>
+      <text x="125" y="232" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#ffe4e6" text-anchor="middle">Cumulative: 27 Pages Locked</text>
+    </g>
+
+    <!-- Phase 4: 160-180m -->
+    <g transform="translate(870, 0)">
+      <rect width="130" height="255" rx="10" fill="#1e293b" stroke="#34d399" stroke-width="1.2"/>
+      <text x="65" y="26" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#34d399" text-anchor="middle">PHASE 4</text>
+      <text x="65" y="44" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#94a3b8" text-anchor="middle">160 - 180 Min</text>
+      
+      <line x1="10" y1="56" x2="120" y2="56" stroke="#334155" stroke-width="1"/>
+      <text x="65" y="76" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Cosmetic Audit</text>
+      <text x="10" y="105" font-family="'Inter', sans-serif" font-size="9" font-weight="500" fill="#cbd5e1">• Pages 28-30</text>
+      <text x="10" y="125" font-family="'Inter', sans-serif" font-size="9" font-weight="500" fill="#cbd5e1">• Pencil underline</text>
+      <text x="10" y="145" font-family="'Inter', sans-serif" font-size="9" font-weight="500" fill="#cbd5e1">• Box equations</text>
+      <text x="10" y="165" font-family="'Inter', sans-serif" font-size="9" font-weight="500" fill="#cbd5e1">• Q-number check</text>
+
+      <rect x="8" y="195" width="114" height="45" rx="8" fill="#047857" fill-opacity="0.3"/>
+      <text x="65" y="215" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#6ee7b7" text-anchor="middle">PAGES 28 TO 30</text>
+      <text x="65" y="232" font-family="'Inter', sans-serif" font-size="9" font-weight="600" fill="#a7f3d0" text-anchor="middle">30 FULL PAGES</text>
+    </g>
+  </g>
+</svg>

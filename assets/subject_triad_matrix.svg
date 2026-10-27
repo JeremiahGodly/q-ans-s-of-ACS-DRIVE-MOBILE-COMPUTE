@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 460" width="100%" height="100%">
+  <defs>
+    <linearGradient id="trBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="trCard1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="460" fill="url(#trBg)"/>
+
+  <!-- Title Section -->
+  <text x="50" y="50" font-family="'Inter', sans-serif" font-size="28" font-weight="900" fill="#ffffff">
+    THE TRI-SUBJECT NEURAL REPOSITORY
+  </text>
+  <text x="50" y="76" font-family="'Inter', sans-serif" font-size="15" font-weight="500" fill="#94a3b8">
+    Pre-Compiled, High-Scoring University PYQ Solutions &amp; Engineering Diagrams
+  </text>
+
+  <!-- 3 Big Subject Cards -->
+  <g transform="translate(50, 110)">
+    <!-- CARD 1: ACS -->
+    <g transform="translate(0, 0)">
+      <rect width="315" height="300" rx="14" fill="url(#trCard1)" stroke="#38bdf8" stroke-width="1.5"/>
+      <rect x="0" y="0" width="315" height="6" rx="3" fill="#38bdf8"/>
+      
+      <circle cx="35" cy="40" r="18" fill="#0284c7" fill-opacity="0.3"/>
+      <text x="35" y="46" font-family="'Inter', sans-serif" font-size="18" font-weight="900" fill="#38bdf8" text-anchor="middle">⚡</text>
+      
+      <text x="65" y="38" font-family="'Inter', sans-serif" font-size="16" font-weight="800" fill="#ffffff">Advanced Control Systems</text>
+      <text x="65" y="55" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#38bdf8">Course Code: EET401</text>
+
+      <line x1="20" y1="72" x2="295" y2="72" stroke="#334155" stroke-width="1"/>
+
+      <text x="20" y="98" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#cbd5e1">Core Cognitive Modules:</text>
+      <text x="20" y="120" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• State-Space Modeling &amp; Phase Variables</text>
+      <text x="20" y="138" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Kalman &amp; Gilbert Controllability</text>
+      <text x="20" y="156" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Ackermann's Pole Placement &amp; Observers</text>
+      <text x="20" y="174" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Lyapunov Direct &amp; Krasovskii Stability</text>
+      <text x="20" y="192" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Describing Functions &amp; Limit Cycles</text>
+
+      <rect x="20" y="215" width="275" height="65" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+      <text x="32" y="235" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#38bdf8">📦 Included Assets:</text>
+      <text x="32" y="252" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" fill="#cbd5e1">• 5 Verified Answer Keys (2024-2026)</text>
+      <text x="32" y="268" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" fill="#cbd5e1">• 26 Vectorized Engineering Plots</text>
+    </g>
+
+    <!-- CARD 2: ELECTRIC DRIVES -->
+    <g transform="translate(345, 0)">
+      <rect width="315" height="300" rx="14" fill="url(#trCard1)" stroke="#a855f7" stroke-width="1.5"/>
+      <rect x="0" y="0" width="315" height="6" rx="3" fill="#a855f7"/>
+      
+      <circle cx="35" cy="40" r="18" fill="#7e22ce" fill-opacity="0.3"/>
+      <text x="35" y="46" font-family="'Inter', sans-serif" font-size="18" font-weight="900" fill="#c084fc" text-anchor="middle">⚙️</text>
+      
+      <text x="65" y="38" font-family="'Inter', sans-serif" font-size="16" font-weight="800" fill="#ffffff">Electric Drives &amp; Traction</text>
+      <text x="65" y="55" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#c084fc">Industrial Drives &amp; Power</text>
+
+      <line x1="20" y1="72" x2="295" y2="72" stroke="#334155" stroke-width="1"/>
+
+      <text x="20" y="98" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#cbd5e1">Core Cognitive Modules:</text>
+      <text x="20" y="120" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• 4-Quadrant Dynamics &amp; Hoist Loads</text>
+      <text x="20" y="138" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Class A to E DC Chopper Drives</text>
+      <text x="20" y="156" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Scalar V/f &amp; Slip Power Recovery</text>
+      <text x="20" y="174" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Field Oriented Vector Control (FOC)</text>
+      <text x="20" y="192" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Regenerative &amp; Dynamic Braking</text>
+
+      <rect x="20" y="215" width="275" height="65" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+      <text x="32" y="235" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#c084fc">📦 Included Assets:</text>
+      <text x="32" y="252" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" fill="#cbd5e1">• 9 PYQ Answer Keys (2021-2025)</text>
+      <text x="32" y="268" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" fill="#cbd5e1">• 28 Circuit &amp; Quadrant Waveforms</text>
+    </g>
+
+    <!-- CARD 3: MOBILE COMPUTING -->
+    <g transform="translate(690, 0)">
+      <rect width="315" height="300" rx="14" fill="url(#trCard1)" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="0" y="0" width="315" height="6" rx="3" fill="#10b981"/>
+      
+      <circle cx="35" cy="40" r="18" fill="#047857" fill-opacity="0.3"/>
+      <text x="35" y="46" font-family="'Inter', sans-serif" font-size="18" font-weight="900" fill="#34d399" text-anchor="middle">📡</text>
+      
+      <text x="65" y="38" font-family="'Inter', sans-serif" font-size="16" font-weight="800" fill="#ffffff">Mobile Computing</text>
+      <text x="65" y="55" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#34d399">Wireless &amp; Ad-Hoc Networks</text>
+
+      <line x1="20" y1="72" x2="295" y2="72" stroke="#334155" stroke-width="1"/>
+
+      <text x="20" y="98" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#cbd5e1">Core Cognitive Modules:</text>
+      <text x="20" y="120" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Cellular Geometry &amp; Handoff (Hard/Soft)</text>
+      <text x="20" y="138" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Mobile IP &amp; Triangular Routing (COA)</text>
+      <text x="20" y="156" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• MAC Protocols (MACA, MACAW, 802.11)</text>
+      <text x="20" y="174" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• Wireless TCP (Snoop, I-TCP, M-TCP)</text>
+      <text x="20" y="192" font-family="'Inter', sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">• MANET Routing (DSDV, AODV, DSR)</text>
+
+      <rect x="20" y="215" width="275" height="65" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+      <text x="32" y="235" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#34d399">📦 Included Assets:</text>
+      <text x="32" y="252" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" fill="#cbd5e1">• 4 PYQ Answer Keys (2019-2024)</text>
+      <text x="32" y="268" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" fill="#cbd5e1">• 30 Protocol Stack Schematics</text>
+    </g>
+  </g>
+</svg>

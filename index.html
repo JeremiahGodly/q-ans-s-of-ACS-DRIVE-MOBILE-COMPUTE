@@ -1186,6 +1186,286 @@ main.content-container {
     to { opacity: 0.65; }
 }
 
+/* =========================================================================
+   Floating Top-Right Countdown Timer Widget with Rhythmic Pendulum
+   ========================================================================= */
+.floating-timer-widget {
+    position: fixed;
+    top: 76px;
+    right: 22px;
+    z-index: 10000;
+    min-width: 275px;
+    max-width: 320px;
+    background: var(--bg-surface);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1.5px solid rgba(16, 185, 129, 0.45);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 18px rgba(16, 185, 129, 0.22);
+    border-radius: 14px;
+    padding: 0.85rem 1rem;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    animation: floatIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(-16px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.floating-timer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.floating-timer-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.floating-pendulum-icon {
+    display: inline-block;
+    font-size: 1.25rem;
+    line-height: 1;
+    transform-origin: 50% 10%;
+    transition: transform 0.2s ease;
+}
+
+@keyframes pendulumSway {
+    0% { transform: rotate(-22deg); }
+    50% { transform: rotate(22deg); }
+    100% { transform: rotate(-22deg); }
+}
+
+.floating-pendulum-icon.swinging {
+    animation: pendulumSway 1s ease-in-out infinite alternate;
+}
+
+.floating-qid {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: #10b981;
+}
+
+.float-btn {
+    border: none;
+    background: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 0.3rem 0.55rem;
+    font-size: 0.74rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.18s ease;
+}
+
+.float-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-focus);
+    transform: translateY(-1px);
+}
+
+.float-close-btn {
+    padding: 0.15rem 0.45rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.float-close-btn:hover {
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+.floating-timer-body {
+    margin: 0.4rem 0 0.65rem 0;
+}
+
+.floating-time-display {
+    font-family: var(--font-mono);
+    font-size: 1.95rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #10b981;
+    text-shadow: 0 0 14px rgba(16, 185, 129, 0.4);
+    line-height: 1.1;
+    margin-bottom: 0.45rem;
+}
+
+.floating-progress-container {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.floating-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #38bdf8);
+    border-radius: 999px;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.floating-timer-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35rem;
+}
+
+.float-action-btn {
+    flex: 1.2;
+    justify-content: center;
+    background: rgba(16, 185, 129, 0.18);
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.45);
+}
+.float-action-btn:hover {
+    background: #10b981;
+    color: #064e3b;
+    border-color: #10b981;
+}
+
+.float-reset-btn {
+    padding: 0.3rem 0.45rem;
+}
+
+.float-sound-btn {
+    padding: 0.3rem 0.45rem;
+}
+.float-sound-btn.sound-muted {
+    color: var(--text-muted);
+    border-color: var(--border-subtle);
+}
+
+.float-jump-btn {
+    padding: 0.3rem 0.5rem;
+    color: var(--accent, #38bdf8);
+}
+
+/* Floating Timer Warning State (< 60s) */
+.floating-timer-widget.timer-warning {
+    border-color: #f59e0b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(245, 158, 11, 0.35);
+}
+.floating-timer-widget.timer-warning .floating-time-display {
+    color: #f59e0b;
+    text-shadow: 0 0 14px rgba(245, 158, 11, 0.45);
+}
+.floating-timer-widget.timer-warning .floating-progress-bar {
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+}
+
+/* Floating Timer Expired State (00:00) */
+.floating-timer-widget.timer-expired {
+    border-color: #ef4444;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 24px rgba(239, 68, 68, 0.55);
+    animation: expiredFlash 1s infinite alternate;
+}
+.floating-timer-widget.timer-expired .floating-time-display {
+    color: #ef4444;
+    text-shadow: 0 0 16px rgba(239, 68, 68, 0.6);
+}
+.floating-timer-widget.timer-expired .floating-progress-bar {
+    background: #ef4444;
+}
+
+/* Question Card Flash Highlight on Jump */
+@keyframes cardFlashHighlight {
+    0% {
+        box-shadow: 0 0 0 4px #38bdf8, 0 0 35px rgba(56, 189, 248, 0.7);
+        transform: scale(1.008);
+    }
+    50% {
+        box-shadow: 0 0 0 8px #38bdf8, 0 0 45px rgba(56, 189, 248, 0.9);
+        transform: scale(1.012);
+    }
+    100% {
+        box-shadow: none;
+        transform: scale(1);
+    }
+}
+
+.flash-highlight {
+    animation: cardFlashHighlight 1.8s ease-out;
+    border-color: #38bdf8 !important;
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .floating-timer-widget {
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12), 0 0 16px rgba(16, 185, 129, 0.15);
+    border-color: rgba(5, 150, 105, 0.4);
+}
+[data-theme="light"] .floating-time-display {
+    color: #059669;
+    text-shadow: none;
+}
+[data-theme="light"] .floating-progress-container {
+    background: rgba(15, 23, 42, 0.08);
+}
+[data-theme="light"] .float-action-btn {
+    background: rgba(5, 150, 105, 0.12);
+    color: #065f46;
+    border-color: rgba(5, 150, 105, 0.35);
+}
+[data-theme="light"] .float-action-btn:hover {
+    background: #059669;
+    color: #ffffff;
+}
+
+/* OLED Theme Overrides */
+[data-theme="oled"] .floating-timer-widget {
+    background: #000000;
+    border: 1.5px solid #10b981;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Responsive Floating Timer for Mobile Devices */
+@media (max-width: 640px) {
+    .floating-timer-widget {
+        top: 60px;
+        right: 10px;
+        min-width: 220px;
+        max-width: calc(100vw - 20px);
+        padding: 0.6rem 0.75rem;
+    }
+    .floating-time-display {
+        font-size: 1.55rem;
+    }
+    .floating-timer-controls {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+    .float-btn {
+        font-size: 0.7rem;
+        padding: 0.22rem 0.4rem;
+    }
+}
+
+
 /* Global Collapse All Button */
 .global-collapse-btn {
     display: inline-flex;
@@ -2240,8 +2520,8 @@ body {
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q1" data-duration="300" data-qid="acs-q1">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q1')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q1" data-duration="300" data-qid="acs-q1" data-label="ACS • Q1 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -2314,8 +2594,8 @@ body {
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q2" data-duration="300" data-qid="acs-q2">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q2')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q2" data-duration="300" data-qid="acs-q2" data-label="ACS • Q2 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -2388,8 +2668,8 @@ body {
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q3" data-duration="300" data-qid="acs-q3">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q3')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q3" data-duration="300" data-qid="acs-q3" data-label="ACS • Q3 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -2462,8 +2742,8 @@ body {
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q4" data-duration="300" data-qid="acs-q4">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q4')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q4" data-duration="300" data-qid="acs-q4" data-label="ACS • Q4 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -2536,8 +2816,8 @@ body {
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q4b" data-duration="300" data-qid="acs-q4b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q4b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q4b" data-duration="300" data-qid="acs-q4b" data-label="ACS • Q4b (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q4b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -2615,8 +2895,8 @@ This formulation reveals that the poles of the transfer function $G(s)$ are prec
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q5" data-duration="720" data-qid="acs-q5">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q5')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q5" data-duration="720" data-qid="acs-q5" data-label="ACS • Q5 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -2705,8 +2985,8 @@ The characteristic polynomial of the unforced system is obtained from $\det(sI -
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q6" data-duration="720" data-qid="acs-q6">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q6')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q6" data-duration="720" data-qid="acs-q6" data-label="ACS • Q6 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -2794,8 +3074,8 @@ $$\begin{bmatrix} \dot{i}_a(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q7" data-duration="720" data-qid="acs-q7">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q7')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q7" data-duration="720" data-qid="acs-q7" data-label="ACS • Q7 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -2891,8 +3171,8 @@ The beauty of the diagonal canonical form is immediately evident: the system mat
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q7b" data-duration="720" data-qid="acs-q7b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q7b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q7b" data-duration="720" data-qid="acs-q7b" data-label="ACS • Q7b (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q7b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -2990,8 +3270,8 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q8" data-duration="300" data-qid="acs-q8">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q8')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q8" data-duration="300" data-qid="acs-q8" data-label="ACS • Q8 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -3064,8 +3344,8 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q9" data-duration="300" data-qid="acs-q9">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q9')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q9" data-duration="300" data-qid="acs-q9" data-label="ACS • Q9 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -3139,8 +3419,8 @@ $$\begin{bmatrix} \dot{i}_f(t) \\ \dot{\omega}_m(t) \\ \dot{\theta}_m(t) \end{bm
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q9b" data-duration="300" data-qid="acs-q9b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q9b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q9b" data-duration="300" data-qid="acs-q9b" data-label="ACS • Q9b (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q9b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -3215,8 +3495,8 @@ The pulse transfer function matrix is therefore defined as $G(z) = \frac{Y(z)}{U
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q10" data-duration="720" data-qid="acs-q10">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q10')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q10" data-duration="720" data-qid="acs-q10" data-label="ACS • Q10 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -3316,8 +3596,8 @@ Evaluating at $t = 0$ yields $e^{A \cdot 0} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q11" data-duration="720" data-qid="acs-q11">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q11')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q11" data-duration="720" data-qid="acs-q11" data-label="ACS • Q11 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -3430,8 +3710,8 @@ This result illustrates an important physical insight: although the control inpu
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q12" data-duration="300" data-qid="acs-q12">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q12')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q12" data-duration="300" data-qid="acs-q12" data-label="ACS • Q12 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -3504,8 +3784,8 @@ This result illustrates an important physical insight: although the control inpu
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q13" data-duration="300" data-qid="acs-q13">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q13')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q13" data-duration="300" data-qid="acs-q13" data-label="ACS • Q13 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -3578,8 +3858,8 @@ This result illustrates an important physical insight: although the control inpu
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q13b" data-duration="300" data-qid="acs-q13b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q13b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q13b" data-duration="300" data-qid="acs-q13b" data-label="ACS • Q13b (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q13b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -3656,8 +3936,8 @@ Evaluating this rank at each eigenvalue $\lambda_i$, if $\text{rank}\begin{bmatr
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q14" data-duration="720" data-qid="acs-q14">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q14')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q14" data-duration="720" data-qid="acs-q14" data-label="ACS • Q14 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -3763,8 +4043,8 @@ Applying this feedback gain vector shifts all three closed-loop poles to the exa
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q15" data-duration="720" data-qid="acs-q15">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q15')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q15" data-duration="720" data-qid="acs-q15" data-label="ACS • Q15 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -3873,8 +4153,8 @@ According to the celebrated Separation Principle, when this observer is combined
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q16" data-duration="300" data-qid="acs-q16">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q16')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q16" data-duration="300" data-qid="acs-q16" data-label="ACS • Q16 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -3947,8 +4227,8 @@ According to the celebrated Separation Principle, when this observer is combined
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q16b" data-duration="300" data-qid="acs-q16b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q16b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q16b" data-duration="300" data-qid="acs-q16b" data-label="ACS • Q16b (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q16b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -4027,8 +4307,8 @@ The describing function for a relay with dead-zone is therefore $N(X) = \frac{4M
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q17" data-duration="720" data-qid="acs-q17">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q17')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q17" data-duration="720" data-qid="acs-q17" data-label="ACS • Q17 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -4132,8 +4412,8 @@ This equation reveals that as the input amplitude $X$ increases far beyond the s
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q17b" data-duration="720" data-qid="acs-q17b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q17b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q17b" data-duration="720" data-qid="acs-q17b" data-label="ACS • Q17b (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q17b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -4227,8 +4507,8 @@ This analytical result reveals that as input amplitude $X$ grows very large comp
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q18" data-duration="720" data-qid="acs-q18">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q18')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q18" data-duration="720" data-qid="acs-q18" data-label="ACS • Q18 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -4348,8 +4628,8 @@ Thus, for gain $K = 2.5$, the system establishes a sustained, stable limit cycle
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q19" data-duration="300" data-qid="acs-q19">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q19')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q19" data-duration="300" data-qid="acs-q19" data-label="ACS • Q19 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -4422,8 +4702,8 @@ Thus, for gain $K = 2.5$, the system establishes a sustained, stable limit cycle
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q20" data-duration="300" data-qid="acs-q20">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q20')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q20" data-duration="300" data-qid="acs-q20" data-label="ACS • Q20 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -4498,8 +4778,8 @@ Furthermore, a quadratic form is negative definite if and only if its leading pr
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q20b" data-duration="300" data-qid="acs-q20b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q20b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q20b" data-duration="300" data-qid="acs-q20b" data-label="ACS • Q20b (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q20b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -4572,8 +4852,8 @@ Furthermore, a quadratic form is negative definite if and only if its leading pr
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q21" data-duration="720" data-qid="acs-q21">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q21')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q21" data-duration="720" data-qid="acs-q21" data-label="ACS • Q21 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -4681,8 +4961,8 @@ For each chosen numerical slope $m$, this equation defines a parabola in the pha
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q22" data-duration="720" data-qid="acs-q22">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q22')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-acs-q22" data-duration="720" data-qid="acs-q22" data-label="ACS • Q22 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -4803,8 +5083,8 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q1" data-duration="300" data-qid="drive-q1">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q1')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q1" data-duration="300" data-qid="drive-q1" data-label="DRIVE • Q1 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -4877,8 +5157,8 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q2" data-duration="300" data-qid="drive-q2">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q2')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q2" data-duration="300" data-qid="drive-q2" data-label="DRIVE • Q2 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -4951,8 +5231,8 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q3" data-duration="300" data-qid="drive-q3">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q3')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q3" data-duration="300" data-qid="drive-q3" data-label="DRIVE • Q3 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -5025,8 +5305,8 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q3b" data-duration="300" data-qid="drive-q3b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q3b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q3b" data-duration="300" data-qid="drive-q3b" data-label="DRIVE • Q3b (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q3b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -5099,8 +5379,8 @@ Because both leading principal minors are strictly positive, matrix $P$ is stric
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q4" data-duration="720" data-qid="drive-q4">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q4')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q4" data-duration="720" data-qid="drive-q4" data-label="DRIVE • Q4 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -5193,8 +5473,8 @@ Summing all referred components yields the total effective moment of inertia $J 
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q5" data-duration="720" data-qid="drive-q5">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q5')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q5" data-duration="720" data-qid="drive-q5" data-label="DRIVE • Q5 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -5279,8 +5559,8 @@ When a fully loaded cage is lowered downward at negative speed ($\omega_m < 0$),
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q6" data-duration="720" data-qid="drive-q6">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q6')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q6" data-duration="720" data-qid="drive-q6" data-label="DRIVE • Q6 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -5379,8 +5659,8 @@ In graphical terms, when plotting $T$ and $T_l$ versus speed $\omega_m$, stabili
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q6b" data-duration="720" data-qid="drive-q6b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q6b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q6b" data-duration="720" data-qid="drive-q6b" data-label="DRIVE • Q6b (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q6b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -5477,8 +5757,8 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q7" data-duration="300" data-qid="drive-q7">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q7')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q7" data-duration="300" data-qid="drive-q7" data-label="DRIVE • Q7 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -5551,8 +5831,8 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q7b" data-duration="300" data-qid="drive-q7b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q7b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q7b" data-duration="300" data-qid="drive-q7b" data-label="DRIVE • Q7b (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q7b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -5625,8 +5905,8 @@ The selected motor continuous rating must have a rated torque $T_{rated} \ge T_{
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q8" data-duration="720" data-qid="drive-q8">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q8')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q8" data-duration="720" data-qid="drive-q8" data-label="DRIVE • Q8 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -5742,8 +6022,8 @@ Because $\alpha_2 = 120.3^\circ > 90^\circ$, the converter operates in the inver
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q8b" data-duration="720" data-qid="drive-q8b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q8b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q8b" data-duration="720" data-qid="drive-q8b" data-label="DRIVE • Q8b (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q8b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -5834,8 +6114,8 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q9" data-duration="300" data-qid="drive-q9">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q9')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q9" data-duration="300" data-qid="drive-q9" data-label="DRIVE • Q9 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -5908,8 +6188,8 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q9b" data-duration="300" data-qid="drive-q9b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q9b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q9b" data-duration="300" data-qid="drive-q9b" data-label="DRIVE • Q9b (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q9b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -5982,8 +6262,8 @@ For firing angles $\alpha < 90^\circ$, $V_a > 0$, and the drive operates in Quad
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q10" data-duration="720" data-qid="drive-q10">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q10')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q10" data-duration="720" data-qid="drive-q10" data-label="DRIVE • Q10 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -6074,8 +6354,8 @@ This derivation proves that by adjusting the duty ratio $\delta_2$, the braking 
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q10b" data-duration="720" data-qid="drive-q10b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q10b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q10b" data-duration="720" data-qid="drive-q10b" data-label="DRIVE • Q10b (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q10b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -6155,8 +6435,8 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q11" data-duration="720" data-qid="drive-q11">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q11')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q11" data-duration="720" data-qid="drive-q11" data-label="DRIVE • Q11 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -6246,8 +6526,8 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q12" data-duration="300" data-qid="drive-q12">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q12')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q12" data-duration="300" data-qid="drive-q12" data-label="DRIVE • Q12 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -6320,8 +6600,8 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q12b" data-duration="300" data-qid="drive-q12b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q12b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q12b" data-duration="300" data-qid="drive-q12b" data-label="DRIVE • Q12b (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q12b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -6394,8 +6674,8 @@ The motor rotates in reverse ($\omega_m < 0$), generating reverse back-EMF ($E_b
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q13" data-duration="720" data-qid="drive-q13">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q13')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q13" data-duration="720" data-qid="drive-q13" data-label="DRIVE • Q13 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -6480,8 +6760,8 @@ Because $\frac{V_1}{f}$ is held constant, the maximum breakdown torque $T_{max}$
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q14" data-duration="720" data-qid="drive-q14">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q14')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q14" data-duration="720" data-qid="drive-q14" data-label="DRIVE • Q14 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -6573,8 +6853,8 @@ This mathematical result proves that varying the chopper duty ratio $\delta$ alt
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q14b" data-duration="720" data-qid="drive-q14b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q14b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q14b" data-duration="720" data-qid="drive-q14b" data-label="DRIVE • Q14b (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q14b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -6664,8 +6944,8 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q15" data-duration="300" data-qid="drive-q15">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q15')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q15" data-duration="300" data-qid="drive-q15" data-label="DRIVE • Q15 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -6738,8 +7018,8 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q15b" data-duration="300" data-qid="drive-q15b">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q15b')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q15b" data-duration="300" data-qid="drive-q15b" data-label="DRIVE • Q15b (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q15b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -6812,8 +7092,8 @@ The total air-gap power transferred across the motor is $P_{ag} = T \omega_s$. T
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q16" data-duration="720" data-qid="drive-q16">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q16')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q16" data-duration="720" data-qid="drive-q16" data-label="DRIVE • Q16 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -6901,8 +7181,8 @@ $$\begin{bmatrix} v_\alpha \\ v_\beta \end{bmatrix} = \begin{bmatrix} \cos(\thet
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q17" data-duration="720" data-qid="drive-q17">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q17')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q17" data-duration="720" data-qid="drive-q17" data-label="DRIVE • Q17 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -6997,8 +7277,8 @@ This proves that Space Vector PWM yields a 15.47 percent increase in output volt
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q18" data-duration="720" data-qid="drive-q18">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q18')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-drive-q18" data-duration="720" data-qid="drive-q18" data-label="DRIVE • Q18 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -7170,8 +7450,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q1" data-duration="300" data-qid="mobile-q1">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q1')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q1" data-duration="300" data-qid="mobile-q1" data-label="MOBILE • Q1 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -7244,8 +7524,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q2" data-duration="300" data-qid="mobile-q2">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q2')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q2" data-duration="300" data-qid="mobile-q2" data-label="MOBILE • Q2 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -7318,8 +7598,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q3" data-duration="300" data-qid="mobile-q3">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q3')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q3" data-duration="300" data-qid="mobile-q3" data-label="MOBILE • Q3 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -7393,8 +7673,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q4" data-duration="300" data-qid="mobile-q4">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q4')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q4" data-duration="300" data-qid="mobile-q4" data-label="MOBILE • Q4 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -7468,8 +7748,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q5" data-duration="720" data-qid="mobile-q5">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q5')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q5" data-duration="720" data-qid="mobile-q5" data-label="MOBILE • Q5 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -7543,8 +7823,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q6" data-duration="720" data-qid="mobile-q6">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q6')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q6" data-duration="720" data-qid="mobile-q6" data-label="MOBILE • Q6 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -7619,8 +7899,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q7" data-duration="720" data-qid="mobile-q7">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q7')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q7" data-duration="720" data-qid="mobile-q7" data-label="MOBILE • Q7 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -7695,8 +7975,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q8" data-duration="720" data-qid="mobile-q8">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q8')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q8" data-duration="720" data-qid="mobile-q8" data-label="MOBILE • Q8 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -7771,8 +8051,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q9" data-duration="720" data-qid="mobile-q9">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q9')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q9" data-duration="720" data-qid="mobile-q9" data-label="MOBILE • Q9 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -7858,8 +8138,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q10" data-duration="300" data-qid="mobile-q10">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q10')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q10" data-duration="300" data-qid="mobile-q10" data-label="MOBILE • Q10 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -7933,8 +8213,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q11" data-duration="300" data-qid="mobile-q11">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q11')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q11" data-duration="300" data-qid="mobile-q11" data-label="MOBILE • Q11 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -8009,8 +8289,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q12" data-duration="300" data-qid="mobile-q12">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q12')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q12" data-duration="300" data-qid="mobile-q12" data-label="MOBILE • Q12 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -8084,8 +8364,8 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q13" data-duration="720" data-qid="mobile-q13">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q13')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q13" data-duration="720" data-qid="mobile-q13" data-label="MOBILE • Q13 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -8166,8 +8446,8 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q14" data-duration="720" data-qid="mobile-q14">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q14')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q14" data-duration="720" data-qid="mobile-q14" data-label="MOBILE • Q14 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -8242,8 +8522,8 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q15" data-duration="720" data-qid="mobile-q15">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q15')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q15" data-duration="720" data-qid="mobile-q15" data-label="MOBILE • Q15 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -8318,8 +8598,8 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q16" data-duration="720" data-qid="mobile-q16">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q16')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q16" data-duration="720" data-qid="mobile-q16" data-label="MOBILE • Q16 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -8394,8 +8674,8 @@ Due to mathematical orthogonality, the cross-correlation terms vanish to zero, p
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q17" data-duration="720" data-qid="mobile-q17">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q17')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q17" data-duration="720" data-qid="mobile-q17" data-label="MOBILE • Q17 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -8487,8 +8767,8 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q18" data-duration="300" data-qid="mobile-q18">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q18')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q18" data-duration="300" data-qid="mobile-q18" data-label="MOBILE • Q18 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -8562,8 +8842,8 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q19" data-duration="300" data-qid="mobile-q19">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q19')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q19" data-duration="300" data-qid="mobile-q19" data-label="MOBILE • Q19 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -8637,8 +8917,8 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q20" data-duration="300" data-qid="mobile-q20">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q20')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q20" data-duration="300" data-qid="mobile-q20" data-label="MOBILE • Q20 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -8712,8 +8992,8 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q21" data-duration="720" data-qid="mobile-q21">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q21')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q21" data-duration="720" data-qid="mobile-q21" data-label="MOBILE • Q21 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -8788,8 +9068,8 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q22" data-duration="720" data-qid="mobile-q22">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q22')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q22" data-duration="720" data-qid="mobile-q22" data-label="MOBILE • Q22 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -8865,8 +9145,8 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q23" data-duration="720" data-qid="mobile-q23">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q23')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q23" data-duration="720" data-qid="mobile-q23" data-label="MOBILE • Q23 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -8952,8 +9232,8 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q24" data-duration="300" data-qid="mobile-q24">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q24')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q24" data-duration="300" data-qid="mobile-q24" data-label="MOBILE • Q24 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -9026,8 +9306,8 @@ This encryption completely shields voice and data payloads from eavesdropping ov
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q25" data-duration="300" data-qid="mobile-q25">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q25')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q25" data-duration="300" data-qid="mobile-q25" data-label="MOBILE • Q25 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -9104,8 +9384,8 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q26" data-duration="720" data-qid="mobile-q26">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q26')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q26" data-duration="720" data-qid="mobile-q26" data-label="MOBILE • Q26 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -9180,8 +9460,8 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q27" data-duration="720" data-qid="mobile-q27">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q27')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q27" data-duration="720" data-qid="mobile-q27" data-label="MOBILE • Q27 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q27')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -9257,8 +9537,8 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q28" data-duration="720" data-qid="mobile-q28">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q28')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q28" data-duration="720" data-qid="mobile-q28" data-label="MOBILE • Q28 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q28')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -9334,8 +9614,8 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q29" data-duration="720" data-qid="mobile-q29">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q29')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q29" data-duration="720" data-qid="mobile-q29" data-label="MOBILE • Q29 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q29')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -9410,8 +9690,8 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q30" data-duration="720" data-qid="mobile-q30">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q30')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q30" data-duration="720" data-qid="mobile-q30" data-label="MOBILE • Q30 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q30')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -9498,8 +9778,8 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q31" data-duration="300" data-qid="mobile-q31">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q31')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q31" data-duration="300" data-qid="mobile-q31" data-label="MOBILE • Q31 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q31')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -9572,8 +9852,8 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q32" data-duration="300" data-qid="mobile-q32">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q32')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q32" data-duration="300" data-qid="mobile-q32" data-label="MOBILE • Q32 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q32')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -9646,8 +9926,8 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-mobile-q33" data-duration="300" data-qid="mobile-q33">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q33')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q33" data-duration="300" data-qid="mobile-q33" data-label="MOBILE • Q33 (3M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q33')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
                     <span class="timer-action">Start</span>
@@ -9721,8 +10001,8 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS} < \text{EIFS}$$</p>
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q34" data-duration="720" data-qid="mobile-q34">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q34')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q34" data-duration="720" data-qid="mobile-q34" data-label="MOBILE • Q34 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q34')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -9839,8 +10119,8 @@ The decrypted plaintext $m' = 2$ matches the original message $m = 2$ perfectly,
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q35" data-duration="720" data-qid="mobile-q35">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q35')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q35" data-duration="720" data-qid="mobile-q35" data-label="MOBILE • Q35 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q35')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -9966,8 +10246,8 @@ Both Alice and Bob have independently and successfully derived the exact identic
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q36" data-duration="720" data-qid="mobile-q36">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q36')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q36" data-duration="720" data-qid="mobile-q36" data-label="MOBILE • Q36 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q36')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -10056,8 +10336,8 @@ This combination of spectral efficiency, resilience against multipath fading, an
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q37" data-duration="720" data-qid="mobile-q37">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q37')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q37" data-duration="720" data-qid="mobile-q37" data-label="MOBILE • Q37 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q37')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -10133,8 +10413,8 @@ This combination of spectral efficiency, resilience against multipath fading, an
         <header class="card-header">
             <div class="card-badges">
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-mobile-q38" data-duration="720" data-qid="mobile-q38">
-                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q38')" title="Start exam practice countdown">
+                <div class="card-timer-widget" id="timer-mobile-q38" data-duration="720" data-qid="mobile-q38" data-label="MOBILE • Q38 (7M)">
+                <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q38')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
                     <span class="timer-action">Start</span>
@@ -10212,6 +10492,39 @@ This combination of spectral efficiency, resilience against multipath fading, an
 
     </main>
 
+    
+    <!-- Floating Active Exam Practice Timer (Top-Right Glassmorphism Pill) -->
+    <div id="floating-timer" class="floating-timer-widget" style="display: none;" role="region" aria-label="Active Exam Practice Timer">
+        <div class="floating-timer-header">
+            <div class="floating-timer-title">
+                <span class="floating-pendulum-icon" id="floating-pendulum" title="Pendulum ticking">🕰️</span>
+                <span class="floating-qid" id="floating-qid">Q1 (3M)</span>
+            </div>
+            <button class="float-btn float-close-btn" onclick="closeFloatingTimer()" title="Dismiss floating timer widget" aria-label="Dismiss timer">✕</button>
+        </div>
+        <div class="floating-timer-body">
+            <div class="floating-time-display" id="floating-time-display">05:00</div>
+            <div class="floating-progress-container" title="Time remaining progress">
+                <div class="floating-progress-bar" id="floating-progress-bar" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="floating-timer-controls">
+            <button class="float-btn float-action-btn" id="floating-action-btn" onclick="toggleActiveTimer()" title="Pause / Resume active countdown">
+                <span id="floating-action-icon">⏸️</span> <span id="floating-action-text">Pause</span>
+            </button>
+            <button class="float-btn float-reset-btn" id="floating-reset-btn" onclick="resetActiveTimer()" title="Reset active countdown">
+                🔄 Reset
+            </button>
+            <button class="float-btn float-sound-btn" id="floating-sound-btn" onclick="toggleTimerSound()" title="Mute or Unmute Tick Sound">
+                🔊 Sound
+            </button>
+            <button class="float-btn float-jump-btn" id="floating-jump-btn" onclick="jumpToActiveQuestion()" title="Scroll directly to active question card">
+                🎯 Jump
+            </button>
+        </div>
+    </div>
+
+
     <!-- Floating Back to Top Button -->
     <button class="back-to-top-btn" id="back-to-top" onclick="scrollToTop()" title="Scroll to top of page">
         <span>↑</span> Top
@@ -10233,11 +10546,14 @@ This combination of spectral efficiency, resilience against multipath fading, an
     <!-- Interactive Client-Side JavaScript -->
     <script>
         
-// Tab Switching for 3 Web Pages in One Index Page
+// =========================================================================
+// Tab Switching for Multi-Subject Index Page
+// =========================================================================
 const tabBtns = document.querySelectorAll('.tab-btn');
 const subjectViews = document.querySelectorAll('.subject-view');
 
 function switchTab(targetId) {
+    if (!targetId) return;
     tabBtns.forEach(btn => {
         if (btn.getAttribute('data-target') === targetId) {
             btn.classList.add('active');
@@ -10257,13 +10573,16 @@ function switchTab(targetId) {
     });
 
     if (window.renderMathInElement) {
-        renderMathInElement(document.getElementById(targetId), {
-            delimiters: [
-                {left: '$$', right: '$$', display: true},
-                {left: '$', right: '$', display: false}
-            ],
-            throwOnError: false
-        });
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+            renderMathInElement(targetEl, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });
+        }
     }
 
     applyFilters();
@@ -10277,7 +10596,9 @@ tabBtns.forEach(btn => {
     });
 });
 
-// Filter Questions (All, 3 Marks, 7 Marks)
+// =========================================================================
+// Question Filtering & Search
+// =========================================================================
 const filterBtns = document.querySelectorAll('.filter-btn');
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -10287,14 +10608,15 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Live Search Input
 const searchInput = document.getElementById('global-search');
-searchInput.addEventListener('input', () => {
-    applyFilters();
-});
+if (searchInput) {
+    searchInput.addEventListener('input', () => {
+        applyFilters();
+    });
+}
 
 function applyFilters() {
-    const query = searchInput.value.toLowerCase().trim();
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
     const activeFilterBtn = document.querySelector('.filter-btn.active');
     const filterType = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
 
@@ -10351,12 +10673,12 @@ function scrollToTop() {
 // ==========================================================================
 // Theme Switching Logic with LocalStorage Persistence
 // Ergonomic Palettes:
-// 1. 'dark'   : Soft Charcoal & Warm Slate (Refined Neutral Dark)
-// 2. 'warm'   : Warm Espresso (Kindle-Style Sepia Dark - Zero Blue Light)
-// 3. 'forest' : Forest Night (Deep Pine & Soft Mint - Lowest Eye Strain)
-// 4. 'oled'   : Midnight OLED (Minimalist True Black)
-// 5. 'light'  : Warm Slate & Off-White Paper (Day Mode)
-// 6. 'sage'   : Sage & Soft Olive (Cool Focus Mode)
+// 1. 'dark'   : Soft Charcoal & Warm Slate
+// 2. 'warm'   : Warm Espresso
+// 3. 'forest' : Forest Night
+// 4. 'oled'   : Midnight OLED
+// 5. 'light'  : Warm Slate & Off-White Paper
+// 6. 'sage'   : Sage & Soft Olive
 // ==========================================================================
 const THEME_STORAGE_KEY = 'ktu_portal_theme';
 const VALID_THEMES = ['dark', 'warm', 'forest', 'oled', 'light', 'sage'];
@@ -10396,16 +10718,123 @@ function initThemeSwitcher() {
     setTheme(savedTheme);
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initThemeSwitcher);
-} else {
-    initThemeSwitcher();
+// =========================================================================
+// Web Audio API Pendulum Mechanical Escapement Sound Synthesizer
+// Zero external audio dependencies - 100% offline & instant response
+// =========================================================================
+let audioCtx = null;
+let soundMuted = false;
+try {
+    soundMuted = localStorage.getItem('exam_timer_sound_muted') === 'true';
+} catch (e) {}
+
+function initAudio() {
+    if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+            audioCtx = new AudioContextClass();
+        }
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
+}
+
+// Alternating Pendulum Escapement Ticks:
+// Tick: ~960Hz (left pallet strike)
+// Tock: ~720Hz (right pallet strike)
+function playPendulumTick(isTock) {
+    if (soundMuted || !audioCtx) return;
+    try {
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        const filter = audioCtx.createBiquadFilter();
+
+        const baseFreq = isTock ? 720 : 960;
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(baseFreq, now);
+        osc.frequency.exponentialRampToValueAtTime(baseFreq * 0.45, now + 0.035);
+
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(baseFreq * 1.4, now);
+        filter.Q.setValueAtTime(8, now);
+
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.linearRampToValueAtTime(0.2, now + 0.002);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.038);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.042);
+    } catch (e) {
+        console.warn('Audio tick error:', e);
+    }
+}
+
+// 3-Tone Arpeggio Chime when time hits 00:00 (Time's Up!)
+function playTimeUpChime() {
+    if (soundMuted || !audioCtx) return;
+    try {
+        const notes = [523.25, 659.25, 783.99, 1046.50];
+        notes.forEach((freq, idx) => {
+            const start = audioCtx.currentTime + (idx * 0.12);
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, start);
+
+            gain.gain.setValueAtTime(0.0001, start);
+            gain.gain.linearRampToValueAtTime(0.22, start + 0.015);
+            gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.55);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(start);
+            osc.stop(start + 0.6);
+        });
+    } catch (e) {
+        console.warn('Audio chime error:', e);
+    }
+}
+
+function toggleTimerSound() {
+    initAudio();
+    soundMuted = !soundMuted;
+    try {
+        localStorage.setItem('exam_timer_sound_muted', soundMuted ? 'true' : 'false');
+    } catch (e) {}
+    updateSoundUI();
+    if (!soundMuted) {
+        playPendulumTick(false);
+    }
+}
+
+function updateSoundUI() {
+    const soundBtns = document.querySelectorAll('.float-sound-btn');
+    soundBtns.forEach(btn => {
+        if (soundMuted) {
+            btn.innerHTML = '🔇 Muted';
+            btn.classList.add('sound-muted');
+            btn.setAttribute('title', 'Sound is muted. Click to enable rhythmic pendulum tick');
+        } else {
+            btn.innerHTML = '🔊 Sound';
+            btn.classList.remove('sound-muted');
+            btn.setAttribute('title', 'Sound is active. Click to mute pendulum tick');
+        }
+    });
 }
 
 // =========================================================================
-// Interactive Exam Countdown Timers
+// Interactive Exam Countdown Timers & Floating Top-Right Synchronizer
 // =========================================================================
 const cardTimers = {};
+let activeTimerQid = null;
 
 function formatTimerMMSS(seconds) {
     const m = Math.floor(seconds / 60);
@@ -10413,11 +10842,86 @@ function formatTimerMMSS(seconds) {
     return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
 }
 
+function updateFloatingWidget(qid) {
+    const floatWidget = document.getElementById('floating-timer');
+    if (!floatWidget) return;
+
+    const timer = cardTimers[qid];
+    if (!timer) return;
+
+    const cardWidget = document.getElementById('timer-' + qid);
+    const label = cardWidget ? (cardWidget.getAttribute('data-label') || qid.toUpperCase()) : qid.toUpperCase();
+
+    const qidSpan = document.getElementById('floating-qid');
+    const timeDisplay = document.getElementById('floating-time-display');
+    const progressBar = document.getElementById('floating-progress-bar');
+    const actionIcon = document.getElementById('floating-action-icon');
+    const actionText = document.getElementById('floating-action-text');
+    const pendulumIcon = document.getElementById('floating-pendulum');
+
+    if (qidSpan) qidSpan.textContent = label;
+    if (timeDisplay) timeDisplay.textContent = formatTimerMMSS(timer.remaining);
+
+    const pct = Math.max(0, Math.min(100, (timer.remaining / timer.duration) * 100));
+    if (progressBar) progressBar.style.width = pct + '%';
+
+    if (timer.state === 'running') {
+        if (actionIcon) actionIcon.textContent = '⏸️';
+        if (actionText) actionText.textContent = 'Pause';
+        if (pendulumIcon) pendulumIcon.classList.add('swinging');
+        floatWidget.classList.remove('timer-paused');
+        floatWidget.classList.add('timer-running');
+    } else if (timer.state === 'paused') {
+        if (actionIcon) actionIcon.textContent = '▶️';
+        if (actionText) actionText.textContent = 'Resume';
+        if (pendulumIcon) pendulumIcon.classList.remove('swinging');
+        floatWidget.classList.remove('timer-running');
+        floatWidget.classList.add('timer-paused');
+    } else if (timer.state === 'expired') {
+        if (actionIcon) actionIcon.textContent = '⚠️';
+        if (actionText) actionText.textContent = "Time's Up!";
+        if (pendulumIcon) pendulumIcon.classList.remove('swinging');
+        floatWidget.classList.remove('timer-running', 'timer-paused');
+        floatWidget.classList.add('timer-expired');
+    } else {
+        if (actionIcon) actionIcon.textContent = '▶️';
+        if (actionText) actionText.textContent = 'Start';
+        if (pendulumIcon) pendulumIcon.classList.remove('swinging');
+        floatWidget.classList.remove('timer-running', 'timer-paused', 'timer-expired', 'timer-warning');
+    }
+
+    if (timer.remaining <= 60 && timer.remaining > 0) {
+        floatWidget.classList.add('timer-warning');
+    } else if (timer.remaining > 60) {
+        floatWidget.classList.remove('timer-warning');
+    }
+}
+
 function toggleCardTimer(qid) {
+    initAudio();
     const widget = document.getElementById('timer-' + qid);
     if (!widget) return;
     const duration = parseInt(widget.getAttribute('data-duration') || '300', 10);
-    
+
+    // Pause any other previously running timer
+    if (activeTimerQid && activeTimerQid !== qid) {
+        const prevTimer = cardTimers[activeTimerQid];
+        if (prevTimer && prevTimer.state === 'running') {
+            clearInterval(prevTimer.intervalId);
+            prevTimer.intervalId = null;
+            prevTimer.state = 'paused';
+            const prevWidget = document.getElementById('timer-' + activeTimerQid);
+            if (prevWidget) {
+                const prevAction = prevWidget.querySelector('.timer-action');
+                if (prevAction) prevAction.textContent = 'Resume';
+                prevWidget.classList.remove('timer-running');
+                prevWidget.classList.add('timer-paused');
+            }
+        }
+    }
+
+    activeTimerQid = qid;
+
     if (!cardTimers[qid]) {
         cardTimers[qid] = {
             duration: duration,
@@ -10426,20 +10930,27 @@ function toggleCardTimer(qid) {
             state: 'idle'
         };
     }
-    
+
     const timer = cardTimers[qid];
     const displaySpan = widget.querySelector('.timer-display');
     const actionSpan = widget.querySelector('.timer-action');
     const resetBtn = widget.querySelector('.timer-reset-btn');
 
+    // Display floating timer
+    const floatWidget = document.getElementById('floating-timer');
+    if (floatWidget) {
+        floatWidget.style.display = 'block';
+    }
+
     if (timer.state === 'running') {
-        // Pause
+        // Pause timer
         clearInterval(timer.intervalId);
         timer.intervalId = null;
         timer.state = 'paused';
-        actionSpan.textContent = 'Resume';
+        if (actionSpan) actionSpan.textContent = 'Resume';
         widget.classList.remove('timer-running');
         widget.classList.add('timer-paused');
+        updateFloatingWidget(qid);
     } else {
         // Start or Resume
         if (timer.state === 'expired') {
@@ -10447,14 +10958,22 @@ function toggleCardTimer(qid) {
             widget.classList.remove('timer-expired');
         }
         timer.state = 'running';
-        actionSpan.textContent = 'Pause';
+        if (actionSpan) actionSpan.textContent = 'Pause';
         if (resetBtn) resetBtn.style.display = 'inline-flex';
         widget.classList.remove('timer-paused');
         widget.classList.add('timer-running');
 
+        // Play initial tick and update UI immediately
+        playPendulumTick(false);
+        updateFloatingWidget(qid);
+
         timer.intervalId = setInterval(() => {
             timer.remaining--;
-            displaySpan.textContent = formatTimerMMSS(timer.remaining);
+            if (displaySpan) displaySpan.textContent = formatTimerMMSS(timer.remaining);
+
+            // Rhythmic Alternating Tick-Tock on every second
+            const isTock = ((timer.duration - timer.remaining) % 2 === 1);
+            playPendulumTick(isTock);
 
             if (timer.remaining <= 60 && timer.remaining > 0) {
                 widget.classList.add('timer-warning');
@@ -10464,10 +10983,14 @@ function toggleCardTimer(qid) {
                 clearInterval(timer.intervalId);
                 timer.intervalId = null;
                 timer.state = 'expired';
-                displaySpan.textContent = '00:00';
-                actionSpan.textContent = "Time's Up!";
+                if (displaySpan) displaySpan.textContent = '00:00';
+                if (actionSpan) actionSpan.textContent = "Time's Up!";
                 widget.classList.remove('timer-running', 'timer-warning');
                 widget.classList.add('timer-expired');
+                playTimeUpChime();
+                updateFloatingWidget(qid);
+            } else {
+                updateFloatingWidget(qid);
             }
         }, 1000);
     }
@@ -10488,10 +11011,57 @@ function resetCardTimer(qid) {
     const actionSpan = widget.querySelector('.timer-action');
     const resetBtn = widget.querySelector('.timer-reset-btn');
 
-    displaySpan.textContent = formatTimerMMSS(timer.duration);
-    actionSpan.textContent = 'Start';
+    if (displaySpan) displaySpan.textContent = formatTimerMMSS(timer.duration);
+    if (actionSpan) actionSpan.textContent = 'Start';
     if (resetBtn) resetBtn.style.display = 'none';
     widget.classList.remove('timer-running', 'timer-paused', 'timer-warning', 'timer-expired');
+
+    if (activeTimerQid === qid) {
+        updateFloatingWidget(qid);
+    }
+}
+
+function toggleActiveTimer() {
+    if (activeTimerQid) toggleCardTimer(activeTimerQid);
+}
+
+function resetActiveTimer() {
+    if (activeTimerQid) resetCardTimer(activeTimerQid);
+}
+
+function closeFloatingTimer() {
+    const floatWidget = document.getElementById('floating-timer');
+    if (floatWidget) floatWidget.style.display = 'none';
+}
+
+function jumpToActiveQuestion() {
+    if (!activeTimerQid) return;
+    const card = document.getElementById(activeTimerQid);
+    if (!card) return;
+
+    const subjectView = card.closest ? card.closest('.subject-view') : null;
+    if (subjectView && !subjectView.classList.contains('active')) {
+        const viewId = subjectView.id;
+        if (typeof switchTab === 'function') switchTab(viewId);
+    }
+
+    if (card.style.display === 'none') {
+        if (searchInput) searchInput.value = '';
+        const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+        if (allBtn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            allBtn.classList.add('active');
+        }
+        if (typeof applyFilters === 'function') applyFilters();
+    }
+
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.classList.remove('flash-highlight');
+    void card.offsetWidth;
+    card.classList.add('flash-highlight');
+    setTimeout(() => {
+        card.classList.remove('flash-highlight');
+    }, 2000);
 }
 
 // =========================================================================
@@ -10545,6 +11115,18 @@ function toggleAllAnswers() {
             btn.classList.remove('active-collapsed');
         }
     });
+}
+
+// Initialization on DOMContentLoaded
+function initPortal() {
+    initThemeSwitcher();
+    updateSoundUI();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPortal);
+} else {
+    initPortal();
 }
 
     </script>

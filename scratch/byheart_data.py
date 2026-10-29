@@ -382,17 +382,51 @@ BYHEART_DATA = {
 }
 
 def get_byheart_card_html(qid, marks=3):
+    # Check if a lecturer answer with refined remember_this exists
+    try:
+        from lecturer_answers import REPRESENTATIVE_ANSWERS
+        rep = REPRESENTATIVE_ANSWERS.get(qid)
+        if rep and rep.get("remember_this"):
+            rem = rep["remember_this"]
+            title = rem.get("title", "Key Equation" if rem.get("eq") else "Remember This")
+            icon = "⚡" if "Equation" in title else "📌"
+            eq_html = f'<div class="byheart-eq">{rem["eq"]}</div>' if rem.get("eq") else ""
+            time_badge = '<span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>' if marks == 3 else '<span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>'
+            text_html = f'<p class="byheart-text">{rem["text"]}</p>' if rem.get("text") else ""
+            return f"""
+            <div class="byheart-card">
+                <div class="byheart-header">
+                    <div class="byheart-title-group">
+                        <span class="byheart-icon">{icon}</span>
+                        <span class="byheart-title">{title}</span>
+                    </div>
+                    <div class="byheart-badges-group">
+                        {time_badge}
+                        <span class="byheart-badge">⭐ High Mark Weightage</span>
+                    </div>
+                </div>
+                <div class="byheart-body">
+                    {eq_html}
+                    {text_html}
+                </div>
+            </div>"""
+    except Exception:
+        pass
+
     item = BYHEART_DATA.get(qid)
     if not item:
         return ""
-    eq_html = f'<div class="byheart-eq">{item["eq"]}</div>' if item.get("eq") else ""
+    has_eq = bool(item.get("eq"))
+    title = "Key Equation" if has_eq else "Remember This"
+    icon = "⚡" if has_eq else "📌"
+    eq_html = f'<div class="byheart-eq">{item["eq"]}</div>' if has_eq else ""
     time_badge = '<span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>' if marks == 3 else '<span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>'
     return f"""
             <div class="byheart-card">
                 <div class="byheart-header">
                     <div class="byheart-title-group">
-                        <span class="byheart-icon">⚡</span>
-                        <span class="byheart-title">Sentence / (Equation) to Byhart</span>
+                        <span class="byheart-icon">{icon}</span>
+                        <span class="byheart-title">{title}</span>
                     </div>
                     <div class="byheart-badges-group">
                         {time_badge}

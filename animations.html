@@ -175,7 +175,7 @@
 
         .hero-section {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
         .hero-tag {
             display: inline-flex;
@@ -204,6 +204,64 @@
             color: var(--text-muted);
             max-width: 720px;
             margin: 0 auto;
+        }
+
+        /* Subject Tab Filter Bar for Simulators */
+        .subject-filter-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+        .subject-filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 0.35rem;
+            overflow-x: auto;
+            max-width: 100%;
+            scrollbar-width: none;
+        }
+        .subject-filter-bar::-webkit-scrollbar {
+            display: none;
+        }
+        .sub-filter-tab {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            font-weight: 600;
+            padding: 0.45rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+        .sub-filter-tab:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .sub-filter-tab.active {
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .sub-filter-tab[data-subject="all"].active {
+            background: #6366f1;
+            box-shadow: 0 0 14px rgba(99, 102, 241, 0.4);
+        }
+        .sub-filter-tab[data-subject="acs"].active {
+            background: #0284c7;
+            box-shadow: 0 0 14px rgba(2, 132, 199, 0.4);
+        }
+        .sub-filter-tab[data-subject="drive"].active {
+            background: #d97706;
+            box-shadow: 0 0 14px rgba(217, 119, 6, 0.4);
+        }
+        .sub-filter-tab[data-subject="mobile"].active {
+            background: #db2777;
+            box-shadow: 0 0 14px rgba(219, 39, 119, 0.4);
         }
 
         /* Simulators Grid */
@@ -300,7 +358,7 @@
             font-size: 0.82rem;
             font-family: 'JetBrains Mono', monospace;
             color: var(--card-focus-color, #38bdf8);
-            min-width: 36px;
+            min-width: 45px;
         }
         .sim-slider {
             width: 130px;
@@ -321,6 +379,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.35rem;
+            white-space: nowrap;
         }
         .action-btn:hover {
             background: rgba(255, 255, 255, 0.15);
@@ -341,97 +400,48 @@
             color: var(--text-main);
         }
 
-        /* Frame Zoomer Hierarchical Tiers */
-        .gsm-tiers-container {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
+        .dual-canvas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
             margin-bottom: 1.25rem;
         }
-        .gsm-tier-bar {
-            background: rgba(236, 72, 153, 0.08);
-            border: 1px solid rgba(236, 72, 153, 0.25);
-            border-radius: 10px;
-            padding: 0.75rem 1rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .gsm-tier-bar:hover {
-            background: rgba(236, 72, 153, 0.16);
-            border-color: #ec4899;
-            transform: translateX(4px);
-        }
-        .gsm-tier-bar.active {
-            background: rgba(236, 72, 153, 0.22);
-            border-color: #ec4899;
-            box-shadow: 0 0 16px rgba(236, 72, 153, 0.25);
-        }
-        .tier-title {
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--text-main);
-        }
-        .tier-timing {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            color: #f472b6;
-        }
-
-        .burst-bits-grid {
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            gap: 4px;
-            background: #080b12;
-            padding: 0.75rem;
-            border-radius: 8px;
+        .sub-canvas-card {
+            background: #060910;
             border: 1px solid var(--border-subtle);
-            text-align: center;
-        }
-        .burst-cell {
-            padding: 0.6rem 0.2rem;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 0.75rem;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2px;
         }
-        .burst-cell-name {
-            font-size: 0.7rem;
+        .sub-canvas-title {
+            font-size: 0.78rem;
             font-weight: 700;
-            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
         }
-        .burst-cell-bits {
-            font-size: 0.65rem;
-            font-family: 'JetBrains Mono', monospace;
-            color: #f472b6;
+        .sub-canvas-card canvas {
+            width: 100%;
+            height: 260px;
+            display: block;
+            border-radius: 6px;
         }
-        .burst-data {
-            background: rgba(56, 189, 248, 0.15);
-            border-color: rgba(56, 189, 248, 0.35);
-        }
-        .burst-data .burst-cell-name { color: #38bdf8; }
-        .burst-train {
-            background: rgba(245, 158, 11, 0.15);
-            border-color: rgba(245, 158, 11, 0.35);
-        }
-        .burst-train .burst-cell-name { color: #fbbf24; }
-        .burst-tail {
-            background: rgba(16, 185, 129, 0.15);
-            border-color: rgba(16, 185, 129, 0.35);
-        }
-        .burst-tail .burst-cell-name { color: #34d399; }
 
-        @media (max-width: 768px) {
-            .site-header { padding: 0.75rem 1rem; }
-            .canvas-viewport { height: 280px; }
-            .sim-controls-panel { gap: 0.75rem; }
-            .burst-bits-grid { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 850px) {
+            .dual-canvas-grid {
+                grid-template-columns: 1fr;
+            }
+            .canvas-viewport {
+                height: 280px;
+            }
+            .sub-canvas-card canvas {
+                height: 220px;
+            }
+            .sim-controls-panel {
+                gap: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -458,14 +468,24 @@
             <span class="hero-tag">⚡ Live Physics &amp; Signal Oscilloscopes</span>
             <h1 class="hero-title">Visual Motion Graphics for Engineering Mastery</h1>
             <p class="hero-subtitle">
-                Interact in real time with non-linear limit cycles, sinusoidal inverter PWM modulators, and wireless MAC protocols. Tap anywhere to inject disturbances and observe physics-grade reactions.
+                Interact in real time with non-linear limit cycles, inverter SPWM synthesis, converter firing angles, and cellular handover thresholds. Use the slider bars to tune parameters dynamically.
             </p>
         </section>
+
+        <!-- Subject Tab Filter Bar -->
+        <div class="subject-filter-wrapper">
+            <div class="subject-filter-bar" role="tablist">
+                <button class="sub-filter-tab active" data-subject="all" onclick="filterSimSubject('all')">🌟 All Simulators (6 Lab Stations)</button>
+                <button class="sub-filter-tab" data-subject="acs" onclick="filterSimSubject('acs')">⚡ ACS Simulators</button>
+                <button class="sub-filter-tab" data-subject="drive" onclick="filterSimSubject('drive')">🏎️ Electric Drives Simulators</button>
+                <button class="sub-filter-tab" data-subject="mobile" onclick="filterSimSubject('mobile')">📡 Mobile Computing Simulators</button>
+            </div>
+        </div>
 
         <div class="sim-grid">
 
             <!-- SIMULATION 1: ACS Phase Plane & Limit Cycle Studio -->
-            <article class="sim-card" style="--card-focus-color:#38bdf8;">
+            <article class="sim-card sim-item-acs" style="--card-focus-color:#38bdf8;">
                 <div class="sim-header">
                     <div class="sim-title-group">
                         <span class="sim-icon">🌀</span>
@@ -505,8 +525,51 @@
                 </div>
             </article>
 
-            <!-- SIMULATION 2: Electric Drives Inverter PWM Sine-Triangle Synthesizer -->
-            <article class="sim-card" style="--card-focus-color:#f59e0b;">
+            <!-- SIMULATION 2: ACS Closed-Loop Pole Placement & Transient Response -->
+            <article class="sim-card sim-item-acs" style="--card-focus-color:#38bdf8;">
+                <div class="sim-header">
+                    <div class="sim-title-group">
+                        <span class="sim-icon">🎯</span>
+                        <div>
+                            <h2 class="sim-title">ACS: State Feedback Pole Placement &amp; Transient Response</h2>
+                        </div>
+                    </div>
+                    <span class="sim-badge">ACS Module 2: Pole Placement</span>
+                </div>
+                <div class="sim-body">
+                    <div class="dual-canvas-grid">
+                        <div class="sub-canvas-card">
+                            <div class="sub-canvas-title">Time Domain Step Response $x_1(t)$ &amp; Velocity $x_2(t)$</div>
+                            <canvas id="anim-transient-canvas"></canvas>
+                        </div>
+                        <div class="sub-canvas-card">
+                            <div class="sub-canvas-title">Complex $s$-Plane Closed-Loop Poles $s = -\zeta\omega_n \pm j\omega_d$</div>
+                            <canvas id="anim-splane-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="sim-controls-panel">
+                        <div class="control-group">
+                            <label class="control-label" for="anim-slider-wn">Natural Frequency $\omega_n$:</label>
+                            <input type="range" id="anim-slider-wn" class="sim-slider" min="1.0" max="6.0" step="0.2" value="3.0">
+                            <span class="control-val" id="anim-val-wn">3.0 rad/s</span>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="anim-slider-zeta">Damping Ratio $\zeta$:</label>
+                            <input type="range" id="anim-slider-zeta" class="sim-slider" min="0.05" max="1.8" step="0.05" value="0.45">
+                            <span class="control-val" id="anim-val-zeta">0.45</span>
+                        </div>
+                        <button type="button" class="action-btn" onclick="injectAnimStep()">⚡ Step Input</button>
+                    </div>
+
+                    <div class="explanation-drawer">
+                        <strong>KTU Exam Core Concept (Ackermann's Formula):</strong> For state feedback $u = -K\mathbf{x}$, tuning gain vector $K = [0 \dots 1]Q_c^{-1}\phi_d(A)$ shifts closed-loop eigenvalues arbitrarily. Setting $\zeta = 0.707$ achieves the optimal balance of minimal rise time with less than 4.3% overshoot.
+                    </div>
+                </div>
+            </article>
+
+            <!-- SIMULATION 3: Electric Drives Inverter PWM Sine-Triangle Synthesizer -->
+            <article class="sim-card sim-item-drive" style="--card-focus-color:#f59e0b;">
                 <div class="sim-header">
                     <div class="sim-title-group">
                         <span class="sim-icon">⚡</span>
@@ -541,8 +604,98 @@
                 </div>
             </article>
 
-            <!-- SIMULATION 3: Mobile Computing CSMA/CA & Hidden Terminal Handshake -->
-            <article class="sim-card" style="--card-focus-color:#ec4899;">
+            <!-- SIMULATION 4: Electric Drives Converter DC Drive & Firing Angle -->
+            <article class="sim-card sim-item-drive" style="--card-focus-color:#f59e0b;">
+                <div class="sim-header">
+                    <div class="sim-title-group">
+                        <span class="sim-icon">🏎️</span>
+                        <div>
+                            <h2 class="sim-title">Electric Drives: Converter DC Drive Firing Angle &amp; Conduction Mode</h2>
+                        </div>
+                    </div>
+                    <span class="sim-badge">Drives Module 2: Converter Drives</span>
+                </div>
+                <div class="sim-body">
+                    <div class="dual-canvas-grid">
+                        <div class="sub-canvas-card">
+                            <div class="sub-canvas-title">Armature Current Waveform $i_a(t)$</div>
+                            <canvas id="anim-converter-canvas"></canvas>
+                        </div>
+                        <div class="sub-canvas-card">
+                            <div class="sub-canvas-title">Torque-Speed Characteristic Curve $(T_e, \omega_m)$</div>
+                            <canvas id="anim-speedtorque-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="sim-controls-panel">
+                        <div class="control-group">
+                            <label class="control-label" for="anim-slider-alpha">Firing Angle $\alpha$:</label>
+                            <input type="range" id="anim-slider-alpha" class="sim-slider" min="0" max="150" step="5" value="45" style="accent-color:#f59e0b;">
+                            <span class="control-val" id="anim-val-alpha" style="color:#f59e0b;">45&deg;</span>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="anim-slider-torque">Load Torque $T_L$:</label>
+                            <input type="range" id="anim-slider-torque" class="sim-slider" min="0.1" max="2.0" step="0.1" value="1.0" style="accent-color:#f59e0b;">
+                            <span class="control-val" id="anim-val-torque" style="color:#f59e0b;">1.0 p.u.</span>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="anim-slider-induct">Armature Inductance $L_a$:</label>
+                            <input type="range" id="anim-slider-induct" class="sim-slider" min="1" max="3" step="1" value="2" style="accent-color:#f59e0b;">
+                            <span class="control-val" id="anim-val-induct" style="color:#f59e0b;">Medium</span>
+                        </div>
+                    </div>
+
+                    <div class="explanation-drawer" style="border-left-color:#f59e0b;">
+                        <strong>KTU Exam Core Concept:</strong> In 1-phase full converters, $V_0 = \frac{2V_m}{\pi}\cos\alpha$. In Discontinuous Conduction Mode (DCM), current falls to zero before the next thyristor fires, causing severe no-load speed surges and poor regulation. Adding series inductance $L_a$ restores linear Continuous Conduction Mode (CCM).
+                    </div>
+                </div>
+            </article>
+
+            <!-- SIMULATION 5: Mobile Computing Cellular Handover & RSSI -->
+            <article class="sim-card sim-item-mobile" style="--card-focus-color:#ec4899;">
+                <div class="sim-header">
+                    <div class="sim-title-group">
+                        <span class="sim-icon">📶</span>
+                        <div>
+                            <h2 class="sim-title">Mobile Computing: Cellular Handover &amp; Hysteresis Margin</h2>
+                        </div>
+                    </div>
+                    <span class="sim-badge">Mobile Module 1: Mobility Management</span>
+                </div>
+                <div class="sim-body">
+                    <div class="dual-canvas-grid">
+                        <div class="sub-canvas-card">
+                            <div class="sub-canvas-title">Cellular Hexagonal Grid &amp; Active Vehicle Link</div>
+                            <canvas id="anim-hex-canvas"></canvas>
+                        </div>
+                        <div class="sub-canvas-card">
+                            <div class="sub-canvas-title">Received Signal Strength (RSSI) &amp; Margin $\Delta$</div>
+                            <canvas id="anim-rssi-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="sim-controls-panel">
+                        <div class="control-group">
+                            <label class="control-label" for="anim-slider-speed">Vehicle Speed $v$:</label>
+                            <input type="range" id="anim-slider-speed" class="sim-slider" min="20" max="120" step="10" value="50" style="accent-color:#ec4899;">
+                            <span class="control-val" id="anim-val-speed" style="color:#ec4899;">50 km/h</span>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="anim-slider-margin">Hysteresis Margin $\Delta$:</label>
+                            <input type="range" id="anim-slider-margin" class="sim-slider" min="1" max="14" step="1" value="6" style="accent-color:#ec4899;">
+                            <span class="control-val" id="anim-val-margin" style="color:#ec4899;">6 dB</span>
+                        </div>
+                        <button type="button" class="action-btn" onclick="restartAnimVehicle()">🚗 Restart Vehicle</button>
+                    </div>
+
+                    <div class="explanation-drawer" style="border-left-color:#ec4899;">
+                        <strong>KTU Exam Core Concept:</strong> Handovers are triggered when the target base station signal exceeds the serving base station signal by hysteresis threshold $\Delta = P_{ho} - P_{min}$. If $\Delta$ is too small, shadow fading causes ping-pong switching; if too large, the call drops before handover completion.
+                    </div>
+                </div>
+            </article>
+
+            <!-- SIMULATION 6: Mobile Computing CSMA/CA & Hidden Terminal Handshake -->
+            <article class="sim-card sim-item-mobile" style="--card-focus-color:#ec4899;">
                 <div class="sim-header">
                     <div class="sim-title-group">
                         <span class="sim-icon">📡</span>
@@ -569,88 +722,30 @@
                 </div>
             </article>
 
-            <!-- SIMULATION 4: GSM TDMA Hierarchical Frame Zoomer -->
-            <article class="sim-card" style="--card-focus-color:#a855f7;">
-                <div class="sim-header">
-                    <div class="sim-title-group">
-                        <span class="sim-icon">🔍</span>
-                        <div>
-                            <h2 class="sim-title">Mobile Computing: GSM Frame Hierarchy &amp; Normal Burst Zoomer</h2>
-                        </div>
-                    </div>
-                    <span class="sim-badge">Mobile Module 2: Air Interface</span>
-                </div>
-                <div class="sim-body">
-                    <div class="gsm-tiers-container">
-                        <div class="gsm-tier-bar active" onclick="selectTier(1)">
-                            <span class="tier-title">Tier 1: 1 Hyperframe (2,048 Superframes = 2,715,648 TDMA Frames)</span>
-                            <span class="tier-timing">⏱️ 3h 28m 53.76s (Crypto Period)</span>
-                        </div>
-                        <div class="gsm-tier-bar" onclick="selectTier(2)">
-                            <span class="tier-title">Tier 2: 1 Superframe (26 or 51 Multiframes)</span>
-                            <span class="tier-timing">⏱️ 6.12 seconds</span>
-                        </div>
-                        <div class="gsm-tier-bar" onclick="selectTier(3)">
-                            <span class="tier-title">Tier 3: 1 Traffic Multiframe (26 TDMA Frames: 24 Traffic + 1 SACCH + 1 Idle)</span>
-                            <span class="tier-timing">⏱️ 120 ms</span>
-                        </div>
-                        <div class="gsm-tier-bar" onclick="selectTier(4)">
-                            <span class="tier-title">Tier 4: 1 TDMA Frame (8 Time Slots: TS0 - TS7)</span>
-                            <span class="tier-timing">⏱️ 4.615 ms</span>
-                        </div>
-                    </div>
-
-                    <h4 style="font-size:0.95rem; font-weight:700; color:var(--text-main); margin-bottom:0.65rem;">
-                        Normal Burst Bit Breakdown in Time Slot (0.577 ms = 156.25 bit durations):
-                    </h4>
-
-                    <div class="burst-bits-grid">
-                        <div class="burst-cell burst-tail">
-                            <span class="burst-cell-name">Tail Bits</span>
-                            <span class="burst-cell-bits">3 Bits</span>
-                        </div>
-                        <div class="burst-cell burst-data">
-                            <span class="burst-cell-name">Data Bits</span>
-                            <span class="burst-cell-bits">57 Bits</span>
-                        </div>
-                        <div class="burst-cell" style="background:rgba(239, 68, 68, 0.15); border-color:rgba(239, 68, 68, 0.35);">
-                            <span class="burst-cell-name" style="color:#f87171;">Steal Flag</span>
-                            <span class="burst-cell-bits">1 Bit</span>
-                        </div>
-                        <div class="burst-cell burst-train">
-                            <span class="burst-cell-name">Training Seq</span>
-                            <span class="burst-cell-bits">26 Bits</span>
-                        </div>
-                        <div class="burst-cell" style="background:rgba(239, 68, 68, 0.15); border-color:rgba(239, 68, 68, 0.35);">
-                            <span class="burst-cell-name" style="color:#f87171;">Steal Flag</span>
-                            <span class="burst-cell-bits">1 Bit</span>
-                        </div>
-                        <div class="burst-cell burst-data">
-                            <span class="burst-cell-name">Data Bits</span>
-                            <span class="burst-cell-bits">57 Bits</span>
-                        </div>
-                        <div class="burst-cell burst-tail">
-                            <span class="burst-cell-name">Tail Bits</span>
-                            <span class="burst-cell-bits">3 Bits</span>
-                        </div>
-                        <div class="burst-cell" style="background:rgba(100, 116, 139, 0.15); border-color:rgba(100, 116, 139, 0.35);">
-                            <span class="burst-cell-name" style="color:#94a3b8;">Guard Time</span>
-                            <span class="burst-cell-bits">8.25 Bits</span>
-                        </div>
-                    </div>
-
-                    <div class="explanation-drawer" style="border-left-color:#a855f7;">
-                        <strong>KTU Exam Core Concept:</strong> In GSM Normal Burst, total bits = $3 + 57 + 1 + 26 + 1 + 57 + 3 + 8.25 = 156.25\text{ bit periods}$. User payload contains 114 encrypted data bits. The 26-bit training sequence is known by receiver to train adaptive equalizers against multipath fading channels.
-                    </div>
-                </div>
-            </article>
-
         </div>
 
     </main>
 
     <!-- Canvas Simulation Scripts -->
     <script>
+        // Filter simulators by subject tab
+        function filterSimSubject(subject) {
+            document.querySelectorAll('.sub-filter-tab').forEach(tab => {
+                if (tab.getAttribute('data-subject') === subject) tab.classList.add('active');
+                else tab.classList.remove('active');
+            });
+
+            document.querySelectorAll('.sim-card').forEach(card => {
+                if (subject === 'all') {
+                    card.style.display = 'block';
+                } else if (card.classList.contains(`sim-item-${subject}`)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
         // =========================================================================
         // 1. ACS PHASE PLANE & LIMIT CYCLE
         // =========================================================================
@@ -673,7 +768,6 @@
         function initPhaseGrid() {
             trajectories = [];
             particles = [];
-            // Spawn default test orbits
             spawnTrajectory(-1.8, -0.4);
             spawnTrajectory(0.2, 0.2);
             spawnTrajectory(2.2, 1.2);
@@ -716,7 +810,6 @@
                     dx = 1.2 * curX;
                     dy = -1.2 * curY;
                 } else {
-                    // Harmonic
                     dx = curY;
                     dy = -curX;
                 }
@@ -811,7 +904,114 @@
         drawPhase();
 
         // =========================================================================
-        // 2. SPWM INVERTER SINE-TRIANGLE
+        // 2. ACS POLE PLACEMENT & TRANSIENT RESPONSE
+        // =========================================================================
+        const tCanvas = document.getElementById('anim-transient-canvas');
+        const sCanvas = document.getElementById('anim-splane-canvas');
+        const tCtx = tCanvas.getContext('2d');
+        const sCtx = sCanvas.getContext('2d');
+        const sliderWn = document.getElementById('anim-slider-wn');
+        const valWn = document.getElementById('anim-val-wn');
+        const sliderZeta = document.getElementById('anim-slider-zeta');
+        const valZeta = document.getElementById('anim-val-zeta');
+
+        function resizePoleSim() {
+            tCanvas.width = tCanvas.parentElement.clientWidth - 20;
+            tCanvas.height = 260;
+            sCanvas.width = sCanvas.parentElement.clientWidth - 20;
+            sCanvas.height = 260;
+        }
+        window.addEventListener('resize', resizePoleSim);
+        resizePoleSim();
+
+        sliderWn.addEventListener('input', e => { valWn.textContent = parseFloat(e.target.value).toFixed(1) + ' rad/s'; });
+        sliderZeta.addEventListener('input', e => { valZeta.textContent = parseFloat(e.target.value).toFixed(2); });
+        window.injectAnimStep = () => {};
+
+        function drawPoleSim() {
+            const tw = tCanvas.width, th = tCanvas.height;
+            tCtx.clearRect(0, 0, tw, th);
+
+            const wn = parseFloat(sliderWn.value);
+            const z = parseFloat(sliderZeta.value);
+
+            // Step Target
+            const yRef = th * 0.4;
+            tCtx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            tCtx.lineWidth = 1;
+            tCtx.setLineDash([4, 4]);
+            tCtx.beginPath(); tCtx.moveTo(0, yRef); tCtx.lineTo(tw, yRef); tCtx.stroke();
+            tCtx.setLineDash([]);
+
+            // Transient Waveform
+            tCtx.strokeStyle = '#38bdf8';
+            tCtx.lineWidth = 2.4;
+            tCtx.beginPath();
+            const maxT = 6.0;
+            for (let px = 0; px < tw; px++) {
+                const t = (px / tw) * maxT;
+                let yVal = 0;
+                if (z < 1.0) {
+                    const wd = wn * Math.sqrt(1 - z * z);
+                    const phi = Math.acos(z);
+                    yVal = 1 - (Math.exp(-z * wn * t) / Math.sqrt(1 - z * z)) * Math.sin(wd * t + phi);
+                } else if (Math.abs(z - 1.0) < 0.05) {
+                    yVal = 1 - (1 + wn * t) * Math.exp(-wn * t);
+                } else {
+                    const s1 = -wn * (z - Math.sqrt(z * z - 1));
+                    const s2 = -wn * (z + Math.sqrt(z * z - 1));
+                    yVal = 1 - (s2 * Math.exp(s1 * t) - s1 * Math.exp(s2 * t)) / (s2 - s1);
+                }
+                const py = (th * 0.85) - yVal * (th * 0.45);
+                if (px === 0) tCtx.moveTo(px, py); else tCtx.lineTo(px, py);
+            }
+            tCtx.stroke();
+
+            // S-Plane
+            const sw = sCanvas.width, sh = sCanvas.height;
+            sCtx.clearRect(0, 0, sw, sh);
+            const scx = sw * 0.7, scy = sh / 2;
+
+            sCtx.fillStyle = 'rgba(16, 185, 129, 0.06)';
+            sCtx.fillRect(0, 0, scx, sh);
+
+            sCtx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            sCtx.beginPath(); sCtx.moveTo(0, scy); sCtx.lineTo(sw, scy); sCtx.moveTo(scx, 0); sCtx.lineTo(scx, sh); sCtx.stroke();
+
+            const scale = 22;
+            sCtx.strokeStyle = '#38bdf8';
+            sCtx.lineWidth = 3;
+            const pSize = 7;
+            if (z < 1.0) {
+                const sigma = -z * wn;
+                const wd = wn * Math.sqrt(1 - z * z);
+                [
+                    { x: scx + sigma * scale, y: scy - wd * scale },
+                    { x: scx + sigma * scale, y: scy + wd * scale }
+                ].forEach(p => {
+                    sCtx.beginPath();
+                    sCtx.moveTo(p.x - pSize, p.y - pSize); sCtx.lineTo(p.x + pSize, p.y + pSize);
+                    sCtx.moveTo(p.x + pSize, p.y - pSize); sCtx.lineTo(p.x - pSize, p.y + pSize);
+                    sCtx.stroke();
+                });
+            } else {
+                const s1 = -wn * (z - Math.sqrt(z * z - 1));
+                const s2 = -wn * (z + Math.sqrt(z * z - 1));
+                [s1, s2].forEach(sVal => {
+                    const px = scx + sVal * scale;
+                    sCtx.beginPath();
+                    sCtx.moveTo(px - pSize, scy - pSize); sCtx.lineTo(px + pSize, scy + pSize);
+                    sCtx.moveTo(px + pSize, scy - pSize); sCtx.lineTo(px - pSize, scy + pSize);
+                    sCtx.stroke();
+                });
+            }
+
+            requestAnimationFrame(drawPoleSim);
+        }
+        drawPoleSim();
+
+        // =========================================================================
+        // 3. SPWM INVERTER SINE-TRIANGLE
         // =========================================================================
         const pwmCanvas = document.getElementById('canvas-pwm');
         const pwmCtx = pwmCanvas.getContext('2d');
@@ -857,7 +1057,6 @@
             const cy1 = topH / 2;
             const cy2 = topH + (botH / 2);
 
-            // Separator line
             pwmCtx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
             pwmCtx.lineWidth = 1;
             pwmCtx.beginPath();
@@ -865,13 +1064,7 @@
             pwmCtx.lineTo(w, topH);
             pwmCtx.stroke();
 
-            // Labels
-            pwmCtx.fillStyle = '#8292a8';
-            pwmCtx.font = '11px Inter';
-            pwmCtx.fillText('Carrier Wave (Triangle) vs Modulating Wave (Sine)', 15, 20);
-            pwmCtx.fillText('Inverter Switched Phase Output Voltage V_AO(t)', 15, topH + 20);
-
-            // Draw Carrier Triangle Wave
+            // Carrier Triangle
             pwmCtx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
             pwmCtx.lineWidth = 1.2;
             pwmCtx.beginPath();
@@ -885,7 +1078,7 @@
             }
             pwmCtx.stroke();
 
-            // Draw Sine Modulating Wave
+            // Sine Modulating
             pwmCtx.strokeStyle = '#f59e0b';
             pwmCtx.lineWidth = 2.2;
             pwmCtx.beginPath();
@@ -898,12 +1091,10 @@
             }
             pwmCtx.stroke();
 
-            // Draw Inverter Output Voltage Square Wave V_AO
+            // Switched Output V_AO
             pwmCtx.strokeStyle = '#38bdf8';
-            pwmCtx.fillStyle = 'rgba(56, 189, 248, 0.15)';
             pwmCtx.lineWidth = 2;
             pwmCtx.beginPath();
-
             let lastHigh = false;
             for (let x = 0; x < w; x++) {
                 const phase = (x % carrierPeriod) / carrierPeriod;
@@ -931,7 +1122,211 @@
         drawPWM();
 
         // =========================================================================
-        // 3. CSMA/CA HIDDEN TERMINAL
+        // 4. DRIVES CONVERTER DC DRIVE
+        // =========================================================================
+        const convCanvas = document.getElementById('anim-converter-canvas');
+        const stCanvas = document.getElementById('anim-speedtorque-canvas');
+        const convCtx = convCanvas.getContext('2d');
+        const stCtx = stCanvas.getContext('2d');
+        const sliderAlpha = document.getElementById('anim-slider-alpha');
+        const valAlpha = document.getElementById('anim-val-alpha');
+        const sliderTorque = document.getElementById('anim-slider-torque');
+        const valTorque = document.getElementById('anim-val-torque');
+        const sliderInduct = document.getElementById('anim-slider-induct');
+        const valInduct = document.getElementById('anim-val-induct');
+
+        function resizeConvSim() {
+            convCanvas.width = convCanvas.parentElement.clientWidth - 20;
+            convCanvas.height = 260;
+            stCanvas.width = stCanvas.parentElement.clientWidth - 20;
+            stCanvas.height = 260;
+        }
+        window.addEventListener('resize', resizeConvSim);
+        resizeConvSim();
+
+        sliderAlpha.addEventListener('input', e => { valAlpha.textContent = e.target.value + '\u00b0'; });
+        sliderTorque.addEventListener('input', e => { valTorque.textContent = parseFloat(e.target.value).toFixed(1) + ' p.u.'; });
+        sliderInduct.addEventListener('input', e => {
+            const v = parseInt(e.target.value);
+            valInduct.textContent = v === 1 ? 'Low' : (v === 2 ? 'Medium' : 'High');
+        });
+
+        function drawConvSim() {
+            const alphaDeg = parseFloat(sliderAlpha.value);
+            const torque = parseFloat(sliderTorque.value);
+            const induct = parseInt(sliderInduct.value);
+
+            const isDCM = (torque < 0.6 && induct === 1) || (torque < 0.35 && induct === 2);
+
+            // Current Waveform
+            const cw = convCanvas.width, ch = convCanvas.height;
+            convCtx.clearRect(0, 0, cw, ch);
+
+            convCtx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+            convCtx.beginPath(); convCtx.moveTo(0, ch * 0.7); convCtx.lineTo(cw, ch * 0.7); convCtx.stroke();
+
+            convCtx.strokeStyle = '#f59e0b';
+            convCtx.lineWidth = 2.4;
+            convCtx.beginPath();
+            const baseCurrent = torque * (ch * 0.35);
+            for (let x = 0; x < cw; x++) {
+                const cycleX = (x % 120) / 120;
+                let cur = 0;
+                if (isDCM) {
+                    if (cycleX < 0.65) cur = Math.sin(cycleX / 0.65 * Math.PI) * baseCurrent * 1.6;
+                    else cur = 0;
+                } else {
+                    cur = baseCurrent + Math.sin(cycleX * Math.PI * 2) * (18 / induct);
+                }
+                const py = (ch * 0.7) - cur;
+                if (x === 0) convCtx.moveTo(x, py); else convCtx.lineTo(x, py);
+            }
+            convCtx.stroke();
+
+            // Speed-Torque
+            const sw = stCanvas.width, sh = stCanvas.height;
+            stCtx.clearRect(0, 0, sw, sh);
+
+            stCtx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+            stCtx.beginPath(); stCtx.moveTo(35, sh - 30); stCtx.lineTo(sw - 10, sh - 30); stCtx.stroke();
+            stCtx.beginPath(); stCtx.moveTo(35, sh - 30); stCtx.lineTo(35, 10); stCtx.stroke();
+
+            const noLoadSpeed = (sh - 40) - Math.cos(alphaDeg * Math.PI / 180) * (sh * 0.4);
+            stCtx.strokeStyle = 'rgba(245, 158, 11, 0.6)';
+            stCtx.lineWidth = 2;
+            stCtx.beginPath();
+            stCtx.moveTo(35, noLoadSpeed);
+            stCtx.lineTo(sw - 20, noLoadSpeed + 45);
+            stCtx.stroke();
+
+            const ptX = 35 + torque * ((sw - 60) / 2.0);
+            let ptY = noLoadSpeed + (torque * 22);
+            if (isDCM) ptY -= 25;
+
+            stCtx.fillStyle = '#38bdf8';
+            stCtx.beginPath();
+            stCtx.arc(ptX, ptY, 6, 0, Math.PI * 2);
+            stCtx.fill();
+
+            requestAnimationFrame(drawConvSim);
+        }
+        drawConvSim();
+
+        // =========================================================================
+        // 5. MOBILE CELLULAR HANDOVER & RSSI
+        // =========================================================================
+        const hexCanvas = document.getElementById('anim-hex-canvas');
+        const rssiCanvas = document.getElementById('anim-rssi-canvas');
+        const hexCtx = hexCanvas.getContext('2d');
+        const rssiCtx = rssiCanvas.getContext('2d');
+        const sliderSpeed = document.getElementById('anim-slider-speed');
+        const valSpeed = document.getElementById('anim-val-speed');
+        const sliderMargin = document.getElementById('anim-slider-margin');
+        const valMargin = document.getElementById('anim-val-margin');
+
+        let carDist = 0.15;
+        let connectedTower = 'A';
+
+        function resizeMobileSim() {
+            hexCanvas.width = hexCanvas.parentElement.clientWidth - 20;
+            hexCanvas.height = 260;
+            rssiCanvas.width = rssiCanvas.parentElement.clientWidth - 20;
+            rssiCanvas.height = 260;
+        }
+        window.addEventListener('resize', resizeMobileSim);
+        resizeMobileSim();
+
+        sliderSpeed.addEventListener('input', e => { valSpeed.textContent = e.target.value + ' km/h'; });
+        sliderMargin.addEventListener('input', e => { valMargin.textContent = e.target.value + ' dB'; });
+        window.restartAnimVehicle = () => { carDist = 0.05; connectedTower = 'A'; };
+
+        function drawHexGrid(ctx, x, y, r, color) {
+            ctx.strokeStyle = color;
+            ctx.fillStyle = color.replace(')', ', 0.05)').replace('rgb', 'rgba');
+            ctx.lineWidth = 1.4;
+            ctx.beginPath();
+            for (let i = 0; i < 6; i++) {
+                const angle = (i * 60) * Math.PI / 180;
+                const hx = x + r * Math.cos(angle);
+                const hy = y + r * Math.sin(angle);
+                if (i === 0) ctx.moveTo(hx, hy); else ctx.lineTo(hx, hy);
+            }
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function drawMobileSim() {
+            const hw = hexCanvas.width, hh = hexCanvas.height;
+            hexCtx.clearRect(0, 0, hw, hh);
+
+            const vSpeed = parseFloat(sliderSpeed.value);
+            const margin = parseFloat(sliderMargin.value);
+
+            carDist += (vSpeed / 120) * 0.003;
+            if (carDist > 0.95) carDist = 0.05;
+
+            const btsA = { x: hw * 0.28, y: hh * 0.5 };
+            const btsB = { x: hw * 0.72, y: hh * 0.5 };
+            const hexR = hw * 0.22;
+
+            drawHexGrid(hexCtx, btsA.x, btsA.y, hexR, 'rgb(56, 189, 248)');
+            drawHexGrid(hexCtx, btsB.x, btsB.y, hexR, 'rgb(236, 72, 153)');
+
+            [btsA, btsB].forEach((bts, idx) => {
+                hexCtx.fillStyle = idx === 0 ? '#38bdf8' : '#ec4899';
+                hexCtx.beginPath(); hexCtx.arc(bts.x, bts.y, 8, 0, Math.PI * 2); hexCtx.fill();
+            });
+
+            const carX = btsA.x + (btsB.x - btsA.x) * carDist;
+            hexCtx.fillStyle = '#fbbf24';
+            hexCtx.beginPath(); hexCtx.arc(carX, hh * 0.5, 6, 0, Math.PI * 2); hexCtx.fill();
+
+            // RSSI
+            const rw = rssiCanvas.width, rh = rssiCanvas.height;
+            rssiCtx.clearRect(0, 0, rw, rh);
+
+            rssiCtx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+            rssiCtx.beginPath(); rssiCtx.moveTo(35, rh - 30); rssiCtx.lineTo(rw - 10, rh - 30); rssiCtx.stroke();
+            rssiCtx.beginPath(); rssiCtx.moveTo(35, rh - 30); rssiCtx.lineTo(35, 15); rssiCtx.stroke();
+
+            // Signal A (Cyan)
+            rssiCtx.strokeStyle = '#38bdf8';
+            rssiCtx.lineWidth = 2;
+            rssiCtx.beginPath();
+            for (let x = 35; x < rw - 10; x++) {
+                const frac = (x - 35) / (rw - 45);
+                const rVal = -40 - frac * 60;
+                const py = (rh - 30) - (rVal + 110) * (rh * 0.65 / 80);
+                if (x === 35) rssiCtx.moveTo(x, py); else rssiCtx.lineTo(x, py);
+            }
+            rssiCtx.stroke();
+
+            // Signal B (Pink)
+            rssiCtx.strokeStyle = '#ec4899';
+            rssiCtx.lineWidth = 2;
+            rssiCtx.beginPath();
+            for (let x = 35; x < rw - 10; x++) {
+                const frac = (x - 35) / (rw - 45);
+                const rVal = -100 + frac * 60;
+                const py = (rh - 30) - (rVal + 110) * (rh * 0.65 / 80);
+                if (x === 35) rssiCtx.moveTo(x, py); else rssiCtx.lineTo(x, py);
+            }
+            rssiCtx.stroke();
+
+            const curPx = 35 + carDist * (rw - 45);
+            rssiCtx.strokeStyle = '#fbbf24';
+            rssiCtx.lineWidth = 1.5;
+            rssiCtx.setLineDash([3, 3]);
+            rssiCtx.beginPath(); rssiCtx.moveTo(curPx, 15); rssiCtx.lineTo(curPx, rh - 30); rssiCtx.stroke();
+            rssiCtx.setLineDash([]);
+
+            requestAnimationFrame(drawMobileSim);
+        }
+        drawMobileSim();
+
+        // =========================================================================
+        // 6. CSMA/CA HIDDEN TERMINAL
         // =========================================================================
         const macCanvas = document.getElementById('canvas-mac');
         const macCtx = macCanvas.getContext('2d');
@@ -969,30 +1364,17 @@
             const nodeAP = { x: w * 0.5, y: h * 0.5, name: 'Access Point (AP)' };
             const nodeC = { x: w * 0.8, y: h * 0.5, name: 'Node C (Sender 2)' };
 
-            // Radio Range Circles
             const rRange = w * 0.35;
             macCtx.strokeStyle = 'rgba(56, 189, 248, 0.2)';
-            macCtx.fillStyle = 'rgba(56, 189, 248, 0.03)';
-            macCtx.lineWidth = 1.2;
             macCtx.beginPath();
             macCtx.arc(nodeA.x, nodeA.y, rRange, 0, Math.PI * 2);
-            macCtx.fill();
             macCtx.stroke();
 
             macCtx.strokeStyle = 'rgba(236, 72, 153, 0.2)';
-            macCtx.fillStyle = 'rgba(236, 72, 153, 0.03)';
             macCtx.beginPath();
             macCtx.arc(nodeC.x, nodeC.y, rRange, 0, Math.PI * 2);
-            macCtx.fill();
             macCtx.stroke();
 
-            // Range overlap labels
-            macCtx.fillStyle = '#8292a8';
-            macCtx.font = '11px Inter';
-            macCtx.textAlign = 'center';
-            macCtx.fillText('Hidden from each other! (Distance > Transmission Range)', w * 0.5, h * 0.18);
-
-            // Draw Nodes
             [nodeA, nodeAP, nodeC].forEach((n, idx) => {
                 macCtx.fillStyle = idx === 1 ? '#fbbf24' : (idx === 0 ? '#38bdf8' : '#ec4899');
                 macCtx.beginPath();
@@ -1001,10 +1383,10 @@
 
                 macCtx.fillStyle = '#ffffff';
                 macCtx.font = 'bold 12px Inter';
+                macCtx.textAlign = 'center';
                 macCtx.fillText(n.name, n.x, n.y + 32);
             });
 
-            // Animate Packet Flights
             if (macState === 'transmitting') {
                 macPacketProgress += 0.015;
                 if (macPacketProgress > 1) {
@@ -1013,25 +1395,19 @@
                     statusText.style.color = rtsEnabled ? '#34d399' : '#f87171';
                 }
 
-                // Packet from Node A
                 const curAx = nodeA.x + (nodeAP.x - nodeA.x) * macPacketProgress;
                 macCtx.fillStyle = '#38bdf8';
-                macCtx.shadowBlur = 12;
-                macCtx.shadowColor = '#38bdf8';
                 macCtx.beginPath();
                 macCtx.arc(curAx, nodeA.y, 6, 0, Math.PI * 2);
                 macCtx.fill();
 
-                // If without RTS, Node C also transmits simultaneously
                 if (!rtsEnabled) {
                     const curCx = nodeC.x + (nodeAP.x - nodeC.x) * macPacketProgress;
                     macCtx.fillStyle = '#ec4899';
-                    macCtx.shadowColor = '#ec4899';
                     macCtx.beginPath();
                     macCtx.arc(curCx, nodeC.y, 6, 0, Math.PI * 2);
                     macCtx.fill();
 
-                    // Collision explosion at AP
                     if (macPacketProgress > 0.85) {
                         macCtx.fillStyle = 'rgba(239, 68, 68, 0.4)';
                         macCtx.beginPath();
@@ -1041,29 +1417,15 @@
                         macCtx.fillText('💥 COLLISION!', nodeAP.x, nodeAP.y - 25);
                     }
                 } else {
-                    // With RTS/CTS: Show NAV reservation bar at Node C
                     macCtx.fillStyle = 'rgba(16, 185, 129, 0.2)';
-                    macCtx.strokeStyle = '#34d399';
                     macCtx.strokeRect(nodeC.x - 40, nodeC.y - 40, 80, 10);
                     macCtx.fillRect(nodeC.x - 40, nodeC.y - 40, 80 * (1 - macPacketProgress), 10);
-                    macCtx.fillStyle = '#34d399';
-                    macCtx.font = '10px JetBrains Mono';
-                    macCtx.fillText('NAV Active (Quiet)', nodeC.x, nodeC.y - 48);
                 }
-                macCtx.shadowBlur = 0;
             }
 
             requestAnimationFrame(drawMAC);
         }
         drawMAC();
-
-        // 4. GSM Frame Zoomer Interactive Tiers
-        function selectTier(tierNum) {
-            document.querySelectorAll('.gsm-tier-bar').forEach((b, idx) => {
-                if (idx + 1 === tierNum) b.classList.add('active');
-                else b.classList.remove('active');
-            });
-        }
     </script>
 </body>
 </html>

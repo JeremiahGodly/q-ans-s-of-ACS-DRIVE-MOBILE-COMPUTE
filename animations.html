@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>60fps Motion Graphics & Interactive Simulators | KTU Mastery Portal</title>
+    
+    <!-- Instant Anti-FOUC Theme Preload -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('ktu_portal_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            const savedLang = localStorage.getItem('ktu_portal_lang') || 'en';
+            document.documentElement.setAttribute('data-lang', savedLang);
+        })();
+    </script>
+
+    <!-- KaTeX CDN for Clean Mathematical Formula Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root, [data-theme="dark"] {
+            --bg-base: #0a0d14;
+            --bg-surface: #101622;
+            --bg-card: #162030;
+            --bg-card-hover: #1d2b40;
+            --border-subtle: #24344d;
+            --border-focus: #38bdf8;
+            --text-main: #f1f5f9;
+            --text-body: #cbd5e1;
+            --text-muted: #8292a8;
+            --header-bg: rgba(13, 19, 29, 0.94);
+            --acs-color: #38bdf8;
+            --drive-color: #f59e0b;
+            --mobile-color: #ec4899;
+            --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+        [data-theme="warm"] {
+            --bg-base: #120f0d;
+            --bg-surface: #1c1713;
+            --bg-card: #261f1a;
+            --bg-card-hover: #332a23;
+            --border-subtle: #3d3129;
+            --border-focus: #fbbf24;
+            --text-main: #faf4ed;
+            --text-body: #ded4c7;
+            --text-muted: #a69888;
+            --header-bg: rgba(22, 18, 15, 0.94);
+            --acs-color: #38bdf8;
+            --drive-color: #f59e0b;
+            --mobile-color: #f472b6;
+            --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+        [data-theme="forest"] {
+            --bg-base: #0b1411;
+            --bg-surface: #111e19;
+            --bg-card: #182a23;
+            --bg-card-hover: #20382f;
+            --border-subtle: #284438;
+            --border-focus: #34d399;
+            --text-main: #ecfdf5;
+            --text-body: #c7e5d8;
+            --text-muted: #7fa896;
+            --header-bg: rgba(14, 25, 21, 0.94);
+            --acs-color: #38bdf8;
+            --drive-color: #fbbf24;
+            --mobile-color: #34d399;
+            --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+        [data-theme="oled"] {
+            --bg-base: #000000;
+            --bg-surface: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1f1f1f;
+            --border-subtle: #242424;
+            --border-focus: #ffffff;
+            --text-main: #ffffff;
+            --text-body: #d1d5db;
+            --text-muted: #888888;
+            --header-bg: rgba(0, 0, 0, 0.96);
+            --acs-color: #38bdf8;
+            --drive-color: #f59e0b;
+            --mobile-color: #ec4899;
+            --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-base);
+            color: var(--text-body);
+            min-height: 100vh;
+            line-height: 1.5;
+            padding-bottom: 5rem;
+        }
+
+        /* Header Navigation */
+        .site-header {
+            position: sticky;
+            top: 0;
+            background: var(--header-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 100;
+        }
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            text-decoration: none;
+            color: inherit;
+        }
+        .brand-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+        .nav-pills {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .nav-pill {
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: var(--text-body);
+            text-decoration: none;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .nav-pill:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--border-subtle);
+        }
+        .nav-pill.active {
+            background: rgba(56, 189, 248, 0.12);
+            color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        /* Container */
+        .page-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.15);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+        }
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 0.65rem;
+        }
+        .hero-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Simulators Grid */
+        .sim-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .sim-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: border-color 0.25s ease;
+        }
+        .sim-card:hover {
+            border-color: var(--card-focus-color, #38bdf8);
+        }
+
+        .sim-header {
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .sim-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .sim-icon {
+            font-size: 1.4rem;
+        }
+        .sim-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+        .sim-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--card-focus-color, #38bdf8);
+        }
+
+        .sim-body {
+            padding: 1.5rem;
+        }
+
+        .canvas-viewport {
+            background: #060910;
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            position: relative;
+            overflow: hidden;
+            height: 380px;
+            margin-bottom: 1.25rem;
+        }
+        .canvas-viewport canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .sim-controls-panel {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.25rem;
+        }
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+        .control-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .control-val {
+            font-size: 0.82rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--card-focus-color, #38bdf8);
+            min-width: 36px;
+        }
+        .sim-slider {
+            width: 130px;
+            accent-color: var(--card-focus-color, #38bdf8);
+            cursor: pointer;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--card-focus-color, #38bdf8);
+        }
+
+        .explanation-drawer {
+            margin-top: 1rem;
+            background: rgba(0, 0, 0, 0.25);
+            border-left: 3px solid var(--card-focus-color, #38bdf8);
+            border-radius: 0 8px 8px 0;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-body);
+        }
+        .explanation-drawer strong {
+            color: var(--text-main);
+        }
+
+        /* Frame Zoomer Hierarchical Tiers */
+        .gsm-tiers-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1.25rem;
+        }
+        .gsm-tier-bar {
+            background: rgba(236, 72, 153, 0.08);
+            border: 1px solid rgba(236, 72, 153, 0.25);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .gsm-tier-bar:hover {
+            background: rgba(236, 72, 153, 0.16);
+            border-color: #ec4899;
+            transform: translateX(4px);
+        }
+        .gsm-tier-bar.active {
+            background: rgba(236, 72, 153, 0.22);
+            border-color: #ec4899;
+            box-shadow: 0 0 16px rgba(236, 72, 153, 0.25);
+        }
+        .tier-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+        .tier-timing {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: #f472b6;
+        }
+
+        .burst-bits-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 4px;
+            background: #080b12;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            text-align: center;
+        }
+        .burst-cell {
+            padding: 0.6rem 0.2rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+        }
+        .burst-cell-name {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+        .burst-cell-bits {
+            font-size: 0.65rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: #f472b6;
+        }
+        .burst-data {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+        .burst-data .burst-cell-name { color: #38bdf8; }
+        .burst-train {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: rgba(245, 158, 11, 0.35);
+        }
+        .burst-train .burst-cell-name { color: #fbbf24; }
+        .burst-tail {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.35);
+        }
+        .burst-tail .burst-cell-name { color: #34d399; }
+
+        @media (max-width: 768px) {
+            .site-header { padding: 0.75rem 1rem; }
+            .canvas-viewport { height: 280px; }
+            .sim-controls-panel { gap: 0.75rem; }
+            .burst-bits-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <a href="index.html" class="brand-link">
+            <span style="font-size:1.5rem;">🎬</span>
+            <span class="brand-title">KTU 60fps Interactive Simulators</span>
+        </a>
+
+        <nav class="nav-pills">
+            <a href="index.html" class="nav-pill">📚 Question Bank</a>
+            <a href="mindmap.html" class="nav-pill">🧠 Mind Map</a>
+            <a href="activities.html" class="nav-pill">🎯 Focus Lab</a>
+            <a href="animations.html" class="nav-pill active">🎬 60fps Simulators</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+
+        <section class="hero-section">
+            <span class="hero-tag">⚡ Live Physics &amp; Signal Oscilloscopes</span>
+            <h1 class="hero-title">Visual Motion Graphics for Engineering Mastery</h1>
+            <p class="hero-subtitle">
+                Interact in real time with non-linear limit cycles, sinusoidal inverter PWM modulators, and wireless MAC protocols. Tap anywhere to inject disturbances and observe physics-grade reactions.
+            </p>
+        </section>
+
+        <div class="sim-grid">
+
+            <!-- SIMULATION 1: ACS Phase Plane & Limit Cycle Studio -->
+            <article class="sim-card" style="--card-focus-color:#38bdf8;">
+                <div class="sim-header">
+                    <div class="sim-title-group">
+                        <span class="sim-icon">🌀</span>
+                        <div>
+                            <h2 class="sim-title">ACS: Non-Linear Phase Plane &amp; Limit Cycle Studio</h2>
+                        </div>
+                    </div>
+                    <span class="sim-badge">ACS Module 3 &amp; 4</span>
+                </div>
+                <div class="sim-body">
+                    <div class="canvas-viewport" id="viewport-phase">
+                        <canvas id="canvas-phase"></canvas>
+                    </div>
+
+                    <div class="sim-controls-panel">
+                        <div class="control-group">
+                            <label class="control-label" for="select-system">Nonlinear System:</label>
+                            <select id="select-system" class="action-btn" style="background:var(--bg-card);">
+                                <option value="vanderpol">Van der Pol Oscillator (Self-Sustained Limit Cycle)</option>
+                                <option value="relay">Relay with Dead Zone (Bang-Bang Chatter)</option>
+                                <option value="saddle">Unstable Saddle Point System</option>
+                                <option value="harmonic">Undamped Center (Concentric Ellipses)</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="slider-mu">Damping $\mu$:</label>
+                            <input type="range" id="slider-mu" class="sim-slider" min="0.1" max="2.5" step="0.1" value="0.8">
+                            <span class="control-val" id="val-mu">0.8</span>
+                        </div>
+                        <button type="button" class="action-btn" onclick="clearPhaseTrajectories()">🧹 Clear Paths</button>
+                        <span style="font-size:0.78rem; color:var(--text-muted);">💡 <em>Click anywhere inside grid to spawn custom state trajectories!</em></span>
+                    </div>
+
+                    <div class="explanation-drawer">
+                        <strong>KTU Exam Core Concept:</strong> A <strong>limit cycle</strong> is an isolated closed trajectory in phase space. In the Van der Pol oscillator $\ddot{x} - \mu(1 - x^2)\dot{x} + x = 0$, trajectories starting inside spiral outward, while trajectories starting outside spiral inward, converging onto the exact same stable periodic orbit.
+                    </div>
+                </div>
+            </article>
+
+            <!-- SIMULATION 2: Electric Drives Inverter PWM Sine-Triangle Synthesizer -->
+            <article class="sim-card" style="--card-focus-color:#f59e0b;">
+                <div class="sim-header">
+                    <div class="sim-title-group">
+                        <span class="sim-icon">⚡</span>
+                        <div>
+                            <h2 class="sim-title">Electric Drives: SPWM Inverter Sine-Triangle Synthesizer</h2>
+                        </div>
+                    </div>
+                    <span class="sim-badge">Drives Module 3 &amp; 4</span>
+                </div>
+                <div class="sim-body">
+                    <div class="canvas-viewport">
+                        <canvas id="canvas-pwm"></canvas>
+                    </div>
+
+                    <div class="sim-controls-panel">
+                        <div class="control-group">
+                            <label class="control-label" for="slider-ma">Modulation Index $m_a = V_m/V_c$:</label>
+                            <input type="range" id="slider-ma" class="sim-slider" min="0.2" max="1.4" step="0.05" value="0.85" style="accent-color:#f59e0b;">
+                            <span class="control-val" id="val-ma" style="color:#f59e0b;">0.85</span>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="slider-mf">Carrier Ratio $m_f = f_c/f_m$:</label>
+                            <input type="range" id="slider-mf" class="sim-slider" min="9" max="27" step="2" value="15" style="accent-color:#f59e0b;">
+                            <span class="control-val" id="val-mf" style="color:#f59e0b;">15</span>
+                        </div>
+                        <button type="button" class="action-btn" id="btn-pwm-pause" onclick="togglePWMPause()">⏸️ Pause</button>
+                    </div>
+
+                    <div class="explanation-drawer" style="border-left-color:#f59e0b;">
+                        <strong>KTU Exam Core Concept:</strong> In Sinusoidal PWM (SPWM), the comparator generates IGBT gate pulses whenever sinusoidal modulating wave $v_{ref} > v_{carrier}$. For $m_a \le 1.0$, output fundamental voltage is linear $V_{AO1} = m_a \frac{V_{dc}}{2}$. For $m_a > 1.0$ (Overmodulation), pulses merge into square-wave conduction.
+                    </div>
+                </div>
+            </article>
+
+            <!-- SIMULATION 3: Mobile Computing CSMA/CA & Hidden Terminal Handshake -->
+            <article class="sim-card" style="--card-focus-color:#ec4899;">
+                <div class="sim-header">
+                    <div class="sim-title-group">
+                        <span class="sim-icon">📡</span>
+                        <div>
+                            <h2 class="sim-title">Mobile Computing: CSMA/CA RTS/CTS &amp; Hidden Terminal</h2>
+                        </div>
+                    </div>
+                    <span class="sim-badge">Mobile Module 3: MAC</span>
+                </div>
+                <div class="sim-body">
+                    <div class="canvas-viewport">
+                        <canvas id="canvas-mac"></canvas>
+                    </div>
+
+                    <div class="sim-controls-panel">
+                        <button type="button" class="action-btn" id="btn-toggle-rts" onclick="toggleRTSMode()">Mode: With RTS/CTS (Collision Free)</button>
+                        <button type="button" class="action-btn" onclick="triggerMACTransmit()">🚀 Trigger Transmission</button>
+                        <span id="mac-status-text" style="font-size:0.82rem; font-weight:700; color:#34d399;">Medium Status: Idle</span>
+                    </div>
+
+                    <div class="explanation-drawer" style="border-left-color:#ec4899;">
+                        <strong>KTU Exam Core Concept:</strong> The <strong>Hidden Terminal Problem</strong> occurs when Node A and Node C cannot hear each other, causing collisions at the Access Point (AP). IEEE 802.11 solves this using virtual carrier sensing: Node A sends Request-to-Send (RTS) $\to$ AP replies with Clear-to-Send (CTS) containing the duration field $\to$ Node C overhears CTS and freezes its transmission via Network Allocation Vector (NAV).
+                    </div>
+                </div>
+            </article>
+
+            <!-- SIMULATION 4: GSM TDMA Hierarchical Frame Zoomer -->
+            <article class="sim-card" style="--card-focus-color:#a855f7;">
+                <div class="sim-header">
+                    <div class="sim-title-group">
+                        <span class="sim-icon">🔍</span>
+                        <div>
+                            <h2 class="sim-title">Mobile Computing: GSM Frame Hierarchy &amp; Normal Burst Zoomer</h2>
+                        </div>
+                    </div>
+                    <span class="sim-badge">Mobile Module 2: Air Interface</span>
+                </div>
+                <div class="sim-body">
+                    <div class="gsm-tiers-container">
+                        <div class="gsm-tier-bar active" onclick="selectTier(1)">
+                            <span class="tier-title">Tier 1: 1 Hyperframe (2,048 Superframes = 2,715,648 TDMA Frames)</span>
+                            <span class="tier-timing">⏱️ 3h 28m 53.76s (Crypto Period)</span>
+                        </div>
+                        <div class="gsm-tier-bar" onclick="selectTier(2)">
+                            <span class="tier-title">Tier 2: 1 Superframe (26 or 51 Multiframes)</span>
+                            <span class="tier-timing">⏱️ 6.12 seconds</span>
+                        </div>
+                        <div class="gsm-tier-bar" onclick="selectTier(3)">
+                            <span class="tier-title">Tier 3: 1 Traffic Multiframe (26 TDMA Frames: 24 Traffic + 1 SACCH + 1 Idle)</span>
+                            <span class="tier-timing">⏱️ 120 ms</span>
+                        </div>
+                        <div class="gsm-tier-bar" onclick="selectTier(4)">
+                            <span class="tier-title">Tier 4: 1 TDMA Frame (8 Time Slots: TS0 - TS7)</span>
+                            <span class="tier-timing">⏱️ 4.615 ms</span>
+                        </div>
+                    </div>
+
+                    <h4 style="font-size:0.95rem; font-weight:700; color:var(--text-main); margin-bottom:0.65rem;">
+                        Normal Burst Bit Breakdown in Time Slot (0.577 ms = 156.25 bit durations):
+                    </h4>
+
+                    <div class="burst-bits-grid">
+                        <div class="burst-cell burst-tail">
+                            <span class="burst-cell-name">Tail Bits</span>
+                            <span class="burst-cell-bits">3 Bits</span>
+                        </div>
+                        <div class="burst-cell burst-data">
+                            <span class="burst-cell-name">Data Bits</span>
+                            <span class="burst-cell-bits">57 Bits</span>
+                        </div>
+                        <div class="burst-cell" style="background:rgba(239, 68, 68, 0.15); border-color:rgba(239, 68, 68, 0.35);">
+                            <span class="burst-cell-name" style="color:#f87171;">Steal Flag</span>
+                            <span class="burst-cell-bits">1 Bit</span>
+                        </div>
+                        <div class="burst-cell burst-train">
+                            <span class="burst-cell-name">Training Seq</span>
+                            <span class="burst-cell-bits">26 Bits</span>
+                        </div>
+                        <div class="burst-cell" style="background:rgba(239, 68, 68, 0.15); border-color:rgba(239, 68, 68, 0.35);">
+                            <span class="burst-cell-name" style="color:#f87171;">Steal Flag</span>
+                            <span class="burst-cell-bits">1 Bit</span>
+                        </div>
+                        <div class="burst-cell burst-data">
+                            <span class="burst-cell-name">Data Bits</span>
+                            <span class="burst-cell-bits">57 Bits</span>
+                        </div>
+                        <div class="burst-cell burst-tail">
+                            <span class="burst-cell-name">Tail Bits</span>
+                            <span class="burst-cell-bits">3 Bits</span>
+                        </div>
+                        <div class="burst-cell" style="background:rgba(100, 116, 139, 0.15); border-color:rgba(100, 116, 139, 0.35);">
+                            <span class="burst-cell-name" style="color:#94a3b8;">Guard Time</span>
+                            <span class="burst-cell-bits">8.25 Bits</span>
+                        </div>
+                    </div>
+
+                    <div class="explanation-drawer" style="border-left-color:#a855f7;">
+                        <strong>KTU Exam Core Concept:</strong> In GSM Normal Burst, total bits = $3 + 57 + 1 + 26 + 1 + 57 + 3 + 8.25 = 156.25\text{ bit periods}$. User payload contains 114 encrypted data bits. The 26-bit training sequence is known by receiver to train adaptive equalizers against multipath fading channels.
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <!-- Canvas Simulation Scripts -->
+    <script>
+        // =========================================================================
+        // 1. ACS PHASE PLANE & LIMIT CYCLE
+        // =========================================================================
+        const pCanvas = document.getElementById('canvas-phase');
+        const pCtx = pCanvas.getContext('2d');
+        const selectSys = document.getElementById('select-system');
+        const sliderMu = document.getElementById('slider-mu');
+        const valMu = document.getElementById('val-mu');
+
+        let trajectories = [];
+        let particles = [];
+
+        function resizePhase() {
+            pCanvas.width = pCanvas.parentElement.clientWidth;
+            pCanvas.height = 380;
+            initPhaseGrid();
+        }
+        window.addEventListener('resize', resizePhase);
+
+        function initPhaseGrid() {
+            trajectories = [];
+            particles = [];
+            // Spawn default test orbits
+            spawnTrajectory(-1.8, -0.4);
+            spawnTrajectory(0.2, 0.2);
+            spawnTrajectory(2.2, 1.2);
+        }
+
+        sliderMu.addEventListener('input', e => {
+            valMu.textContent = parseFloat(e.target.value).toFixed(1);
+        });
+
+        selectSys.addEventListener('change', () => {
+            initPhaseGrid();
+        });
+
+        function clearPhaseTrajectories() {
+            trajectories = [];
+            particles = [];
+        }
+
+        function spawnTrajectory(x0, y0) {
+            const path = [{ x: x0, y: y0 }];
+            let curX = x0;
+            let curY = y0;
+            const dt = 0.02;
+            const mu = parseFloat(sliderMu.value);
+            const sys = selectSys.value;
+
+            for (let i = 0; i < 400; i++) {
+                let dx, dy;
+                if (sys === 'vanderpol') {
+                    dx = curY;
+                    dy = mu * (1 - curX * curX) * curY - curX;
+                } else if (sys === 'relay') {
+                    dx = curY;
+                    const dead = 0.4;
+                    let u = 0;
+                    if (curX > dead) u = -1.2;
+                    else if (curX < -dead) u = 1.2;
+                    dy = -0.3 * curY + u;
+                } else if (sys === 'saddle') {
+                    dx = 1.2 * curX;
+                    dy = -1.2 * curY;
+                } else {
+                    // Harmonic
+                    dx = curY;
+                    dy = -curX;
+                }
+                curX += dx * dt;
+                curY += dy * dt;
+                path.push({ x: curX, y: curY });
+                if (Math.abs(curX) > 4 || Math.abs(curY) > 4) break;
+            }
+            trajectories.push(path);
+            particles.push({ path, idx: 0, speed: 1 });
+        }
+
+        pCanvas.addEventListener('click', e => {
+            const rect = pCanvas.getBoundingClientRect();
+            const w = pCanvas.width;
+            const h = pCanvas.height;
+            const cx = w / 2;
+            const cy = h / 2;
+            const scale = 55;
+            const clickX = (e.clientX - rect.left - cx) / scale;
+            const clickY = -(e.clientY - rect.top - cy) / scale;
+            spawnTrajectory(clickX, clickY);
+        });
+
+        function drawPhase() {
+            const w = pCanvas.width;
+            const h = pCanvas.height;
+            pCtx.clearRect(0, 0, w, h);
+
+            const cx = w / 2;
+            const cy = h / 2;
+            const scale = 55;
+
+            // Coordinate grid
+            pCtx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+            pCtx.lineWidth = 1;
+            for (let x = cx % 40; x < w; x += 40) {
+                pCtx.beginPath(); pCtx.moveTo(x, 0); pCtx.lineTo(x, h); pCtx.stroke();
+            }
+            for (let y = cy % 40; y < h; y += 40) {
+                pCtx.beginPath(); pCtx.moveTo(0, y); pCtx.lineTo(w, y); pCtx.stroke();
+            }
+
+            // Axes
+            pCtx.strokeStyle = 'rgba(56, 189, 248, 0.4)';
+            pCtx.lineWidth = 1.5;
+            pCtx.beginPath();
+            pCtx.moveTo(0, cy); pCtx.lineTo(w, cy);
+            pCtx.moveTo(cx, 0); pCtx.lineTo(cx, h);
+            pCtx.stroke();
+
+            // Axis labels
+            pCtx.fillStyle = '#8292a8';
+            pCtx.font = '11px Inter';
+            pCtx.fillText('x\u2081 (State Output)', w - 100, cy - 8);
+            pCtx.fillText('x\u2082 = dx\u2081/dt (Velocity)', cx + 8, 20);
+
+            // Draw Trajectories
+            trajectories.forEach(path => {
+                pCtx.strokeStyle = 'rgba(56, 189, 248, 0.5)';
+                pCtx.lineWidth = 1.6;
+                pCtx.beginPath();
+                path.forEach((pt, idx) => {
+                    const scrX = cx + pt.x * scale;
+                    const scrY = cy - pt.y * scale;
+                    if (idx === 0) pCtx.moveTo(scrX, scrY);
+                    else pCtx.lineTo(scrX, scrY);
+                });
+                pCtx.stroke();
+            });
+
+            // Animated moving state particles along orbits
+            particles.forEach(p => {
+                p.idx = (p.idx + p.speed) % p.path.length;
+                const pt = p.path[Math.floor(p.idx)];
+                if (!pt) return;
+                const scrX = cx + pt.x * scale;
+                const scrY = cy - pt.y * scale;
+
+                pCtx.shadowBlur = 10;
+                pCtx.shadowColor = '#38bdf8';
+                pCtx.fillStyle = '#ffffff';
+                pCtx.beginPath();
+                pCtx.arc(scrX, scrY, 3.5, 0, Math.PI * 2);
+                pCtx.fill();
+                pCtx.shadowBlur = 0;
+            });
+
+            requestAnimationFrame(drawPhase);
+        }
+        resizePhase();
+        drawPhase();
+
+        // =========================================================================
+        // 2. SPWM INVERTER SINE-TRIANGLE
+        // =========================================================================
+        const pwmCanvas = document.getElementById('canvas-pwm');
+        const pwmCtx = pwmCanvas.getContext('2d');
+        const sliderMa = document.getElementById('slider-ma');
+        const valMa = document.getElementById('val-ma');
+        const sliderMf = document.getElementById('slider-mf');
+        const valMf = document.getElementById('val-mf');
+
+        let pwmTime = 0;
+        let isPWMPaused = false;
+
+        function resizePWM() {
+            pwmCanvas.width = pwmCanvas.parentElement.clientWidth;
+            pwmCanvas.height = 380;
+        }
+        window.addEventListener('resize', resizePWM);
+        resizePWM();
+
+        sliderMa.addEventListener('input', e => {
+            valMa.textContent = parseFloat(e.target.value).toFixed(2);
+        });
+        sliderMf.addEventListener('input', e => {
+            valMf.textContent = e.target.value;
+        });
+
+        function togglePWMPause() {
+            isPWMPaused = !isPWMPaused;
+            document.getElementById('btn-pwm-pause').textContent = isPWMPaused ? '▶️ Resume' : '⏸️ Pause';
+        }
+
+        function drawPWM() {
+            if (!isPWMPaused) pwmTime += 0.02;
+
+            const w = pwmCanvas.width;
+            const h = pwmCanvas.height;
+            pwmCtx.clearRect(0, 0, w, h);
+
+            const ma = parseFloat(sliderMa.value);
+            const mf = parseInt(sliderMf.value);
+
+            const topH = h * 0.45;
+            const botH = h * 0.45;
+            const cy1 = topH / 2;
+            const cy2 = topH + (botH / 2);
+
+            // Separator line
+            pwmCtx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+            pwmCtx.lineWidth = 1;
+            pwmCtx.beginPath();
+            pwmCtx.moveTo(0, topH);
+            pwmCtx.lineTo(w, topH);
+            pwmCtx.stroke();
+
+            // Labels
+            pwmCtx.fillStyle = '#8292a8';
+            pwmCtx.font = '11px Inter';
+            pwmCtx.fillText('Carrier Wave (Triangle) vs Modulating Wave (Sine)', 15, 20);
+            pwmCtx.fillText('Inverter Switched Phase Output Voltage V_AO(t)', 15, topH + 20);
+
+            // Draw Carrier Triangle Wave
+            pwmCtx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+            pwmCtx.lineWidth = 1.2;
+            pwmCtx.beginPath();
+            const carrierPeriod = w / (mf / 2);
+            for (let x = 0; x < w; x++) {
+                const phase = (x % carrierPeriod) / carrierPeriod;
+                const tri = (phase < 0.5) ? (4 * phase - 1) : (3 - 4 * phase);
+                const y = cy1 - tri * (cy1 * 0.75);
+                if (x === 0) pwmCtx.moveTo(x, y);
+                else pwmCtx.lineTo(x, y);
+            }
+            pwmCtx.stroke();
+
+            // Draw Sine Modulating Wave
+            pwmCtx.strokeStyle = '#f59e0b';
+            pwmCtx.lineWidth = 2.2;
+            pwmCtx.beginPath();
+            for (let x = 0; x < w; x++) {
+                const theta = (x / w) * (Math.PI * 2) + pwmTime;
+                const sine = Math.sin(theta) * ma;
+                const y = cy1 - sine * (cy1 * 0.75);
+                if (x === 0) pwmCtx.moveTo(x, y);
+                else pwmCtx.lineTo(x, y);
+            }
+            pwmCtx.stroke();
+
+            // Draw Inverter Output Voltage Square Wave V_AO
+            pwmCtx.strokeStyle = '#38bdf8';
+            pwmCtx.fillStyle = 'rgba(56, 189, 248, 0.15)';
+            pwmCtx.lineWidth = 2;
+            pwmCtx.beginPath();
+
+            let lastHigh = false;
+            for (let x = 0; x < w; x++) {
+                const phase = (x % carrierPeriod) / carrierPeriod;
+                const tri = (phase < 0.5) ? (4 * phase - 1) : (3 - 4 * phase);
+                const theta = (x / w) * (Math.PI * 2) + pwmTime;
+                const sine = Math.sin(theta) * ma;
+
+                const isHigh = sine > tri;
+                const yVal = isHigh ? (cy2 - botH * 0.32) : (cy2 + botH * 0.32);
+
+                if (x === 0) {
+                    pwmCtx.moveTo(x, yVal);
+                } else {
+                    if (isHigh !== lastHigh) {
+                        pwmCtx.lineTo(x, isHigh ? (cy2 + botH * 0.32) : (cy2 - botH * 0.32));
+                    }
+                    pwmCtx.lineTo(x, yVal);
+                }
+                lastHigh = isHigh;
+            }
+            pwmCtx.stroke();
+
+            requestAnimationFrame(drawPWM);
+        }
+        drawPWM();
+
+        // =========================================================================
+        // 3. CSMA/CA HIDDEN TERMINAL
+        // =========================================================================
+        const macCanvas = document.getElementById('canvas-mac');
+        const macCtx = macCanvas.getContext('2d');
+        const statusText = document.getElementById('mac-status-text');
+
+        let rtsEnabled = true;
+        let macPacketProgress = 0;
+        let macState = 'idle';
+
+        function resizeMAC() {
+            macCanvas.width = macCanvas.parentElement.clientWidth;
+            macCanvas.height = 380;
+        }
+        window.addEventListener('resize', resizeMAC);
+        resizeMAC();
+
+        function toggleRTSMode() {
+            rtsEnabled = !rtsEnabled;
+            document.getElementById('btn-toggle-rts').textContent = rtsEnabled ? 'Mode: With RTS/CTS (Collision Free)' : 'Mode: Without RTS/CTS (Hidden Collisions)';
+        }
+
+        function triggerMACTransmit() {
+            macPacketProgress = 0;
+            macState = 'transmitting';
+            statusText.textContent = rtsEnabled ? 'Transmitting RTS / Setting NAV...' : 'Simultaneous Transmit... Collision Imminent!';
+            statusText.style.color = rtsEnabled ? '#38bdf8' : '#f87171';
+        }
+
+        function drawMAC() {
+            const w = macCanvas.width;
+            const h = macCanvas.height;
+            macCtx.clearRect(0, 0, w, h);
+
+            const nodeA = { x: w * 0.2, y: h * 0.5, name: 'Node A (Sender 1)' };
+            const nodeAP = { x: w * 0.5, y: h * 0.5, name: 'Access Point (AP)' };
+            const nodeC = { x: w * 0.8, y: h * 0.5, name: 'Node C (Sender 2)' };
+
+            // Radio Range Circles
+            const rRange = w * 0.35;
+            macCtx.strokeStyle = 'rgba(56, 189, 248, 0.2)';
+            macCtx.fillStyle = 'rgba(56, 189, 248, 0.03)';
+            macCtx.lineWidth = 1.2;
+            macCtx.beginPath();
+            macCtx.arc(nodeA.x, nodeA.y, rRange, 0, Math.PI * 2);
+            macCtx.fill();
+            macCtx.stroke();
+
+            macCtx.strokeStyle = 'rgba(236, 72, 153, 0.2)';
+            macCtx.fillStyle = 'rgba(236, 72, 153, 0.03)';
+            macCtx.beginPath();
+            macCtx.arc(nodeC.x, nodeC.y, rRange, 0, Math.PI * 2);
+            macCtx.fill();
+            macCtx.stroke();
+
+            // Range overlap labels
+            macCtx.fillStyle = '#8292a8';
+            macCtx.font = '11px Inter';
+            macCtx.textAlign = 'center';
+            macCtx.fillText('Hidden from each other! (Distance > Transmission Range)', w * 0.5, h * 0.18);
+
+            // Draw Nodes
+            [nodeA, nodeAP, nodeC].forEach((n, idx) => {
+                macCtx.fillStyle = idx === 1 ? '#fbbf24' : (idx === 0 ? '#38bdf8' : '#ec4899');
+                macCtx.beginPath();
+                macCtx.arc(n.x, n.y, 16, 0, Math.PI * 2);
+                macCtx.fill();
+
+                macCtx.fillStyle = '#ffffff';
+                macCtx.font = 'bold 12px Inter';
+                macCtx.fillText(n.name, n.x, n.y + 32);
+            });
+
+            // Animate Packet Flights
+            if (macState === 'transmitting') {
+                macPacketProgress += 0.015;
+                if (macPacketProgress > 1) {
+                    macState = 'idle';
+                    statusText.textContent = rtsEnabled ? 'Transmission Succeeded! (ACK Received)' : 'Collision Occurred at AP! Backing off...';
+                    statusText.style.color = rtsEnabled ? '#34d399' : '#f87171';
+                }
+
+                // Packet from Node A
+                const curAx = nodeA.x + (nodeAP.x - nodeA.x) * macPacketProgress;
+                macCtx.fillStyle = '#38bdf8';
+                macCtx.shadowBlur = 12;
+                macCtx.shadowColor = '#38bdf8';
+                macCtx.beginPath();
+                macCtx.arc(curAx, nodeA.y, 6, 0, Math.PI * 2);
+                macCtx.fill();
+
+                // If without RTS, Node C also transmits simultaneously
+                if (!rtsEnabled) {
+                    const curCx = nodeC.x + (nodeAP.x - nodeC.x) * macPacketProgress;
+                    macCtx.fillStyle = '#ec4899';
+                    macCtx.shadowColor = '#ec4899';
+                    macCtx.beginPath();
+                    macCtx.arc(curCx, nodeC.y, 6, 0, Math.PI * 2);
+                    macCtx.fill();
+
+                    // Collision explosion at AP
+                    if (macPacketProgress > 0.85) {
+                        macCtx.fillStyle = 'rgba(239, 68, 68, 0.4)';
+                        macCtx.beginPath();
+                        macCtx.arc(nodeAP.x, nodeAP.y, 35, 0, Math.PI * 2);
+                        macCtx.fill();
+                        macCtx.fillStyle = '#f87171';
+                        macCtx.fillText('💥 COLLISION!', nodeAP.x, nodeAP.y - 25);
+                    }
+                } else {
+                    // With RTS/CTS: Show NAV reservation bar at Node C
+                    macCtx.fillStyle = 'rgba(16, 185, 129, 0.2)';
+                    macCtx.strokeStyle = '#34d399';
+                    macCtx.strokeRect(nodeC.x - 40, nodeC.y - 40, 80, 10);
+                    macCtx.fillRect(nodeC.x - 40, nodeC.y - 40, 80 * (1 - macPacketProgress), 10);
+                    macCtx.fillStyle = '#34d399';
+                    macCtx.font = '10px JetBrains Mono';
+                    macCtx.fillText('NAV Active (Quiet)', nodeC.x, nodeC.y - 48);
+                }
+                macCtx.shadowBlur = 0;
+            }
+
+            requestAnimationFrame(drawMAC);
+        }
+        drawMAC();
+
+        // 4. GSM Frame Zoomer Interactive Tiers
+        function selectTier(tierNum) {
+            document.querySelectorAll('.gsm-tier-bar').forEach((b, idx) => {
+                if (idx + 1 === tierNum) b.classList.add('active');
+                else b.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>

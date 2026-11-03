@@ -25,6 +25,13 @@ from exam_questions import EXAM_QUESTIONS_MAP
 from lecturer_answers import REPRESENTATIVE_ANSWERS
 from local_language_bank import LOCAL_LANG_BANK, LOCAL_LANG_DEMO
 from multi_diagrams_data import EXTRA_DIAGRAMS_MAP
+from simulators_component import (
+    get_acs_simulators_html,
+    get_drives_simulators_html,
+    get_mobile_simulators_html,
+    get_simulators_css,
+    get_simulators_js
+)
 
 def render_single_diagram(img_path, img_caption, badge=None):
     if not img_path:
@@ -989,6 +996,36 @@ header.site-header {
     color: #ffffff;
     font-weight: 700;
     box-shadow: 0 4px 18px var(--mobile-glow);
+}
+
+/* Feature Navigation Bar (Mind Map, Focus Lab, 60fps Simulators) */
+.feature-nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.feature-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.36rem 0.65rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-body);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.feature-nav-link:hover {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
 }
 
 /* Theme Switcher Controls */
@@ -2936,6 +2973,24 @@ body {
     .subject-tabs::-webkit-scrollbar {
         display: none;
     }
+
+    .feature-nav-bar {
+        order: 4;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0.2rem 0;
+        gap: 0.35rem;
+    }
+    .feature-nav-bar::-webkit-scrollbar {
+        display: none;
+    }
+    .feature-nav-link {
+        flex-shrink: 0;
+        font-size: 0.74rem;
+        padding: 0.28rem 0.55rem;
+    }
     .tab-btn {
         padding: 0.38rem 0.75rem;
         font-size: 0.78rem;
@@ -4320,6 +4375,13 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
                 </button>
             </nav>
 
+            <!-- Interactive Features: Mind Map, Focus Lab, 60fps Simulators -->
+            <nav class="feature-nav-bar" aria-label="Interactive Learning Features">
+                <a href="mindmap.html" class="feature-nav-link" title="Large Interactive Neural Mind Map with glowing synapses">🧠 Mind Map</a>
+                <a href="activities.html" class="feature-nav-link" title="Gamified Focus Lab, Nano Banana Portals & Engineering Drills">🎯 Focus Lab</a>
+                <a href="animations.html" class="feature-nav-link" title="60fps Real-Time Motion Graphics & Simulators">🎬 60fps Simulators</a>
+            </nav>
+
             <!-- Tone / Language Switcher Controls (English, Manglish, Malayalam) -->
             <div class="lang-switcher-wrapper" role="radiogroup" aria-label="Language &amp; Tone Selector">
                 <button class="lang-btn active" data-lang-value="en" title="English: University Standard Exam Answers" aria-label="English">
@@ -4509,6 +4571,14 @@ def generate_standalone_page(subject_key, subject_title, subject_code, subject_c
                 </div>
             </div>
 
+            <!-- Interactive Features: Mind Map, Focus Lab, 60fps Simulators -->
+            <nav class="feature-nav-bar" aria-label="Interactive Learning Features">
+                <a href="index.html" class="feature-nav-link" title="Return to Portal Home & All 3 Subjects">📚 All Subjects</a>
+                <a href="mindmap.html" class="feature-nav-link" title="Large Interactive Neural Mind Map with glowing synapses">🧠 Mind Map</a>
+                <a href="activities.html" class="feature-nav-link" title="Gamified Focus Lab, Nano Banana Portals & Engineering Drills">🎯 Focus Lab</a>
+                <a href="animations.html" class="feature-nav-link" title="60fps Real-Time Motion Graphics & Simulators">🎬 60fps Simulators</a>
+            </nav>
+
             <!-- Tone / Language Switcher Controls -->
             <div class="lang-switcher-wrapper" role="radiogroup" aria-label="Language &amp; Tone Selector">
                 <button class="lang-btn active" data-lang-value="en" title="English: University Standard Exam Answers" aria-label="English">
@@ -4613,7 +4683,15 @@ def generate_standalone_page(subject_key, subject_title, subject_code, subject_c
     )
 
 def main():
-    print("Generating comprehensive website portal with ergonomic themes...")
+    global CSS_STYLES, JS_SCRIPT
+    CSS_STYLES += "\n" + get_simulators_css()
+    JS_SCRIPT += "\n" + get_simulators_js()
+
+    print("Generating comprehensive website portal with ergonomic themes & 60fps simulators...")
+
+    acs_sim_html = get_acs_simulators_html()
+    drive_sim_html = get_drives_simulators_html()
+    mobile_sim_html = get_mobile_simulators_html()
 
     acs_html = '\n'.join([render_module_section(m, "subject-acs") for m in ACS_MODULES])
     drive_html = '\n'.join([render_module_section(m, "subject-drive") for m in DRIVE_MODULES])
@@ -4631,10 +4709,10 @@ def main():
         .replace("{{JS_BLOCK}}", JS_SCRIPT)
         .replace("{{FLOATING_TIMER_HTML}}", FLOATING_TIMER_HTML)
         .replace("{{GRAND_TOTAL}}", str(grand_total))
-        .replace("{{ACS_CONTENT}}", acs_html)
-        .replace("{{DRIVE_CONTENT}}", drive_html)
+        .replace("{{ACS_CONTENT}}", acs_sim_html + '\n' + acs_html)
+        .replace("{{DRIVE_CONTENT}}", drive_sim_html + '\n' + drive_html)
         .replace("{{MOBILE_SYLLABUS_CONTENT}}", mobile_syl_html)
-        .replace("{{MOBILE_CONTENT}}", mobile_qs_html)
+        .replace("{{MOBILE_CONTENT}}", mobile_sim_html + '\n' + mobile_qs_html)
     )
 
     with open("index.html", "w", encoding="utf-8") as f:
@@ -4648,7 +4726,7 @@ def main():
         <h2>Advanced Control Systems</h2>
         <p>Complete university previous year questions, continuous LTI and non-linear system state models, solution of state equations, Cayley-Hamilton state transition matrices, Kalman controllability/observability, Ackermann state feedback pole placement, Luenberger observers, describing functions for non-linear saturation, phase plane singular point analysis, and Lyapunov stability theorems.</p>
     </div>
-    """ + acs_html
+    """ + acs_sim_html + '\n' + acs_html
     acs_page = generate_standalone_page("acs", "Advanced Control Systems", "EET401", "#38bdf8", "view-acs", acs_inner)
     with open("acs.html", "w", encoding="utf-8") as f:
         f.write(acs_page)
@@ -4661,7 +4739,7 @@ def main():
         <h2>Electric Drives</h2>
         <p>Exhaustive coverage of drive dynamics, fundamental dynamic torque equation derivations, four-quadrant hoist operations, steady-state stability criteria, phase-controlled converter DC drives with firing angle problem solving, chopper-controlled two-quadrant drives, closed-loop cascade speed control, induction motor stator voltage and V/f speed control, static rotor resistance chopper drives, synchronous motor drives, Space Vector PWM, Clarke/Park reference frame transformations, and Field-Oriented Control (FOC).</p>
     </div>
-    """ + drive_html
+    """ + drive_sim_html + '\n' + drive_html
     drive_page = generate_standalone_page("drive", "Electric Drives", "EET413", "#f59e0b", "view-drive", drive_inner)
     with open("drives.html", "w", encoding="utf-8") as f:
         f.write(drive_page)
@@ -4674,7 +4752,7 @@ def main():
         <h2>Introduction to Mobile Computing</h2>
         <p>Comprehensive curriculum guide and university question bank encompassing the official CST415 syllabus, three-tier mobile computing architecture, client context and adaptability management, cellular multiple access (FDMA, TDMA, CDMA, SDMA), GEO/LEO/MEO satellites, full GSM network architecture with A3/A8/A5 security algorithms, SMS/GPRS architecture and packet workflows, IEEE 802.11 WLAN with hidden/exposed terminal RTS/CTS mechanics, Wireless Local Loop (WLL), Public Key RSA cryptosystem numerical problem solving, Diffie-Hellman key exchange, TLS/SSL protocols, and Orthogonal Frequency Division Multiplexing (OFDM).</p>
     </div>
-    """ + mobile_syl_html + mobile_qs_html
+    """ + mobile_sim_html + '\n' + mobile_syl_html + mobile_qs_html
     mobile_page = generate_standalone_page("mobile", "Introduction to Mobile Computing", "CST415", "#10b981", "view-mobile", mobile_inner)
     with open("mobile_computing.html", "w", encoding="utf-8") as f:
         f.write(mobile_page)

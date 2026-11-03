@@ -23,14 +23,18 @@ from gen_mobile import MOBILE_SYLLABUS, MOBILE_MODULES
 from byheart_data import get_byheart_card_html
 from exam_questions import EXAM_QUESTIONS_MAP
 from lecturer_answers import REPRESENTATIVE_ANSWERS
+from local_language_bank import LOCAL_LANG_BANK, LOCAL_LANG_DEMO
+from multi_diagrams_data import EXTRA_DIAGRAMS_MAP
 
-def render_image_box(img_path, img_caption):
+def render_single_diagram(img_path, img_caption, badge=None):
     if not img_path:
         return ""
+    badge_html = f'<div class="diagram-badge-pill">{html.escape(badge)}</div>' if badge else ""
     exists = os.path.exists(img_path)
     if exists:
         return f"""
         <div class="diagram-card has-real-image">
+            {badge_html}
             <div class="diagram-wrapper">
                 <img src="{img_path}" alt="{html.escape(img_caption)}" class="diagram-img" loading="lazy">
             </div>
@@ -44,6 +48,48 @@ def render_image_box(img_path, img_caption):
             <span class="notice-text"><strong>Schematic:</strong> {html.escape(img_caption)} &mdash; <em>(Refer to textbook/lecture notes)</em></span>
         </div>
         """
+
+def render_image_box(img_path, img_caption):
+    return render_single_diagram(img_path, img_caption)
+
+def render_diagrams_box(q):
+    qid = q.get("qid", "")
+    primary_path = q.get("img_path")
+    primary_caption = q.get("img_caption", "")
+    extra_images = q.get("extra_images") or EXTRA_DIAGRAMS_MAP.get(qid, [])
+
+    if not primary_path and not extra_images:
+        return ""
+
+    if not extra_images:
+        return render_single_diagram(primary_path, primary_caption)
+
+    # Multi-diagram layout with badge pills
+    cards_html = []
+    # Primary diagram badge
+    primary_badge = "Figure A • Primary Architecture"
+    cards_html.append(render_single_diagram(primary_path, primary_caption, badge=primary_badge))
+
+    for idx, extra in enumerate(extra_images, start=2):
+        letter = chr(64 + idx) # B, C, D
+        badge = extra.get("badge", f"Figure {letter} • Technical Detail")
+        cards_html.append(render_single_diagram(extra.get("img_path"), extra.get("img_caption", ""), badge=badge))
+
+    return f"""
+    <div class="multi-diagrams-container">
+        <div class="multi-diagrams-header">
+            <span class="multi-diagrams-icon">📐</span>
+            <div class="multi-diagrams-title-group">
+                <span class="multi-diagrams-title">Dual Technical Schematics &bull; Full Exam Coverage</span>
+                <span class="multi-diagrams-subtitle">Circuit Topology, Force Mechanics &amp; Conduction Waveforms</span>
+            </div>
+            <span class="multi-diagrams-badge">{len(cards_html)} Figures</span>
+        </div>
+        <div class="multi-diagrams-grid">
+            {''.join(cards_html)}
+        </div>
+    </div>
+    """
 
 def render_youtube_btn(query, title):
     encoded_query = html.escape(query.replace(' ', '+'))
@@ -85,7 +131,7 @@ def render_question_card(q, subject_class):
             </div>'''
     type_badge = f'<span class="badge badge-type">{q["type"]}</span>'
     yt_btn = render_youtube_btn(q["yt_query"], actual_question)
-    img_box = render_image_box(q.get("img_path"), q.get("img_caption"))
+    img_box = render_diagrams_box(q)
 
     # Check for lecturer-refined answers
     rep = REPRESENTATIVE_ANSWERS.get(qid)
@@ -96,27 +142,275 @@ def render_question_card(q, subject_class):
         content_html = format_paragraphs(q["answer"])
         understand_simply = None
 
-    understand_box = ""
-    if understand_simply:
-        understand_box = f'''
-        <details class="understand-simply-drawer">
-            <summary class="understand-simply-summary">
-                <div class="drawer-title-group">
-                    <span class="drawer-icon">💡</span>
-                    <span class="drawer-title"><strong>Understand It Simply</strong> &mdash; Intuitive Explanation &amp; Analogy</span>
-                </div>
-                <div class="drawer-meta-group">
-                    <span class="drawer-badge">Learning Aid</span>
-                    <span class="drawer-chevron">▼</span>
-                </div>
-            </summary>
-            <div class="understand-simply-body">
-                {understand_simply}
-            </div>
-        </details>
+    demo = LOCAL_LANG_BANK.get(qid)
+
+    # In-card language switcher
+    card_lang_toggle = f'''
+    <div class="card-lang-toggle" data-qid="{qid}">
+        <button type="button" class="card-lang-btn active" data-card-lang="en" onclick="setCardLang('{qid}', 'en')" title="Switch this card to English">🇬🇧 EN</button>
+        <button type="button" class="card-lang-btn" data-card-lang="manglish" onclick="setCardLang('{qid}', 'manglish')" title="Switch this card to Manglish (Local Tone)">🌴 Manglish</button>
+        <button type="button" class="card-lang-btn" data-card-lang="ml" onclick="setCardLang('{qid}', 'ml')" title="ഈ ചോദ്യം മലയാളത്തിൽ കാണുക">🇮🇳 മലയാളം</button>
+    </div>
+    '''
+
+    # Title markup with 3 language views
+    if demo:
+        m_title = demo['manglish']['title']
+        ml_title = demo['ml']['title']
+        title_html = f'''
+        <h3 class="card-title">
+            <span class="lang-view lang-en">{actual_question}</span>
+            <span class="lang-view lang-manglish">{m_title}</span>
+            <span class="lang-view lang-ml font-ml">{ml_title}</span>
+        </h3>
+        '''
+    else:
+        title_html = f'''
+        <h3 class="card-title">
+            <span class="lang-view lang-en">{actual_question}</span>
+            <span class="lang-view lang-manglish">{actual_question}</span>
+            <span class="lang-view lang-ml">{actual_question}</span>
+        </h3>
         '''
 
-    byheart_box = get_byheart_card_html(qid, q["marks"])
+    # Byheart markup with 3 language views
+    byheart_en = get_byheart_card_html(qid, q["marks"])
+    time_badge = '<span class="byheart-time-badge">⏱️ 5 Mins Writing Time</span>' if q["marks"] == 3 else '<span class="byheart-time-badge">⏱️ 12 Mins Writing Time</span>'
+
+    if demo:
+        # Manglish Byheart
+        m_rem = demo['manglish']['remember_this']
+        m_icon = "⚡" if "Equation" in m_rem['title'] else "📌"
+        m_eq_html = f'<div class="byheart-eq">{m_rem["eq"]}</div>' if m_rem.get("eq") else ""
+        byheart_manglish = f'''
+        <div class="byheart-card">
+            <div class="byheart-header">
+                <div class="byheart-title-group">
+                    <span class="byheart-icon">{m_icon}</span>
+                    <span class="byheart-title">{m_rem['title']}</span>
+                </div>
+                <div class="byheart-badges-group">
+                    {time_badge}
+                    <span class="byheart-badge">🌴 Manglish Tone</span>
+                </div>
+            </div>
+            <div class="byheart-body">
+                {m_eq_html}
+                <p class="byheart-text">{m_rem['text']}</p>
+            </div>
+        </div>
+        '''
+
+        # Malayalam Byheart
+        ml_rem = demo['ml']['remember_this']
+        ml_icon = "⚡" if ("സമവാക്യം" in ml_rem['title'] or "Equation" in ml_rem['title']) else "📌"
+        ml_eq_html = f'<div class="byheart-eq">{ml_rem["eq"]}</div>' if ml_rem.get("eq") else ""
+        byheart_ml = f'''
+        <div class="byheart-card font-ml">
+            <div class="byheart-header">
+                <div class="byheart-title-group">
+                    <span class="byheart-icon">{ml_icon}</span>
+                    <span class="byheart-title">{ml_rem['title']}</span>
+                </div>
+                <div class="byheart-badges-group">
+                    {time_badge}
+                    <span class="byheart-badge">🇮🇳 മലയാളം</span>
+                </div>
+            </div>
+            <div class="byheart-body">
+                {ml_eq_html}
+                <p class="byheart-text">{ml_rem['text']}</p>
+            </div>
+        </div>
+        '''
+
+        byheart_block = f'''
+        <div class="lang-view lang-en">{byheart_en}</div>
+        <div class="lang-view lang-manglish">{byheart_manglish}</div>
+        <div class="lang-view lang-ml">{byheart_ml}</div>
+        '''
+    else:
+        byheart_block = f'''
+        <div class="lang-view lang-en">{byheart_en}</div>
+        <div class="lang-view lang-manglish">{byheart_en}</div>
+        <div class="lang-view lang-ml">{byheart_en}</div>
+        '''
+
+    # Section A (Exam-Ready Answer) markup
+    if demo:
+        exam_section = f'''
+        <!-- English View -->
+        <div class="lang-view lang-en">
+            <div class="answer-section">
+                <div class="answer-section-header">
+                    <h4 class="answer-section-title"><span class="section-tag">Section A</span> Exam-Ready Answer</h4>
+                </div>
+                <div class="exam-ready-content">
+                    {content_html}
+                </div>
+            </div>
+        </div>
+
+        <!-- Manglish View -->
+        <div class="lang-view lang-manglish">
+            <div class="answer-section">
+                <div class="answer-section-header">
+                    <h4 class="answer-section-title"><span class="section-tag section-tag-manglish">🌴 Manglish</span> Local Tone Study Guide</h4>
+                    <button type="button" class="btn-show-english-ref" onclick="toggleEnglishReference('{qid}')">📄 View English Exam Sheet Text</button>
+                </div>
+                <div class="exam-ready-content">
+                    {demo['manglish']['exam_guide']}
+                    <div class="english-reference-drawer" id="eng-ref-{qid}" style="display:none;">
+                        <div class="ref-drawer-header">📝 Exact English Text for University Examination:</div>
+                        <div class="ref-drawer-content">
+                            {content_html}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Malayalam View -->
+        <div class="lang-view lang-ml">
+            <div class="answer-section">
+                <div class="answer-section-header">
+                    <h4 class="answer-section-title"><span class="section-tag section-tag-ml">🇮🇳 മലയാളം</span> പ്രാദേശിക പഠന സഹായി</h4>
+                    <button type="button" class="btn-show-english-ref" onclick="toggleEnglishReference('{qid}')">📄 പരീക്ഷാ ഇംഗ്ലീഷ് കാണുക</button>
+                </div>
+                <div class="exam-ready-content font-ml">
+                    {demo['ml']['exam_guide']}
+                    <div class="english-reference-drawer" id="eng-ref-ml-{qid}" style="display:none;">
+                        <div class="ref-drawer-header">📝 പരീക്ഷയിൽ എഴുതേണ്ട ഇംഗ്ലീഷ് വാചകങ്ങൾ:</div>
+                        <div class="ref-drawer-content">
+                            {content_html}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        '''
+    else:
+        exam_section = f'''
+        <div class="lang-view lang-en">
+            <div class="answer-section">
+                <div class="answer-section-header">
+                    <h4 class="answer-section-title"><span class="section-tag">Section A</span> Exam-Ready Answer</h4>
+                </div>
+                <div class="exam-ready-content">
+                    {content_html}
+                </div>
+            </div>
+        </div>
+
+        <div class="lang-view lang-manglish">
+            <div class="answer-section">
+                <div class="answer-section-header">
+                    <h4 class="answer-section-title"><span class="section-tag section-tag-manglish">🌴 Manglish</span> Local Tone Study Guide</h4>
+                </div>
+                <div class="exam-ready-content">
+                    {content_html}
+                </div>
+            </div>
+        </div>
+
+        <div class="lang-view lang-ml">
+            <div class="answer-section">
+                <div class="answer-section-header">
+                    <h4 class="answer-section-title"><span class="section-tag section-tag-ml">🇮🇳 മലയാളം</span> പ്രാദേശിക പഠന സഹായി</h4>
+                </div>
+                <div class="exam-ready-content font-ml">
+                    {content_html}
+                </div>
+            </div>
+        </div>
+        '''
+
+    # Section B (Understand It Simply) markup
+    if demo:
+        understand_box = f'''
+        <!-- English Analogy -->
+        <div class="lang-view lang-en">
+            <details class="understand-simply-drawer">
+                <summary class="understand-simply-summary">
+                    <div class="drawer-title-group">
+                        <span class="drawer-icon">💡</span>
+                        <span class="drawer-title"><strong>Understand It Simply</strong> &mdash; Intuitive Explanation &amp; Analogy</span>
+                    </div>
+                    <div class="drawer-meta-group">
+                        <span class="drawer-badge">Learning Aid</span>
+                        <span class="drawer-chevron">▼</span>
+                    </div>
+                </summary>
+                <div class="understand-simply-body">
+                    {understand_simply if understand_simply else ""}
+                </div>
+            </details>
+        </div>
+
+        <!-- Manglish Analogy -->
+        <div class="lang-view lang-manglish">
+            <details class="understand-simply-drawer" open>
+                <summary class="understand-simply-summary">
+                    <div class="drawer-title-group">
+                        <span class="drawer-icon">💡</span>
+                        <span class="drawer-title"><strong>Understand It Simply (Manglish)</strong> &mdash; Local Campus Analogy</span>
+                    </div>
+                    <div class="drawer-meta-group">
+                        <span class="drawer-badge drawer-badge-manglish">🌴 Local Tone</span>
+                        <span class="drawer-chevron">▼</span>
+                    </div>
+                </summary>
+                <div class="understand-simply-body">
+                    {demo['manglish']['understand_simply']}
+                </div>
+            </details>
+        </div>
+
+        <!-- Malayalam Analogy -->
+        <div class="lang-view lang-ml">
+            <details class="understand-simply-drawer font-ml" open>
+                <summary class="understand-simply-summary">
+                    <div class="drawer-title-group">
+                        <span class="drawer-icon">💡</span>
+                        <span class="drawer-title"><strong>ലളിതമായി മനസ്സിലാക്കാം</strong> &mdash; പ്രാദേശിക ഉദാഹരണം</span>
+                    </div>
+                    <div class="drawer-meta-group">
+                        <span class="drawer-badge drawer-badge-ml">🇮🇳 മലയാളം</span>
+                        <span class="drawer-chevron">▼</span>
+                    </div>
+                </summary>
+                <div class="understand-simply-body font-ml">
+                    {demo['ml']['understand_simply']}
+                </div>
+            </details>
+        </div>
+        '''
+    else:
+        if understand_simply:
+            u_drawer = f'''
+            <details class="understand-simply-drawer">
+                <summary class="understand-simply-summary">
+                    <div class="drawer-title-group">
+                        <span class="drawer-icon">💡</span>
+                        <span class="drawer-title"><strong>Understand It Simply</strong> &mdash; Intuitive Explanation &amp; Analogy</span>
+                    </div>
+                    <div class="drawer-meta-group">
+                        <span class="drawer-badge">Learning Aid</span>
+                        <span class="drawer-chevron">▼</span>
+                    </div>
+                </summary>
+                <div class="understand-simply-body">
+                    {understand_simply}
+                </div>
+            </details>
+            '''
+            understand_box = f'''
+            <div class="lang-view lang-en">{u_drawer}</div>
+            <div class="lang-view lang-manglish">{u_drawer}</div>
+            <div class="lang-view lang-ml">{u_drawer}</div>
+            '''
+        else:
+            understand_box = ""
 
     return f"""
     <article class="question-card {subject_class}" id="{qid}" data-marks="{q['marks']}" data-title="{html.escape(actual_question.lower())}">
@@ -127,8 +421,9 @@ def render_question_card(q, subject_class):
                 {type_badge}
                 <span class="badge badge-qid">ID: {qid.upper()}</span>
             </div>
-            <h3 class="card-title">{actual_question}</h3>
+            {title_html}
             <div class="card-action-bar">
+                {card_lang_toggle}
                 {yt_btn}
                 <button class="btn-toggle-answer" onclick="toggleAnswerCard('{qid}')" title="Toggle answer visibility">
                     <span class="toggle-icon">▲</span>
@@ -137,15 +432,8 @@ def render_question_card(q, subject_class):
             </div>
         </header>
         <div class="card-body">
-            {byheart_box}
-            <div class="answer-section">
-                <div class="answer-section-header">
-                    <h4 class="answer-section-title"><span class="section-tag">Section A</span> Exam-Ready Answer</h4>
-                </div>
-                <div class="exam-ready-content">
-                    {content_html}
-                </div>
-            </div>
+            {byheart_block}
+            {exam_section}
             {img_box}
             {understand_box}
         </div>
@@ -1717,6 +2005,78 @@ main.content-container {
     gap: 0.5rem;
 }
 
+/* Multi-Diagram Exam Presentation */
+.multi-diagrams-container {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    box-shadow: 0 4px 20px var(--card-shadow);
+}
+.multi-diagrams-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+.multi-diagrams-icon {
+    font-size: 1.35rem;
+    line-height: 1;
+}
+.multi-diagrams-title-group {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.multi-diagrams-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+.multi-diagrams-subtitle {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+.multi-diagrams-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+}
+.multi-diagrams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 1.25rem;
+}
+.multi-diagrams-grid .diagram-card {
+    margin-top: 0;
+    background: var(--bg-surface);
+}
+.diagram-badge-pill {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    background: var(--bg-card);
+    color: #38bdf8;
+    border: 1px solid var(--border-subtle);
+}
+@media (max-width: 800px) {
+    .multi-diagrams-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Section B: Understand It Simply Collapsible Drawer */
 .understand-simply-drawer {
     margin-top: 1.25rem;
@@ -2861,8 +3221,330 @@ body {
         padding: 0.25rem 0.38rem;
     }
 }
-"""
 
+/* =========================================================================
+   Language & Tone Switching CSS Rules (English, Manglish, Malayalam)
+   ========================================================================= */
+.font-ml {
+    font-family: 'Noto Sans Malayalam', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    line-height: 1.75;
+}
+
+/* Visibility Rules: Default (English) */
+html:not([data-lang]) .lang-manglish,
+html:not([data-lang]) .lang-ml,
+html[data-lang="en"] .lang-manglish,
+html[data-lang="en"] .lang-ml {
+    display: none !important;
+}
+
+html:not([data-lang]) .lang-en,
+html[data-lang="en"] .lang-en {
+    display: block;
+}
+html:not([data-lang]) span.lang-en,
+html[data-lang="en"] span.lang-en {
+    display: inline;
+}
+
+/* Visibility Rules: Manglish Mode */
+html[data-lang="manglish"] .lang-en,
+html[data-lang="manglish"] .lang-ml {
+    display: none !important;
+}
+html[data-lang="manglish"] .lang-manglish {
+    display: block;
+}
+html[data-lang="manglish"] span.lang-manglish {
+    display: inline;
+}
+
+/* Visibility Rules: Malayalam (മലയാളം) Mode */
+html[data-lang="ml"] .lang-en,
+html[data-lang="ml"] .lang-manglish {
+    display: none !important;
+}
+html[data-lang="ml"] .lang-ml {
+    display: block;
+}
+html[data-lang="ml"] span.lang-ml {
+    display: inline;
+}
+
+/* Per-Card Overrides */
+article.question-card[data-card-lang="en"] .lang-manglish,
+article.question-card[data-card-lang="en"] .lang-ml {
+    display: none !important;
+}
+article.question-card[data-card-lang="en"] .lang-en {
+    display: block !important;
+}
+article.question-card[data-card-lang="en"] span.lang-en {
+    display: inline !important;
+}
+
+article.question-card[data-card-lang="manglish"] .lang-en,
+article.question-card[data-card-lang="manglish"] .lang-ml {
+    display: none !important;
+}
+article.question-card[data-card-lang="manglish"] .lang-manglish {
+    display: block !important;
+}
+article.question-card[data-card-lang="manglish"] span.lang-manglish {
+    display: inline !important;
+}
+
+article.question-card[data-card-lang="ml"] .lang-en,
+article.question-card[data-card-lang="ml"] .lang-manglish {
+    display: none !important;
+}
+article.question-card[data-card-lang="ml"] .lang-ml {
+    display: block !important;
+}
+article.question-card[data-card-lang="ml"] span.lang-ml {
+    display: inline !important;
+}
+
+/* Global Language Switcher UI */
+.lang-switcher-wrapper {
+    display: flex;
+    align-items: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 9px;
+    padding: 0.2rem;
+    gap: 0.15rem;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.lang-btn:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+}
+
+.lang-btn.active {
+    background: var(--bg-card);
+    color: var(--border-focus);
+    font-weight: 600;
+    box-shadow: 0 1px 4px var(--card-shadow);
+}
+
+.lang-badge {
+    font-size: 0.62rem;
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    padding: 0.08rem 0.32rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Card-level Language Switcher */
+.card-lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg-base);
+    border: 1px solid var(--border-subtle);
+    border-radius: 7px;
+    padding: 0.15rem;
+    gap: 0.15rem;
+}
+
+.card-lang-btn {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.22rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.card-lang-btn:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+}
+
+.card-lang-btn.active {
+    background: var(--bg-card);
+    color: var(--border-focus);
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Local Language Study Guide Styling */
+.local-lang-guide {
+    font-size: 0.95rem;
+    line-height: 1.68;
+}
+
+.lang-guide-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    margin-bottom: 1.1rem;
+    font-size: 0.85rem;
+}
+
+.lang-guide-banner p {
+    margin: 0;
+    color: var(--text-body);
+}
+
+.guide-badge {
+    display: inline-block;
+    background: #10b981;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.section-tag-manglish {
+    background: rgba(16, 185, 129, 0.2) !important;
+    color: #10b981 !important;
+}
+
+.section-tag-ml {
+    background: rgba(245, 158, 11, 0.2) !important;
+    color: #f59e0b !important;
+}
+
+.drawer-badge-manglish {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+}
+
+.drawer-badge-ml {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+}
+
+.math-block-highlight {
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--border-focus);
+    padding: 0.5rem 0.8rem;
+    border-radius: 0 6px 6px 0;
+    margin: 0.75rem 0;
+}
+
+.exam-tip-box {
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-radius: 7px;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.86rem;
+    margin-top: 1rem;
+    color: var(--text-body);
+}
+
+/* English Reference Drawer inside Manglish/Malayalam */
+.btn-show-english-ref {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.28rem 0.65rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: auto;
+}
+
+.btn-show-english-ref:hover {
+    color: var(--text-main);
+    border-color: var(--border-focus);
+    background: var(--bg-card-hover);
+}
+
+.english-reference-drawer {
+    margin-top: 1.1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px dashed var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+}
+
+.ref-drawer-header {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.35rem;
+}
+
+/* Demo fallback banner for non-demo cards */
+.demo-fallback-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 0.83rem;
+    color: var(--text-body);
+    line-height: 1.5;
+}
+
+.fallback-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.lang-demo-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #34d399;
+    margin-left: 0.45rem;
+    background: rgba(16, 185, 129, 0.15);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+}
+
+@media (max-width: 960px) {
+    .lang-btn .lang-name {
+        display: none;
+    }
+    .lang-btn {
+        padding: 0.32rem 0.45rem;
+    }
+}
+
+"""
 
 FLOATING_TIMER_HTML = """
     <!-- Floating Active Exam Practice Timer (Top-Right Glassmorphism Pill) -->
@@ -3470,8 +4152,93 @@ function toggleAllAnswers() {
 }
 
 // Initialization on DOMContentLoaded
+
+// =========================================================================
+// Language & Tone Switching (English, Manglish, Malayalam)
+// =========================================================================
+const LANG_STORAGE_KEY = 'ktu_portal_lang';
+
+function setGlobalLang(lang) {
+    if (!lang) lang = 'en';
+    document.documentElement.setAttribute('data-lang', lang);
+    try {
+        localStorage.setItem(LANG_STORAGE_KEY, lang);
+    } catch (e) {}
+
+    // Update global buttons in header
+    const globalBtns = document.querySelectorAll('.lang-btn');
+    globalBtns.forEach(btn => {
+        const val = btn.getAttribute('data-lang-value');
+        if (val === lang) {
+            btn.classList.add('active');
+            btn.setAttribute('aria-checked', 'true');
+        } else {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-checked', 'false');
+        }
+    });
+
+    // Reset card-specific overrides to match global
+    const cards = document.querySelectorAll('.question-card');
+    cards.forEach(card => {
+        card.removeAttribute('data-card-lang');
+        const cardBtns = card.querySelectorAll('.card-lang-btn');
+        cardBtns.forEach(btn => {
+            const val = btn.getAttribute('data-card-lang');
+            if (val === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    });
+}
+
+function setCardLang(qid, lang) {
+    const card = document.getElementById(qid);
+    if (!card) return;
+    card.setAttribute('data-card-lang', lang);
+    const cardBtns = card.querySelectorAll('.card-lang-btn');
+    cardBtns.forEach(btn => {
+        const val = btn.getAttribute('data-card-lang');
+        if (val === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+
+function toggleEnglishReference(qid) {
+    const refDrawer = document.getElementById('eng-ref-' + qid) || document.getElementById('eng-ref-ml-' + qid);
+    if (!refDrawer) return;
+    if (refDrawer.style.display === 'none' || refDrawer.style.display === '') {
+        refDrawer.style.display = 'block';
+    } else {
+        refDrawer.style.display = 'none';
+    }
+}
+
+function initLanguageSwitcher() {
+    let savedLang = 'en';
+    try {
+        savedLang = localStorage.getItem(LANG_STORAGE_KEY) || 'en';
+    } catch (e) {}
+    setGlobalLang(savedLang);
+
+    const globalBtns = document.querySelectorAll('.lang-btn');
+    globalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const val = btn.getAttribute('data-lang-value');
+            setGlobalLang(val);
+        });
+    });
+}
+
 function initPortal() {
     initThemeSwitcher();
+    initLanguageSwitcher();
     updateSoundUI();
 }
 
@@ -3495,6 +4262,8 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
         (function() {
             const savedTheme = localStorage.getItem('ktu_portal_theme') || 'dark';
             document.documentElement.setAttribute('data-theme', savedTheme);
+            const savedLang = localStorage.getItem('ktu_portal_lang') || 'en';
+            document.documentElement.setAttribute('data-lang', savedLang);
         })();
     </script>
 
@@ -3513,7 +4282,7 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
     <!-- Google Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         {{CSS_BLOCK}}
@@ -3550,6 +4319,22 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
                     <span class="tab-text-short">Mobile (CST415)</span>
                 </button>
             </nav>
+
+            <!-- Tone / Language Switcher Controls (English, Manglish, Malayalam) -->
+            <div class="lang-switcher-wrapper" role="radiogroup" aria-label="Language &amp; Tone Selector">
+                <button class="lang-btn active" data-lang-value="en" title="English: University Standard Exam Answers" aria-label="English">
+                    <span class="lang-flag">🇬🇧</span>
+                    <span class="lang-name">English</span>
+                </button>
+                <button class="lang-btn" data-lang-value="manglish" title="Manglish: Malayalam in English text with local campus tone" aria-label="Manglish">
+                    <span class="lang-flag">🌴</span>
+                    <span class="lang-name">Manglish</span>
+                </button>
+                <button class="lang-btn" data-lang-value="ml" title="മലയാളം: പ്രാദേശിക സംഭാഷണ ശൈലി" aria-label="Malayalam">
+                    <span class="lang-flag">🇮🇳</span>
+                    <span class="lang-name">മലയാളം</span>
+                </button>
+            </div>
 
             <!-- Theme Switcher Controls (Night, Day, Sage) -->
             <div class="theme-switcher-wrapper" role="radiogroup" aria-label="Reading &amp; Study Theme Selector">
@@ -3688,6 +4473,8 @@ def generate_standalone_page(subject_key, subject_title, subject_code, subject_c
         (function() {
             const savedTheme = localStorage.getItem('ktu_portal_theme') || 'dark';
             document.documentElement.setAttribute('data-theme', savedTheme);
+            const savedLang = localStorage.getItem('ktu_portal_lang') || 'en';
+            document.documentElement.setAttribute('data-lang', savedLang);
         })();
     </script>
 
@@ -3705,7 +4492,7 @@ def generate_standalone_page(subject_key, subject_title, subject_code, subject_c
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         {{CSS_BLOCK}}
@@ -3720,6 +4507,22 @@ def generate_standalone_page(subject_key, subject_title, subject_code, subject_c
                     <h1>{{SUBJECT_TITLE}} ({{SUBJECT_CODE}})</h1>
                     <p>KTU Engineering B.Tech Examination Preparation</p>
                 </div>
+            </div>
+
+            <!-- Tone / Language Switcher Controls -->
+            <div class="lang-switcher-wrapper" role="radiogroup" aria-label="Language &amp; Tone Selector">
+                <button class="lang-btn active" data-lang-value="en" title="English: University Standard Exam Answers" aria-label="English">
+                    <span class="lang-flag">🇬🇧</span>
+                    <span class="lang-name">English</span>
+                </button>
+                <button class="lang-btn" data-lang-value="manglish" title="Manglish: Malayalam in English text with local campus tone" aria-label="Manglish">
+                    <span class="lang-flag">🌴</span>
+                    <span class="lang-name">Manglish</span>
+                </button>
+                <button class="lang-btn" data-lang-value="ml" title="മലയാളം: പ്രാദേശിക സംഭാഷണ ശൈലി" aria-label="Malayalam">
+                    <span class="lang-flag">🇮🇳</span>
+                    <span class="lang-name">മലയാളം</span>
+                </button>
             </div>
 
             <!-- Header Theme Switcher Palette Selector -->

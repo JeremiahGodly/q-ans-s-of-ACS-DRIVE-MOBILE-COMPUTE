@@ -4375,11 +4375,12 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
                 </button>
             </nav>
 
-            <!-- Interactive Features: Mind Map, Focus Lab, 60fps Simulators -->
+            <!-- Interactive Features: Mind Map, Focus Lab, 60fps Simulators, Muscle Memory Canvas -->
             <nav class="feature-nav-bar" aria-label="Interactive Learning Features">
                 <a href="mindmap.html" class="feature-nav-link" title="Large Interactive Neural Mind Map with glowing synapses">🧠 Mind Map</a>
                 <a href="activities.html" class="feature-nav-link" title="Gamified Focus Lab, Nano Banana Portals & Engineering Drills">🎯 Focus Lab</a>
                 <a href="animations.html" class="feature-nav-link" title="60fps Real-Time Motion Graphics & Simulators">🎬 60fps Simulators</a>
+                <a href="draw.html" class="feature-nav-link" title="Interactive Muscle Memory Canvas: Trace & Draw Engineering Diagrams">✏️ Muscle Memory Canvas</a>
             </nav>
 
             <!-- Tone / Language Switcher Controls (English, Manglish, Malayalam) -->
@@ -4571,12 +4572,13 @@ def generate_standalone_page(subject_key, subject_title, subject_code, subject_c
                 </div>
             </div>
 
-            <!-- Interactive Features: Mind Map, Focus Lab, 60fps Simulators -->
+            <!-- Interactive Features: Mind Map, Focus Lab, 60fps Simulators, Muscle Memory Canvas -->
             <nav class="feature-nav-bar" aria-label="Interactive Learning Features">
                 <a href="index.html" class="feature-nav-link" title="Return to Portal Home & All 3 Subjects">📚 All Subjects</a>
                 <a href="mindmap.html" class="feature-nav-link" title="Large Interactive Neural Mind Map with glowing synapses">🧠 Mind Map</a>
                 <a href="activities.html" class="feature-nav-link" title="Gamified Focus Lab, Nano Banana Portals & Engineering Drills">🎯 Focus Lab</a>
                 <a href="animations.html" class="feature-nav-link" title="60fps Real-Time Motion Graphics & Simulators">🎬 60fps Simulators</a>
+                <a href="draw.html" class="feature-nav-link" title="Interactive Muscle Memory Canvas: Trace & Draw Engineering Diagrams">✏️ Muscle Memory Canvas</a>
             </nav>
 
             <!-- Tone / Language Switcher Controls -->

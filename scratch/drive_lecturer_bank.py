@@ -462,6 +462,19 @@ where $V_{ml} = \sqrt{3}V_m$ is the peak line-to-line voltage, and $\alpha$ is t
             "text": r"Firing angle $0^\circ \le \alpha \le 90^\circ \implies$ Motoring ($V_a > 0$); $90^\circ < \alpha \le 180^\circ \implies$ Inversion ($V_a < 0$, regenerative braking)."
         },
         "exam_answer": r"""
+<div class="interactive-practice-pill" style="margin: 0.5rem 0 1.25rem 0; padding: 0.75rem 1rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem;">
+    <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <span style="font-size: 1.35rem;">✏️</span>
+        <div>
+            <strong style="color: #38bdf8; font-size: 0.88rem;">Interactive Muscle Memory Canvas</strong>
+            <p style="font-size: 0.76rem; color: var(--text-muted); margin: 0;">Trace and draw this exact circuit diagram with magnetic stroke-snapping.</p>
+        </div>
+    </div>
+    <a href="draw.html" class="tool-btn primary" style="text-decoration: none; padding: 0.4rem 0.9rem; font-size: 0.8rem; font-weight: 700; border-radius: 8px; display: inline-flex; align-items: center; gap: 0.4rem; background: #0284c7; color: white; border: 1px solid #38bdf8;">
+        <span>🎯 Practice Drawing Now</span>
+    </a>
+</div>
+
 <p><strong>1. Circuit Topology &amp; Operation:</strong><br>
 A single-phase fully controlled converter uses four thyristors ($T_1, T_2, T_3, T_4$) in a full-bridge arrangement to supply the armature of a separately excited DC motor from an AC source $v_s(t) = V_m \sin\omega t$.</p>
 <ul>

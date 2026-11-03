@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Muscle Memory Canvas | Engineering Diagram Drawing Lab</title>
+
+    <!-- Theme & Language Preload -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('ktu_portal_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <!-- KaTeX CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root, [data-theme="dark"] {
+            --bg-base: #080b11;
+            --bg-surface: #0f1523;
+            --bg-card: #151e32;
+            --bg-card-hover: #1c2842;
+            --border-subtle: #22304d;
+            --border-focus: #38bdf8;
+            --text-main: #f1f5f9;
+            --text-body: #cbd5e1;
+            --text-muted: #8292a8;
+            --header-bg: rgba(13, 19, 29, 0.94);
+            --acs-color: #38bdf8;
+            --drive-color: #f59e0b;
+            --mobile-color: #ec4899;
+            --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+            --glow-cyan: rgba(0, 242, 254, 0.35);
+            --glow-amber: rgba(245, 158, 11, 0.35);
+        }
+
+        [data-theme="light"] {
+            --bg-base: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-card: #f1f5f9;
+            --bg-card-hover: #e2e8f0;
+            --border-subtle: #cbd5e1;
+            --border-focus: #0284c7;
+            --text-main: #0f172a;
+            --text-body: #334155;
+            --text-muted: #64748b;
+            --header-bg: rgba(255, 255, 255, 0.94);
+            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --glow-cyan: rgba(2, 132, 199, 0.2);
+            --glow-amber: rgba(217, 119, 6, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            touch-action: pan-y;
+        }
+
+        /* Header Navigation */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--header-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 0.65rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.55rem;
+            border-radius: 9999px;
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.35);
+        }
+
+        .nav-pills {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding: 0.2rem 0;
+        }
+
+        .nav-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.4rem 0.85rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill:hover {
+            color: var(--text-main);
+            background: var(--bg-card);
+            border-color: var(--border-subtle);
+        }
+
+        .nav-pill.active {
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.12);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        /* Container */
+        .lab-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            flex-grow: 1;
+        }
+
+        /* Activity Info Banner */
+        .activity-banner {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(56, 189, 248, 0.08) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .banner-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            max-width: 780px;
+        }
+
+        .banner-tags {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag-subject {
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+
+        .tag-marks {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+
+        .tag-freq {
+            background: rgba(236, 72, 153, 0.2);
+            color: #f472b6;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(236, 72, 153, 0.4);
+        }
+
+        .activity-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .activity-desc {
+            font-size: 0.85rem;
+            color: var(--text-body);
+            line-height: 1.45;
+        }
+
+        .progress-stat-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 0.65rem 1.15rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-circle-wrap {
+            position: relative;
+            width: 52px;
+            height: 52px;
+        }
+
+        .progress-circle-svg {
+            transform: rotate(-90deg);
+        }
+
+        .circle-bg {
+            fill: none;
+            stroke: var(--border-subtle);
+            stroke-width: 5;
+        }
+
+        .circle-bar {
+            fill: none;
+            stroke: #10b981;
+            stroke-width: 5;
+            stroke-linecap: round;
+            stroke-dasharray: 138;
+            stroke-dashoffset: 138;
+            transition: stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .progress-pct-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .progress-labels {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .progress-count-text {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #38bdf8;
+        }
+
+        .progress-subtext {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        /* Drawing Canvas Workspace Card */
+        .canvas-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+
+        /* Canvas Toolbar */
+        .canvas-toolbar {
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .toolbar-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tool-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 8px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .tool-btn:hover {
+            border-color: var(--border-focus);
+            background: var(--bg-card-hover);
+        }
+
+        .tool-btn:active {
+            transform: scale(0.97);
+        }
+
+        .tool-btn.primary {
+            background: #0284c7;
+            border-color: #38bdf8;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+        }
+
+        .tool-btn.primary:hover {
+            background: #0369a1;
+        }
+
+        .tool-btn.amber {
+            background: #d97706;
+            border-color: #f59e0b;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+        }
+
+        .tool-btn.amber:hover {
+            background: #b45309;
+        }
+
+        .tool-btn.success {
+            background: #059669;
+            border-color: #10b981;
+            color: #ffffff;
+        }
+
+        /* Ghost Opacity Slider */
+        .ghost-slider-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            padding: 0.35rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .ghost-slider-group input[type="range"] {
+            width: 80px;
+            accent-color: #38bdf8;
+            cursor: pointer;
+        }
+
+        /* Interactive Drawing Stage */
+        .stage-wrapper {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            background-color: #070a12;
+            background-image: 
+                radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 24px 24px, 48px 48px, 48px 48px;
+            overflow: hidden;
+            touch-action: none; /* Critical: prevents screen scrolling while drawing */
+            cursor: crosshair;
+        }
+
+        @media (max-width: 768px) {
+            .stage-wrapper {
+                height: 420px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stage-wrapper {
+                height: 360px;
+            }
+        }
+
+        /* Vector Circuit SVG Container */
+        .circuit-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        /* Freehand User Canvas Layer */
+        .ink-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        /* Particles Layer */
+        .particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Ghost Blueprint Elements */
+        .ghost-stroke {
+            stroke: #475569;
+            stroke-width: 2;
+            stroke-dasharray: 4, 4;
+            fill: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .ghost-fill {
+            fill: #1e293b;
+            fill-opacity: 0.15;
+            stroke: #475569;
+            stroke-width: 1.5;
+            stroke-dasharray: 4, 4;
+        }
+
+        /* Snapped Active Components (Ultra Colorful & Glowing) */
+        .active-comp {
+            opacity: 0;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease;
+            transform-origin: center;
+        }
+
+        .active-comp.snapped {
+            opacity: 1;
+            animation: snapPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes snapPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.92);
+                filter: drop-shadow(0 0 20px #fff);
+            }
+            50% {
+                transform: scale(1.04);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Component Color Themes */
+        .comp-source {
+            stroke: #fbbf24;
+            filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.6));
+        }
+
+        .comp-scr {
+            stroke: #00f2fe;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.65));
+        }
+
+        .comp-diode {
+            stroke: #10b981;
+            filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.7));
+        }
+
+        .comp-resistor {
+            stroke: #ff6b35;
+            filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.6));
+        }
+
+        .comp-inductor {
+            stroke: #c084fc;
+            filter: drop-shadow(0 0 10px rgba(192, 132, 252, 0.65));
+        }
+
+        .comp-motor {
+            stroke: #f43f5e;
+            filter: drop-shadow(0 0 12px rgba(244, 63, 94, 0.7));
+        }
+
+        .comp-rail {
+            stroke: #38bdf8;
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
+        }
+
+        .comp-label {
+            fill: #ffffff;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+
+        /* Touch Hint Indicator / Swipe Ripple */
+        .swipe-hint-pill {
+            position: absolute;
+            bottom: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.45rem 1.15rem;
+            border-radius: 9999px;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            z-index: 20;
+            animation: pulseFade 2.5s infinite;
+        }
+
+        @keyframes pulseFade {
+            0%, 100% { opacity: 0.9; transform: translateX(-50%) scale(1); }
+            50% { opacity: 1; transform: translateX(-50%) scale(1.03); box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
+        }
+
+        /* Next Recommended Component Spotlight */
+        .spotlight-pulse {
+            animation: spotlightBlink 1.2s infinite ease-in-out;
+        }
+
+        @keyframes spotlightBlink {
+            0%, 100% { stroke-opacity: 0.3; stroke-width: 2; }
+            50% { stroke-opacity: 0.9; stroke-width: 4; stroke: #38bdf8; }
+        }
+
+        /* Component Check-Off Sidebar / Checklist */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 0.65rem;
+            padding: 1.25rem;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.45rem 0.75rem;
+            border-radius: 8px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            transition: all 0.25s ease;
+        }
+
+        .check-item.done {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .check-icon {
+            font-size: 0.95rem;
+        }
+
+        .check-item.done .check-icon {
+            color: #10b981;
+        }
+
+        .color-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        /* Victory Modal Popup */
+        .victory-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 11, 17, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        .victory-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .victory-card {
+            background: linear-gradient(135deg, #151e32 0%, #0d1322 100%);
+            border: 2px solid #10b981;
+            border-radius: 20px;
+            padding: 2.25rem;
+            max-width: 540px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3), 0 0 80px rgba(0, 0, 0, 0.8);
+            transform: scale(0.85);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .victory-overlay.visible .victory-card {
+            transform: scale(1);
+        }
+
+        .victory-badge {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-8px); }
+        }
+
+        .victory-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #34d399;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .victory-desc {
+            font-size: 0.92rem;
+            color: var(--text-body);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .victory-stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .victory-stat-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 0.75rem 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #fbbf24;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label-mini {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 0.2rem;
+        }
+
+        .victory-btn-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        /* Theory Guide Card */
+        .theory-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .theory-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 0.65rem;
+        }
+
+        .theory-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .theory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .theory-item {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+        }
+
+        .theory-item h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 0.35rem;
+        }
+
+        .theory-item p {
+            font-size: 0.8rem;
+            color: var(--text-body);
+            line-height: 1.45;
+        }
+
+        /* Responsive Mobile Styles */
+        @media (max-width: 640px) {
+            .site-header {
+                padding: 0.5rem 0.75rem;
+            }
+            .lab-container {
+                padding: 0.75rem;
+                gap: 0.85rem;
+            }
+            .activity-banner {
+                padding: 0.85rem 1rem;
+            }
+            .activity-title {
+                font-size: 1.1rem;
+            }
+            .checklist-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+                padding: 0.85rem;
+            }
+            .canvas-toolbar {
+                padding: 0.5rem 0.75rem;
+            }
+            .ghost-slider-group {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <a href="index.html" class="brand-link">
+            <span style="font-size:1.35rem;">⚡</span>
+            <span>KTU Muscle Memory Lab</span>
+            <span class="brand-badge">Electric Drives</span>
+        </a>
+
+        <nav class="nav-pills">
+            <a href="index.html" class="nav-pill">📚 Question Bank</a>
+            <a href="drives.html" class="nav-pill">⚡ Electric Drives</a>
+            <a href="mindmap.html" class="nav-pill">🧠 Mind Map</a>
+            <a href="activities.html" class="nav-pill">🎯 Focus Lab</a>
+            <a href="animations.html" class="nav-pill">🎬 60fps Simulators</a>
+            <a href="draw.html" class="nav-pill active">✏️ Muscle Memory Canvas</a>
+        </nav>
+    </header>
+
+    <main class="lab-container">
+
+        <!-- Activity Info Banner -->
+        <section class="activity-banner">
+            <div class="banner-content">
+                <div class="banner-tags">
+                    <span class="tag-subject">EET413 • Module 2</span>
+                    <span class="tag-marks">7 Marks Guaranteed</span>
+                    <span class="tag-freq">★ Universally Asked Question (drive-q8)</span>
+                </div>
+                <h1 class="activity-title">Single-Phase Fully Controlled Rectifier Fed DC Motor Drive</h1>
+                <p class="activity-desc">
+                    Build physical <strong>muscle memory</strong> for your 3-hour university exam! Swipe with your finger, stylus, or mouse near any circuit element. The <strong>magnetic tracer</strong> snaps the lines accurately into vibrant neon vector schematics.
+                </p>
+            </div>
+
+            <!-- Progress Ring -->
+            <div class="progress-stat-pill">
+                <div class="progress-circle-wrap">
+                    <svg class="progress-circle-svg" width="52" height="52" viewBox="0 0 52 52">
+                        <circle class="circle-bg" cx="26" cy="26" r="22"></circle>
+                        <circle class="circle-bar" id="progress-bar-circle" cx="26" cy="26" r="22"></circle>
+                    </svg>
+                    <div class="progress-pct-text" id="progress-pct-text">0%</div>
+                </div>
+                <div class="progress-labels">
+                    <span class="progress-count-text" id="progress-count-text">0 / 12</span>
+                    <span class="progress-subtext">Components Snapped</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canvas Workspace Card -->
+        <section class="canvas-card">
+            <!-- Toolbar -->
+            <div class="canvas-toolbar">
+                <div class="toolbar-group">
+                    <button class="tool-btn primary" id="btn-auto-draw" title="Watch full guided drawing demo">
+                        <span>▶️</span> <span>Watch Demo</span>
+                    </button>
+                    <button class="tool-btn amber" id="btn-hint" title="Spotlight next stroke to draw">
+                        <span>💡</span> <span>Next Hint</span>
+                    </button>
+                    <button class="tool-btn" id="btn-undo" title="Undo last snapped component">
+                        <span>↩️</span> <span>Undo</span>
+                    </button>
+                    <button class="tool-btn" id="btn-reset" title="Reset canvas and start over">
+                        <span>🔄</span> <span>Reset</span>
+                    </button>
+                </div>
+
+                <div class="toolbar-group">
+                    <!-- Ghost Opacity Slider -->
+                    <div class="ghost-slider-group">
+                        <span>👻 Guide Opacity:</span>
+                        <input type="range" id="ghost-opacity-slider" min="0" max="100" value="25" title="Ghost guide transparency">
+                        <span id="ghost-opacity-val">25%</span>
+                    </div>
+
+                    <!-- Audio Toggle -->
+                    <button class="tool-btn" id="btn-sound-toggle" title="Toggle sound chimes">
+                        <span id="sound-icon">🔊</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stage: Vector Circuit + Touch Canvas -->
+            <div class="stage-wrapper" id="stage-wrapper">
+                <!-- SVG Vector Circuit Stage (ViewBox: 1000 x 580) -->
+                <svg class="circuit-svg" id="circuit-svg" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <!-- Glow filters -->
+                        <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="4" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="4" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="5" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <marker id="arrow-wire" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8"/>
+                        </marker>
+                    </defs>
+
+                    <!-- ============================================== -->
+                    <!-- 1. GHOST BLUEPRINT UNDERLAY (Adjustable Opacity) -->
+                    <!-- ============================================== -->
+                    <g id="ghost-blueprint-group" opacity="0.25">
+                        <!-- AC Source -->
+                        <circle cx="130" cy="290" r="28" class="ghost-fill"/>
+                        <path d="M 116 290 Q 123 274 130 290 Q 137 306 144 290" class="ghost-stroke"/>
+                        <text x="130" y="335" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">vs = Vm·sin(ωt)</text>
+
+                        <!-- AC Connecting Wires -->
+                        <path d="M 130 262 L 130 220 L 260 220" class="ghost-stroke"/>
+                        <path d="M 130 318 L 130 360 L 400 360" class="ghost-stroke"/>
+
+                        <!-- SCR T1 -->
+                        <path d="M 260 220 L 260 185" class="ghost-stroke"/>
+                        <polygon points="245,185 275,185 260,160" class="ghost-fill"/>
+                        <line x1="245" y1="160" x2="275" y2="160" class="ghost-stroke"/>
+                        <line x1="260" y1="160" x2="260" y2="140" class="ghost-stroke"/>
+                        <line x1="250" y1="180" x2="235" y2="185" class="ghost-stroke"/>
+                        <text x="220" y="170" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13">T1</text>
+
+                        <!-- SCR T4 -->
+                        <path d="M 260 440 L 260 310" class="ghost-stroke"/>
+                        <polygon points="245,310 275,310 260,285" class="ghost-fill"/>
+                        <line x1="245" y1="285" x2="275" y2="285" class="ghost-stroke"/>
+                        <line x1="260" y1="285" x2="260" y2="220" class="ghost-stroke"/>
+                        <line x1="250" y1="305" x2="235" y2="310" class="ghost-stroke"/>
+                        <text x="220" y="295" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13">T4</text>
+
+                        <!-- SCR T3 -->
+                        <path d="M 400 360 L 400 185" class="ghost-stroke"/>
+                        <polygon points="385,185 415,185 400,160" class="ghost-fill"/>
+                        <line x1="385" y1="160" x2="415" y2="160" class="ghost-stroke"/>
+                        <line x1="400" y1="160" x2="400" y2="140" class="ghost-stroke"/>
+                        <line x1="410" y1="180" x2="425" y2="185" class="ghost-stroke"/>
+                        <text x="435" y="170" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13">T3</text>
+
+                        <!-- SCR T2 -->
+                        <path d="M 400 440 L 400 410" class="ghost-stroke"/>
+                        <polygon points="385,410 415,410 400,385" class="ghost-fill"/>
+                        <line x1="385" y1="385" x2="415" y2="385" class="ghost-stroke"/>
+                        <line x1="400" y1="385" x2="400" y2="360" class="ghost-stroke"/>
+                        <line x1="410" y1="405" x2="425" y2="410" class="ghost-stroke"/>
+                        <text x="435" y="395" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13">T2</text>
+
+                        <!-- DC Bus Bars -->
+                        <path d="M 260 140 L 400 140 L 520 140 L 610 140" class="ghost-stroke"/>
+                        <path d="M 260 440 L 400 440 L 520 440 L 850 440" class="ghost-stroke"/>
+
+                        <!-- Freewheeling Diode Dfw -->
+                        <path d="M 520 440 L 520 310" class="ghost-stroke"/>
+                        <polygon points="505,310 535,310 520,280" class="ghost-fill"/>
+                        <line x1="505" y1="280" x2="535" y2="280" class="ghost-stroke"/>
+                        <line x1="520" y1="280" x2="520" y2="140" class="ghost-stroke"/>
+                        <text x="520" y="340" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">D_fw</text>
+
+                        <!-- Armature Resistor Ra -->
+                        <path d="M 610 140 L 620 140 L 627 122 L 639 158 L 651 122 L 663 158 L 675 122 L 687 158 L 694 140 L 710 140" class="ghost-stroke"/>
+                        <text x="655" y="105" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">Ra</text>
+
+                        <!-- Armature Inductor La -->
+                        <path d="M 710 140 C 715 110, 735 110, 735 140 C 735 110, 760 110, 760 140 C 760 110, 785 110, 785 140 C 785 110, 810 110, 810 140 L 850 140 L 850 240" class="ghost-stroke"/>
+                        <text x="760" y="105" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">La</text>
+
+                        <!-- Motor Armature M -->
+                        <circle cx="850" cy="280" r="36" class="ghost-fill"/>
+                        <rect x="838" y="240" width="24" height="8" rx="2" class="ghost-fill"/>
+                        <rect x="838" y="312" width="24" height="8" rx="2" class="ghost-fill"/>
+                        <text x="850" y="287" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="bold" text-anchor="middle">M</text>
+                        <text x="850" y="355" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">DC MOTOR</text>
+
+                        <!-- Back-EMF Eb & Return Wire -->
+                        <text x="850" y="260" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold" text-anchor="middle">+</text>
+                        <text x="850" y="306" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold" text-anchor="middle">-</text>
+                        <text x="905" y="285" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">Eb</text>
+                        <path d="M 850 320 L 850 440" class="ghost-stroke"/>
+
+                        <!-- Voltage & Current Labels -->
+                        <text x="470" y="125" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">(+)</text>
+                        <text x="470" y="465" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">(-)</text>
+                        <text x="470" y="295" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">+ vo(t) -</text>
+                        <text x="560" y="125" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="12">ia(t) -></text>
+                    </g>
+
+
+                    <!-- ============================================== -->
+                    <!-- 2. ACTIVE SNAPPED VECTOR ELEMENTS (Colorful)   -->
+                    <!-- ============================================== -->
+
+                    <!-- Component 1: AC Voltage Source -->
+                    <g id="comp-ac-source" class="active-comp">
+                        <circle cx="130" cy="290" r="28" fill="#1e1805" stroke="#fbbf24" stroke-width="3" filter="url(#glow-gold)"/>
+                        <path d="M 116 290 Q 123 274 130 290 Q 137 306 144 290" fill="none" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                        <rect x="75" y="324" width="110" height="22" rx="5" fill="#131822" stroke="#fbbf24" stroke-width="1"/>
+                        <text x="130" y="339" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">vs = Vm·sin(ωt)</text>
+                    </g>
+
+                    <!-- Component 2: AC Connecting Wires -->
+                    <g id="comp-ac-wires" class="active-comp">
+                        <path d="M 130 262 L 130 220 L 260 220" fill="none" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round" filter="url(#glow-gold)"/>
+                        <path d="M 130 318 L 130 360 L 400 360" fill="none" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round" filter="url(#glow-gold)"/>
+                        <!-- AC terminal nodes -->
+                        <circle cx="260" cy="220" r="5" fill="#fbbf24"/>
+                        <circle cx="400" cy="360" r="5" fill="#fbbf24"/>
+                        <text x="275" y="215" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">A</text>
+                        <text x="415" y="355" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">B</text>
+                    </g>
+
+                    <!-- Component 3: SCR T1 -->
+                    <g id="comp-t1-scr" class="active-comp">
+                        <line x1="260" y1="220" x2="260" y2="185" stroke="#00f2fe" stroke-width="3"/>
+                        <polygon points="245,185 275,185 260,160" fill="#042738" stroke="#00f2fe" stroke-width="2.5" filter="url(#glow-cyan)"/>
+                        <line x1="245" y1="160" x2="275" y2="160" stroke="#00f2fe" stroke-width="3.5"/>
+                        <line x1="260" y1="160" x2="260" y2="140" stroke="#00f2fe" stroke-width="3"/>
+                        <!-- Gate terminal -->
+                        <path d="M 252 178 L 235 185 L 225 185" fill="none" stroke="#ffffff" stroke-width="2"/>
+                        <text x="215" y="172" fill="#00f2fe" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="800">T1</text>
+                        <text x="212" y="195" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">g1</text>
+                    </g>
+
+                    <!-- Component 4: SCR T4 -->
+                    <g id="comp-t4-scr" class="active-comp">
+                        <line x1="260" y1="440" x2="260" y2="310" stroke="#00f2fe" stroke-width="3"/>
+                        <polygon points="245,310 275,310 260,285" fill="#042738" stroke="#00f2fe" stroke-width="2.5" filter="url(#glow-cyan)"/>
+                        <line x1="245" y1="285" x2="275" y2="285" stroke="#00f2fe" stroke-width="3.5"/>
+                        <line x1="260" y1="285" x2="260" y2="220" stroke="#00f2fe" stroke-width="3"/>
+                        <!-- Gate terminal -->
+                        <path d="M 252 303 L 235 310 L 225 310" fill="none" stroke="#ffffff" stroke-width="2"/>
+                        <text x="215" y="295" fill="#00f2fe" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="800">T4</text>
+                        <text x="212" y="320" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">g4</text>
+                    </g>
+
+                    <!-- Component 5: SCR T3 -->
+                    <g id="comp-t3-scr" class="active-comp">
+                        <line x1="400" y1="360" x2="400" y2="185" stroke="#00f2fe" stroke-width="3"/>
+                        <polygon points="385,185 415,185 400,160" fill="#042738" stroke="#00f2fe" stroke-width="2.5" filter="url(#glow-cyan)"/>
+                        <line x1="385" y1="160" x2="415" y2="160" stroke="#00f2fe" stroke-width="3.5"/>
+                        <line x1="400" y1="160" x2="400" y2="140" stroke="#00f2fe" stroke-width="3"/>
+                        <!-- Gate terminal -->
+                        <path d="M 408 178 L 425 185 L 435 185" fill="none" stroke="#ffffff" stroke-width="2"/>
+                        <text x="442" y="172" fill="#00f2fe" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="800">T3</text>
+                        <text x="440" y="195" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">g3</text>
+                    </g>
+
+                    <!-- Component 6: SCR T2 -->
+                    <g id="comp-t2-scr" class="active-comp">
+                        <line x1="400" y1="440" x2="400" y2="410" stroke="#00f2fe" stroke-width="3"/>
+                        <polygon points="385,410 415,410 400,385" fill="#042738" stroke="#00f2fe" stroke-width="2.5" filter="url(#glow-cyan)"/>
+                        <line x1="385" y1="385" x2="415" y2="385" stroke="#00f2fe" stroke-width="3.5"/>
+                        <line x1="400" y1="385" x2="400" y2="360" stroke="#00f2fe" stroke-width="3"/>
+                        <!-- Gate terminal -->
+                        <path d="M 408 403 L 425 410 L 435 410" fill="none" stroke="#ffffff" stroke-width="2"/>
+                        <text x="442" y="395" fill="#00f2fe" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="800">T2</text>
+                        <text x="440" y="420" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">g2</text>
+                    </g>
+
+                    <!-- Component 7: Positive Top DC Bus -->
+                    <g id="comp-pos-rail" class="active-comp">
+                        <path d="M 260 140 L 400 140 L 520 140 L 610 140" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" filter="url(#glow-cyan)"/>
+                        <circle cx="260" cy="140" r="5" fill="#38bdf8"/>
+                        <circle cx="400" cy="140" r="5" fill="#38bdf8"/>
+                        <circle cx="520" cy="140" r="5" fill="#38bdf8"/>
+                        <rect x="455" y="112" width="36" height="20" rx="4" fill="#0369a1" stroke="#38bdf8"/>
+                        <text x="473" y="126" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" text-anchor="middle">(+)</text>
+                    </g>
+
+                    <!-- Component 8: Negative Bottom DC Bus -->
+                    <g id="comp-neg-rail" class="active-comp">
+                        <path d="M 260 440 L 400 440 L 520 440 L 850 440" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" filter="url(#glow-cyan)"/>
+                        <circle cx="260" cy="440" r="5" fill="#38bdf8"/>
+                        <circle cx="400" cy="440" r="5" fill="#38bdf8"/>
+                        <circle cx="520" cy="440" r="5" fill="#38bdf8"/>
+                        <circle cx="850" cy="440" r="5" fill="#38bdf8"/>
+                        <rect x="455" y="448" width="36" height="20" rx="4" fill="#0369a1" stroke="#38bdf8"/>
+                        <text x="473" y="462" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" text-anchor="middle">(-)</text>
+                    </g>
+
+                    <!-- Component 9: Freewheeling Diode Dfw -->
+                    <g id="comp-diode-dfw" class="active-comp">
+                        <line x1="520" y1="440" x2="520" y2="310" stroke="#10b981" stroke-width="3"/>
+                        <polygon points="505,310 535,310 520,280" fill="#063826" stroke="#10b981" stroke-width="2.5" filter="url(#glow-green)"/>
+                        <line x1="505" y1="280" x2="535" y2="280" stroke="#10b981" stroke-width="3.5"/>
+                        <line x1="520" y1="280" x2="520" y2="140" stroke="#10b981" stroke-width="3"/>
+                        <rect x="480" y="328" width="80" height="22" rx="5" fill="#062d1f" stroke="#10b981" stroke-width="1"/>
+                        <text x="520" y="343" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">D_fw</text>
+                    </g>
+
+                    <!-- Component 10: Armature Resistor Ra -->
+                    <g id="comp-resistor-ra" class="active-comp">
+                        <path d="M 610 140 L 620 140 L 627 122 L 639 158 L 651 122 L 663 158 L 675 122 L 687 158 L 694 140 L 710 140" fill="none" stroke="#ff7b00" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="drop-shadow(0 0 8px rgba(255,123,0,0.6))"/>
+                        <rect x="640" y="94" width="30" height="20" rx="4" fill="#3a1c04" stroke="#ff7b00"/>
+                        <text x="655" y="108" fill="#ff7b00" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" text-anchor="middle">Ra</text>
+                    </g>
+
+                    <!-- Component 11: Armature Inductor La -->
+                    <g id="comp-inductor-la" class="active-comp">
+                        <path d="M 710 140 C 715 110, 735 110, 735 140 C 735 110, 760 110, 760 140 C 760 110, 785 110, 785 140 C 785 110, 810 110, 810 140 L 850 140 L 850 240" fill="none" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round" filter="drop-shadow(0 0 8px rgba(192,132,252,0.6))"/>
+                        <circle cx="850" cy="140" r="4" fill="#c084fc"/>
+                        <rect x="745" y="94" width="30" height="20" rx="4" fill="#2d124d" stroke="#c084fc"/>
+                        <text x="760" y="108" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" text-anchor="middle">La</text>
+                    </g>
+
+                    <!-- Component 12: DC Motor Armature & Back-EMF -->
+                    <g id="comp-motor-armature" class="active-comp">
+                        <!-- Brushes -->
+                        <rect x="838" y="240" width="24" height="8" rx="2" fill="#334155" stroke="#f43f5e" stroke-width="2"/>
+                        <rect x="838" y="312" width="24" height="8" rx="2" fill="#334155" stroke="#f43f5e" stroke-width="2"/>
+                        <!-- Motor Circle -->
+                        <circle cx="850" cy="280" r="36" fill="#2d0b17" stroke="#f43f5e" stroke-width="3.5" filter="url(#glow-pink)"/>
+                        <text x="850" y="289" fill="#f43f5e" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="900" text-anchor="middle">M</text>
+                        <!-- Back EMF and Return Wire -->
+                        <path d="M 850 320 L 850 440" fill="none" stroke="#f43f5e" stroke-width="3.5"/>
+                        <text x="850" y="260" fill="#fb7185" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="900" text-anchor="middle">+</text>
+                        <text x="850" y="306" fill="#fb7185" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="900" text-anchor="middle">-</text>
+                        <rect x="895" y="270" width="30" height="20" rx="4" fill="#3b0716" stroke="#fb7185"/>
+                        <text x="910" y="284" fill="#fb7185" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">Eb</text>
+                        <rect x="805" y="348" width="90" height="22" rx="5" fill="#18050b" stroke="#f43f5e"/>
+                        <text x="850" y="363" fill="#f43f5e" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" text-anchor="middle">DC MOTOR</text>
+                        
+                        <!-- Current & Voltage Indicators -->
+                        <g filter="drop-shadow(0 0 6px rgba(56,189,248,0.5))">
+                            <line x1="560" y1="130" x2="590" y2="130" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow-wire)"/>
+                            <text x="575" y="120" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">ia(t)</text>
+                        </g>
+                        <g filter="drop-shadow(0 0 6px rgba(251,191,36,0.5))">
+                            <line x1="473" y1="145" x2="473" y2="435" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,3"/>
+                            <rect x="440" y="280" width="66" height="22" rx="4" fill="#241b04" stroke="#fbbf24"/>
+                            <text x="473" y="295" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">vo(t)</text>
+                        </g>
+                    </g>
+                </svg>
+
+                <!-- Freehand Ink Canvas (Captures Touch/Pen Strokes) -->
+                <canvas class="ink-canvas" id="ink-canvas"></canvas>
+
+                <!-- Particles Effect Canvas -->
+                <canvas class="particles-canvas" id="particles-canvas"></canvas>
+
+                <!-- Swipe Prompt Pill -->
+                <div class="swipe-hint-pill" id="swipe-hint-pill">
+                    <span>✨</span>
+                    <span id="swipe-hint-text">Swipe your finger over the ghost lines to snap components!</span>
+                </div>
+            </div>
+
+            <!-- Components Checklist Grid -->
+            <div class="checklist-grid" id="checklist-grid">
+                <!-- Injected via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Theory & Examiner Marking Strategy Card -->
+        <section class="theory-card">
+            <div class="theory-header">
+                <span class="theory-title">
+                    <span>📋</span>
+                    <span>Examiner Pattern Recognition: How to Score 7/7 Marks</span>
+                </span>
+                <span style="font-size: 0.78rem; color: #10b981; font-weight: 700;">KTU Master Protocol</span>
+            </div>
+
+            <div class="theory-grid">
+                <div class="theory-item">
+                    <h4>1. SCR Conduction Intervals</h4>
+                    <p>Thyristors $T_1, T_2$ fire at trigger angle $\alpha$ and conduct until $\pi + \alpha$. Thyristors $T_3, T_4$ fire at $\pi + \alpha$ and conduct until $2\pi + \alpha$. Continuous armature current keeps SCRs ON even when $v_s$ drops below zero!</p>
+                </div>
+
+                <div class="theory-item">
+                    <h4>2. Governing Equation (Framed 30%)</h4>
+                    <p>Average DC terminal voltage across armature:
+                    $$V_{dc} = \frac{1}{\pi} \int_{\alpha}^{\pi+\alpha} V_m \sin(\omega t)\, d(\omega t) = \frac{2 V_m}{\pi} \cos \alpha$$
+                    Motor Speed equation: $\omega_m = \frac{V_{dc} - I_a R_a}{K_t \Phi}$</p>
+                </div>
+
+                <div class="theory-item">
+                    <h4>3. The 3 Pitfalls Examiners Penalize</h4>
+                    <p>• <strong>Reversed $E_b$:</strong> Always place $+$ at the top brush to oppose incoming current.<br>
+                    • <strong>Missing $D_{fw}$:</strong> The freewheeling diode prevents negative voltage spikes across thyristors.<br>
+                    • <strong>Missing Gate Pulses:</strong> Clearly mark gate leads $g_1, g_2, g_3, g_4$.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Celebration Victory Modal Popup -->
+    <div class="victory-overlay" id="victory-overlay">
+        <div class="victory-card">
+            <div class="victory-badge">🎯</div>
+            <h2 class="victory-title">Muscle Memory Unlocked!</h2>
+            <p class="victory-desc">
+                Outstanding! You have accurately traced all 12 key engineering components of the <strong>Single-Phase Full Converter DC Drive</strong>. Your spatial recall and motor pathways are primed for exam day!
+            </p>
+
+            <div class="victory-stats-row">
+                <div class="victory-stat-box">
+                    <div class="stat-value" id="final-time">00:48</div>
+                    <div class="stat-label-mini">Time Taken</div>
+                </div>
+                <div class="victory-stat-box">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label-mini">Accuracy</div>
+                </div>
+                <div class="victory-stat-box">
+                    <div class="stat-value">7 / 7</div>
+                    <div class="stat-label-mini">Expected Marks</div>
+                </div>
+            </div>
+
+            <div class="victory-btn-row">
+                <button class="tool-btn amber" id="btn-practice-again">
+                    <span>🔄</span> <span>Practice Again</span>
+                </button>
+                <a href="drives.html" class="tool-btn primary" style="text-decoration: none;">
+                    <span>⚡</span> <span>Explore Electric Drives</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script>
+        (function() {
+            // =========================================================================
+            // 1. COMPONENT REGISTRY & SPATIAL GEOMETRY
+            // =========================================================================
+            const COMPONENTS = [
+                {
+                    id: "comp-ac-source",
+                    name: "AC Voltage Source (vs)",
+                    tag: "Source",
+                    color: "#fbbf24",
+                    center: { x: 130, y: 290 },
+                    radius: 45,
+                    points: [
+                        { x: 130, y: 262 }, { x: 130, y: 290 }, { x: 130, y: 318 },
+                        { x: 102, y: 290 }, { x: 158, y: 290 }
+                    ],
+                    order: 1
+                },
+                {
+                    id: "comp-ac-wires",
+                    name: "AC Connecting Lines (A, B)",
+                    tag: "Terminals",
+                    color: "#f59e0b",
+                    center: { x: 260, y: 290 },
+                    radius: 70,
+                    points: [
+                        { x: 130, y: 220 }, { x: 200, y: 220 }, { x: 260, y: 220 },
+                        { x: 130, y: 360 }, { x: 260, y: 360 }, { x: 400, y: 360 }
+                    ],
+                    order: 2
+                },
+                {
+                    id: "comp-t1-scr",
+                    name: "Thyristor T1 (Top-Left SCR)",
+                    tag: "Switch",
+                    color: "#00f2fe",
+                    center: { x: 260, y: 175 },
+                    radius: 50,
+                    points: [
+                        { x: 260, y: 220 }, { x: 260, y: 185 }, { x: 260, y: 160 }, { x: 260, y: 140 },
+                        { x: 245, y: 185 }, { x: 275, y: 185 }, { x: 235, y: 185 }
+                    ],
+                    order: 3
+                },
+                {
+                    id: "comp-t4-scr",
+                    name: "Thyristor T4 (Bottom-Left SCR)",
+                    tag: "Switch",
+                    color: "#00f2fe",
+                    center: { x: 260, y: 310 },
+                    radius: 50,
+                    points: [
+                        { x: 260, y: 440 }, { x: 260, y: 310 }, { x: 260, y: 285 }, { x: 260, y: 220 },
+                        { x: 245, y: 310 }, { x: 275, y: 310 }, { x: 235, y: 310 }
+                    ],
+                    order: 4
+                },
+                {
+                    id: "comp-t3-scr",
+                    name: "Thyristor T3 (Top-Right SCR)",
+                    tag: "Switch",
+                    color: "#00f2fe",
+                    center: { x: 400, y: 175 },
+                    radius: 50,
+                    points: [
+                        { x: 400, y: 360 }, { x: 400, y: 185 }, { x: 400, y: 160 }, { x: 400, y: 140 },
+                        { x: 385, y: 185 }, { x: 415, y: 185 }, { x: 425, y: 185 }
+                    ],
+                    order: 5
+                },
+                {
+                    id: "comp-t2-scr",
+                    name: "Thyristor T2 (Bottom-Right SCR)",
+                    tag: "Switch",
+                    color: "#00f2fe",
+                    center: { x: 400, y: 400 },
+                    radius: 50,
+                    points: [
+                        { x: 400, y: 440 }, { x: 400, y: 410 }, { x: 400, y: 385 }, { x: 400, y: 360 },
+                        { x: 385, y: 410 }, { x: 415, y: 410 }, { x: 425, y: 410 }
+                    ],
+                    order: 6
+                },
+                {
+                    id: "comp-pos-rail",
+                    name: "Positive (+) DC Bus Bar",
+                    tag: "Bus Bar",
+                    color: "#38bdf8",
+                    center: { x: 435, y: 140 },
+                    radius: 120,
+                    points: [
+                        { x: 260, y: 140 }, { x: 330, y: 140 }, { x: 400, y: 140 },
+                        { x: 460, y: 140 }, { x: 520, y: 140 }, { x: 610, y: 140 }
+                    ],
+                    order: 7
+                },
+                {
+                    id: "comp-neg-rail",
+                    name: "Negative (-) DC Bus Bar",
+                    tag: "Bus Bar",
+                    color: "#38bdf8",
+                    center: { x: 550, y: 440 },
+                    radius: 180,
+                    points: [
+                        { x: 260, y: 440 }, { x: 400, y: 440 }, { x: 520, y: 440 },
+                        { x: 680, y: 440 }, { x: 770, y: 440 }, { x: 850, y: 440 }
+                    ],
+                    order: 8
+                },
+                {
+                    id: "comp-diode-dfw",
+                    name: "Freewheeling Diode (Dfw)",
+                    tag: "Protection",
+                    color: "#10b981",
+                    center: { x: 520, y: 290 },
+                    radius: 70,
+                    points: [
+                        { x: 520, y: 440 }, { x: 520, y: 310 }, { x: 520, y: 280 }, { x: 520, y: 140 },
+                        { x: 505, y: 310 }, { x: 535, y: 310 }, { x: 505, y: 280 }, { x: 535, y: 280 }
+                    ],
+                    order: 9
+                },
+                {
+                    id: "comp-resistor-ra",
+                    name: "Armature Resistance (Ra)",
+                    tag: "Load",
+                    color: "#ff7b00",
+                    center: { x: 655, y: 140 },
+                    radius: 50,
+                    points: [
+                        { x: 610, y: 140 }, { x: 627, y: 122 }, { x: 639, y: 158 },
+                        { x: 651, y: 122 }, { x: 663, y: 158 }, { x: 675, y: 122 },
+                        { x: 687, y: 158 }, { x: 710, y: 140 }
+                    ],
+                    order: 10
+                },
+                {
+                    id: "comp-inductor-la",
+                    name: "Armature Inductance (La)",
+                    tag: "Load",
+                    color: "#c084fc",
+                    center: { x: 760, y: 140 },
+                    radius: 60,
+                    points: [
+                        { x: 710, y: 140 }, { x: 735, y: 120 }, { x: 760, y: 120 },
+                        { x: 785, y: 120 }, { x: 810, y: 140 }, { x: 850, y: 140 }, { x: 850, y: 200 }
+                    ],
+                    order: 11
+                },
+                {
+                    id: "comp-motor-armature",
+                    name: "DC Motor Armature (M & Eb)",
+                    tag: "Machine",
+                    color: "#f43f5e",
+                    center: { x: 850, y: 280 },
+                    radius: 75,
+                    points: [
+                        { x: 850, y: 240 }, { x: 850, y: 280 }, { x: 850, y: 320 },
+                        { x: 814, y: 280 }, { x: 886, y: 280 }, { x: 850, y: 380 }, { x: 850, y: 440 }
+                    ],
+                    order: 12
+                }
+            ];
+
+            // State
+            let snappedComponents = new Set();
+            let historyStack = [];
+            let isDrawing = false;
+            let lastPoint = null;
+            let startTime = null;
+            let timerInterval = null;
+            let soundEnabled = true;
+
+            // DOM Elements
+            const stageWrapper = document.getElementById('stage-wrapper');
+            const inkCanvas = document.getElementById('ink-canvas');
+            const particlesCanvas = document.getElementById('particles-canvas');
+            const inkCtx = inkCanvas.getContext('2d');
+            const partCtx = particlesCanvas.getContext('2d');
+            const ghostGroup = document.getElementById('ghost-blueprint-group');
+            const ghostSlider = document.getElementById('ghost-opacity-slider');
+            const ghostValText = document.getElementById('ghost-opacity-val');
+            const progressBarCircle = document.getElementById('progress-bar-circle');
+            const progressPctText = document.getElementById('progress-pct-text');
+            const progressCountText = document.getElementById('progress-count-text');
+            const swipeHintText = document.getElementById('swipe-hint-text');
+            const checklistGrid = document.getElementById('checklist-grid');
+            const victoryOverlay = document.getElementById('victory-overlay');
+            const finalTimeText = document.getElementById('final-time');
+
+            // Web Audio Synthesis (Self-contained sound effects)
+            let audioCtx = null;
+            function playChime(freq = 587.33, type = 'sine', duration = 0.25) {
+                if (!soundEnabled) return;
+                try {
+                    if (!audioCtx) {
+                        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    }
+                    if (audioCtx.state === 'suspended') {
+                        audioCtx.resume();
+                    }
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = type;
+                    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + duration);
+                } catch(e) {}
+            }
+
+            function playVictoryChime() {
+                if (!soundEnabled) return;
+                const notes = [523.25, 659.25, 783.99, 1046.50]; // C E G C
+                notes.forEach((n, i) => {
+                    setTimeout(() => playChime(n, 'triangle', 0.4), i * 120);
+                });
+            }
+
+            // =========================================================================
+            // 2. RESIZING & COORDINATE NORMALIZATION
+            // =========================================================================
+            const SVG_VIEW_WIDTH = 1000;
+            const SVG_VIEW_HEIGHT = 580;
+
+            function resizeCanvases() {
+                const rect = stageWrapper.getBoundingClientRect();
+                const dpr = window.devicePixelRatio || 1;
+
+                inkCanvas.width = rect.width * dpr;
+                inkCanvas.height = rect.height * dpr;
+                inkCanvas.style.width = rect.width + 'px';
+                inkCanvas.style.height = rect.height + 'px';
+                inkCtx.scale(dpr, dpr);
+
+                particlesCanvas.width = rect.width * dpr;
+                particlesCanvas.height = rect.height * dpr;
+                particlesCanvas.style.width = rect.width + 'px';
+                particlesCanvas.style.height = rect.height + 'px';
+                partCtx.scale(dpr, dpr);
+            }
+
+            window.addEventListener('resize', resizeCanvases);
+            window.addEventListener('orientationchange', resizeCanvases);
+            setTimeout(resizeCanvases, 50);
+
+            // Convert pointer client coordinate into SVG (1000x580) coordinate space
+            function screenToSvgCoords(clientX, clientY) {
+                const rect = stageWrapper.getBoundingClientRect();
+                const scaleX = SVG_VIEW_WIDTH / rect.width;
+                const scaleY = SVG_VIEW_HEIGHT / rect.height;
+                return {
+                    x: (clientX - rect.left) * scaleX,
+                    y: (clientY - rect.top) * scaleY
+                };
+            }
+
+            // Convert SVG coordinate back to client coordinate on canvas
+            function svgToScreenCoords(svgX, svgY) {
+                const rect = stageWrapper.getBoundingClientRect();
+                return {
+                    x: (svgX / SVG_VIEW_WIDTH) * rect.width,
+                    y: (svgY / SVG_VIEW_HEIGHT) * rect.height
+                };
+            }
+
+            // =========================================================================
+            // 3. CHECKLIST INITIALIZATION
+            // =========================================================================
+            function initChecklist() {
+                checklistGrid.innerHTML = '';
+                COMPONENTS.forEach(comp => {
+                    const el = document.createElement('div');
+                    el.className = 'check-item';
+                    el.id = `chk-${comp.id}`;
+                    el.innerHTML = `
+                        <span class="color-dot" style="background:${comp.color}; box-shadow: 0 0 6px ${comp.color};"></span>
+                        <span class="check-title">${comp.name}</span>
+                        <span class="check-icon" style="margin-left:auto;">○</span>
+                    `;
+                    checklistGrid.appendChild(el);
+                });
+            }
+            initChecklist();
+
+            // =========================================================================
+            // 4. PARTICLES ENGINE
+            // =========================================================================
+            let particles = [];
+            function emitSparks(screenX, screenY, color = '#38bdf8') {
+                const count = 22;
+                for (let i = 0; i < count; i++) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = 1.5 + Math.random() * 4.5;
+                    particles.push({
+                        x: screenX,
+                        y: screenY,
+                        vx: Math.cos(angle) * speed,
+                        vy: Math.sin(angle) * speed - 0.5,
+                        life: 1.0,
+                        decay: 0.02 + Math.random() * 0.02,
+                        size: 2.5 + Math.random() * 3.5,
+                        color: color
+                    });
+                }
+            }
+
+            function updateParticles() {
+                const rect = stageWrapper.getBoundingClientRect();
+                partCtx.clearRect(0, 0, rect.width, rect.height);
+
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += 0.08; // gravity
+                    p.life -= p.decay;
+
+                    if (p.life <= 0) {
+                        particles.splice(i, 1);
+                        continue;
+                    }
+
+                    partCtx.save();
+                    partCtx.globalAlpha = p.life;
+                    partCtx.fillStyle = p.color;
+                    partCtx.shadowColor = p.color;
+                    partCtx.shadowBlur = 8;
+                    partCtx.beginPath();
+                    partCtx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+                    partCtx.fill();
+                    partCtx.restore();
+                }
+                requestAnimationFrame(updateParticles);
+            }
+            requestAnimationFrame(updateParticles);
+
+            // =========================================================================
+            // 5. MAGNETIC AUTO-SNAP DETECTION
+            // =========================================================================
+            const SNAP_DISTANCE_THRESHOLD = 42; // generous touch threshold for mobile
+
+            function checkProximityAndSnap(svgPoint, screenPoint) {
+                if (snappedComponents.size === 0 && !startTime) {
+                    startTime = Date.now();
+                    timerInterval = setInterval(updateTimerDisplay, 1000);
+                }
+
+                for (const comp of COMPONENTS) {
+                    if (snappedComponents.has(comp.id)) continue;
+
+                    // 1. Check distance to center bounding circle
+                    const dxCenter = svgPoint.x - comp.center.x;
+                    const dyCenter = svgPoint.y - comp.center.y;
+                    const distCenter = Math.sqrt(dxCenter * dxCenter + dyCenter * dyCenter);
+
+                    let isClose = distCenter < comp.radius;
+
+                    // 2. If not in broad radius, test individual waypoints
+                    if (!isClose && comp.points) {
+                        for (const pt of comp.points) {
+                            const d = Math.hypot(svgPoint.x - pt.x, svgPoint.y - pt.y);
+                            if (d <= SNAP_DISTANCE_THRESHOLD) {
+                                isClose = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (isClose) {
+                        snapComponent(comp, screenPoint);
+                        break; // snap one per touch move for smooth rhythm
+                    }
+                }
+            }
+
+            function snapComponent(comp, screenPoint) {
+                if (snappedComponents.has(comp.id)) return;
+
+                snappedComponents.add(comp.id);
+                historyStack.push(comp.id);
+
+                // Reveal SVG Vector element
+                const el = document.getElementById(comp.id);
+                if (el) {
+                    el.classList.add('snapped');
+                }
+
+                // Update checklist item
+                const chk = document.getElementById(`chk-${comp.id}`);
+                if (chk) {
+                    chk.classList.add('done');
+                    chk.querySelector('.check-icon').textContent = '●';
+                }
+
+                // Sparks & Sound
+                const pt = screenPoint || svgToScreenCoords(comp.center.x, comp.center.y);
+                emitSparks(pt.x, pt.y, comp.color);
+                playChime(440 + snappedComponents.size * 55, 'triangle', 0.28);
+                if (navigator.vibrate) navigator.vibrate(25);
+
+                // Update Progress
+                updateProgressUI();
+
+                // Check Completion
+                if (snappedComponents.size === COMPONENTS.length) {
+                    handleVictory();
+                } else {
+                    swipeHintText.textContent = `Snapped: ${comp.name}! Keep tracing!`;
+                }
+            }
+
+            function updateProgressUI() {
+                const total = COMPONENTS.length;
+                const count = snappedComponents.size;
+                const pct = Math.round((count / total) * 100);
+
+                progressCountText.textContent = `${count} / ${total}`;
+                progressPctText.textContent = `${pct}%`;
+
+                // SVG Circle circumference is approx 2 * PI * 22 = 138.2
+                const offset = 138 - (138 * (count / total));
+                progressBarCircle.style.strokeDashoffset = offset;
+            }
+
+            function updateTimerDisplay() {
+                if (!startTime) return;
+                const sec = Math.floor((Date.now() - startTime) / 1000);
+                const m = String(Math.floor(sec / 60)).padStart(2, '0');
+                const s = String(sec % 60).padStart(2, '0');
+                finalTimeText.textContent = `${m}:${s}`;
+            }
+
+            function handleVictory() {
+                clearInterval(timerInterval);
+                playVictoryChime();
+
+                // Full celebration fireworks
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const rect = stageWrapper.getBoundingClientRect();
+                        const rx = rect.width * (0.2 + Math.random() * 0.6);
+                        const ry = rect.height * (0.2 + Math.random() * 0.6);
+                        emitSparks(rx, ry, ['#fbbf24', '#00f2fe', '#10b981', '#f43f5e', '#c084fc'][i % 5]);
+                    }, i * 180);
+                }
+
+                setTimeout(() => {
+                    victoryOverlay.classList.add('visible');
+                }, 800);
+            }
+
+            // =========================================================================
+            // 6. TOUCH & POINTER DRAWING ENGINE
+            // =========================================================================
+            function getPointerPos(e) {
+                const rect = stageWrapper.getBoundingClientRect();
+                const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+                const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
+                return {
+                    clientX,
+                    clientY,
+                    screenX: clientX - rect.left,
+                    screenY: clientY - rect.top,
+                    svg: screenToSvgCoords(clientX, clientY)
+                };
+            }
+
+            function handlePointerDown(e) {
+                isDrawing = true;
+                const pos = getPointerPos(e);
+                lastPoint = { x: pos.screenX, y: pos.screenY };
+                checkProximityAndSnap(pos.svg, { x: pos.screenX, y: pos.screenY });
+            }
+
+            function handlePointerMove(e) {
+                if (!isDrawing) return;
+                e.preventDefault(); // Prevents touch drag page scroll
+
+                const pos = getPointerPos(e);
+
+                // Draw glowing freehand ink line
+                inkCtx.save();
+                inkCtx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
+                inkCtx.lineWidth = 4;
+                inkCtx.lineCap = 'round';
+                inkCtx.lineJoin = 'round';
+                inkCtx.shadowColor = '#00f2fe';
+                inkCtx.shadowBlur = 6;
+                inkCtx.beginPath();
+                inkCtx.moveTo(lastPoint.x, lastPoint.y);
+                inkCtx.lineTo(pos.screenX, pos.screenY);
+                inkCtx.stroke();
+                inkCtx.restore();
+
+                lastPoint = { x: pos.screenX, y: pos.screenY };
+
+                // Magnetic Proximity Snap Check
+                checkProximityAndSnap(pos.svg, { x: pos.screenX, y: pos.screenY });
+            }
+
+            function handlePointerUp() {
+                isDrawing = false;
+                lastPoint = null;
+
+                // Gradually fade user ink so the crisp vector diagram shines
+                setTimeout(() => {
+                    const rect = stageWrapper.getBoundingClientRect();
+                    inkCtx.clearRect(0, 0, rect.width, rect.height);
+                }, 400);
+            }
+
+            // Pointer Events (Unified touch & mouse with passive: false)
+            stageWrapper.addEventListener('pointerdown', handlePointerDown);
+            window.addEventListener('pointermove', handlePointerMove, { passive: false });
+            window.addEventListener('pointerup', handlePointerUp);
+            window.addEventListener('pointercancel', handlePointerUp);
+
+            // Explicit touch events to guarantee mobile responsiveness
+            stageWrapper.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                handlePointerDown(e);
+            }, { passive: false });
+
+            stageWrapper.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+                handlePointerMove(e);
+            }, { passive: false });
+
+            stageWrapper.addEventListener('touchend', function(e) {
+                handlePointerUp();
+            });
+
+            // =========================================================================
+            // 7. CONTROLS: DEMO, HINT, UNDO, RESET, SLIDERS
+            // =========================================================================
+
+            // Auto-Draw Guided Demo
+            let isAutoDrawing = false;
+            document.getElementById('btn-auto-draw').addEventListener('click', function() {
+                if (isAutoDrawing) return;
+                isAutoDrawing = true;
+                this.classList.add('success');
+                this.innerHTML = '<span>⏸️</span> <span>Playing...</span>';
+
+                // Reset first if already filled
+                if (snappedComponents.size === COMPONENTS.length) {
+                    resetCanvas();
+                }
+
+                let idx = 0;
+                function drawNextStep() {
+                    if (idx < COMPONENTS.length) {
+                        const comp = COMPONENTS[idx];
+                        if (!snappedComponents.has(comp.id)) {
+                            const pt = svgToScreenCoords(comp.center.x, comp.center.y);
+                            snapComponent(comp, pt);
+                        }
+                        idx++;
+                        setTimeout(drawNextStep, 500);
+                    } else {
+                        isAutoDrawing = false;
+                        document.getElementById('btn-auto-draw').classList.remove('success');
+                        document.getElementById('btn-auto-draw').innerHTML = '<span>▶️</span> <span>Watch Demo</span>';
+                    }
+                }
+                drawNextStep();
+            });
+
+            // Next Hint Button
+            document.getElementById('btn-hint').addEventListener('click', function() {
+                const nextComp = COMPONENTS.find(c => !snappedComponents.has(c.id));
+                if (!nextComp) return;
+
+                const pt = svgToScreenCoords(nextComp.center.x, nextComp.center.y);
+                emitSparks(pt.x, pt.y, nextComp.color);
+                playChime(659.25, 'sine', 0.2);
+                swipeHintText.textContent = `👉 Hint: Swipe near ${nextComp.name}!`;
+
+                // Pulse the ghost element temporarily
+                const ghostEl = document.getElementById(nextComp.id);
+                if (ghostEl) {
+                    ghostEl.classList.add('spotlight-pulse');
+                    setTimeout(() => ghostEl.classList.remove('spotlight-pulse'), 1800);
+                }
+            });
+
+            // Undo Button
+            document.getElementById('btn-undo').addEventListener('click', function() {
+                if (historyStack.length === 0) return;
+                const lastId = historyStack.pop();
+                snappedComponents.delete(lastId);
+
+                const el = document.getElementById(lastId);
+                if (el) el.classList.remove('snapped');
+
+                const chk = document.getElementById(`chk-${lastId}`);
+                if (chk) {
+                    chk.classList.remove('done');
+                    chk.querySelector('.check-icon').textContent = '○';
+                }
+
+                updateProgressUI();
+                swipeHintText.textContent = 'Undone. Swipe again to snap!';
+            });
+
+            // Reset Button
+            function resetCanvas() {
+                snappedComponents.clear();
+                historyStack = [];
+                startTime = null;
+                clearInterval(timerInterval);
+
+                COMPONENTS.forEach(c => {
+                    const el = document.getElementById(c.id);
+                    if (el) el.classList.remove('snapped');
+                    const chk = document.getElementById(`chk-${c.id}`);
+                    if (chk) {
+                        chk.classList.remove('done');
+                        chk.querySelector('.check-icon').textContent = '○';
+                    }
+                });
+
+                const rect = stageWrapper.getBoundingClientRect();
+                inkCtx.clearRect(0, 0, rect.width, rect.height);
+                partCtx.clearRect(0, 0, rect.width, rect.height);
+                victoryOverlay.classList.remove('visible');
+
+                updateProgressUI();
+                swipeHintText.textContent = 'Canvas reset! Swipe near any line to begin.';
+            }
+
+            document.getElementById('btn-reset').addEventListener('click', resetCanvas);
+            document.getElementById('btn-practice-again').addEventListener('click', function() {
+                resetCanvas();
+            });
+
+            // Ghost Opacity Slider
+            ghostSlider.addEventListener('input', function() {
+                const val = this.value;
+                ghostValText.textContent = `${val}%`;
+                ghostGroup.setAttribute('opacity', (val / 100).toFixed(2));
+            });
+
+            // Sound Toggle
+            document.getElementById('btn-sound-toggle').addEventListener('click', function() {
+                soundEnabled = !soundEnabled;
+                document.getElementById('sound-icon').textContent = soundEnabled ? '🔊' : '🔇';
+            });
+
+        })();
+    </script>
+</body>
+</html>

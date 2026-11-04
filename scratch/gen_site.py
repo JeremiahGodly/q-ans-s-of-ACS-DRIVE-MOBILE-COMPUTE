@@ -33,15 +33,53 @@ from simulators_component import (
     get_simulators_js
 )
 
-def render_single_diagram(img_path, img_caption, badge=None):
+def render_single_diagram(img_path, img_caption, badge=None, qid=None, fig_idx=1):
     if not img_path:
         return ""
     badge_html = f'<div class="diagram-badge-pill">{html.escape(badge)}</div>' if badge else ""
     exists = os.path.exists(img_path)
+
+    draw_link_html = ""
+    if qid and exists:
+        if qid.startswith("drive-"):
+            page = "draw_drives.html"
+            color = "#f59e0b"
+            bg_col = "rgba(245, 158, 11, 0.12)"
+            border_col = "rgba(245, 158, 11, 0.4)"
+        elif qid.startswith("acs-"):
+            page = "draw_acs.html"
+            color = "#38bdf8"
+            bg_col = "rgba(56, 189, 248, 0.12)"
+            border_col = "rgba(56, 189, 248, 0.4)"
+        elif qid.startswith("mobile-"):
+            page = "draw_mobile.html"
+            color = "#10b981"
+            bg_col = "rgba(16, 185, 129, 0.12)"
+            border_col = "rgba(16, 185, 129, 0.4)"
+        else:
+            page = "draw.html"
+            color = "#f59e0b"
+            bg_col = "rgba(245, 158, 11, 0.12)"
+            border_col = "rgba(245, 158, 11, 0.4)"
+
+        hash_target = f"{qid}-fig{fig_idx}" if fig_idx > 1 else qid
+        draw_link_html = f'''<a href="{page}#{hash_target}" class="diagram-draw-link" style="--draw-color:{color}; --draw-bg:{bg_col}; --draw-border:{border_col};" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>'''
+
+    topbar_html = ""
+    if badge_html or draw_link_html:
+        topbar_html = f'''<div class="diagram-card-topbar">
+            {badge_html if badge_html else "<span></span>"}
+            {draw_link_html}
+        </div>'''
+
     if exists:
         return f"""
         <div class="diagram-card has-real-image">
-            {badge_html}
+            {topbar_html}
             <div class="diagram-wrapper">
                 <img src="{img_path}" alt="{html.escape(img_caption)}" class="diagram-img" loading="lazy">
             </div>
@@ -69,18 +107,18 @@ def render_diagrams_box(q):
         return ""
 
     if not extra_images:
-        return render_single_diagram(primary_path, primary_caption)
+        return render_single_diagram(primary_path, primary_caption, qid=qid, fig_idx=1)
 
     # Multi-diagram layout with badge pills
     cards_html = []
     # Primary diagram badge
     primary_badge = "Figure A • Primary Architecture"
-    cards_html.append(render_single_diagram(primary_path, primary_caption, badge=primary_badge))
+    cards_html.append(render_single_diagram(primary_path, primary_caption, badge=primary_badge, qid=qid, fig_idx=1))
 
     for idx, extra in enumerate(extra_images, start=2):
         letter = chr(64 + idx) # B, C, D
         badge = extra.get("badge", f"Figure {letter} • Technical Detail")
-        cards_html.append(render_single_diagram(extra.get("img_path"), extra.get("img_caption", ""), badge=badge))
+        cards_html.append(render_single_diagram(extra.get("img_path"), extra.get("img_caption", ""), badge=badge, qid=qid, fig_idx=idx))
 
     return f"""
     <div class="multi-diagrams-container">
@@ -2107,6 +2145,52 @@ main.content-container {
     background: var(--bg-card);
     color: #38bdf8;
     border: 1px solid var(--border-subtle);
+}
+
+.diagram-card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.35rem;
+}
+
+.diagram-draw-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--draw-color, #38bdf8);
+    background: var(--draw-bg, rgba(56, 189, 248, 0.12));
+    border: 1px solid var(--draw-border, rgba(56, 189, 248, 0.4));
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.diagram-draw-link:hover {
+    background: var(--draw-color, #38bdf8);
+    color: #070a12;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.diagram-draw-link .draw-link-icon {
+    font-size: 0.85rem;
+}
+
+.diagram-draw-link .draw-link-arrow {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.diagram-draw-link:hover .draw-link-arrow {
+    transform: translateX(2px);
 }
 @media (max-width: 800px) {
     .multi-diagrams-grid {

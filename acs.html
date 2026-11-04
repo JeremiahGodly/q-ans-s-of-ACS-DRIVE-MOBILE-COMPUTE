@@ -1645,6 +1645,52 @@ main.content-container {
     color: #38bdf8;
     border: 1px solid var(--border-subtle);
 }
+
+.diagram-card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.35rem;
+}
+
+.diagram-draw-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--draw-color, #38bdf8);
+    background: var(--draw-bg, rgba(56, 189, 248, 0.12));
+    border: 1px solid var(--draw-border, rgba(56, 189, 248, 0.4));
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.diagram-draw-link:hover {
+    background: var(--draw-color, #38bdf8);
+    color: #070a12;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.diagram-draw-link .draw-link-icon {
+    font-size: 0.85rem;
+}
+
+.diagram-draw-link .draw-link-arrow {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.diagram-draw-link:hover .draw-link-arrow {
+    transform: translateX(2px);
+}
 @media (max-width: 800px) {
     .multi-diagrams-grid {
         grid-template-columns: 1fr;
@@ -3820,7 +3866,14 @@ article.question-card[data-card-lang="ml"] span.lang-ml {
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q1" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/state_space_concept.png" alt="Figure 1.1: Multi-dimensional State Space Representation with Trajectory Vector" class="diagram-img" loading="lazy">
             </div>
@@ -4138,7 +4191,14 @@ $$y(t) = \begin{bmatrix} 1 & 0 & \dots & 0 \end{bmatrix} \mathbf{x}(t)$$
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/phase_variables_flow.png" alt="Figure 1.2: Successive Integrator Chain Generating Phase Variables" class="diagram-img" loading="lazy">
             </div>
@@ -4428,7 +4488,14 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) \quad \text{--- [Output Equati
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q3" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/lti_state_block_diagram.png" alt="Figure 1.3: Standard Integrator-Based Block Diagram of Continuous LTI System" class="diagram-img" loading="lazy">
             </div>
@@ -4737,7 +4804,14 @@ $$\bar{A} = P^{-1}AP, \quad \bar{B} = P^{-1}B, \quad \bar{C} = CP, \quad \bar{D}
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q4" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/similarity_transformation.png" alt="Figure 1.4: Linear Coordinate Transformation between State Bases" class="diagram-img" loading="lazy">
             </div>
@@ -5082,7 +5156,14 @@ $$G(s) = \frac{C \operatorname{adj}(sI - A) B}{\det(sI - A)} + D$$
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q4b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/transfer_function_derivation.png" alt="Figure 1.4B: Resolvent Matrix Mapping State Equations to Input-Output Transfer Function" class="diagram-img" loading="lazy">
             </div>
@@ -5444,7 +5525,14 @@ $$A = \begin{bmatrix} -R/L & -1/L \\ 1/C & 0 \end{bmatrix}, \quad B = \begin{bma
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q5" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/series_rlc_circuit.png" alt="Figure 1.5: Schematic and State Space Flow of Series RLC Circuit" class="diagram-img" loading="lazy">
             </div>
@@ -5452,7 +5540,14 @@ $$A = \begin{bmatrix} -R/L & -1/L \\ 1/C & 0 \end{bmatrix}, \quad B = \begin{bma
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • State Simulation Diagram</div>
+            <a href="draw_acs.html#acs-q5-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/series_rlc_state_diagram.png" alt="Figure 1.5B: Analog Simulation State Block Diagram of Series RLC Circuit with Integrators for x1=iL and x2=vC" class="diagram-img" loading="lazy">
             </div>
@@ -5817,7 +5912,14 @@ where $J$ is rotor moment of inertia ($\text{kg}\cdot\text{m}^2$), $B$ is viscou
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q6" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/armature_dc_motor.png" alt="Figure 1.6: Electromechanical Schematic and State Flow Diagram of Armature-Controlled DC Motor" class="diagram-img" loading="lazy">
             </div>
@@ -5825,7 +5927,14 @@ where $J$ is rotor moment of inertia ($\text{kg}\cdot\text{m}^2$), $B$ is viscou
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Transfer Function Block Diagram</div>
+            <a href="draw_acs.html#acs-q6-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/armature_dc_motor_block_diagram.png" alt="Figure 1.6B: Comprehensive Electromechanical Transfer Function Block Diagram with Armature Admittance, Torque Constant Kt, and Back-EMF Feedback Kb" class="diagram-img" loading="lazy">
             </div>
@@ -6153,7 +6262,14 @@ $$G(s) = \frac{Y(s)}{U(s)} = \frac{b_2 s^2 + b_1 s + b_0}{s^3 + a_2 s^2 + a_1 s 
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q7" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/diagonal_canonical_form.png" alt="Figure 1.7: Analog Simulation Block Diagram for Diagonal Canonical Realization" class="diagram-img" loading="lazy">
             </div>
@@ -6161,7 +6277,14 @@ $$G(s) = \frac{Y(s)}{U(s)} = \frac{b_2 s^2 + b_1 s + b_0}{s^3 + a_2 s^2 + a_1 s 
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Controllable Canonical Realization</div>
+            <a href="draw_acs.html#acs-q7-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/controllable_canonical_form.png" alt="Figure 1.7B: Controllable Canonical Form (CCF) Phase Variable Analog Simulation Diagram with Successive Integrator Chains" class="diagram-img" loading="lazy">
             </div>
@@ -6491,7 +6614,14 @@ $$y(t) = \begin{bmatrix} 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bma
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q7b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/field_controlled_dc_motor.png" alt="Figure 1.7B: Electromechanical Schematic and State Flow of Field-Controlled DC Motor" class="diagram-img" loading="lazy">
             </div>
@@ -6803,7 +6933,14 @@ where $\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\}$ is the <strong>Stat
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q8" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/autonomous_response_flow.png" alt="Figure 2.1: Resolvent Matrix and Laplace Transform Inversion Flow" class="diagram-img" loading="lazy">
             </div>
@@ -7101,7 +7238,14 @@ where $\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\}$ is the <strong>Stat
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q9" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/stm_properties.png" alt="Figure 2.2: Composition and Inversion Geometry of State Transition Matrix" class="diagram-img" loading="lazy">
             </div>
@@ -7395,7 +7539,14 @@ $$G(z) = \frac{\mathbf{Y}(z)}{\mathbf{U}(z)} = C(zI - G)^{-1} H + D$$</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q9b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/discrete_state_model.png" alt="Figure 2.2B: Discrete Delay Elements and State Transition in Sampled Data Systems" class="diagram-img" loading="lazy">
             </div>
@@ -7708,7 +7859,14 @@ where $\alpha_0(t), \alpha_1(t), \dots, \alpha_{n-1}(t)$ are scalar functions of
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q10" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/cayley_hamilton_method.png" alt="Figure 2.3: Mapping Characteristic Polynomial to Matrix Exponential via Cayley-Hamilton" class="diagram-img" loading="lazy">
             </div>
@@ -8033,7 +8191,14 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) = C e^{At}\mathbf{x}(0) + C \i
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q11" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/convolution_integral.png" alt="Figure 2.4: Superposition of Zero-Input and Zero-State Convolution Integral Responses" class="diagram-img" loading="lazy">
             </div>
@@ -8342,7 +8507,14 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) = C e^{At}\mathbf{x}(0) + C \i
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q12" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/kalman_duality.png" alt="Figure 3.1: Dual Mapping between Controllability and Observability Matrices" class="diagram-img" loading="lazy">
             </div>
@@ -8627,7 +8799,14 @@ Gilbert's method tests controllability and observability by converting the syste
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q13" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/gilbert_method.png" alt="Figure 3.2: Modal Decoupling and Gilbert&#x27;s Diagonal Row/Column Inspection" class="diagram-img" loading="lazy">
             </div>
@@ -8918,7 +9097,14 @@ Gilbert's method tests controllability and observability by converting the syste
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q13b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/pbh_rank_test.png" alt="Figure 3.2B: Modal Partitioning in Popov-Belevitch-Hautus (PBH) Algebraic Rank Test" class="diagram-img" loading="lazy">
             </div>
@@ -9242,7 +9428,14 @@ $$\operatorname{rank}(Q_c) = \operatorname{rank}\begin{bmatrix} B & AB & A^2 B &
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q14" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/state_feedback_regulator.png" alt="Figure 3.3: Closed-Loop State Feedback Regulator Architecture with Gain Vector K" class="diagram-img" loading="lazy">
             </div>
@@ -9250,7 +9443,14 @@ $$\operatorname{rank}(Q_c) = \operatorname{rank}\begin{bmatrix} B & AB & A^2 B &
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • S-Plane Pole Migration</div>
+            <a href="draw_acs.html#acs-q14-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/pole_placement_s_plane.png" alt="Figure 3.3B: Complex S-Plane Root Migration Diagram showing Open-Loop vs Desired Closed-Loop Pole Relocations within Damping Cone (ζ, ωn)" class="diagram-img" loading="lazy">
             </div>
@@ -9595,7 +9795,14 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q15" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/state_observer_block_diagram.png" alt="Figure 3.4: Complete Architecture of Plant Coupled with Full-Order Luenberger State Observer" class="diagram-img" loading="lazy">
             </div>
@@ -9603,7 +9810,14 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Error Dynamics &amp; Convergence</div>
+            <a href="draw_acs.html#acs-q15-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/observer_error_dynamics.png" alt="Figure 3.4B: Full-Order Luenberger Observer Error Dynamics and Asymptotic Convergence e(t) -&gt; 0 governed by Eigenvalues of (A - LC)" class="diagram-img" loading="lazy">
             </div>
@@ -9888,7 +10102,14 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q16" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/nonlinear_phenomena.png" alt="Figure 4.1: Distinctive Non-Linear Dynamic Phenomena (Jump Resonance &amp; Hysteresis)" class="diagram-img" loading="lazy">
             </div>
@@ -10201,7 +10422,14 @@ $$N(X) = \frac{Y_1 \angle \phi_1}{X} = \frac{A_1 + j B_1}{X}$$</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q16b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/relay_describing_function.png" alt="Figure 4.1B: Ideal Relay and Dead-Zone Relay Switching Characteristics and Output Square Waves" class="diagram-img" loading="lazy">
             </div>
@@ -10209,7 +10437,14 @@ $$N(X) = \frac{Y_1 \angle \phi_1}{X} = \frac{A_1 + j B_1}{X}$$</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Input-Output Waveforms &amp; Fourier</div>
+            <a href="draw_acs.html#acs-q16b-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/relay_waveforms_fourier.png" alt="Figure 4.1C: Ideal Relay Input Sinusoid x(t)=X·sin(ωt), Output Square Wave y(t)=±M, and Fundamental Fourier Harmonic Y1(t)" class="diagram-img" loading="lazy">
             </div>
@@ -10560,7 +10795,14 @@ $$N(X) = k \quad \text{for } X \le S$$</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q17" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/saturation_describing_function.png" alt="Figure 4.2: Symmetrical Saturation Characteristic and Truncated Output Waveform" class="diagram-img" loading="lazy">
             </div>
@@ -10568,7 +10810,14 @@ $$N(X) = k \quad \text{for } X \le S$$</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Clipped Output Waveform</div>
+            <a href="draw_acs.html#acs-q17-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/saturation_waveforms_fourier.png" alt="Figure 4.2B: Symmetrical Saturation Clipped Waveform with Transition Angle θ1 = sin⁻¹(S/X) and Conduction Intervals" class="diagram-img" loading="lazy">
             </div>
@@ -10887,7 +11136,14 @@ $$N(X) = 0 \quad \text{for } X \le D$$</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q17b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/dead_zone_describing_function.png" alt="Figure 4.2B: Symmetrical Dead-Zone Non-Linearity Characteristic and Output Waveform" class="diagram-img" loading="lazy">
             </div>
@@ -11223,7 +11479,14 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q18" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/limit_cycle_nyquist.png" alt="Figure 4.3: Intersection of Linear Nyquist Locus G(jω) and Non-Linear Locus -1/N(X)" class="diagram-img" loading="lazy">
             </div>
@@ -11231,7 +11494,14 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Perturbation Stability Analysis</div>
+            <a href="draw_acs.html#acs-q18-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/limit_cycle_stability_criterion.png" alt="Figure 4.3B: Polar Nyquist Plot of Plant G(jω) intersecting Non-Linear Locus -1/N(X) with Loeb&#x27;s Directional Amplitude Stability Analysis" class="diagram-img" loading="lazy">
             </div>
@@ -11634,7 +11904,14 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q19" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/singular_points_types.png" alt="Figure 5.1: Classification of Singular Points in Phase Plane (Nodes, Foci, Centers, Saddle Points)" class="diagram-img" loading="lazy">
             </div>
@@ -11930,7 +12207,14 @@ $$\Delta_3 = \begin{vmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q20" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/sylvester_definiteness.png" alt="Figure 5.2: Geometric Energy Bowl of Positive Definite Function V(x)" class="diagram-img" loading="lazy">
             </div>
@@ -12232,7 +12516,14 @@ $$\Delta_3 = \begin{vmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q20b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/krasovskii_variable_gradient.png" alt="Figure 5.2B: Gradient Vector Field Integration to Synthesize Lyapunov Function V(x)" class="diagram-img" loading="lazy">
             </div>
@@ -12578,7 +12869,14 @@ $$\dot{x}_1 = f_1(x_1, x_2), \quad \dot{x}_2 = f_2(x_1, x_2)$$</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q21" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/singular_points_phase_portrait.png" alt="Figure 5.3: Phase Portrait Sketch showing Singular Points (Unstable Focus and Saddle Point)" class="diagram-img" loading="lazy">
             </div>
@@ -12586,7 +12884,14 @@ $$\dot{x}_1 = f_1(x_1, x_2), \quad \dot{x}_2 = f_2(x_1, x_2)$$</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Isocline Construction Method</div>
+            <a href="draw_acs.html#acs-q21-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/isocline_method_construction.png" alt="Figure 5.3B: Method of Isoclines Step-by-Step Construction with Constant Slope Lines M = dx2/dx1 and Directional Slope Tangents" class="diagram-img" loading="lazy">
             </div>
@@ -12936,7 +13241,14 @@ $$A^T P + P A = -Q$$</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q22" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/lyapunov_stability_contours.png" alt="Figure 5.4: State Trajectory Penetrating Inward across Lyapunov Contours V(x) = C" class="diagram-img" loading="lazy">
             </div>

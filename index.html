@@ -1646,6 +1646,52 @@ main.content-container {
     color: #38bdf8;
     border: 1px solid var(--border-subtle);
 }
+
+.diagram-card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.35rem;
+}
+
+.diagram-draw-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--draw-color, #38bdf8);
+    background: var(--draw-bg, rgba(56, 189, 248, 0.12));
+    border: 1px solid var(--draw-border, rgba(56, 189, 248, 0.4));
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.diagram-draw-link:hover {
+    background: var(--draw-color, #38bdf8);
+    color: #070a12;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.diagram-draw-link .draw-link-icon {
+    font-size: 0.85rem;
+}
+
+.diagram-draw-link .draw-link-arrow {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.diagram-draw-link:hover .draw-link-arrow {
+    transform: translateX(2px);
+}
 @media (max-width: 800px) {
     .multi-diagrams-grid {
         grid-template-columns: 1fr;
@@ -3853,7 +3899,14 @@ article.question-card[data-card-lang="ml"] span.lang-ml {
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q1" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/state_space_concept.png" alt="Figure 1.1: Multi-dimensional State Space Representation with Trajectory Vector" class="diagram-img" loading="lazy">
             </div>
@@ -4171,7 +4224,14 @@ $$y(t) = \begin{bmatrix} 1 & 0 & \dots & 0 \end{bmatrix} \mathbf{x}(t)$$
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/phase_variables_flow.png" alt="Figure 1.2: Successive Integrator Chain Generating Phase Variables" class="diagram-img" loading="lazy">
             </div>
@@ -4461,7 +4521,14 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) \quad \text{--- [Output Equati
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q3" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/lti_state_block_diagram.png" alt="Figure 1.3: Standard Integrator-Based Block Diagram of Continuous LTI System" class="diagram-img" loading="lazy">
             </div>
@@ -4770,7 +4837,14 @@ $$\bar{A} = P^{-1}AP, \quad \bar{B} = P^{-1}B, \quad \bar{C} = CP, \quad \bar{D}
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q4" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/similarity_transformation.png" alt="Figure 1.4: Linear Coordinate Transformation between State Bases" class="diagram-img" loading="lazy">
             </div>
@@ -5115,7 +5189,14 @@ $$G(s) = \frac{C \operatorname{adj}(sI - A) B}{\det(sI - A)} + D$$
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q4b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/transfer_function_derivation.png" alt="Figure 1.4B: Resolvent Matrix Mapping State Equations to Input-Output Transfer Function" class="diagram-img" loading="lazy">
             </div>
@@ -5477,7 +5558,14 @@ $$A = \begin{bmatrix} -R/L & -1/L \\ 1/C & 0 \end{bmatrix}, \quad B = \begin{bma
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q5" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/series_rlc_circuit.png" alt="Figure 1.5: Schematic and State Space Flow of Series RLC Circuit" class="diagram-img" loading="lazy">
             </div>
@@ -5485,7 +5573,14 @@ $$A = \begin{bmatrix} -R/L & -1/L \\ 1/C & 0 \end{bmatrix}, \quad B = \begin{bma
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • State Simulation Diagram</div>
+            <a href="draw_acs.html#acs-q5-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/series_rlc_state_diagram.png" alt="Figure 1.5B: Analog Simulation State Block Diagram of Series RLC Circuit with Integrators for x1=iL and x2=vC" class="diagram-img" loading="lazy">
             </div>
@@ -5850,7 +5945,14 @@ where $J$ is rotor moment of inertia ($\text{kg}\cdot\text{m}^2$), $B$ is viscou
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q6" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/armature_dc_motor.png" alt="Figure 1.6: Electromechanical Schematic and State Flow Diagram of Armature-Controlled DC Motor" class="diagram-img" loading="lazy">
             </div>
@@ -5858,7 +5960,14 @@ where $J$ is rotor moment of inertia ($\text{kg}\cdot\text{m}^2$), $B$ is viscou
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Transfer Function Block Diagram</div>
+            <a href="draw_acs.html#acs-q6-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/armature_dc_motor_block_diagram.png" alt="Figure 1.6B: Comprehensive Electromechanical Transfer Function Block Diagram with Armature Admittance, Torque Constant Kt, and Back-EMF Feedback Kb" class="diagram-img" loading="lazy">
             </div>
@@ -6186,7 +6295,14 @@ $$G(s) = \frac{Y(s)}{U(s)} = \frac{b_2 s^2 + b_1 s + b_0}{s^3 + a_2 s^2 + a_1 s 
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q7" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/diagonal_canonical_form.png" alt="Figure 1.7: Analog Simulation Block Diagram for Diagonal Canonical Realization" class="diagram-img" loading="lazy">
             </div>
@@ -6194,7 +6310,14 @@ $$G(s) = \frac{Y(s)}{U(s)} = \frac{b_2 s^2 + b_1 s + b_0}{s^3 + a_2 s^2 + a_1 s 
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Controllable Canonical Realization</div>
+            <a href="draw_acs.html#acs-q7-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/controllable_canonical_form.png" alt="Figure 1.7B: Controllable Canonical Form (CCF) Phase Variable Analog Simulation Diagram with Successive Integrator Chains" class="diagram-img" loading="lazy">
             </div>
@@ -6524,7 +6647,14 @@ $$y(t) = \begin{bmatrix} 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bma
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q7b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/field_controlled_dc_motor.png" alt="Figure 1.7B: Electromechanical Schematic and State Flow of Field-Controlled DC Motor" class="diagram-img" loading="lazy">
             </div>
@@ -6836,7 +6966,14 @@ where $\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\}$ is the <strong>Stat
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q8" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/autonomous_response_flow.png" alt="Figure 2.1: Resolvent Matrix and Laplace Transform Inversion Flow" class="diagram-img" loading="lazy">
             </div>
@@ -7134,7 +7271,14 @@ where $\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\}$ is the <strong>Stat
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q9" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/stm_properties.png" alt="Figure 2.2: Composition and Inversion Geometry of State Transition Matrix" class="diagram-img" loading="lazy">
             </div>
@@ -7428,7 +7572,14 @@ $$G(z) = \frac{\mathbf{Y}(z)}{\mathbf{U}(z)} = C(zI - G)^{-1} H + D$$</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q9b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/discrete_state_model.png" alt="Figure 2.2B: Discrete Delay Elements and State Transition in Sampled Data Systems" class="diagram-img" loading="lazy">
             </div>
@@ -7741,7 +7892,14 @@ where $\alpha_0(t), \alpha_1(t), \dots, \alpha_{n-1}(t)$ are scalar functions of
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q10" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/cayley_hamilton_method.png" alt="Figure 2.3: Mapping Characteristic Polynomial to Matrix Exponential via Cayley-Hamilton" class="diagram-img" loading="lazy">
             </div>
@@ -8066,7 +8224,14 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) = C e^{At}\mathbf{x}(0) + C \i
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q11" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/convolution_integral.png" alt="Figure 2.4: Superposition of Zero-Input and Zero-State Convolution Integral Responses" class="diagram-img" loading="lazy">
             </div>
@@ -8375,7 +8540,14 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) = C e^{At}\mathbf{x}(0) + C \i
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q12" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/kalman_duality.png" alt="Figure 3.1: Dual Mapping between Controllability and Observability Matrices" class="diagram-img" loading="lazy">
             </div>
@@ -8660,7 +8832,14 @@ Gilbert's method tests controllability and observability by converting the syste
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q13" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/gilbert_method.png" alt="Figure 3.2: Modal Decoupling and Gilbert&#x27;s Diagonal Row/Column Inspection" class="diagram-img" loading="lazy">
             </div>
@@ -8951,7 +9130,14 @@ Gilbert's method tests controllability and observability by converting the syste
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q13b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/pbh_rank_test.png" alt="Figure 3.2B: Modal Partitioning in Popov-Belevitch-Hautus (PBH) Algebraic Rank Test" class="diagram-img" loading="lazy">
             </div>
@@ -9275,7 +9461,14 @@ $$\operatorname{rank}(Q_c) = \operatorname{rank}\begin{bmatrix} B & AB & A^2 B &
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q14" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/state_feedback_regulator.png" alt="Figure 3.3: Closed-Loop State Feedback Regulator Architecture with Gain Vector K" class="diagram-img" loading="lazy">
             </div>
@@ -9283,7 +9476,14 @@ $$\operatorname{rank}(Q_c) = \operatorname{rank}\begin{bmatrix} B & AB & A^2 B &
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • S-Plane Pole Migration</div>
+            <a href="draw_acs.html#acs-q14-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/pole_placement_s_plane.png" alt="Figure 3.3B: Complex S-Plane Root Migration Diagram showing Open-Loop vs Desired Closed-Loop Pole Relocations within Damping Cone (ζ, ωn)" class="diagram-img" loading="lazy">
             </div>
@@ -9628,7 +9828,14 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q15" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/state_observer_block_diagram.png" alt="Figure 3.4: Complete Architecture of Plant Coupled with Full-Order Luenberger State Observer" class="diagram-img" loading="lazy">
             </div>
@@ -9636,7 +9843,14 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Error Dynamics &amp; Convergence</div>
+            <a href="draw_acs.html#acs-q15-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/observer_error_dynamics.png" alt="Figure 3.4B: Full-Order Luenberger Observer Error Dynamics and Asymptotic Convergence e(t) -&gt; 0 governed by Eigenvalues of (A - LC)" class="diagram-img" loading="lazy">
             </div>
@@ -9921,7 +10135,14 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q16" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/nonlinear_phenomena.png" alt="Figure 4.1: Distinctive Non-Linear Dynamic Phenomena (Jump Resonance &amp; Hysteresis)" class="diagram-img" loading="lazy">
             </div>
@@ -10234,7 +10455,14 @@ $$N(X) = \frac{Y_1 \angle \phi_1}{X} = \frac{A_1 + j B_1}{X}$$</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q16b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/relay_describing_function.png" alt="Figure 4.1B: Ideal Relay and Dead-Zone Relay Switching Characteristics and Output Square Waves" class="diagram-img" loading="lazy">
             </div>
@@ -10242,7 +10470,14 @@ $$N(X) = \frac{Y_1 \angle \phi_1}{X} = \frac{A_1 + j B_1}{X}$$</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Input-Output Waveforms &amp; Fourier</div>
+            <a href="draw_acs.html#acs-q16b-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/relay_waveforms_fourier.png" alt="Figure 4.1C: Ideal Relay Input Sinusoid x(t)=X·sin(ωt), Output Square Wave y(t)=±M, and Fundamental Fourier Harmonic Y1(t)" class="diagram-img" loading="lazy">
             </div>
@@ -10593,7 +10828,14 @@ $$N(X) = k \quad \text{for } X \le S$$</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q17" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/saturation_describing_function.png" alt="Figure 4.2: Symmetrical Saturation Characteristic and Truncated Output Waveform" class="diagram-img" loading="lazy">
             </div>
@@ -10601,7 +10843,14 @@ $$N(X) = k \quad \text{for } X \le S$$</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Clipped Output Waveform</div>
+            <a href="draw_acs.html#acs-q17-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/saturation_waveforms_fourier.png" alt="Figure 4.2B: Symmetrical Saturation Clipped Waveform with Transition Angle θ1 = sin⁻¹(S/X) and Conduction Intervals" class="diagram-img" loading="lazy">
             </div>
@@ -10920,7 +11169,14 @@ $$N(X) = 0 \quad \text{for } X \le D$$</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q17b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/dead_zone_describing_function.png" alt="Figure 4.2B: Symmetrical Dead-Zone Non-Linearity Characteristic and Output Waveform" class="diagram-img" loading="lazy">
             </div>
@@ -11256,7 +11512,14 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q18" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/limit_cycle_nyquist.png" alt="Figure 4.3: Intersection of Linear Nyquist Locus G(jω) and Non-Linear Locus -1/N(X)" class="diagram-img" loading="lazy">
             </div>
@@ -11264,7 +11527,14 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Perturbation Stability Analysis</div>
+            <a href="draw_acs.html#acs-q18-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/limit_cycle_stability_criterion.png" alt="Figure 4.3B: Polar Nyquist Plot of Plant G(jω) intersecting Non-Linear Locus -1/N(X) with Loeb&#x27;s Directional Amplitude Stability Analysis" class="diagram-img" loading="lazy">
             </div>
@@ -11667,7 +11937,14 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q19" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/singular_points_types.png" alt="Figure 5.1: Classification of Singular Points in Phase Plane (Nodes, Foci, Centers, Saddle Points)" class="diagram-img" loading="lazy">
             </div>
@@ -11963,7 +12240,14 @@ $$\Delta_3 = \begin{vmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q20" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/sylvester_definiteness.png" alt="Figure 5.2: Geometric Energy Bowl of Positive Definite Function V(x)" class="diagram-img" loading="lazy">
             </div>
@@ -12265,7 +12549,14 @@ $$\Delta_3 = \begin{vmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q20b" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/krasovskii_variable_gradient.png" alt="Figure 5.2B: Gradient Vector Field Integration to Synthesize Lyapunov Function V(x)" class="diagram-img" loading="lazy">
             </div>
@@ -12611,7 +12902,14 @@ $$\dot{x}_1 = f_1(x_1, x_2), \quad \dot{x}_2 = f_2(x_1, x_2)$$</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_acs.html#acs-q21" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/singular_points_phase_portrait.png" alt="Figure 5.3: Phase Portrait Sketch showing Singular Points (Unstable Focus and Saddle Point)" class="diagram-img" loading="lazy">
             </div>
@@ -12619,7 +12917,14 @@ $$\dot{x}_1 = f_1(x_1, x_2), \quad \dot{x}_2 = f_2(x_1, x_2)$$</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Isocline Construction Method</div>
+            <a href="draw_acs.html#acs-q21-fig2" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/isocline_method_construction.png" alt="Figure 5.3B: Method of Isoclines Step-by-Step Construction with Constant Slope Lines M = dx2/dx1 and Directional Slope Tangents" class="diagram-img" loading="lazy">
             </div>
@@ -12969,7 +13274,14 @@ $$A^T P + P A = -Q$$</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_acs.html#acs-q22" class="diagram-draw-link" style="--draw-color:#38bdf8; --draw-bg:rgba(56, 189, 248, 0.12); --draw-border:rgba(56, 189, 248, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/acs/lyapunov_stability_contours.png" alt="Figure 5.4: State Trajectory Penetrating Inward across Lyapunov Contours V(x) = C" class="diagram-img" loading="lazy">
             </div>
@@ -13361,7 +13673,14 @@ An electric drive is an electromechanical system designed to convert electrical 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q1" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/electric_drive_block_diagram.png" alt="Figure 1.1: Functional Block Diagram of a Modern Electric Drive System" class="diagram-img" loading="lazy">
             </div>
@@ -13638,7 +13957,14 @@ An electric drive is an electromechanical system designed to convert electrical 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/drive_efficiency_curve.png" alt="Figure 1.2: Efficiency Comparison Curve of Electric Drives across Speed Ranges" class="diagram-img" loading="lazy">
             </div>
@@ -13982,7 +14308,14 @@ Industrial load torques are classified into two broad categories based on whethe
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q3" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/speed_vs_torque_characteristics.png" alt="Figure 1.3: Speed vs Torque Characteristics of Industrial Loads (Paper Mill, Hoist, Fan/Pump, Traction)" class="diagram-img" loading="lazy">
             </div>
@@ -14292,7 +14625,14 @@ Industrial load torques are classified into two broad categories based on whethe
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q3b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/critical_speed_resonance.png" alt="Figure 1.3B: Mechanical Resonance Curve showing Critical Speed Threshold" class="diagram-img" loading="lazy">
             </div>
@@ -14633,7 +14973,14 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q4" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/dynamic_torque_derivation.png" alt="Figure 1.4: Dynamic Equilibrium of Motor and Load Inertia on Common Shaft" class="diagram-img" loading="lazy">
             </div>
@@ -15067,7 +15414,14 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q5" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/four_quadrant_hoist.png" alt="Figure 1.5: Four-Quadrant Speed-Torque Plane Diagram for an Electric Hoist Load" class="diagram-img" loading="lazy">
             </div>
@@ -15075,7 +15429,14 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Mechanical Force Dynamics</div>
+            <a href="draw_drives.html#drive-q5-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/four_quadrant_hoist_mechanics.png" alt="Figure 1.5B: Physical Hoist Mechanical Assembly showing Cable Drum, Counterweight Wc, Loaded Cage WL, and Gravitational Torque Balance" class="diagram-img" loading="lazy">
             </div>
@@ -15417,7 +15778,14 @@ $$\frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m}$$
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q6" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/stability_criterion_curves.png" alt="Figure 1.6: Torque-Speed Characteristic Intersections Illustrating Stable and Unstable Equilibria" class="diagram-img" loading="lazy">
             </div>
@@ -15752,7 +16120,14 @@ where $\theta_0$ is initial temperature at shutdown, and $\tau_c = \frac{C}{D'}$
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q6b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/thermal_heating_cooling.png" alt="Figure 1.6B: Exponential Temperature Rise and Cooling Curves for Electric Motor" class="diagram-img" loading="lazy">
             </div>
@@ -16111,7 +16486,14 @@ where $\theta_0$ is initial temperature at shutdown, and $\tau_c = \frac{C}{D'}$
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q7" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/dc_motor_control_zones.png" alt="Figure 2.1: Constant Torque and Constant Power Zones in DC Drive Speed Control" class="diagram-img" loading="lazy">
             </div>
@@ -16396,7 +16778,14 @@ where $V_{ml} = \sqrt{3}V_m$ is the peak line-to-line voltage, and $\alpha$ is t
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q7b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/three_phase_semi_converter.png" alt="Figure 2.1B: Power Circuit of Three-Phase Semi-Converter Fed DC Drive" class="diagram-img" loading="lazy">
             </div>
@@ -16753,7 +17142,14 @@ Because current $I_a$ can only flow in one direction through the thyristors ($I_
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q8" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/single_phase_full_converter_waveforms.png" alt="Figure 2.2: Circuit Schematic and Conduction Waveforms of 1-Phase Fully Controlled DC Drive" class="diagram-img" loading="lazy">
             </div>
@@ -16761,7 +17157,14 @@ Because current $I_a$ can only flow in one direction through the thyristors ($I_
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Conduction Waveforms</div>
+            <a href="draw_drives.html#drive-q8-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/single_phase_full_converter_firing_waveforms.png" alt="Figure 2.2B: Supply Voltage vs, Firing Angle α, Output Voltage vo(t), and Continuous Armature Current ia(t) Waveforms" class="diagram-img" loading="lazy">
             </div>
@@ -17073,7 +17476,14 @@ $$\omega_m = \frac{\frac{3V_{ml}}{\pi}\cos\alpha}{K_b \Phi} - \frac{R_a}{(K_b \P
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q8b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/three_phase_full_converter.png" alt="Figure 2.2B: Circuit Schematic and Six-Pulse Waveforms of Three-Phase Full Converter DC Drive" class="diagram-img" loading="lazy">
             </div>
@@ -17081,7 +17491,14 @@ $$\omega_m = \frac{\frac{3V_{ml}}{\pi}\cos\alpha}{K_b \Phi} - \frac{R_a}{(K_b \P
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • 6-Pulse Commutation Waveforms</div>
+            <a href="draw_drives.html#drive-q8b-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/three_phase_full_converter_waveforms.png" alt="Figure 2.2C: Six-Pulse Conduction Waveforms, Interlocking Line Voltages, and Thyristor Firing Sequence (T1-T6)" class="diagram-img" loading="lazy">
             </div>
@@ -17383,7 +17800,14 @@ Both average voltage $V_a \ge 0$ and current $I_a \ge 0$ are strictly positive. 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q9" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_a_chopper.png" alt="Figure 3.1: Power Circuit and Waveforms of Class-A Step-Down Chopper Drive" class="diagram-img" loading="lazy">
             </div>
@@ -17665,7 +18089,14 @@ Because current flows out of the motor ($I_a < 0$) while motor voltage remains p
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q9b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_b_chopper.png" alt="Figure 3.1B: Class-B Step-Up Chopper Circuit and Energy Feedback Waveforms" class="diagram-img" loading="lazy">
             </div>
@@ -17982,7 +18413,14 @@ Class-C chopper drives are standard in battery-powered electric vehicles (EVs), 
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q10" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_c_chopper_drive.png" alt="Figure 3.2: Circuit Topology and Operating Modes of Two-Quadrant Class-C Chopper Drive" class="diagram-img" loading="lazy">
             </div>
@@ -17990,7 +18428,14 @@ Class-C chopper drives are standard in battery-powered electric vehicles (EVs), 
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Operating Mode Waveforms</div>
+            <a href="draw_drives.html#drive-q10-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_c_chopper_waveforms.png" alt="Figure 3.2B: Two-Quadrant Class-C Chopper Waveforms for Mode 1 (Motoring: CH1, D2) and Mode 2 (Regenerative Braking: CH2, D1)" class="diagram-img" loading="lazy">
             </div>
@@ -18298,7 +18743,14 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q10b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_e_chopper.png" alt="Figure 3.2B: Four-Quadrant H-Bridge Class-E Chopper Topology and Switching Matrix" class="diagram-img" loading="lazy">
             </div>
@@ -18306,7 +18758,14 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • 4-Quadrant Conduction Paths</div>
+            <a href="draw_drives.html#drive-q10b-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_e_chopper_modes.png" alt="Figure 3.2C: Four-Quadrant Class-E H-Bridge Chopper Conduction Loops across Motoring and Regenerative Braking Modes" class="diagram-img" loading="lazy">
             </div>
@@ -18663,7 +19122,14 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q11" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/closed_loop_dc_drive_block_diagram.png" alt="Figure 3.3: Multi-Loop Cascade Architecture for Closed-Loop DC Motor Speed Control" class="diagram-img" loading="lazy">
             </div>
@@ -18671,7 +19137,14 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Inner Current Loop Detail</div>
+            <a href="draw_drives.html#drive-q11-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/inner_current_control_loop.png" alt="Figure 3.3B: Fast Subordinate Inner Current Control Loop with Current Limiter Clamp (±Ia,max) and Anti-Windup PI Regulator" class="diagram-img" loading="lazy">
             </div>
@@ -18965,7 +19438,14 @@ Strictly restricted to low-power centrifugal fan, blower, and water pump drives 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q12" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/stator_voltage_characteristics.png" alt="Figure 4.1: Torque-Speed Curves under Stator Voltage Control showing Narrow Stable Range" class="diagram-img" loading="lazy">
             </div>
@@ -19329,7 +19809,14 @@ Strictly restricted to low-power centrifugal fan, blower, and water pump drives 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q12b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/vsi_vs_csi_drive.png" alt="Figure 4.1B: Comparative Topologies of VSI and CSI Inverter-Fed Induction Motor Drives" class="diagram-img" loading="lazy">
             </div>
@@ -19635,7 +20122,14 @@ Since $\frac{V}{f}$ is held constant, the maximum breakdown torque $T_{\text{max
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q13" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/v_f_control_characteristics.png" alt="Figure 4.2: Comprehensive Family of Torque-Speed Characteristics under Constant V/f Speed Control" class="diagram-img" loading="lazy">
             </div>
@@ -19643,7 +20137,14 @@ Since $\frac{V}{f}$ is held constant, the maximum breakdown torque $T_{\text{max
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Closed-Loop Architecture</div>
+            <a href="draw_drives.html#drive-q13-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/v_f_closed_loop_schematic.png" alt="Figure 4.2B: Closed-Loop Constant V/f Induction Motor Drive Architecture with Slip Speed Regulation (ωsl*) and Inverter Control" class="diagram-img" loading="lazy">
             </div>
@@ -19966,7 +20467,14 @@ where $R_2$ is the internal rotor winding resistance per phase.</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q14" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/static_rotor_resistance_circuit.png" alt="Figure 4.3: Power Electronic Circuit Schematic of Static Rotor Resistance Chopper Drive" class="diagram-img" loading="lazy">
             </div>
@@ -20343,7 +20851,14 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q14b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/slip_power_recovery.png" alt="Figure 4.3B: Comparative Schematics of Static Kramer and Static Scherbius Slip Power Recovery Drives" class="diagram-img" loading="lazy">
             </div>
@@ -20351,7 +20866,14 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Power Flow &amp; Operating Zones</div>
+            <a href="draw_drives.html#drive-q14b-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/kramer_vs_scherbius_characteristics.png" alt="Figure 4.3C: Comparative Slip Power Recovery Topologies: Static Kramer (Sub-synchronous only) vs Static Scherbius (Sub &amp; Super-synchronous)" class="diagram-img" loading="lazy">
             </div>
@@ -20708,7 +21230,14 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q15" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/synchronous_drive_modes.png" alt="Figure 5.1: Comparative Schematics of True Synchronous and Self-Controlled Drives" class="diagram-img" loading="lazy">
             </div>
@@ -21010,7 +21539,14 @@ A Load-Commutated Inverter (LCI) drive powers a wound-field synchronous motor us
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q15b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/lci_synchronous_drive.png" alt="Figure 5.1B: Power Electronic Circuit of Load-Commutated Inverter (LCI) Synchronous Drive" class="diagram-img" loading="lazy">
             </div>
@@ -21319,7 +21855,14 @@ This complete decoupling is the foundation of Vector Control (FOC).</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q16" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/clarke_park_transforms.png" alt="Figure 5.2: Geometric Vector Decomposition between Three-Phase (abc), Stationary (αβ), and Synchronous (dq) Frames" class="diagram-img" loading="lazy">
             </div>
@@ -21632,7 +22175,14 @@ The zero time $T_0$ is divided equally between $V_0(000)$ and $V_7(111)$ using a
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q17" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/svpwm_sectors_switching.png" alt="Figure 5.3: Hexagonal Space Vector Switching Pattern with Six Sectors and Inverter States" class="diagram-img" loading="lazy">
             </div>
@@ -21964,7 +22514,14 @@ FOC provides instantaneous torque response (under $5\text{ ms}$), full torque ca
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q18" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/field_oriented_control_block_diagram.png" alt="Figure 5.4: Comprehensive Architectural Block Diagram of Indirect Field-Oriented Control (IFOC)" class="diagram-img" loading="lazy">
             </div>
@@ -21972,7 +22529,14 @@ FOC provides instantaneous torque response (under $5\text{ ms}$), full torque ca
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Vector Decomposition Geometry</div>
+            <a href="draw_drives.html#drive-q18-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/clarke_park_transformation_geometry.png" alt="Figure 5.4B: Geometric Vector Transformations from 3-Phase abc Frame to Orthogonal αβ Frame and Synchronous Rotor-Flux dq Frame" class="diagram-img" loading="lazy">
             </div>
@@ -22436,7 +23000,14 @@ The primary purpose of this course is to prepare learners to comprehend the foun
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q1" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/middleware_architecture.png" alt="Figure 1.1: Position of Middleware and Gateways between Mobile Clients and Enterprise Servers" class="diagram-img" loading="lazy">
             </div>
@@ -22713,7 +23284,14 @@ The Internet acts as the universal, packet-switched transport backbone that inte
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/ubiquitous_internet.png" alt="Figure 1.2: Ubiquitous Interconnection of Heterogeneous Mobile Access Networks via IP Core" class="diagram-img" loading="lazy">
             </div>
@@ -23042,7 +23620,14 @@ The Internet acts as the universal, packet-switched transport backbone that inte
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q3" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/network_segmentation.png" alt="Figure 1.3: Three-Tier Hierarchical Network Segmentation in Mobile Infrastructure" class="diagram-img" loading="lazy">
             </div>
@@ -23314,7 +23899,14 @@ The Internet acts as the universal, packet-switched transport backbone that inte
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q4" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/mobile_limitations.png" alt="Figure 1.4: Major Hardware, Energy, and Wireless Channel Constraints of Mobile Computing" class="diagram-img" loading="lazy">
             </div>
@@ -23631,7 +24223,14 @@ The three-tier architecture separates mobile application responsibilities into t
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q5" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/three_tier_architecture.png" alt="Figure 1.5: Detailed Three-Tier Mobile Architecture: Presentation, Application/Middleware, and Enterprise Data Tiers" class="diagram-img" loading="lazy">
             </div>
@@ -23975,7 +24574,14 @@ The three-tier architecture separates mobile application responsibilities into t
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q6" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/design_considerations.png" alt="Figure 1.6: Engineering Design Considerations Across Mobility, Energy, Wireless Bandwidth, and Security" class="diagram-img" loading="lazy">
             </div>
@@ -24272,7 +24878,14 @@ A system is <strong>context-aware</strong> if it uses contextual information abo
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q7" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/context_aware_managers.png" alt="Figure 1.7: Context-Aware Management Architecture: Sensing, Policy Evaluation, Security Enforcement, and Dynamic Adaptation" class="diagram-img" loading="lazy">
             </div>
@@ -24626,7 +25239,14 @@ Content adaptation dynamically modifies multimedia resources (images, video, web
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q8" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/content_adaptation_transcoding.png" alt="Figure 1.8: Content Transcoding Taxonomies: Syntactic, Structural, and Semantic Transformation Pipelines" class="diagram-img" loading="lazy">
             </div>
@@ -24961,7 +25581,14 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q9" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/seamless_communication_roaming.png" alt="Figure 1.9: Seamless Roaming Architecture across Heterogeneous Wireless Networks with Session Continuity" class="diagram-img" loading="lazy">
             </div>
@@ -25347,7 +25974,14 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_mobile.html#mobile-q10" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/satellite_orbits.png" alt="Figure 2.1: Orbital Altitude Comparison of GEO, MEO, and LEO Satellite Constellations" class="diagram-img" loading="lazy">
             </div>
@@ -25355,7 +25989,14 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Footprint Geometry &amp; Coverage</div>
+            <a href="draw_mobile.html#mobile-q10-fig2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/satellite_footprint_geometry.png" alt="Figure 2.1B: Satellite Geometric Coverage Footprint, Earth Horizon, Slant Range Distance, and Minimum Elevation Angle (θmin &gt;= 10°)" class="diagram-img" loading="lazy">
             </div>
@@ -25722,7 +26363,14 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q11" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/mobile_identifiers.png" alt="Figure 2.2: Cellular Identification Hierarchy: Hardware, Subscriber, Dialable Number, and Temporary Alias" class="diagram-img" loading="lazy">
             </div>
@@ -26011,7 +26659,14 @@ Informs the calling subscriber about the status of an ongoing call setup attempt
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q12" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/call_progress_indication.png" alt="Figure 2.3: Call Progress Signaling Flow between Calling Party, MSC, Visited Network, and Called Mobile Station" class="diagram-img" loading="lazy">
             </div>
@@ -26374,7 +27029,14 @@ Informs the calling subscriber about the status of an ongoing call setup attempt
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q13" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/multiple_access_techniques.png" alt="Figure 2.4: Signal Division Coordinate Space: Frequency (FDMA), Time (TDMA), Code (CDMA), and Space (SDMA)" class="diagram-img" loading="lazy">
             </div>
@@ -26728,7 +27390,14 @@ The GSM (2G) cellular network architecture is structured into three primary func
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_mobile.html#mobile-q14" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gsm_architecture_databases.png" alt="Figure 2.5: GSM Architectural Subsystems: MS, BSS (BTS/BSC), NSS (MSC/HLR/VLR/AUC/EIR), and OSS" class="diagram-img" loading="lazy">
             </div>
@@ -26736,7 +27405,14 @@ The GSM (2G) cellular network architecture is structured into three primary func
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Channel Hierarchy &amp; Multiplexing</div>
+            <a href="draw_mobile.html#mobile-q14-fig2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gsm_channel_hierarchy.png" alt="Figure 2.5B: GSM Logical and Physical Channel Architecture: Traffic Channels (TCH) and Control Channels (BCH, CCCH, DCCH)" class="diagram-img" loading="lazy">
             </div>
@@ -27126,7 +27802,14 @@ When an external telephone calls a mobile subscriber's public MSISDN:</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_mobile.html#mobile-q15" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gsm_call_routing_handover_roaming.png" alt="Figure 2.6: Signaling Call Flows for Mobile Terminating Call (MTC) and Handover versus Roaming Classification" class="diagram-img" loading="lazy">
             </div>
@@ -27134,7 +27817,14 @@ When an external telephone calls a mobile subscriber's public MSISDN:</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Handover Signaling Ladder</div>
+            <a href="draw_mobile.html#mobile-q15-fig2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gsm_handover_sequence.png" alt="Figure 2.6B: Inter-BSS Mobile-Assisted Handover (MAHO) Signaling Protocol Ladder between MS, Old BTS, New BTS, BSC, and MSC" class="diagram-img" loading="lazy">
             </div>
@@ -27444,7 +28134,14 @@ When an external telephone calls a mobile subscriber's public MSISDN:</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q16" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/ivr_theatre_booking_callflow.png" alt="Figure 2.7: Interactive Voice Response (IVR) Architecture and Theatre Ticket Reservation Call Flow Diagram" class="diagram-img" loading="lazy">
             </div>
@@ -27797,7 +28494,14 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_mobile.html#mobile-q17" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gsm_security_a3_a5_a8.png" alt="Figure 2.8: Cryptographic Architecture of GSM: Triplet Generation (A3/A8) and Stream Ciphering (A5)" class="diagram-img" loading="lazy">
             </div>
@@ -27805,7 +28509,14 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Authentication Protocol Timeline</div>
+            <a href="draw_mobile.html#mobile-q17-fig2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gsm_auth_cipher_timeline.png" alt="Figure 2.8B: GSM Security Signaling Protocol Timeline: SIM Authentication Challenge-Response (A3) and A5 Stream Cipher Activation" class="diagram-img" loading="lazy">
             </div>
@@ -28105,7 +28816,14 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q18" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/sms_strengths.png" alt="Figure 3.1: Architectural Distinction of SMS: Transmission Over Signaling Channels without Dedicated Traffic Trunks" class="diagram-img" loading="lazy">
             </div>
@@ -28375,7 +29093,14 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q19" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gprs_limitations.png" alt="Figure 3.2: Technical Bottlenecks of GPRS: Air Interface Resource Contention, Latency, and Throughput Saturation" class="diagram-img" loading="lazy">
             </div>
@@ -28677,7 +29402,14 @@ Unlike circuit-switched GSM (which bills purely by call connection time), GPRS b
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q20" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gprs_billing_charging.png" alt="Figure 3.3: GPRS Charging Architecture: CDR Generation at SGSN/GGSN and Mediation via CGF" class="diagram-img" loading="lazy">
             </div>
@@ -29019,7 +29751,14 @@ Unlike circuit-switched GSM (which bills purely by call connection time), GPRS b
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_mobile.html#mobile-q21" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/sms_architecture_delivery.png" alt="Figure 3.4: Complete SMS Network Architecture and End-to-End Signaling Flows for SM-MO and SM-MT Delivery" class="diagram-img" loading="lazy">
             </div>
@@ -29027,7 +29766,14 @@ Unlike circuit-switched GSM (which bills purely by call connection time), GPRS b
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • SM-MO and SM-MT Signaling Flow</div>
+            <a href="draw_mobile.html#mobile-q21-fig2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/sms_pdu_signaling_flow.png" alt="Figure 3.4B: End-to-End Signaling Sequence Diagrams for Mobile-Originated (SM-MO) and Mobile-Terminated (SM-MT) Message Delivery" class="diagram-img" loading="lazy">
             </div>
@@ -29387,7 +30133,14 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_mobile.html#mobile-q22" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gprs_architecture_protocol.png" alt="Figure 3.5: GPRS Core Network Architecture, Transmission Protocol Stack, and PDP Context Signaling Procedure" class="diagram-img" loading="lazy">
             </div>
@@ -29395,7 +30148,14 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • PDP Context Signaling Procedure</div>
+            <a href="draw_mobile.html#mobile-q22-fig2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gprs_pdp_context_activation.png" alt="Figure 3.5B: Complete PDP Context Activation Signaling Procedure establishing Packet Data Protocol Tunnel from MS to APN / Internet" class="diagram-img" loading="lazy">
             </div>
@@ -29758,7 +30518,14 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q23" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/gprs_qos_parameters.png" alt="Figure 3.6: GPRS Quality of Service (QoS) Profile Parameter Matrix across Radio and Core Layers" class="diagram-img" loading="lazy">
             </div>
@@ -30117,7 +30884,14 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q24" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/wlan_infrastructure_adhoc.png" alt="Figure 4.1: IEEE 802.11 Network Topologies: Infrastructure BSS with Access Point versus Ad-Hoc IBSS" class="diagram-img" loading="lazy">
             </div>
@@ -30395,7 +31169,14 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_mobile.html#mobile-q25" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/interframe_spaces.png" alt="Figure 4.2: IEEE 802.11 Priority Hierarchy Enforced by Interframe Space (IFS) Durations" class="diagram-img" loading="lazy">
             </div>
@@ -30403,7 +31184,14 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • CSMA/CA Backoff Timeline</div>
+            <a href="draw_mobile.html#mobile-q25-fig2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/csma_ca_backoff_timeline.png" alt="Figure 4.2B: IEEE 802.11 CSMA/CA Exponential Backoff Timing with DIFS Listening, Slot Countdown, and Counter Freezing Mechanism" class="diagram-img" loading="lazy">
             </div>
@@ -30776,7 +31564,14 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q26" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/wifi_vs_3g.png" alt="Figure 4.3: Comparative Matrix: Wi-Fi (IEEE 802.11) versus 3G Cellular (UMTS/WCDMA) across All Technical Dimensions" class="diagram-img" loading="lazy">
             </div>
@@ -31095,7 +31890,14 @@ IEEE 802.11 solves the hidden terminal problem through a 4-way handshake using V
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_mobile.html#mobile-q27" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/hidden_exposed_terminal_rts_cts.png" alt="Figure 4.4: Hidden and Exposed Terminal Scenarios and Mitigation via RTS/CTS Virtual Carrier Sensing (NAV)" class="diagram-img" loading="lazy">
             </div>
@@ -31103,7 +31905,14 @@ IEEE 802.11 solves the hidden terminal problem through a 4-way handshake using V
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • RTS/CTS Virtual Carrier Sensing</div>
+            <a href="draw_mobile.html#mobile-q27-fig2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/rts_cts_nav_timing.png" alt="Figure 4.4B: IEEE 802.11 Virtual Carrier Sensing: RTS/CTS Frame Handshake and Network Allocation Vector (NAV) Reservation Timeline" class="diagram-img" loading="lazy">
             </div>
@@ -31410,7 +32219,14 @@ Wireless Local Loop (also called Fixed Wireless Access) replaces traditional und
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q28" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/wll_architecture.png" alt="Figure 4.5: Wireless Local Loop (WLL) Architecture: PSTN Core, WLL Controller, Base Station, and Customer Premises Equipment" class="diagram-img" loading="lazy">
             </div>
@@ -31773,7 +32589,14 @@ Wireless Local Loop (also called Fixed Wireless Access) replaces traditional und
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q29" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/wlan_security_evolution.png" alt="Figure 4.6: Historical Cryptographic Evolution of WLAN Security Protocols: WEP to WPA3" class="diagram-img" loading="lazy">
             </div>
@@ -32140,7 +32963,14 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q30" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/hiperlan_architecture.png" alt="Figure 4.7: European Telecommunications Standards Institute (ETSI) HIPERLAN 1 and HIPERLAN 2 Architecture" class="diagram-img" loading="lazy">
             </div>
@@ -32422,7 +33252,14 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q31" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/information_security_components.png" alt="Figure 5.1: The Extended Information Security Architecture: CIA Triad, Authenticity, Non-Repudiation, and Authorization" class="diagram-img" loading="lazy">
             </div>
@@ -32782,7 +33619,14 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q32" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/static_vs_dynamic_attacks.png" alt="Figure 5.2: Taxonomy of Security Attacks: Static Attacks on Data-at-Rest versus Dynamic Attacks on Data-in-Transit" class="diagram-img" loading="lazy">
             </div>
@@ -33080,7 +33924,14 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q33" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/ssl_tls_mobile_vpn.png" alt="Figure 5.3: End-to-End Cryptographic Protocol Architecture: TLS Protocol Stack and Mobile VPN Tunneling" class="diagram-img" loading="lazy">
             </div>
@@ -33457,7 +34308,14 @@ Let prime numbers be $p = 3$ and $q = 11$, and message plaintext $M = 2$.</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_mobile.html#mobile-q34" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/rsa_cryptosystem_derivation.png" alt="Figure 5.4: Mathematical Flow of RSA Public Key Cryptosystem: Key Generation, Encryption, and Decryption" class="diagram-img" loading="lazy">
             </div>
@@ -33465,7 +34323,14 @@ Let prime numbers be $p = 3$ and $q = 11$, and message plaintext $M = 2$.</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Step-by-Step Processing Pipeline</div>
+            <a href="draw_mobile.html#mobile-q34-fig2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/rsa_encryption_pipeline.png" alt="Figure 5.4B: Complete RSA Public Key Numerical Processing Pipeline with Key Generation (e=3, d=7), Encryption (C=8), and Decryption (M=2)" class="diagram-img" loading="lazy">
             </div>
@@ -33830,7 +34695,14 @@ Let public parameters be prime $p = 23$, generator $g = 5$.</p>
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_mobile.html#mobile-q35" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/diffie_hellman_key_exchange.png" alt="Figure 5.5: Diffie-Hellman Asymmetric Key Agreement Protocol and Mathematical Parameter Exchange" class="diagram-img" loading="lazy">
             </div>
@@ -33838,7 +34710,14 @@ Let public parameters be prime $p = 23$, generator $g = 5$.</p>
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Color Mixing &amp; Modulo Math Flow</div>
+            <a href="draw_mobile.html#mobile-q35-fig2" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/diffie_hellman_color_mixing_math.png" alt="Figure 5.5B: Diffie-Hellman Key Exchange Discrete Logarithm Math Flow &amp; Color-Mixing Analogy for Asymmetric Shared Key Agreement" class="diagram-img" loading="lazy">
             </div>
@@ -34142,7 +35021,14 @@ Modulation is performed digitally using an Inverse Fast Fourier Transform (IFFT)
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q36" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/ofdm_subcarriers_cyclic_prefix.png" alt="Figure 5.6: OFDM Signal Spectra, Mathematical Sinc Overlapping Subcarriers, and Cyclic Prefix Multipath Elimination" class="diagram-img" loading="lazy">
             </div>
@@ -34453,7 +35339,14 @@ Modulation is performed digitally using an Inverse Fast Fourier Transform (IFFT)
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q37" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/mbms_mpls_architecture.png" alt="Figure 5.7: MBMS Architecture (BM-SC, MBMS-GW) and Multiprotocol Label Switching (MPLS) Core Label Routing" class="diagram-img" loading="lazy">
             </div>
@@ -34835,7 +35728,14 @@ Modulation is performed digitally using an Inverse Fast Fourier Transform (IFFT)
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_mobile.html#mobile-q38" class="diagram-draw-link" style="--draw-color:#10b981; --draw-bg:rgba(16, 185, 129, 0.12); --draw-border:rgba(16, 185, 129, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/mobile_compute/cellular_evolution_2g_to_5g.png" alt="Figure 5.8: Generational Evolution of Cellular Telephony from 2G GSM to Cloud-Native 5G Service-Based Architecture" class="diagram-img" loading="lazy">
             </div>

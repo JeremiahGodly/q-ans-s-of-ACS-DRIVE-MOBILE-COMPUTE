@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Advanced Control Systems (EET401) | Interactive Muscle Memory Canvas</title>
+
+    <!-- Theme & Preload -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('ktu_portal_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <!-- KaTeX CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root, [data-theme="dark"] {
+            --bg-base: #080b11;
+            --bg-surface: #0f1523;
+            --bg-card: #151e32;
+            --bg-card-hover: #1c2842;
+            --border-subtle: #22304d;
+            --border-focus: #38bdf8;
+            --text-main: #f1f5f9;
+            --text-body: #cbd5e1;
+            --text-muted: #8292a8;
+            --header-bg: rgba(13, 19, 29, 0.94);
+            --accent-main: #38bdf8;
+            --accent-alpha: rgba(56, 189, 248, 0.2);
+            --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        [data-theme="light"] {
+            --bg-base: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-card: #f1f5f9;
+            --bg-card-hover: #e2e8f0;
+            --border-subtle: #cbd5e1;
+            --border-focus: #0284c7;
+            --text-main: #0f172a;
+            --text-body: #334155;
+            --text-muted: #64748b;
+            --header-bg: rgba(255, 255, 255, 0.94);
+            --accent-main: #38bdf8;
+            --accent-alpha: rgba(2, 132, 199, 0.15);
+            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            touch-action: pan-y;
+        }
+
+        /* Header Navigation */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--header-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 0.65rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.55rem;
+            border-radius: 9999px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-main);
+            border: 1px solid var(--accent-main);
+        }
+
+        .nav-pills {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-pill {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.35rem 0.75rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill:hover {
+            color: var(--text-main);
+            background: var(--bg-card);
+        }
+
+        .nav-pill.active {
+            background: var(--bg-card);
+            color: var(--accent-main);
+            border: 1px solid var(--accent-main);
+        }
+
+        /* Subject Switcher Bar */
+        .subject-switcher-bar {
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 0.5rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            overflow-x: auto;
+        }
+
+        .subject-tabs {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subject-tab {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.32rem 0.75rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .subject-tab:hover {
+            color: var(--text-main);
+            border-color: var(--border-focus);
+        }
+
+        .subject-tab.active {
+            background: var(--accent-alpha);
+            color: var(--accent-main);
+            border-color: var(--accent-main);
+            box-shadow: 0 0 10px var(--accent-alpha);
+        }
+
+        /* Container */
+        .lab-container {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            flex: 1;
+        }
+
+        /* Diagram Carousel / Selector */
+        .diagram-selector-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 0.85rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .selector-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .selector-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .diagram-carousel {
+            display: flex;
+            gap: 0.65rem;
+            overflow-x: auto;
+            padding-bottom: 0.35rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .carousel-item {
+            flex: 0 0 240px;
+            scroll-snap-align: start;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 0.65rem 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            user-select: none;
+        }
+
+        .carousel-item:hover {
+            border-color: var(--border-focus);
+            transform: translateY(-2px);
+        }
+
+        .carousel-item.active {
+            border-color: var(--accent-main);
+            background: var(--bg-card-hover);
+            box-shadow: 0 0 14px var(--accent-alpha);
+        }
+
+        .carousel-item-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .item-qid {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-main);
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+        }
+
+        .item-marks {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #34d399;
+        }
+
+        .item-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Banner */
+        .activity-banner {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            box-shadow: var(--card-shadow);
+        }
+
+        .banner-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .banner-tags {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag-subject {
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 0.2rem 0.65rem;
+            border-radius: 6px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-main);
+            border: 1px solid var(--accent-main);
+        }
+
+        .tag-marks {
+            font-size: 0.74rem;
+            font-weight: 800;
+            padding: 0.2rem 0.65rem;
+            border-radius: 6px;
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+
+        .tag-freq {
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+
+        .activity-title {
+            font-size: 1.35rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+            margin-bottom: 0.4rem;
+            line-height: 1.25;
+        }
+
+        .activity-desc {
+            font-size: 0.88rem;
+            color: var(--text-body);
+            line-height: 1.5;
+            max-width: 820px;
+        }
+
+        /* Progress Pill */
+        .progress-stat-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 0.65rem 1.15rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-circle-wrap {
+            position: relative;
+            width: 52px;
+            height: 52px;
+        }
+
+        .progress-circle-svg {
+            transform: rotate(-90deg);
+        }
+
+        .circle-bg {
+            fill: none;
+            stroke: var(--border-subtle);
+            stroke-width: 5;
+        }
+
+        .circle-bar {
+            fill: none;
+            stroke: #10b981;
+            stroke-width: 5;
+            stroke-dasharray: 138;
+            stroke-dashoffset: 138;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .progress-pct-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: #34d399;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .progress-labels {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .progress-count-text {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-main);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .progress-subtext {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Canvas Workspace Card */
+        .canvas-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--card-shadow);
+        }
+
+        .canvas-toolbar {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 0.65rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .toolbar-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tool-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.42rem 0.85rem;
+            border-radius: 8px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .tool-btn:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-focus);
+            transform: translateY(-1px);
+        }
+
+        .tool-btn:active {
+            transform: translateY(0);
+        }
+
+        .tool-btn.primary {
+            background: #0284c7;
+            border-color: #38bdf8;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+        }
+
+        .tool-btn.primary:hover {
+            filter: brightness(1.1);
+        }
+
+        .tool-btn.amber {
+            background: #d97706;
+            border-color: #fbbf24;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(251, 191, 36, 0.3);
+        }
+
+        .tool-btn.success {
+            background: #059669;
+            border-color: #10b981;
+            color: #ffffff;
+        }
+
+        .ghost-slider-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            padding: 0.3rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .ghost-slider-group input[type="range"] {
+            width: 80px;
+            accent-color: var(--accent-main);
+            cursor: pointer;
+        }
+
+        /* Interactive Vector Stage */
+        .stage-wrapper {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            background-color: #070912;
+            background-image: 
+                radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px),
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 24px 24px, 48px 48px, 48px 48px;
+            overflow: hidden;
+            touch-action: none;
+            cursor: crosshair;
+        }
+
+        @media (max-width: 768px) {
+            .stage-wrapper {
+                height: 420px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stage-wrapper {
+                height: 360px;
+            }
+        }
+
+        .circuit-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .ink-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+            z-index: 5;
+        }
+
+        .particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Ghost Blueprint Elements */
+        .ghost-stroke {
+            stroke: #475569;
+            stroke-width: 2;
+            stroke-dasharray: 4, 4;
+            fill: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .ghost-fill {
+            fill: #1e293b;
+            fill-opacity: 0.15;
+            stroke: #475569;
+            stroke-width: 1.5;
+            stroke-dasharray: 4, 4;
+        }
+
+        /* Snapped Active Components */
+        .active-comp {
+            opacity: 0;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease;
+            transform-origin: center;
+        }
+
+        .active-comp.snapped {
+            opacity: 1;
+            animation: snapPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes snapPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.92);
+                filter: drop-shadow(0 0 20px #fff);
+            }
+            50% {
+                transform: scale(1.04);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .spotlight-pulse {
+            animation: spotlightPulse 0.6s infinite alternate !important;
+            opacity: 0.85 !important;
+        }
+
+        @keyframes spotlightPulse {
+            from { filter: drop-shadow(0 0 8px #fbbf24); }
+            to { filter: drop-shadow(0 0 24px #00f2fe); }
+        }
+
+        /* Floating Hint */
+        .swipe-hint-pill {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--accent-main);
+            color: var(--accent-main);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.4rem 1.15rem;
+            border-radius: 9999px;
+            pointer-events: none;
+            z-index: 15;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            white-space: nowrap;
+        }
+
+        /* Checklist */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.65rem;
+            padding: 1.25rem;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.45rem 0.75rem;
+            border-radius: 8px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+
+        .check-item.done {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .check-icon {
+            font-size: 0.95rem;
+            margin-left: auto;
+        }
+
+        .check-item.done .check-icon {
+            color: #10b981;
+        }
+
+        .color-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        /* Victory Modal Popup */
+        .victory-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 11, 17, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        .victory-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .victory-card {
+            background: linear-gradient(135deg, #151e32 0%, #0d1322 100%);
+            border: 2px solid #10b981;
+            border-radius: 20px;
+            padding: 2.25rem;
+            max-width: 540px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3), 0 0 80px rgba(0, 0, 0, 0.8);
+            transform: scale(0.85);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .victory-overlay.visible .victory-card {
+            transform: scale(1);
+        }
+
+        .victory-badge {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-8px); }
+        }
+
+        .victory-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #34d399;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .victory-desc {
+            font-size: 0.92rem;
+            color: var(--text-body);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .victory-stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .victory-stat-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 0.75rem 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #fbbf24;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label-mini {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 0.2rem;
+        }
+
+        .victory-btn-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        /* Theory Guide Card */
+        .theory-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .theory-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 0.65rem;
+        }
+
+        .theory-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .theory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .theory-item {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+        }
+
+        .theory-item h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 0.35rem;
+        }
+
+        .theory-item p, .theory-item div {
+            font-size: 0.84rem;
+            color: var(--text-body);
+            line-height: 1.45;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <a href="index.html" class="brand-link">
+            <span style="font-size:1.35rem;">⚡</span>
+            <span>KTU Muscle Memory Lab</span>
+            <span class="brand-badge">Advanced Control Systems</span>
+        </a>
+
+        <nav class="nav-pills">
+            <a href="index.html" class="nav-pill">📚 Question Bank</a>
+            <a href="draw.html" class="nav-pill">🎨 Master Hub</a>
+            <a href="draw_drives.html" class="nav-pill ">⚡ Electric Drives</a>
+            <a href="draw_acs.html" class="nav-pill active">🌀 Control Systems</a>
+            <a href="draw_mobile.html" class="nav-pill ">📱 Mobile Computing</a>
+            <a href="mindmap.html" class="nav-pill">🧠 Mind Map</a>
+            <a href="activities.html" class="nav-pill">🎯 Focus Lab</a>
+            <a href="animations.html" class="nav-pill">🎬 60fps Simulators</a>
+        </nav>
+    </header>
+
+    <!-- Subject Switcher Bar -->
+    <div class="subject-switcher-bar">
+        <div class="subject-tabs">
+            <a href="draw_drives.html" class="subject-tab ">⚡ Electric Drives (EET413)</a>
+            <a href="draw_acs.html" class="subject-tab active">🌀 Advanced Control Systems (EET401)</a>
+            <a href="draw_mobile.html" class="subject-tab ">📱 Mobile Computing (CST415)</a>
+        </div>
+        <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">4 Interactive Vector Blueprints</span>
+    </div>
+
+    <main class="lab-container">
+
+        <!-- Diagram Selector Carousel -->
+        <section class="diagram-selector-card">
+            <div class="selector-header">
+                <span class="selector-title">📐 Select Exam Question to Draw:</span>
+                <span style="font-size:0.75rem; color:var(--text-muted);">Swipe or click blueprint</span>
+            </div>
+            <div class="diagram-carousel" id="diagram-carousel">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </section>
+
+        <!-- Activity Info Banner -->
+        <section class="activity-banner">
+            <div class="banner-content">
+                <div class="banner-tags">
+                    <span class="tag-subject" id="banner-subject-pill">EET413</span>
+                    <span class="tag-marks" id="banner-marks-pill">7 Marks</span>
+                    <span class="tag-freq" id="banner-qid-pill">QID</span>
+                </div>
+                <h1 class="activity-title" id="banner-title">Diagram Title</h1>
+                <p class="activity-desc" id="banner-desc">
+                    Swipe with your finger, stylus, or mouse near any circuit element. The <strong>magnetic tracer</strong> snaps the vector lines into vibrant glowing neon schematics!
+                </p>
+            </div>
+
+            <!-- Progress Ring -->
+            <div class="progress-stat-pill">
+                <div class="progress-circle-wrap">
+                    <svg class="progress-circle-svg" width="52" height="52" viewBox="0 0 52 52">
+                        <circle class="circle-bg" cx="26" cy="26" r="22"></circle>
+                        <circle class="circle-bar" id="progress-bar-circle" cx="26" cy="26" r="22"></circle>
+                    </svg>
+                    <div class="progress-pct-text" id="progress-pct-text">0%</div>
+                </div>
+                <div class="progress-labels">
+                    <span class="progress-count-text" id="progress-count-text">0 / 0</span>
+                    <span class="progress-subtext">Components Snapped</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canvas Workspace Card -->
+        <section class="canvas-card">
+            <!-- Toolbar -->
+            <div class="canvas-toolbar">
+                <div class="toolbar-group">
+                    <button class="tool-btn primary" id="btn-auto-draw" title="Watch full guided drawing demo">
+                        <span>▶️</span> <span>Watch Demo</span>
+                    </button>
+                    <button class="tool-btn amber" id="btn-hint" title="Spotlight next stroke to draw">
+                        <span>💡</span> <span>Next Hint</span>
+                    </button>
+                    <button class="tool-btn" id="btn-undo" title="Undo last snapped component">
+                        <span>↩️</span> <span>Undo</span>
+                    </button>
+                    <button class="tool-btn" id="btn-reset" title="Reset canvas and start over">
+                        <span>🔄</span> <span>Reset</span>
+                    </button>
+                </div>
+
+                <div class="toolbar-group">
+                    <!-- Ghost Opacity Slider -->
+                    <div class="ghost-slider-group">
+                        <span>👻 Guide Opacity:</span>
+                        <input type="range" id="ghost-opacity-slider" min="0" max="100" value="25" title="Ghost guide transparency">
+                        <span id="ghost-opacity-val">25%</span>
+                    </div>
+
+                    <!-- Audio Toggle -->
+                    <button class="tool-btn" id="btn-sound-toggle" title="Toggle sound chimes">
+                        <span id="sound-icon">🔊</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stage: Vector Circuit + Touch Canvas -->
+            <div class="stage-wrapper" id="stage-wrapper">
+                <!-- SVG Vector Circuit Stage -->
+                <svg class="circuit-svg" id="circuit-svg" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <!-- Glow filters -->
+                        <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="4" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="4" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="5" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <marker id="arrow-wire" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8"/>
+                        </marker>
+                    </defs>
+
+                    <!-- 1. GHOST BLUEPRINT UNDERLAY -->
+                    <g id="ghost-blueprint-group" opacity="0.25">
+                        <!-- Injected via JS -->
+                    </g>
+
+                    <!-- 2. ACTIVE SNAPPED COMPONENTS -->
+                    <g id="active-components-group">
+                        <!-- Injected via JS -->
+                    </g>
+                </svg>
+
+                <!-- Freehand User Stroke Layer -->
+                <canvas class="ink-canvas" id="ink-canvas"></canvas>
+
+                <!-- Spark Particles Layer -->
+                <canvas class="particles-canvas" id="particles-canvas"></canvas>
+
+                <!-- Floating Swipe Hint -->
+                <div class="swipe-hint-pill" id="swipe-hint-pill">
+                    <span>✨ Swipe or trace near any dotted line to snap!</span>
+                </div>
+            </div>
+
+            <!-- Real-time Component Checklist -->
+            <div class="checklist-grid" id="checklist-grid">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+        <!-- Governing Formula & Theory Guide Card -->
+        <section class="theory-card">
+            <div class="theory-header">
+                <div class="theory-title">
+                    <span>📐</span> <span id="theory-title-text">Exam Warfare &amp; Governing Equations</span>
+                </div>
+                <span style="font-size:0.75rem; color:#34d399; font-weight:700;">KTU 40/30/30 Scoring Protocol</span>
+            </div>
+            <div class="theory-grid">
+                <div class="theory-item">
+                    <h4>Governing Mathematical Formula</h4>
+                    <div id="theory-formula-box"></div>
+                </div>
+                <div class="theory-item">
+                    <h4>Examiner Marking Criteria</h4>
+                    <p id="theory-marking-text"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Victory Modal Popup -->
+    <div class="victory-overlay" id="victory-overlay">
+        <div class="victory-card">
+            <div class="victory-badge">🏆</div>
+            <h2 class="victory-title">Blueprint Mastered!</h2>
+            <p class="victory-desc">
+                Full muscle memory locked in! You traced all components with exact spatial precision. Your neural motor pathways are now primed for full marks in the 3-hour university exam!
+            </p>
+            <div class="victory-stats-row">
+                <div class="victory-stat-box">
+                    <div class="stat-value" id="final-accuracy">100%</div>
+                    <div class="stat-label-mini">Accuracy</div>
+                </div>
+                <div class="victory-stat-box">
+                    <div class="stat-value" id="final-time">00:32</div>
+                    <div class="stat-label-mini">Time Taken</div>
+                </div>
+                <div class="victory-stat-box">
+                    <div class="stat-value" id="final-score">7 / 7</div>
+                    <div class="stat-label-mini">Exam Marks</div>
+                </div>
+            </div>
+            <div class="victory-btn-row">
+                <button class="tool-btn amber" id="btn-practice-again">
+                    <span>🔄</span> <span>Practice Again</span>
+                </button>
+                <button class="tool-btn primary" id="btn-next-diagram">
+                    <span>▶️</span> <span>Next Diagram</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script>
+        (function() {
+            const DIAGRAMS = [{"qid": "acs-q2", "aliases": ["acs-q1", "acs-q2", "acs-q3", "acs-q6", "acs-q7b", "acs-q8", "acs-q9", "acs-q9b", "acs-q10"], "title": "State-Space Block Diagram Representation of Continuous-Time LTI System", "module": 1, "marks": "6 Marks Guaranteed", "desc": "Trace the fundamental vector state equations governing modern control engineering: \\dot{x} = Ax + Bu and y = Cx + Du!", "equation": "\\dot{\\mathbf{x}}(t) = \\mathbf{A}\\mathbf{x}(t) + \\mathbf{B}\\mathbf{u}(t), \\quad \\mathbf{y}(t) = \\mathbf{C}\\mathbf{x}(t) + \\mathbf{D}\\mathbf{u}(t)", "marking_tip": "KTU Examiners allocate 2 marks for the input-to-state integrator loop (B, Summer 1, Integrator 1/s, and feedback matrix A), 2 marks for output summing logic (C and Summer 2), and 2 marks for direct feedforward transmission matrix D.", "svg_viewBox": "0 0 1000 580", "ghost_svg": "\n            <!-- Input u(t) -->\n            <path d=\"M 60 260 L 160 260\" class=\"ghost-stroke\"/>\n            <polygon points=\"160,260 148,254 148,266\" class=\"ghost-fill\"/>\n            <text x=\"100\" y=\"245\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"600\">u(t)</text>\n\n            <!-- Input Matrix B -->\n            <rect x=\"160\" y=\"215\" width=\"90\" height=\"90\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"205\" y=\"270\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"24\" font-weight=\"700\" text-anchor=\"middle\">B</text>\n\n            <!-- Arrow B to Summer 1 -->\n            <path d=\"M 250 260 L 330 260\" class=\"ghost-stroke\"/>\n            <polygon points=\"330,260 318,254 318,266\" class=\"ghost-fill\"/>\n\n            <!-- Summer 1 -->\n            <circle cx=\"355\" cy=\"260\" r=\"25\" class=\"ghost-fill\"/>\n            <text x=\"355\" y=\"267\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"20\" font-weight=\"700\" text-anchor=\"middle\">+</text>\n\n            <!-- x_dot(t) -->\n            <path d=\"M 380 260 L 460 260\" class=\"ghost-stroke\"/>\n            <polygon points=\"460,260 448,254 448,266\" class=\"ghost-fill\"/>\n            <text x=\"415\" y=\"245\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">x\u0307(t)</text>\n\n            <!-- Integrator 1/s -->\n            <rect x=\"460\" y=\"215\" width=\"100\" height=\"90\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"510\" y=\"260\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">\u222b dt</text>\n            <text x=\"510\" y=\"285\" fill=\"#475569\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" text-anchor=\"middle\">(1/s)</text>\n\n            <!-- State x(t) pickoff -->\n            <path d=\"M 560 260 L 680 260\" class=\"ghost-stroke\"/>\n            <polygon points=\"680,260 668,254 668,266\" class=\"ghost-fill\"/>\n            <circle cx=\"620\" cy=\"260\" r=\"6\" class=\"ghost-fill\"/>\n            <text x=\"615\" y=\"245\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"15\" font-weight=\"600\" text-anchor=\"middle\">x(t)</text>\n\n            <!-- Output Matrix C -->\n            <rect x=\"680\" y=\"215\" width=\"90\" height=\"90\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"725\" y=\"270\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"24\" font-weight=\"700\" text-anchor=\"middle\">C</text>\n\n            <!-- Arrow C to Summer 2 -->\n            <path d=\"M 770 260 L 835 260\" class=\"ghost-stroke\"/>\n            <polygon points=\"835,260 823,254 823,266\" class=\"ghost-fill\"/>\n\n            <!-- Summer 2 -->\n            <circle cx=\"860\" cy=\"260\" r=\"25\" class=\"ghost-fill\"/>\n            <text x=\"860\" y=\"267\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"20\" font-weight=\"700\" text-anchor=\"middle\">+</text>\n\n            <!-- Output y(t) -->\n            <path d=\"M 885 260 L 960 260\" class=\"ghost-stroke\"/>\n            <polygon points=\"960,260 948,254 948,266\" class=\"ghost-fill\"/>\n            <text x=\"925\" y=\"245\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"600\">y(t)</text>\n\n            <!-- Matrix A in Feedback Loop -->\n            <path d=\"M 620 260 L 620 420 L 560 420\" class=\"ghost-stroke\"/>\n            <polygon points=\"560,420 572,414 572,426\" class=\"ghost-fill\"/>\n            <rect x=\"460\" y=\"375\" width=\"100\" height=\"90\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"510\" y=\"430\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"24\" font-weight=\"700\" text-anchor=\"middle\">A</text>\n            <path d=\"M 460 420 L 355 420 L 355 285\" class=\"ghost-stroke\"/>\n            <polygon points=\"355,285 349,297 361,297\" class=\"ghost-fill\"/>\n\n            <!-- Matrix D in Feedforward Loop -->\n            <circle cx=\"110\" cy=\"260\" r=\"5\" class=\"ghost-fill\"/>\n            <path d=\"M 110 260 L 110 100 L 460 100\" class=\"ghost-stroke\"/>\n            <polygon points=\"460,100 448,94 448,106\" class=\"ghost-fill\"/>\n            <rect x=\"460\" y=\"55\" width=\"100\" height=\"90\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"510\" y=\"110\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"24\" font-weight=\"700\" text-anchor=\"middle\">D</text>\n            <path d=\"M 560 100 L 860 100 L 860 235\" class=\"ghost-stroke\"/>\n            <polygon points=\"860,235 854,223 866,223\" class=\"ghost-fill\"/>\n        ", "components": [{"id": "comp-input-b", "name": "Input Matrix B & Signal u(t)", "center": [205, 260], "radius": 45, "svg": "\n                    <g id=\"comp-input-b\" class=\"active-comp\" filter=\"url(#glow-cyan)\">\n                        <path d=\"M 60 260 L 160 260\" stroke=\"#06b6d4\" stroke-width=\"3\"/>\n                        <polygon points=\"160,260 148,254 148,266\" fill=\"#06b6d4\"/>\n                        <text x=\"100\" y=\"245\" fill=\"#a5f3fc\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"700\">u(t)</text>\n                        <rect x=\"160\" y=\"215\" width=\"90\" height=\"90\" rx=\"8\" fill=\"rgba(6, 182, 212, 0.2)\" stroke=\"#06b6d4\" stroke-width=\"2.5\"/>\n                        <text x=\"205\" y=\"270\" fill=\"#e0f2fe\" font-family=\"'JetBrains Mono', monospace\" font-size=\"24\" font-weight=\"800\" text-anchor=\"middle\">B</text>\n                    </g>\n                "}, {"id": "comp-summer1", "name": "State Derivative Summing Junction", "center": [355, 260], "radius": 40, "svg": "\n                    <g id=\"comp-summer1\" class=\"active-comp\" filter=\"url(#glow-gold)\">\n                        <path d=\"M 250 260 L 330 260\" stroke=\"#f59e0b\" stroke-width=\"2.5\"/>\n                        <polygon points=\"330,260 318,254 318,266\" fill=\"#f59e0b\"/>\n                        <circle cx=\"355\" cy=\"260\" r=\"25\" fill=\"rgba(245, 158, 11, 0.2)\" stroke=\"#f59e0b\" stroke-width=\"2.5\"/>\n                        <text x=\"355\" y=\"267\" fill=\"#fef3c7\" font-family=\"'JetBrains Mono', monospace\" font-size=\"20\" font-weight=\"800\" text-anchor=\"middle\">+</text>\n                    </g>\n                "}, {"id": "comp-integrator", "name": "Continuous State Integrator (1/s)", "center": [510, 260], "radius": 45, "svg": "\n                    <g id=\"comp-integrator\" class=\"active-comp\" filter=\"url(#glow-green)\">\n                        <path d=\"M 380 260 L 460 260\" stroke=\"#10b981\" stroke-width=\"2.5\"/>\n                        <polygon points=\"460,260 448,254 448,266\" fill=\"#10b981\"/>\n                        <text x=\"415\" y=\"245\" fill=\"#a7f3d0\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">x\u0307(t)</text>\n                        <rect x=\"460\" y=\"215\" width=\"100\" height=\"90\" rx=\"8\" fill=\"rgba(16, 185, 129, 0.2)\" stroke=\"#10b981\" stroke-width=\"2.5\"/>\n                        <text x=\"510\" y=\"260\" fill=\"#ecfdf5\" font-family=\"'JetBrains Mono', monospace\" font-size=\"22\" font-weight=\"800\" text-anchor=\"middle\">\u222b dt</text>\n                        <text x=\"510\" y=\"285\" fill=\"#6ee7b7\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" text-anchor=\"middle\">(1/s)</text>\n                    </g>\n                "}, {"id": "comp-matrix-a", "name": "System Matrix A (State Feedback)", "center": [510, 420], "radius": 45, "svg": "\n                    <g id=\"comp-matrix-a\" class=\"active-comp\" filter=\"url(#glow-pink)\">\n                        <path d=\"M 620 260 L 620 420 L 560 420\" stroke=\"#ec4899\" stroke-width=\"2.5\"/>\n                        <polygon points=\"560,420 572,414 572,426\" fill=\"#ec4899\"/>\n                        <rect x=\"460\" y=\"375\" width=\"100\" height=\"90\" rx=\"8\" fill=\"rgba(236, 72, 153, 0.2)\" stroke=\"#ec4899\" stroke-width=\"2.5\"/>\n                        <text x=\"510\" y=\"430\" fill=\"#fdf2f8\" font-family=\"'JetBrains Mono', monospace\" font-size=\"24\" font-weight=\"800\" text-anchor=\"middle\">A</text>\n                        <path d=\"M 460 420 L 355 420 L 355 285\" stroke=\"#ec4899\" stroke-width=\"2.5\"/>\n                        <polygon points=\"355,285 349,297 361,297\" fill=\"#ec4899\"/>\n                    </g>\n                "}, {"id": "comp-matrix-c", "name": "Output Matrix C & State Pickoff x(t)", "center": [725, 260], "radius": 45, "svg": "\n                    <g id=\"comp-matrix-c\" class=\"active-comp\" filter=\"url(#glow-cyan)\">\n                        <path d=\"M 560 260 L 680 260\" stroke=\"#06b6d4\" stroke-width=\"2.5\"/>\n                        <polygon points=\"680,260 668,254 668,266\" fill=\"#06b6d4\"/>\n                        <circle cx=\"620\" cy=\"260\" r=\"6\" fill=\"#06b6d4\"/>\n                        <text x=\"615\" y=\"245\" fill=\"#a5f3fc\" font-family=\"'JetBrains Mono', monospace\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">x(t)</text>\n                        <rect x=\"680\" y=\"215\" width=\"90\" height=\"90\" rx=\"8\" fill=\"rgba(6, 182, 212, 0.2)\" stroke=\"#06b6d4\" stroke-width=\"2.5\"/>\n                        <text x=\"725\" y=\"270\" fill=\"#e0f2fe\" font-family=\"'JetBrains Mono', monospace\" font-size=\"24\" font-weight=\"800\" text-anchor=\"middle\">C</text>\n                    </g>\n                "}, {"id": "comp-summer2", "name": "Output Summing Junction & y(t)", "center": [860, 260], "radius": 45, "svg": "\n                    <g id=\"comp-summer2\" class=\"active-comp\" filter=\"url(#glow-gold)\">\n                        <path d=\"M 770 260 L 835 260\" stroke=\"#f59e0b\" stroke-width=\"2.5\"/>\n                        <polygon points=\"835,260 823,254 823,266\" fill=\"#f59e0b\"/>\n                        <circle cx=\"860\" cy=\"260\" r=\"25\" fill=\"rgba(245, 158, 11, 0.2)\" stroke=\"#f59e0b\" stroke-width=\"2.5\"/>\n                        <text x=\"860\" y=\"267\" fill=\"#fef3c7\" font-family=\"'JetBrains Mono', monospace\" font-size=\"20\" font-weight=\"800\" text-anchor=\"middle\">+</text>\n                        <path d=\"M 885 260 L 960 260\" stroke=\"#f59e0b\" stroke-width=\"3\"/>\n                        <polygon points=\"960,260 948,254 948,266\" fill=\"#f59e0b\"/>\n                        <text x=\"925\" y=\"245\" fill=\"#fde68a\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"700\">y(t)</text>\n                    </g>\n                "}, {"id": "comp-matrix-d", "name": "Direct Transmission Matrix D", "center": [510, 100], "radius": 45, "svg": "\n                    <g id=\"comp-matrix-d\" class=\"active-comp\" filter=\"url(#glow-green)\">\n                        <circle cx=\"110\" cy=\"260\" r=\"5\" fill=\"#10b981\"/>\n                        <path d=\"M 110 260 L 110 100 L 460 100\" stroke=\"#10b981\" stroke-width=\"2.5\"/>\n                        <polygon points=\"460,100 448,94 448,106\" fill=\"#10b981\"/>\n                        <rect x=\"460\" y=\"55\" width=\"100\" height=\"90\" rx=\"8\" fill=\"rgba(16, 185, 129, 0.2)\" stroke=\"#10b981\" stroke-width=\"2.5\"/>\n                        <text x=\"510\" y=\"110\" fill=\"#ecfdf5\" font-family=\"'JetBrains Mono', monospace\" font-size=\"24\" font-weight=\"800\" text-anchor=\"middle\">D</text>\n                        <path d=\"M 560 100 L 860 100 L 860 235\" stroke=\"#10b981\" stroke-width=\"2.5\"/>\n                        <polygon points=\"860,235 854,223 866,223\" fill=\"#10b981\"/>\n                    </g>\n                "}]}, {"qid": "acs-q4", "aliases": ["acs-q4", "acs-q4b"], "title": "State Space Model of Electrical Series RLC Circuit", "module": 1, "marks": "7 Marks Guaranteed", "desc": "Select state variables x1(t) = i_L(t) (inductor current) and x2(t) = v_C(t) (capacitor voltage). Swipe to trace the loop!", "equation": "\\begin{bmatrix} \\dot{x}_1 \\\\ \\dot{x}_2 \\end{bmatrix} = \\begin{bmatrix} -R/L & -1/L \\\\ 1/C & 0 \\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} + \\begin{bmatrix} 1/L \\\\ 0 \\end{bmatrix} u(t), \\quad y = \\begin{bmatrix} 0 & 1 \\end{bmatrix} x", "marking_tip": "University examiners award 3 marks for the series schematic with labeled states iL and vC, and 4 marks for deriving the state differential equations.", "svg_viewBox": "0 0 1000 580", "ghost_svg": "\n            <!-- Input Source u(t) -->\n            <circle cx=\"150\" cy=\"290\" r=\"32\" class=\"ghost-fill\"/>\n            <path d=\"M 135 290 Q 142 270 150 290 Q 158 310 165 290\" class=\"ghost-stroke\"/>\n            <text x=\"150\" y=\"340\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" text-anchor=\"middle\">u(t) = e(t)</text>\n            <text x=\"150\" y=\"245\" fill=\"#64748b\" font-size=\"14\" text-anchor=\"middle\">(+)</text>\n            <text x=\"150\" y=\"375\" fill=\"#64748b\" font-size=\"14\" text-anchor=\"middle\">(-)</text>\n\n            <!-- Top wire to Resistor R -->\n            <path d=\"M 150 258 L 150 180 L 280 180\" class=\"ghost-stroke\"/>\n\n            <!-- Resistor R -->\n            <path d=\"M 280 180 L 290 180 L 298 160 L 314 200 L 330 160 L 346 200 L 362 160 L 378 200 L 386 180 L 410 180\" class=\"ghost-stroke\"/>\n            <text x=\"345\" y=\"140\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"15\" text-anchor=\"middle\">R (\u03a9)</text>\n\n            <!-- Inductor L with state x1 = iL -->\n            <path d=\"M 410 180 L 460 180 C 470 150, 495 150, 495 180 C 495 150, 525 150, 525 180 C 525 150, 555 150, 555 180 C 555 150, 585 150, 585 180 L 650 180\" class=\"ghost-stroke\"/>\n            <text x=\"540\" y=\"140\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"15\" text-anchor=\"middle\">L (State x1 = iL)</text>\n\n            <!-- Wire to Shunt Capacitor C -->\n            <path d=\"M 650 180 L 720 180 L 720 255\" class=\"ghost-stroke\"/>\n\n            <!-- Capacitor C with state x2 = vC -->\n            <line x1=\"680\" y1=\"255\" x2=\"760\" y2=\"255\" class=\"ghost-stroke\" stroke-width=\"3\"/>\n            <line x1=\"680\" y1=\"275\" x2=\"760\" y2=\"275\" class=\"ghost-stroke\" stroke-width=\"3\"/>\n            <line x1=\"720\" y1=\"275\" x2=\"720\" y2=\"400\" class=\"ghost-stroke\"/>\n            <text x=\"790\" y=\"270\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\">C (x2 = vC)</text>\n\n            <!-- Output Terminals y(t) = vC -->\n            <line x1=\"720\" y1=\"180\" x2=\"880\" y2=\"180\" class=\"ghost-stroke\"/>\n            <circle cx=\"880\" cy=\"180\" r=\"5\" class=\"ghost-fill\"/>\n            <line x1=\"720\" y1=\"400\" x2=\"880\" y2=\"400\" class=\"ghost-stroke\"/>\n            <circle cx=\"880\" cy=\"400\" r=\"5\" class=\"ghost-fill\"/>\n            <text x=\"910\" y=\"295\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"bold\">y(t) = vC</text>\n\n            <!-- Ground Common Rail -->\n            <path d=\"M 150 322 L 150 400 L 720 400\" class=\"ghost-stroke\"/>\n            <line x1=\"420\" y1=\"400\" x2=\"420\" y2=\"420\" class=\"ghost-stroke\"/>\n            <line x1=\"400\" y1=\"420\" x2=\"440\" y2=\"420\" class=\"ghost-stroke\"/>\n            <line x1=\"410\" y1=\"426\" x2=\"430\" y2=\"426\" class=\"ghost-stroke\"/>\n        ", "active_svg": "\n            <!-- Comp 1: Input Voltage Source u(t) -->\n            <g id=\"comp-rlc-source\" class=\"active-comp\">\n                <circle cx=\"150\" cy=\"290\" r=\"32\" fill=\"#2d220b\" stroke=\"#fbbf24\" stroke-width=\"3.5\" filter=\"url(#glow-gold)\"/>\n                <path d=\"M 135 290 Q 142 270 150 290 Q 158 310 165 290\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"3.5\" stroke-linecap=\"round\"/>\n                <text x=\"150\" y=\"342\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\">u(t)</text>\n                <text x=\"150\" y=\"248\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">(+)</text>\n                <text x=\"150\" y=\"375\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">(-)</text>\n            </g>\n\n            <!-- Comp 2: Top Line to Resistor -->\n            <g id=\"comp-rlc-wire1\" class=\"active-comp\">\n                <path d=\"M 150 258 L 150 180 L 280 180\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"3.5\" stroke-linecap=\"round\" filter=\"url(#glow-cyan)\"/>\n                <path d=\"M 210 180 L 225 180\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#arrow-wire)\"/>\n            </g>\n\n            <!-- Comp 3: Series Resistor R -->\n            <g id=\"comp-rlc-resistor\" class=\"active-comp\">\n                <path d=\"M 280 180 L 290 180 L 298 160 L 314 200 L 330 160 L 346 200 L 362 160 L 378 200 L 386 180 L 410 180\" fill=\"none\" stroke=\"#ff7b00\" stroke-width=\"3.5\" stroke-linejoin=\"round\" filter=\"drop-shadow(0 0 8px rgba(255,123,0,0.6))\"/>\n                <rect x=\"325\" y=\"125\" width=\"45\" height=\"24\" rx=\"4\" fill=\"#3a1c04\" stroke=\"#ff7b00\"/>\n                <text x=\"347\" y=\"142\" fill=\"#ff7b00\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">R</text>\n            </g>\n\n            <!-- Comp 4: Energy Storage Inductor L -->\n            <g id=\"comp-rlc-inductor\" class=\"active-comp\">\n                <path d=\"M 410 180 L 460 180 C 470 148, 495 148, 495 180 C 495 148, 525 148, 525 180 C 525 148, 555 148, 555 180 C 555 148, 585 148, 585 180 L 650 180\" fill=\"none\" stroke=\"#c084fc\" stroke-width=\"3.5\" filter=\"drop-shadow(0 0 10px rgba(192,132,252,0.6))\"/>\n                <rect x=\"470\" y=\"122\" width=\"140\" height=\"26\" rx=\"5\" fill=\"#2d124d\" stroke=\"#c084fc\"/>\n                <text x=\"540\" y=\"140\" fill=\"#c084fc\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">L (State x1 = iL)</text>\n            </g>\n\n            <!-- Comp 5: Shunt Storage Capacitor C -->\n            <g id=\"comp-rlc-capacitor\" class=\"active-comp\">\n                <path d=\"M 650 180 L 720 180 L 720 255\" fill=\"none\" stroke=\"#10b981\" stroke-width=\"3.5\"/>\n                <line x1=\"680\" y1=\"255\" x2=\"760\" y2=\"255\" stroke=\"#10b981\" stroke-width=\"4.5\" filter=\"url(#glow-green)\"/>\n                <line x1=\"680\" y1=\"275\" x2=\"760\" y2=\"275\" stroke=\"#10b981\" stroke-width=\"4.5\" filter=\"url(#glow-green)\"/>\n                <line x1=\"720\" y1=\"275\" x2=\"720\" y2=\"400\" stroke=\"#10b981\" stroke-width=\"3.5\"/>\n                <rect x=\"765\" y=\"252\" width=\"140\" height=\"26\" rx=\"5\" fill=\"#063826\" stroke=\"#10b981\"/>\n                <text x=\"835\" y=\"270\" fill=\"#34d399\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">C (State x2 = vC)</text>\n            </g>\n\n            <!-- Comp 6: Ground Return Bus -->\n            <g id=\"comp-rlc-ground\" class=\"active-comp\">\n                <path d=\"M 150 322 L 150 400 L 720 400\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"3.5\" stroke-linecap=\"round\" filter=\"url(#glow-cyan)\"/>\n                <line x1=\"420\" y1=\"400\" x2=\"420\" y2=\"425\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n                <line x1=\"395\" y1=\"425\" x2=\"445\" y2=\"425\" stroke=\"#38bdf8\" stroke-width=\"3.5\"/>\n                <line x1=\"405\" y1=\"432\" x2=\"435\" y2=\"432\" stroke=\"#38bdf8\" stroke-width=\"2.5\"/>\n                <line x1=\"415\" y1=\"438\" x2=\"425\" y2=\"438\" stroke=\"#38bdf8\" stroke-width=\"2\"/>\n                <circle cx=\"720\" cy=\"400\" r=\"5\" fill=\"#38bdf8\"/>\n            </g>\n\n            <!-- Comp 7: Output Voltage Probe y = vC -->\n            <g id=\"comp-rlc-output\" class=\"active-comp\">\n                <line x1=\"720\" y1=\"180\" x2=\"880\" y2=\"180\" stroke=\"#f43f5e\" stroke-width=\"3\" stroke-dasharray=\"4,4\"/>\n                <circle cx=\"880\" cy=\"180\" r=\"5\" fill=\"#f43f5e\"/>\n                <line x1=\"720\" y1=\"400\" x2=\"880\" y2=\"400\" stroke=\"#f43f5e\" stroke-width=\"3\" stroke-dasharray=\"4,4\"/>\n                <circle cx=\"880\" cy=\"400\" r=\"5\" fill=\"#f43f5e\"/>\n                <rect x=\"850\" y=\"275\" width=\"120\" height=\"30\" rx=\"6\" fill=\"#2d0b17\" stroke=\"#f43f5e\" stroke-width=\"2\" filter=\"url(#glow-pink)\"/>\n                <text x=\"910\" y=\"295\" fill=\"#f43f5e\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\" font-weight=\"900\" text-anchor=\"middle\">y(t) = vC(t)</text>\n            </g>\n\n            <!-- Comp 8: State Differential Annotation -->\n            <g id=\"comp-rlc-eqs\" class=\"active-comp\">\n                <rect x=\"250\" y=\"460\" width=\"500\" height=\"45\" rx=\"8\" fill=\"#0f172a\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n                <text x=\"500\" y=\"488\" fill=\"#38bdf8\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\">dx1/dt = -(R/L)x1 - (1/L)x2 + (1/L)u,   dx2/dt = (1/C)x1</text>\n            </g>\n        ", "components": [{"id": "comp-rlc-source", "name": "Input Voltage Source u(t)", "tag": "Input", "color": "#fbbf24", "center": {"x": 150, "y": 290}, "radius": 50, "points": [{"x": 150, "y": 258}, {"x": 150, "y": 290}, {"x": 150, "y": 322}], "order": 1}, {"id": "comp-rlc-wire1", "name": "Input Connecting Wire", "tag": "Rail", "color": "#38bdf8", "center": {"x": 200, "y": 180}, "radius": 50, "points": [{"x": 150, "y": 180}, {"x": 200, "y": 180}, {"x": 280, "y": 180}], "order": 2}, {"id": "comp-rlc-resistor", "name": "Series Resistor (R)", "tag": "Passive", "color": "#ff7b00", "center": {"x": 345, "y": 180}, "radius": 55, "points": [{"x": 280, "y": 180}, {"x": 345, "y": 180}, {"x": 410, "y": 180}], "order": 3}, {"id": "comp-rlc-inductor", "name": "Energy Storage Inductor L (State x1 = iL)", "tag": "State x1", "color": "#c084fc", "center": {"x": 530, "y": 180}, "radius": 75, "points": [{"x": 410, "y": 180}, {"x": 530, "y": 180}, {"x": 650, "y": 180}], "order": 4}, {"id": "comp-rlc-capacitor", "name": "Shunt Storage Capacitor C (State x2 = vC)", "tag": "State x2", "color": "#10b981", "center": {"x": 720, "y": 265}, "radius": 65, "points": [{"x": 720, "y": 180}, {"x": 720, "y": 265}, {"x": 720, "y": 400}], "order": 5}, {"id": "comp-rlc-ground", "name": "Common Return Bus & Ground", "tag": "Ground", "color": "#38bdf8", "center": {"x": 435, "y": 400}, "radius": 85, "points": [{"x": 150, "y": 400}, {"x": 420, "y": 400}, {"x": 720, "y": 400}], "order": 6}, {"id": "comp-rlc-output", "name": "Output Voltage Terminals (y = vC)", "tag": "Output", "color": "#f43f5e", "center": {"x": 880, "y": 290}, "radius": 60, "points": [{"x": 880, "y": 180}, {"x": 880, "y": 290}, {"x": 880, "y": 400}], "order": 7}, {"id": "comp-rlc-eqs", "name": "State Equations Formulation Banner", "tag": "Math", "color": "#38bdf8", "center": {"x": 500, "y": 480}, "radius": 70, "points": [{"x": 300, "y": 480}, {"x": 500, "y": 480}, {"x": 700, "y": 480}], "order": 8}]}, {"qid": "acs-q5", "aliases": ["acs-q5", "acs-q5-fig2", "acs-q7"], "title": "Armature-Controlled DC Servomotor State Flow Diagram", "module": 1, "marks": "7 Marks Guaranteed", "desc": "Models electro-mechanical energy conversion: Input ea(t) -> Armature Current ia -> Motor Torque Tm -> Speed \u03c9 -> Angular Position \u03b8.", "equation": "\\dot{x} = \\begin{bmatrix} -R_a/L_a & -K_b/L_a & 0 \\\\ K_t/J & -B/J & 0 \\\\ 0 & 1 & 0 \\end{bmatrix} x + \\begin{bmatrix} 1/L_a \\\\ 0 \\\\ 0 \\end{bmatrix} e_a, \\quad y = \\theta", "marking_tip": "University standard requires drawing the closed-loop signal flow diagram with forward blocks (1/(La s+Ra), Kt, 1/(Js+B), 1/s) and back-EMF feedback (Kb).", "svg_viewBox": "0 0 1000 580", "ghost_svg": "\n            <!-- Input ea(t) & Summing Junction -->\n            <line x1=\"60\" y1=\"200\" x2=\"132\" y2=\"200\" class=\"ghost-stroke\"/>\n            <text x=\"80\" y=\"185\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\">ea(t)</text>\n            <circle cx=\"150\" cy=\"200\" r=\"18\" class=\"ghost-fill\"/>\n\n            <!-- Armature Electrical Block 1/(La s + Ra) -->\n            <line x1=\"168\" y1=\"200\" x2=\"220\" y2=\"200\" class=\"ghost-stroke\"/>\n            <rect x=\"220\" y=\"165\" width=\"115\" height=\"70\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"277\" y=\"205\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" text-anchor=\"middle\">1/(La\u00b7s + Ra)</text>\n\n            <!-- Armature Current ia & Torque Constant Kt -->\n            <line x1=\"335\" y1=\"200\" x2=\"395\" y2=\"200\" class=\"ghost-stroke\"/>\n            <text x=\"365\" y=\"185\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\">ia</text>\n            <rect x=\"395\" y=\"165\" width=\"80\" height=\"70\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"435\" y=\"205\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">Kt</text>\n\n            <!-- Motor Torque Tm & Mechanical Block 1/(J s + B) -->\n            <line x1=\"475\" y1=\"200\" x2=\"535\" y2=\"200\" class=\"ghost-stroke\"/>\n            <text x=\"505\" y=\"185\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\">Tm</text>\n            <rect x=\"535\" y=\"165\" width=\"115\" height=\"70\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"592\" y=\"205\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" text-anchor=\"middle\">1/(J\u00b7s + B)</text>\n\n            <!-- Speed State x1 = \u03c9 & Position Integrator 1/s -->\n            <line x1=\"650\" y1=\"200\" x2=\"725\" y2=\"200\" class=\"ghost-stroke\"/>\n            <text x=\"685\" y=\"185\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\">\u03c9(t)</text>\n            <rect x=\"725\" y=\"165\" width=\"80\" height=\"70\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"765\" y=\"205\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\">1/s</text>\n\n            <!-- Output Position State x2 = \u03b8 -->\n            <line x1=\"805\" y1=\"200\" x2=\"920\" y2=\"200\" class=\"ghost-stroke\"/>\n            <text x=\"860\" y=\"185\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"bold\">\u03b8(t)</text>\n\n            <!-- Back-EMF Feedback Block Kb -->\n            <path d=\"M 685 200 L 685 340 L 480 340\" class=\"ghost-stroke\"/>\n            <rect x=\"400\" y=\"305\" width=\"80\" height=\"70\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"440\" y=\"345\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">Kb</text>\n            <path d=\"M 400 340 L 150 340 L 150 218\" class=\"ghost-stroke\"/>\n            <text x=\"260\" y=\"325\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\">eb = Kb\u00b7\u03c9</text>\n        ", "active_svg": "\n            <!-- Comp 1: Armature Input Voltage ea(t) -->\n            <g id=\"comp-dcm-input\" class=\"active-comp\">\n                <line x1=\"60\" y1=\"200\" x2=\"132\" y2=\"200\" stroke=\"#fbbf24\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"55\" y=\"175\" width=\"60\" height=\"24\" rx=\"4\" fill=\"#2d220b\" stroke=\"#fbbf24\"/>\n                <text x=\"85\" y=\"192\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">ea(t)</text>\n            </g>\n\n            <!-- Comp 2: Back-EMF Summing Junction -->\n            <g id=\"comp-dcm-sum\" class=\"active-comp\">\n                <circle cx=\"150\" cy=\"200\" r=\"18\" fill=\"#141c2f\" stroke=\"#38bdf8\" stroke-width=\"3\" filter=\"url(#glow-cyan)\"/>\n                <text x=\"150\" y=\"205\" fill=\"#38bdf8\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\">\u03a3</text>\n                <text x=\"132\" y=\"190\" fill=\"#38bdf8\" font-size=\"13\">+</text>\n                <text x=\"145\" y=\"228\" fill=\"#f43f5e\" font-size=\"13\">-</text>\n            </g>\n\n            <!-- Comp 3: Armature Impedance Block -->\n            <g id=\"comp-dcm-elec\" class=\"active-comp\">\n                <line x1=\"168\" y1=\"200\" x2=\"220\" y2=\"200\" stroke=\"#38bdf8\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"220\" y=\"165\" width=\"115\" height=\"70\" rx=\"8\" fill=\"#032732\" stroke=\"#00f2fe\" stroke-width=\"3\" filter=\"url(#glow-cyan)\"/>\n                <text x=\"277\" y=\"196\" fill=\"#00f2fe\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">ELECTRICAL</text>\n                <text x=\"277\" y=\"215\" fill=\"#ffffff\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">1/(La\u00b7s + Ra)</text>\n            </g>\n\n            <!-- Comp 4: Motor Torque Constant Kt -->\n            <g id=\"comp-dcm-kt\" class=\"active-comp\">\n                <line x1=\"335\" y1=\"200\" x2=\"395\" y2=\"200\" stroke=\"#00f2fe\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <text x=\"365\" y=\"185\" fill=\"#00f2fe\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\">ia</text>\n                <rect x=\"395\" y=\"165\" width=\"80\" height=\"70\" rx=\"8\" fill=\"#1e1809\" stroke=\"#fbbf24\" stroke-width=\"3\" filter=\"url(#glow-gold)\"/>\n                <text x=\"435\" y=\"196\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">TORQUE</text>\n                <text x=\"435\" y=\"218\" fill=\"#ffffff\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\">Kt</text>\n            </g>\n\n            <!-- Comp 5: Mechanical Dynamics Block -->\n            <g id=\"comp-dcm-mech\" class=\"active-comp\">\n                <line x1=\"475\" y1=\"200\" x2=\"535\" y2=\"200\" stroke=\"#fbbf24\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <text x=\"505\" y=\"185\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\">Tm</text>\n                <rect x=\"535\" y=\"165\" width=\"115\" height=\"70\" rx=\"8\" fill=\"#063826\" stroke=\"#10b981\" stroke-width=\"3\" filter=\"url(#glow-green)\"/>\n                <text x=\"592\" y=\"196\" fill=\"#10b981\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">ROTOR INERTIA</text>\n                <text x=\"592\" y=\"215\" fill=\"#ffffff\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">1/(J\u00b7s + B)</text>\n            </g>\n\n            <!-- Comp 6: Speed State Output \u03c9 -->\n            <g id=\"comp-dcm-speed\" class=\"active-comp\">\n                <line x1=\"650\" y1=\"200\" x2=\"725\" y2=\"200\" stroke=\"#10b981\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <circle cx=\"685\" cy=\"200\" r=\"5\" fill=\"#10b981\"/>\n                <rect x=\"660\" y=\"162\" width=\"50\" height=\"22\" rx=\"4\" fill=\"#063826\" stroke=\"#10b981\"/>\n                <text x=\"685\" y=\"178\" fill=\"#34d399\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">\u03c9(t)</text>\n            </g>\n\n            <!-- Comp 7: Position Integrator 1/s -->\n            <g id=\"comp-dcm-pos\" class=\"active-comp\">\n                <rect x=\"725\" y=\"165\" width=\"80\" height=\"70\" rx=\"8\" fill=\"#2d124d\" stroke=\"#c084fc\" stroke-width=\"3\" filter=\"drop-shadow(0 0 10px rgba(192,132,252,0.6))\"/>\n                <text x=\"765\" y=\"196\" fill=\"#c084fc\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">INTEGRATOR</text>\n                <text x=\"765\" y=\"218\" fill=\"#ffffff\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\">1/s</text>\n                <line x1=\"805\" y1=\"200\" x2=\"905\" y2=\"200\" stroke=\"#c084fc\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"880\" y=\"180\" width=\"70\" height=\"32\" rx=\"6\" fill=\"#2d0b17\" stroke=\"#f43f5e\" stroke-width=\"2\"/>\n                <text x=\"915\" y=\"201\" fill=\"#f43f5e\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"900\" text-anchor=\"middle\">\u03b8(t)</text>\n            </g>\n\n            <!-- Comp 8: Back-EMF Feedback Constant Kb -->\n            <g id=\"comp-dcm-kb\" class=\"active-comp\">\n                <path d=\"M 685 200 L 685 340 L 480 340\" stroke=\"#f43f5e\" stroke-width=\"3\" fill=\"none\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"400\" y=\"305\" width=\"80\" height=\"70\" rx=\"8\" fill=\"#2d0b17\" stroke=\"#f43f5e\" stroke-width=\"3\" filter=\"url(#glow-pink)\"/>\n                <text x=\"440\" y=\"336\" fill=\"#f43f5e\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">BACK-EMF</text>\n                <text x=\"440\" y=\"358\" fill=\"#ffffff\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\">Kb</text>\n            </g>\n\n            <!-- Comp 9: Negative Feedback Return Loop -->\n            <g id=\"comp-dcm-loop\" class=\"active-comp\">\n                <path d=\"M 400 340 L 150 340 L 150 218\" stroke=\"#f43f5e\" stroke-width=\"3\" fill=\"none\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"220\" y=\"325\" width=\"120\" height=\"25\" rx=\"5\" fill=\"#1e1809\" stroke=\"#fbbf24\"/>\n                <text x=\"280\" y=\"342\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">eb(t) = Kb\u00b7\u03c9(t)</text>\n            </g>\n        ", "components": [{"id": "comp-dcm-input", "name": "Armature Input Voltage ea(t)", "tag": "Input", "color": "#fbbf24", "center": {"x": 85, "y": 200}, "radius": 40, "points": [{"x": 60, "y": 200}, {"x": 130, "y": 200}], "order": 1}, {"id": "comp-dcm-sum", "name": "Back-EMF Comparator (\u03a3)", "tag": "Summing", "color": "#38bdf8", "center": {"x": 150, "y": 200}, "radius": 35, "points": [{"x": 150, "y": 200}], "order": 2}, {"id": "comp-dcm-elec", "name": "Armature Electrical Block 1/(La s + Ra)", "tag": "Impedance", "color": "#00f2fe", "center": {"x": 277, "y": 200}, "radius": 60, "points": [{"x": 220, "y": 200}, {"x": 277, "y": 200}, {"x": 335, "y": 200}], "order": 3}, {"id": "comp-dcm-kt", "name": "Motor Torque Constant (Kt)", "tag": "Torque", "color": "#fbbf24", "center": {"x": 435, "y": 200}, "radius": 50, "points": [{"x": 395, "y": 200}, {"x": 435, "y": 200}, {"x": 475, "y": 200}], "order": 4}, {"id": "comp-dcm-mech", "name": "Mechanical Dynamics Block 1/(J s + B)", "tag": "Rotor", "color": "#10b981", "center": {"x": 592, "y": 200}, "radius": 60, "points": [{"x": 535, "y": 200}, {"x": 592, "y": 200}, {"x": 650, "y": 200}], "order": 5}, {"id": "comp-dcm-speed", "name": "Shaft Speed State x1 = \u03c9(t)", "tag": "State x1", "color": "#10b981", "center": {"x": 685, "y": 200}, "radius": 35, "points": [{"x": 650, "y": 200}, {"x": 685, "y": 200}, {"x": 725, "y": 200}], "order": 6}, {"id": "comp-dcm-pos", "name": "Position Integrator 1/s yielding \u03b8(t)", "tag": "State x2", "color": "#c084fc", "center": {"x": 800, "y": 200}, "radius": 65, "points": [{"x": 725, "y": 200}, {"x": 805, "y": 200}, {"x": 905, "y": 200}], "order": 7}, {"id": "comp-dcm-kb", "name": "Back-EMF Feedback Constant (Kb)", "tag": "Feedback", "color": "#f43f5e", "center": {"x": 440, "y": 340}, "radius": 55, "points": [{"x": 400, "y": 340}, {"x": 440, "y": 340}, {"x": 480, "y": 340}], "order": 8}, {"id": "comp-dcm-loop", "name": "Negative Feedback Loop Path", "tag": "Return", "color": "#f43f5e", "center": {"x": 280, "y": 340}, "radius": 65, "points": [{"x": 400, "y": 340}, {"x": 280, "y": 340}, {"x": 150, "y": 340}, {"x": 150, "y": 220}], "order": 9}]}, {"qid": "acs-q13", "aliases": ["acs-q11", "acs-q12", "acs-q13", "acs-q13b", "acs-q14", "acs-q15", "acs-q16", "acs-q16b", "acs-q17", "acs-q17b", "acs-q18", "acs-q19", "acs-q20", "acs-q20b", "acs-q21", "acs-q22"], "title": "State Feedback Pole Placement Regulator System (Ackermann)", "module": 3, "marks": "7 Marks Guaranteed", "desc": "Universal question! Closed loop pole placement via full state feedback u = -Kx + r to shift unstable open loop poles to desired locations in the s-plane.", "equation": "u = -Kx + r, \\quad \\dot{x} = (A - BK)x + Br, \\quad K = [0 \\dots 1] M_c^{-1} \\phi_d(A)", "marking_tip": "Draw the continuous state space plant with integrators, the state vector tapping node x, the feedback gain matrix K, and the input comparator.", "svg_viewBox": "0 0 1000 580", "ghost_svg": "\n            <!-- Reference Input r(t) & Input Summing -->\n            <line x1=\"80\" y1=\"200\" x2=\"162\" y2=\"200\" class=\"ghost-stroke\"/>\n            <text x=\"110\" y=\"185\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\">r(t)</text>\n            <circle cx=\"180\" cy=\"200\" r=\"18\" class=\"ghost-fill\"/>\n\n            <!-- Plant Input Matrix B -->\n            <line x1=\"198\" y1=\"200\" x2=\"260\" y2=\"200\" class=\"ghost-stroke\"/>\n            <rect x=\"260\" y=\"165\" width=\"80\" height=\"70\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"300\" y=\"206\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\">B</text>\n\n            <!-- Internal Summing Junction for A matrix -->\n            <line x1=\"340\" y1=\"200\" x2=\"402\" y2=\"200\" class=\"ghost-stroke\"/>\n            <circle cx=\"420\" cy=\"200\" r=\"18\" class=\"ghost-fill\"/>\n\n            <!-- State Integrator Block 1/s -->\n            <line x1=\"438\" y1=\"200\" x2=\"510\" y2=\"200\" class=\"ghost-stroke\"/>\n            <text x=\"470\" y=\"185\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\">x_dot</text>\n            <rect x=\"510\" y=\"165\" width=\"100\" height=\"70\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"560\" y=\"206\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"18\" font-weight=\"bold\" text-anchor=\"middle\">\u222b dt</text>\n\n            <!-- Output Matrix C & Output y(t) -->\n            <line x1=\"610\" y1=\"200\" x2=\"720\" y2=\"200\" class=\"ghost-stroke\"/>\n            <circle cx=\"660\" cy=\"200\" r=\"5\" class=\"ghost-fill\"/>\n            <text x=\"660\" y=\"185\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\">x(t)</text>\n            <rect x=\"720\" y=\"165\" width=\"80\" height=\"70\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"760\" y=\"206\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\">C</text>\n            <line x1=\"800\" y1=\"200\" x2=\"900\" y2=\"200\" class=\"ghost-stroke\"/>\n            <text x=\"860\" y=\"185\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"14\" font-weight=\"bold\">y = Cx</text>\n\n            <!-- Plant Dynamics Matrix A Feedback -->\n            <path d=\"M 660 200 L 660 100 L 460 100\" class=\"ghost-stroke\"/>\n            <rect x=\"380\" y=\"65\" width=\"80\" height=\"70\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"420\" y=\"106\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\">A</text>\n            <path d=\"M 380 100 L 320 100 L 420 182\" class=\"ghost-stroke\"/>\n\n            <!-- State Feedback Gain Matrix K -->\n            <path d=\"M 660 200 L 660 350 L 480 350\" class=\"ghost-stroke\"/>\n            <rect x=\"380\" y=\"315\" width=\"100\" height=\"70\" rx=\"8\" class=\"ghost-fill\"/>\n            <text x=\"430\" y=\"356\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\">K</text>\n            <path d=\"M 380 350 L 180 350 L 180 218\" class=\"ghost-stroke\"/>\n            <text x=\"260\" y=\"335\" fill=\"#64748b\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\">u = -Kx</text>\n        ", "active_svg": "\n            <!-- Comp 1: Reference Command r(t) -->\n            <g id=\"comp-sf-ref\" class=\"active-comp\">\n                <line x1=\"80\" y1=\"200\" x2=\"162\" y2=\"200\" stroke=\"#fbbf24\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"75\" y=\"175\" width=\"55\" height=\"24\" rx=\"4\" fill=\"#2d220b\" stroke=\"#fbbf24\"/>\n                <text x=\"102\" y=\"192\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">r(t)</text>\n            </g>\n\n            <!-- Comp 2: Feedback Comparator -->\n            <g id=\"comp-sf-sum1\" class=\"active-comp\">\n                <circle cx=\"180\" cy=\"200\" r=\"18\" fill=\"#141c2f\" stroke=\"#38bdf8\" stroke-width=\"3\" filter=\"url(#glow-cyan)\"/>\n                <text x=\"180\" y=\"205\" fill=\"#38bdf8\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\">\u03a3</text>\n                <text x=\"162\" y=\"190\" fill=\"#38bdf8\" font-size=\"13\">+</text>\n                <text x=\"175\" y=\"228\" fill=\"#f43f5e\" font-size=\"13\">-</text>\n            </g>\n\n            <!-- Comp 3: Input Matrix B -->\n            <g id=\"comp-sf-b\" class=\"active-comp\">\n                <line x1=\"198\" y1=\"200\" x2=\"260\" y2=\"200\" stroke=\"#38bdf8\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <text x=\"228\" y=\"185\" fill=\"#38bdf8\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\">u(t)</text>\n                <rect x=\"260\" y=\"165\" width=\"80\" height=\"70\" rx=\"8\" fill=\"#032732\" stroke=\"#00f2fe\" stroke-width=\"3\" filter=\"url(#glow-cyan)\"/>\n                <text x=\"300\" y=\"196\" fill=\"#00f2fe\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">INPUT</text>\n                <text x=\"300\" y=\"218\" fill=\"#ffffff\" font-family=\"'JetBrains Mono', monospace\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\">B</text>\n            </g>\n\n            <!-- Comp 4: Plant Internal Summing -->\n            <g id=\"comp-sf-sum2\" class=\"active-comp\">\n                <line x1=\"340\" y1=\"200\" x2=\"402\" y2=\"200\" stroke=\"#00f2fe\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <circle cx=\"420\" cy=\"200\" r=\"18\" fill=\"#141c2f\" stroke=\"#10b981\" stroke-width=\"3\" filter=\"url(#glow-green)\"/>\n                <text x=\"420\" y=\"205\" fill=\"#10b981\" font-family=\"'JetBrains Mono', monospace\" font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\">+</text>\n            </g>\n\n            <!-- Comp 5: Continuous Integrator Block \u222b dt -->\n            <g id=\"comp-sf-integrator\" class=\"active-comp\">\n                <line x1=\"438\" y1=\"200\" x2=\"510\" y2=\"200\" stroke=\"#10b981\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"460\" y=\"172\" width=\"45\" height=\"22\" rx=\"4\" fill=\"#063826\" stroke=\"#10b981\"/>\n                <text x=\"482\" y=\"188\" fill=\"#34d399\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">x_dot</text>\n                <rect x=\"510\" y=\"165\" width=\"100\" height=\"70\" rx=\"8\" fill=\"#1e1809\" stroke=\"#fbbf24\" stroke-width=\"3\" filter=\"url(#glow-gold)\"/>\n                <text x=\"560\" y=\"196\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">INTEGRATOR</text>\n                <text x=\"560\" y=\"218\" fill=\"#ffffff\" font-family=\"'JetBrains Mono', monospace\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\">\u222b dt</text>\n            </g>\n\n            <!-- Comp 6: Plant System Matrix A -->\n            <g id=\"comp-sf-a\" class=\"active-comp\">\n                <path d=\"M 660 200 L 660 100 L 460 100\" stroke=\"#10b981\" stroke-width=\"3\" fill=\"none\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"380\" y=\"65\" width=\"80\" height=\"70\" rx=\"8\" fill=\"#063826\" stroke=\"#10b981\" stroke-width=\"3\" filter=\"url(#glow-green)\"/>\n                <text x=\"420\" y=\"96\" fill=\"#10b981\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">SYSTEM</text>\n                <text x=\"420\" y=\"118\" fill=\"#ffffff\" font-family=\"'JetBrains Mono', monospace\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\">A</text>\n                <path d=\"M 380 100 L 320 100 L 420 182\" stroke=\"#10b981\" stroke-width=\"2.5\" fill=\"none\" marker-end=\"url(#arrow-wire)\"/>\n            </g>\n\n            <!-- Comp 7: Output Transmission Matrix C -->\n            <g id=\"comp-sf-c\" class=\"active-comp\">\n                <line x1=\"610\" y1=\"200\" x2=\"720\" y2=\"200\" stroke=\"#fbbf24\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <circle cx=\"660\" cy=\"200\" r=\"5\" fill=\"#fbbf24\"/>\n                <rect x=\"640\" y=\"165\" width=\"40\" height=\"22\" rx=\"4\" fill=\"#2d220b\" stroke=\"#fbbf24\"/>\n                <text x=\"660\" y=\"181\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">x(t)</text>\n                <rect x=\"720\" y=\"165\" width=\"80\" height=\"70\" rx=\"8\" fill=\"#2d124d\" stroke=\"#c084fc\" stroke-width=\"3\" filter=\"drop-shadow(0 0 10px rgba(192,132,252,0.6))\"/>\n                <text x=\"760\" y=\"196\" fill=\"#c084fc\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">OUTPUT</text>\n                <text x=\"760\" y=\"218\" fill=\"#ffffff\" font-family=\"'JetBrains Mono', monospace\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\">C</text>\n                <line x1=\"800\" y1=\"200\" x2=\"900\" y2=\"200\" stroke=\"#c084fc\" stroke-width=\"3.5\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"880\" y=\"180\" width=\"80\" height=\"32\" rx=\"6\" fill=\"#2d0b17\" stroke=\"#f43f5e\" stroke-width=\"2\"/>\n                <text x=\"920\" y=\"201\" fill=\"#f43f5e\" font-family=\"'JetBrains Mono', monospace\" font-size=\"13\" font-weight=\"900\" text-anchor=\"middle\">y = Cx</text>\n            </g>\n\n            <!-- Comp 8: Feedback Gain Matrix K -->\n            <g id=\"comp-sf-k\" class=\"active-comp\">\n                <path d=\"M 660 200 L 660 350 L 480 350\" stroke=\"#f43f5e\" stroke-width=\"3\" fill=\"none\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"380\" y=\"315\" width=\"100\" height=\"70\" rx=\"8\" fill=\"#2d0b17\" stroke=\"#f43f5e\" stroke-width=\"3\" filter=\"url(#glow-pink)\"/>\n                <text x=\"430\" y=\"346\" fill=\"#f43f5e\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">FEEDBACK GAIN</text>\n                <text x=\"430\" y=\"368\" fill=\"#ffffff\" font-family=\"'JetBrains Mono', monospace\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\">K</text>\n            </g>\n\n            <!-- Comp 9: Control Law Loop u = -Kx -->\n            <g id=\"comp-sf-loop\" class=\"active-comp\">\n                <path d=\"M 380 350 L 180 350 L 180 218\" stroke=\"#f43f5e\" stroke-width=\"3\" fill=\"none\" marker-end=\"url(#arrow-wire)\"/>\n                <rect x=\"235\" y=\"335\" width=\"105\" height=\"24\" rx=\"5\" fill=\"#1e1809\" stroke=\"#fbbf24\"/>\n                <text x=\"287\" y=\"351\" fill=\"#fbbf24\" font-family=\"'JetBrains Mono', monospace\" font-size=\"11\" font-weight=\"bold\" text-anchor=\"middle\">u = -Kx + r</text>\n            </g>\n        ", "components": [{"id": "comp-sf-ref", "name": "Reference Command Input r(t)", "tag": "Command", "color": "#fbbf24", "center": {"x": 102, "y": 200}, "radius": 40, "points": [{"x": 80, "y": 200}, {"x": 160, "y": 200}], "order": 1}, {"id": "comp-sf-sum1", "name": "State Feedback Comparator (\u03a3)", "tag": "Summing", "color": "#38bdf8", "center": {"x": 180, "y": 200}, "radius": 35, "points": [{"x": 180, "y": 200}], "order": 2}, {"id": "comp-sf-b", "name": "Plant Input Matrix (B)", "tag": "Input", "color": "#00f2fe", "center": {"x": 300, "y": 200}, "radius": 50, "points": [{"x": 260, "y": 200}, {"x": 300, "y": 200}, {"x": 340, "y": 200}], "order": 3}, {"id": "comp-sf-sum2", "name": "Internal State Adder (+)", "tag": "Adder", "color": "#10b981", "center": {"x": 420, "y": 200}, "radius": 35, "points": [{"x": 420, "y": 200}], "order": 4}, {"id": "comp-sf-integrator", "name": "State Vector Integrator (\u222b dt)", "tag": "Integrator", "color": "#fbbf24", "center": {"x": 560, "y": 200}, "radius": 60, "points": [{"x": 510, "y": 200}, {"x": 560, "y": 200}, {"x": 610, "y": 200}], "order": 5}, {"id": "comp-sf-a", "name": "Plant Dynamics Matrix (A)", "tag": "Plant", "color": "#10b981", "center": {"x": 420, "y": 100}, "radius": 50, "points": [{"x": 380, "y": 100}, {"x": 420, "y": 100}, {"x": 460, "y": 100}], "order": 6}, {"id": "comp-sf-c", "name": "Plant Output Matrix (C)", "tag": "Output", "color": "#c084fc", "center": {"x": 760, "y": 200}, "radius": 55, "points": [{"x": 720, "y": 200}, {"x": 760, "y": 200}, {"x": 800, "y": 200}], "order": 7}, {"id": "comp-sf-k", "name": "State Feedback Gain Matrix (K)", "tag": "Gain K", "color": "#f43f5e", "center": {"x": 430, "y": 350}, "radius": 60, "points": [{"x": 380, "y": 350}, {"x": 430, "y": 350}, {"x": 480, "y": 350}], "order": 8}, {"id": "comp-sf-loop", "name": "Control Law Closed Loop (u = -Kx)", "tag": "Loop", "color": "#f43f5e", "center": {"x": 280, "y": 350}, "radius": 70, "points": [{"x": 380, "y": 350}, {"x": 280, "y": 350}, {"x": 180, "y": 350}, {"x": 180, "y": 220}], "order": 9}]}];
+            let currentDiagramIdx = 0;
+            let currentComponents = [];
+            let snappedComponents = new Set();
+            let historyStack = [];
+            let isDrawing = false;
+            let lastPoint = null;
+            let startTime = null;
+            let timerInterval = null;
+            let soundEnabled = true;
+            let isAutoDrawing = false;
+
+            // DOM Elements
+            const carousel = document.getElementById('diagram-carousel');
+            const stageWrapper = document.getElementById('stage-wrapper');
+            const circuitSvg = document.getElementById('circuit-svg');
+            const ghostGroup = document.getElementById('ghost-blueprint-group');
+            const activeGroup = document.getElementById('active-components-group');
+            const inkCanvas = document.getElementById('ink-canvas');
+            const particlesCanvas = document.getElementById('particles-canvas');
+            const inkCtx = inkCanvas.getContext('2d');
+            const partCtx = particlesCanvas.getContext('2d');
+
+            const ghostSlider = document.getElementById('ghost-opacity-slider');
+            const ghostValText = document.getElementById('ghost-opacity-val');
+            const progressBarCircle = document.getElementById('progress-bar-circle');
+            const progressPctText = document.getElementById('progress-pct-text');
+            const progressCountText = document.getElementById('progress-count-text');
+            const swipeHintText = document.getElementById('swipe-hint-pill');
+            const checklistGrid = document.getElementById('checklist-grid');
+            const victoryOverlay = document.getElementById('victory-overlay');
+            const finalTimeText = document.getElementById('final-time');
+
+            const bannerSubjectPill = document.getElementById('banner-subject-pill');
+            const bannerMarksPill = document.getElementById('banner-marks-pill');
+            const bannerQidPill = document.getElementById('banner-qid-pill');
+            const bannerTitle = document.getElementById('banner-title');
+            const bannerDesc = document.getElementById('banner-desc');
+            const theoryFormulaBox = document.getElementById('theory-formula-box');
+            const theoryMarkingText = document.getElementById('theory-marking-text');
+
+            // Web Audio Synthesis
+            let audioCtx = null;
+            function playChime(freq = 587.33, type = 'sine', duration = 0.25) {
+                if (!soundEnabled) return;
+                try {
+                    if (!audioCtx) {
+                        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    }
+                    if (audioCtx.state === 'suspended') audioCtx.resume();
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = type;
+                    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + duration);
+                } catch(e) {}
+            }
+
+            function playVictoryChime() {
+                if (!soundEnabled) return;
+                const notes = [523.25, 659.25, 783.99, 1046.50];
+                notes.forEach((n, i) => {
+                    setTimeout(() => playChime(n, 'triangle', 0.4), i * 120);
+                });
+            }
+
+            // Responsive Canvas Resize
+            function resizeCanvases() {
+                const rect = stageWrapper.getBoundingClientRect();
+                if (!rect || rect.width <= 0 || rect.height <= 0) return;
+                const dpr = window.devicePixelRatio || 1;
+
+                inkCanvas.width = rect.width * dpr;
+                inkCanvas.height = rect.height * dpr;
+                inkCanvas.style.width = rect.width + 'px';
+                inkCanvas.style.height = rect.height + 'px';
+                inkCtx.scale(dpr, dpr);
+
+                particlesCanvas.width = rect.width * dpr;
+                particlesCanvas.height = rect.height * dpr;
+                particlesCanvas.style.width = rect.width + 'px';
+                particlesCanvas.style.height = rect.height + 'px';
+                partCtx.scale(dpr, dpr);
+            }
+
+            window.addEventListener('resize', resizeCanvases);
+            window.addEventListener('orientationchange', () => setTimeout(resizeCanvases, 150));
+            setTimeout(resizeCanvases, 50);
+
+            // Coordinates Normalization (SVG 1000x580 to Screen)
+            const SVG_VIEW_WIDTH = 1000;
+            const SVG_VIEW_HEIGHT = 580;
+
+            function screenToSvgCoords(clientX, clientY) {
+                const rect = stageWrapper.getBoundingClientRect();
+                const screenX = clientX - rect.left;
+                const screenY = clientY - rect.top;
+
+                const stageRatio = rect.width / rect.height;
+                const svgRatio = SVG_VIEW_WIDTH / SVG_VIEW_HEIGHT;
+
+                let renderedWidth, renderedHeight, offsetX, offsetY;
+                if (stageRatio > svgRatio) {
+                    renderedHeight = rect.height;
+                    renderedWidth = rect.height * svgRatio;
+                    offsetX = (rect.width - renderedWidth) / 2;
+                    offsetY = 0;
+                } else {
+                    renderedWidth = rect.width;
+                    renderedHeight = rect.width / svgRatio;
+                    offsetX = 0;
+                    offsetY = (rect.height - renderedHeight) / 2;
+                }
+
+                const normalizedX = (screenX - offsetX) * (SVG_VIEW_WIDTH / renderedWidth);
+                const normalizedY = (screenY - offsetY) * (SVG_VIEW_HEIGHT / renderedHeight);
+                return { x: normalizedX, y: normalizedY };
+            }
+
+            function svgToScreenCoords(svgX, svgY) {
+                const rect = stageWrapper.getBoundingClientRect();
+                const stageRatio = rect.width / rect.height;
+                const svgRatio = SVG_VIEW_WIDTH / SVG_VIEW_HEIGHT;
+
+                let renderedWidth, renderedHeight, offsetX, offsetY;
+                if (stageRatio > svgRatio) {
+                    renderedHeight = rect.height;
+                    renderedWidth = rect.height * svgRatio;
+                    offsetX = (rect.width - renderedWidth) / 2;
+                    offsetY = 0;
+                } else {
+                    renderedWidth = rect.width;
+                    renderedHeight = rect.width / svgRatio;
+                    offsetX = 0;
+                    offsetY = (rect.height - renderedHeight) / 2;
+                }
+
+                const screenX = offsetX + (svgX * (renderedWidth / SVG_VIEW_WIDTH));
+                const screenY = offsetY + (svgY * (renderedHeight / SVG_VIEW_HEIGHT));
+                return { x: screenX, y: screenY };
+            }
+
+            // Render Carousel Items
+            function renderCarousel() {
+                carousel.innerHTML = '';
+                DIAGRAMS.forEach((d, idx) => {
+                    const item = document.createElement('div');
+                    item.className = `carousel-item ${idx === currentDiagramIdx ? 'active' : ''}`;
+                    item.setAttribute('data-index', idx);
+                    item.innerHTML = `
+                        <div class="carousel-item-top">
+                            <span class="item-qid">${d.qid.toUpperCase()}</span>
+                            <span class="item-marks">${d.marks}</span>
+                        </div>
+                        <div class="item-title">${d.title}</div>
+                    `;
+                    item.addEventListener('click', () => {
+                        loadDiagram(idx);
+                    });
+                    carousel.appendChild(item);
+                });
+            }
+
+            // Load and Initialize Diagram
+            function loadDiagram(idx) {
+                if (idx < 0 || idx >= DIAGRAMS.length) return;
+                currentDiagramIdx = idx;
+                const d = DIAGRAMS[idx];
+
+                // Update Info Banner
+                bannerSubjectPill.textContent = `EET401 • Mod ${d.module}`;
+                bannerMarksPill.textContent = d.marks;
+                bannerQidPill.textContent = `★ Question ${d.qid.toUpperCase()}`;
+                bannerTitle.textContent = d.title;
+                bannerDesc.textContent = d.desc;
+
+                // Update Theory & Math
+                theoryFormulaBox.innerHTML = `$$${d.equation}$$`;
+                theoryMarkingText.textContent = d.marking_tip;
+                if (window.renderMathInElement) {
+                    window.renderMathInElement(theoryFormulaBox, {
+                        delimiters: [
+                            {left: '$$', right: '$$', display: true},
+                            {left: '$', right: '$', display: false}
+                        ],
+                        throwOnError: false
+                    });
+                }
+
+                // Inject SVG Vector Elements
+                ghostGroup.innerHTML = d.ghost_svg;
+                activeGroup.innerHTML = d.active_svg;
+                currentComponents = d.components || [];
+
+                // Reset State
+                snappedComponents.clear();
+                historyStack = [];
+                startTime = null;
+                clearInterval(timerInterval);
+                isAutoDrawing = false;
+                victoryOverlay.classList.remove('visible');
+
+                // Clear Inks
+                const rect = stageWrapper.getBoundingClientRect();
+                inkCtx.clearRect(0, 0, rect.width, rect.height);
+                partCtx.clearRect(0, 0, rect.width, rect.height);
+
+                // Build Checklist
+                checklistGrid.innerHTML = '';
+                currentComponents.forEach(comp => {
+                    const el = document.createElement('div');
+                    el.className = 'check-item';
+                    el.id = `chk-${comp.id}`;
+                    el.innerHTML = `
+                        <span class="color-dot" style="background:${comp.color}; box-shadow: 0 0 6px ${comp.color};"></span>
+                        <span class="check-title">${comp.name}</span>
+                        <span class="check-icon">○</span>
+                    `;
+                    checklistGrid.appendChild(el);
+                });
+
+                // Update Active Carousel Card
+                document.querySelectorAll('.carousel-item').forEach(card => {
+                    const cIdx = parseInt(card.getAttribute('data-index') || -1);
+                    card.classList.toggle('active', cIdx === idx);
+                });
+
+                const activeCard = document.querySelector(`.carousel-item[data-index="${idx}"]`);
+                if (activeCard && typeof activeCard.scrollIntoView === 'function') {
+                    activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+
+                // Update URL Hash
+                if (window.history && window.history.replaceState && d.qid) {
+                    window.history.replaceState(null, '', '#' + d.qid);
+                }
+
+                updateProgressUI();
+                swipeHintText.textContent = '✨ Swipe or trace near any dotted line to snap!';
+                playChime(523.25, 'triangle', 0.2);
+            }
+
+            // Particles Engine
+            let particles = [];
+            function emitSparks(screenX, screenY, color = '#38bdf8') {
+                const count = 22;
+                for (let i = 0; i < count; i++) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = 1.5 + Math.random() * 4.5;
+                    particles.push({
+                        x: screenX,
+                        y: screenY,
+                        vx: Math.cos(angle) * speed,
+                        vy: Math.sin(angle) * speed - 0.5,
+                        life: 1.0,
+                        decay: 0.02 + Math.random() * 0.02,
+                        size: 2.5 + Math.random() * 3.5,
+                        color: color
+                    });
+                }
+            }
+
+            function updateParticles() {
+                const rect = stageWrapper.getBoundingClientRect();
+                partCtx.clearRect(0, 0, rect.width, rect.height);
+
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += 0.08;
+                    p.life -= p.decay;
+
+                    if (p.life <= 0) {
+                        particles.splice(i, 1);
+                        continue;
+                    }
+
+                    partCtx.save();
+                    partCtx.globalAlpha = p.life;
+                    partCtx.fillStyle = p.color;
+                    partCtx.shadowColor = p.color;
+                    partCtx.shadowBlur = 8;
+                    partCtx.beginPath();
+                    partCtx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+                    partCtx.fill();
+                    partCtx.restore();
+                }
+                requestAnimationFrame(updateParticles);
+            }
+            requestAnimationFrame(updateParticles);
+
+            // Magnetic Snap Check
+            const SNAP_DISTANCE_THRESHOLD = 45;
+
+            function checkProximityAndSnap(svgPoint, screenPoint) {
+                if (snappedComponents.size === 0 && !startTime) {
+                    startTime = Date.now();
+                    timerInterval = setInterval(updateTimerDisplay, 1000);
+                }
+
+                for (const comp of currentComponents) {
+                    if (snappedComponents.has(comp.id)) continue;
+
+                    const dxCenter = svgPoint.x - comp.center.x;
+                    const dyCenter = svgPoint.y - comp.center.y;
+                    const distCenter = Math.sqrt(dxCenter * dxCenter + dyCenter * dyCenter);
+
+                    let isClose = distCenter < comp.radius;
+
+                    if (!isClose && comp.points) {
+                        for (const pt of comp.points) {
+                            const d = Math.hypot(svgPoint.x - pt.x, svgPoint.y - pt.y);
+                            if (d <= SNAP_DISTANCE_THRESHOLD) {
+                                isClose = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (isClose) {
+                        snapComponent(comp, screenPoint);
+                        break;
+                    }
+                }
+            }
+
+            function snapComponent(comp, screenPoint) {
+                if (snappedComponents.has(comp.id)) return;
+
+                snappedComponents.add(comp.id);
+                historyStack.push(comp.id);
+
+                const el = document.getElementById(comp.id);
+                if (el) {
+                    el.classList.add('snapped');
+                }
+
+                const chk = document.getElementById(`chk-${comp.id}`);
+                if (chk) {
+                    chk.classList.add('done');
+                    chk.querySelector('.check-icon').textContent = '●';
+                }
+
+                const pt = screenPoint || svgToScreenCoords(comp.center.x, comp.center.y);
+                emitSparks(pt.x, pt.y, comp.color);
+                playChime(440 + snappedComponents.size * 55, 'triangle', 0.28);
+                if (navigator.vibrate) navigator.vibrate(25);
+
+                updateProgressUI();
+
+                if (snappedComponents.size === currentComponents.length) {
+                    handleVictory();
+                } else {
+                    swipeHintText.textContent = `🎯 Snapped: ${comp.name}! Keep tracing!`;
+                }
+            }
+
+            function updateProgressUI() {
+                const total = currentComponents.length;
+                const count = snappedComponents.size;
+                const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+
+                progressCountText.textContent = `${count} / ${total}`;
+                progressPctText.textContent = `${pct}%`;
+
+                const offset = 138 - (138 * (total > 0 ? count / total : 0));
+                progressBarCircle.style.strokeDashoffset = offset;
+            }
+
+            function updateTimerDisplay() {
+                if (!startTime) return;
+                const sec = Math.floor((Date.now() - startTime) / 1000);
+                const m = String(Math.floor(sec / 60)).padStart(2, '0');
+                const s = String(sec % 60).padStart(2, '0');
+                finalTimeText.textContent = `${m}:${s}`;
+            }
+
+            function handleVictory() {
+                clearInterval(timerInterval);
+                playVictoryChime();
+
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const rect = stageWrapper.getBoundingClientRect();
+                        const rx = rect.width * (0.2 + Math.random() * 0.6);
+                        const ry = rect.height * (0.2 + Math.random() * 0.6);
+                        emitSparks(rx, ry, ['#fbbf24', '#00f2fe', '#10b981', '#f43f5e', '#c084fc'][i % 5]);
+                    }, i * 180);
+                }
+
+                setTimeout(() => {
+                    victoryOverlay.classList.add('visible');
+                }, 800);
+            }
+
+            // Pointer Drawing Engine
+            function getPointerPos(e) {
+                const rect = stageWrapper.getBoundingClientRect();
+                const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+                const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
+                return {
+                    clientX,
+                    clientY,
+                    screenX: clientX - rect.left,
+                    screenY: clientY - rect.top,
+                    svg: screenToSvgCoords(clientX, clientY)
+                };
+            }
+
+            function handlePointerDown(e) {
+                isDrawing = true;
+                if (e.cancelable) e.preventDefault();
+                if (e.target && e.target.setPointerCapture && e.pointerId !== undefined) {
+                    try { e.target.setPointerCapture(e.pointerId); } catch(err) {}
+                }
+                const pos = getPointerPos(e);
+                lastPoint = { x: pos.screenX, y: pos.screenY };
+                checkProximityAndSnap(pos.svg, { x: pos.screenX, y: pos.screenY });
+            }
+
+            function handlePointerMove(e) {
+                if (!isDrawing) return;
+                if (e.cancelable) e.preventDefault();
+
+                const pos = getPointerPos(e);
+
+                inkCtx.save();
+                inkCtx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
+                inkCtx.lineWidth = 4;
+                inkCtx.lineCap = 'round';
+                inkCtx.lineJoin = 'round';
+                inkCtx.shadowColor = '#00f2fe';
+                inkCtx.shadowBlur = 6;
+                inkCtx.beginPath();
+                inkCtx.moveTo(lastPoint.x, lastPoint.y);
+                inkCtx.lineTo(pos.screenX, pos.screenY);
+                inkCtx.stroke();
+                inkCtx.restore();
+
+                lastPoint = { x: pos.screenX, y: pos.screenY };
+                checkProximityAndSnap(pos.svg, { x: pos.screenX, y: pos.screenY });
+            }
+
+            function handlePointerUp(e) {
+                isDrawing = false;
+                if (e && e.target && e.target.releasePointerCapture && e.pointerId !== undefined) {
+                    try { e.target.releasePointerCapture(e.pointerId); } catch(err) {}
+                }
+            }
+
+            stageWrapper.addEventListener('pointerdown', handlePointerDown);
+            window.addEventListener('pointermove', handlePointerMove, { passive: false });
+            window.addEventListener('pointerup', handlePointerUp);
+            window.addEventListener('pointercancel', handlePointerUp);
+
+            // Watch Demo Button
+            document.getElementById('btn-auto-draw').addEventListener('click', function() {
+                if (isAutoDrawing) return;
+                isAutoDrawing = true;
+                this.classList.add('success');
+                this.innerHTML = '<span>⏸️</span> <span>Playing...</span>';
+
+                if (snappedComponents.size === currentComponents.length) {
+                    resetCanvas();
+                }
+
+                let idx = 0;
+                function drawNextStep() {
+                    if (idx < currentComponents.length) {
+                        const comp = currentComponents[idx];
+                        if (!snappedComponents.has(comp.id)) {
+                            const pt = svgToScreenCoords(comp.center.x, comp.center.y);
+                            snapComponent(comp, pt);
+                        }
+                        idx++;
+                        setTimeout(drawNextStep, 500);
+                    } else {
+                        isAutoDrawing = false;
+                        document.getElementById('btn-auto-draw').classList.remove('success');
+                        document.getElementById('btn-auto-draw').innerHTML = '<span>▶️</span> <span>Watch Demo</span>';
+                    }
+                }
+                drawNextStep();
+            });
+
+            // Next Hint Button
+            document.getElementById('btn-hint').addEventListener('click', function() {
+                const nextComp = currentComponents.find(c => !snappedComponents.has(c.id));
+                if (!nextComp) return;
+
+                const pt = svgToScreenCoords(nextComp.center.x, nextComp.center.y);
+                emitSparks(pt.x, pt.y, nextComp.color);
+                playChime(659.25, 'sine', 0.2);
+                swipeHintText.textContent = `👉 Hint: Swipe near ${nextComp.name}!`;
+
+                const ghostEl = document.getElementById(nextComp.id);
+                if (ghostEl) {
+                    ghostEl.classList.add('spotlight-pulse');
+                    setTimeout(() => ghostEl.classList.remove('spotlight-pulse'), 1800);
+                }
+            });
+
+            // Undo Button
+            document.getElementById('btn-undo').addEventListener('click', function() {
+                if (historyStack.length === 0) return;
+                const lastId = historyStack.pop();
+                snappedComponents.delete(lastId);
+
+                const el = document.getElementById(lastId);
+                if (el) el.classList.remove('snapped');
+
+                const chk = document.getElementById(`chk-${lastId}`);
+                if (chk) {
+                    chk.classList.remove('done');
+                    chk.querySelector('.check-icon').textContent = '○';
+                }
+
+                updateProgressUI();
+                swipeHintText.textContent = 'Undone. Swipe again to snap!';
+            });
+
+            // Reset Button
+            function resetCanvas() {
+                snappedComponents.clear();
+                historyStack = [];
+                startTime = null;
+                clearInterval(timerInterval);
+
+                currentComponents.forEach(c => {
+                    const el = document.getElementById(c.id);
+                    if (el) el.classList.remove('snapped');
+                    const chk = document.getElementById(`chk-${c.id}`);
+                    if (chk) {
+                        chk.classList.remove('done');
+                        chk.querySelector('.check-icon').textContent = '○';
+                    }
+                });
+
+                const rect = stageWrapper.getBoundingClientRect();
+                inkCtx.clearRect(0, 0, rect.width, rect.height);
+                partCtx.clearRect(0, 0, rect.width, rect.height);
+                victoryOverlay.classList.remove('visible');
+
+                updateProgressUI();
+                swipeHintText.textContent = 'Canvas reset! Swipe near any line to begin.';
+            }
+
+            document.getElementById('btn-reset').addEventListener('click', resetCanvas);
+            document.getElementById('btn-practice-again').addEventListener('click', resetCanvas);
+            document.getElementById('btn-next-diagram').addEventListener('click', () => {
+                victoryOverlay.classList.remove('visible');
+                loadDiagram((currentDiagramIdx + 1) % DIAGRAMS.length);
+            });
+
+            // Ghost Opacity Slider
+            ghostSlider.addEventListener('input', function() {
+                const val = this.value;
+                ghostValText.textContent = `${val}%`;
+                ghostGroup.setAttribute('opacity', (val / 100).toFixed(2));
+            });
+
+            // Sound Toggle
+            document.getElementById('btn-sound-toggle').addEventListener('click', function() {
+                soundEnabled = !soundEnabled;
+                document.getElementById('sound-icon').textContent = soundEnabled ? '🔊' : '🔇';
+            });
+
+            // Initial Launch & Hash Router
+            renderCarousel();
+
+            function selectFromHash() {
+                const hash = (window.location.hash || '').replace('#', '').trim().toLowerCase();
+                if (hash) {
+                    let foundIdx = DIAGRAMS.findIndex(d => (d.qid || '').toLowerCase() === hash);
+                    if (foundIdx === -1) {
+                        foundIdx = DIAGRAMS.findIndex(d => {
+                            const arr = (d.aliases || []);
+                            return arr.some(a => a.toLowerCase() === hash);
+                        });
+                    }
+                    if (foundIdx !== -1) {
+                        loadDiagram(foundIdx);
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            if (!selectFromHash()) {
+                loadDiagram(0);
+            }
+
+            window.addEventListener('hashchange', () => {
+                selectFromHash();
+            });
+
+        })();
+    </script>
+</body>
+</html>

@@ -1645,6 +1645,52 @@ main.content-container {
     color: #38bdf8;
     border: 1px solid var(--border-subtle);
 }
+
+.diagram-card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.35rem;
+}
+
+.diagram-draw-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--draw-color, #38bdf8);
+    background: var(--draw-bg, rgba(56, 189, 248, 0.12));
+    border: 1px solid var(--draw-border, rgba(56, 189, 248, 0.4));
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.diagram-draw-link:hover {
+    background: var(--draw-color, #38bdf8);
+    color: #070a12;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.diagram-draw-link .draw-link-icon {
+    font-size: 0.85rem;
+}
+
+.diagram-draw-link .draw-link-arrow {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.diagram-draw-link:hover .draw-link-arrow {
+    transform: translateX(2px);
+}
 @media (max-width: 800px) {
     .multi-diagrams-grid {
         grid-template-columns: 1fr;
@@ -3768,7 +3814,14 @@ An electric drive is an electromechanical system designed to convert electrical 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q1" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/electric_drive_block_diagram.png" alt="Figure 1.1: Functional Block Diagram of a Modern Electric Drive System" class="diagram-img" loading="lazy">
             </div>
@@ -4045,7 +4098,14 @@ An electric drive is an electromechanical system designed to convert electrical 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/drive_efficiency_curve.png" alt="Figure 1.2: Efficiency Comparison Curve of Electric Drives across Speed Ranges" class="diagram-img" loading="lazy">
             </div>
@@ -4389,7 +4449,14 @@ Industrial load torques are classified into two broad categories based on whethe
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q3" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/speed_vs_torque_characteristics.png" alt="Figure 1.3: Speed vs Torque Characteristics of Industrial Loads (Paper Mill, Hoist, Fan/Pump, Traction)" class="diagram-img" loading="lazy">
             </div>
@@ -4699,7 +4766,14 @@ Industrial load torques are classified into two broad categories based on whethe
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q3b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/critical_speed_resonance.png" alt="Figure 1.3B: Mechanical Resonance Curve showing Critical Speed Threshold" class="diagram-img" loading="lazy">
             </div>
@@ -5040,7 +5114,14 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q4" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/dynamic_torque_derivation.png" alt="Figure 1.4: Dynamic Equilibrium of Motor and Load Inertia on Common Shaft" class="diagram-img" loading="lazy">
             </div>
@@ -5474,7 +5555,14 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q5" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/four_quadrant_hoist.png" alt="Figure 1.5: Four-Quadrant Speed-Torque Plane Diagram for an Electric Hoist Load" class="diagram-img" loading="lazy">
             </div>
@@ -5482,7 +5570,14 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Mechanical Force Dynamics</div>
+            <a href="draw_drives.html#drive-q5-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/four_quadrant_hoist_mechanics.png" alt="Figure 1.5B: Physical Hoist Mechanical Assembly showing Cable Drum, Counterweight Wc, Loaded Cage WL, and Gravitational Torque Balance" class="diagram-img" loading="lazy">
             </div>
@@ -5824,7 +5919,14 @@ $$\frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m}$$
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q6" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/stability_criterion_curves.png" alt="Figure 1.6: Torque-Speed Characteristic Intersections Illustrating Stable and Unstable Equilibria" class="diagram-img" loading="lazy">
             </div>
@@ -6159,7 +6261,14 @@ where $\theta_0$ is initial temperature at shutdown, and $\tau_c = \frac{C}{D'}$
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q6b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/thermal_heating_cooling.png" alt="Figure 1.6B: Exponential Temperature Rise and Cooling Curves for Electric Motor" class="diagram-img" loading="lazy">
             </div>
@@ -6518,7 +6627,14 @@ where $\theta_0$ is initial temperature at shutdown, and $\tau_c = \frac{C}{D'}$
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q7" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/dc_motor_control_zones.png" alt="Figure 2.1: Constant Torque and Constant Power Zones in DC Drive Speed Control" class="diagram-img" loading="lazy">
             </div>
@@ -6803,7 +6919,14 @@ where $V_{ml} = \sqrt{3}V_m$ is the peak line-to-line voltage, and $\alpha$ is t
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q7b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/three_phase_semi_converter.png" alt="Figure 2.1B: Power Circuit of Three-Phase Semi-Converter Fed DC Drive" class="diagram-img" loading="lazy">
             </div>
@@ -7160,7 +7283,14 @@ Because current $I_a$ can only flow in one direction through the thyristors ($I_
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q8" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/single_phase_full_converter_waveforms.png" alt="Figure 2.2: Circuit Schematic and Conduction Waveforms of 1-Phase Fully Controlled DC Drive" class="diagram-img" loading="lazy">
             </div>
@@ -7168,7 +7298,14 @@ Because current $I_a$ can only flow in one direction through the thyristors ($I_
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Conduction Waveforms</div>
+            <a href="draw_drives.html#drive-q8-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/single_phase_full_converter_firing_waveforms.png" alt="Figure 2.2B: Supply Voltage vs, Firing Angle α, Output Voltage vo(t), and Continuous Armature Current ia(t) Waveforms" class="diagram-img" loading="lazy">
             </div>
@@ -7480,7 +7617,14 @@ $$\omega_m = \frac{\frac{3V_{ml}}{\pi}\cos\alpha}{K_b \Phi} - \frac{R_a}{(K_b \P
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q8b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/three_phase_full_converter.png" alt="Figure 2.2B: Circuit Schematic and Six-Pulse Waveforms of Three-Phase Full Converter DC Drive" class="diagram-img" loading="lazy">
             </div>
@@ -7488,7 +7632,14 @@ $$\omega_m = \frac{\frac{3V_{ml}}{\pi}\cos\alpha}{K_b \Phi} - \frac{R_a}{(K_b \P
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • 6-Pulse Commutation Waveforms</div>
+            <a href="draw_drives.html#drive-q8b-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/three_phase_full_converter_waveforms.png" alt="Figure 2.2C: Six-Pulse Conduction Waveforms, Interlocking Line Voltages, and Thyristor Firing Sequence (T1-T6)" class="diagram-img" loading="lazy">
             </div>
@@ -7790,7 +7941,14 @@ Both average voltage $V_a \ge 0$ and current $I_a \ge 0$ are strictly positive. 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q9" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_a_chopper.png" alt="Figure 3.1: Power Circuit and Waveforms of Class-A Step-Down Chopper Drive" class="diagram-img" loading="lazy">
             </div>
@@ -8072,7 +8230,14 @@ Because current flows out of the motor ($I_a < 0$) while motor voltage remains p
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q9b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_b_chopper.png" alt="Figure 3.1B: Class-B Step-Up Chopper Circuit and Energy Feedback Waveforms" class="diagram-img" loading="lazy">
             </div>
@@ -8389,7 +8554,14 @@ Class-C chopper drives are standard in battery-powered electric vehicles (EVs), 
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q10" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_c_chopper_drive.png" alt="Figure 3.2: Circuit Topology and Operating Modes of Two-Quadrant Class-C Chopper Drive" class="diagram-img" loading="lazy">
             </div>
@@ -8397,7 +8569,14 @@ Class-C chopper drives are standard in battery-powered electric vehicles (EVs), 
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Operating Mode Waveforms</div>
+            <a href="draw_drives.html#drive-q10-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_c_chopper_waveforms.png" alt="Figure 3.2B: Two-Quadrant Class-C Chopper Waveforms for Mode 1 (Motoring: CH1, D2) and Mode 2 (Regenerative Braking: CH2, D1)" class="diagram-img" loading="lazy">
             </div>
@@ -8705,7 +8884,14 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q10b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_e_chopper.png" alt="Figure 3.2B: Four-Quadrant H-Bridge Class-E Chopper Topology and Switching Matrix" class="diagram-img" loading="lazy">
             </div>
@@ -8713,7 +8899,14 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • 4-Quadrant Conduction Paths</div>
+            <a href="draw_drives.html#drive-q10b-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/class_e_chopper_modes.png" alt="Figure 3.2C: Four-Quadrant Class-E H-Bridge Chopper Conduction Loops across Motoring and Regenerative Braking Modes" class="diagram-img" loading="lazy">
             </div>
@@ -9070,7 +9263,14 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q11" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/closed_loop_dc_drive_block_diagram.png" alt="Figure 3.3: Multi-Loop Cascade Architecture for Closed-Loop DC Motor Speed Control" class="diagram-img" loading="lazy">
             </div>
@@ -9078,7 +9278,14 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Inner Current Loop Detail</div>
+            <a href="draw_drives.html#drive-q11-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/inner_current_control_loop.png" alt="Figure 3.3B: Fast Subordinate Inner Current Control Loop with Current Limiter Clamp (±Ia,max) and Anti-Windup PI Regulator" class="diagram-img" loading="lazy">
             </div>
@@ -9372,7 +9579,14 @@ Strictly restricted to low-power centrifugal fan, blower, and water pump drives 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q12" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/stator_voltage_characteristics.png" alt="Figure 4.1: Torque-Speed Curves under Stator Voltage Control showing Narrow Stable Range" class="diagram-img" loading="lazy">
             </div>
@@ -9736,7 +9950,14 @@ Strictly restricted to low-power centrifugal fan, blower, and water pump drives 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q12b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/vsi_vs_csi_drive.png" alt="Figure 4.1B: Comparative Topologies of VSI and CSI Inverter-Fed Induction Motor Drives" class="diagram-img" loading="lazy">
             </div>
@@ -10042,7 +10263,14 @@ Since $\frac{V}{f}$ is held constant, the maximum breakdown torque $T_{\text{max
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q13" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/v_f_control_characteristics.png" alt="Figure 4.2: Comprehensive Family of Torque-Speed Characteristics under Constant V/f Speed Control" class="diagram-img" loading="lazy">
             </div>
@@ -10050,7 +10278,14 @@ Since $\frac{V}{f}$ is held constant, the maximum breakdown torque $T_{\text{max
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Closed-Loop Architecture</div>
+            <a href="draw_drives.html#drive-q13-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/v_f_closed_loop_schematic.png" alt="Figure 4.2B: Closed-Loop Constant V/f Induction Motor Drive Architecture with Slip Speed Regulation (ωsl*) and Inverter Control" class="diagram-img" loading="lazy">
             </div>
@@ -10373,7 +10608,14 @@ where $R_2$ is the internal rotor winding resistance per phase.</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q14" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/static_rotor_resistance_circuit.png" alt="Figure 4.3: Power Electronic Circuit Schematic of Static Rotor Resistance Chopper Drive" class="diagram-img" loading="lazy">
             </div>
@@ -10750,7 +10992,14 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q14b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/slip_power_recovery.png" alt="Figure 4.3B: Comparative Schematics of Static Kramer and Static Scherbius Slip Power Recovery Drives" class="diagram-img" loading="lazy">
             </div>
@@ -10758,7 +11007,14 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Power Flow &amp; Operating Zones</div>
+            <a href="draw_drives.html#drive-q14b-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/kramer_vs_scherbius_characteristics.png" alt="Figure 4.3C: Comparative Slip Power Recovery Topologies: Static Kramer (Sub-synchronous only) vs Static Scherbius (Sub &amp; Super-synchronous)" class="diagram-img" loading="lazy">
             </div>
@@ -11115,7 +11371,14 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q15" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/synchronous_drive_modes.png" alt="Figure 5.1: Comparative Schematics of True Synchronous and Self-Controlled Drives" class="diagram-img" loading="lazy">
             </div>
@@ -11417,7 +11680,14 @@ A Load-Commutated Inverter (LCI) drive powers a wound-field synchronous motor us
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q15b" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/lci_synchronous_drive.png" alt="Figure 5.1B: Power Electronic Circuit of Load-Commutated Inverter (LCI) Synchronous Drive" class="diagram-img" loading="lazy">
             </div>
@@ -11726,7 +11996,14 @@ This complete decoupling is the foundation of Vector Control (FOC).</p>
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q16" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/clarke_park_transforms.png" alt="Figure 5.2: Geometric Vector Decomposition between Three-Phase (abc), Stationary (αβ), and Synchronous (dq) Frames" class="diagram-img" loading="lazy">
             </div>
@@ -12039,7 +12316,14 @@ The zero time $T_0$ is divided equally between $V_0(000)$ and $V_7(111)$ using a
         
             
         <div class="diagram-card has-real-image">
-            
+            <div class="diagram-card-topbar">
+            <span></span>
+            <a href="draw_drives.html#drive-q17" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/svpwm_sectors_switching.png" alt="Figure 5.3: Hexagonal Space Vector Switching Pattern with Six Sectors and Inverter States" class="diagram-img" loading="lazy">
             </div>
@@ -12371,7 +12655,14 @@ FOC provides instantaneous torque response (under $5\text{ ms}$), full torque ca
         <div class="multi-diagrams-grid">
             
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure A • Primary Architecture</div>
+            <a href="draw_drives.html#drive-q18" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/field_oriented_control_block_diagram.png" alt="Figure 5.4: Comprehensive Architectural Block Diagram of Indirect Field-Oriented Control (IFOC)" class="diagram-img" loading="lazy">
             </div>
@@ -12379,7 +12670,14 @@ FOC provides instantaneous torque response (under $5\text{ ms}$), full torque ca
         </div>
         
         <div class="diagram-card has-real-image">
+            <div class="diagram-card-topbar">
             <div class="diagram-badge-pill">Figure B • Vector Decomposition Geometry</div>
+            <a href="draw_drives.html#drive-q18-fig2" class="diagram-draw-link" style="--draw-color:#f59e0b; --draw-bg:rgba(245, 158, 11, 0.12); --draw-border:rgba(245, 158, 11, 0.4);" title="Trace &amp; practice drawing this blueprint in the interactive drawing canvas">
+            <span class="draw-link-icon">✏️</span>
+            <span class="draw-link-label">Practice Drawing Blueprint</span>
+            <span class="draw-link-arrow">&rarr;</span>
+        </a>
+        </div>
             <div class="diagram-wrapper">
                 <img src="images/drive/clarke_park_transformation_geometry.png" alt="Figure 5.4B: Geometric Vector Transformations from 3-Phase abc Frame to Orthogonal αβ Frame and Synchronous Rotor-Flux dq Frame" class="diagram-img" loading="lazy">
             </div>

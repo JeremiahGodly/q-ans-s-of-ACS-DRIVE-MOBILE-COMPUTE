@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4332,6 +4450,7 @@ pre, code {
     <article class="question-card subject-ps2" id="ps2-q1" data-marks="3" data-title="derive the mathematical expression for the instantaneous short-circuit current on a transmission line modeled as an rl circuit. explain the dc offset component and the doubling effect.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-ps2-q1" data-duration="300" data-qid="ps2-q1" data-label="PS2 • Q1 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4346,9 +4465,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the mathematical expression for the instantaneous short-circuit current on a transmission line modeled as an RL circuit. Explain the DC offset component and the doubling effect.</span>
-            <span class="lang-view lang-manglish">Derive the mathematical expression for the instantaneous short-circuit current on a transmission line modeled as an RL circuit. Explain the DC offset component and the doubling effect.</span>
-            <span class="lang-view lang-ml">Derive the mathematical expression for the instantaneous short-circuit current on a transmission line modeled as an RL circuit. Explain the DC offset component and the doubling effect.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Derive the mathematical expression for the instantaneous short-circuit current on a transmission line modeled as an RL circuit. Explain the DC offset component and the doubling effect.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> Derive the mathematical expression for the instantaneous short-circuit current on a transmission line modeled as an RL circuit. Explain the DC offset component and the doubling effect.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> Derive the mathematical expression for the instantaneous short-circuit current on a transmission line modeled as an RL circuit. Explain the DC offset component and the doubling effect.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4372,6 +4491,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 1</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4535,6 +4669,7 @@ This doubling of peak current is termed the Doubling Effect. Circuit breakers mu
     <article class="question-card subject-ps2" id="ps2-q2" data-marks="7" data-title="explain the physical phenomena occurring during a symmetrical 3-phase fault at the terminals of an unloaded synchronous generator. define subtransient, transient, and steady-state reactances with neat oscillogram.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q2" data-duration="720" data-qid="ps2-q2" data-label="PS2 • Q2 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4549,9 +4684,9 @@ This doubling of peak current is termed the Doubling Effect. Circuit breakers mu
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the physical phenomena occurring during a symmetrical 3-phase fault at the terminals of an unloaded synchronous generator. Define subtransient, transient, and steady-state reactances with neat oscillogram.</span>
-            <span class="lang-view lang-manglish">Explain the physical phenomena occurring during a symmetrical 3-phase fault at the terminals of an unloaded synchronous generator. Define subtransient, transient, and steady-state reactances with neat oscillogram.</span>
-            <span class="lang-view lang-ml">Explain the physical phenomena occurring during a symmetrical 3-phase fault at the terminals of an unloaded synchronous generator. Define subtransient, transient, and steady-state reactances with neat oscillogram.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Explain the physical phenomena occurring during a symmetrical 3-phase fault at the terminals of an unloaded synchronous generator. Define subtransient, transient, and steady-state reactances with neat oscillogram.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Explain the physical phenomena occurring during a symmetrical 3-phase fault at the terminals of an unloaded synchronous generator. Define subtransient, transient, and steady-state reactances with neat oscillogram.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> Explain the physical phenomena occurring during a symmetrical 3-phase fault at the terminals of an unloaded synchronous generator. Define subtransient, transient, and steady-state reactances with neat oscillogram.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4575,6 +4710,21 @@ This doubling of peak current is termed the Doubling Effect. Circuit breakers mu
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4771,6 +4921,7 @@ This analytical decomposition enables protection engineers to select circuit bre
     <article class="question-card subject-ps2" id="ps2-q3" data-marks="3" data-title="define short circuit mva. explain the selection criteria for circuit breaker ratings, differentiating between rated symmetrical interrupting current and rated momentary making current.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-ps2-q3" data-duration="300" data-qid="ps2-q3" data-label="PS2 • Q3 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4785,9 +4936,9 @@ This analytical decomposition enables protection engineers to select circuit bre
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define Short Circuit MVA. Explain the selection criteria for circuit breaker ratings, differentiating between rated symmetrical interrupting current and rated momentary making current.</span>
-            <span class="lang-view lang-manglish">Define Short Circuit MVA. Explain the selection criteria for circuit breaker ratings, differentiating between rated symmetrical interrupting current and rated momentary making current.</span>
-            <span class="lang-view lang-ml">Define Short Circuit MVA. Explain the selection criteria for circuit breaker ratings, differentiating between rated symmetrical interrupting current and rated momentary making current.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Define Short Circuit MVA. Explain the selection criteria for circuit breaker ratings, differentiating between rated symmetrical interrupting current and rated momentary making current.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Define Short Circuit MVA. Explain the selection criteria for circuit breaker ratings, differentiating between rated symmetrical interrupting current and rated momentary making current.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> Define Short Circuit MVA. Explain the selection criteria for circuit breaker ratings, differentiating between rated symmetrical interrupting current and rated momentary making current.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4811,6 +4962,21 @@ This analytical decomposition enables protection engineers to select circuit bre
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4983,6 +5149,7 @@ Breakers must be selected such that both their making current and interrupting M
     <article class="question-card subject-ps2" id="ps2-q4" data-marks="7" data-title="explain the step-by-step algorithm for the formation of the bus impedance matrix (z_bus). derive the mathematical formulas for the four types of branch additions and kron reduction.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q4" data-duration="720" data-qid="ps2-q4" data-label="PS2 • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4997,9 +5164,9 @@ Breakers must be selected such that both their making current and interrupting M
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the step-by-step algorithm for the formation of the Bus Impedance Matrix (Z_bus). Derive the mathematical formulas for the four types of branch additions and Kron reduction.</span>
-            <span class="lang-view lang-manglish">Explain the step-by-step algorithm for the formation of the Bus Impedance Matrix (Z_bus). Derive the mathematical formulas for the four types of branch additions and Kron reduction.</span>
-            <span class="lang-view lang-ml">Explain the step-by-step algorithm for the formation of the Bus Impedance Matrix (Z_bus). Derive the mathematical formulas for the four types of branch additions and Kron reduction.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Explain the step-by-step algorithm for the formation of the Bus Impedance Matrix (Z_bus). Derive the mathematical formulas for the four types of branch additions and Kron reduction.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Explain the step-by-step algorithm for the formation of the Bus Impedance Matrix (Z_bus). Derive the mathematical formulas for the four types of branch additions and Kron reduction.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> Explain the step-by-step algorithm for the formation of the Bus Impedance Matrix (Z_bus). Derive the mathematical formulas for the four types of branch additions and Kron reduction.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5023,6 +5190,21 @@ Breakers must be selected such that both their making current and interrupting M
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5234,6 +5416,7 @@ This demonstrates the tremendous computational superiority of $Z_{bus}$ for auto
     <article class="question-card subject-ps2" id="ps2-q5" data-marks="7" data-title="calculate the fault current in ka and fault mva for a 3-phase symmetrical fault on an interconnected power system with two generators, step-up transformers, and transmission line on a 100 mva base.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q5" data-duration="720" data-qid="ps2-q5" data-label="PS2 • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5248,9 +5431,9 @@ This demonstrates the tremendous computational superiority of $Z_{bus}$ for auto
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Calculate the fault current in kA and fault MVA for a 3-phase symmetrical fault on an interconnected power system with two generators, step-up transformers, and transmission line on a 100 MVA base.</span>
-            <span class="lang-view lang-manglish">Calculate the fault current in kA and fault MVA for a 3-phase symmetrical fault on an interconnected power system with two generators, step-up transformers, and transmission line on a 100 MVA base.</span>
-            <span class="lang-view lang-ml">Calculate the fault current in kA and fault MVA for a 3-phase symmetrical fault on an interconnected power system with two generators, step-up transformers, and transmission line on a 100 MVA base.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Calculate the fault current in kA and fault MVA for a 3-phase symmetrical fault on an interconnected power system with two generators, step-up transformers, and transmission line on a 100 MVA base.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Calculate the fault current in kA and fault MVA for a 3-phase symmetrical fault on an interconnected power system with two generators, step-up transformers, and transmission line on a 100 MVA base.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> Calculate the fault current in kA and fault MVA for a 3-phase symmetrical fault on an interconnected power system with two generators, step-up transformers, and transmission line on a 100 MVA base.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5274,6 +5457,21 @@ This demonstrates the tremendous computational superiority of $Z_{bus}$ for auto
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5577,6 +5775,7 @@ This rigorous step-by-step working provides the complete solution expected in KT
     <article class="question-card subject-ps2" id="ps2-q6" data-marks="3" data-title="state fortescue&#x27;s theorem and explain the symmetrical components transformation. define the complex operator &#x27;a&#x27;, state its mathematical properties, and prove the invariance of complex power.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-ps2-q6" data-duration="300" data-qid="ps2-q6" data-label="PS2 • Q6 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5591,9 +5790,9 @@ This rigorous step-by-step working provides the complete solution expected in KT
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State Fortescue's theorem and explain the symmetrical components transformation. Define the complex operator 'a', state its mathematical properties, and prove the invariance of complex power.</span>
-            <span class="lang-view lang-manglish">State Fortescue's theorem and explain the symmetrical components transformation. Define the complex operator 'a', state its mathematical properties, and prove the invariance of complex power.</span>
-            <span class="lang-view lang-ml">State Fortescue's theorem and explain the symmetrical components transformation. Define the complex operator 'a', state its mathematical properties, and prove the invariance of complex power.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> State Fortescue's theorem and explain the symmetrical components transformation. Define the complex operator 'a', state its mathematical properties, and prove the invariance of complex power.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> State Fortescue's theorem and explain the symmetrical components transformation. Define the complex operator 'a', state its mathematical properties, and prove the invariance of complex power.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> State Fortescue's theorem and explain the symmetrical components transformation. Define the complex operator 'a', state its mathematical properties, and prove the invariance of complex power.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5617,6 +5816,21 @@ This rigorous step-by-step working provides the complete solution expected in KT
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 3</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5825,6 +6039,7 @@ This proves that complex power can be evaluated independently in the three decou
     <article class="question-card subject-ps2" id="ps2-q7" data-marks="7" data-title="draw and explain the positive, negative, and zero sequence equivalent circuits of synchronous generators, three-phase transformers (with various winding and grounding connections), and transmission lines.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q7" data-duration="720" data-qid="ps2-q7" data-label="PS2 • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5839,9 +6054,9 @@ This proves that complex power can be evaluated independently in the three decou
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw and explain the positive, negative, and zero sequence equivalent circuits of synchronous generators, three-phase transformers (with various winding and grounding connections), and transmission lines.</span>
-            <span class="lang-view lang-manglish">Draw and explain the positive, negative, and zero sequence equivalent circuits of synchronous generators, three-phase transformers (with various winding and grounding connections), and transmission lines.</span>
-            <span class="lang-view lang-ml">Draw and explain the positive, negative, and zero sequence equivalent circuits of synchronous generators, three-phase transformers (with various winding and grounding connections), and transmission lines.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Draw and explain the positive, negative, and zero sequence equivalent circuits of synchronous generators, three-phase transformers (with various winding and grounding connections), and transmission lines.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Draw and explain the positive, negative, and zero sequence equivalent circuits of synchronous generators, three-phase transformers (with various winding and grounding connections), and transmission lines.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Draw and explain the positive, negative, and zero sequence equivalent circuits of synchronous generators, three-phase transformers (with various winding and grounding connections), and transmission lines.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5865,6 +6080,21 @@ This proves that complex power can be evaluated independently in the three decou
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6067,6 +6297,7 @@ In typical high-voltage lines, $Z_0$ is significantly larger than $Z_1$, usually
     <article class="question-card subject-ps2" id="ps2-q8" data-marks="7" data-title="derive the expressions for sequence currents and fault current for a single line-to-ground (lg) fault on phase &#x27;a&#x27; through a fault impedance zf. draw the sequence network interconnection.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q8" data-duration="720" data-qid="ps2-q8" data-label="PS2 • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6081,9 +6312,9 @@ In typical high-voltage lines, $Z_0$ is significantly larger than $Z_1$, usually
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the expressions for sequence currents and fault current for a Single Line-to-Ground (LG) fault on phase 'a' through a fault impedance Zf. Draw the sequence network interconnection.</span>
-            <span class="lang-view lang-manglish">Derive the expressions for sequence currents and fault current for a Single Line-to-Ground (LG) fault on phase 'a' through a fault impedance Zf. Draw the sequence network interconnection.</span>
-            <span class="lang-view lang-ml">Derive the expressions for sequence currents and fault current for a Single Line-to-Ground (LG) fault on phase 'a' through a fault impedance Zf. Draw the sequence network interconnection.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Derive the expressions for sequence currents and fault current for a Single Line-to-Ground (LG) fault on phase 'a' through a fault impedance Zf. Draw the sequence network interconnection.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Derive the expressions for sequence currents and fault current for a Single Line-to-Ground (LG) fault on phase 'a' through a fault impedance Zf. Draw the sequence network interconnection.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Derive the expressions for sequence currents and fault current for a Single Line-to-Ground (LG) fault on phase 'a' through a fault impedance Zf. Draw the sequence network interconnection.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6107,6 +6338,21 @@ In typical high-voltage lines, $Z_0$ is significantly larger than $Z_1$, usually
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6336,6 +6582,7 @@ To satisfy both $I_{a0} = I_{a1} = I_{a2}$ and $E_a - I_{a1}(Z_1 + Z_2 + Z_0 + 3
     <article class="question-card subject-ps2" id="ps2-q9" data-marks="7" data-title="derive the expressions for sequence currents and fault current for a line-to-line (ll) fault between phases &#x27;b&#x27; and &#x27;c&#x27; through fault impedance zf. draw the sequence network interconnection.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q9" data-duration="720" data-qid="ps2-q9" data-label="PS2 • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6350,9 +6597,9 @@ To satisfy both $I_{a0} = I_{a1} = I_{a2}$ and $E_a - I_{a1}(Z_1 + Z_2 + Z_0 + 3
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the expressions for sequence currents and fault current for a Line-to-Line (LL) fault between phases 'b' and 'c' through fault impedance Zf. Draw the sequence network interconnection.</span>
-            <span class="lang-view lang-manglish">Derive the expressions for sequence currents and fault current for a Line-to-Line (LL) fault between phases 'b' and 'c' through fault impedance Zf. Draw the sequence network interconnection.</span>
-            <span class="lang-view lang-ml">Derive the expressions for sequence currents and fault current for a Line-to-Line (LL) fault between phases 'b' and 'c' through fault impedance Zf. Draw the sequence network interconnection.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Derive the expressions for sequence currents and fault current for a Line-to-Line (LL) fault between phases 'b' and 'c' through fault impedance Zf. Draw the sequence network interconnection.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Derive the expressions for sequence currents and fault current for a Line-to-Line (LL) fault between phases 'b' and 'c' through fault impedance Zf. Draw the sequence network interconnection.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Derive the expressions for sequence currents and fault current for a Line-to-Line (LL) fault between phases 'b' and 'c' through fault impedance Zf. Draw the sequence network interconnection.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6376,6 +6623,21 @@ To satisfy both $I_{a0} = I_{a1} = I_{a2}$ and $E_a - I_{a1}(Z_1 + Z_2 + Z_0 + 3
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6623,6 +6885,7 @@ Because $I_{a1} = -I_{a2}$ and $V_{a1} - V_{a2} = I_{a1} Z_f$, the positive-sequ
     <article class="question-card subject-ps2" id="ps2-q10" data-marks="7" data-title="derive the expressions for sequence currents, sequence voltages, and ground fault current for a double line-to-ground (llg) fault on phases &#x27;b&#x27; and &#x27;c&#x27;. draw the sequence network interconnection.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q10" data-duration="720" data-qid="ps2-q10" data-label="PS2 • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6637,9 +6900,9 @@ Because $I_{a1} = -I_{a2}$ and $V_{a1} - V_{a2} = I_{a1} Z_f$, the positive-sequ
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the expressions for sequence currents, sequence voltages, and ground fault current for a Double Line-to-Ground (LLG) fault on phases 'b' and 'c'. Draw the sequence network interconnection.</span>
-            <span class="lang-view lang-manglish">Derive the expressions for sequence currents, sequence voltages, and ground fault current for a Double Line-to-Ground (LLG) fault on phases 'b' and 'c'. Draw the sequence network interconnection.</span>
-            <span class="lang-view lang-ml">Derive the expressions for sequence currents, sequence voltages, and ground fault current for a Double Line-to-Ground (LLG) fault on phases 'b' and 'c'. Draw the sequence network interconnection.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Derive the expressions for sequence currents, sequence voltages, and ground fault current for a Double Line-to-Ground (LLG) fault on phases 'b' and 'c'. Draw the sequence network interconnection.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Derive the expressions for sequence currents, sequence voltages, and ground fault current for a Double Line-to-Ground (LLG) fault on phases 'b' and 'c'. Draw the sequence network interconnection.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> Derive the expressions for sequence currents, sequence voltages, and ground fault current for a Double Line-to-Ground (LLG) fault on phases 'b' and 'c'. Draw the sequence network interconnection.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6663,6 +6926,21 @@ Because $I_{a1} = -I_{a2}$ and $V_{a1} - V_{a2} = I_{a1} Z_f$, the positive-sequ
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6915,6 +7193,7 @@ The positive-sequence network, negative-sequence network, and zero-sequence netw
     <article class="question-card subject-ps2" id="ps2-q11" data-marks="3" data-title="classify the buses in a power system for load flow studies. state the known and unknown variables for each bus type and explain the formulation of bus admittance matrix (y_bus) by inspection.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-ps2-q11" data-duration="300" data-qid="ps2-q11" data-label="PS2 • Q11 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6929,9 +7208,9 @@ The positive-sequence network, negative-sequence network, and zero-sequence netw
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Classify the buses in a power system for load flow studies. State the known and unknown variables for each bus type and explain the formulation of Bus Admittance Matrix (Y_bus) by inspection.</span>
-            <span class="lang-view lang-manglish">Classify the buses in a power system for load flow studies. State the known and unknown variables for each bus type and explain the formulation of Bus Admittance Matrix (Y_bus) by inspection.</span>
-            <span class="lang-view lang-ml">Classify the buses in a power system for load flow studies. State the known and unknown variables for each bus type and explain the formulation of Bus Admittance Matrix (Y_bus) by inspection.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Classify the buses in a power system for load flow studies. State the known and unknown variables for each bus type and explain the formulation of Bus Admittance Matrix (Y_bus) by inspection.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Classify the buses in a power system for load flow studies. State the known and unknown variables for each bus type and explain the formulation of Bus Admittance Matrix (Y_bus) by inspection.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Classify the buses in a power system for load flow studies. State the known and unknown variables for each bus type and explain the formulation of Bus Admittance Matrix (Y_bus) by inspection.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6955,6 +7234,21 @@ The positive-sequence network, negative-sequence network, and zero-sequence netw
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 5</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7145,6 +7439,7 @@ If no direct transmission line connects bus $i$ and bus $k$, $Y_{ik} = 0$.</p>
     <article class="question-card subject-ps2" id="ps2-q12" data-marks="7" data-title="derive the static real and reactive power flow equations of an n-bus power system in polar coordinates from first principles using complex power injection relations.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q12" data-duration="720" data-qid="ps2-q12" data-label="PS2 • Q12 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7159,9 +7454,9 @@ If no direct transmission line connects bus $i$ and bus $k$, $Y_{ik} = 0$.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the static real and reactive power flow equations of an n-bus power system in polar coordinates from first principles using complex power injection relations.</span>
-            <span class="lang-view lang-manglish">Derive the static real and reactive power flow equations of an n-bus power system in polar coordinates from first principles using complex power injection relations.</span>
-            <span class="lang-view lang-ml">Derive the static real and reactive power flow equations of an n-bus power system in polar coordinates from first principles using complex power injection relations.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Derive the static real and reactive power flow equations of an n-bus power system in polar coordinates from first principles using complex power injection relations.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Derive the static real and reactive power flow equations of an n-bus power system in polar coordinates from first principles using complex power injection relations.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> Derive the static real and reactive power flow equations of an n-bus power system in polar coordinates from first principles using complex power injection relations.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7185,6 +7480,21 @@ If no direct transmission line connects bus $i$ and bus $k$, $Y_{ik} = 0$.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7396,6 +7706,7 @@ Convergence is achieved when all mismatches satisfy $|\Delta P_i| \le \epsilon$ 
     <article class="question-card subject-ps2" id="ps2-q13" data-marks="7" data-title="explain the gauss-seidel method for power flow solution. derive the iterative bus voltage equation, discuss the role of acceleration factor, and explain the handling of pv buses with reactive power limits.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q13" data-duration="720" data-qid="ps2-q13" data-label="PS2 • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7410,9 +7721,9 @@ Convergence is achieved when all mismatches satisfy $|\Delta P_i| \le \epsilon$ 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the Gauss-Seidel method for power flow solution. Derive the iterative bus voltage equation, discuss the role of acceleration factor, and explain the handling of PV buses with reactive power limits.</span>
-            <span class="lang-view lang-manglish">Explain the Gauss-Seidel method for power flow solution. Derive the iterative bus voltage equation, discuss the role of acceleration factor, and explain the handling of PV buses with reactive power limits.</span>
-            <span class="lang-view lang-ml">Explain the Gauss-Seidel method for power flow solution. Derive the iterative bus voltage equation, discuss the role of acceleration factor, and explain the handling of PV buses with reactive power limits.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Explain the Gauss-Seidel method for power flow solution. Derive the iterative bus voltage equation, discuss the role of acceleration factor, and explain the handling of PV buses with reactive power limits.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Explain the Gauss-Seidel method for power flow solution. Derive the iterative bus voltage equation, discuss the role of acceleration factor, and explain the handling of PV buses with reactive power limits.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Explain the Gauss-Seidel method for power flow solution. Derive the iterative bus voltage equation, discuss the role of acceleration factor, and explain the handling of PV buses with reactive power limits.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7436,6 +7747,21 @@ Convergence is achieved when all mismatches satisfy $|\Delta P_i| \le \epsilon$ 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7635,6 +7961,7 @@ $$\max_{i} \left| V_i^{(m+1)} - V_i^{(m)} \right| \le \epsilon \approx 10^{-4} \
     <article class="question-card subject-ps2" id="ps2-q14" data-marks="7" data-title="formulate the newton-raphson load flow algorithm in polar coordinates. derive the explicit mathematical expressions for the diagonal and off-diagonal elements of the jacobian matrix sub-blocks.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q14" data-duration="720" data-qid="ps2-q14" data-label="PS2 • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7649,9 +7976,9 @@ $$\max_{i} \left| V_i^{(m+1)} - V_i^{(m)} \right| \le \epsilon \approx 10^{-4} \
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Formulate the Newton-Raphson load flow algorithm in polar coordinates. Derive the explicit mathematical expressions for the diagonal and off-diagonal elements of the Jacobian matrix sub-blocks.</span>
-            <span class="lang-view lang-manglish">Formulate the Newton-Raphson load flow algorithm in polar coordinates. Derive the explicit mathematical expressions for the diagonal and off-diagonal elements of the Jacobian matrix sub-blocks.</span>
-            <span class="lang-view lang-ml">Formulate the Newton-Raphson load flow algorithm in polar coordinates. Derive the explicit mathematical expressions for the diagonal and off-diagonal elements of the Jacobian matrix sub-blocks.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Formulate the Newton-Raphson load flow algorithm in polar coordinates. Derive the explicit mathematical expressions for the diagonal and off-diagonal elements of the Jacobian matrix sub-blocks.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Formulate the Newton-Raphson load flow algorithm in polar coordinates. Derive the explicit mathematical expressions for the diagonal and off-diagonal elements of the Jacobian matrix sub-blocks.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Formulate the Newton-Raphson load flow algorithm in polar coordinates. Derive the explicit mathematical expressions for the diagonal and off-diagonal elements of the Jacobian matrix sub-blocks.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7675,6 +8002,21 @@ $$\max_{i} \left| V_i^{(m+1)} - V_i^{(m)} \right| \le \epsilon \approx 10^{-4} \
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7904,6 +8246,7 @@ $$Q_i = -|V_i|^2 B_{ii} + \sum_{k=1, k\ne i}^n |V_i| |V_k| \left[ G_{ik} \sin(\d
     <article class="question-card subject-ps2" id="ps2-q15" data-marks="3" data-title="state the physical assumptions underlying the fast decoupled load flow (fdlf) method. derive the decoupled matrix equations involving b&#x27; and b&#x27;&#x27; and discuss its computational advantages.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-ps2-q15" data-duration="300" data-qid="ps2-q15" data-label="PS2 • Q15 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7918,9 +8261,9 @@ $$Q_i = -|V_i|^2 B_{ii} + \sum_{k=1, k\ne i}^n |V_i| |V_k| \left[ G_{ik} \sin(\d
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State the physical assumptions underlying the Fast Decoupled Load Flow (FDLF) method. Derive the decoupled matrix equations involving B' and B'' and discuss its computational advantages.</span>
-            <span class="lang-view lang-manglish">State the physical assumptions underlying the Fast Decoupled Load Flow (FDLF) method. Derive the decoupled matrix equations involving B' and B'' and discuss its computational advantages.</span>
-            <span class="lang-view lang-ml">State the physical assumptions underlying the Fast Decoupled Load Flow (FDLF) method. Derive the decoupled matrix equations involving B' and B'' and discuss its computational advantages.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> State the physical assumptions underlying the Fast Decoupled Load Flow (FDLF) method. Derive the decoupled matrix equations involving B' and B'' and discuss its computational advantages.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> State the physical assumptions underlying the Fast Decoupled Load Flow (FDLF) method. Derive the decoupled matrix equations involving B' and B'' and discuss its computational advantages.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> State the physical assumptions underlying the Fast Decoupled Load Flow (FDLF) method. Derive the decoupled matrix equations involving B' and B'' and discuss its computational advantages.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7944,6 +8287,21 @@ $$Q_i = -|V_i|^2 B_{ii} + \sum_{k=1, k\ne i}^n |V_i| |V_k| \left[ G_{ik} \sin(\d
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 6</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8136,6 +8494,7 @@ where:
     <article class="question-card subject-ps2" id="ps2-q16" data-marks="3" data-title="derive the swing equation governing the rotor dynamics of a synchronous machine during transients. define inertia constant h and angular momentum m, and express the equation in electrical radians and degrees.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-ps2-q16" data-duration="300" data-qid="ps2-q16" data-label="PS2 • Q16 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8150,9 +8509,9 @@ where:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the swing equation governing the rotor dynamics of a synchronous machine during transients. Define inertia constant H and angular momentum M, and express the equation in electrical radians and degrees.</span>
-            <span class="lang-view lang-manglish">Derive the swing equation governing the rotor dynamics of a synchronous machine during transients. Define inertia constant H and angular momentum M, and express the equation in electrical radians and degrees.</span>
-            <span class="lang-view lang-ml">Derive the swing equation governing the rotor dynamics of a synchronous machine during transients. Define inertia constant H and angular momentum M, and express the equation in electrical radians and degrees.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Derive the swing equation governing the rotor dynamics of a synchronous machine during transients. Define inertia constant H and angular momentum M, and express the equation in electrical radians and degrees.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Derive the swing equation governing the rotor dynamics of a synchronous machine during transients. Define inertia constant H and angular momentum M, and express the equation in electrical radians and degrees.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> Derive the swing equation governing the rotor dynamics of a synchronous machine during transients. Define inertia constant H and angular momentum M, and express the equation in electrical radians and degrees.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8176,6 +8535,21 @@ where:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 7</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8399,6 +8773,7 @@ This fundamental second-order non-linear differential equation is the Swing Equa
     <article class="question-card subject-ps2" id="ps2-q17" data-marks="7" data-title="derive the power-angle equation pe = pmax sin(delta) for a synchronous machine connected to an infinite bus. define synchronizing power coefficient and determine the steady-state stability limit.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q17" data-duration="720" data-qid="ps2-q17" data-label="PS2 • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8413,9 +8788,9 @@ This fundamental second-order non-linear differential equation is the Swing Equa
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the power-angle equation Pe = Pmax sin(delta) for a synchronous machine connected to an infinite bus. Define synchronizing power coefficient and determine the steady-state stability limit.</span>
-            <span class="lang-view lang-manglish">Derive the power-angle equation Pe = Pmax sin(delta) for a synchronous machine connected to an infinite bus. Define synchronizing power coefficient and determine the steady-state stability limit.</span>
-            <span class="lang-view lang-ml">Derive the power-angle equation Pe = Pmax sin(delta) for a synchronous machine connected to an infinite bus. Define synchronizing power coefficient and determine the steady-state stability limit.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Derive the power-angle equation Pe = Pmax sin(delta) for a synchronous machine connected to an infinite bus. Define synchronizing power coefficient and determine the steady-state stability limit.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Derive the power-angle equation Pe = Pmax sin(delta) for a synchronous machine connected to an infinite bus. Define synchronizing power coefficient and determine the steady-state stability limit.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Derive the power-angle equation Pe = Pmax sin(delta) for a synchronous machine connected to an infinite bus. Define synchronizing power coefficient and determine the steady-state stability limit.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8439,6 +8814,21 @@ This fundamental second-order non-linear differential equation is the Swing Equa
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8662,6 +9052,7 @@ Operating beyond $\delta = 90^\circ$ is inherently unstable under constant excit
     <article class="question-card subject-ps2" id="ps2-q18" data-marks="7" data-title="state and prove the equal area criterion (eac) for the transient stability of a synchronous machine. apply eac to determine the maximum swing angle for a sudden step increase in mechanical power input.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q18" data-duration="720" data-qid="ps2-q18" data-label="PS2 • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8676,9 +9067,9 @@ Operating beyond $\delta = 90^\circ$ is inherently unstable under constant excit
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and prove the Equal Area Criterion (EAC) for the transient stability of a synchronous machine. Apply EAC to determine the maximum swing angle for a sudden step increase in mechanical power input.</span>
-            <span class="lang-view lang-manglish">State and prove the Equal Area Criterion (EAC) for the transient stability of a synchronous machine. Apply EAC to determine the maximum swing angle for a sudden step increase in mechanical power input.</span>
-            <span class="lang-view lang-ml">State and prove the Equal Area Criterion (EAC) for the transient stability of a synchronous machine. Apply EAC to determine the maximum swing angle for a sudden step increase in mechanical power input.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> State and prove the Equal Area Criterion (EAC) for the transient stability of a synchronous machine. Apply EAC to determine the maximum swing angle for a sudden step increase in mechanical power input.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> State and prove the Equal Area Criterion (EAC) for the transient stability of a synchronous machine. Apply EAC to determine the maximum swing angle for a sudden step increase in mechanical power input.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> State and prove the Equal Area Criterion (EAC) for the transient stability of a synchronous machine. Apply EAC to determine the maximum swing angle for a sudden step increase in mechanical power input.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8702,6 +9093,21 @@ Operating beyond $\delta = 90^\circ$ is inherently unstable under constant excit
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8919,6 +9325,7 @@ Equating $A_1 = A_2$ determines whether the system stabilizes at $\delta_1$ afte
     <article class="question-card subject-ps2" id="ps2-q19" data-marks="7" data-title="apply the equal area criterion to derive the expression for the critical clearing angle (delta_cr) for a three-phase fault on a double-circuit transmission line. obtain the critical clearing time formula.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q19" data-duration="720" data-qid="ps2-q19" data-label="PS2 • Q19 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8933,9 +9340,9 @@ Equating $A_1 = A_2$ determines whether the system stabilizes at $\delta_1$ afte
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Apply the Equal Area Criterion to derive the expression for the Critical Clearing Angle (delta_cr) for a three-phase fault on a double-circuit transmission line. Obtain the critical clearing time formula.</span>
-            <span class="lang-view lang-manglish">Apply the Equal Area Criterion to derive the expression for the Critical Clearing Angle (delta_cr) for a three-phase fault on a double-circuit transmission line. Obtain the critical clearing time formula.</span>
-            <span class="lang-view lang-ml">Apply the Equal Area Criterion to derive the expression for the Critical Clearing Angle (delta_cr) for a three-phase fault on a double-circuit transmission line. Obtain the critical clearing time formula.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Apply the Equal Area Criterion to derive the expression for the Critical Clearing Angle (delta_cr) for a three-phase fault on a double-circuit transmission line. Obtain the critical clearing time formula.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Apply the Equal Area Criterion to derive the expression for the Critical Clearing Angle (delta_cr) for a three-phase fault on a double-circuit transmission line. Obtain the critical clearing time formula.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> Apply the Equal Area Criterion to derive the expression for the Critical Clearing Angle (delta_cr) for a three-phase fault on a double-circuit transmission line. Obtain the critical clearing time formula.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8959,6 +9366,21 @@ Equating $A_1 = A_2$ determines whether the system stabilizes at $\delta_1$ afte
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9185,6 +9607,7 @@ If protective relays and circuit breakers do not clear the short circuit within 
     <article class="question-card subject-ps2" id="ps2-q20" data-marks="3" data-title="explain the various practical methods employed in modern power systems to improve transient and dynamic stability, including fast fault clearing, auto-reclosing, dynamic braking, and facts devices.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-ps2-q20" data-duration="300" data-qid="ps2-q20" data-label="PS2 • Q20 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9199,9 +9622,9 @@ If protective relays and circuit breakers do not clear the short circuit within 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the various practical methods employed in modern power systems to improve transient and dynamic stability, including fast fault clearing, auto-reclosing, dynamic braking, and FACTS devices.</span>
-            <span class="lang-view lang-manglish">Explain the various practical methods employed in modern power systems to improve transient and dynamic stability, including fast fault clearing, auto-reclosing, dynamic braking, and FACTS devices.</span>
-            <span class="lang-view lang-ml">Explain the various practical methods employed in modern power systems to improve transient and dynamic stability, including fast fault clearing, auto-reclosing, dynamic braking, and FACTS devices.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Explain the various practical methods employed in modern power systems to improve transient and dynamic stability, including fast fault clearing, auto-reclosing, dynamic braking, and FACTS devices.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Explain the various practical methods employed in modern power systems to improve transient and dynamic stability, including fast fault clearing, auto-reclosing, dynamic braking, and FACTS devices.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Explain the various practical methods employed in modern power systems to improve transient and dynamic stability, including fast fault clearing, auto-reclosing, dynamic braking, and FACTS devices.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9225,6 +9648,21 @@ If protective relays and circuit breakers do not clear the short circuit within 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 8</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9387,6 +9825,7 @@ Power electronic controllers enhance stability dynamically:
     <article class="question-card subject-ps2" id="ps2-q21" data-marks="7" data-title="develop the transfer function block diagram of an isolated single-area power system for load frequency control (lfc). derive the expression for steady-state frequency deviation following a step load change.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q21" data-duration="720" data-qid="ps2-q21" data-label="PS2 • Q21 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9401,9 +9840,9 @@ Power electronic controllers enhance stability dynamically:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Develop the transfer function block diagram of an isolated single-area power system for Load Frequency Control (LFC). Derive the expression for steady-state frequency deviation following a step load change.</span>
-            <span class="lang-view lang-manglish">Develop the transfer function block diagram of an isolated single-area power system for Load Frequency Control (LFC). Derive the expression for steady-state frequency deviation following a step load change.</span>
-            <span class="lang-view lang-ml">Develop the transfer function block diagram of an isolated single-area power system for Load Frequency Control (LFC). Derive the expression for steady-state frequency deviation following a step load change.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Develop the transfer function block diagram of an isolated single-area power system for Load Frequency Control (LFC). Derive the expression for steady-state frequency deviation following a step load change.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Develop the transfer function block diagram of an isolated single-area power system for Load Frequency Control (LFC). Derive the expression for steady-state frequency deviation following a step load change.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Develop the transfer function block diagram of an isolated single-area power system for Load Frequency Control (LFC). Derive the expression for steady-state frequency deviation following a step load change.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9427,6 +9866,21 @@ Power electronic controllers enhance stability dynamically:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9647,6 +10101,7 @@ This derivation proves that primary governor droop control inherently leaves a n
     <article class="question-card subject-ps2" id="ps2-q22" data-marks="7" data-title="explain secondary frequency control and the dynamics of a two-area interconnected power system. derive the tie-line power flow equation and define the area control error (ace) for each control area.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q22" data-duration="720" data-qid="ps2-q22" data-label="PS2 • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9661,9 +10116,9 @@ This derivation proves that primary governor droop control inherently leaves a n
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain secondary frequency control and the dynamics of a two-area interconnected power system. Derive the tie-line power flow equation and define the Area Control Error (ACE) for each control area.</span>
-            <span class="lang-view lang-manglish">Explain secondary frequency control and the dynamics of a two-area interconnected power system. Derive the tie-line power flow equation and define the Area Control Error (ACE) for each control area.</span>
-            <span class="lang-view lang-ml">Explain secondary frequency control and the dynamics of a two-area interconnected power system. Derive the tie-line power flow equation and define the Area Control Error (ACE) for each control area.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Explain secondary frequency control and the dynamics of a two-area interconnected power system. Derive the tie-line power flow equation and define the Area Control Error (ACE) for each control area.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Explain secondary frequency control and the dynamics of a two-area interconnected power system. Derive the tie-line power flow equation and define the Area Control Error (ACE) for each control area.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Explain secondary frequency control and the dynamics of a two-area interconnected power system. Derive the tie-line power flow equation and define the Area Control Error (ACE) for each control area.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9687,6 +10142,21 @@ This derivation proves that primary governor droop control inherently leaves a n
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9916,6 +10386,7 @@ Each area successfully adjusts its own generation to meet its local load change.
     <article class="question-card subject-ps2" id="ps2-q23" data-marks="3" data-title="draw the functional block diagram of an automatic voltage regulator (avr) for a synchronous generator. state the transfer functions of each constituent component and discuss stability compensation.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-ps2-q23" data-duration="300" data-qid="ps2-q23" data-label="PS2 • Q23 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9930,9 +10401,9 @@ Each area successfully adjusts its own generation to meet its local load change.
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw the functional block diagram of an Automatic Voltage Regulator (AVR) for a synchronous generator. State the transfer functions of each constituent component and discuss stability compensation.</span>
-            <span class="lang-view lang-manglish">Draw the functional block diagram of an Automatic Voltage Regulator (AVR) for a synchronous generator. State the transfer functions of each constituent component and discuss stability compensation.</span>
-            <span class="lang-view lang-ml">Draw the functional block diagram of an Automatic Voltage Regulator (AVR) for a synchronous generator. State the transfer functions of each constituent component and discuss stability compensation.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Draw the functional block diagram of an Automatic Voltage Regulator (AVR) for a synchronous generator. State the transfer functions of each constituent component and discuss stability compensation.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Draw the functional block diagram of an Automatic Voltage Regulator (AVR) for a synchronous generator. State the transfer functions of each constituent component and discuss stability compensation.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Draw the functional block diagram of an Automatic Voltage Regulator (AVR) for a synchronous generator. State the transfer functions of each constituent component and discuss stability compensation.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9956,6 +10427,21 @@ Each area successfully adjusts its own generation to meet its local load change.
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 10</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10134,6 +10620,7 @@ To ensure stable transient performance, a derivative feedback stabilizer (rate f
     <article class="question-card subject-ps2" id="ps2-q24" data-marks="7" data-title="formulate the economic load dispatch problem for thermal generating units neglecting transmission line losses. using lagrange multipliers, derive the criterion of equal incremental fuel costs.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q24" data-duration="720" data-qid="ps2-q24" data-label="PS2 • Q24 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10148,9 +10635,9 @@ To ensure stable transient performance, a derivative feedback stabilizer (rate f
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Formulate the economic load dispatch problem for thermal generating units neglecting transmission line losses. Using Lagrange multipliers, derive the criterion of equal incremental fuel costs.</span>
-            <span class="lang-view lang-manglish">Formulate the economic load dispatch problem for thermal generating units neglecting transmission line losses. Using Lagrange multipliers, derive the criterion of equal incremental fuel costs.</span>
-            <span class="lang-view lang-ml">Formulate the economic load dispatch problem for thermal generating units neglecting transmission line losses. Using Lagrange multipliers, derive the criterion of equal incremental fuel costs.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Formulate the economic load dispatch problem for thermal generating units neglecting transmission line losses. Using Lagrange multipliers, derive the criterion of equal incremental fuel costs.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Formulate the economic load dispatch problem for thermal generating units neglecting transmission line losses. Using Lagrange multipliers, derive the criterion of equal incremental fuel costs.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Formulate the economic load dispatch problem for thermal generating units neglecting transmission line losses. Using Lagrange multipliers, derive the criterion of equal incremental fuel costs.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10174,6 +10661,21 @@ To ensure stable transient performance, a derivative feedback stabilizer (rate f
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10379,6 +10881,7 @@ Any unit pegged at its boundary is removed from further economic adjustment; its
     <article class="question-card subject-ps2" id="ps2-q25" data-marks="7" data-title="formulate the economic dispatch problem including transmission network losses using kron&#x27;s loss formula. derive the coordination equations and explain the physical significance of the penalty factor li.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q25" data-duration="720" data-qid="ps2-q25" data-label="PS2 • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10393,9 +10896,9 @@ Any unit pegged at its boundary is removed from further economic adjustment; its
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Formulate the economic dispatch problem including transmission network losses using Kron's loss formula. Derive the coordination equations and explain the physical significance of the Penalty Factor Li.</span>
-            <span class="lang-view lang-manglish">Formulate the economic dispatch problem including transmission network losses using Kron's loss formula. Derive the coordination equations and explain the physical significance of the Penalty Factor Li.</span>
-            <span class="lang-view lang-ml">Formulate the economic dispatch problem including transmission network losses using Kron's loss formula. Derive the coordination equations and explain the physical significance of the Penalty Factor Li.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Formulate the economic dispatch problem including transmission network losses using Kron's loss formula. Derive the coordination equations and explain the physical significance of the Penalty Factor Li.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Formulate the economic dispatch problem including transmission network losses using Kron's loss formula. Derive the coordination equations and explain the physical significance of the Penalty Factor Li.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Formulate the economic dispatch problem including transmission network losses using Kron's loss formula. Derive the coordination equations and explain the physical significance of the Penalty Factor Li.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10419,6 +10922,21 @@ Any unit pegged at its boundary is removed from further economic adjustment; its
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10621,6 +11139,7 @@ $$\frac{dC_1}{dP_1} L_1 = \frac{dC_2}{dP_2} L_2 = \dots = \frac{dC_N}{dP_N} L_N 
     <article class="question-card subject-ps2" id="ps2-q26" data-marks="7" data-title="two thermal generating units have fuel cost functions c1 = 0.05 p1^2 + 20 p1 + 800 rs/h and c2 = 0.06 p2^2 + 15 p2 + 1000 rs/h with limits 20 &lt;= pi &lt;= 120 mw. for a total load of 180 mw, find optimal generation schedule, lambda, and calculate hourly cost savings compared to equal load sharing.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-ps2-q26" data-duration="720" data-qid="ps2-q26" data-label="PS2 • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('ps2-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10635,9 +11154,9 @@ $$\frac{dC_1}{dP_1} L_1 = \frac{dC_2}{dP_2} L_2 = \dots = \frac{dC_N}{dP_N} L_N 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Two thermal generating units have fuel cost functions C1 = 0.05 P1^2 + 20 P1 + 800 Rs/h and C2 = 0.06 P2^2 + 15 P2 + 1000 Rs/h with limits 20 <= Pi <= 120 MW. For a total load of 180 MW, find optimal generation schedule, lambda, and calculate hourly cost savings compared to equal load sharing.</span>
-            <span class="lang-view lang-manglish">Two thermal generating units have fuel cost functions C1 = 0.05 P1^2 + 20 P1 + 800 Rs/h and C2 = 0.06 P2^2 + 15 P2 + 1000 Rs/h with limits 20 <= Pi <= 120 MW. For a total load of 180 MW, find optimal generation schedule, lambda, and calculate hourly cost savings compared to equal load sharing.</span>
-            <span class="lang-view lang-ml">Two thermal generating units have fuel cost functions C1 = 0.05 P1^2 + 20 P1 + 800 Rs/h and C2 = 0.06 P2^2 + 15 P2 + 1000 Rs/h with limits 20 <= Pi <= 120 MW. For a total load of 180 MW, find optimal generation schedule, lambda, and calculate hourly cost savings compared to equal load sharing.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Two thermal generating units have fuel cost functions C1 = 0.05 P1^2 + 20 P1 + 800 Rs/h and C2 = 0.06 P2^2 + 15 P2 + 1000 Rs/h with limits 20 <= Pi <= 120 MW. For a total load of 180 MW, find optimal generation schedule, lambda, and calculate hourly cost savings compared to equal load sharing.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Two thermal generating units have fuel cost functions C1 = 0.05 P1^2 + 20 P1 + 800 Rs/h and C2 = 0.06 P2^2 + 15 P2 + 1000 Rs/h with limits 20 <= Pi <= 120 MW. For a total load of 180 MW, find optimal generation schedule, lambda, and calculate hourly cost savings compared to equal load sharing.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Two thermal generating units have fuel cost functions C1 = 0.05 P1^2 + 20 P1 + 800 Rs/h and C2 = 0.06 P2^2 + 15 P2 + 1000 Rs/h with limits 20 <= Pi <= 120 MW. For a total load of 180 MW, find optimal generation schedule, lambda, and calculate hourly cost savings compared to equal load sharing.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10661,6 +11180,21 @@ $$\frac{dC_1}{dP_1} L_1 = \frac{dC_2}{dP_2} L_2 = \dots = \frac{dC_N}{dP_N} L_N 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET304)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/ps2/EET304_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

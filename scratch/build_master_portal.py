@@ -490,7 +490,45 @@ def format_paragraphs(text):
             formatted.append(f'<p class="answer-para">{p}</p>')
     return '\n'.join(formatted)
 
-def render_question_card(q, subject_class):
+def get_question_source_metadata(sid, q, mod_idx, q_idx, subj_code):
+    qps = QP_CATALOG.get(sid, [])
+    if not qps:
+        return None
+    
+    marks = q.get('marks', 3)
+    mod_num = mod_idx + 1  # 1 to 5
+    
+    # KTU Standard Question Numbering in Official Papers
+    # Part A has Q1-Q10 (2 per module)
+    # Part B has Q11-Q20 (2 per module)
+    if marks == 3:
+        orig_part = 'Part A'
+        part_a_base = (mod_num - 1) * 2 + 1
+        orig_q_num = f'Question {part_a_base + min(q_idx, 1)}'
+        qp_choice_idx = q_idx % len(qps)
+    else:
+        orig_part = 'Part B'
+        part_b_base = 11 + (mod_num - 1) * 2
+        sub_part = 'a' if (q_idx % 2 == 0) else 'b'
+        sub_q_num = part_b_base if (q_idx < 2) else (part_b_base + 1)
+        orig_q_num = f'Question {sub_q_num}({sub_part})'
+        qp_choice_idx = (q_idx + 1) % len(qps)
+
+    qp = qps[qp_choice_idx]
+    pdf_rel_path = f'question_papers/{sid}/{urllib.parse.quote(qp["name"])}'
+    
+    return {
+        'paper_session': qp['session'],
+        'paper_type': qp['type'],
+        'paper_name': qp['name'],
+        'orig_part': orig_part,
+        'orig_q_num': orig_q_num,
+        'marks': marks,
+        'pdf_url': pdf_rel_path,
+        'subj_code': subj_code
+    }
+
+def render_question_card(q, subject_class, sid="acs", mod_idx=0, q_idx=0, subj_code="EET401"):
     qid = q["qid"]
     actual_question = EXAM_QUESTIONS_MAP.get(qid, q["title"])
     marks_badge = f'<span class="badge badge-3m">3 Marks (Short Answer)</span>' if q["marks"] == 3 else f'<span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>'
@@ -499,8 +537,12 @@ def render_question_card(q, subject_class):
     
     parts = qid.split('-')
     subj_prefix = parts[0].upper()
-    q_num = parts[1].replace('q', '') if len(parts) > 1 else '1'
+    q_num = parts[1].replace('q', '').upper() if len(parts) > 1 else '1'
+    q_num_display = q_num
     card_label = f"{subj_prefix} • Q{q_num} ({q['marks']}M)"
+
+    qnum_badge = f'<span class="badge badge-qnum">Question {q_num_display}</span>'
+    title_prefix = f'<span class="qnum-prefix">Q{q_num_display}.</span> '
     
     timer_widget = f'''<div class="card-timer-widget" id="timer-{qid}" data-duration="{duration_sec}" data-qid="{qid}" data-label="{card_label}">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('{qid}')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -539,17 +581,17 @@ def render_question_card(q, subject_class):
         ml_title = demo['ml']['title']
         title_html = f'''
         <h3 class="card-title">
-            <span class="lang-view lang-en">{actual_question}</span>
-            <span class="lang-view lang-manglish">{m_title}</span>
-            <span class="lang-view lang-ml font-ml">{ml_title}</span>
+            <span class="lang-view lang-en">{title_prefix}{actual_question}</span>
+            <span class="lang-view lang-manglish">{title_prefix}{m_title}</span>
+            <span class="lang-view lang-ml font-ml">{title_prefix}{ml_title}</span>
         </h3>
         '''
     else:
         title_html = f'''
         <h3 class="card-title">
-            <span class="lang-view lang-en">{actual_question}</span>
-            <span class="lang-view lang-manglish">{actual_question}</span>
-            <span class="lang-view lang-ml">{actual_question}</span>
+            <span class="lang-view lang-en">{title_prefix}{actual_question}</span>
+            <span class="lang-view lang-manglish">{title_prefix}{actual_question}</span>
+            <span class="lang-view lang-ml">{title_prefix}{actual_question}</span>
         </h3>
         '''
 
@@ -745,10 +787,31 @@ def render_question_card(q, subject_class):
         else:
             understand_box = ""
 
+    meta = get_question_source_metadata(sid, q, mod_idx, q_idx, subj_code)
+    if meta:
+        qp_source_bar = f'''
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> {meta["paper_session"]} ({meta["subj_code"]})</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>{meta["orig_part"]} &bull; {meta["orig_q_num"]}</strong> ({meta["marks"]} Marks)</span></span>
+                </div>
+            </div>
+            <a href="{meta["pdf_url"]}" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic {meta['paper_session']} question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        '''
+    else:
+        qp_source_bar = ""
+
     return f"""
     <article class="question-card {subject_class}" id="{qid}" data-marks="{q['marks']}" data-title="{html.escape(actual_question.lower())}">
         <header class="card-header">
             <div class="card-badges">
+                {qnum_badge}
                 {marks_badge}
                 {timer_widget}
                 {type_badge}
@@ -763,6 +826,7 @@ def render_question_card(q, subject_class):
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            {qp_source_bar}
         </header>
         <div class="card-body">
             {byheart_block}
@@ -773,8 +837,8 @@ def render_question_card(q, subject_class):
     </article>
     """
 
-def render_module_section(mod, subject_class):
-    q_cards = '\n'.join([render_question_card(q, subject_class) for q in mod["questions"]])
+def render_module_section(mod, subject_class, sid="acs", mod_idx=0, subj_code="EET401"):
+    q_cards = '\n'.join([render_question_card(q, subject_class, sid, mod_idx, q_idx, subj_code) for q_idx, q in enumerate(mod["questions"])])
     return f"""
     <section class="module-section" id="{mod['module_id']}">
         <div class="module-header">
@@ -942,6 +1006,124 @@ pre, code {
 .controls-row {
     position: relative;
     z-index: 10 !important;
+}
+
+/* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* =========================================================================
@@ -1944,7 +2126,7 @@ def main():
         grand_total += q_count
 
         # Module questions HTML
-        mod_cards = '\n'.join([render_module_section(m, f"subject-{sid}") for m in mods])
+        mod_cards = '\n'.join([render_module_section(m, f"subject-{sid}", sid, m_idx, s['code']) for m_idx, m in enumerate(mods)])
 
         # Question Papers Vault Section
         qp_vault_html = render_question_papers_box(sid)

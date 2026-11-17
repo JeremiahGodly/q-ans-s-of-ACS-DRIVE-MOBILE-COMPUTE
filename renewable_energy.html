@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4332,6 +4450,7 @@ pre, code {
     <article class="question-card subject-res" id="res-q1" data-marks="3" data-title="explain the terms extraterrestrial and terrestrial solar radiation. define solar constant and air mass ratio with standard values.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-res-q1" data-duration="300" data-qid="res-q1" data-label="RES • Q1 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4346,9 +4465,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the terms extraterrestrial and terrestrial solar radiation. Define solar constant and air mass ratio with standard values.</span>
-            <span class="lang-view lang-manglish">Explain the terms extraterrestrial and terrestrial solar radiation. Define solar constant and air mass ratio with standard values.</span>
-            <span class="lang-view lang-ml">Explain the terms extraterrestrial and terrestrial solar radiation. Define solar constant and air mass ratio with standard values.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Explain the terms extraterrestrial and terrestrial solar radiation. Define solar constant and air mass ratio with standard values.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> Explain the terms extraterrestrial and terrestrial solar radiation. Define solar constant and air mass ratio with standard values.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> Explain the terms extraterrestrial and terrestrial solar radiation. Define solar constant and air mass ratio with standard values.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4372,6 +4491,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 1</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4496,6 +4630,7 @@ where $\theta_z$ is the solar zenith angle. In space, where no atmosphere exists
     <article class="question-card subject-res" id="res-q2" data-marks="3" data-title="define the following solar angles with neat sketches: (i) declination angle, (ii) hour angle, (iii) solar altitude angle, (iv) zenith angle, and (v) solar azimuth angle.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-res-q2" data-duration="300" data-qid="res-q2" data-label="RES • Q2 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4510,9 +4645,9 @@ where $\theta_z$ is the solar zenith angle. In space, where no atmosphere exists
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define the following solar angles with neat sketches: (i) Declination angle, (ii) Hour angle, (iii) Solar altitude angle, (iv) Zenith angle, and (v) Solar azimuth angle.</span>
-            <span class="lang-view lang-manglish">Define the following solar angles with neat sketches: (i) Declination angle, (ii) Hour angle, (iii) Solar altitude angle, (iv) Zenith angle, and (v) Solar azimuth angle.</span>
-            <span class="lang-view lang-ml">Define the following solar angles with neat sketches: (i) Declination angle, (ii) Hour angle, (iii) Solar altitude angle, (iv) Zenith angle, and (v) Solar azimuth angle.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Define the following solar angles with neat sketches: (i) Declination angle, (ii) Hour angle, (iii) Solar altitude angle, (iv) Zenith angle, and (v) Solar azimuth angle.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Define the following solar angles with neat sketches: (i) Declination angle, (ii) Hour angle, (iii) Solar altitude angle, (iv) Zenith angle, and (v) Solar azimuth angle.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> Define the following solar angles with neat sketches: (i) Declination angle, (ii) Hour angle, (iii) Solar altitude angle, (iv) Zenith angle, and (v) Solar azimuth angle.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4536,6 +4671,21 @@ where $\theta_z$ is the solar zenith angle. In space, where no atmosphere exists
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4669,6 +4819,7 @@ $$\sin\alpha = \cos\theta_z = \sin\phi \sin\delta + \cos\phi \cos\delta \cos\ome
     <article class="question-card subject-res" id="res-q3" data-marks="7" data-title="explain with neat sketches the construction and working principles of a pyranometer and a pyrheliometer for measuring solar radiation.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q3" data-duration="720" data-qid="res-q3" data-label="RES • Q3 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4683,9 +4834,9 @@ $$\sin\alpha = \cos\theta_z = \sin\phi \sin\delta + \cos\phi \cos\delta \cos\ome
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain with neat sketches the construction and working principles of a Pyranometer and a Pyrheliometer for measuring solar radiation.</span>
-            <span class="lang-view lang-manglish">Explain with neat sketches the construction and working principles of a Pyranometer and a Pyrheliometer for measuring solar radiation.</span>
-            <span class="lang-view lang-ml">Explain with neat sketches the construction and working principles of a Pyranometer and a Pyrheliometer for measuring solar radiation.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Explain with neat sketches the construction and working principles of a Pyranometer and a Pyrheliometer for measuring solar radiation.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Explain with neat sketches the construction and working principles of a Pyranometer and a Pyrheliometer for measuring solar radiation.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> Explain with neat sketches the construction and working principles of a Pyranometer and a Pyrheliometer for measuring solar radiation.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4709,6 +4860,21 @@ $$\sin\alpha = \cos\theta_z = \sin\phi \sin\delta + \cos\phi \cos\delta \cos\ome
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4860,6 +5026,7 @@ Pyrheliometer measurements are indispensable for Concentrated Solar Power (CSP) 
     <article class="question-card subject-res" id="res-q4" data-marks="7" data-title="derive the single-diode equivalent circuit model and the governing i-v characteristic equation of a practical solar photovoltaic cell.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q4" data-duration="720" data-qid="res-q4" data-label="RES • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4874,9 +5041,9 @@ Pyrheliometer measurements are indispensable for Concentrated Solar Power (CSP) 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the single-diode equivalent circuit model and the governing I-V characteristic equation of a practical solar photovoltaic cell.</span>
-            <span class="lang-view lang-manglish">Derive the single-diode equivalent circuit model and the governing I-V characteristic equation of a practical solar photovoltaic cell.</span>
-            <span class="lang-view lang-ml">Derive the single-diode equivalent circuit model and the governing I-V characteristic equation of a practical solar photovoltaic cell.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Derive the single-diode equivalent circuit model and the governing I-V characteristic equation of a practical solar photovoltaic cell.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Derive the single-diode equivalent circuit model and the governing I-V characteristic equation of a practical solar photovoltaic cell.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> Derive the single-diode equivalent circuit model and the governing I-V characteristic equation of a practical solar photovoltaic cell.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4900,6 +5067,21 @@ Pyrheliometer measurements are indispensable for Concentrated Solar Power (CSP) 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5099,6 +5281,7 @@ This confirms that $I_{sc}$ increases linearly with incident solar irradiance, w
     <article class="question-card subject-res" id="res-q5" data-marks="7" data-title="define open-circuit voltage, short-circuit current, maximum power point, fill factor, and conversion efficiency of a pv cell with step-by-step numerical calculation.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q5" data-duration="720" data-qid="res-q5" data-label="RES • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5113,9 +5296,9 @@ This confirms that $I_{sc}$ increases linearly with incident solar irradiance, w
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define Open-Circuit Voltage, Short-Circuit Current, Maximum Power Point, Fill Factor, and Conversion Efficiency of a PV cell with step-by-step numerical calculation.</span>
-            <span class="lang-view lang-manglish">Define Open-Circuit Voltage, Short-Circuit Current, Maximum Power Point, Fill Factor, and Conversion Efficiency of a PV cell with step-by-step numerical calculation.</span>
-            <span class="lang-view lang-ml">Define Open-Circuit Voltage, Short-Circuit Current, Maximum Power Point, Fill Factor, and Conversion Efficiency of a PV cell with step-by-step numerical calculation.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Define Open-Circuit Voltage, Short-Circuit Current, Maximum Power Point, Fill Factor, and Conversion Efficiency of a PV cell with step-by-step numerical calculation.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Define Open-Circuit Voltage, Short-Circuit Current, Maximum Power Point, Fill Factor, and Conversion Efficiency of a PV cell with step-by-step numerical calculation.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> Define Open-Circuit Voltage, Short-Circuit Current, Maximum Power Point, Fill Factor, and Conversion Efficiency of a PV cell with step-by-step numerical calculation.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5139,6 +5322,21 @@ This confirms that $I_{sc}$ increases linearly with incident solar irradiance, w
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5370,6 +5568,7 @@ $$\mathbf{P_{mp} = 2.448\text{ W}}, \quad \mathbf{FF = 0.7521 \ (75.21\%)}, \qua
     <article class="question-card subject-res" id="res-q6" data-marks="7" data-title="explain the construction and working of a liquid flat-plate solar collector. derive the hottel-whillier-bliss useful energy balance equation and efficiency.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q6" data-duration="720" data-qid="res-q6" data-label="RES • Q6 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5384,9 +5583,9 @@ $$\mathbf{P_{mp} = 2.448\text{ W}}, \quad \mathbf{FF = 0.7521 \ (75.21\%)}, \qua
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the construction and working of a liquid flat-plate solar collector. Derive the Hottel-Whillier-Bliss useful energy balance equation and efficiency.</span>
-            <span class="lang-view lang-manglish">Explain the construction and working of a liquid flat-plate solar collector. Derive the Hottel-Whillier-Bliss useful energy balance equation and efficiency.</span>
-            <span class="lang-view lang-ml">Explain the construction and working of a liquid flat-plate solar collector. Derive the Hottel-Whillier-Bliss useful energy balance equation and efficiency.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Explain the construction and working of a liquid flat-plate solar collector. Derive the Hottel-Whillier-Bliss useful energy balance equation and efficiency.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Explain the construction and working of a liquid flat-plate solar collector. Derive the Hottel-Whillier-Bliss useful energy balance equation and efficiency.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> Explain the construction and working of a liquid flat-plate solar collector. Derive the Hottel-Whillier-Bliss useful energy balance equation and efficiency.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5410,6 +5609,21 @@ $$\mathbf{P_{mp} = 2.448\text{ W}}, \quad \mathbf{FF = 0.7521 \ (75.21\%)}, \qua
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5588,6 +5802,7 @@ Plotting $\eta$ against the reduced temperature parameter $\left( \frac{T_i - T_
     <article class="question-card subject-res" id="res-q7" data-marks="7" data-title="classify concentrating solar thermal collectors. compare parabolic trough, linear fresnel, solar power tower, and parabolic dish systems.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q7" data-duration="720" data-qid="res-q7" data-label="RES • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5602,9 +5817,9 @@ Plotting $\eta$ against the reduced temperature parameter $\left( \frac{T_i - T_
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Classify concentrating solar thermal collectors. Compare Parabolic Trough, Linear Fresnel, Solar Power Tower, and Parabolic Dish systems.</span>
-            <span class="lang-view lang-manglish">Classify concentrating solar thermal collectors. Compare Parabolic Trough, Linear Fresnel, Solar Power Tower, and Parabolic Dish systems.</span>
-            <span class="lang-view lang-ml">Classify concentrating solar thermal collectors. Compare Parabolic Trough, Linear Fresnel, Solar Power Tower, and Parabolic Dish systems.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Classify concentrating solar thermal collectors. Compare Parabolic Trough, Linear Fresnel, Solar Power Tower, and Parabolic Dish systems.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Classify concentrating solar thermal collectors. Compare Parabolic Trough, Linear Fresnel, Solar Power Tower, and Parabolic Dish systems.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Classify concentrating solar thermal collectors. Compare Parabolic Trough, Linear Fresnel, Solar Power Tower, and Parabolic Dish systems.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5628,6 +5843,21 @@ Plotting $\eta$ against the reduced temperature parameter $\left( \frac{T_i - T_
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5800,6 +6030,7 @@ As $C_R$ increases, the thermal loss area $A_r$ shrinks relative to the collecti
     <article class="question-card subject-res" id="res-q8" data-marks="7" data-title="explain the effects of partial shading on pv module i-v and p-v characteristics. discuss hot-spot formation and the protective role of bypass and blocking diodes.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q8" data-duration="720" data-qid="res-q8" data-label="RES • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5814,9 +6045,9 @@ As $C_R$ increases, the thermal loss area $A_r$ shrinks relative to the collecti
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the effects of partial shading on PV module I-V and P-V characteristics. Discuss hot-spot formation and the protective role of bypass and blocking diodes.</span>
-            <span class="lang-view lang-manglish">Explain the effects of partial shading on PV module I-V and P-V characteristics. Discuss hot-spot formation and the protective role of bypass and blocking diodes.</span>
-            <span class="lang-view lang-ml">Explain the effects of partial shading on PV module I-V and P-V characteristics. Discuss hot-spot formation and the protective role of bypass and blocking diodes.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Explain the effects of partial shading on PV module I-V and P-V characteristics. Discuss hot-spot formation and the protective role of bypass and blocking diodes.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Explain the effects of partial shading on PV module I-V and P-V characteristics. Discuss hot-spot formation and the protective role of bypass and blocking diodes.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Explain the effects of partial shading on PV module I-V and P-V characteristics. Discuss hot-spot formation and the protective role of bypass and blocking diodes.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5840,6 +6071,21 @@ As $C_R$ increases, the thermal loss area $A_r$ shrinks relative to the collecti
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5994,6 +6240,7 @@ Blocking Diodes are connected in series with each parallel string in an array or
     <article class="question-card subject-res" id="res-q9" data-marks="7" data-title="explain the maximum power point tracking (mppt) principle. derive the mathematical formulation of perturb &amp; observe (p&amp;o) and incremental conductance algorithms.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q9" data-duration="720" data-qid="res-q9" data-label="RES • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6008,9 +6255,9 @@ Blocking Diodes are connected in series with each parallel string in an array or
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the Maximum Power Point Tracking (MPPT) principle. Derive the mathematical formulation of Perturb & Observe (P&O) and Incremental Conductance algorithms.</span>
-            <span class="lang-view lang-manglish">Explain the Maximum Power Point Tracking (MPPT) principle. Derive the mathematical formulation of Perturb & Observe (P&O) and Incremental Conductance algorithms.</span>
-            <span class="lang-view lang-ml">Explain the Maximum Power Point Tracking (MPPT) principle. Derive the mathematical formulation of Perturb & Observe (P&O) and Incremental Conductance algorithms.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Explain the Maximum Power Point Tracking (MPPT) principle. Derive the mathematical formulation of Perturb & Observe (P&O) and Incremental Conductance algorithms.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Explain the Maximum Power Point Tracking (MPPT) principle. Derive the mathematical formulation of Perturb & Observe (P&O) and Incremental Conductance algorithms.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Explain the Maximum Power Point Tracking (MPPT) principle. Derive the mathematical formulation of Perturb & Observe (P&O) and Incremental Conductance algorithms.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6034,6 +6281,21 @@ Blocking Diodes are connected in series with each parallel string in an array or
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6254,6 +6516,7 @@ The controller measures instantaneous $V(k)$ and $I(k)$, computes $\Delta V = V(
     <article class="question-card subject-res" id="res-q10" data-marks="7" data-title="compare grid-tied and stand-alone solar pv systems with functional block diagrams, balance of system (bos) components, and inverter configurations.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q10" data-duration="720" data-qid="res-q10" data-label="RES • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6268,9 +6531,9 @@ The controller measures instantaneous $V(k)$ and $I(k)$, computes $\Delta V = V(
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare grid-tied and stand-alone solar PV systems with functional block diagrams, balance of system (BOS) components, and inverter configurations.</span>
-            <span class="lang-view lang-manglish">Compare grid-tied and stand-alone solar PV systems with functional block diagrams, balance of system (BOS) components, and inverter configurations.</span>
-            <span class="lang-view lang-ml">Compare grid-tied and stand-alone solar PV systems with functional block diagrams, balance of system (BOS) components, and inverter configurations.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Compare grid-tied and stand-alone solar PV systems with functional block diagrams, balance of system (BOS) components, and inverter configurations.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Compare grid-tied and stand-alone solar PV systems with functional block diagrams, balance of system (BOS) components, and inverter configurations.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> Compare grid-tied and stand-alone solar PV systems with functional block diagrams, balance of system (BOS) components, and inverter configurations.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6294,6 +6557,21 @@ The controller measures instantaneous $V(k)$ and $I(k)$, computes $\Delta V = V(
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6471,6 +6749,7 @@ The controller measures instantaneous $V(k)$ and $I(k)$, computes $\Delta V = V(
     <article class="question-card subject-res" id="res-q11" data-marks="7" data-title="derive the expression for total power in an unconstrained wind stream. derive the betz limit for maximum theoretical power extraction using actuator disc theory.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q11" data-duration="720" data-qid="res-q11" data-label="RES • Q11 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6485,9 +6764,9 @@ The controller measures instantaneous $V(k)$ and $I(k)$, computes $\Delta V = V(
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the expression for total power in an unconstrained wind stream. Derive the Betz limit for maximum theoretical power extraction using actuator disc theory.</span>
-            <span class="lang-view lang-manglish">Derive the expression for total power in an unconstrained wind stream. Derive the Betz limit for maximum theoretical power extraction using actuator disc theory.</span>
-            <span class="lang-view lang-ml">Derive the expression for total power in an unconstrained wind stream. Derive the Betz limit for maximum theoretical power extraction using actuator disc theory.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Derive the expression for total power in an unconstrained wind stream. Derive the Betz limit for maximum theoretical power extraction using actuator disc theory.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Derive the expression for total power in an unconstrained wind stream. Derive the Betz limit for maximum theoretical power extraction using actuator disc theory.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Derive the expression for total power in an unconstrained wind stream. Derive the Betz limit for maximum theoretical power extraction using actuator disc theory.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6511,6 +6790,21 @@ The controller measures instantaneous $V(k)$ and $I(k)$, computes $\Delta V = V(
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6764,6 +7058,7 @@ $$\mathbf{C_{p,\max} = \frac{16}{27} \approx 59.26\%}$$</p>
     <article class="question-card subject-res" id="res-q12" data-marks="7" data-title="compare horizontal axis wind turbines (hawt) and vertical axis wind turbines (vawt) in terms of aerodynamic principles, lift vs drag, tip-speed ratio, and efficiency.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q12" data-duration="720" data-qid="res-q12" data-label="RES • Q12 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6778,9 +7073,9 @@ $$\mathbf{C_{p,\max} = \frac{16}{27} \approx 59.26\%}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare Horizontal Axis Wind Turbines (HAWT) and Vertical Axis Wind Turbines (VAWT) in terms of aerodynamic principles, lift vs drag, tip-speed ratio, and efficiency.</span>
-            <span class="lang-view lang-manglish">Compare Horizontal Axis Wind Turbines (HAWT) and Vertical Axis Wind Turbines (VAWT) in terms of aerodynamic principles, lift vs drag, tip-speed ratio, and efficiency.</span>
-            <span class="lang-view lang-ml">Compare Horizontal Axis Wind Turbines (HAWT) and Vertical Axis Wind Turbines (VAWT) in terms of aerodynamic principles, lift vs drag, tip-speed ratio, and efficiency.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Compare Horizontal Axis Wind Turbines (HAWT) and Vertical Axis Wind Turbines (VAWT) in terms of aerodynamic principles, lift vs drag, tip-speed ratio, and efficiency.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Compare Horizontal Axis Wind Turbines (HAWT) and Vertical Axis Wind Turbines (VAWT) in terms of aerodynamic principles, lift vs drag, tip-speed ratio, and efficiency.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> Compare Horizontal Axis Wind Turbines (HAWT) and Vertical Axis Wind Turbines (VAWT) in terms of aerodynamic principles, lift vs drag, tip-speed ratio, and efficiency.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6804,6 +7099,21 @@ $$\mathbf{C_{p,\max} = \frac{16}{27} \approx 59.26\%}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6985,6 +7295,7 @@ where $\omega$ is rotor angular velocity, $R$ is blade tip radius, and $v$ is wi
     <article class="question-card subject-res" id="res-q13" data-marks="7" data-title="draw a neat cutaway diagram of a utility-scale hawt nacelle and explain the functions of the drive train, gearbox, yaw mechanism, and pitch control.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q13" data-duration="720" data-qid="res-q13" data-label="RES • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6999,9 +7310,9 @@ where $\omega$ is rotor angular velocity, $R$ is blade tip radius, and $v$ is wi
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw a neat cutaway diagram of a utility-scale HAWT nacelle and explain the functions of the drive train, gearbox, yaw mechanism, and pitch control.</span>
-            <span class="lang-view lang-manglish">Draw a neat cutaway diagram of a utility-scale HAWT nacelle and explain the functions of the drive train, gearbox, yaw mechanism, and pitch control.</span>
-            <span class="lang-view lang-ml">Draw a neat cutaway diagram of a utility-scale HAWT nacelle and explain the functions of the drive train, gearbox, yaw mechanism, and pitch control.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Draw a neat cutaway diagram of a utility-scale HAWT nacelle and explain the functions of the drive train, gearbox, yaw mechanism, and pitch control.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Draw a neat cutaway diagram of a utility-scale HAWT nacelle and explain the functions of the drive train, gearbox, yaw mechanism, and pitch control.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Draw a neat cutaway diagram of a utility-scale HAWT nacelle and explain the functions of the drive train, gearbox, yaw mechanism, and pitch control.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7025,6 +7336,21 @@ where $\omega$ is rotor angular velocity, $R$ is blade tip radius, and $v$ is wi
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7179,6 +7505,7 @@ The nacelle is the housing structure mounted atop the tower that encloses the dr
     <article class="question-card subject-res" id="res-q14" data-marks="7" data-title="compare the operation, converter sizing, and characteristics of doubly fed induction generators (dfig) and permanent magnet synchronous generators (pmsg) for wind turbines.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q14" data-duration="720" data-qid="res-q14" data-label="RES • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7193,9 +7520,9 @@ The nacelle is the housing structure mounted atop the tower that encloses the dr
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare the operation, converter sizing, and characteristics of Doubly Fed Induction Generators (DFIG) and Permanent Magnet Synchronous Generators (PMSG) for wind turbines.</span>
-            <span class="lang-view lang-manglish">Compare the operation, converter sizing, and characteristics of Doubly Fed Induction Generators (DFIG) and Permanent Magnet Synchronous Generators (PMSG) for wind turbines.</span>
-            <span class="lang-view lang-ml">Compare the operation, converter sizing, and characteristics of Doubly Fed Induction Generators (DFIG) and Permanent Magnet Synchronous Generators (PMSG) for wind turbines.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Compare the operation, converter sizing, and characteristics of Doubly Fed Induction Generators (DFIG) and Permanent Magnet Synchronous Generators (PMSG) for wind turbines.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Compare the operation, converter sizing, and characteristics of Doubly Fed Induction Generators (DFIG) and Permanent Magnet Synchronous Generators (PMSG) for wind turbines.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Compare the operation, converter sizing, and characteristics of Doubly Fed Induction Generators (DFIG) and Permanent Magnet Synchronous Generators (PMSG) for wind turbines.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7219,6 +7546,21 @@ The nacelle is the housing structure mounted atop the tower that encloses the dr
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7388,6 +7730,7 @@ The nacelle is the housing structure mounted atop the tower that encloses the dr
     <article class="question-card subject-res" id="res-q15" data-marks="7" data-title="explain the wind turbine power curve across operating regions 1 to 4. compare pitch control, passive stall, and active stall aerodynamic power regulation.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q15" data-duration="720" data-qid="res-q15" data-label="RES • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7402,9 +7745,9 @@ The nacelle is the housing structure mounted atop the tower that encloses the dr
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the wind turbine power curve across operating Regions 1 to 4. Compare pitch control, passive stall, and active stall aerodynamic power regulation.</span>
-            <span class="lang-view lang-manglish">Explain the wind turbine power curve across operating Regions 1 to 4. Compare pitch control, passive stall, and active stall aerodynamic power regulation.</span>
-            <span class="lang-view lang-ml">Explain the wind turbine power curve across operating Regions 1 to 4. Compare pitch control, passive stall, and active stall aerodynamic power regulation.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Explain the wind turbine power curve across operating Regions 1 to 4. Compare pitch control, passive stall, and active stall aerodynamic power regulation.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Explain the wind turbine power curve across operating Regions 1 to 4. Compare pitch control, passive stall, and active stall aerodynamic power regulation.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Explain the wind turbine power curve across operating Regions 1 to 4. Compare pitch control, passive stall, and active stall aerodynamic power regulation.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7428,6 +7771,21 @@ The nacelle is the housing structure mounted atop the tower that encloses the dr
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7596,6 +7954,7 @@ Driven by electric gear motors located at the tower-nacelle junction. Using sign
     <article class="question-card subject-res" id="res-q16" data-marks="7" data-title="explain the thermochemical conversion pathways of biomass: direct combustion, gasification (chemical reactions and gasifier types), and pyrolysis.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q16" data-duration="720" data-qid="res-q16" data-label="RES • Q16 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7610,9 +7969,9 @@ Driven by electric gear motors located at the tower-nacelle junction. Using sign
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the thermochemical conversion pathways of biomass: Direct Combustion, Gasification (chemical reactions and gasifier types), and Pyrolysis.</span>
-            <span class="lang-view lang-manglish">Explain the thermochemical conversion pathways of biomass: Direct Combustion, Gasification (chemical reactions and gasifier types), and Pyrolysis.</span>
-            <span class="lang-view lang-ml">Explain the thermochemical conversion pathways of biomass: Direct Combustion, Gasification (chemical reactions and gasifier types), and Pyrolysis.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Explain the thermochemical conversion pathways of biomass: Direct Combustion, Gasification (chemical reactions and gasifier types), and Pyrolysis.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Explain the thermochemical conversion pathways of biomass: Direct Combustion, Gasification (chemical reactions and gasifier types), and Pyrolysis.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> Explain the thermochemical conversion pathways of biomass: Direct Combustion, Gasification (chemical reactions and gasifier types), and Pyrolysis.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7636,6 +7995,21 @@ Driven by electric gear motors located at the tower-nacelle junction. Using sign
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7808,6 +8182,7 @@ The resulting producer gas consists primarily of Carbon Monoxide ($CO \approx 18
     <article class="question-card subject-res" id="res-q17" data-marks="7" data-title="explain the biochemical process of biogas production through anaerobic digestion detailing the four stages: hydrolysis, acidogenesis, acetogenesis, and methanogenesis.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q17" data-duration="720" data-qid="res-q17" data-label="RES • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7822,9 +8197,9 @@ The resulting producer gas consists primarily of Carbon Monoxide ($CO \approx 18
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the biochemical process of biogas production through anaerobic digestion detailing the four stages: Hydrolysis, Acidogenesis, Acetogenesis, and Methanogenesis.</span>
-            <span class="lang-view lang-manglish">Explain the biochemical process of biogas production through anaerobic digestion detailing the four stages: Hydrolysis, Acidogenesis, Acetogenesis, and Methanogenesis.</span>
-            <span class="lang-view lang-ml">Explain the biochemical process of biogas production through anaerobic digestion detailing the four stages: Hydrolysis, Acidogenesis, Acetogenesis, and Methanogenesis.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Explain the biochemical process of biogas production through anaerobic digestion detailing the four stages: Hydrolysis, Acidogenesis, Acetogenesis, and Methanogenesis.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Explain the biochemical process of biogas production through anaerobic digestion detailing the four stages: Hydrolysis, Acidogenesis, Acetogenesis, and Methanogenesis.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Explain the biochemical process of biogas production through anaerobic digestion detailing the four stages: Hydrolysis, Acidogenesis, Acetogenesis, and Methanogenesis.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7848,6 +8223,21 @@ The resulting producer gas consists primarily of Carbon Monoxide ($CO \approx 18
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8029,6 +8419,7 @@ $$CO_2 + 4 H_2 \xrightarrow{\text{hydrogenotrophic methanogens}} CH_4 + 2 H_2 O$
     <article class="question-card subject-res" id="res-q18" data-marks="7" data-title="compare the construction, operational gas pressure, capital cost, and maintenance of floating drum (kvic) and fixed dome (deenabandhu) biogas plants.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q18" data-duration="720" data-qid="res-q18" data-label="RES • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8043,9 +8434,9 @@ $$CO_2 + 4 H_2 \xrightarrow{\text{hydrogenotrophic methanogens}} CH_4 + 2 H_2 O$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare the construction, operational gas pressure, capital cost, and maintenance of Floating Drum (KVIC) and Fixed Dome (Deenabandhu) biogas plants.</span>
-            <span class="lang-view lang-manglish">Compare the construction, operational gas pressure, capital cost, and maintenance of Floating Drum (KVIC) and Fixed Dome (Deenabandhu) biogas plants.</span>
-            <span class="lang-view lang-ml">Compare the construction, operational gas pressure, capital cost, and maintenance of Floating Drum (KVIC) and Fixed Dome (Deenabandhu) biogas plants.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Compare the construction, operational gas pressure, capital cost, and maintenance of Floating Drum (KVIC) and Fixed Dome (Deenabandhu) biogas plants.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Compare the construction, operational gas pressure, capital cost, and maintenance of Floating Drum (KVIC) and Fixed Dome (Deenabandhu) biogas plants.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> Compare the construction, operational gas pressure, capital cost, and maintenance of Floating Drum (KVIC) and Fixed Dome (Deenabandhu) biogas plants.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8069,6 +8460,21 @@ $$CO_2 + 4 H_2 \xrightarrow{\text{hydrogenotrophic methanogens}} CH_4 + 2 H_2 O$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8253,6 +8659,7 @@ Developed by Action for Food Production (AFPRO), this design eliminates all movi
     <article class="question-card subject-res" id="res-q19" data-marks="7" data-title="explain the thermodynamic principle of ocean thermal energy conversion (otec). compare open-cycle (claude) and closed-cycle (rankine) otec systems with carnot limits.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q19" data-duration="720" data-qid="res-q19" data-label="RES • Q19 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8267,9 +8674,9 @@ Developed by Action for Food Production (AFPRO), this design eliminates all movi
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the thermodynamic principle of Ocean Thermal Energy Conversion (OTEC). Compare Open-Cycle (Claude) and Closed-Cycle (Rankine) OTEC systems with Carnot limits.</span>
-            <span class="lang-view lang-manglish">Explain the thermodynamic principle of Ocean Thermal Energy Conversion (OTEC). Compare Open-Cycle (Claude) and Closed-Cycle (Rankine) OTEC systems with Carnot limits.</span>
-            <span class="lang-view lang-ml">Explain the thermodynamic principle of Ocean Thermal Energy Conversion (OTEC). Compare Open-Cycle (Claude) and Closed-Cycle (Rankine) OTEC systems with Carnot limits.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Explain the thermodynamic principle of Ocean Thermal Energy Conversion (OTEC). Compare Open-Cycle (Claude) and Closed-Cycle (Rankine) OTEC systems with Carnot limits.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Explain the thermodynamic principle of Ocean Thermal Energy Conversion (OTEC). Compare Open-Cycle (Claude) and Closed-Cycle (Rankine) OTEC systems with Carnot limits.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> Explain the thermodynamic principle of Ocean Thermal Energy Conversion (OTEC). Compare Open-Cycle (Claude) and Closed-Cycle (Rankine) OTEC systems with Carnot limits.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8293,6 +8700,21 @@ Developed by Action for Food Production (AFPRO), this design eliminates all movi
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8471,6 +8893,7 @@ When practical heat exchanger temperature drops, turbine isentropic losses, and 
     <article class="question-card subject-res" id="res-q20" data-marks="7" data-title="derive the theoretical potential energy stored in a tidal barrage basin per tidal cycle. explain the working of an oscillating water column (owc) with a wells turbine.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q20" data-duration="720" data-qid="res-q20" data-label="RES • Q20 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8485,9 +8908,9 @@ When practical heat exchanger temperature drops, turbine isentropic losses, and 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the theoretical potential energy stored in a tidal barrage basin per tidal cycle. Explain the working of an Oscillating Water Column (OWC) with a Wells turbine.</span>
-            <span class="lang-view lang-manglish">Derive the theoretical potential energy stored in a tidal barrage basin per tidal cycle. Explain the working of an Oscillating Water Column (OWC) with a Wells turbine.</span>
-            <span class="lang-view lang-ml">Derive the theoretical potential energy stored in a tidal barrage basin per tidal cycle. Explain the working of an Oscillating Water Column (OWC) with a Wells turbine.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Derive the theoretical potential energy stored in a tidal barrage basin per tidal cycle. Explain the working of an Oscillating Water Column (OWC) with a Wells turbine.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Derive the theoretical potential energy stored in a tidal barrage basin per tidal cycle. Explain the working of an Oscillating Water Column (OWC) with a Wells turbine.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Derive the theoretical potential energy stored in a tidal barrage basin per tidal cycle. Explain the working of an Oscillating Water Column (OWC) with a Wells turbine.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8511,6 +8934,21 @@ When practical heat exchanger temperature drops, turbine isentropic losses, and 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8718,6 +9156,7 @@ A conventional aerodynamic turbine would reverse its direction of rotation every
     <article class="question-card subject-res" id="res-q21" data-marks="7" data-title="explain the working principle of a hydrogen-oxygen fuel cell. derive the theoretical thermodynamic efficiency and describe the v-i polarization curve overpotentials.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q21" data-duration="720" data-qid="res-q21" data-label="RES • Q21 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8732,9 +9171,9 @@ A conventional aerodynamic turbine would reverse its direction of rotation every
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the working principle of a hydrogen-oxygen fuel cell. Derive the theoretical thermodynamic efficiency and describe the V-I polarization curve overpotentials.</span>
-            <span class="lang-view lang-manglish">Explain the working principle of a hydrogen-oxygen fuel cell. Derive the theoretical thermodynamic efficiency and describe the V-I polarization curve overpotentials.</span>
-            <span class="lang-view lang-ml">Explain the working principle of a hydrogen-oxygen fuel cell. Derive the theoretical thermodynamic efficiency and describe the V-I polarization curve overpotentials.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Explain the working principle of a hydrogen-oxygen fuel cell. Derive the theoretical thermodynamic efficiency and describe the V-I polarization curve overpotentials.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Explain the working principle of a hydrogen-oxygen fuel cell. Derive the theoretical thermodynamic efficiency and describe the V-I polarization curve overpotentials.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Explain the working principle of a hydrogen-oxygen fuel cell. Derive the theoretical thermodynamic efficiency and describe the V-I polarization curve overpotentials.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8758,6 +9197,21 @@ A conventional aerodynamic turbine would reverse its direction of rotation every
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8954,6 +9408,7 @@ where $i_L$ is the limiting current density. When current approaches $i_L$, term
     <article class="question-card subject-res" id="res-q22" data-marks="7" data-title="compare proton exchange membrane fuel cells (pemfc) and solid oxide fuel cells (sofc) in terms of electrolyte, operating temperature, catalysts, and applications.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q22" data-duration="720" data-qid="res-q22" data-label="RES • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8968,9 +9423,9 @@ where $i_L$ is the limiting current density. When current approaches $i_L$, term
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare Proton Exchange Membrane Fuel Cells (PEMFC) and Solid Oxide Fuel Cells (SOFC) in terms of electrolyte, operating temperature, catalysts, and applications.</span>
-            <span class="lang-view lang-manglish">Compare Proton Exchange Membrane Fuel Cells (PEMFC) and Solid Oxide Fuel Cells (SOFC) in terms of electrolyte, operating temperature, catalysts, and applications.</span>
-            <span class="lang-view lang-ml">Compare Proton Exchange Membrane Fuel Cells (PEMFC) and Solid Oxide Fuel Cells (SOFC) in terms of electrolyte, operating temperature, catalysts, and applications.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Compare Proton Exchange Membrane Fuel Cells (PEMFC) and Solid Oxide Fuel Cells (SOFC) in terms of electrolyte, operating temperature, catalysts, and applications.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Compare Proton Exchange Membrane Fuel Cells (PEMFC) and Solid Oxide Fuel Cells (SOFC) in terms of electrolyte, operating temperature, catalysts, and applications.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Compare Proton Exchange Membrane Fuel Cells (PEMFC) and Solid Oxide Fuel Cells (SOFC) in terms of electrolyte, operating temperature, catalysts, and applications.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8994,6 +9449,21 @@ where $i_L$ is the limiting current density. When current approaches $i_L$, term
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9169,6 +9639,7 @@ where $i_L$ is the limiting current density. When current approaches $i_L$, term
     <article class="question-card subject-res" id="res-q23" data-marks="7" data-title="describe battery energy storage systems (bess). define state of charge (soc), depth of discharge (dod), c-rate, round-trip efficiency, and degradation mechanisms.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q23" data-duration="720" data-qid="res-q23" data-label="RES • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9183,9 +9654,9 @@ where $i_L$ is the limiting current density. When current approaches $i_L$, term
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Describe Battery Energy Storage Systems (BESS). Define State of Charge (SoC), Depth of Discharge (DoD), C-rate, round-trip efficiency, and degradation mechanisms.</span>
-            <span class="lang-view lang-manglish">Describe Battery Energy Storage Systems (BESS). Define State of Charge (SoC), Depth of Discharge (DoD), C-rate, round-trip efficiency, and degradation mechanisms.</span>
-            <span class="lang-view lang-ml">Describe Battery Energy Storage Systems (BESS). Define State of Charge (SoC), Depth of Discharge (DoD), C-rate, round-trip efficiency, and degradation mechanisms.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Describe Battery Energy Storage Systems (BESS). Define State of Charge (SoC), Depth of Discharge (DoD), C-rate, round-trip efficiency, and degradation mechanisms.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Describe Battery Energy Storage Systems (BESS). Define State of Charge (SoC), Depth of Discharge (DoD), C-rate, round-trip efficiency, and degradation mechanisms.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Describe Battery Energy Storage Systems (BESS). Define State of Charge (SoC), Depth of Discharge (DoD), C-rate, round-trip efficiency, and degradation mechanisms.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9209,6 +9680,21 @@ where $i_L$ is the limiting current density. When current approaches $i_L$, term
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9402,6 +9888,7 @@ Electrochemical cells degrade through both Calendar Aging (time and temperature 
     <article class="question-card subject-res" id="res-q24" data-marks="7" data-title="explain the architecture of a hybrid renewable energy system (hres). compare dc-coupled and ac-coupled topologies, and describe the energy dispatch strategy.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q24" data-duration="720" data-qid="res-q24" data-label="RES • Q24 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9416,9 +9903,9 @@ Electrochemical cells degrade through both Calendar Aging (time and temperature 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the architecture of a Hybrid Renewable Energy System (HRES). Compare DC-coupled and AC-coupled topologies, and describe the energy dispatch strategy.</span>
-            <span class="lang-view lang-manglish">Explain the architecture of a Hybrid Renewable Energy System (HRES). Compare DC-coupled and AC-coupled topologies, and describe the energy dispatch strategy.</span>
-            <span class="lang-view lang-ml">Explain the architecture of a Hybrid Renewable Energy System (HRES). Compare DC-coupled and AC-coupled topologies, and describe the energy dispatch strategy.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Explain the architecture of a Hybrid Renewable Energy System (HRES). Compare DC-coupled and AC-coupled topologies, and describe the energy dispatch strategy.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Explain the architecture of a Hybrid Renewable Energy System (HRES). Compare DC-coupled and AC-coupled topologies, and describe the energy dispatch strategy.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Explain the architecture of a Hybrid Renewable Energy System (HRES). Compare DC-coupled and AC-coupled topologies, and describe the energy dispatch strategy.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9442,6 +9929,21 @@ Electrochemical cells degrade through both Calendar Aging (time and temperature 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9602,6 +10104,7 @@ The centralized EMS microgrid controller executes real-time optimal power dispat
     <article class="question-card subject-res" id="res-q25" data-marks="7" data-title="explain ac and dc microgrid architectures. discuss grid-connected and islanded modes, and derive the decentralized p-f and q-v droop control equations.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q25" data-duration="720" data-qid="res-q25" data-label="RES • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9616,9 +10119,9 @@ The centralized EMS microgrid controller executes real-time optimal power dispat
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain AC and DC microgrid architectures. Discuss grid-connected and islanded modes, and derive the decentralized P-f and Q-V droop control equations.</span>
-            <span class="lang-view lang-manglish">Explain AC and DC microgrid architectures. Discuss grid-connected and islanded modes, and derive the decentralized P-f and Q-V droop control equations.</span>
-            <span class="lang-view lang-ml">Explain AC and DC microgrid architectures. Discuss grid-connected and islanded modes, and derive the decentralized P-f and Q-V droop control equations.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Explain AC and DC microgrid architectures. Discuss grid-connected and islanded modes, and derive the decentralized P-f and Q-V droop control equations.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Explain AC and DC microgrid architectures. Discuss grid-connected and islanded modes, and derive the decentralized P-f and Q-V droop control equations.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Explain AC and DC microgrid architectures. Discuss grid-connected and islanded modes, and derive the decentralized P-f and Q-V droop control equations.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9642,6 +10145,21 @@ The centralized EMS microgrid controller executes real-time optimal power dispat
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9811,6 +10329,7 @@ If reactive load increases, terminal voltage dips slightly, and each inverter au
     <article class="question-card subject-res" id="res-q26" data-marks="7" data-title="discuss the major grid integration challenges of high-penetration renewables: duck curve, loss of rotational inertia, power quality harmonics, and low-voltage fault ride-through (lvrt).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-res-q26" data-duration="720" data-qid="res-q26" data-label="RES • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('res-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9825,9 +10344,9 @@ If reactive load increases, terminal voltage dips slightly, and each inverter au
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Discuss the major grid integration challenges of high-penetration renewables: Duck curve, loss of rotational inertia, power quality harmonics, and Low-Voltage Fault Ride-Through (LVRT).</span>
-            <span class="lang-view lang-manglish">Discuss the major grid integration challenges of high-penetration renewables: Duck curve, loss of rotational inertia, power quality harmonics, and Low-Voltage Fault Ride-Through (LVRT).</span>
-            <span class="lang-view lang-ml">Discuss the major grid integration challenges of high-penetration renewables: Duck curve, loss of rotational inertia, power quality harmonics, and Low-Voltage Fault Ride-Through (LVRT).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Discuss the major grid integration challenges of high-penetration renewables: Duck curve, loss of rotational inertia, power quality harmonics, and Low-Voltage Fault Ride-Through (LVRT).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Discuss the major grid integration challenges of high-penetration renewables: Duck curve, loss of rotational inertia, power quality harmonics, and Low-Voltage Fault Ride-Through (LVRT).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Discuss the major grid integration challenges of high-penetration renewables: Duck curve, loss of rotational inertia, power quality harmonics, and Low-Voltage Fault Ride-Through (LVRT).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9851,6 +10370,21 @@ If reactive load increases, terminal voltage dips slightly, and each inverter au
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET322)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/res/EET322_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

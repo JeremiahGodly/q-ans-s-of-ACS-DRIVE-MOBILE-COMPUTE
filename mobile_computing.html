@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4446,6 +4564,7 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     <article class="question-card subject-mobile" id="mobile-q1" data-marks="3" data-title="explain the functions of middleware components and gateways in mobile computing systems.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q1" data-duration="300" data-qid="mobile-q1" data-label="MOBILE • Q1 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4460,9 +4579,9 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the functions of middleware components and gateways in mobile computing systems.</span>
-            <span class="lang-view lang-manglish">Mobile Computing-il Middleware-um Gateways-um enthinaanu use cheyyunnath?</span>
-            <span class="lang-view lang-ml font-ml">മൊബൈൽ കമ്പ്യൂട്ടിംഗിൽ Middleware-ഉം Gateway-കളും എന്താണ് ചെയ്യുന്നത്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Explain the functions of middleware components and gateways in mobile computing systems.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> Mobile Computing-il Middleware-um Gateways-um enthinaanu use cheyyunnath?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q1.</span> മൊബൈൽ കമ്പ്യൂട്ടിംഗിൽ Middleware-ഉം Gateway-കളും എന്താണ് ചെയ്യുന്നത്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4486,6 +4605,21 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 1</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4767,6 +4901,7 @@ The primary purpose of this course is to prepare learners to comprehend the foun
     <article class="question-card subject-mobile" id="mobile-q2" data-marks="3" data-title="explain the role of the internet as the ubiquitous backbone network in mobile computing and discuss mobile ip tunneling.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q2" data-duration="300" data-qid="mobile-q2" data-label="MOBILE • Q2 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4781,9 +4916,9 @@ The primary purpose of this course is to prepare learners to comprehend the foun
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the role of the Internet as the ubiquitous backbone network in mobile computing and discuss Mobile IP tunneling.</span>
-            <span class="lang-view lang-manglish">Internet enganeyanu mobile computing-te ubiquitous backbone aayi maariyath?</span>
-            <span class="lang-view lang-ml font-ml">ഇന്റർനെറ്റ് എങ്ങനെയാണ് മൊബൈൽ കമ്പ്യൂട്ടിംഗിന്റെ ആഗോള നട്ടെല്ലായി മാറിയത്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Explain the role of the Internet as the ubiquitous backbone network in mobile computing and discuss Mobile IP tunneling.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Internet enganeyanu mobile computing-te ubiquitous backbone aayi maariyath?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q2.</span> ഇന്റർനെറ്റ് എങ്ങനെയാണ് മൊബൈൽ കമ്പ്യൂട്ടിംഗിന്റെ ആഗോള നട്ടെല്ലായി മാറിയത്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4807,6 +4942,21 @@ The primary purpose of this course is to prepare learners to comprehend the foun
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5033,6 +5183,7 @@ The Internet acts as the universal, packet-switched transport backbone that inte
     <article class="question-card subject-mobile" id="mobile-q3" data-marks="3" data-title="explain network segmentation in mobile communication architectures: access network, edge network, and core network.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q3" data-duration="300" data-qid="mobile-q3" data-label="MOBILE • Q3 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5047,9 +5198,9 @@ The Internet acts as the universal, packet-switched transport backbone that inte
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain network segmentation in mobile communication architectures: access network, edge network, and core network.</span>
-            <span class="lang-view lang-manglish">Mobile network segmentation (Core, Edge, and Access Networks) explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">മൊബൈൽ നെറ്റ്‌വർക്ക് സെഗ്മെന്റേഷൻ (Core, Edge, Access) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Explain network segmentation in mobile communication architectures: access network, edge network, and core network.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Mobile network segmentation (Core, Edge, and Access Networks) explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q3.</span> മൊബൈൽ നെറ്റ്‌വർക്ക് സെഗ്മെന്റേഷൻ (Core, Edge, Access) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5073,6 +5224,21 @@ The Internet acts as the universal, packet-switched transport backbone that inte
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5370,6 +5536,7 @@ The Internet acts as the universal, packet-switched transport backbone that inte
     <article class="question-card subject-mobile" id="mobile-q4" data-marks="3" data-title="discuss the intrinsic physical and technical limitations of mobile computing environments.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q4" data-duration="300" data-qid="mobile-q4" data-label="MOBILE • Q4 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5384,9 +5551,9 @@ The Internet acts as the universal, packet-switched transport backbone that inte
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Discuss the intrinsic physical and technical limitations of mobile computing environments.</span>
-            <span class="lang-view lang-manglish">Mobile Computing-te intrinsic physical limitations enthokke aanu?</span>
-            <span class="lang-view lang-ml font-ml">മൊബൈൽ കമ്പ്യൂട്ടിംഗിന്റെ സ്വാഭാവികമായ പരിമിതികൾ എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Discuss the intrinsic physical and technical limitations of mobile computing environments.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Mobile Computing-te intrinsic physical limitations enthokke aanu?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q4.</span> മൊബൈൽ കമ്പ്യൂട്ടിംഗിന്റെ സ്വാഭാവികമായ പരിമിതികൾ എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5410,6 +5577,21 @@ The Internet acts as the universal, packet-switched transport backbone that inte
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> 2019 Scheme Curriculum Model (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%282019%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic 2019 Scheme Curriculum Model question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5630,6 +5812,7 @@ The Internet acts as the universal, packet-switched transport backbone that inte
     <article class="question-card subject-mobile" id="mobile-q5" data-marks="7" data-title="explain the comprehensive three-tier architecture of mobile computing systems with a neat architectural diagram.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q5" data-duration="720" data-qid="mobile-q5" data-label="MOBILE • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5644,9 +5827,9 @@ The Internet acts as the universal, packet-switched transport backbone that inte
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the comprehensive three-tier architecture of mobile computing systems with a neat architectural diagram.</span>
-            <span class="lang-view lang-manglish">Mobile Computing-te Three-Tier Architecture detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">മൊബൈൽ കമ്പ്യൂട്ടിംഗിന്റെ ത്രീ-ടയർ (3-Tier) ആർക്കിടെക്ചർ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Explain the comprehensive three-tier architecture of mobile computing systems with a neat architectural diagram.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Mobile Computing-te Three-Tier Architecture detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q5.</span> മൊബൈൽ കമ്പ്യൂട്ടിംഗിന്റെ ത്രീ-ടയർ (3-Tier) ആർക്കിടെക്ചർ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5670,6 +5853,21 @@ The Internet acts as the universal, packet-switched transport backbone that inte
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5955,6 +6153,7 @@ The three-tier architecture separates mobile application responsibilities into t
     <article class="question-card subject-mobile" id="mobile-q6" data-marks="7" data-title="discuss the key architectural and software design considerations for developing mobile computing systems.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q6" data-duration="720" data-qid="mobile-q6" data-label="MOBILE • Q6 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5969,9 +6168,9 @@ The three-tier architecture separates mobile application responsibilities into t
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Discuss the key architectural and software design considerations for developing mobile computing systems.</span>
-            <span class="lang-view lang-manglish">Mobile Computing systems design cheyyumbol nokkenda main considerations enthokke aanu?</span>
-            <span class="lang-view lang-ml font-ml">മൊബൈൽ സിസ്റ്റങ്ങൾ രൂപകൽപ്പന ചെയ്യുമ്പോൾ ശ്രദ്ധിക്കേണ്ട പ്രധാന കാര്യങ്ങൾ എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Discuss the key architectural and software design considerations for developing mobile computing systems.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Mobile Computing systems design cheyyumbol nokkenda main considerations enthokke aanu?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q6.</span> മൊബൈൽ സിസ്റ്റങ്ങൾ രൂപകൽപ്പന ചെയ്യുമ്പോൾ ശ്രദ്ധിക്കേണ്ട പ്രധാന കാര്യങ്ങൾ എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5995,6 +6194,21 @@ The three-tier architecture separates mobile application responsibilities into t
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6287,6 +6501,7 @@ The three-tier architecture separates mobile application responsibilities into t
     <article class="question-card subject-mobile" id="mobile-q7" data-marks="7" data-title="explain context-aware system management in mobile computing covering client context, policy, security, and adaptability managers.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q7" data-duration="720" data-qid="mobile-q7" data-label="MOBILE • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6301,9 +6516,9 @@ The three-tier architecture separates mobile application responsibilities into t
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain context-aware system management in mobile computing covering client context, policy, security, and adaptability managers.</span>
-            <span class="lang-view lang-manglish">Context-Aware System Management in Mobile Computing explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">മൊബൈൽ കമ്പ്യൂട്ടിംഗിലെ കോൺടെക്സ്റ്റ്-അവയർ (Context-Aware) മാനേജ്മെന്റ് വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Explain context-aware system management in mobile computing covering client context, policy, security, and adaptability managers.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Context-Aware System Management in Mobile Computing explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q7.</span> മൊബൈൽ കമ്പ്യൂട്ടിംഗിലെ കോൺടെക്സ്റ്റ്-അവയർ (Context-Aware) മാനേജ്മെന്റ് വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6327,6 +6542,21 @@ The three-tier architecture separates mobile application responsibilities into t
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> 2019 Scheme Curriculum Model (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%282019%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic 2019 Scheme Curriculum Model question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6577,6 +6807,7 @@ A system is <strong>context-aware</strong> if it uses contextual information abo
     <article class="question-card subject-mobile" id="mobile-q8" data-marks="7" data-title="what is content adaptation? classify and explain syntactic, structural, and semantic transcoding in mobile systems.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q8" data-duration="720" data-qid="mobile-q8" data-label="MOBILE • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6591,9 +6822,9 @@ A system is <strong>context-aware</strong> if it uses contextual information abo
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">What is content adaptation? Classify and explain syntactic, structural, and semantic transcoding in mobile systems.</span>
-            <span class="lang-view lang-manglish">Content Adaptation-um Transcoding techniques-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">കണ്ടന്റ് അഡാപ്റ്റേഷനും ട്രാൻസ്കോഡിംഗും (Transcoding) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> What is content adaptation? Classify and explain syntactic, structural, and semantic transcoding in mobile systems.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Content Adaptation-um Transcoding techniques-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q8.</span> കണ്ടന്റ് അഡാപ്റ്റേഷനും ട്രാൻസ്കോഡിംഗും (Transcoding) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6617,6 +6848,21 @@ A system is <strong>context-aware</strong> if it uses contextual information abo
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6939,6 +7185,7 @@ Content adaptation dynamically modifies multimedia resources (images, video, web
     <article class="question-card subject-mobile" id="mobile-q9" data-marks="7" data-title="what is seamless communication? discuss the essential facets that must be maintained during seamless mobile roaming and handoff.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q9" data-duration="720" data-qid="mobile-q9" data-label="MOBILE • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6953,9 +7200,9 @@ Content adaptation dynamically modifies multimedia resources (images, video, web
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">What is seamless communication? Discuss the essential facets that must be maintained during seamless mobile roaming and handoff.</span>
-            <span class="lang-view lang-manglish">Roaming time-il Seamless Communication maintain cheyyunna facets enthokke aanu?</span>
-            <span class="lang-view lang-ml font-ml">റോമിംഗ് സമയത്ത് സുഗമമായ ആശയവിനിമയം (Seamless Communication) നിലനിർത്തുന്ന ഘടകങ്ങൾ ഏവ?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> What is seamless communication? Discuss the essential facets that must be maintained during seamless mobile roaming and handoff.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Roaming time-il Seamless Communication maintain cheyyunna facets enthokke aanu?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q9.</span> റോമിംഗ് സമയത്ത് സുഗമമായ ആശയവിനിമയം (Seamless Communication) നിലനിർത്തുന്ന ഘടകങ്ങൾ ഏവ?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6979,6 +7226,21 @@ Content adaptation dynamically modifies multimedia resources (images, video, web
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7273,6 +7535,7 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
     <article class="question-card subject-mobile" id="mobile-q10" data-marks="3" data-title="provide a comparative analysis of geo, leo, and meo satellite systems in mobile communications.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q10" data-duration="300" data-qid="mobile-q10" data-label="MOBILE • Q10 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7287,9 +7550,9 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Provide a comparative analysis of GEO, LEO, and MEO satellite systems in mobile communications.</span>
-            <span class="lang-view lang-manglish">Satellite communication systems: GEO, LEO, and MEO compare cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഉപഗ്രഹ വിനിമയ സംവിധാനങ്ങൾ: GEO, LEO, MEO എന്നിവ താരതമ്യം ചെയ്യുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Provide a comparative analysis of GEO, LEO, and MEO satellite systems in mobile communications.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Satellite communication systems: GEO, LEO, and MEO compare cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q10.</span> ഉപഗ്രഹ വിനിമയ സംവിധാനങ്ങൾ: GEO, LEO, MEO എന്നിവ താരതമ്യം ചെയ്യുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7313,6 +7576,21 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 3</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7671,6 +7949,7 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
     <article class="question-card subject-mobile" id="mobile-q11" data-marks="3" data-title="explain the significance and format of mobile station identifiers: imei, imsi, msisdn, and tmsi.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q11" data-duration="300" data-qid="mobile-q11" data-label="MOBILE • Q11 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7685,9 +7964,9 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the significance and format of mobile station identifiers: IMEI, IMSI, MSISDN, and TMSI.</span>
-            <span class="lang-view lang-manglish">Cellular mobile identifiers: IMEI, IMSI, MSISDN, and TMSI detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">മൊബൈൽ ഐഡന്റിഫയറുകൾ: IMEI, IMSI, MSISDN, TMSI എന്നിവ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Explain the significance and format of mobile station identifiers: IMEI, IMSI, MSISDN, and TMSI.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Cellular mobile identifiers: IMEI, IMSI, MSISDN, and TMSI detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q11.</span> മൊബൈൽ ഐഡന്റിഫയറുകൾ: IMEI, IMSI, MSISDN, TMSI എന്നിവ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7711,6 +7990,21 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 4</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8042,6 +8336,7 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
     <article class="question-card subject-mobile" id="mobile-q12" data-marks="3" data-title="explain call progress indication mechanisms and signaling protocols in cellular telephony.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q12" data-duration="300" data-qid="mobile-q12" data-label="MOBILE • Q12 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8056,9 +8351,9 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain call progress indication mechanisms and signaling protocols in cellular telephony.</span>
-            <span class="lang-view lang-manglish">Cellular telephony-il Call Progress Indication mechanisms enganeyaanu work cheyyunnath?</span>
-            <span class="lang-view lang-ml font-ml">സെല്ലുലാർ ഫോണിലെ കോൾ പ്രോഗ്രസ് ഇൻഡിക്കേഷൻ രീതികൾ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Explain call progress indication mechanisms and signaling protocols in cellular telephony.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Cellular telephony-il Call Progress Indication mechanisms enganeyaanu work cheyyunnath?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q12.</span> സെല്ലുലാർ ഫോണിലെ കോൾ പ്രോഗ്രസ് ഇൻഡിക്കേഷൻ രീതികൾ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8082,6 +8377,21 @@ Seamless communication enables a mobile subscriber to maintain continuous, unint
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 4</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8318,6 +8628,7 @@ Informs the calling subscriber about the status of an ongoing call setup attempt
     <article class="question-card subject-mobile" id="mobile-q13" data-marks="7" data-title="explain multiple access techniques: fdma, tdma, cdma, and sdma with mathematical principles and comparative characteristics.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q13" data-duration="720" data-qid="mobile-q13" data-label="MOBILE • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8332,9 +8643,9 @@ Informs the calling subscriber about the status of an ongoing call setup attempt
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain multiple access techniques: FDMA, TDMA, CDMA, and SDMA with mathematical principles and comparative characteristics.</span>
-            <span class="lang-view lang-manglish">Cellular-il FDMA, TDMA, CDMA, SDMA procedures detail aayi compare cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">സെല്ലുലാർ മൾട്ടിപ്പിൾ ആക്സസ് രീതികൾ (FDMA, TDMA, CDMA, SDMA) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Explain multiple access techniques: FDMA, TDMA, CDMA, and SDMA with mathematical principles and comparative characteristics.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Cellular-il FDMA, TDMA, CDMA, SDMA procedures detail aayi compare cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q13.</span> സെല്ലുലാർ മൾട്ടിപ്പിൾ ആക്സസ് രീതികൾ (FDMA, TDMA, CDMA, SDMA) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8358,6 +8669,21 @@ Informs the calling subscriber about the status of an ongoing call setup attempt
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8692,6 +9018,7 @@ Informs the calling subscriber about the status of an ongoing call setup attempt
     <article class="question-card subject-mobile" id="mobile-q14" data-marks="7" data-title="draw and explain the comprehensive architecture of the global system for mobile communications (gsm) and its network databases.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q14" data-duration="720" data-qid="mobile-q14" data-label="MOBILE • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8706,9 +9033,9 @@ Informs the calling subscriber about the status of an ongoing call setup attempt
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw and explain the comprehensive architecture of the Global System for Mobile Communications (GSM) and its network databases.</span>
-            <span class="lang-view lang-manglish">GSM Network Architecture-nte complete subsystems-um interfaces-um detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">GSM നെറ്റ്‌വർക്ക് ആർക്കിടെക്ചർ പൂർണ്ണമായി വിശദീകരിക്കുക (BSS, NSS, OSS)</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Draw and explain the comprehensive architecture of the Global System for Mobile Communications (GSM) and its network databases.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> GSM Network Architecture-nte complete subsystems-um interfaces-um detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q14.</span> GSM നെറ്റ്‌വർക്ക് ആർക്കിടെക്ചർ പൂർണ്ണമായി വിശദീകരിക്കുക (BSS, NSS, OSS)</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8732,6 +9059,21 @@ Informs the calling subscriber about the status of an ongoing call setup attempt
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9066,6 +9408,7 @@ The GSM (2G) cellular network architecture is structured into three primary func
     <article class="question-card subject-mobile" id="mobile-q15" data-marks="7" data-title="explain mobile terminated call (mtc) and mobile originated call (moc) routing in gsm. distinguish between handover and roaming.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q15" data-duration="720" data-qid="mobile-q15" data-label="MOBILE • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9080,9 +9423,9 @@ The GSM (2G) cellular network architecture is structured into three primary func
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Mobile Terminated Call (MTC) and Mobile Originated Call (MOC) routing in GSM. Distinguish between handover and roaming.</span>
-            <span class="lang-view lang-manglish">GSM-il MTC (Mobile Terminated Call) & MOC (Mobile Originated Call) flows-um Handover vs Roaming-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">GSM കോൾ റൂട്ടിംഗ് (MTC, MOC), ഹാൻഡ്ഓവർ vs റോമിംഗ് എന്നിവ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Explain Mobile Terminated Call (MTC) and Mobile Originated Call (MOC) routing in GSM. Distinguish between handover and roaming.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> GSM-il MTC (Mobile Terminated Call) & MOC (Mobile Originated Call) flows-um Handover vs Roaming-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q15.</span> GSM കോൾ റൂട്ടിംഗ് (MTC, MOC), ഹാൻഡ്ഓവർ vs റോമിംഗ് എന്നിവ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9106,6 +9449,21 @@ The GSM (2G) cellular network architecture is structured into three primary func
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9457,6 +9815,7 @@ When an external telephone calls a mobile subscriber's public MSISDN:</p>
     <article class="question-card subject-mobile" id="mobile-q16" data-marks="7" data-title="draw and explain the interactive voice response (ivr) architecture and call flow for a telephone banking or theatre ticket booking system.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q16" data-duration="720" data-qid="mobile-q16" data-label="MOBILE • Q16 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9471,9 +9830,9 @@ When an external telephone calls a mobile subscriber's public MSISDN:</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw and explain the Interactive Voice Response (IVR) architecture and call flow for a telephone banking or theatre ticket booking system.</span>
-            <span class="lang-view lang-manglish">Interactive Voice Response (IVR) system-te architecture-um call flow-um detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഇന്ററാക്ടീവ് വോയ്സ് റെസ്പോൺസ് (IVR) ആർക്കിടെക്ചറും പ്രവർത്തനവും വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Draw and explain the Interactive Voice Response (IVR) architecture and call flow for a telephone banking or theatre ticket booking system.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Interactive Voice Response (IVR) system-te architecture-um call flow-um detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q16.</span> ഇന്ററാക്ടീവ് വോയ്സ് റെസ്പോൺസ് (IVR) ആർക്കിടെക്ചറും പ്രവർത്തനവും വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9497,6 +9856,21 @@ When an external telephone calls a mobile subscriber's public MSISDN:</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> 2019 Scheme Curriculum Model (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%282019%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic 2019 Scheme Curriculum Model question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9757,6 +10131,7 @@ When an external telephone calls a mobile subscriber's public MSISDN:</p>
     <article class="question-card subject-mobile" id="mobile-q17" data-marks="7" data-title="explain gsm security architecture. describe the mathematical operations of authentication algorithm a3, cipher key generation a8, and encryption algorithm a5.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q17" data-duration="720" data-qid="mobile-q17" data-label="MOBILE • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9771,9 +10146,9 @@ When an external telephone calls a mobile subscriber's public MSISDN:</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain GSM security architecture. Describe the mathematical operations of authentication algorithm A3, cipher key generation A8, and encryption algorithm A5.</span>
-            <span class="lang-view lang-manglish">GSM Security Architecture: Authentication (A3), Key Generation (A8), and Encryption (A5) algorithms explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">GSM സുരക്ഷാ ആർക്കിടെക്ചർ: A3, A8, A5 അൽഗോരിതങ്ങൾ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Explain GSM security architecture. Describe the mathematical operations of authentication algorithm A3, cipher key generation A8, and encryption algorithm A5.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> GSM Security Architecture: Authentication (A3), Key Generation (A8), and Encryption (A5) algorithms explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q17.</span> GSM സുരക്ഷാ ആർക്കിടെക്ചർ: A3, A8, A5 അൽഗോരിതങ്ങൾ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9797,6 +10172,21 @@ When an external telephone calls a mobile subscriber's public MSISDN:</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10135,6 +10525,7 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
     <article class="question-card subject-mobile" id="mobile-q18" data-marks="3" data-title="explain the architectural distinctiveness and technical strengths of short message service (sms) over cellular signaling channels.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q18" data-duration="300" data-qid="mobile-q18" data-label="MOBILE • Q18 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10149,9 +10540,9 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the architectural distinctiveness and technical strengths of Short Message Service (SMS) over cellular signaling channels.</span>
-            <span class="lang-view lang-manglish">Short Message Service (SMS)-inte architectural strengths-um distinctiveness-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">എസ്എംഎസ് (SMS) സാങ്കേതികവിദ്യയുടെ പ്രധാന മേന്മകളും പ്രത്യേകതകളും എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Explain the architectural distinctiveness and technical strengths of Short Message Service (SMS) over cellular signaling channels.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Short Message Service (SMS)-inte architectural strengths-um distinctiveness-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q18.</span> എസ്എംഎസ് (SMS) സാങ്കേതികവിദ്യയുടെ പ്രധാന മേന്മകളും പ്രത്യേകതകളും എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10175,6 +10566,21 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 5</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10413,6 +10819,7 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
     <article class="question-card subject-mobile" id="mobile-q19" data-marks="3" data-title="discuss the architectural limitations and throughput bottlenecks of general packet radio service (gprs).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q19" data-duration="300" data-qid="mobile-q19" data-label="MOBILE • Q19 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10427,9 +10834,9 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Discuss the architectural limitations and throughput bottlenecks of General Packet Radio Service (GPRS).</span>
-            <span class="lang-view lang-manglish">General Packet Radio Service (GPRS)-nte limitations-um bottlenecks-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ജിപിആർഎസ് (GPRS) സാങ്കേതികവിദ്യയുടെ പ്രധാന പരിമിതികൾ എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Discuss the architectural limitations and throughput bottlenecks of General Packet Radio Service (GPRS).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> General Packet Radio Service (GPRS)-nte limitations-um bottlenecks-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q19.</span> ജിപിആർഎസ് (GPRS) സാങ്കേതികവിദ്യയുടെ പ്രധാന പരിമിതികൾ എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10453,6 +10860,21 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 6</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10676,6 +11098,7 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
     <article class="question-card subject-mobile" id="mobile-q20" data-marks="3" data-title="explain the billing and charging mechanisms in gprs based on data volume, duration, qos, and charging data records (cdrs).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q20" data-duration="300" data-qid="mobile-q20" data-label="MOBILE • Q20 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10690,9 +11113,9 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the billing and charging mechanisms in GPRS based on data volume, duration, QoS, and Charging Data Records (CDRs).</span>
-            <span class="lang-view lang-manglish">GPRS-il Billing & Charging mechanisms (Volume, Duration, QoS, and CDRs) enganeyaanu implement cheythittullath?</span>
-            <span class="lang-view lang-ml font-ml">ജിപിആർഎസിലെ ബില്ലിംഗ് രീതികൾ (Volume, Duration, QoS, CDR) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Explain the billing and charging mechanisms in GPRS based on data volume, duration, QoS, and Charging Data Records (CDRs).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> GPRS-il Billing & Charging mechanisms (Volume, Duration, QoS, and CDRs) enganeyaanu implement cheythittullath?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q20.</span> ജിപിആർഎസിലെ ബില്ലിംഗ് രീതികൾ (Volume, Duration, QoS, CDR) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10716,6 +11139,21 @@ Algorithm A5 (e.g., A5/1 or A5/3) is an encryption stream cipher running on the 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 6</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10971,6 +11409,7 @@ Unlike circuit-switched GSM (which bills purely by call connection time), GPRS b
     <article class="question-card subject-mobile" id="mobile-q21" data-marks="7" data-title="explain the end-to-end architecture and message delivery mechanism of sms (sm-mt and sm-mo) and discuss location-based sms services.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q21" data-duration="720" data-qid="mobile-q21" data-label="MOBILE • Q21 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10985,9 +11424,9 @@ Unlike circuit-switched GSM (which bills purely by call connection time), GPRS b
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the end-to-end architecture and message delivery mechanism of SMS (SM-MT and SM-MO) and discuss location-based SMS services.</span>
-            <span class="lang-view lang-manglish">SMS Architecture-um delivery mechanisms (SM-MO & SM-MT) detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">എസ്എംഎസ് ആർക്കിടെക്ചറും ഡെലിവറി രീതികളും (SM-MO, SM-MT) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Explain the end-to-end architecture and message delivery mechanism of SMS (SM-MT and SM-MO) and discuss location-based SMS services.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> SMS Architecture-um delivery mechanisms (SM-MO & SM-MT) detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q21.</span> എസ്എംഎസ് ആർക്കിടെക്ചറും ഡെലിവറി രീതികളും (SM-MO, SM-MT) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11011,6 +11450,21 @@ Unlike circuit-switched GSM (which bills purely by call connection time), GPRS b
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11324,6 +11778,7 @@ Unlike circuit-switched GSM (which bills purely by call connection time), GPRS b
     <article class="question-card subject-mobile" id="mobile-q22" data-marks="7" data-title="explain the comprehensive architecture, protocol stack, and packet routing operations of gprs including sgsn, ggsn, and pdp context activation.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q22" data-duration="720" data-qid="mobile-q22" data-label="MOBILE • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11338,9 +11793,9 @@ Unlike circuit-switched GSM (which bills purely by call connection time), GPRS b
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the comprehensive architecture, protocol stack, and packet routing operations of GPRS including SGSN, GGSN, and PDP context activation.</span>
-            <span class="lang-view lang-manglish">GPRS Network Architecture, Protocol Stack, and SGSN/GGSN functions explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ജിപിആർഎസ് ആർക്കിടെക്ചറും പ്രോട്ടോക്കോൾ സ്റ്റാക്കും (SGSN, GGSN) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Explain the comprehensive architecture, protocol stack, and packet routing operations of GPRS including SGSN, GGSN, and PDP context activation.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> GPRS Network Architecture, Protocol Stack, and SGSN/GGSN functions explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q22.</span> ജിപിആർഎസ് ആർക്കിടെക്ചറും പ്രോട്ടോക്കോൾ സ്റ്റാക്കും (SGSN, GGSN) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11364,6 +11819,21 @@ Unlike circuit-switched GSM (which bills purely by call connection time), GPRS b
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11692,6 +12162,7 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
     <article class="question-card subject-mobile" id="mobile-q23" data-marks="7" data-title="explain the quality of service (qos) parameters, classes, and profiles defined in gprs and packet data networks.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q23" data-duration="720" data-qid="mobile-q23" data-label="MOBILE • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11706,9 +12177,9 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the Quality of Service (QoS) parameters, classes, and profiles defined in GPRS and packet data networks.</span>
-            <span class="lang-view lang-manglish">GPRS-ile Quality of Service (QoS) parameters (Delay, Precedence, Reliability, Throughput) explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ജിപിആർഎസിലെ ക്വാളിറ്റി ഓഫ് സർവ്വീസ് (QoS) ഘടകങ്ങൾ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Explain the Quality of Service (QoS) parameters, classes, and profiles defined in GPRS and packet data networks.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> GPRS-ile Quality of Service (QoS) parameters (Delay, Precedence, Reliability, Throughput) explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q23.</span> ജിപിആർഎസിലെ ക്വാളിറ്റി ഓഫ് സർവ്വീസ് (QoS) ഘടകങ്ങൾ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11732,6 +12203,21 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12056,6 +12542,7 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
     <article class="question-card subject-mobile" id="mobile-q24" data-marks="3" data-title="compare ieee 802.11 wlan infrastructure basic service set (bss) mode with independent basic service set (ibss / ad-hoc) mode.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q24" data-duration="300" data-qid="mobile-q24" data-label="MOBILE • Q24 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12070,9 +12557,9 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare IEEE 802.11 WLAN Infrastructure Basic Service Set (BSS) mode with Independent Basic Service Set (IBSS / Ad-hoc) mode.</span>
-            <span class="lang-view lang-manglish">IEEE 802.11 WLAN Architecture: Infrastructure Mode-um Ad-Hoc Mode-um compare cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">വയർലെസ് ലാൻ (WLAN) ആർക്കിടെക്ചർ: ഇൻഫ്രാസ്ട്രക്ചർ vs അഡ്-ഹോക്ക് മോഡ് താരതമ്യം ചെയ്യുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Compare IEEE 802.11 WLAN Infrastructure Basic Service Set (BSS) mode with Independent Basic Service Set (IBSS / Ad-hoc) mode.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> IEEE 802.11 WLAN Architecture: Infrastructure Mode-um Ad-Hoc Mode-um compare cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q24.</span> വയർലെസ് ലാൻ (WLAN) ആർക്കിടെക്ചർ: ഇൻഫ്രാസ്ട്രക്ചർ vs അഡ്-ഹോക്ക് മോഡ് താരതമ്യം ചെയ്യുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12096,6 +12583,21 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 7</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12397,6 +12899,7 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
     <article class="question-card subject-mobile" id="mobile-q25" data-marks="3" data-title="explain the four interframe spaces (ifs) in ieee 802.11 mac: sifs, pifs, difs, and eifs, and their role in medium access priority.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q25" data-duration="300" data-qid="mobile-q25" data-label="MOBILE • Q25 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12411,9 +12914,9 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the four Interframe Spaces (IFS) in IEEE 802.11 MAC: SIFS, PIFS, DIFS, and EIFS, and their role in medium access priority.</span>
-            <span class="lang-view lang-manglish">IEEE 802.11 MAC-ile Interframe Spaces (SIFS, PIFS, DIFS, EIFS) explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">IEEE 802.11-ലെ ഇന്റർഫ്രെയിം സ്പേസുകൾ (SIFS, PIFS, DIFS, EIFS) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Explain the four Interframe Spaces (IFS) in IEEE 802.11 MAC: SIFS, PIFS, DIFS, and EIFS, and their role in medium access priority.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> IEEE 802.11 MAC-ile Interframe Spaces (SIFS, PIFS, DIFS, EIFS) explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q25.</span> IEEE 802.11-ലെ ഇന്റർഫ്രെയിം സ്പേസുകൾ (SIFS, PIFS, DIFS, EIFS) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12437,6 +12940,21 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 8</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12704,6 +13222,7 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
     <article class="question-card subject-mobile" id="mobile-q26" data-marks="7" data-title="provide a comprehensive comparative technical analysis between wi-fi (ieee 802.11) and 3g/cellular wireless networks.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q26" data-duration="720" data-qid="mobile-q26" data-label="MOBILE • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12718,9 +13237,9 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Provide a comprehensive comparative technical analysis between Wi-Fi (IEEE 802.11) and 3G/Cellular wireless networks.</span>
-            <span class="lang-view lang-manglish">Wi-Fi (IEEE 802.11)-um Cellular Networks (3G/4G)-um compare cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">വൈ-ഫൈയും (Wi-Fi) സെല്ലുലാർ (3G/4G) നെറ്റ്‌വർക്കുകളും തമ്മിലുള്ള വ്യത്യാസങ്ങൾ എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Provide a comprehensive comparative technical analysis between Wi-Fi (IEEE 802.11) and 3G/Cellular wireless networks.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Wi-Fi (IEEE 802.11)-um Cellular Networks (3G/4G)-um compare cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q26.</span> വൈ-ഫൈയും (Wi-Fi) സെല്ലുലാർ (3G/4G) നെറ്റ്‌വർക്കുകളും തമ്മിലുള്ള വ്യത്യാസങ്ങൾ എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12744,6 +13263,21 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> 2019 Scheme Curriculum Model (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%282019%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic 2019 Scheme Curriculum Model question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -13061,6 +13595,7 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
     <article class="question-card subject-mobile" id="mobile-q27" data-marks="7" data-title="explain the hidden terminal and exposed terminal problems in wireless networks. how does rts/cts handshaking resolve the hidden terminal issue?">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 27</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q27" data-duration="720" data-qid="mobile-q27" data-label="MOBILE • Q27 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q27')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -13075,9 +13610,9 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the hidden terminal and exposed terminal problems in wireless networks. How does RTS/CTS handshaking resolve the hidden terminal issue?</span>
-            <span class="lang-view lang-manglish">Hidden and Exposed Terminal Problems-um RTS/CTS virtual carrier sensing mechanics-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഹിഡൻ ആൻഡ് എക്സ്പോസ്ഡ് ടെർമിനൽ പ്രശ്നങ്ങളും RTS/CTS പരിഹാരവും വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q27.</span> Explain the hidden terminal and exposed terminal problems in wireless networks. How does RTS/CTS handshaking resolve the hidden terminal issue?</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q27.</span> Hidden and Exposed Terminal Problems-um RTS/CTS virtual carrier sensing mechanics-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q27.</span> ഹിഡൻ ആൻഡ് എക്സ്പോസ്ഡ് ടെർമിനൽ പ്രശ്നങ്ങളും RTS/CTS പരിഹാരവും വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -13101,6 +13636,21 @@ GPRS overlays two new core packet-switching nodes onto the existing circuit-swit
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -13394,6 +13944,7 @@ IEEE 802.11 solves the hidden terminal problem through a 4-way handshake using V
     <article class="question-card subject-mobile" id="mobile-q28" data-marks="7" data-title="draw and explain the comprehensive architecture and operational advantages of wireless local loop (wll).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 28</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q28" data-duration="720" data-qid="mobile-q28" data-label="MOBILE • Q28 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q28')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -13408,9 +13959,9 @@ IEEE 802.11 solves the hidden terminal problem through a 4-way handshake using V
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw and explain the comprehensive architecture and operational advantages of Wireless Local Loop (WLL).</span>
-            <span class="lang-view lang-manglish">Wireless Local Loop (WLL / Fixed Wireless Access) engane work cheyyunnu?</span>
-            <span class="lang-view lang-ml font-ml">വയർലെസ് ലോക്കൽ ലൂപ്പ് (WLL) ആർക്കിടെക്ചറും ഉപയോഗങ്ങളും വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q28.</span> Draw and explain the comprehensive architecture and operational advantages of Wireless Local Loop (WLL).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q28.</span> Wireless Local Loop (WLL / Fixed Wireless Access) engane work cheyyunnu?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q28.</span> വയർലെസ് ലോക്കൽ ലൂപ്പ് (WLL) ആർക്കിടെക്ചറും ഉപയോഗങ്ങളും വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -13434,6 +13985,21 @@ IEEE 802.11 solves the hidden terminal problem through a 4-way handshake using V
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -13690,6 +14256,7 @@ Wireless Local Loop (also called Fixed Wireless Access) replaces traditional und
     <article class="question-card subject-mobile" id="mobile-q29" data-marks="7" data-title="trace the security evolution in ieee 802.11 wlans: discuss wep vulnerabilities, wpa (tkip), wpa2 (aes-ccmp), and 802.1x authentication.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 29</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q29" data-duration="720" data-qid="mobile-q29" data-label="MOBILE • Q29 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q29')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -13704,9 +14271,9 @@ Wireless Local Loop (also called Fixed Wireless Access) replaces traditional und
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Trace the security evolution in IEEE 802.11 WLANs: discuss WEP vulnerabilities, WPA (TKIP), WPA2 (AES-CCMP), and 802.1X authentication.</span>
-            <span class="lang-view lang-manglish">WLAN Security Evolution: WEP Vulnerabilities, WPA, WPA2 (802.11i), and WPA3 compare cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">വൈ-ഫൈ സുരക്ഷാ പരിണാമം: WEP, WPA, WPA2, WPA3 എന്നിവ താരതമ്യം ചെയ്യുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q29.</span> Trace the security evolution in IEEE 802.11 WLANs: discuss WEP vulnerabilities, WPA (TKIP), WPA2 (AES-CCMP), and 802.1X authentication.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q29.</span> WLAN Security Evolution: WEP Vulnerabilities, WPA, WPA2 (802.11i), and WPA3 compare cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q29.</span> വൈ-ഫൈ സുരക്ഷാ പരിണാമം: WEP, WPA, WPA2, WPA3 എന്നിവ താരതമ്യം ചെയ്യുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -13730,6 +14297,21 @@ Wireless Local Loop (also called Fixed Wireless Access) replaces traditional und
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -14046,6 +14628,7 @@ Wireless Local Loop (also called Fixed Wireless Access) replaces traditional und
     <article class="question-card subject-mobile" id="mobile-q30" data-marks="7" data-title="explain hiperlan communication models. compare hiperlan/1 (ey-npma) with hiperlan/2 (centralized tdma/tdd).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 30</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q30" data-duration="720" data-qid="mobile-q30" data-label="MOBILE • Q30 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q30')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -14060,9 +14643,9 @@ Wireless Local Loop (also called Fixed Wireless Access) replaces traditional und
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain HIPERLAN communication models. Compare HIPERLAN/1 (EY-NPMA) with HIPERLAN/2 (centralized TDMA/TDD).</span>
-            <span class="lang-view lang-manglish">HIPERLAN standards (HIPERLAN 1 vs HIPERLAN 2) and EY-NPMA MAC protocol explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഹൈപ്പർലാൻ (HIPERLAN 1 vs HIPERLAN 2) കമ്മ്യൂണിക്കേഷൻ മോഡലുകൾ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q30.</span> Explain HIPERLAN communication models. Compare HIPERLAN/1 (EY-NPMA) with HIPERLAN/2 (centralized TDMA/TDD).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q30.</span> HIPERLAN standards (HIPERLAN 1 vs HIPERLAN 2) and EY-NPMA MAC protocol explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q30.</span> ഹൈപ്പർലാൻ (HIPERLAN 1 vs HIPERLAN 2) കമ്മ്യൂണിക്കേഷൻ മോഡലുകൾ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -14086,6 +14669,21 @@ Wireless Local Loop (also called Fixed Wireless Access) replaces traditional und
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> 2019 Scheme Curriculum Model (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%282019%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic 2019 Scheme Curriculum Model question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -14417,6 +15015,7 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
     <article class="question-card subject-mobile" id="mobile-q31" data-marks="3" data-title="explain the foundational pillars of information security: extended cia triad, authenticity, non-repudiation, and authorization in mobile systems.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 31</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q31" data-duration="300" data-qid="mobile-q31" data-label="MOBILE • Q31 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q31')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -14431,9 +15030,9 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the foundational pillars of information security: extended CIA triad, authenticity, non-repudiation, and authorization in mobile systems.</span>
-            <span class="lang-view lang-manglish">Information Security-le Extended CIA Triad (Confidentiality, Integrity, Availability, Non-Repudiation, Authenticity) explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഇൻഫർമേഷൻ സെക്യൂരിറ്റിയിലെ എക്സ്റ്റൻഡഡ് CIA ട്രയാഡ് ഘടകങ്ങൾ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q31.</span> Explain the foundational pillars of information security: extended CIA triad, authenticity, non-repudiation, and authorization in mobile systems.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q31.</span> Information Security-le Extended CIA Triad (Confidentiality, Integrity, Availability, Non-Repudiation, Authenticity) explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q31.</span> ഇൻഫർമേഷൻ സെക്യൂരിറ്റിയിലെ എക്സ്റ്റൻഡഡ് CIA ട്രയാഡ് ഘടകങ്ങൾ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -14457,6 +15056,21 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 9</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -14699,6 +15313,7 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
     <article class="question-card subject-mobile" id="mobile-q32" data-marks="3" data-title="classify and explain security attacks in mobile computing into static and dynamic attacks on mobile assets.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 32</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q32" data-duration="300" data-qid="mobile-q32" data-label="MOBILE • Q32 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q32')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -14713,9 +15328,9 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Classify and explain security attacks in mobile computing into static and dynamic attacks on mobile assets.</span>
-            <span class="lang-view lang-manglish">Mobile Computing-ile Security Attacks: Passive vs Active (Static vs Dynamic) classify cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">മൊബൈൽ നെറ്റ്‌വർക്കിലെ സെക്യൂരിറ്റി അറ്റാക്കുകൾ: പാസീവ് vs ആക്ടീവ് അറ്റാക്കുകൾ തരംതിരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q32.</span> Classify and explain security attacks in mobile computing into static and dynamic attacks on mobile assets.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q32.</span> Mobile Computing-ile Security Attacks: Passive vs Active (Static vs Dynamic) classify cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q32.</span> മൊബൈൽ നെറ്റ്‌വർക്കിലെ സെക്യൂരിറ്റി അറ്റാക്കുകൾ: പാസീവ് vs ആക്ടീവ് അറ്റാക്കുകൾ തരംതിരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -14739,6 +15354,21 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 10</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -15049,6 +15679,7 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
     <article class="question-card subject-mobile" id="mobile-q33" data-marks="3" data-title="explain ssl/tls protocol architecture and discuss its adaptation in mobile networks including wtls and mobile vpns.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 33</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-mobile-q33" data-duration="300" data-qid="mobile-q33" data-label="MOBILE • Q33 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q33')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -15063,9 +15694,9 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain SSL/TLS protocol architecture and discuss its adaptation in mobile networks including WTLS and Mobile VPNs.</span>
-            <span class="lang-view lang-manglish">Mobile networks-ile Security Protocols: SSL, TLS, and Mobile VPN detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">സുരക്ഷാ പ്രോട്ടോക്കോളുകൾ: SSL, TLS, മൊബൈൽ വിപിഎൻ (VPN) എന്നിവ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q33.</span> Explain SSL/TLS protocol architecture and discuss its adaptation in mobile networks including WTLS and Mobile VPNs.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q33.</span> Mobile networks-ile Security Protocols: SSL, TLS, and Mobile VPN detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q33.</span> സുരക്ഷാ പ്രോട്ടോക്കോളുകൾ: SSL, TLS, മൊബൈൽ വിപിഎൻ (VPN) എന്നിവ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -15089,6 +15720,21 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 10</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -15339,6 +15985,7 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
     <article class="question-card subject-mobile" id="mobile-q34" data-marks="7" data-title="explain the rsa public-key cryptosystem. solve a complete step-by-step numerical problem for key generation, encryption, and decryption.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 34</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q34" data-duration="720" data-qid="mobile-q34" data-label="MOBILE • Q34 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q34')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -15353,9 +16000,9 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the RSA public-key cryptosystem. Solve a complete step-by-step numerical problem for key generation, encryption, and decryption.</span>
-            <span class="lang-view lang-manglish">RSA Algorithm step-by-step working explain cheythu numerical solve cheyyuka ($p=3, q=11, e=7$).</span>
-            <span class="lang-view lang-ml font-ml">RSA അൽഗോരിതം വിശദീകരിച്ച് ഉദാഹരണ കണക്ക് ചെയ്യുക ($p=3, q=11, e=7$)</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q34.</span> Explain the RSA public-key cryptosystem. Solve a complete step-by-step numerical problem for key generation, encryption, and decryption.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q34.</span> RSA Algorithm step-by-step working explain cheythu numerical solve cheyyuka ($p=3, q=11, e=7$).</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q34.</span> RSA അൽഗോരിതം വിശദീകരിച്ച് ഉദാഹരണ കണക്ക് ചെയ്യുക ($p=3, q=11, e=7$)</span>
         </h3>
         
             <div class="card-action-bar">
@@ -15379,6 +16026,21 @@ HIPERLAN (High Performance Radio Local Area Network) is a European telecommunica
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -15730,6 +16392,7 @@ Let prime numbers be $p = 3$ and $q = 11$, and message plaintext $M = 2$.</p>
     <article class="question-card subject-mobile" id="mobile-q35" data-marks="7" data-title="derive the diffie-hellman key exchange algorithm. explain the discrete logarithm problem and discuss vulnerability to man-in-the-middle attack.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 35</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q35" data-duration="720" data-qid="mobile-q35" data-label="MOBILE • Q35 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q35')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -15744,9 +16407,9 @@ Let prime numbers be $p = 3$ and $q = 11$, and message plaintext $M = 2$.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the Diffie-Hellman key exchange algorithm. Explain the discrete logarithm problem and discuss vulnerability to Man-in-the-Middle attack.</span>
-            <span class="lang-view lang-manglish">Diffie-Hellman Key Exchange Algorithm derivation-um numerical example-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഡിഫി-ഹെൽമാൻ കീ എക്സ്ചേഞ്ച് അൽഗോരിതവും കണക്കുകൂട്ടലും വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q35.</span> Derive the Diffie-Hellman key exchange algorithm. Explain the discrete logarithm problem and discuss vulnerability to Man-in-the-Middle attack.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q35.</span> Diffie-Hellman Key Exchange Algorithm derivation-um numerical example-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q35.</span> ഡിഫി-ഹെൽമാൻ കീ എക്സ്ചേഞ്ച് അൽഗോരിതവും കണക്കുകൂട്ടലും വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -15770,6 +16433,21 @@ Let prime numbers be $p = 3$ and $q = 11$, and message plaintext $M = 2$.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -16105,6 +16783,7 @@ Let public parameters be prime $p = 23$, generator $g = 5$.</p>
     <article class="question-card subject-mobile" id="mobile-q36" data-marks="7" data-title="explain the mathematical principle of orthogonal frequency division multiplexing (ofdm). discuss subcarrier orthogonality and cyclic prefix (cp).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 36</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q36" data-duration="720" data-qid="mobile-q36" data-label="MOBILE • Q36 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q36')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -16119,9 +16798,9 @@ Let public parameters be prime $p = 23$, generator $g = 5$.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the mathematical principle of Orthogonal Frequency Division Multiplexing (OFDM). Discuss subcarrier orthogonality and Cyclic Prefix (CP).</span>
-            <span class="lang-view lang-manglish">OFDM (Orthogonal Frequency Division Multiplexing) principles-um Cyclic Prefix-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഒഎഫ്ഡിഎം (OFDM) തത്വങ്ങളും സൈക്ലിക് പ്രിഫിക്സും (Cyclic Prefix) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q36.</span> Explain the mathematical principle of Orthogonal Frequency Division Multiplexing (OFDM). Discuss subcarrier orthogonality and Cyclic Prefix (CP).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q36.</span> OFDM (Orthogonal Frequency Division Multiplexing) principles-um Cyclic Prefix-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q36.</span> ഒഎഫ്ഡിഎം (OFDM) തത്വങ്ങളും സൈക്ലിക് പ്രിഫിക്സും (Cyclic Prefix) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -16145,6 +16824,21 @@ Let public parameters be prime $p = 23$, generator $g = 5$.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -16398,6 +17092,7 @@ Modulation is performed digitally using an Inverse Fast Fourier Transform (IFFT)
     <article class="question-card subject-mobile" id="mobile-q37" data-marks="7" data-title="explain multimedia broadcast and multicast services (mbms) in cellular networks and discuss mpls label switching in mobile core backbones.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 37</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q37" data-duration="720" data-qid="mobile-q37" data-label="MOBILE • Q37 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q37')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -16412,9 +17107,9 @@ Modulation is performed digitally using an Inverse Fast Fourier Transform (IFFT)
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Multimedia Broadcast and Multicast Services (MBMS) in cellular networks and discuss MPLS label switching in mobile core backbones.</span>
-            <span class="lang-view lang-manglish">MBMS (Multimedia Broadcast Multicast Service) and MPLS in mobile cellular networks explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">മൾട്ടിമീഡിയ ബ്രോഡ്കാസ്റ്റ് മൾട്ടികാസ്റ്റ് സർവ്വീസും (MBMS) MPLS-ഉം വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q37.</span> Explain Multimedia Broadcast and Multicast Services (MBMS) in cellular networks and discuss MPLS label switching in mobile core backbones.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q37.</span> MBMS (Multimedia Broadcast Multicast Service) and MPLS in mobile cellular networks explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q37.</span> മൾട്ടിമീഡിയ ബ്രോഡ്കാസ്റ്റ് മൾട്ടികാസ്റ്റ് സർവ്വീസും (MBMS) MPLS-ഉം വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -16438,6 +17133,21 @@ Modulation is performed digitally using an Inverse Fast Fourier Transform (IFFT)
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> 2019 Scheme Curriculum Model (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%282019%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic 2019 Scheme Curriculum Model question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -16705,6 +17415,7 @@ Modulation is performed digitally using an Inverse Fast Fourier Transform (IFFT)
     <article class="question-card subject-mobile" id="mobile-q38" data-marks="7" data-title="compare the architectural and functional evolution of cellular mobile communication networks from 2g to 5g.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 38</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mobile-q38" data-duration="720" data-qid="mobile-q38" data-label="MOBILE • Q38 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mobile-q38')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -16719,9 +17430,9 @@ Modulation is performed digitally using an Inverse Fast Fourier Transform (IFFT)
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare the architectural and functional evolution of cellular mobile communication networks from 2G to 5G.</span>
-            <span class="lang-view lang-manglish">Cellular Network Generations: 2G muthal 5G vareyulla architectural and performance comparison explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">സെല്ലുലാർ നെറ്റ്‌വർക്ക് പരിണാമം: 2G മുതൽ 5G വരെയുള്ള മാറ്റങ്ങൾ താരതമ്യം ചെയ്യുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q38.</span> Compare the architectural and functional evolution of cellular mobile communication networks from 2G to 5G.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q38.</span> Cellular Network Generations: 2G muthal 5G vareyulla architectural and performance comparison explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q38.</span> സെല്ലുലാർ നെറ്റ്‌വർക്ക് പരിണാമം: 2G മുതൽ 5G വരെയുള്ള മാറ്റങ്ങൾ താരതമ്യം ചെയ്യുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -16745,6 +17456,21 @@ Modulation is performed digitally using an Inverse Fast Fourier Transform (IFFT)
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (CST415)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mobile/Introduction%20to%20Mobile%20Computing%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

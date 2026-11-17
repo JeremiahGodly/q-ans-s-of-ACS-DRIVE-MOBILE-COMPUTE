@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4366,6 +4484,7 @@ pre, code {
     <article class="question-card subject-physics" id="phy-q1" data-marks="7" data-title="derive the differential equation of damped harmonic oscillations. obtain the general solution and discuss the three cases of damping: overdamped, critically damped, and underdamped.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q1" data-duration="720" data-qid="phy-q1" data-label="PHY • Q1 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4380,9 +4499,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the differential equation of damped harmonic oscillations. Obtain the general solution and discuss the three cases of damping: overdamped, critically damped, and underdamped.</span>
-            <span class="lang-view lang-manglish">Derive the differential equation of damped harmonic oscillations. Obtain the general solution and discuss the three cases of damping: overdamped, critically damped, and underdamped.</span>
-            <span class="lang-view lang-ml">Derive the differential equation of damped harmonic oscillations. Obtain the general solution and discuss the three cases of damping: overdamped, critically damped, and underdamped.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Derive the differential equation of damped harmonic oscillations. Obtain the general solution and discuss the three cases of damping: overdamped, critically damped, and underdamped.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> Derive the differential equation of damped harmonic oscillations. Obtain the general solution and discuss the three cases of damping: overdamped, critically damped, and underdamped.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> Derive the differential equation of damped harmonic oscillations. Obtain the general solution and discuss the three cases of damping: overdamped, critically damped, and underdamped.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4406,6 +4525,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4593,6 +4727,7 @@ where $A$ is the initial amplitude and $\phi$ is the initial phase angle, both d
     <article class="question-card subject-physics" id="phy-q2" data-marks="7" data-title="derive the differential equation for forced harmonic oscillations. obtain the expressions for the steady-state amplitude and phase difference, and discuss their variation with driving frequency.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q2" data-duration="720" data-qid="phy-q2" data-label="PHY • Q2 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4607,9 +4742,9 @@ where $A$ is the initial amplitude and $\phi$ is the initial phase angle, both d
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the differential equation for forced harmonic oscillations. Obtain the expressions for the steady-state amplitude and phase difference, and discuss their variation with driving frequency.</span>
-            <span class="lang-view lang-manglish">Derive the differential equation for forced harmonic oscillations. Obtain the expressions for the steady-state amplitude and phase difference, and discuss their variation with driving frequency.</span>
-            <span class="lang-view lang-ml">Derive the differential equation for forced harmonic oscillations. Obtain the expressions for the steady-state amplitude and phase difference, and discuss their variation with driving frequency.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Derive the differential equation for forced harmonic oscillations. Obtain the expressions for the steady-state amplitude and phase difference, and discuss their variation with driving frequency.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Derive the differential equation for forced harmonic oscillations. Obtain the expressions for the steady-state amplitude and phase difference, and discuss their variation with driving frequency.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> Derive the differential equation for forced harmonic oscillations. Obtain the expressions for the steady-state amplitude and phase difference, and discuss their variation with driving frequency.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4633,6 +4768,21 @@ where $A$ is the initial amplitude and $\phi$ is the initial phase angle, both d
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2021_Answer_Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4838,6 +4988,7 @@ $$\tan\phi = \frac{f_0 \sin\phi}{f_0 \cos\phi} = \frac{2\gamma \omega}{\omega_0^
     <article class="question-card subject-physics" id="phy-q3" data-marks="7" data-title="explain the phenomenon of amplitude resonance in forced oscillations. derive expressions for resonant frequency, sharpness of resonance, quality factor, and logarithmic decrement.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q3" data-duration="720" data-qid="phy-q3" data-label="PHY • Q3 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4852,9 +5003,9 @@ $$\tan\phi = \frac{f_0 \sin\phi}{f_0 \cos\phi} = \frac{2\gamma \omega}{\omega_0^
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the phenomenon of amplitude resonance in forced oscillations. Derive expressions for resonant frequency, sharpness of resonance, Quality factor, and logarithmic decrement.</span>
-            <span class="lang-view lang-manglish">Explain the phenomenon of amplitude resonance in forced oscillations. Derive expressions for resonant frequency, sharpness of resonance, Quality factor, and logarithmic decrement.</span>
-            <span class="lang-view lang-ml">Explain the phenomenon of amplitude resonance in forced oscillations. Derive expressions for resonant frequency, sharpness of resonance, Quality factor, and logarithmic decrement.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Explain the phenomenon of amplitude resonance in forced oscillations. Derive expressions for resonant frequency, sharpness of resonance, Quality factor, and logarithmic decrement.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Explain the phenomenon of amplitude resonance in forced oscillations. Derive expressions for resonant frequency, sharpness of resonance, Quality factor, and logarithmic decrement.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> Explain the phenomenon of amplitude resonance in forced oscillations. Derive expressions for resonant frequency, sharpness of resonance, Quality factor, and logarithmic decrement.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4878,6 +5029,21 @@ $$\tan\phi = \frac{f_0 \sin\phi}{f_0 \cos\phi} = \frac{2\gamma \omega}{\omega_0^
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5059,6 +5225,7 @@ This equation shows that the logarithmic decrement is inversely proportional to 
     <article class="question-card subject-physics" id="phy-q4" data-marks="7" data-title="derive the one-dimensional differential wave equation for the propagation of transverse waves on a stretched flexible string from fundamental principles.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q4" data-duration="720" data-qid="phy-q4" data-label="PHY • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5073,9 +5240,9 @@ This equation shows that the logarithmic decrement is inversely proportional to 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the one-dimensional differential wave equation for the propagation of transverse waves on a stretched flexible string from fundamental principles.</span>
-            <span class="lang-view lang-manglish">Derive the one-dimensional differential wave equation for the propagation of transverse waves on a stretched flexible string from fundamental principles.</span>
-            <span class="lang-view lang-ml">Derive the one-dimensional differential wave equation for the propagation of transverse waves on a stretched flexible string from fundamental principles.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Derive the one-dimensional differential wave equation for the propagation of transverse waves on a stretched flexible string from fundamental principles.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Derive the one-dimensional differential wave equation for the propagation of transverse waves on a stretched flexible string from fundamental principles.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> Derive the one-dimensional differential wave equation for the propagation of transverse waves on a stretched flexible string from fundamental principles.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5099,6 +5266,21 @@ This equation shows that the logarithmic decrement is inversely proportional to 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5274,6 +5456,7 @@ where $f(x - vt)$ represents a non-dispersive wave travelling in the positive $x
     <article class="question-card subject-physics" id="phy-q5" data-marks="7" data-title="apply rigid boundary conditions to obtain the standing wave modes and quantized natural frequencies of transverse vibrations on a stretched string fixed at both ends. state mersenne&#x27;s laws.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q5" data-duration="720" data-qid="phy-q5" data-label="PHY • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5288,9 +5471,9 @@ where $f(x - vt)$ represents a non-dispersive wave travelling in the positive $x
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Apply rigid boundary conditions to obtain the standing wave modes and quantized natural frequencies of transverse vibrations on a stretched string fixed at both ends. State Mersenne's laws.</span>
-            <span class="lang-view lang-manglish">Apply rigid boundary conditions to obtain the standing wave modes and quantized natural frequencies of transverse vibrations on a stretched string fixed at both ends. State Mersenne's laws.</span>
-            <span class="lang-view lang-ml">Apply rigid boundary conditions to obtain the standing wave modes and quantized natural frequencies of transverse vibrations on a stretched string fixed at both ends. State Mersenne's laws.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Apply rigid boundary conditions to obtain the standing wave modes and quantized natural frequencies of transverse vibrations on a stretched string fixed at both ends. State Mersenne's laws.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Apply rigid boundary conditions to obtain the standing wave modes and quantized natural frequencies of transverse vibrations on a stretched string fixed at both ends. State Mersenne's laws.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> Apply rigid boundary conditions to obtain the standing wave modes and quantized natural frequencies of transverse vibrations on a stretched string fixed at both ends. State Mersenne's laws.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5314,6 +5497,21 @@ where $f(x - vt)$ represents a non-dispersive wave travelling in the positive $x
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2021_Answer_Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5539,6 +5737,7 @@ In general, $f_n = n f_1$. A stretched string fixed at both ends supports all in
     <article class="question-card subject-physics" id="phy-q6" data-marks="7" data-title="derive the expression for the optical path difference between reflected rays in a thin parallel transparent film. deduce the conditions for constructive and destructive interference, and explain why an extremely thin film appears dark.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q6" data-duration="720" data-qid="phy-q6" data-label="PHY • Q6 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5553,9 +5752,9 @@ In general, $f_n = n f_1$. A stretched string fixed at both ends supports all in
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the expression for the optical path difference between reflected rays in a thin parallel transparent film. Deduce the conditions for constructive and destructive interference, and explain why an extremely thin film appears dark.</span>
-            <span class="lang-view lang-manglish">Derive the expression for the optical path difference between reflected rays in a thin parallel transparent film. Deduce the conditions for constructive and destructive interference, and explain why an extremely thin film appears dark.</span>
-            <span class="lang-view lang-ml">Derive the expression for the optical path difference between reflected rays in a thin parallel transparent film. Deduce the conditions for constructive and destructive interference, and explain why an extremely thin film appears dark.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Derive the expression for the optical path difference between reflected rays in a thin parallel transparent film. Deduce the conditions for constructive and destructive interference, and explain why an extremely thin film appears dark.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Derive the expression for the optical path difference between reflected rays in a thin parallel transparent film. Deduce the conditions for constructive and destructive interference, and explain why an extremely thin film appears dark.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> Derive the expression for the optical path difference between reflected rays in a thin parallel transparent film. Deduce the conditions for constructive and destructive interference, and explain why an extremely thin film appears dark.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5579,6 +5778,21 @@ In general, $f_n = n f_1$. A stretched string fixed at both ends supports all in
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5763,6 +5977,7 @@ $$2\mu t \cos r - \frac{\lambda}{2} = (2n + 1)\frac{\lambda}{2} \implies 2\mu t 
     <article class="question-card subject-physics" id="phy-q7" data-marks="7" data-title="explain the formation of interference fringes in an air wedge. derive the expression for fringe width and explain how the diameter of a thin wire is measured experimentally.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q7" data-duration="720" data-qid="phy-q7" data-label="PHY • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5777,9 +5992,9 @@ $$2\mu t \cos r - \frac{\lambda}{2} = (2n + 1)\frac{\lambda}{2} \implies 2\mu t 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the formation of interference fringes in an air wedge. Derive the expression for fringe width and explain how the diameter of a thin wire is measured experimentally.</span>
-            <span class="lang-view lang-manglish">Explain the formation of interference fringes in an air wedge. Derive the expression for fringe width and explain how the diameter of a thin wire is measured experimentally.</span>
-            <span class="lang-view lang-ml">Explain the formation of interference fringes in an air wedge. Derive the expression for fringe width and explain how the diameter of a thin wire is measured experimentally.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Explain the formation of interference fringes in an air wedge. Derive the expression for fringe width and explain how the diameter of a thin wire is measured experimentally.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Explain the formation of interference fringes in an air wedge. Derive the expression for fringe width and explain how the diameter of a thin wire is measured experimentally.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Explain the formation of interference fringes in an air wedge. Derive the expression for fringe width and explain how the diameter of a thin wire is measured experimentally.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5803,6 +6018,21 @@ $$2\mu t \cos r - \frac{\lambda}{2} = (2n + 1)\frac{\lambda}{2} \implies 2\mu t 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2021_Answer_Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6008,6 +6238,7 @@ This method achieves sub-micron measurement accuracy without applying mechanical
     <article class="question-card subject-physics" id="phy-q8" data-marks="7" data-title="explain the theory of newton&#x27;s rings in reflected light. derive expressions for the diameters of dark and bright rings, and explain how the wavelength of sodium light and the refractive index of a liquid are determined.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q8" data-duration="720" data-qid="phy-q8" data-label="PHY • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6022,9 +6253,9 @@ This method achieves sub-micron measurement accuracy without applying mechanical
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the theory of Newton's rings in reflected light. Derive expressions for the diameters of dark and bright rings, and explain how the wavelength of sodium light and the refractive index of a liquid are determined.</span>
-            <span class="lang-view lang-manglish">Explain the theory of Newton's rings in reflected light. Derive expressions for the diameters of dark and bright rings, and explain how the wavelength of sodium light and the refractive index of a liquid are determined.</span>
-            <span class="lang-view lang-ml">Explain the theory of Newton's rings in reflected light. Derive expressions for the diameters of dark and bright rings, and explain how the wavelength of sodium light and the refractive index of a liquid are determined.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Explain the theory of Newton's rings in reflected light. Derive expressions for the diameters of dark and bright rings, and explain how the wavelength of sodium light and the refractive index of a liquid are determined.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Explain the theory of Newton's rings in reflected light. Derive expressions for the diameters of dark and bright rings, and explain how the wavelength of sodium light and the refractive index of a liquid are determined.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Explain the theory of Newton's rings in reflected light. Derive expressions for the diameters of dark and bright rings, and explain how the wavelength of sodium light and the refractive index of a liquid are determined.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6048,6 +6279,21 @@ This method achieves sub-micron measurement accuracy without applying mechanical
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6253,6 +6499,7 @@ Because $\mu > 1$, the rings contract and shift inwards when liquid is introduce
     <article class="question-card subject-physics" id="phy-q9" data-marks="7" data-title="derive the expression for the intensity distribution in fraunhofer diffraction at a single slit. obtain the conditions for central maximum, secondary maxima, and diffraction minima, and deduce the angular width of the central maximum.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q9" data-duration="720" data-qid="phy-q9" data-label="PHY • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6267,9 +6514,9 @@ Because $\mu > 1$, the rings contract and shift inwards when liquid is introduce
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the expression for the intensity distribution in Fraunhofer diffraction at a single slit. Obtain the conditions for central maximum, secondary maxima, and diffraction minima, and deduce the angular width of the central maximum.</span>
-            <span class="lang-view lang-manglish">Derive the expression for the intensity distribution in Fraunhofer diffraction at a single slit. Obtain the conditions for central maximum, secondary maxima, and diffraction minima, and deduce the angular width of the central maximum.</span>
-            <span class="lang-view lang-ml">Derive the expression for the intensity distribution in Fraunhofer diffraction at a single slit. Obtain the conditions for central maximum, secondary maxima, and diffraction minima, and deduce the angular width of the central maximum.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Derive the expression for the intensity distribution in Fraunhofer diffraction at a single slit. Obtain the conditions for central maximum, secondary maxima, and diffraction minima, and deduce the angular width of the central maximum.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Derive the expression for the intensity distribution in Fraunhofer diffraction at a single slit. Obtain the conditions for central maximum, secondary maxima, and diffraction minima, and deduce the angular width of the central maximum.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Derive the expression for the intensity distribution in Fraunhofer diffraction at a single slit. Obtain the conditions for central maximum, secondary maxima, and diffraction minima, and deduce the angular width of the central maximum.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6293,6 +6540,21 @@ Because $\mu > 1$, the rings contract and shift inwards when liquid is introduce
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6510,6 +6772,7 @@ Narrowing the slit width $a$ causes the central maximum to expand dramatically, 
     <article class="question-card subject-physics" id="phy-q10" data-marks="7" data-title="state and prove the plane transmission diffraction grating equation. derive expressions for the maximum observable order of spectra, dispersive power, and resolving power of the grating based on rayleigh&#x27;s criterion.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q10" data-duration="720" data-qid="phy-q10" data-label="PHY • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6524,9 +6787,9 @@ Narrowing the slit width $a$ causes the central maximum to expand dramatically, 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and prove the plane transmission diffraction grating equation. Derive expressions for the maximum observable order of spectra, dispersive power, and resolving power of the grating based on Rayleigh's criterion.</span>
-            <span class="lang-view lang-manglish">State and prove the plane transmission diffraction grating equation. Derive expressions for the maximum observable order of spectra, dispersive power, and resolving power of the grating based on Rayleigh's criterion.</span>
-            <span class="lang-view lang-ml">State and prove the plane transmission diffraction grating equation. Derive expressions for the maximum observable order of spectra, dispersive power, and resolving power of the grating based on Rayleigh's criterion.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> State and prove the plane transmission diffraction grating equation. Derive expressions for the maximum observable order of spectra, dispersive power, and resolving power of the grating based on Rayleigh's criterion.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> State and prove the plane transmission diffraction grating equation. Derive expressions for the maximum observable order of spectra, dispersive power, and resolving power of the grating based on Rayleigh's criterion.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> State and prove the plane transmission diffraction grating equation. Derive expressions for the maximum observable order of spectra, dispersive power, and resolving power of the grating based on Rayleigh's criterion.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6550,6 +6813,21 @@ Narrowing the slit width $a$ causes the central maximum to expand dramatically, 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2021_Answer_Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6763,6 +7041,7 @@ This celebrated derivation proves that the chromatic resolving power of a diffra
     <article class="question-card subject-physics" id="phy-q11" data-marks="7" data-title="state de broglie hypothesis and derive expressions for de broglie wavelength for a particle of energy e and an electron accelerated through potential v. state heisenberg&#x27;s uncertainty principle and prove that free electrons cannot exist inside an atomic nucleus.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q11" data-duration="720" data-qid="phy-q11" data-label="PHY • Q11 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6777,9 +7056,9 @@ This celebrated derivation proves that the chromatic resolving power of a diffra
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State de Broglie hypothesis and derive expressions for de Broglie wavelength for a particle of energy E and an electron accelerated through potential V. State Heisenberg's uncertainty principle and prove that free electrons cannot exist inside an atomic nucleus.</span>
-            <span class="lang-view lang-manglish">State de Broglie hypothesis and derive expressions for de Broglie wavelength for a particle of energy E and an electron accelerated through potential V. State Heisenberg's uncertainty principle and prove that free electrons cannot exist inside an atomic nucleus.</span>
-            <span class="lang-view lang-ml">State de Broglie hypothesis and derive expressions for de Broglie wavelength for a particle of energy E and an electron accelerated through potential V. State Heisenberg's uncertainty principle and prove that free electrons cannot exist inside an atomic nucleus.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> State de Broglie hypothesis and derive expressions for de Broglie wavelength for a particle of energy E and an electron accelerated through potential V. State Heisenberg's uncertainty principle and prove that free electrons cannot exist inside an atomic nucleus.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> State de Broglie hypothesis and derive expressions for de Broglie wavelength for a particle of energy E and an electron accelerated through potential V. State Heisenberg's uncertainty principle and prove that free electrons cannot exist inside an atomic nucleus.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> State de Broglie hypothesis and derive expressions for de Broglie wavelength for a particle of energy E and an electron accelerated through potential V. State Heisenberg's uncertainty principle and prove that free electrons cannot exist inside an atomic nucleus.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6803,6 +7082,21 @@ This celebrated derivation proves that the chromatic resolving power of a diffra
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7008,6 +7302,7 @@ However, extensive experimental measurements of beta particles (electrons) emitt
     <article class="question-card subject-physics" id="phy-q12" data-marks="7" data-title="explain the physical significance of the wave function psi. discuss born&#x27;s statistical interpretation, the normalization condition, and the necessary mathematical criteria for an acceptable wave function.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q12" data-duration="720" data-qid="phy-q12" data-label="PHY • Q12 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7022,9 +7317,9 @@ However, extensive experimental measurements of beta particles (electrons) emitt
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the physical significance of the wave function psi. Discuss Born's statistical interpretation, the normalization condition, and the necessary mathematical criteria for an acceptable wave function.</span>
-            <span class="lang-view lang-manglish">Explain the physical significance of the wave function psi. Discuss Born's statistical interpretation, the normalization condition, and the necessary mathematical criteria for an acceptable wave function.</span>
-            <span class="lang-view lang-ml">Explain the physical significance of the wave function psi. Discuss Born's statistical interpretation, the normalization condition, and the necessary mathematical criteria for an acceptable wave function.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Explain the physical significance of the wave function psi. Discuss Born's statistical interpretation, the normalization condition, and the necessary mathematical criteria for an acceptable wave function.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Explain the physical significance of the wave function psi. Discuss Born's statistical interpretation, the normalization condition, and the necessary mathematical criteria for an acceptable wave function.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> Explain the physical significance of the wave function psi. Discuss Born's statistical interpretation, the normalization condition, and the necessary mathematical criteria for an acceptable wave function.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7048,6 +7343,21 @@ However, extensive experimental measurements of beta particles (electrons) emitt
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2021_Answer_Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7223,6 +7533,7 @@ These foundational definitions enable full probabilistic calculation of dynamic 
     <article class="question-card subject-physics" id="phy-q13" data-marks="7" data-title="derive both the one-dimensional time-dependent and time-independent schrödinger wave equations for a particle moving in a conservative potential field.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q13" data-duration="720" data-qid="phy-q13" data-label="PHY • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7237,9 +7548,9 @@ These foundational definitions enable full probabilistic calculation of dynamic 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive both the one-dimensional Time-Dependent and Time-Independent Schrödinger wave equations for a particle moving in a conservative potential field.</span>
-            <span class="lang-view lang-manglish">Derive both the one-dimensional Time-Dependent and Time-Independent Schrödinger wave equations for a particle moving in a conservative potential field.</span>
-            <span class="lang-view lang-ml">Derive both the one-dimensional Time-Dependent and Time-Independent Schrödinger wave equations for a particle moving in a conservative potential field.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Derive both the one-dimensional Time-Dependent and Time-Independent Schrödinger wave equations for a particle moving in a conservative potential field.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Derive both the one-dimensional Time-Dependent and Time-Independent Schrödinger wave equations for a particle moving in a conservative potential field.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Derive both the one-dimensional Time-Dependent and Time-Independent Schrödinger wave equations for a particle moving in a conservative potential field.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7263,6 +7574,21 @@ These foundational definitions enable full probabilistic calculation of dynamic 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7489,6 +7815,7 @@ This is the One-Dimensional Time-Independent Schrödinger Wave Equation. It is a
     <article class="question-card subject-physics" id="phy-q14" data-marks="7" data-title="solve the one-dimensional time-independent schrödinger equation for a particle trapped in an infinite potential well of width l. derive expressions for the quantized energy eigenvalues, zero-point energy, and normalized wave functions.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q14" data-duration="720" data-qid="phy-q14" data-label="PHY • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7503,9 +7830,9 @@ This is the One-Dimensional Time-Independent Schrödinger Wave Equation. It is a
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Solve the one-dimensional time-independent Schrödinger equation for a particle trapped in an infinite potential well of width L. Derive expressions for the quantized energy eigenvalues, zero-point energy, and normalized wave functions.</span>
-            <span class="lang-view lang-manglish">Solve the one-dimensional time-independent Schrödinger equation for a particle trapped in an infinite potential well of width L. Derive expressions for the quantized energy eigenvalues, zero-point energy, and normalized wave functions.</span>
-            <span class="lang-view lang-ml">Solve the one-dimensional time-independent Schrödinger equation for a particle trapped in an infinite potential well of width L. Derive expressions for the quantized energy eigenvalues, zero-point energy, and normalized wave functions.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Solve the one-dimensional time-independent Schrödinger equation for a particle trapped in an infinite potential well of width L. Derive expressions for the quantized energy eigenvalues, zero-point energy, and normalized wave functions.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Solve the one-dimensional time-independent Schrödinger equation for a particle trapped in an infinite potential well of width L. Derive expressions for the quantized energy eigenvalues, zero-point energy, and normalized wave functions.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Solve the one-dimensional time-independent Schrödinger equation for a particle trapped in an infinite potential well of width L. Derive expressions for the quantized energy eigenvalues, zero-point energy, and normalized wave functions.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7529,6 +7856,21 @@ This is the One-Dimensional Time-Independent Schrödinger Wave Equation. It is a
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7773,6 +8115,7 @@ The probability density distribution $P_n(x) = |\psi_n(x)|^2 = \frac{2}{L}\sin^2
     <article class="question-card subject-physics" id="phy-q15" data-marks="7" data-title="explain the quantum confinement effect in nanomaterials. classify nanomaterials as 0d, 1d, and 2d with examples. describe the synthesis of nanomaterials using the sol-gel technique and chemical vapor deposition (cvd).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q15" data-duration="720" data-qid="phy-q15" data-label="PHY • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7787,9 +8130,9 @@ The probability density distribution $P_n(x) = |\psi_n(x)|^2 = \frac{2}{L}\sin^2
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the quantum confinement effect in nanomaterials. Classify nanomaterials as 0D, 1D, and 2D with examples. Describe the synthesis of nanomaterials using the Sol-Gel technique and Chemical Vapor Deposition (CVD).</span>
-            <span class="lang-view lang-manglish">Explain the quantum confinement effect in nanomaterials. Classify nanomaterials as 0D, 1D, and 2D with examples. Describe the synthesis of nanomaterials using the Sol-Gel technique and Chemical Vapor Deposition (CVD).</span>
-            <span class="lang-view lang-ml">Explain the quantum confinement effect in nanomaterials. Classify nanomaterials as 0D, 1D, and 2D with examples. Describe the synthesis of nanomaterials using the Sol-Gel technique and Chemical Vapor Deposition (CVD).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Explain the quantum confinement effect in nanomaterials. Classify nanomaterials as 0D, 1D, and 2D with examples. Describe the synthesis of nanomaterials using the Sol-Gel technique and Chemical Vapor Deposition (CVD).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Explain the quantum confinement effect in nanomaterials. Classify nanomaterials as 0D, 1D, and 2D with examples. Describe the synthesis of nanomaterials using the Sol-Gel technique and Chemical Vapor Deposition (CVD).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Explain the quantum confinement effect in nanomaterials. Classify nanomaterials as 0D, 1D, and 2D with examples. Describe the synthesis of nanomaterials using the Sol-Gel technique and Chemical Vapor Deposition (CVD).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7813,6 +8156,21 @@ The probability density distribution $P_n(x) = |\psi_n(x)|^2 = \frac{2}{L}\sin^2
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2021_Answer_Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8020,6 +8378,7 @@ Carbon dissolves into the metal catalyst particle until supersaturation is reach
     <article class="question-card subject-physics" id="phy-q16" data-marks="7" data-title="explain the piezoelectric method of generating ultrasonic waves with a neat circuit diagram. state the converse piezoelectric effect and derive the formula for the resonant frequency of a vibrating quartz crystal plate.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q16" data-duration="720" data-qid="phy-q16" data-label="PHY • Q16 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8034,9 +8393,9 @@ Carbon dissolves into the metal catalyst particle until supersaturation is reach
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the piezoelectric method of generating ultrasonic waves with a neat circuit diagram. State the converse piezoelectric effect and derive the formula for the resonant frequency of a vibrating quartz crystal plate.</span>
-            <span class="lang-view lang-manglish">Explain the piezoelectric method of generating ultrasonic waves with a neat circuit diagram. State the converse piezoelectric effect and derive the formula for the resonant frequency of a vibrating quartz crystal plate.</span>
-            <span class="lang-view lang-ml">Explain the piezoelectric method of generating ultrasonic waves with a neat circuit diagram. State the converse piezoelectric effect and derive the formula for the resonant frequency of a vibrating quartz crystal plate.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Explain the piezoelectric method of generating ultrasonic waves with a neat circuit diagram. State the converse piezoelectric effect and derive the formula for the resonant frequency of a vibrating quartz crystal plate.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Explain the piezoelectric method of generating ultrasonic waves with a neat circuit diagram. State the converse piezoelectric effect and derive the formula for the resonant frequency of a vibrating quartz crystal plate.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> Explain the piezoelectric method of generating ultrasonic waves with a neat circuit diagram. State the converse piezoelectric effect and derive the formula for the resonant frequency of a vibrating quartz crystal plate.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8060,6 +8419,21 @@ Carbon dissolves into the metal catalyst particle until supersaturation is reach
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8265,6 +8639,7 @@ A quartz plate of thickness $t = 1\text{ mm} = 10^{-3}\text{ m}$ generates a fun
     <article class="question-card subject-physics" id="phy-q17" data-marks="7" data-title="explain the principle, circuit diagram, and working of a magnetostriction ultrasonic generator. derive the expression for the resonant frequency of the ferromagnetic rod and state its operating frequency limits.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q17" data-duration="720" data-qid="phy-q17" data-label="PHY • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8279,9 +8654,9 @@ A quartz plate of thickness $t = 1\text{ mm} = 10^{-3}\text{ m}$ generates a fun
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the principle, circuit diagram, and working of a magnetostriction ultrasonic generator. Derive the expression for the resonant frequency of the ferromagnetic rod and state its operating frequency limits.</span>
-            <span class="lang-view lang-manglish">Explain the principle, circuit diagram, and working of a magnetostriction ultrasonic generator. Derive the expression for the resonant frequency of the ferromagnetic rod and state its operating frequency limits.</span>
-            <span class="lang-view lang-ml">Explain the principle, circuit diagram, and working of a magnetostriction ultrasonic generator. Derive the expression for the resonant frequency of the ferromagnetic rod and state its operating frequency limits.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Explain the principle, circuit diagram, and working of a magnetostriction ultrasonic generator. Derive the expression for the resonant frequency of the ferromagnetic rod and state its operating frequency limits.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Explain the principle, circuit diagram, and working of a magnetostriction ultrasonic generator. Derive the expression for the resonant frequency of the ferromagnetic rod and state its operating frequency limits.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Explain the principle, circuit diagram, and working of a magnetostriction ultrasonic generator. Derive the expression for the resonant frequency of the ferromagnetic rod and state its operating frequency limits.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8305,6 +8680,21 @@ A quartz plate of thickness $t = 1\text{ mm} = 10^{-3}\text{ m}$ generates a fun
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2021_Answer_Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8513,6 +8903,7 @@ This frequency lies in the lower ultrasonic spectrum.</p>
     <article class="question-card subject-physics" id="phy-q18" data-marks="7" data-title="explain the principle and working of ultrasonic non-destructive testing (ndt) using the pulse-echo method. draw a typical a-scan display and derive the formula for determining the depth of an internal flaw.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q18" data-duration="720" data-qid="phy-q18" data-label="PHY • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8527,9 +8918,9 @@ This frequency lies in the lower ultrasonic spectrum.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the principle and working of Ultrasonic Non-Destructive Testing (NDT) using the pulse-echo method. Draw a typical A-scan display and derive the formula for determining the depth of an internal flaw.</span>
-            <span class="lang-view lang-manglish">Explain the principle and working of Ultrasonic Non-Destructive Testing (NDT) using the pulse-echo method. Draw a typical A-scan display and derive the formula for determining the depth of an internal flaw.</span>
-            <span class="lang-view lang-ml">Explain the principle and working of Ultrasonic Non-Destructive Testing (NDT) using the pulse-echo method. Draw a typical A-scan display and derive the formula for determining the depth of an internal flaw.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Explain the principle and working of Ultrasonic Non-Destructive Testing (NDT) using the pulse-echo method. Draw a typical A-scan display and derive the formula for determining the depth of an internal flaw.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Explain the principle and working of Ultrasonic Non-Destructive Testing (NDT) using the pulse-echo method. Draw a typical A-scan display and derive the formula for determining the depth of an internal flaw.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> Explain the principle and working of Ultrasonic Non-Destructive Testing (NDT) using the pulse-echo method. Draw a typical A-scan display and derive the formula for determining the depth of an internal flaw.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8553,6 +8944,21 @@ This frequency lies in the lower ultrasonic spectrum.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8770,6 +9176,7 @@ The relative amplitude (height) of the flaw echo pip $P_f$ correlates with the c
     <article class="question-card subject-physics" id="phy-q19" data-marks="7" data-title="define reverberation and reverberation time. state and derive sabine&#x27;s formula for the reverberation time of an auditorium based on the growth and decay of acoustic energy density.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q19" data-duration="720" data-qid="phy-q19" data-label="PHY • Q19 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8784,9 +9191,9 @@ The relative amplitude (height) of the flaw echo pip $P_f$ correlates with the c
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define reverberation and reverberation time. State and derive Sabine's formula for the reverberation time of an auditorium based on the growth and decay of acoustic energy density.</span>
-            <span class="lang-view lang-manglish">Define reverberation and reverberation time. State and derive Sabine's formula for the reverberation time of an auditorium based on the growth and decay of acoustic energy density.</span>
-            <span class="lang-view lang-ml">Define reverberation and reverberation time. State and derive Sabine's formula for the reverberation time of an auditorium based on the growth and decay of acoustic energy density.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Define reverberation and reverberation time. State and derive Sabine's formula for the reverberation time of an auditorium based on the growth and decay of acoustic energy density.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Define reverberation and reverberation time. State and derive Sabine's formula for the reverberation time of an auditorium based on the growth and decay of acoustic energy density.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> Define reverberation and reverberation time. State and derive Sabine's formula for the reverberation time of an auditorium based on the growth and decay of acoustic energy density.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8810,6 +9217,21 @@ The relative amplitude (height) of the flaw echo pip $P_f$ correlates with the c
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9057,6 +9479,7 @@ This is Sabine's Reverberation Formula.</p>
     <article class="question-card subject-physics" id="phy-q20" data-marks="7" data-title="discuss the essential architectural acoustic requirements of an auditorium. explain common acoustic defects such as echoes, flutter echoes, sound focusing, and resonance, along with their engineering remedies.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q20" data-duration="720" data-qid="phy-q20" data-label="PHY • Q20 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9071,9 +9494,9 @@ This is Sabine's Reverberation Formula.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Discuss the essential architectural acoustic requirements of an auditorium. Explain common acoustic defects such as echoes, flutter echoes, sound focusing, and resonance, along with their engineering remedies.</span>
-            <span class="lang-view lang-manglish">Discuss the essential architectural acoustic requirements of an auditorium. Explain common acoustic defects such as echoes, flutter echoes, sound focusing, and resonance, along with their engineering remedies.</span>
-            <span class="lang-view lang-ml">Discuss the essential architectural acoustic requirements of an auditorium. Explain common acoustic defects such as echoes, flutter echoes, sound focusing, and resonance, along with their engineering remedies.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Discuss the essential architectural acoustic requirements of an auditorium. Explain common acoustic defects such as echoes, flutter echoes, sound focusing, and resonance, along with their engineering remedies.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Discuss the essential architectural acoustic requirements of an auditorium. Explain common acoustic defects such as echoes, flutter echoes, sound focusing, and resonance, along with their engineering remedies.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Discuss the essential architectural acoustic requirements of an auditorium. Explain common acoustic defects such as echoes, flutter echoes, sound focusing, and resonance, along with their engineering remedies.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9097,6 +9520,21 @@ This is Sabine's Reverberation Formula.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2021_Answer_Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9298,6 +9736,7 @@ Reverberation time is the most critical parameter in architectural acoustics. If
     <article class="question-card subject-physics" id="phy-q21" data-marks="7" data-title="explain the three radiation-matter interaction processes. derive the relations between einstein&#x27;s a and b coefficients, and explain why population inversion is necessary for laser action.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q21" data-duration="720" data-qid="phy-q21" data-label="PHY • Q21 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9312,9 +9751,9 @@ Reverberation time is the most critical parameter in architectural acoustics. If
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the three radiation-matter interaction processes. Derive the relations between Einstein's A and B coefficients, and explain why population inversion is necessary for laser action.</span>
-            <span class="lang-view lang-manglish">Explain the three radiation-matter interaction processes. Derive the relations between Einstein's A and B coefficients, and explain why population inversion is necessary for laser action.</span>
-            <span class="lang-view lang-ml">Explain the three radiation-matter interaction processes. Derive the relations between Einstein's A and B coefficients, and explain why population inversion is necessary for laser action.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Explain the three radiation-matter interaction processes. Derive the relations between Einstein's A and B coefficients, and explain why population inversion is necessary for laser action.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Explain the three radiation-matter interaction processes. Derive the relations between Einstein's A and B coefficients, and explain why population inversion is necessary for laser action.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Explain the three radiation-matter interaction processes. Derive the relations between Einstein's A and B coefficients, and explain why population inversion is necessary for laser action.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9338,6 +9777,21 @@ Reverberation time is the most critical parameter in architectural acoustics. If
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9570,6 +10024,7 @@ This non-equilibrium condition is known as Population Inversion. Because $E_2 > 
     <article class="question-card subject-physics" id="phy-q22" data-marks="7" data-title="describe the construction and working of a ruby laser with a neat schematic and three-level energy band diagram. explain why ruby lasers operate in pulsed mode.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q22" data-duration="720" data-qid="phy-q22" data-label="PHY • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9584,9 +10039,9 @@ This non-equilibrium condition is known as Population Inversion. Because $E_2 > 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Describe the construction and working of a Ruby laser with a neat schematic and three-level energy band diagram. Explain why ruby lasers operate in pulsed mode.</span>
-            <span class="lang-view lang-manglish">Describe the construction and working of a Ruby laser with a neat schematic and three-level energy band diagram. Explain why ruby lasers operate in pulsed mode.</span>
-            <span class="lang-view lang-ml">Describe the construction and working of a Ruby laser with a neat schematic and three-level energy band diagram. Explain why ruby lasers operate in pulsed mode.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Describe the construction and working of a Ruby laser with a neat schematic and three-level energy band diagram. Explain why ruby lasers operate in pulsed mode.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Describe the construction and working of a Ruby laser with a neat schematic and three-level energy band diagram. Explain why ruby lasers operate in pulsed mode.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Describe the construction and working of a Ruby laser with a neat schematic and three-level energy band diagram. Explain why ruby lasers operate in pulsed mode.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9610,6 +10065,21 @@ This non-equilibrium condition is known as Population Inversion. Because $E_2 > 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2021_Answer_Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9782,6 +10252,7 @@ Because the lower laser level is the ground state ($E_1$), more than $50\%$ of a
     <article class="question-card subject-physics" id="phy-q23" data-marks="7" data-title="explain the construction and four-level working of a helium-neon (he-ne) gas laser with an energy level diagram. explain the mechanism of resonant collision energy transfer and continuous-wave emission at 632.8 nm.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q23" data-duration="720" data-qid="phy-q23" data-label="PHY • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9796,9 +10267,9 @@ Because the lower laser level is the ground state ($E_1$), more than $50\%$ of a
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the construction and four-level working of a Helium-Neon (He-Ne) gas laser with an energy level diagram. Explain the mechanism of resonant collision energy transfer and continuous-wave emission at 632.8 nm.</span>
-            <span class="lang-view lang-manglish">Explain the construction and four-level working of a Helium-Neon (He-Ne) gas laser with an energy level diagram. Explain the mechanism of resonant collision energy transfer and continuous-wave emission at 632.8 nm.</span>
-            <span class="lang-view lang-ml">Explain the construction and four-level working of a Helium-Neon (He-Ne) gas laser with an energy level diagram. Explain the mechanism of resonant collision energy transfer and continuous-wave emission at 632.8 nm.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Explain the construction and four-level working of a Helium-Neon (He-Ne) gas laser with an energy level diagram. Explain the mechanism of resonant collision energy transfer and continuous-wave emission at 632.8 nm.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Explain the construction and four-level working of a Helium-Neon (He-Ne) gas laser with an energy level diagram. Explain the mechanism of resonant collision energy transfer and continuous-wave emission at 632.8 nm.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Explain the construction and four-level working of a Helium-Neon (He-Ne) gas laser with an energy level diagram. Explain the mechanism of resonant collision energy transfer and continuous-wave emission at 632.8 nm.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9822,6 +10293,21 @@ Because the lower laser level is the ground state ($E_1$), more than $50\%$ of a
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10036,6 +10522,7 @@ This is why the discharge bore must remain narrow ($2-4\text{ mm}$), ensuring fr
     <article class="question-card subject-physics" id="phy-q24" data-marks="7" data-title="explain the working principle of a semiconductor diode laser (gaas). explain how population inversion is achieved across a degenerately doped p-n junction under forward bias and how the optical cavity is formed.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q24" data-duration="720" data-qid="phy-q24" data-label="PHY • Q24 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10050,9 +10537,9 @@ This is why the discharge bore must remain narrow ($2-4\text{ mm}$), ensuring fr
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the working principle of a semiconductor diode laser (GaAs). Explain how population inversion is achieved across a degenerately doped p-n junction under forward bias and how the optical cavity is formed.</span>
-            <span class="lang-view lang-manglish">Explain the working principle of a semiconductor diode laser (GaAs). Explain how population inversion is achieved across a degenerately doped p-n junction under forward bias and how the optical cavity is formed.</span>
-            <span class="lang-view lang-ml">Explain the working principle of a semiconductor diode laser (GaAs). Explain how population inversion is achieved across a degenerately doped p-n junction under forward bias and how the optical cavity is formed.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Explain the working principle of a semiconductor diode laser (GaAs). Explain how population inversion is achieved across a degenerately doped p-n junction under forward bias and how the optical cavity is formed.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Explain the working principle of a semiconductor diode laser (GaAs). Explain how population inversion is achieved across a degenerately doped p-n junction under forward bias and how the optical cavity is formed.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Explain the working principle of a semiconductor diode laser (GaAs). Explain how population inversion is achieved across a degenerately doped p-n junction under forward bias and how the optical cavity is formed.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10076,6 +10563,21 @@ This is why the discharge bore must remain narrow ($2-4\text{ mm}$), ensuring fr
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10266,6 +10768,7 @@ emitting in the near-infrared spectrum. Heterostructure lasers (e.g., $GaAs / Al
     <article class="question-card subject-physics" id="phy-q25" data-marks="7" data-title="explain the principle of light propagation in an optical fiber by total internal reflection. derive expressions for the acceptance angle and numerical aperture of a step-index optical fiber.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q25" data-duration="720" data-qid="phy-q25" data-label="PHY • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10280,9 +10783,9 @@ emitting in the near-infrared spectrum. Heterostructure lasers (e.g., $GaAs / Al
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the principle of light propagation in an optical fiber by total internal reflection. Derive expressions for the acceptance angle and Numerical Aperture of a step-index optical fiber.</span>
-            <span class="lang-view lang-manglish">Explain the principle of light propagation in an optical fiber by total internal reflection. Derive expressions for the acceptance angle and Numerical Aperture of a step-index optical fiber.</span>
-            <span class="lang-view lang-ml">Explain the principle of light propagation in an optical fiber by total internal reflection. Derive expressions for the acceptance angle and Numerical Aperture of a step-index optical fiber.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Explain the principle of light propagation in an optical fiber by total internal reflection. Derive expressions for the acceptance angle and Numerical Aperture of a step-index optical fiber.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Explain the principle of light propagation in an optical fiber by total internal reflection. Derive expressions for the acceptance angle and Numerical Aperture of a step-index optical fiber.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Explain the principle of light propagation in an optical fiber by total internal reflection. Derive expressions for the acceptance angle and Numerical Aperture of a step-index optical fiber.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10306,6 +10809,21 @@ emitting in the near-infrared spectrum. Heterostructure lasers (e.g., $GaAs / Al
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2021_Answer_Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10556,6 +11074,7 @@ This formula demonstrates that $NA$ depends solely on the refractive indices of 
     <article class="question-card subject-physics" id="phy-q26" data-marks="7" data-title="classify optical fibers based on refractive index profile and mode of propagation. explain the fundamental attenuation mechanisms in optical fibers: absorption, rayleigh scattering, and bending losses.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-phy-q26" data-duration="720" data-qid="phy-q26" data-label="PHY • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('phy-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10570,9 +11089,9 @@ This formula demonstrates that $NA$ depends solely on the refractive indices of 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Classify optical fibers based on refractive index profile and mode of propagation. Explain the fundamental attenuation mechanisms in optical fibers: absorption, Rayleigh scattering, and bending losses.</span>
-            <span class="lang-view lang-manglish">Classify optical fibers based on refractive index profile and mode of propagation. Explain the fundamental attenuation mechanisms in optical fibers: absorption, Rayleigh scattering, and bending losses.</span>
-            <span class="lang-view lang-ml">Classify optical fibers based on refractive index profile and mode of propagation. Explain the fundamental attenuation mechanisms in optical fibers: absorption, Rayleigh scattering, and bending losses.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Classify optical fibers based on refractive index profile and mode of propagation. Explain the fundamental attenuation mechanisms in optical fibers: absorption, Rayleigh scattering, and bending losses.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Classify optical fibers based on refractive index profile and mode of propagation. Explain the fundamental attenuation mechanisms in optical fibers: absorption, Rayleigh scattering, and bending losses.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Classify optical fibers based on refractive index profile and mode of propagation. Explain the fundamental attenuation mechanisms in optical fibers: absorption, Rayleigh scattering, and bending losses.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10596,6 +11115,21 @@ This formula demonstrates that $NA$ depends solely on the refractive indices of 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (PHT100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/physics/PHT100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

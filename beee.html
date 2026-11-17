@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4366,6 +4484,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q1" data-marks="5" data-title="state and explain kirchhoff&#x27;s current law (kcl) and kirchhoff&#x27;s voltage law (kvl) with algebraic sign conventions. explain how they form the basis of mesh and nodal analysis.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q1" data-duration="720" data-qid="beee-q1" data-label="BEEE • Q1 (5M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4380,9 +4499,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and explain Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) with algebraic sign conventions. Explain how they form the basis of mesh and nodal analysis.</span>
-            <span class="lang-view lang-manglish">State and explain Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) with algebraic sign conventions. Explain how they form the basis of mesh and nodal analysis.</span>
-            <span class="lang-view lang-ml">State and explain Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) with algebraic sign conventions. Explain how they form the basis of mesh and nodal analysis.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> State and explain Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) with algebraic sign conventions. Explain how they form the basis of mesh and nodal analysis.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> State and explain Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) with algebraic sign conventions. Explain how they form the basis of mesh and nodal analysis.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> State and explain Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) with algebraic sign conventions. Explain how they form the basis of mesh and nodal analysis.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4406,6 +4525,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(a)</strong> (5 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4545,6 +4679,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q2" data-marks="7" data-title="explain nodal voltage analysis. explain the supernode concept when an ideal independent voltage source is connected between two non-reference nodes, and solve a numerical problem.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q2" data-duration="720" data-qid="beee-q2" data-label="BEEE • Q2 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4559,9 +4694,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Nodal Voltage Analysis. Explain the supernode concept when an ideal independent voltage source is connected between two non-reference nodes, and solve a numerical problem.</span>
-            <span class="lang-view lang-manglish">Explain Nodal Voltage Analysis. Explain the supernode concept when an ideal independent voltage source is connected between two non-reference nodes, and solve a numerical problem.</span>
-            <span class="lang-view lang-ml">Explain Nodal Voltage Analysis. Explain the supernode concept when an ideal independent voltage source is connected between two non-reference nodes, and solve a numerical problem.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Explain Nodal Voltage Analysis. Explain the supernode concept when an ideal independent voltage source is connected between two non-reference nodes, and solve a numerical problem.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Explain Nodal Voltage Analysis. Explain the supernode concept when an ideal independent voltage source is connected between two non-reference nodes, and solve a numerical problem.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> Explain Nodal Voltage Analysis. Explain the supernode concept when an ideal independent voltage source is connected between two non-reference nodes, and solve a numerical problem.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4585,6 +4720,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4799,6 +4949,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q3" data-marks="7" data-title="state superposition theorem. explain its conditions of applicability and limitations. find the current through the load resistor in a multi-source dc network with independent voltage and current sources.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q3" data-duration="720" data-qid="beee-q3" data-label="BEEE • Q3 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4813,9 +4964,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State Superposition Theorem. Explain its conditions of applicability and limitations. Find the current through the load resistor in a multi-source DC network with independent voltage and current sources.</span>
-            <span class="lang-view lang-manglish">State Superposition Theorem. Explain its conditions of applicability and limitations. Find the current through the load resistor in a multi-source DC network with independent voltage and current sources.</span>
-            <span class="lang-view lang-ml">State Superposition Theorem. Explain its conditions of applicability and limitations. Find the current through the load resistor in a multi-source DC network with independent voltage and current sources.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> State Superposition Theorem. Explain its conditions of applicability and limitations. Find the current through the load resistor in a multi-source DC network with independent voltage and current sources.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> State Superposition Theorem. Explain its conditions of applicability and limitations. Find the current through the load resistor in a multi-source DC network with independent voltage and current sources.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> State Superposition Theorem. Explain its conditions of applicability and limitations. Find the current through the load resistor in a multi-source DC network with independent voltage and current sources.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4839,6 +4990,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5068,6 +5234,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q4" data-marks="7" data-title="state thevenin&#x27;s and norton&#x27;s theorems and derive their dual relationship. find the thevenin and norton equivalent circuits across the detector terminals of an unbalanced bridge network.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q4" data-duration="720" data-qid="beee-q4" data-label="BEEE • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5082,9 +5249,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State Thevenin's and Norton's Theorems and derive their dual relationship. Find the Thevenin and Norton equivalent circuits across the detector terminals of an unbalanced bridge network.</span>
-            <span class="lang-view lang-manglish">State Thevenin's and Norton's Theorems and derive their dual relationship. Find the Thevenin and Norton equivalent circuits across the detector terminals of an unbalanced bridge network.</span>
-            <span class="lang-view lang-ml">State Thevenin's and Norton's Theorems and derive their dual relationship. Find the Thevenin and Norton equivalent circuits across the detector terminals of an unbalanced bridge network.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> State Thevenin's and Norton's Theorems and derive their dual relationship. Find the Thevenin and Norton equivalent circuits across the detector terminals of an unbalanced bridge network.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> State Thevenin's and Norton's Theorems and derive their dual relationship. Find the Thevenin and Norton equivalent circuits across the detector terminals of an unbalanced bridge network.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> State Thevenin's and Norton's Theorems and derive their dual relationship. Find the Thevenin and Norton equivalent circuits across the detector terminals of an unbalanced bridge network.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5108,6 +5275,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5331,6 +5513,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q5" data-marks="7" data-title="state and prove maximum power transfer theorem for a dc network. derive the expression for maximum power and show that the transmission efficiency at maximum power is 50%.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q5" data-duration="720" data-qid="beee-q5" data-label="BEEE • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5345,9 +5528,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and prove Maximum Power Transfer Theorem for a DC network. Derive the expression for maximum power and show that the transmission efficiency at maximum power is 50%.</span>
-            <span class="lang-view lang-manglish">State and prove Maximum Power Transfer Theorem for a DC network. Derive the expression for maximum power and show that the transmission efficiency at maximum power is 50%.</span>
-            <span class="lang-view lang-ml">State and prove Maximum Power Transfer Theorem for a DC network. Derive the expression for maximum power and show that the transmission efficiency at maximum power is 50%.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> State and prove Maximum Power Transfer Theorem for a DC network. Derive the expression for maximum power and show that the transmission efficiency at maximum power is 50%.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> State and prove Maximum Power Transfer Theorem for a DC network. Derive the expression for maximum power and show that the transmission efficiency at maximum power is 50%.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> State and prove Maximum Power Transfer Theorem for a DC network. Derive the expression for maximum power and show that the transmission efficiency at maximum power is 50%.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5371,6 +5554,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5611,6 +5809,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q6" data-marks="5" data-title="explain the generation of sinusoidal alternating voltage by a coil rotating in a uniform magnetic field. define instantaneous value, amplitude, time period, frequency, and phasor representation.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q6" data-duration="720" data-qid="beee-q6" data-label="BEEE • Q6 (5M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5625,9 +5824,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the generation of sinusoidal alternating voltage by a coil rotating in a uniform magnetic field. Define instantaneous value, amplitude, time period, frequency, and phasor representation.</span>
-            <span class="lang-view lang-manglish">Explain the generation of sinusoidal alternating voltage by a coil rotating in a uniform magnetic field. Define instantaneous value, amplitude, time period, frequency, and phasor representation.</span>
-            <span class="lang-view lang-ml">Explain the generation of sinusoidal alternating voltage by a coil rotating in a uniform magnetic field. Define instantaneous value, amplitude, time period, frequency, and phasor representation.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Explain the generation of sinusoidal alternating voltage by a coil rotating in a uniform magnetic field. Define instantaneous value, amplitude, time period, frequency, and phasor representation.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Explain the generation of sinusoidal alternating voltage by a coil rotating in a uniform magnetic field. Define instantaneous value, amplitude, time period, frequency, and phasor representation.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> Explain the generation of sinusoidal alternating voltage by a coil rotating in a uniform magnetic field. Define instantaneous value, amplitude, time period, frequency, and phasor representation.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5651,6 +5850,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(a)</strong> (5 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5805,6 +6019,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q7" data-marks="7" data-title="derive the mathematical expressions for the rms value, average value, form factor, and peak factor of a pure sinusoidal alternating voltage waveform.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q7" data-duration="720" data-qid="beee-q7" data-label="BEEE • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5819,9 +6034,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the mathematical expressions for the RMS value, Average value, Form Factor, and Peak Factor of a pure sinusoidal alternating voltage waveform.</span>
-            <span class="lang-view lang-manglish">Derive the mathematical expressions for the RMS value, Average value, Form Factor, and Peak Factor of a pure sinusoidal alternating voltage waveform.</span>
-            <span class="lang-view lang-ml">Derive the mathematical expressions for the RMS value, Average value, Form Factor, and Peak Factor of a pure sinusoidal alternating voltage waveform.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Derive the mathematical expressions for the RMS value, Average value, Form Factor, and Peak Factor of a pure sinusoidal alternating voltage waveform.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Derive the mathematical expressions for the RMS value, Average value, Form Factor, and Peak Factor of a pure sinusoidal alternating voltage waveform.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Derive the mathematical expressions for the RMS value, Average value, Form Factor, and Peak Factor of a pure sinusoidal alternating voltage waveform.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5845,6 +6060,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6047,6 +6277,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q8" data-marks="7" data-title="derive the expressions for impedance, current, phase angle, and power in a series r-l and series r-c circuit excited by sinusoidal ac. explain the impedance and power triangles with a numerical problem.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q8" data-duration="720" data-qid="beee-q8" data-label="BEEE • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6061,9 +6292,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the expressions for impedance, current, phase angle, and power in a series R-L and series R-C circuit excited by sinusoidal AC. Explain the impedance and power triangles with a numerical problem.</span>
-            <span class="lang-view lang-manglish">Derive the expressions for impedance, current, phase angle, and power in a series R-L and series R-C circuit excited by sinusoidal AC. Explain the impedance and power triangles with a numerical problem.</span>
-            <span class="lang-view lang-ml">Derive the expressions for impedance, current, phase angle, and power in a series R-L and series R-C circuit excited by sinusoidal AC. Explain the impedance and power triangles with a numerical problem.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Derive the expressions for impedance, current, phase angle, and power in a series R-L and series R-C circuit excited by sinusoidal AC. Explain the impedance and power triangles with a numerical problem.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Derive the expressions for impedance, current, phase angle, and power in a series R-L and series R-C circuit excited by sinusoidal AC. Explain the impedance and power triangles with a numerical problem.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Derive the expressions for impedance, current, phase angle, and power in a series R-L and series R-C circuit excited by sinusoidal AC. Explain the impedance and power triangles with a numerical problem.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6087,6 +6318,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6331,6 +6577,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q9" data-marks="7" data-title="derive the condition and expression for resonant frequency in a series r-l-c circuit. derive the expressions for quality factor (q) and half-power bandwidth (bw).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q9" data-duration="720" data-qid="beee-q9" data-label="BEEE • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6345,9 +6592,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the condition and expression for resonant frequency in a series R-L-C circuit. Derive the expressions for Quality factor (Q) and half-power bandwidth (BW).</span>
-            <span class="lang-view lang-manglish">Derive the condition and expression for resonant frequency in a series R-L-C circuit. Derive the expressions for Quality factor (Q) and half-power bandwidth (BW).</span>
-            <span class="lang-view lang-ml">Derive the condition and expression for resonant frequency in a series R-L-C circuit. Derive the expressions for Quality factor (Q) and half-power bandwidth (BW).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Derive the condition and expression for resonant frequency in a series R-L-C circuit. Derive the expressions for Quality factor (Q) and half-power bandwidth (BW).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Derive the condition and expression for resonant frequency in a series R-L-C circuit. Derive the expressions for Quality factor (Q) and half-power bandwidth (BW).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Derive the condition and expression for resonant frequency in a series R-L-C circuit. Derive the expressions for Quality factor (Q) and half-power bandwidth (BW).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6371,6 +6618,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6594,6 +6856,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q10" data-marks="7" data-title="define mmf, magnetic flux, reluctance, permeance, and flux density. compare electric and magnetic circuits in detail. explain the b-h curve and solve a series magnetic circuit with an air gap.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q10" data-duration="720" data-qid="beee-q10" data-label="BEEE • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6608,9 +6871,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define MMF, magnetic flux, reluctance, permeance, and flux density. Compare electric and magnetic circuits in detail. Explain the B-H curve and solve a series magnetic circuit with an air gap.</span>
-            <span class="lang-view lang-manglish">Define MMF, magnetic flux, reluctance, permeance, and flux density. Compare electric and magnetic circuits in detail. Explain the B-H curve and solve a series magnetic circuit with an air gap.</span>
-            <span class="lang-view lang-ml">Define MMF, magnetic flux, reluctance, permeance, and flux density. Compare electric and magnetic circuits in detail. Explain the B-H curve and solve a series magnetic circuit with an air gap.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Define MMF, magnetic flux, reluctance, permeance, and flux density. Compare electric and magnetic circuits in detail. Explain the B-H curve and solve a series magnetic circuit with an air gap.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Define MMF, magnetic flux, reluctance, permeance, and flux density. Compare electric and magnetic circuits in detail. Explain the B-H curve and solve a series magnetic circuit with an air gap.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> Define MMF, magnetic flux, reluctance, permeance, and flux density. Compare electric and magnetic circuits in detail. Explain the B-H curve and solve a series magnetic circuit with an air gap.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6634,6 +6897,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6862,6 +7140,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q11" data-marks="7" data-title="explain the construction and working principle of a single-phase transformer. derive the emf equation and the condition for maximum efficiency.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q11" data-duration="720" data-qid="beee-q11" data-label="BEEE • Q11 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6876,9 +7155,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the construction and working principle of a single-phase transformer. Derive the EMF equation and the condition for maximum efficiency.</span>
-            <span class="lang-view lang-manglish">Explain the construction and working principle of a single-phase transformer. Derive the EMF equation and the condition for maximum efficiency.</span>
-            <span class="lang-view lang-ml">Explain the construction and working principle of a single-phase transformer. Derive the EMF equation and the condition for maximum efficiency.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Explain the construction and working principle of a single-phase transformer. Derive the EMF equation and the condition for maximum efficiency.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Explain the construction and working principle of a single-phase transformer. Derive the EMF equation and the condition for maximum efficiency.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Explain the construction and working principle of a single-phase transformer. Derive the EMF equation and the condition for maximum efficiency.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6902,6 +7181,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7146,6 +7440,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q12" data-marks="7" data-title="explain the constructional details of a dc machine with a neat sketch. explain the operating principle of a dc generator and derive the generator emf equation.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q12" data-duration="720" data-qid="beee-q12" data-label="BEEE • Q12 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7160,9 +7455,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the constructional details of a DC machine with a neat sketch. Explain the operating principle of a DC generator and derive the generator EMF equation.</span>
-            <span class="lang-view lang-manglish">Explain the constructional details of a DC machine with a neat sketch. Explain the operating principle of a DC generator and derive the generator EMF equation.</span>
-            <span class="lang-view lang-ml">Explain the constructional details of a DC machine with a neat sketch. Explain the operating principle of a DC generator and derive the generator EMF equation.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Explain the constructional details of a DC machine with a neat sketch. Explain the operating principle of a DC generator and derive the generator EMF equation.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Explain the constructional details of a DC machine with a neat sketch. Explain the operating principle of a DC generator and derive the generator EMF equation.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> Explain the constructional details of a DC machine with a neat sketch. Explain the operating principle of a DC generator and derive the generator EMF equation.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7186,6 +7481,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7400,6 +7710,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q13" data-marks="7" data-title="explain the working principle of a dc motor and the physical significance of back-emf. derive the dc motor armature torque equation and speed relationship.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q13" data-duration="720" data-qid="beee-q13" data-label="BEEE • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7414,9 +7725,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the working principle of a DC motor and the physical significance of Back-EMF. Derive the DC motor armature torque equation and speed relationship.</span>
-            <span class="lang-view lang-manglish">Explain the working principle of a DC motor and the physical significance of Back-EMF. Derive the DC motor armature torque equation and speed relationship.</span>
-            <span class="lang-view lang-ml">Explain the working principle of a DC motor and the physical significance of Back-EMF. Derive the DC motor armature torque equation and speed relationship.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Explain the working principle of a DC motor and the physical significance of Back-EMF. Derive the DC motor armature torque equation and speed relationship.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Explain the working principle of a DC motor and the physical significance of Back-EMF. Derive the DC motor armature torque equation and speed relationship.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Explain the working principle of a DC motor and the physical significance of Back-EMF. Derive the DC motor armature torque equation and speed relationship.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7440,6 +7751,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7660,6 +7986,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q14" data-marks="7" data-title="derive the relationship between line and phase voltages and currents in balanced 3-phase star (y) and delta (δ) connected systems. derive the expression for total 3-phase active power.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q14" data-duration="720" data-qid="beee-q14" data-label="BEEE • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7674,9 +8001,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the relationship between line and phase voltages and currents in balanced 3-phase Star (Y) and Delta (Δ) connected systems. Derive the expression for total 3-phase active power.</span>
-            <span class="lang-view lang-manglish">Derive the relationship between line and phase voltages and currents in balanced 3-phase Star (Y) and Delta (Δ) connected systems. Derive the expression for total 3-phase active power.</span>
-            <span class="lang-view lang-ml">Derive the relationship between line and phase voltages and currents in balanced 3-phase Star (Y) and Delta (Δ) connected systems. Derive the expression for total 3-phase active power.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Derive the relationship between line and phase voltages and currents in balanced 3-phase Star (Y) and Delta (Δ) connected systems. Derive the expression for total 3-phase active power.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Derive the relationship between line and phase voltages and currents in balanced 3-phase Star (Y) and Delta (Δ) connected systems. Derive the expression for total 3-phase active power.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Derive the relationship between line and phase voltages and currents in balanced 3-phase Star (Y) and Delta (Δ) connected systems. Derive the expression for total 3-phase active power.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7700,6 +8027,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7938,6 +8280,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q15" data-marks="7" data-title="draw the schematic layout of a residential distribution board. explain the two-way control of a lamp (staircase wiring). explain pipe earthing and compare fuse, mcb, and elcb/rccb.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q15" data-duration="720" data-qid="beee-q15" data-label="BEEE • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7952,9 +8295,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw the schematic layout of a residential distribution board. Explain the two-way control of a lamp (staircase wiring). Explain pipe earthing and compare Fuse, MCB, and ELCB/RCCB.</span>
-            <span class="lang-view lang-manglish">Draw the schematic layout of a residential distribution board. Explain the two-way control of a lamp (staircase wiring). Explain pipe earthing and compare Fuse, MCB, and ELCB/RCCB.</span>
-            <span class="lang-view lang-ml">Draw the schematic layout of a residential distribution board. Explain the two-way control of a lamp (staircase wiring). Explain pipe earthing and compare Fuse, MCB, and ELCB/RCCB.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Draw the schematic layout of a residential distribution board. Explain the two-way control of a lamp (staircase wiring). Explain pipe earthing and compare Fuse, MCB, and ELCB/RCCB.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Draw the schematic layout of a residential distribution board. Explain the two-way control of a lamp (staircase wiring). Explain pipe earthing and compare Fuse, MCB, and ELCB/RCCB.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Draw the schematic layout of a residential distribution board. Explain the two-way control of a lamp (staircase wiring). Explain pipe earthing and compare Fuse, MCB, and ELCB/RCCB.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7978,6 +8321,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8185,6 +8543,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q16" data-marks="7" data-title="distinguish between intrinsic and extrinsic semiconductors. explain the formation of a pn junction, depletion layer, and barrier potential. explain forward and reverse bias v-i characteristics.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q16" data-duration="720" data-qid="beee-q16" data-label="BEEE • Q16 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8199,9 +8558,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Distinguish between intrinsic and extrinsic semiconductors. Explain the formation of a PN junction, depletion layer, and barrier potential. Explain forward and reverse bias V-I characteristics.</span>
-            <span class="lang-view lang-manglish">Distinguish between intrinsic and extrinsic semiconductors. Explain the formation of a PN junction, depletion layer, and barrier potential. Explain forward and reverse bias V-I characteristics.</span>
-            <span class="lang-view lang-ml">Distinguish between intrinsic and extrinsic semiconductors. Explain the formation of a PN junction, depletion layer, and barrier potential. Explain forward and reverse bias V-I characteristics.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Distinguish between intrinsic and extrinsic semiconductors. Explain the formation of a PN junction, depletion layer, and barrier potential. Explain forward and reverse bias V-I characteristics.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Distinguish between intrinsic and extrinsic semiconductors. Explain the formation of a PN junction, depletion layer, and barrier potential. Explain forward and reverse bias V-I characteristics.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> Distinguish between intrinsic and extrinsic semiconductors. Explain the formation of a PN junction, depletion layer, and barrier potential. Explain forward and reverse bias V-I characteristics.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8225,6 +8584,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8400,6 +8774,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q17" data-marks="7" data-title="explain the working of half-wave and full-wave bridge rectifiers with circuit diagrams and waveforms. derive expressions for v_dc, v_rms, rectification efficiency, and ripple factor. explain the role of capacitor filter.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q17" data-duration="720" data-qid="beee-q17" data-label="BEEE • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8414,9 +8789,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the working of half-wave and full-wave bridge rectifiers with circuit diagrams and waveforms. Derive expressions for V_dc, V_rms, rectification efficiency, and ripple factor. Explain the role of capacitor filter.</span>
-            <span class="lang-view lang-manglish">Explain the working of half-wave and full-wave bridge rectifiers with circuit diagrams and waveforms. Derive expressions for V_dc, V_rms, rectification efficiency, and ripple factor. Explain the role of capacitor filter.</span>
-            <span class="lang-view lang-ml">Explain the working of half-wave and full-wave bridge rectifiers with circuit diagrams and waveforms. Derive expressions for V_dc, V_rms, rectification efficiency, and ripple factor. Explain the role of capacitor filter.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Explain the working of half-wave and full-wave bridge rectifiers with circuit diagrams and waveforms. Derive expressions for V_dc, V_rms, rectification efficiency, and ripple factor. Explain the role of capacitor filter.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Explain the working of half-wave and full-wave bridge rectifiers with circuit diagrams and waveforms. Derive expressions for V_dc, V_rms, rectification efficiency, and ripple factor. Explain the role of capacitor filter.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Explain the working of half-wave and full-wave bridge rectifiers with circuit diagrams and waveforms. Derive expressions for V_dc, V_rms, rectification efficiency, and ripple factor. Explain the role of capacitor filter.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8440,6 +8815,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8657,6 +9047,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q18" data-marks="7" data-title="explain the breakdown mechanisms in a pn junction: avalanche breakdown versus zener breakdown. explain the operation of a zener diode as a shunt voltage regulator with circuit diagram and design equations.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q18" data-duration="720" data-qid="beee-q18" data-label="BEEE • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8671,9 +9062,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the breakdown mechanisms in a PN junction: Avalanche breakdown versus Zener breakdown. Explain the operation of a Zener diode as a shunt voltage regulator with circuit diagram and design equations.</span>
-            <span class="lang-view lang-manglish">Explain the breakdown mechanisms in a PN junction: Avalanche breakdown versus Zener breakdown. Explain the operation of a Zener diode as a shunt voltage regulator with circuit diagram and design equations.</span>
-            <span class="lang-view lang-ml">Explain the breakdown mechanisms in a PN junction: Avalanche breakdown versus Zener breakdown. Explain the operation of a Zener diode as a shunt voltage regulator with circuit diagram and design equations.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Explain the breakdown mechanisms in a PN junction: Avalanche breakdown versus Zener breakdown. Explain the operation of a Zener diode as a shunt voltage regulator with circuit diagram and design equations.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Explain the breakdown mechanisms in a PN junction: Avalanche breakdown versus Zener breakdown. Explain the operation of a Zener diode as a shunt voltage regulator with circuit diagram and design equations.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> Explain the breakdown mechanisms in a PN junction: Avalanche breakdown versus Zener breakdown. Explain the operation of a Zener diode as a shunt voltage regulator with circuit diagram and design equations.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8697,6 +9088,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8866,6 +9272,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q19" data-marks="7" data-title="describe the physical structure and operation of an npn bipolar junction transistor. plot and explain the common emitter (ce) input and output characteristics, identifying all operating regions. derive the relationship between α and β.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q19" data-duration="720" data-qid="beee-q19" data-label="BEEE • Q19 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8880,9 +9287,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Describe the physical structure and operation of an NPN Bipolar Junction Transistor. Plot and explain the Common Emitter (CE) input and output characteristics, identifying all operating regions. Derive the relationship between α and β.</span>
-            <span class="lang-view lang-manglish">Describe the physical structure and operation of an NPN Bipolar Junction Transistor. Plot and explain the Common Emitter (CE) input and output characteristics, identifying all operating regions. Derive the relationship between α and β.</span>
-            <span class="lang-view lang-ml">Describe the physical structure and operation of an NPN Bipolar Junction Transistor. Plot and explain the Common Emitter (CE) input and output characteristics, identifying all operating regions. Derive the relationship between α and β.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Describe the physical structure and operation of an NPN Bipolar Junction Transistor. Plot and explain the Common Emitter (CE) input and output characteristics, identifying all operating regions. Derive the relationship between α and β.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Describe the physical structure and operation of an NPN Bipolar Junction Transistor. Plot and explain the Common Emitter (CE) input and output characteristics, identifying all operating regions. Derive the relationship between α and β.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> Describe the physical structure and operation of an NPN Bipolar Junction Transistor. Plot and explain the Common Emitter (CE) input and output characteristics, identifying all operating regions. Derive the relationship between α and β.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8906,6 +9313,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9129,6 +9551,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q20" data-marks="7" data-title="explain the operation of a bjt as a digital switch with operating conditions. draw the circuit diagram of a single-stage common emitter (ce) voltage amplifier with voltage-divider biasing and explain its operation and 180° phase inversion.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q20" data-duration="720" data-qid="beee-q20" data-label="BEEE • Q20 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9143,9 +9566,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation of a BJT as a digital switch with operating conditions. Draw the circuit diagram of a single-stage Common Emitter (CE) voltage amplifier with voltage-divider biasing and explain its operation and 180° phase inversion.</span>
-            <span class="lang-view lang-manglish">Explain the operation of a BJT as a digital switch with operating conditions. Draw the circuit diagram of a single-stage Common Emitter (CE) voltage amplifier with voltage-divider biasing and explain its operation and 180° phase inversion.</span>
-            <span class="lang-view lang-ml">Explain the operation of a BJT as a digital switch with operating conditions. Draw the circuit diagram of a single-stage Common Emitter (CE) voltage amplifier with voltage-divider biasing and explain its operation and 180° phase inversion.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Explain the operation of a BJT as a digital switch with operating conditions. Draw the circuit diagram of a single-stage Common Emitter (CE) voltage amplifier with voltage-divider biasing and explain its operation and 180° phase inversion.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Explain the operation of a BJT as a digital switch with operating conditions. Draw the circuit diagram of a single-stage Common Emitter (CE) voltage amplifier with voltage-divider biasing and explain its operation and 180° phase inversion.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Explain the operation of a BJT as a digital switch with operating conditions. Draw the circuit diagram of a single-stage Common Emitter (CE) voltage amplifier with voltage-divider biasing and explain its operation and 180° phase inversion.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9169,6 +9592,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9385,6 +9823,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q21" data-marks="5" data-title="explain the internal architectural block diagram of an operational amplifier and pinout of ic 741. list ideal op-amp characteristics and explain the concepts of virtual ground and virtual short.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q21" data-duration="720" data-qid="beee-q21" data-label="BEEE • Q21 (5M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9399,9 +9838,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the internal architectural block diagram of an operational amplifier and pinout of IC 741. List ideal op-amp characteristics and explain the concepts of Virtual Ground and Virtual Short.</span>
-            <span class="lang-view lang-manglish">Explain the internal architectural block diagram of an operational amplifier and pinout of IC 741. List ideal op-amp characteristics and explain the concepts of Virtual Ground and Virtual Short.</span>
-            <span class="lang-view lang-ml">Explain the internal architectural block diagram of an operational amplifier and pinout of IC 741. List ideal op-amp characteristics and explain the concepts of Virtual Ground and Virtual Short.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Explain the internal architectural block diagram of an operational amplifier and pinout of IC 741. List ideal op-amp characteristics and explain the concepts of Virtual Ground and Virtual Short.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Explain the internal architectural block diagram of an operational amplifier and pinout of IC 741. List ideal op-amp characteristics and explain the concepts of Virtual Ground and Virtual Short.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Explain the internal architectural block diagram of an operational amplifier and pinout of IC 741. List ideal op-amp characteristics and explain the concepts of Virtual Ground and Virtual Short.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9425,6 +9864,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(a)</strong> (5 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9639,6 +10093,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q22" data-marks="7" data-title="derive the closed-loop voltage gain expressions for inverting and non-inverting op-amp configurations. explain the voltage follower (buffer) circuit and its practical application.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q22" data-duration="720" data-qid="beee-q22" data-label="BEEE • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9653,9 +10108,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the closed-loop voltage gain expressions for Inverting and Non-Inverting op-amp configurations. Explain the Voltage Follower (Buffer) circuit and its practical application.</span>
-            <span class="lang-view lang-manglish">Derive the closed-loop voltage gain expressions for Inverting and Non-Inverting op-amp configurations. Explain the Voltage Follower (Buffer) circuit and its practical application.</span>
-            <span class="lang-view lang-ml">Derive the closed-loop voltage gain expressions for Inverting and Non-Inverting op-amp configurations. Explain the Voltage Follower (Buffer) circuit and its practical application.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Derive the closed-loop voltage gain expressions for Inverting and Non-Inverting op-amp configurations. Explain the Voltage Follower (Buffer) circuit and its practical application.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Derive the closed-loop voltage gain expressions for Inverting and Non-Inverting op-amp configurations. Explain the Voltage Follower (Buffer) circuit and its practical application.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Derive the closed-loop voltage gain expressions for Inverting and Non-Inverting op-amp configurations. Explain the Voltage Follower (Buffer) circuit and its practical application.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9679,6 +10134,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9911,6 +10381,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q23" data-marks="7" data-title="explain the circuit operations and derive the output voltage expressions for an op-amp summing amplifier, difference amplifier, integrator, and differentiator.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q23" data-duration="720" data-qid="beee-q23" data-label="BEEE • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9925,9 +10396,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the circuit operations and derive the output voltage expressions for an op-amp Summing Amplifier, Difference Amplifier, Integrator, and Differentiator.</span>
-            <span class="lang-view lang-manglish">Explain the circuit operations and derive the output voltage expressions for an op-amp Summing Amplifier, Difference Amplifier, Integrator, and Differentiator.</span>
-            <span class="lang-view lang-ml">Explain the circuit operations and derive the output voltage expressions for an op-amp Summing Amplifier, Difference Amplifier, Integrator, and Differentiator.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Explain the circuit operations and derive the output voltage expressions for an op-amp Summing Amplifier, Difference Amplifier, Integrator, and Differentiator.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Explain the circuit operations and derive the output voltage expressions for an op-amp Summing Amplifier, Difference Amplifier, Integrator, and Differentiator.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Explain the circuit operations and derive the output voltage expressions for an op-amp Summing Amplifier, Difference Amplifier, Integrator, and Differentiator.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9951,6 +10422,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10207,6 +10693,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q24" data-marks="5" data-title="explain decimal, binary, octal, and hexadecimal number systems with radix conversion examples. explain 1&#x27;s and 2&#x27;s complement representations and perform binary subtraction using 2&#x27;s complement with overflow rules.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q24" data-duration="720" data-qid="beee-q24" data-label="BEEE • Q24 (5M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10221,9 +10708,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain decimal, binary, octal, and hexadecimal number systems with radix conversion examples. Explain 1's and 2's complement representations and perform binary subtraction using 2's complement with overflow rules.</span>
-            <span class="lang-view lang-manglish">Explain decimal, binary, octal, and hexadecimal number systems with radix conversion examples. Explain 1's and 2's complement representations and perform binary subtraction using 2's complement with overflow rules.</span>
-            <span class="lang-view lang-ml">Explain decimal, binary, octal, and hexadecimal number systems with radix conversion examples. Explain 1's and 2's complement representations and perform binary subtraction using 2's complement with overflow rules.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Explain decimal, binary, octal, and hexadecimal number systems with radix conversion examples. Explain 1's and 2's complement representations and perform binary subtraction using 2's complement with overflow rules.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Explain decimal, binary, octal, and hexadecimal number systems with radix conversion examples. Explain 1's and 2's complement representations and perform binary subtraction using 2's complement with overflow rules.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Explain decimal, binary, octal, and hexadecimal number systems with radix conversion examples. Explain 1's and 2's complement representations and perform binary subtraction using 2's complement with overflow rules.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10247,6 +10734,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (5 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10581,6 +11083,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q25" data-marks="7" data-title="explain basic and universal logic gates with symbols, boolean expressions, and truth tables. show how and, or, not gates are realized using only nand gates and only nor gates. state and prove de morgan&#x27;s laws.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q25" data-duration="720" data-qid="beee-q25" data-label="BEEE • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10595,9 +11098,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain basic and universal logic gates with symbols, Boolean expressions, and truth tables. Show how AND, OR, NOT gates are realized using only NAND gates and only NOR gates. State and prove De Morgan's laws.</span>
-            <span class="lang-view lang-manglish">Explain basic and universal logic gates with symbols, Boolean expressions, and truth tables. Show how AND, OR, NOT gates are realized using only NAND gates and only NOR gates. State and prove De Morgan's laws.</span>
-            <span class="lang-view lang-ml">Explain basic and universal logic gates with symbols, Boolean expressions, and truth tables. Show how AND, OR, NOT gates are realized using only NAND gates and only NOR gates. State and prove De Morgan's laws.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Explain basic and universal logic gates with symbols, Boolean expressions, and truth tables. Show how AND, OR, NOT gates are realized using only NAND gates and only NOR gates. State and prove De Morgan's laws.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Explain basic and universal logic gates with symbols, Boolean expressions, and truth tables. Show how AND, OR, NOT gates are realized using only NAND gates and only NOR gates. State and prove De Morgan's laws.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Explain basic and universal logic gates with symbols, Boolean expressions, and truth tables. Show how AND, OR, NOT gates are realized using only NAND gates and only NOR gates. State and prove De Morgan's laws.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10621,6 +11124,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10868,6 +11386,7 @@ pre, code {
     <article class="question-card subject-beee" id="beee-q26" data-marks="7" data-title="design a half adder and a full adder circuit. write their truth tables, obtain minimized boolean expressions using k-maps, and implement a full adder using two half adders and an or gate.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-beee-q26" data-duration="720" data-qid="beee-q26" data-label="BEEE • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('beee-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10882,9 +11401,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Design a Half Adder and a Full Adder circuit. Write their truth tables, obtain minimized Boolean expressions using K-maps, and implement a Full Adder using two Half Adders and an OR gate.</span>
-            <span class="lang-view lang-manglish">Design a Half Adder and a Full Adder circuit. Write their truth tables, obtain minimized Boolean expressions using K-maps, and implement a Full Adder using two Half Adders and an OR gate.</span>
-            <span class="lang-view lang-ml">Design a Half Adder and a Full Adder circuit. Write their truth tables, obtain minimized Boolean expressions using K-maps, and implement a Full Adder using two Half Adders and an OR gate.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Design a Half Adder and a Full Adder circuit. Write their truth tables, obtain minimized Boolean expressions using K-maps, and implement a Full Adder using two Half Adders and an OR gate.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Design a Half Adder and a Full Adder circuit. Write their truth tables, obtain minimized Boolean expressions using K-maps, and implement a Full Adder using two Half Adders and an OR gate.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Design a Half Adder and a Full Adder circuit. Write their truth tables, obtain minimized Boolean expressions using K-maps, and implement a Full Adder using two Half Adders and an OR gate.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10908,6 +11427,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST130)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/beee/EST130_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

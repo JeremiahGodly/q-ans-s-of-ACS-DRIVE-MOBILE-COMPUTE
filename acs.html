@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4400,6 +4518,7 @@ pre, code {
     <article class="question-card subject-acs" id="acs-q1" data-marks="3" data-title="explain the following state space concepts with appropriate mathematical expressions: (i) state, (ii) state variables, (iii) state vector, and (iv) state space.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q1" data-duration="300" data-qid="acs-q1" data-label="ACS • Q1 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4414,9 +4533,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the following state space concepts with appropriate mathematical expressions: (i) State, (ii) State variables, (iii) State vector, and (iv) State space.</span>
-            <span class="lang-view lang-manglish">State Space concepts enthokke aanu? (State, State Variables, State Vector, State Space)</span>
-            <span class="lang-view lang-ml font-ml">എന്തൊക്കെയാണ് State Space അടിസ്ഥാന ആശയങ്ങൾ? (State, State Variables, State Vector, State Space)</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Explain the following state space concepts with appropriate mathematical expressions: (i) State, (ii) State variables, (iii) State vector, and (iv) State space.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> State Space concepts enthokke aanu? (State, State Variables, State Vector, State Space)</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q1.</span> എന്തൊക്കെയാണ് State Space അടിസ്ഥാന ആശയങ്ങൾ? (State, State Variables, State Vector, State Space)</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4440,6 +4559,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> Comprehensive PYQ Collection (2019-2025) (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 1</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/ACS%20full%20pyq%20and%20answer%20keys.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic Comprehensive PYQ Collection (2019-2025) question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4743,6 +4877,7 @@ pre, code {
     <article class="question-card subject-acs" id="acs-q2" data-marks="3" data-title="what are phase variables? formulate the continuous-time state-space representation of an n-th order differential equation using phase variables.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q2" data-duration="300" data-qid="acs-q2" data-label="ACS • Q2 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4757,9 +4892,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">What are phase variables? Formulate the continuous-time state-space representation of an n-th order differential equation using phase variables.</span>
-            <span class="lang-view lang-manglish">Enthane phase variable enn ariyo? Oru n-th order differential equation engane phase variables vechu state space aakkam?</span>
-            <span class="lang-view lang-ml font-ml">എന്താണ് phase variables എന്ന് അറിയോ? ഒരു n-th order differential equation എങ്ങനെ phase variables ഉപയോഗിച്ച് state space രൂപത്തിലാക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> What are phase variables? Formulate the continuous-time state-space representation of an n-th order differential equation using phase variables.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Enthane phase variable enn ariyo? Oru n-th order differential equation engane phase variables vechu state space aakkam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q2.</span> എന്താണ് phase variables എന്ന് അറിയോ? ഒരു n-th order differential equation എങ്ങനെ phase variables ഉപയോഗിച്ച് state space രൂപത്തിലാക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4783,6 +4918,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2026 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20MAY%202026.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2026 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5052,6 +5202,7 @@ $$y(t) = \begin{bmatrix} 1 & 0 & \dots & 0 \end{bmatrix} \mathbf{x}(t)$$
     <article class="question-card subject-acs" id="acs-q3" data-marks="3" data-title="draw and explain the general block diagram representation of a continuous-time lti system described by state and output equations.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q3" data-duration="300" data-qid="acs-q3" data-label="ACS • Q3 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5066,9 +5217,9 @@ $$y(t) = \begin{bmatrix} 1 & 0 & \dots & 0 \end{bmatrix} \mathbf{x}(t)$$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw and explain the general block diagram representation of a continuous-time LTI system described by state and output equations.</span>
-            <span class="lang-view lang-manglish">LTI State-Space system-te continuous-time block diagram engane varakkam?</span>
-            <span class="lang-view lang-ml font-ml">LTI State-Space സിസ്റ്റത്തിന്റെ ബ്ലോക്ക് ഡയഗ്രം എങ്ങനെ വരയ്ക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Draw and explain the general block diagram representation of a continuous-time LTI system described by state and output equations.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> LTI State-Space system-te continuous-time block diagram engane varakkam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q3.</span> LTI State-Space സിസ്റ്റത്തിന്റെ ബ്ലോക്ക് ഡയഗ്രം എങ്ങനെ വരയ്ക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5092,6 +5243,21 @@ $$y(t) = \begin{bmatrix} 1 & 0 & \dots & 0 \end{bmatrix} \mathbf{x}(t)$$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2025 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20NOVEMBER%202025.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2025 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5334,6 +5500,7 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) \quad \text{--- [Output Equati
     <article class="question-card subject-acs" id="acs-q4" data-marks="3" data-title="show that the state space representation of a dynamic system is not unique using similarity transformations. prove that eigenvalues remain invariant.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q4" data-duration="300" data-qid="acs-q4" data-label="ACS • Q4 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5348,9 +5515,9 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) \quad \text{--- [Output Equati
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Show that the state space representation of a dynamic system is not unique using similarity transformations. Prove that eigenvalues remain invariant.</span>
-            <span class="lang-view lang-manglish">State space representation unique alla ennu engane prove cheyyam? (Similarity Transformation)</span>
-            <span class="lang-view lang-ml font-ml">സ്റ്റേറ്റ് സ്പേസ് മോഡൽ unique അല്ല എന്ന് എങ്ങനെ തെളിയിക്കാം? (Similarity Transformation)</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Show that the state space representation of a dynamic system is not unique using similarity transformations. Prove that eigenvalues remain invariant.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> State space representation unique alla ennu engane prove cheyyam? (Similarity Transformation)</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q4.</span> സ്റ്റേറ്റ് സ്പേസ് മോഡൽ unique അല്ല എന്ന് എങ്ങനെ തെളിയിക്കാം? (Similarity Transformation)</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5374,6 +5541,21 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) \quad \text{--- [Output Equati
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> April 2025 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/Advanced%20Control%20Systems%20%28April%202025%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic April 2025 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5636,8 +5818,9 @@ $$\bar{A} = P^{-1}AP, \quad \bar{B} = P^{-1}B, \quad \bar{C} = CP, \quad \bar{D}
     <article class="question-card subject-acs" id="acs-q4b" data-marks="3" data-title="derive the transfer function matrix g(s) of a continuous-time lti system from its state-space model.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4B</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q4b" data-duration="300" data-qid="acs-q4b" data-label="ACS • Q4b (3M)">
+                <div class="card-timer-widget" id="timer-acs-q4b" data-duration="300" data-qid="acs-q4b" data-label="ACS • Q4B (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q4b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
@@ -5650,9 +5833,9 @@ $$\bar{A} = P^{-1}AP, \quad \bar{B} = P^{-1}B, \quad \bar{C} = CP, \quad \bar{D}
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the transfer function matrix G(s) of a continuous-time LTI system from its state-space model.</span>
-            <span class="lang-view lang-manglish">State Space model-il ninnu Transfer Function Matrix engane derive cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">State Space മോഡലിൽ നിന്നും Transfer Function Matrix എങ്ങനെ കണ്ടുപിടിക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4B.</span> Derive the transfer function matrix G(s) of a continuous-time LTI system from its state-space model.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4B.</span> State Space model-il ninnu Transfer Function Matrix engane derive cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q4B.</span> State Space മോഡലിൽ നിന്നും Transfer Function Matrix എങ്ങനെ കണ്ടുപിടിക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5676,6 +5859,21 @@ $$\bar{A} = P^{-1}AP, \quad \bar{B} = P^{-1}B, \quad \bar{C} = CP, \quad \bar{D}
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/Advanced%20Control%20Systems%20%28November%202024%29%20Answer%20Key_1.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5974,6 +6172,7 @@ $$G(s) = \frac{C \operatorname{adj}(sI - A) B}{\det(sI - A)} + D$$
     <article class="question-card subject-acs" id="acs-q5" data-marks="7" data-title="derive the state-space model of a series rlc circuit excited by an input voltage source, selecting the inductor current and capacitor voltage as state variables.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q5" data-duration="720" data-qid="acs-q5" data-label="ACS • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5988,9 +6187,9 @@ $$G(s) = \frac{C \operatorname{adj}(sI - A) B}{\det(sI - A)} + D$$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the state-space model of a series RLC circuit excited by an input voltage source, selecting the inductor current and capacitor voltage as state variables.</span>
-            <span class="lang-view lang-manglish">Series RLC circuit-inte State-Space model engane derive cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ഒരു സീരീസ് RLC സർക്യൂട്ടിന്റെ സ്റ്റേറ്റ് സ്പേസ് മോഡൽ എങ്ങനെ ഉണ്ടാക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Derive the state-space model of a series RLC circuit excited by an input voltage source, selecting the inductor current and capacitor voltage as state variables.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Series RLC circuit-inte State-Space model engane derive cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q5.</span> ഒരു സീരീസ് RLC സർക്യൂട്ടിന്റെ സ്റ്റേറ്റ് സ്പേസ് മോഡൽ എങ്ങനെ ഉണ്ടാക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6014,6 +6213,21 @@ $$G(s) = \frac{C \operatorname{adj}(sI - A) B}{\det(sI - A)} + D$$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2026 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20MAY%202026.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2026 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6347,6 +6561,7 @@ $$A = \begin{bmatrix} -R/L & -1/L \\ 1/C & 0 \end{bmatrix}, \quad B = \begin{bma
     <article class="question-card subject-acs" id="acs-q6" data-marks="7" data-title="derive the electromechanical state-space model of an armature-controlled dc servomotor with necessary differential equations and block diagram.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q6" data-duration="720" data-qid="acs-q6" data-label="ACS • Q6 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6361,9 +6576,9 @@ $$A = \begin{bmatrix} -R/L & -1/L \\ 1/C & 0 \end{bmatrix}, \quad B = \begin{bma
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the electromechanical state-space model of an armature-controlled DC servomotor with necessary differential equations and block diagram.</span>
-            <span class="lang-view lang-manglish">Armature-Controlled DC motor-te state space equations engane derive cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ആർമേച്ചർ നിയന്ത്രിത DC മോട്ടോറിന്റെ സ്റ്റേറ്റ് സ്പേസ് സമവാക്യങ്ങൾ രൂപീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Derive the electromechanical state-space model of an armature-controlled DC servomotor with necessary differential equations and block diagram.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Armature-Controlled DC motor-te state space equations engane derive cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q6.</span> ആർമേച്ചർ നിയന്ത്രിത DC മോട്ടോറിന്റെ സ്റ്റേറ്റ് സ്പേസ് സമവാക്യങ്ങൾ രൂപീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6387,6 +6602,21 @@ $$A = \begin{bmatrix} -R/L & -1/L \\ 1/C & 0 \end{bmatrix}, \quad B = \begin{bma
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2025 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20NOVEMBER%202025.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2025 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6720,6 +6950,7 @@ where $J$ is rotor moment of inertia ($\text{kg}\cdot\text{m}^2$), $B$ is viscou
     <article class="question-card subject-acs" id="acs-q7" data-marks="7" data-title="derive the controllable canonical form and diagonal (jordan) canonical form from a given system transfer function.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q7" data-duration="720" data-qid="acs-q7" data-label="ACS • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6734,9 +6965,9 @@ where $J$ is rotor moment of inertia ($\text{kg}\cdot\text{m}^2$), $B$ is viscou
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the controllable canonical form and diagonal (Jordan) canonical form from a given system transfer function.</span>
-            <span class="lang-view lang-manglish">Controllable Canonical Form-um Diagonal (Jordan) Canonical Form-um engane derive cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">കൺട്രോളബിൾ കാനോനിക്കൽ ഫോമും ഡയഗണൽ (ജോർദാൻ) ഫോമും എങ്ങനെ കണ്ടുപിടിക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Derive the controllable canonical form and diagonal (Jordan) canonical form from a given system transfer function.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Controllable Canonical Form-um Diagonal (Jordan) Canonical Form-um engane derive cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q7.</span> കൺട്രോളബിൾ കാനോനിക്കൽ ഫോമും ഡയഗണൽ (ജോർദാൻ) ഫോമും എങ്ങനെ കണ്ടുപിടിക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6760,6 +6991,21 @@ where $J$ is rotor moment of inertia ($\text{kg}\cdot\text{m}^2$), $B$ is viscou
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> April 2025 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/Advanced%20Control%20Systems%20%28April%202025%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic April 2025 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7056,8 +7302,9 @@ $$G(s) = \frac{Y(s)}{U(s)} = \frac{b_2 s^2 + b_1 s + b_0}{s^3 + a_2 s^2 + a_1 s 
     <article class="question-card subject-acs" id="acs-q7b" data-marks="7" data-title="derive the state space equations for a field-controlled dc motor and obtain its overall transfer function.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7B</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q7b" data-duration="720" data-qid="acs-q7b" data-label="ACS • Q7b (7M)">
+                <div class="card-timer-widget" id="timer-acs-q7b" data-duration="720" data-qid="acs-q7b" data-label="ACS • Q7B (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q7b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
@@ -7070,9 +7317,9 @@ $$G(s) = \frac{Y(s)}{U(s)} = \frac{b_2 s^2 + b_1 s + b_0}{s^3 + a_2 s^2 + a_1 s 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the state space equations for a field-controlled DC motor and obtain its overall transfer function.</span>
-            <span class="lang-view lang-manglish">Field-Controlled DC Servomotor-te State-Space Model engane undakkam?</span>
-            <span class="lang-view lang-ml font-ml">ഫീൽഡ് നിയന്ത്രിത DC സെർവോമോട്ടോറിന്റെ സ്റ്റേറ്റ് സ്പേസ് മോഡൽ രൂപീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7B.</span> Derive the state space equations for a field-controlled DC motor and obtain its overall transfer function.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7B.</span> Field-Controlled DC Servomotor-te State-Space Model engane undakkam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q7B.</span> ഫീൽഡ് നിയന്ത്രിത DC സെർവോമോട്ടോറിന്റെ സ്റ്റേറ്റ് സ്പേസ് മോഡൽ രൂപീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7096,6 +7343,21 @@ $$G(s) = \frac{Y(s)}{U(s)} = \frac{b_2 s^2 + b_1 s + b_0}{s^3 + a_2 s^2 + a_1 s 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/Advanced%20Control%20Systems%20%28November%202024%29%20Answer%20Key_1.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7387,6 +7649,7 @@ $$y(t) = \begin{bmatrix} 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bma
     <article class="question-card subject-acs" id="acs-q8" data-marks="3" data-title="derive the solution of homogeneous (autonomous) continuous-time state equations using the laplace transform method.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q8" data-duration="300" data-qid="acs-q8" data-label="ACS • Q8 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7401,9 +7664,9 @@ $$y(t) = \begin{bmatrix} 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bma
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the solution of homogeneous (autonomous) continuous-time state equations using the Laplace transform method.</span>
-            <span class="lang-view lang-manglish">Autonomous state equation $\dot{\mathbf{x}} = A\mathbf{x}$-nte solution engane derive cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ഹോമോജീനിയസ് സ്റ്റേറ്റ് സമവാക്യത്തിന്റെ പരിഹാരം എങ്ങനെ കണ്ടെത്താം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Derive the solution of homogeneous (autonomous) continuous-time state equations using the Laplace transform method.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Autonomous state equation $\dot{\mathbf{x}} = A\mathbf{x}$-nte solution engane derive cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q8.</span> ഹോമോജീനിയസ് സ്റ്റേറ്റ് സമവാക്യത്തിന്റെ പരിഹാരം എങ്ങനെ കണ്ടെത്താം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7427,6 +7690,21 @@ $$y(t) = \begin{bmatrix} 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bma
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> Comprehensive PYQ Collection (2019-2025) (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 3</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/ACS%20full%20pyq%20and%20answer%20keys.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic Comprehensive PYQ Collection (2019-2025) question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7681,6 +7959,7 @@ where $\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\}$ is the <strong>Stat
     <article class="question-card subject-acs" id="acs-q9" data-marks="3" data-title="define state transition matrix. state and prove any four important properties of the state transition matrix.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q9" data-duration="300" data-qid="acs-q9" data-label="ACS • Q9 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7695,9 +7974,9 @@ where $\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\}$ is the <strong>Stat
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define state transition matrix. State and prove any four important properties of the state transition matrix.</span>
-            <span class="lang-view lang-manglish">State Transition Matrix $\Phi(t) = e^{At}$-nte 5 main properties enthokke aanu?</span>
-            <span class="lang-view lang-ml font-ml">സ്റ്റേറ്റ് ട്രാൻസിഷൻ മാട്രിക്സിന്റെ ($\Phi(t)$) പ്രധാന സവിശേഷതകൾ എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Define state transition matrix. State and prove any four important properties of the state transition matrix.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> State Transition Matrix $\Phi(t) = e^{At}$-nte 5 main properties enthokke aanu?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q9.</span> സ്റ്റേറ്റ് ട്രാൻസിഷൻ മാട്രിക്സിന്റെ ($\Phi(t)$) പ്രധാന സവിശേഷതകൾ എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7721,6 +8000,21 @@ where $\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\}$ is the <strong>Stat
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2026 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 4</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20MAY%202026.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2026 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7972,8 +8266,9 @@ where $\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\}$ is the <strong>Stat
     <article class="question-card subject-acs" id="acs-q9b" data-marks="3" data-title="derive the pulse transfer function and discrete state transition solution for a discrete-time lti state model with zero-order hold (zoh).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9B</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q9b" data-duration="300" data-qid="acs-q9b" data-label="ACS • Q9b (3M)">
+                <div class="card-timer-widget" id="timer-acs-q9b" data-duration="300" data-qid="acs-q9b" data-label="ACS • Q9B (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q9b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
@@ -7986,9 +8281,9 @@ where $\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\}$ is the <strong>Stat
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the pulse transfer function and discrete state transition solution for a discrete-time LTI state model with Zero-Order Hold (ZOH).</span>
-            <span class="lang-view lang-manglish">Discrete-Time State Space model-um Pulse Transfer Function-um engane define cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ഡിസ്ക്രീറ്റ്-ടൈം സ്റ്റേറ്റ് സ്പേസ് മോഡലും പൾസ് ട്രാൻസ്ഫർ ഫങ്ഷനും വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9B.</span> Derive the pulse transfer function and discrete state transition solution for a discrete-time LTI state model with Zero-Order Hold (ZOH).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9B.</span> Discrete-Time State Space model-um Pulse Transfer Function-um engane define cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q9B.</span> ഡിസ്ക്രീറ്റ്-ടൈം സ്റ്റേറ്റ് സ്പേസ് മോഡലും പൾസ് ട്രാൻസ്ഫർ ഫങ്ഷനും വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8012,6 +8307,21 @@ where $\Phi(t) = e^{At} = \mathcal{L}^{-1}\{(sI - A)^{-1}\}$ is the <strong>Stat
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2025 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 4</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20NOVEMBER%202025.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2025 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8259,6 +8569,7 @@ $$G(z) = \frac{\mathbf{Y}(z)}{\mathbf{U}(z)} = C(zI - G)^{-1} H + D$$</p>
     <article class="question-card subject-acs" id="acs-q10" data-marks="7" data-title="explain the computation of state transition matrix e^{at} using cayley-hamilton theorem for both distinct and repeated eigenvalues.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q10" data-duration="720" data-qid="acs-q10" data-label="ACS • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8273,9 +8584,9 @@ $$G(z) = \frac{\mathbf{Y}(z)}{\mathbf{U}(z)} = C(zI - G)^{-1} H + D$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the computation of state transition matrix e^{At} using Cayley-Hamilton theorem for both distinct and repeated eigenvalues.</span>
-            <span class="lang-view lang-manglish">Cayley-Hamilton Theorem use cheythu State Transition Matrix $e^{At}$ engane kandupidikkam?</span>
-            <span class="lang-view lang-ml font-ml">കെയ്‌ലി-ഹാമിൽട്ടൺ തിയറം ഉപയോഗിച്ച് സ്റ്റേറ്റ് ട്രാൻസിഷൻ മാട്രിക്സ് എങ്ങനെ കണക്കാക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Explain the computation of state transition matrix e^{At} using Cayley-Hamilton theorem for both distinct and repeated eigenvalues.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Cayley-Hamilton Theorem use cheythu State Transition Matrix $e^{At}$ engane kandupidikkam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q10.</span> കെയ്‌ലി-ഹാമിൽട്ടൺ തിയറം ഉപയോഗിച്ച് സ്റ്റേറ്റ് ട്രാൻസിഷൻ മാട്രിക്സ് എങ്ങനെ കണക്കാക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8299,6 +8610,21 @@ $$G(z) = \frac{\mathbf{Y}(z)}{\mathbf{U}(z)} = C(zI - G)^{-1} H + D$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/Advanced%20Control%20Systems%20%28November%202024%29%20Answer%20Key_1.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8565,6 +8891,7 @@ where $\alpha_0(t), \alpha_1(t), \dots, \alpha_{n-1}(t)$ are scalar functions of
     <article class="question-card subject-acs" id="acs-q11" data-marks="7" data-title="derive the complete solution of non-homogeneous continuous-time state equations and determine the step response expression.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q11" data-duration="720" data-qid="acs-q11" data-label="ACS • Q11 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8579,9 +8906,9 @@ where $\alpha_0(t), \alpha_1(t), \dots, \alpha_{n-1}(t)$ are scalar functions of
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the complete solution of non-homogeneous continuous-time state equations and determine the step response expression.</span>
-            <span class="lang-view lang-manglish">Non-Homogeneous State Equation $\dot{\mathbf{x}} = A\mathbf{x} + B\mathbf{u}$-nte complete solution engane derive cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">നോൺ-ഹോമോജീനിയസ് സ്റ്റേറ്റ് സമവാക്യത്തിന്റെ പൂർണ്ണ പരിഹാരം എങ്ങനെ കണ്ടെത്താം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Derive the complete solution of non-homogeneous continuous-time state equations and determine the step response expression.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Non-Homogeneous State Equation $\dot{\mathbf{x}} = A\mathbf{x} + B\mathbf{u}$-nte complete solution engane derive cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q11.</span> നോൺ-ഹോമോജീനിയസ് സ്റ്റേറ്റ് സമവാക്യത്തിന്റെ പൂർണ്ണ പരിഹാരം എങ്ങനെ കണ്ടെത്താം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8605,6 +8932,21 @@ where $\alpha_0(t), \alpha_1(t), \dots, \alpha_{n-1}(t)$ are scalar functions of
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> Comprehensive PYQ Collection (2019-2025) (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/ACS%20full%20pyq%20and%20answer%20keys.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic Comprehensive PYQ Collection (2019-2025) question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8894,6 +9236,7 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) = C e^{At}\mathbf{x}(0) + C \i
     <article class="question-card subject-acs" id="acs-q12" data-marks="3" data-title="state and explain kalman&#x27;s duality principle relating state controllability and state observability.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q12" data-duration="300" data-qid="acs-q12" data-label="ACS • Q12 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8908,9 +9251,9 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) = C e^{At}\mathbf{x}(0) + C \i
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and explain Kalman's duality principle relating state controllability and state observability.</span>
-            <span class="lang-view lang-manglish">Kalman's Duality Principle between Controllability and Observability explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">കാൽമാന്റെ ഡ്യുവാലിറ്റി തത്വം (Duality Principle) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> State and explain Kalman's duality principle relating state controllability and state observability.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Kalman's Duality Principle between Controllability and Observability explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q12.</span> കാൽമാന്റെ ഡ്യുവാലിറ്റി തത്വം (Duality Principle) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8934,6 +9277,21 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) = C e^{At}\mathbf{x}(0) + C \i
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> Comprehensive PYQ Collection (2019-2025) (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 5</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/ACS%20full%20pyq%20and%20answer%20keys.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic Comprehensive PYQ Collection (2019-2025) question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9185,6 +9543,7 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) = C e^{At}\mathbf{x}(0) + C \i
     <article class="question-card subject-acs" id="acs-q13" data-marks="3" data-title="explain gilbert&#x27;s method for determining the state controllability and state observability of an lti continuous system.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q13" data-duration="300" data-qid="acs-q13" data-label="ACS • Q13 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9199,9 +9558,9 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) = C e^{At}\mathbf{x}(0) + C \i
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Gilbert's method for determining the state controllability and state observability of an LTI continuous system.</span>
-            <span class="lang-view lang-manglish">Gilbert's Method use cheythu Controllability-um Observability-um engane test cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ഗിൽബർട്ട്സ് രീതി (Gilbert's Method) ഉപയോഗിച്ച് കൺട്രോളബിലിറ്റിയും ഒബ്സർവബിലിറ്റിയും എങ്ങനെ പരിശോധിക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Explain Gilbert's method for determining the state controllability and state observability of an LTI continuous system.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Gilbert's Method use cheythu Controllability-um Observability-um engane test cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q13.</span> ഗിൽബർട്ട്സ് രീതി (Gilbert's Method) ഉപയോഗിച്ച് കൺട്രോളബിലിറ്റിയും ഒബ്സർവബിലിറ്റിയും എങ്ങനെ പരിശോധിക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9225,6 +9584,21 @@ $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t) = C e^{At}\mathbf{x}(0) + C \i
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2026 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 6</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20MAY%202026.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2026 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9463,8 +9837,9 @@ Gilbert's method tests controllability and observability by converting the syste
     <article class="question-card subject-acs" id="acs-q13b" data-marks="3" data-title="state and explain the popov-belevitch-hautus (pbh) rank tests for testing controllability and observability.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13B</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q13b" data-duration="300" data-qid="acs-q13b" data-label="ACS • Q13b (3M)">
+                <div class="card-timer-widget" id="timer-acs-q13b" data-duration="300" data-qid="acs-q13b" data-label="ACS • Q13B (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q13b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
@@ -9477,9 +9852,9 @@ Gilbert's method tests controllability and observability by converting the syste
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and explain the Popov-Belevitch-Hautus (PBH) rank tests for testing controllability and observability.</span>
-            <span class="lang-view lang-manglish">Popov-Belevitch-Hautus (PBH) Rank Tests for Controllability and Observability explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">PBH (Popov-Belevitch-Hautus) റാങ്ക് ടെസ്റ്റുകൾ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13B.</span> State and explain the Popov-Belevitch-Hautus (PBH) rank tests for testing controllability and observability.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13B.</span> Popov-Belevitch-Hautus (PBH) Rank Tests for Controllability and Observability explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q13B.</span> PBH (Popov-Belevitch-Hautus) റാങ്ക് ടെസ്റ്റുകൾ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9503,6 +9878,21 @@ Gilbert's method tests controllability and observability by converting the syste
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2025 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 6</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20NOVEMBER%202025.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2025 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9747,6 +10137,7 @@ Gilbert's method tests controllability and observability by converting the syste
     <article class="question-card subject-acs" id="acs-q14" data-marks="7" data-title="explain the design of a state feedback controller by pole placement technique and derive ackermann&#x27;s formula.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q14" data-duration="720" data-qid="acs-q14" data-label="ACS • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9761,9 +10152,9 @@ Gilbert's method tests controllability and observability by converting the syste
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the design of a state feedback controller by pole placement technique and derive Ackermann's formula.</span>
-            <span class="lang-view lang-manglish">Pole Placement State Feedback Controller design (Ackermann's Formula) engane cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">പോൾ പ്ലേസ്‌മെന്റ് സ്റ്റേറ്റ് ഫീഡ്‌ബാക്ക് കൺട്രോളർ ഡിസൈൻ (അക്കർമാൻസ് ഫോർമുല) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Explain the design of a state feedback controller by pole placement technique and derive Ackermann's formula.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Pole Placement State Feedback Controller design (Ackermann's Formula) engane cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q14.</span> പോൾ പ്ലേസ്‌മെന്റ് സ്റ്റേറ്റ് ഫീഡ്‌ബാക്ക് കൺട്രോളർ ഡിസൈൻ (അക്കർമാൻസ് ഫോർമുല) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9787,6 +10178,21 @@ Gilbert's method tests controllability and observability by converting the syste
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/Advanced%20Control%20Systems%20%28November%202024%29%20Answer%20Key_1.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10082,6 +10488,7 @@ $$\operatorname{rank}(Q_c) = \operatorname{rank}\begin{bmatrix} B & AB & A^2 B &
     <article class="question-card subject-acs" id="acs-q15" data-marks="7" data-title="explain the design procedure of a full-order luenberger state observer and derive its error dynamics.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q15" data-duration="720" data-qid="acs-q15" data-label="ACS • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10096,9 +10503,9 @@ $$\operatorname{rank}(Q_c) = \operatorname{rank}\begin{bmatrix} B & AB & A^2 B &
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the design procedure of a full-order Luenberger state observer and derive its error dynamics.</span>
-            <span class="lang-view lang-manglish">Full-Order State Observer (Luenberger Observer) engane design cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ഫുൾ-ഓർഡർ സ്റ്റേറ്റ് ഒബ്സർവർ (Luenberger Observer) ഡിസൈൻ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Explain the design procedure of a full-order Luenberger state observer and derive its error dynamics.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Full-Order State Observer (Luenberger Observer) engane design cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q15.</span> ഫുൾ-ഓർഡർ സ്റ്റേറ്റ് ഒബ്സർവർ (Luenberger Observer) ഡിസൈൻ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10122,6 +10529,21 @@ $$\operatorname{rank}(Q_c) = \operatorname{rank}\begin{bmatrix} B & AB & A^2 B &
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> Comprehensive PYQ Collection (2019-2025) (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/ACS%20full%20pyq%20and%20answer%20keys.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic Comprehensive PYQ Collection (2019-2025) question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10446,6 +10868,7 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
     <article class="question-card subject-acs" id="acs-q16" data-marks="3" data-title="explain the common physical non-linear phenomena observed in non-linear control systems that do not occur in linear systems.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q16" data-duration="300" data-qid="acs-q16" data-label="ACS • Q16 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10460,9 +10883,9 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the common physical non-linear phenomena observed in non-linear control systems that do not occur in linear systems.</span>
-            <span class="lang-view lang-manglish">Non-Linear control systems-nte main characteristics & physical phenomena enthokke aanu?</span>
-            <span class="lang-view lang-ml font-ml">നോൺ-ലീനിയർ സിസ്റ്റങ്ങളുടെ പ്രത്യേകതകളും സവിശേഷ പ്രതിഭാസങ്ങളും എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Explain the common physical non-linear phenomena observed in non-linear control systems that do not occur in linear systems.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Non-Linear control systems-nte main characteristics & physical phenomena enthokke aanu?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q16.</span> നോൺ-ലീനിയർ സിസ്റ്റങ്ങളുടെ പ്രത്യേകതകളും സവിശേഷ പ്രതിഭാസങ്ങളും എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10486,6 +10909,21 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> Comprehensive PYQ Collection (2019-2025) (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 7</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/ACS%20full%20pyq%20and%20answer%20keys.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic Comprehensive PYQ Collection (2019-2025) question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10710,8 +11148,9 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
     <article class="question-card subject-acs" id="acs-q16b" data-marks="3" data-title="derive the describing function for an ideal relay and a relay with dead-zone non-linearity.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16B</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q16b" data-duration="300" data-qid="acs-q16b" data-label="ACS • Q16b (3M)">
+                <div class="card-timer-widget" id="timer-acs-q16b" data-duration="300" data-qid="acs-q16b" data-label="ACS • Q16B (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q16b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
@@ -10724,9 +11163,9 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the describing function for an ideal relay and a relay with dead-zone non-linearity.</span>
-            <span class="lang-view lang-manglish">Ideal Relay-udeyum Relay with Dead-Zone-nteyum Describing Function derive cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഐഡിയൽ റിലേയുടെയും ഡെഡ്-സോൺ റിലേയുടെയും ഡിസ്ക്രൈബിംഗ് ഫങ്ഷൻ കണ്ടുപിടിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16B.</span> Derive the describing function for an ideal relay and a relay with dead-zone non-linearity.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16B.</span> Ideal Relay-udeyum Relay with Dead-Zone-nteyum Describing Function derive cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q16B.</span> ഐഡിയൽ റിലേയുടെയും ഡെഡ്-സോൺ റിലേയുടെയും ഡിസ്ക്രൈബിംഗ് ഫങ്ഷൻ കണ്ടുപിടിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10750,6 +11189,21 @@ where $\hat{\mathbf{x}}(t)$ is the estimated state vector, and $L$ is the $n \ti
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2026 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 8</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20MAY%202026.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2026 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11034,6 +11488,7 @@ $$N(X) = \frac{Y_1 \angle \phi_1}{X} = \frac{A_1 + j B_1}{X}$$</p>
     <article class="question-card subject-acs" id="acs-q17" data-marks="7" data-title="derive the describing function expression n(x) for a symmetrical saturation non-linearity.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q17" data-duration="720" data-qid="acs-q17" data-label="ACS • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11048,9 +11503,9 @@ $$N(X) = \frac{Y_1 \angle \phi_1}{X} = \frac{A_1 + j B_1}{X}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the describing function expression N(X) for a symmetrical saturation non-linearity.</span>
-            <span class="lang-view lang-manglish">Symmetrical Saturation non-linearity-ude Describing Function derive cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">സിമെട്രിക്കൽ സാച്ചുറേഷൻ നോൺ-ലീനിയാരിറ്റിയുടെ ഡിസ്ക്രൈബിംഗ് ഫങ്ഷൻ സമവാക്യം കണ്ടെത്തുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Derive the describing function expression N(X) for a symmetrical saturation non-linearity.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Symmetrical Saturation non-linearity-ude Describing Function derive cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q17.</span> സിമെട്രിക്കൽ സാച്ചുറേഷൻ നോൺ-ലീനിയാരിറ്റിയുടെ ഡിസ്ക്രൈബിംഗ് ഫങ്ഷൻ സമവാക്യം കണ്ടെത്തുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11074,6 +11529,21 @@ $$N(X) = \frac{Y_1 \angle \phi_1}{X} = \frac{A_1 + j B_1}{X}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> April 2025 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/Advanced%20Control%20Systems%20%28April%202025%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic April 2025 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11393,8 +11863,9 @@ $$N(X) = k \quad \text{for } X \le S$$</p>
     <article class="question-card subject-acs" id="acs-q17b" data-marks="7" data-title="derive the describing function n(x) for a dead-zone non-linearity.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17B</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-acs-q17b" data-duration="720" data-qid="acs-q17b" data-label="ACS • Q17b (7M)">
+                <div class="card-timer-widget" id="timer-acs-q17b" data-duration="720" data-qid="acs-q17b" data-label="ACS • Q17B (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q17b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
@@ -11407,9 +11878,9 @@ $$N(X) = k \quad \text{for } X \le S$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the describing function N(X) for a dead-zone non-linearity.</span>
-            <span class="lang-view lang-manglish">Dead-Zone Non-Linearity-ude Describing Function engane derive cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ഡെഡ്-സോൺ നോൺ-ലീനിയാരിറ്റിയുടെ ഡിസ്ക്രൈബിംഗ് ഫങ്ഷൻ സമവാക്യം കണ്ടെത്തുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17B.</span> Derive the describing function N(X) for a dead-zone non-linearity.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17B.</span> Dead-Zone Non-Linearity-ude Describing Function engane derive cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q17B.</span> ഡെഡ്-സോൺ നോൺ-ലീനിയാരിറ്റിയുടെ ഡിസ്ക്രൈബിംഗ് ഫങ്ഷൻ സമവാക്യം കണ്ടെത്തുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11433,6 +11904,21 @@ $$N(X) = k \quad \text{for } X \le S$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/Advanced%20Control%20Systems%20%28November%202024%29%20Answer%20Key_1.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11702,6 +12188,7 @@ $$N(X) = 0 \quad \text{for } X \le D$$</p>
     <article class="question-card subject-acs" id="acs-q18" data-marks="7" data-title="explain how the stability and frequency of limit cycles in non-linear feedback systems are determined using describing function and nyquist criterion.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q18" data-duration="720" data-qid="acs-q18" data-label="ACS • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11716,9 +12203,9 @@ $$N(X) = 0 \quad \text{for } X \le D$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain how the stability and frequency of limit cycles in non-linear feedback systems are determined using describing function and Nyquist criterion.</span>
-            <span class="lang-view lang-manglish">Limit Cycle-nte existence-um stability-um Describing Function vechu engane kandupidikkam?</span>
-            <span class="lang-view lang-ml font-ml">ഡിസ്ക്രൈബിംഗ് ഫങ്ഷൻ ഉപയോഗിച്ച് ലിമിറ്റ് സൈക്കിളുകൾ എങ്ങനെ കണ്ടെത്താം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Explain how the stability and frequency of limit cycles in non-linear feedback systems are determined using describing function and Nyquist criterion.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Limit Cycle-nte existence-um stability-um Describing Function vechu engane kandupidikkam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q18.</span> ഡിസ്ക്രൈബിംഗ് ഫങ്ഷൻ ഉപയോഗിച്ച് ലിമിറ്റ് സൈക്കിളുകൾ എങ്ങനെ കണ്ടെത്താം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11742,6 +12229,21 @@ $$N(X) = 0 \quad \text{for } X \le D$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> Comprehensive PYQ Collection (2019-2025) (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/ACS%20full%20pyq%20and%20answer%20keys.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic Comprehensive PYQ Collection (2019-2025) question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12060,6 +12562,7 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
     <article class="question-card subject-acs" id="acs-q19" data-marks="3" data-title="explain phase plane analysis, phase trajectory construction, and classification of singular points in second-order autonomous systems.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q19" data-duration="300" data-qid="acs-q19" data-label="ACS • Q19 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12074,9 +12577,9 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain phase plane analysis, phase trajectory construction, and classification of singular points in second-order autonomous systems.</span>
-            <span class="lang-view lang-manglish">Phase Plane, Phase Trajectories, and Phase Portrait concepts explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഫേസ് പ്ലെയിൻ, ഫേസ് ട്രാജക്ടറി, ഫേസ് പോർട്രെയിറ്റ് എന്നിവ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Explain phase plane analysis, phase trajectory construction, and classification of singular points in second-order autonomous systems.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Phase Plane, Phase Trajectories, and Phase Portrait concepts explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q19.</span> ഫേസ് പ്ലെയിൻ, ഫേസ് ട്രാജക്ടറി, ഫേസ് പോർട്രെയിറ്റ് എന്നിവ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12100,6 +12603,21 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> Comprehensive PYQ Collection (2019-2025) (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 9</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/ACS%20full%20pyq%20and%20answer%20keys.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic Comprehensive PYQ Collection (2019-2025) question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12442,6 +12960,7 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
     <article class="question-card subject-acs" id="acs-q20" data-marks="3" data-title="state sylvester&#x27;s criterion for testing the positive definiteness of quadratic scalar functions v(x) = x^t p x.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-acs-q20" data-duration="300" data-qid="acs-q20" data-label="ACS • Q20 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12456,9 +12975,9 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State Sylvester's criterion for testing the positive definiteness of quadratic scalar functions V(x) = x^T P x.</span>
-            <span class="lang-view lang-manglish">Scalar Function-te Sign Definiteness-um Sylvester's Criterion-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">സൈൻ ഡെഫിനിറ്റ്നസും സിൽവെസ്റ്റേഴ്സ് മാനദണ്ഡവും (Sylvester's Criterion) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> State Sylvester's criterion for testing the positive definiteness of quadratic scalar functions V(x) = x^T P x.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Scalar Function-te Sign Definiteness-um Sylvester's Criterion-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q20.</span> സൈൻ ഡെഫിനിറ്റ്നസും സിൽവെസ്റ്റേഴ്സ് മാനദണ്ഡവും (Sylvester's Criterion) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12482,6 +13001,21 @@ $$1 + N(X) G(j\omega) = 0 \implies G(j\omega) = -\frac{1}{N(X)}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2026 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 10</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20MAY%202026.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2026 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12731,8 +13265,9 @@ $$\Delta_3 = \begin{vmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23
     <article class="question-card subject-acs" id="acs-q20b" data-marks="3" data-title="explain krasovskii&#x27;s method and variable gradient method for the construction of lyapunov functions.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20B</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-acs-q20b" data-duration="300" data-qid="acs-q20b" data-label="ACS • Q20b (3M)">
+                <div class="card-timer-widget" id="timer-acs-q20b" data-duration="300" data-qid="acs-q20b" data-label="ACS • Q20B (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q20b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
@@ -12745,9 +13280,9 @@ $$\Delta_3 = \begin{vmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Krasovskii's method and variable gradient method for the construction of Lyapunov functions.</span>
-            <span class="lang-view lang-manglish">Lyapunov function generate cheyyunna methods (Krasovskii's & Variable Gradient) explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ലയപുനോവ് ഫങ്ഷനുകൾ നിർമ്മിക്കുന്ന രീതികൾ (Krasovskii's & Variable Gradient) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20B.</span> Explain Krasovskii's method and variable gradient method for the construction of Lyapunov functions.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20B.</span> Lyapunov function generate cheyyunna methods (Krasovskii's & Variable Gradient) explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q20B.</span> ലയപുനോവ് ഫങ്ഷനുകൾ നിർമ്മിക്കുന്ന രീതികൾ (Krasovskii's & Variable Gradient) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12771,6 +13306,21 @@ $$\Delta_3 = \begin{vmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2025 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 10</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/EET401%20ADVANCED%20CONTROL%20SYSTEMS%2C%20NOVEMBER%202025.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2025 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -13026,6 +13576,7 @@ $$\Delta_3 = \begin{vmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23
     <article class="question-card subject-acs" id="acs-q21" data-marks="7" data-title="construct the phase portrait and determine the singular points of a non-linear second-order system using the method of isoclines.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q21" data-duration="720" data-qid="acs-q21" data-label="ACS • Q21 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -13040,9 +13591,9 @@ $$\Delta_3 = \begin{vmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Construct the phase portrait and determine the singular points of a non-linear second-order system using the method of isoclines.</span>
-            <span class="lang-view lang-manglish">Singular Points-nte Classification explain cheyyuka (Node, Saddle, Focus, Center).</span>
-            <span class="lang-view lang-ml font-ml">സിംഗുലർ പോയിന്റുകളുടെ വർഗ്ഗീകരണം വിശദീകരിക്കുക (Node, Saddle, Focus, Center)</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Construct the phase portrait and determine the singular points of a non-linear second-order system using the method of isoclines.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Singular Points-nte Classification explain cheyyuka (Node, Saddle, Focus, Center).</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q21.</span> സിംഗുലർ പോയിന്റുകളുടെ വർഗ്ഗീകരണം വിശദീകരിക്കുക (Node, Saddle, Focus, Center)</span>
         </h3>
         
             <div class="card-action-bar">
@@ -13066,6 +13617,21 @@ $$\Delta_3 = \begin{vmatrix} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22} & p_{23
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/Advanced%20Control%20Systems%20%28November%202024%29%20Answer%20Key_1.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -13383,6 +13949,7 @@ $$\dot{x}_1 = f_1(x_1, x_2), \quad \dot{x}_2 = f_2(x_1, x_2)$$</p>
     <article class="question-card subject-acs" id="acs-q22" data-marks="7" data-title="state and prove lyapunov&#x27;s direct method stability theorems for continuous-time autonomous lti systems using the matrix equation a^t p + p a = -q.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-acs-q22" data-duration="720" data-qid="acs-q22" data-label="ACS • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('acs-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -13397,9 +13964,9 @@ $$\dot{x}_1 = f_1(x_1, x_2), \quad \dot{x}_2 = f_2(x_1, x_2)$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and prove Lyapunov's direct method stability theorems for continuous-time autonomous LTI systems using the matrix equation A^T P + P A = -Q.</span>
-            <span class="lang-view lang-manglish">Lyapunov Direct Method-um Matrix Equation $A^T P + P A = -Q$ derivation-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ലയപുനോവിന്റെ ഡയറക്ട് രീതിയും $A^T P + P A = -Q$ സമവാക്യവും വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> State and prove Lyapunov's direct method stability theorems for continuous-time autonomous LTI systems using the matrix equation A^T P + P A = -Q.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Lyapunov Direct Method-um Matrix Equation $A^T P + P A = -Q$ derivation-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q22.</span> ലയപുനോവിന്റെ ഡയറക്ട് രീതിയും $A^T P + P A = -Q$ സമവാക്യവും വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -13423,6 +13990,21 @@ $$\dot{x}_1 = f_1(x_1, x_2), \quad \dot{x}_2 = f_2(x_1, x_2)$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> Comprehensive PYQ Collection (2019-2025) (EET401)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/acs/ACS%20full%20pyq%20and%20answer%20keys.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic Comprehensive PYQ Collection (2019-2025) question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

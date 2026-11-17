@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4451,6 +4569,7 @@ pre, code {
     <article class="question-card subject-drive" id="drive-q1" data-marks="3" data-title="draw the block diagram of a modern electric drive system and explain the functions of each constituent component.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-drive-q1" data-duration="300" data-qid="drive-q1" data-label="DRIVE • Q1 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4465,9 +4584,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw the block diagram of a modern electric drive system and explain the functions of each constituent component.</span>
-            <span class="lang-view lang-manglish">Modern Electric Drive system-il enthokke main blocks aanu ulla?</span>
-            <span class="lang-view lang-ml font-ml">ഒരു ഇലക്ട്രിക് ഡ്രൈവ് സിസ്റ്റത്തിലെ പ്രധാന ഭാഗങ്ങൾ എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Draw the block diagram of a modern electric drive system and explain the functions of each constituent component.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> Modern Electric Drive system-il enthokke main blocks aanu ulla?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q1.</span> ഒരു ഇലക്ട്രിക് ഡ്രൈവ് സിസ്റ്റത്തിലെ പ്രധാന ഭാഗങ്ങൾ എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4491,6 +4610,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 1</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4763,6 +4897,7 @@ An electric drive is an electromechanical system designed to convert electrical 
     <article class="question-card subject-drive" id="drive-q2" data-marks="3" data-title="state and explain the major advantages of electric drives over conventional mechanical and thermal drive systems in industrial motion control.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-drive-q2" data-duration="300" data-qid="drive-q2" data-label="DRIVE • Q2 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4777,9 +4912,9 @@ An electric drive is an electromechanical system designed to convert electrical 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and explain the major advantages of electric drives over conventional mechanical and thermal drive systems in industrial motion control.</span>
-            <span class="lang-view lang-manglish">Mechanical/Diesel drives-ine kaal Electric Drives-inte main advantages enthokke aanu?</span>
-            <span class="lang-view lang-ml font-ml">ഇലക്ട്രിക് ഡ്രൈവുകളുടെ പ്രധാന ഗുണങ്ങൾ എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> State and explain the major advantages of electric drives over conventional mechanical and thermal drive systems in industrial motion control.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Mechanical/Diesel drives-ine kaal Electric Drives-inte main advantages enthokke aanu?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q2.</span> ഇലക്ട്രിക് ഡ്രൈവുകളുടെ പ്രധാന ഗുണങ്ങൾ എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4803,6 +4938,21 @@ An electric drive is an electromechanical system designed to convert electrical 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5027,6 +5177,7 @@ An electric drive is an electromechanical system designed to convert electrical 
     <article class="question-card subject-drive" id="drive-q3" data-marks="3" data-title="classify industrial load torques with suitable mathematical expressions and torque-speed characteristics.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-drive-q3" data-duration="300" data-qid="drive-q3" data-label="DRIVE • Q3 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5041,9 +5192,9 @@ An electric drive is an electromechanical system designed to convert electrical 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Classify industrial load torques with suitable mathematical expressions and torque-speed characteristics.</span>
-            <span class="lang-view lang-manglish">Industrial Load Torques engane classify cheyyam? (Active vs Passive)</span>
-            <span class="lang-view lang-ml font-ml">ലോഡ് ടോർക്കുകളെ എങ്ങനെ തരംതിരിക്കാം? (Active vs Passive Torques)</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Classify industrial load torques with suitable mathematical expressions and torque-speed characteristics.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Industrial Load Torques engane classify cheyyam? (Active vs Passive)</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q3.</span> ലോഡ് ടോർക്കുകളെ എങ്ങനെ തരംതിരിക്കാം? (Active vs Passive Torques)</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5067,6 +5218,21 @@ An electric drive is an electromechanical system designed to convert electrical 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> April 2025 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28April%202025%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic April 2025 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5376,8 +5542,9 @@ Industrial load torques are classified into two broad categories based on whethe
     <article class="question-card subject-drive" id="drive-q3b" data-marks="3" data-title="explain the concept of critical speed and torsional resonance in electric drive shaft couplings.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3B</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q3b" data-duration="300" data-qid="drive-q3b" data-label="DRIVE • Q3b (3M)">
+                <div class="card-timer-widget" id="timer-drive-q3b" data-duration="300" data-qid="drive-q3b" data-label="DRIVE • Q3B (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q3b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
@@ -5390,9 +5557,9 @@ Industrial load torques are classified into two broad categories based on whethe
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the concept of critical speed and torsional resonance in electric drive shaft couplings.</span>
-            <span class="lang-view lang-manglish">Critical Speed-um Torsional Resonance-um electric drives-il enthinaanu study cheyyunnath?</span>
-            <span class="lang-view lang-ml font-ml">ക്രിട്ടിക്കൽ സ്പീഡും ടോർഷണൽ റെസൊണൻസും ഡ്രൈവുകളിൽ വരുത്തുന്ന പ്രശ്നങ്ങൾ എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3B.</span> Explain the concept of critical speed and torsional resonance in electric drive shaft couplings.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3B.</span> Critical Speed-um Torsional Resonance-um electric drives-il enthinaanu study cheyyunnath?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q3B.</span> ക്രിട്ടിക്കൽ സ്പീഡും ടോർഷണൽ റെസൊണൻസും ഡ്രൈവുകളിൽ വരുത്തുന്ന പ്രശ്നങ്ങൾ എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5416,6 +5583,21 @@ Industrial load torques are classified into two broad categories based on whethe
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5675,6 +5857,7 @@ Industrial load torques are classified into two broad categories based on whethe
     <article class="question-card subject-drive" id="drive-q4" data-marks="7" data-title="derive the fundamental dynamic torque equation governing the rotational motion of an electric motor driving a mechanical load.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q4" data-duration="720" data-qid="drive-q4" data-label="DRIVE • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5689,9 +5872,9 @@ Industrial load torques are classified into two broad categories based on whethe
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the fundamental dynamic torque equation governing the rotational motion of an electric motor driving a mechanical load.</span>
-            <span class="lang-view lang-manglish">Fundamental Dynamic Torque Equation $J \frac{d\omega_m}{dt} = T - T_L$ engane derive cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ഡൈനാമിക് ടോർക്ക് അടിസ്ഥാന സമവാക്യം ($J \frac{d\omega_m}{dt} = T - T_L$) എങ്ങനെ തെളിയിക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Derive the fundamental dynamic torque equation governing the rotational motion of an electric motor driving a mechanical load.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Fundamental Dynamic Torque Equation $J \frac{d\omega_m}{dt} = T - T_L$ engane derive cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q4.</span> ഡൈനാമിക് ടോർക്ക് അടിസ്ഥാന സമവാക്യം ($J \frac{d\omega_m}{dt} = T - T_L$) എങ്ങനെ തെളിയിക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5715,6 +5898,21 @@ Industrial load torques are classified into two broad categories based on whethe
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2022 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28December%202022%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2022 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6009,6 +6207,7 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
     <article class="question-card subject-drive" id="drive-q5" data-marks="7" data-title="explain with neat torque-speed diagrams the four-quadrant operation of an electric motor driving a hoist load.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q5" data-duration="720" data-qid="drive-q5" data-label="DRIVE • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6023,9 +6222,9 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain with neat torque-speed diagrams the four-quadrant operation of an electric motor driving a hoist load.</span>
-            <span class="lang-view lang-manglish">Hoist-nte Four-Quadrant operation detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഒരു ക്രെയിൻ/ഹോയിസ്റ്റ് ലോഡിന്റെ ഫോർ-ക്വാഡ്രന്റ് പ്രവർത്തനം വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Explain with neat torque-speed diagrams the four-quadrant operation of an electric motor driving a hoist load.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Hoist-nte Four-Quadrant operation detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q5.</span> ഒരു ക്രെയിൻ/ഹോയിസ്റ്റ് ലോഡിന്റെ ഫോർ-ക്വാഡ്രന്റ് പ്രവർത്തനം വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6049,6 +6248,21 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2021 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28May%202021%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2021 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6466,6 +6680,7 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
     <article class="question-card subject-drive" id="drive-q6" data-marks="7" data-title="derive the mathematical condition for the steady-state stability of an electric drive operating point.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q6" data-duration="720" data-qid="drive-q6" data-label="DRIVE • Q6 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6480,9 +6695,9 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the mathematical condition for the steady-state stability of an electric drive operating point.</span>
-            <span class="lang-view lang-manglish">Steady-State Stability criterion $\frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m}$ engane derive cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">സ്റ്റെഡി-സ്റ്റേറ്റ് സ്റ്റെബിലിറ്റി നിബന്ധന ($\frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m}$) എങ്ങനെ തെളിയിക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Derive the mathematical condition for the steady-state stability of an electric drive operating point.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Steady-State Stability criterion $\frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m}$ engane derive cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q6.</span> സ്റ്റെഡി-സ്റ്റേറ്റ് സ്റ്റെബിലിറ്റി നിബന്ധന ($\frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m}$) എങ്ങനെ തെളിയിക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6506,6 +6721,21 @@ where $J \frac{d\omega_m}{dt}$ represents the dynamic inertia torque ($T_{\text{
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> Reference Characteristic Schematics (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Speed%20vs%20Torque%20Characteristics%20Diagram.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic Reference Characteristic Schematics question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6794,8 +7024,9 @@ $$\frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m}$$
     <article class="question-card subject-drive" id="drive-q6b" data-marks="7" data-title="explain the thermal heating and cooling dynamics of an electric motor and discuss the determination of motor power rating for continuous and intermittent loads.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6B</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q6b" data-duration="720" data-qid="drive-q6b" data-label="DRIVE • Q6b (7M)">
+                <div class="card-timer-widget" id="timer-drive-q6b" data-duration="720" data-qid="drive-q6b" data-label="DRIVE • Q6B (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q6b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
@@ -6808,9 +7039,9 @@ $$\frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m}$$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the thermal heating and cooling dynamics of an electric motor and discuss the determination of motor power rating for continuous and intermittent loads.</span>
-            <span class="lang-view lang-manglish">Electric motor-te Thermal Heating & Cooling dynamics equation engane derive cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ഇലക്ട്രിക് മോട്ടോറിന്റെ ചൂടാകലും തണുക്കലും സംബന്ധിച്ച സമവാക്യങ്ങൾ കണ്ടെത്തുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6B.</span> Explain the thermal heating and cooling dynamics of an electric motor and discuss the determination of motor power rating for continuous and intermittent loads.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6B.</span> Electric motor-te Thermal Heating & Cooling dynamics equation engane derive cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q6B.</span> ഇലക്ട്രിക് മോട്ടോറിന്റെ ചൂടാകലും തണുക്കലും സംബന്ധിച്ച സമവാക്യങ്ങൾ കണ്ടെത്തുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6834,6 +7065,21 @@ $$\frac{dT_L}{d\omega_m} > \frac{dT}{d\omega_m}$$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7133,6 +7379,7 @@ where $\theta_0$ is initial temperature at shutdown, and $\tau_c = \frac{C}{D'}$
     <article class="question-card subject-drive" id="drive-q7" data-marks="3" data-title="compare armature voltage control and field weakening speed control methods of a dc separately excited motor drive with torque-power capabilities.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-drive-q7" data-duration="300" data-qid="drive-q7" data-label="DRIVE • Q7 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7147,9 +7394,9 @@ where $\theta_0$ is initial temperature at shutdown, and $\tau_c = \frac{C}{D'}$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare armature voltage control and field weakening speed control methods of a DC separately excited motor drive with torque-power capabilities.</span>
-            <span class="lang-view lang-manglish">DC Motor-il Armature Voltage Control-um Field Weakening Control-um compare cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ആർമേച്ചർ വോൾട്ടേജ് കൺട്രോളും ഫീൽഡ് വീക്കനിംഗ് കൺട്രോളും താരതമ്യം ചെയ്യുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Compare armature voltage control and field weakening speed control methods of a DC separately excited motor drive with torque-power capabilities.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> DC Motor-il Armature Voltage Control-um Field Weakening Control-um compare cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q7.</span> ആർമേച്ചർ വോൾട്ടേജ് കൺട്രോളും ഫീൽഡ് വീക്കനിംഗ് കൺട്രോളും താരതമ്യം ചെയ്യുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7173,6 +7420,21 @@ where $\theta_0$ is initial temperature at shutdown, and $\tau_c = \frac{C}{D'}$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 3</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7474,8 +7736,9 @@ where $\theta_0$ is initial temperature at shutdown, and $\tau_c = \frac{C}{D'}$
     <article class="question-card subject-drive" id="drive-q7b" data-marks="3" data-title="explain the operation of a three-phase semi-converter fed dc motor drive. why is regenerative braking not possible in semi-converter drives?">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7B</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q7b" data-duration="300" data-qid="drive-q7b" data-label="DRIVE • Q7b (3M)">
+                <div class="card-timer-widget" id="timer-drive-q7b" data-duration="300" data-qid="drive-q7b" data-label="DRIVE • Q7B (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q7b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
@@ -7488,9 +7751,9 @@ where $\theta_0$ is initial temperature at shutdown, and $\tau_c = \frac{C}{D'}$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation of a three-phase semi-converter fed DC motor drive. Why is regenerative braking not possible in semi-converter drives?</span>
-            <span class="lang-view lang-manglish">Three-Phase Semi-Converter Fed DC Motor Drive-inte working-um output voltage equation-um ezhuthuka.</span>
-            <span class="lang-view lang-ml font-ml">ത്രീ-ഫേസ് സെമി-കൺവെർട്ടർ DC മോട്ടോർ ഡ്രൈവിന്റെ പ്രവർത്തനവും വോൾട്ടേജ് സമവാക്യവും എഴുതുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7B.</span> Explain the operation of a three-phase semi-converter fed DC motor drive. Why is regenerative braking not possible in semi-converter drives?</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7B.</span> Three-Phase Semi-Converter Fed DC Motor Drive-inte working-um output voltage equation-um ezhuthuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q7B.</span> ത്രീ-ഫേസ് സെമി-കൺവെർട്ടർ DC മോട്ടോർ ഡ്രൈവിന്റെ പ്രവർത്തനവും വോൾട്ടേജ് സമവാക്യവും എഴുതുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7514,6 +7777,21 @@ where $\theta_0$ is initial temperature at shutdown, and $\tau_c = \frac{C}{D'}$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 4</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7752,6 +8030,7 @@ where $V_{ml} = \sqrt{3}V_m$ is the peak line-to-line voltage, and $\alpha$ is t
     <article class="question-card subject-drive" id="drive-q8" data-marks="7" data-title="explain the operation of a single-phase fully controlled rectifier fed separately excited dc motor drive and derive the speed-torque relationship for continuous conduction.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q8" data-duration="720" data-qid="drive-q8" data-label="DRIVE • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7766,9 +8045,9 @@ where $V_{ml} = \sqrt{3}V_m$ is the peak line-to-line voltage, and $\alpha$ is t
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation of a single-phase fully controlled rectifier fed separately excited DC motor drive and derive the speed-torque relationship for continuous conduction.</span>
-            <span class="lang-view lang-manglish">Single-Phase Full Converter Fed DC Motor-te operation-um waveforms-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">സിംഗിൾ-ഫേസ് ഫുൾ കൺവെർട്ടർ DC മോട്ടോർ ഡ്രൈവിന്റെ പ്രവർത്തനവും തരംഗരൂപങ്ങളും വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Explain the operation of a single-phase fully controlled rectifier fed separately excited DC motor drive and derive the speed-torque relationship for continuous conduction.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Single-Phase Full Converter Fed DC Motor-te operation-um waveforms-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q8.</span> സിംഗിൾ-ഫേസ് ഫുൾ കൺവെർട്ടർ DC മോട്ടോർ ഡ്രൈവിന്റെ പ്രവർത്തനവും തരംഗരൂപങ്ങളും വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7792,6 +8071,21 @@ where $V_{ml} = \sqrt{3}V_m$ is the peak line-to-line voltage, and $\alpha$ is t
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8120,8 +8414,9 @@ Because current $I_a$ can only flow in one direction through the thyristors ($I_
     <article class="question-card subject-drive" id="drive-q8b" data-marks="7" data-title="explain the operation of a three-phase full converter fed dc drive and compare its performance with a single-phase converter drive.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8B</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q8b" data-duration="720" data-qid="drive-q8b" data-label="DRIVE • Q8b (7M)">
+                <div class="card-timer-widget" id="timer-drive-q8b" data-duration="720" data-qid="drive-q8b" data-label="DRIVE • Q8B (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q8b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
@@ -8134,9 +8429,9 @@ Because current $I_a$ can only flow in one direction through the thyristors ($I_
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation of a three-phase full converter fed DC drive and compare its performance with a single-phase converter drive.</span>
-            <span class="lang-view lang-manglish">Three-Phase Full Converter Fed Separately Excited DC Motor-te analysis explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ത്രീ-ഫേസ് ഫുൾ കൺവെർട്ടർ DC മോട്ടോർ ഡ്രൈവിന്റെ സവിശേഷതകൾ വിശകലനം ചെയ്യുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8B.</span> Explain the operation of a three-phase full converter fed DC drive and compare its performance with a single-phase converter drive.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8B.</span> Three-Phase Full Converter Fed Separately Excited DC Motor-te analysis explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q8B.</span> ത്രീ-ഫേസ് ഫുൾ കൺവെർട്ടർ DC മോട്ടോർ ഡ്രൈവിന്റെ സവിശേഷതകൾ വിശകലനം ചെയ്യുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8160,6 +8455,21 @@ Because current $I_a$ can only flow in one direction through the thyristors ($I_
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2023 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28May%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8451,6 +8761,7 @@ $$\omega_m = \frac{\frac{3V_{ml}}{\pi}\cos\alpha}{K_b \Phi} - \frac{R_a}{(K_b \P
     <article class="question-card subject-drive" id="drive-q9" data-marks="3" data-title="explain the speed control of a separately excited dc motor using a class-a step-down chopper with neat circuit and waveform diagrams.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-drive-q9" data-duration="300" data-qid="drive-q9" data-label="DRIVE • Q9 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8465,9 +8776,9 @@ $$\omega_m = \frac{\frac{3V_{ml}}{\pi}\cos\alpha}{K_b \Phi} - \frac{R_a}{(K_b \P
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the speed control of a separately excited DC motor using a Class-A step-down chopper with neat circuit and waveform diagrams.</span>
-            <span class="lang-view lang-manglish">Class-A Step-Down Chopper use cheythu DC motor-ne motoring mode-il engane control cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ക്ലാസ്സ്-A ചോപ്പർ ഉപയോഗിച്ച് DC മോട്ടോറിന്റെ വേഗത എങ്ങനെ നിയന്ത്രിക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Explain the speed control of a separately excited DC motor using a Class-A step-down chopper with neat circuit and waveform diagrams.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Class-A Step-Down Chopper use cheythu DC motor-ne motoring mode-il engane control cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q9.</span> ക്ലാസ്സ്-A ചോപ്പർ ഉപയോഗിച്ച് DC മോട്ടോറിന്റെ വേഗത എങ്ങനെ നിയന്ത്രിക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8491,6 +8802,21 @@ $$\omega_m = \frac{\frac{3V_{ml}}{\pi}\cos\alpha}{K_b \Phi} - \frac{R_a}{(K_b \P
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 5</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8732,8 +9058,9 @@ Both average voltage $V_a \ge 0$ and current $I_a \ge 0$ are strictly positive. 
     <article class="question-card subject-drive" id="drive-q9b" data-marks="3" data-title="explain the regenerative braking control of a dc motor using a class-b step-up chopper with circuit and waveform analysis.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9B</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q9b" data-duration="300" data-qid="drive-q9b" data-label="DRIVE • Q9b (3M)">
+                <div class="card-timer-widget" id="timer-drive-q9b" data-duration="300" data-qid="drive-q9b" data-label="DRIVE • Q9B (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q9b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
@@ -8746,9 +9073,9 @@ Both average voltage $V_a \ge 0$ and current $I_a \ge 0$ are strictly positive. 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the regenerative braking control of a DC motor using a Class-B step-up chopper with circuit and waveform analysis.</span>
-            <span class="lang-view lang-manglish">Class-B Step-Up Chopper use cheythu DC motor-il Regenerative Braking engane cheyyam?</span>
-            <span class="lang-view lang-ml font-ml">ക്ലാസ്സ്-B ചോപ്പർ ഉപയോഗിച്ച് റീജനറേറ്റീവ് ബ്രേക്കിംഗ് എങ്ങനെ സാധ്യമാക്കാം?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9B.</span> Explain the regenerative braking control of a DC motor using a Class-B step-up chopper with circuit and waveform analysis.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9B.</span> Class-B Step-Up Chopper use cheythu DC motor-il Regenerative Braking engane cheyyam?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q9B.</span> ക്ലാസ്സ്-B ചോപ്പർ ഉപയോഗിച്ച് റീജനറേറ്റീവ് ബ്രേക്കിംഗ് എങ്ങനെ സാധ്യമാക്കാം?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8772,6 +9099,21 @@ Both average voltage $V_a \ge 0$ and current $I_a \ge 0$ are strictly positive. 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 6</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9007,6 +9349,7 @@ Because current flows out of the motor ($I_a < 0$) while motor voltage remains p
     <article class="question-card subject-drive" id="drive-q10" data-marks="7" data-title="explain the operation of a two-quadrant class-c chopper fed dc motor drive for motoring and regenerative braking modes.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q10" data-duration="720" data-qid="drive-q10" data-label="DRIVE • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9021,9 +9364,9 @@ Because current flows out of the motor ($I_a < 0$) while motor voltage remains p
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation of a two-quadrant Class-C chopper fed DC motor drive for motoring and regenerative braking modes.</span>
-            <span class="lang-view lang-manglish">Two-Quadrant Class-C Chopper fed DC Motor Drive-nte operation detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ക്ലാസ്സ്-C ടൂ-ക്വാഡ്രന്റ് ചോപ്പർ DC മോട്ടോർ ഡ്രൈവിന്റെ പ്രവർത്തനം വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Explain the operation of a two-quadrant Class-C chopper fed DC motor drive for motoring and regenerative braking modes.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Two-Quadrant Class-C Chopper fed DC Motor Drive-nte operation detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q10.</span> ക്ലാസ്സ്-C ടൂ-ക്വാഡ്രന്റ് ചോപ്പർ DC മോട്ടോർ ഡ്രൈവിന്റെ പ്രവർത്തനം വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9047,6 +9390,21 @@ Because current flows out of the motor ($I_a < 0$) while motor voltage remains p
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9335,8 +9693,9 @@ Class-C chopper drives are standard in battery-powered electric vehicles (EVs), 
     <article class="question-card subject-drive" id="drive-q10b" data-marks="7" data-title="explain the four-quadrant operation of a dc motor drive using a class-e h-bridge chopper.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10B</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q10b" data-duration="720" data-qid="drive-q10b" data-label="DRIVE • Q10b (7M)">
+                <div class="card-timer-widget" id="timer-drive-q10b" data-duration="720" data-qid="drive-q10b" data-label="DRIVE • Q10B (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q10b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
@@ -9349,9 +9708,9 @@ Class-C chopper drives are standard in battery-powered electric vehicles (EVs), 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the four-quadrant operation of a DC motor drive using a Class-E H-bridge chopper.</span>
-            <span class="lang-view lang-manglish">Four-Quadrant Class-E Chopper (H-Bridge) Fed DC Motor Drive-nte operation explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">എച്ച്-ബ്രിഡ്ജ് (ക്ലാസ്സ്-E) ഫോർ-ക്വാഡ്രന്റ് ചോപ്പർ DC മോട്ടോർ ഡ്രൈവ് വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10B.</span> Explain the four-quadrant operation of a DC motor drive using a Class-E H-bridge chopper.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10B.</span> Four-Quadrant Class-E Chopper (H-Bridge) Fed DC Motor Drive-nte operation explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q10B.</span> എച്ച്-ബ്രിഡ്ജ് (ക്ലാസ്സ്-E) ഫോർ-ക്വാഡ്രന്റ് ചോപ്പർ DC മോട്ടോർ ഡ്രൈവ് വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9375,6 +9734,21 @@ Class-C chopper drives are standard in battery-powered electric vehicles (EVs), 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2023 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28May%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9651,6 +10025,7 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
     <article class="question-card subject-drive" id="drive-q11" data-marks="7" data-title="draw and explain the closed-loop speed control scheme of a dc motor drive with inner current control loop and anti-windup controller.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q11" data-duration="720" data-qid="drive-q11" data-label="DRIVE • Q11 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9665,9 +10040,9 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw and explain the closed-loop speed control scheme of a DC motor drive with inner current control loop and anti-windup controller.</span>
-            <span class="lang-view lang-manglish">Inner Current Loop ulla Closed-Loop Speed Control Architecture explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഇന്നർ കറന്റ് ലൂപ്പുള്ള ക്ലോസ്ഡ്-ലൂപ്പ് സ്പീഡ് കൺട്രോൾ ആർക്കിടെക്ചർ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Draw and explain the closed-loop speed control scheme of a DC motor drive with inner current control loop and anti-windup controller.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Inner Current Loop ulla Closed-Loop Speed Control Architecture explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q11.</span> ഇന്നർ കറന്റ് ലൂപ്പുള്ള ക്ലോസ്ഡ്-ലൂപ്പ് സ്പീഡ് കൺട്രോൾ ആർക്കിടെക്ചർ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9691,6 +10066,21 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2022 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28December%202022%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2022 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10027,6 +10417,7 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
     <article class="question-card subject-drive" id="drive-q12" data-marks="3" data-title="discuss the limitations and practical application boundaries of stator voltage control method in three-phase induction motor drives.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-drive-q12" data-duration="300" data-qid="drive-q12" data-label="DRIVE • Q12 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10041,9 +10432,9 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Discuss the limitations and practical application boundaries of stator voltage control method in three-phase induction motor drives.</span>
-            <span class="lang-view lang-manglish">Induction Motor-il Stator Voltage Control-te limitations-um application boundaries-um explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഇൻഡക്ഷൻ മോട്ടോറുകളിൽ സ്റ്റേറ്റർ വോൾട്ടേജ് കൺട്രോളിന്റെ പരിമിതികൾ എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Discuss the limitations and practical application boundaries of stator voltage control method in three-phase induction motor drives.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Induction Motor-il Stator Voltage Control-te limitations-um application boundaries-um explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q12.</span> ഇൻഡക്ഷൻ മോട്ടോറുകളിൽ സ്റ്റേറ്റർ വോൾട്ടേജ് കൺട്രോളിന്റെ പരിമിതികൾ എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10067,6 +10458,21 @@ A Class-E chopper consists of four semiconductor switches ($CH_1, CH_2, CH_3, CH
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 7</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10300,8 +10706,9 @@ Strictly restricted to low-power centrifugal fan, blower, and water pump drives 
     <article class="question-card subject-drive" id="drive-q12b" data-marks="3" data-title="compare voltage source inverter (vsi) and current source inverter (csi) fed induction motor drives.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12B</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q12b" data-duration="300" data-qid="drive-q12b" data-label="DRIVE • Q12b (3M)">
+                <div class="card-timer-widget" id="timer-drive-q12b" data-duration="300" data-qid="drive-q12b" data-label="DRIVE • Q12B (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q12b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
@@ -10314,9 +10721,9 @@ Strictly restricted to low-power centrifugal fan, blower, and water pump drives 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare Voltage Source Inverter (VSI) and Current Source Inverter (CSI) fed induction motor drives.</span>
-            <span class="lang-view lang-manglish">Voltage Source Inverter (VSI) drives-um Current Source Inverter (CSI) drives-um compare cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">വോൾട്ടേജ് സോഴ്സ് ഇൻവെർട്ടറും (VSI) കറന്റ് സോഴ്സ് ഇൻവെർട്ടറും (CSI) തമ്മിലുള്ള വ്യത്യാസങ്ങൾ എന്തൊക്കെയാണ്?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12B.</span> Compare Voltage Source Inverter (VSI) and Current Source Inverter (CSI) fed induction motor drives.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12B.</span> Voltage Source Inverter (VSI) drives-um Current Source Inverter (CSI) drives-um compare cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q12B.</span> വോൾട്ടേജ് സോഴ്സ് ഇൻവെർട്ടറും (VSI) കറന്റ് സോഴ്സ് ഇൻവെർട്ടറും (CSI) തമ്മിലുള്ള വ്യത്യാസങ്ങൾ എന്തൊക്കെയാണ്?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10340,6 +10747,21 @@ Strictly restricted to low-power centrifugal fan, blower, and water pump drives 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 8</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10657,6 +11079,7 @@ Strictly restricted to low-power centrifugal fan, blower, and water pump drives 
     <article class="question-card subject-drive" id="drive-q13" data-marks="7" data-title="explain the principle and complete mathematical theory of constant v/f speed control of a three-phase induction motor drive.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q13" data-duration="720" data-qid="drive-q13" data-label="DRIVE • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10671,9 +11094,9 @@ Strictly restricted to low-power centrifugal fan, blower, and water pump drives 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the principle and complete mathematical theory of constant V/f speed control of a three-phase induction motor drive.</span>
-            <span class="lang-view lang-manglish">Induction Motor-te Constant V/f Speed Control theory and derivation detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">കോൺസ്റ്റന്റ് V/f ഇൻഡക്ഷൻ മോട്ടോർ സ്പീഡ് കൺട്രോൾ തത്വവും സമവാക്യങ്ങളും വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Explain the principle and complete mathematical theory of constant V/f speed control of a three-phase induction motor drive.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Induction Motor-te Constant V/f Speed Control theory and derivation detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q13.</span> കോൺസ്റ്റന്റ് V/f ഇൻഡക്ഷൻ മോട്ടോർ സ്പീഡ് കൺട്രോൾ തത്വവും സമവാക്യങ്ങളും വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10697,6 +11120,21 @@ Strictly restricted to low-power centrifugal fan, blower, and water pump drives 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10974,6 +11412,7 @@ Since $\frac{V}{f}$ is held constant, the maximum breakdown torque $T_{\text{max
     <article class="question-card subject-drive" id="drive-q14" data-marks="7" data-title="explain static rotor resistance control of a wound-rotor induction motor using a diode bridge rectifier and chopper.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q14" data-duration="720" data-qid="drive-q14" data-label="DRIVE • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10988,9 +11427,9 @@ Since $\frac{V}{f}$ is held constant, the maximum breakdown torque $T_{\text{max
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain static rotor resistance control of a wound-rotor induction motor using a diode bridge rectifier and chopper.</span>
-            <span class="lang-view lang-manglish">Wound-Rotor Induction Motor-il Chopper-controlled Static Rotor Resistance Speed Control engane work cheyyunnu?</span>
-            <span class="lang-view lang-ml font-ml">സ്റ്റാറ്റിക് റോട്ടർ റെസിസ്റ്റൻസ് ചോപ്പർ സ്പീഡ് കൺട്രോൾ വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Explain static rotor resistance control of a wound-rotor induction motor using a diode bridge rectifier and chopper.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Wound-Rotor Induction Motor-il Chopper-controlled Static Rotor Resistance Speed Control engane work cheyyunnu?</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q14.</span> സ്റ്റാറ്റിക് റോട്ടർ റെസിസ്റ്റൻസ് ചോപ്പർ സ്പീഡ് കൺട്രോൾ വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11014,6 +11453,21 @@ Since $\frac{V}{f}$ is held constant, the maximum breakdown torque $T_{\text{max
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2023 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28May%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11287,8 +11741,9 @@ where $R_2$ is the internal rotor winding resistance per phase.</p>
     <article class="question-card subject-drive" id="drive-q14b" data-marks="7" data-title="explain the working principle of slip power recovery schemes. compare static kramer drive with static scherbius drive.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14B</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
-                <div class="card-timer-widget" id="timer-drive-q14b" data-duration="720" data-qid="drive-q14b" data-label="DRIVE • Q14b (7M)">
+                <div class="card-timer-widget" id="timer-drive-q14b" data-duration="720" data-qid="drive-q14b" data-label="DRIVE • Q14B (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q14b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">12:00</span>
@@ -11301,9 +11756,9 @@ where $R_2$ is the internal rotor winding resistance per phase.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the working principle of slip power recovery schemes. Compare Static Kramer drive with Static Scherbius drive.</span>
-            <span class="lang-view lang-manglish">Slip Power Recovery Schemes: Static Kramer vs Static Scherbius systems compare cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">സ്ലിപ്പ് പവർ റിക്കവറി സ്കീമുകൾ: സ്റ്റാറ്റിക് ക്രാമറും ഷെർബിയസും താരതമ്യം ചെയ്യുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14B.</span> Explain the working principle of slip power recovery schemes. Compare Static Kramer drive with Static Scherbius drive.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14B.</span> Slip Power Recovery Schemes: Static Kramer vs Static Scherbius systems compare cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q14B.</span> സ്ലിപ്പ് പവർ റിക്കവറി സ്കീമുകൾ: സ്റ്റാറ്റിക് ക്രാമറും ഷെർബിയസും താരതമ്യം ചെയ്യുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11327,6 +11782,21 @@ where $R_2$ is the internal rotor winding resistance per phase.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2022 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28December%202022%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2022 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11686,6 +12156,7 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
     <article class="question-card subject-drive" id="drive-q15" data-marks="3" data-title="distinguish between true synchronous mode and self-controlled mode of inverter-fed synchronous motor drives.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-drive-q15" data-duration="300" data-qid="drive-q15" data-label="DRIVE • Q15 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11700,9 +12171,9 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Distinguish between true synchronous mode and self-controlled mode of inverter-fed synchronous motor drives.</span>
-            <span class="lang-view lang-manglish">Synchronous Motor-il True Synchronous Mode-um Self-Controlled Mode-um compare cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ട്രൂ സിൻക്രണസ് മോഡും സെൽഫ്-കൺട്രോൾഡ് മോഡും താരതമ്യം ചെയ്യുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Distinguish between true synchronous mode and self-controlled mode of inverter-fed synchronous motor drives.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Synchronous Motor-il True Synchronous Mode-um Self-Controlled Mode-um compare cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q15.</span> ട്രൂ സിൻക്രണസ് മോഡും സെൽഫ്-കൺട്രോൾഡ് മോഡും താരതമ്യം ചെയ്യുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11726,6 +12197,21 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> November 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 9</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28November%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic November 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12025,8 +12511,9 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
     <article class="question-card subject-drive" id="drive-q15b" data-marks="3" data-title="explain the operation of a load-commutated inverter (lci) fed synchronous motor drive at leading power factor.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15B</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
-                <div class="card-timer-widget" id="timer-drive-q15b" data-duration="300" data-qid="drive-q15b" data-label="DRIVE • Q15b (3M)">
+                <div class="card-timer-widget" id="timer-drive-q15b" data-duration="300" data-qid="drive-q15b" data-label="DRIVE • Q15B (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q15b')" title="Start exam practice countdown with rhythmic pendulum tick sound">
                     <span class="timer-icon">⏱️</span>
                     <span class="timer-display">05:00</span>
@@ -12039,9 +12526,9 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation of a Load-Commutated Inverter (LCI) fed synchronous motor drive at leading power factor.</span>
-            <span class="lang-view lang-manglish">Load-Commutated Inverter (LCI) Fed Synchronous Motor Drive-inte working detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ലോഡ്-കമ്മ്യൂട്ടേറ്റഡ് ഇൻവെർട്ടർ (LCI) സിൻക്രണസ് മോട്ടോർ ഡ്രൈവ് വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15B.</span> Explain the operation of a Load-Commutated Inverter (LCI) fed synchronous motor drive at leading power factor.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15B.</span> Load-Commutated Inverter (LCI) Fed Synchronous Motor Drive-inte working detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q15B.</span> ലോഡ്-കമ്മ്യൂട്ടേറ്റഡ് ഇൻവെർട്ടർ (LCI) സിൻക്രണസ് മോട്ടോർ ഡ്രൈവ് വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12065,6 +12552,21 @@ In conventional rotor resistance control, slip power $P_{\text{slip}} = s \cdot 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2024 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 10</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28May%202024%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2024 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12319,6 +12821,7 @@ A Load-Commutated Inverter (LCI) drive powers a wound-field synchronous motor us
     <article class="question-card subject-drive" id="drive-q16" data-marks="7" data-title="derive clarke and park coordinate reference frame transformations from three-phase stationary (a-b-c) to rotating (d-q) reference frame.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q16" data-duration="720" data-qid="drive-q16" data-label="DRIVE • Q16 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12333,9 +12836,9 @@ A Load-Commutated Inverter (LCI) drive powers a wound-field synchronous motor us
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive Clarke and Park coordinate reference frame transformations from three-phase stationary (a-b-c) to rotating (d-q) reference frame.</span>
-            <span class="lang-view lang-manglish">Clarke ($abc \to \alpha\beta$) and Park ($\alpha\beta \to dq$) Reference Frame Transformations derive cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ക്ലാർക്ക്, പാർക്ക് റഫറൻസ് ഫ്രെയിം ട്രാൻസ്ഫോർമേഷനുകൾ തെളിയിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Derive Clarke and Park coordinate reference frame transformations from three-phase stationary (a-b-c) to rotating (d-q) reference frame.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Clarke ($abc \to \alpha\beta$) and Park ($\alpha\beta \to dq$) Reference Frame Transformations derive cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q16.</span> ക്ലാർക്ക്, പാർക്ക് റഫറൻസ് ഫ്രെയിം ട്രാൻസ്ഫോർമേഷനുകൾ തെളിയിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12359,6 +12862,21 @@ A Load-Commutated Inverter (LCI) drive powers a wound-field synchronous motor us
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28December%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12621,6 +13139,7 @@ This complete decoupling is the foundation of Vector Control (FOC).</p>
     <article class="question-card subject-drive" id="drive-q17" data-marks="7" data-title="explain the principle of space vector pulse width modulation (svpwm). derive sector dwell times and explain switching sequence.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q17" data-duration="720" data-qid="drive-q17" data-label="DRIVE • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12635,9 +13154,9 @@ This complete decoupling is the foundation of Vector Control (FOC).</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the principle of Space Vector Pulse Width Modulation (SVPWM). Derive sector dwell times and explain switching sequence.</span>
-            <span class="lang-view lang-manglish">Space Vector PWM (SVPWM): Principles, 6 Sectors, and Switching Dwell Times detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">സ്പേസ് വെക്ടർ പിഡബ്ല്യുഎം (SVPWM) തത്വങ്ങളും സ്വിച്ചിംഗ് സമയങ്ങളും വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Explain the principle of Space Vector Pulse Width Modulation (SVPWM). Derive sector dwell times and explain switching sequence.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Space Vector PWM (SVPWM): Principles, 6 Sectors, and Switching Dwell Times detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q17.</span> സ്പേസ് വെക്ടർ പിഡബ്ല്യുഎം (SVPWM) തത്വങ്ങളും സ്വിച്ചിംഗ് സമയങ്ങളും വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12661,6 +13180,21 @@ This complete decoupling is the foundation of Vector Control (FOC).</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> May 2023 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28May%202023%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic May 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12927,6 +13461,7 @@ The zero time $T_0$ is divided equally between $V_0(000)$ and $V_7(111)$ using a
     <article class="question-card subject-drive" id="drive-q18" data-marks="7" data-title="explain the principle of field-oriented control (vector control) of a three-phase induction motor drive with block diagram.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-drive-q18" data-duration="720" data-qid="drive-q18" data-label="DRIVE • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('drive-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12941,9 +13476,9 @@ The zero time $T_0$ is divided equally between $V_0(000)$ and $V_7(111)$ using a
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the principle of Field-Oriented Control (Vector Control) of a three-phase induction motor drive with block diagram.</span>
-            <span class="lang-view lang-manglish">Three-Phase Induction Motor-te Field-Oriented Control (FOC / Vector Control) detail aayi explain cheyyuka.</span>
-            <span class="lang-view lang-ml font-ml">ഇൻഡക്ഷൻ മോട്ടോറിന്റെ ഫീൽഡ്-ഓറിയന്റഡ് കൺട്രോൾ (വെക്ടർ കൺട്രോൾ) വിശദീകരിക്കുക</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Explain the principle of Field-Oriented Control (Vector Control) of a three-phase induction motor drive with block diagram.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Three-Phase Induction Motor-te Field-Oriented Control (FOC / Vector Control) detail aayi explain cheyyuka.</span>
+            <span class="lang-view lang-ml font-ml"><span class="qnum-prefix">Q18.</span> ഇൻഡക്ഷൻ മോട്ടോറിന്റെ ഫീൽഡ്-ഓറിയന്റഡ് കൺട്രോൾ (വെക്ടർ കൺട്രോൾ) വിശദീകരിക്കുക</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12967,6 +13502,21 @@ The zero time $T_0$ is divided equally between $V_0(000)$ and $V_7(111)$ using a
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2022 University Exam (EET413)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/drive/Electric%20Drives%20%28December%202022%29%20Answer%20Key.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2022 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

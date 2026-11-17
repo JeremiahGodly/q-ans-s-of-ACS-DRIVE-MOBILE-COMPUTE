@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4332,6 +4450,7 @@ pre, code {
     <article class="question-card subject-lcs" id="lcs-q1" data-marks="3" data-title="compare open loop and closed loop control systems. derive the expressions for the sensitivity of closed-loop system transfer function with respect to forward path gain g(s) and feedback path gain h(s).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lcs-q1" data-duration="300" data-qid="lcs-q1" data-label="LCS • Q1 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4346,9 +4465,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare open loop and closed loop control systems. Derive the expressions for the sensitivity of closed-loop system transfer function with respect to forward path gain G(s) and feedback path gain H(s).</span>
-            <span class="lang-view lang-manglish">Compare open loop and closed loop control systems. Derive the expressions for the sensitivity of closed-loop system transfer function with respect to forward path gain G(s) and feedback path gain H(s).</span>
-            <span class="lang-view lang-ml">Compare open loop and closed loop control systems. Derive the expressions for the sensitivity of closed-loop system transfer function with respect to forward path gain G(s) and feedback path gain H(s).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Compare open loop and closed loop control systems. Derive the expressions for the sensitivity of closed-loop system transfer function with respect to forward path gain G(s) and feedback path gain H(s).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> Compare open loop and closed loop control systems. Derive the expressions for the sensitivity of closed-loop system transfer function with respect to forward path gain G(s) and feedback path gain H(s).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> Compare open loop and closed loop control systems. Derive the expressions for the sensitivity of closed-loop system transfer function with respect to forward path gain G(s) and feedback path gain H(s).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4372,6 +4491,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 1</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4517,6 +4651,7 @@ When the open-loop gain is large, $|S^T_H| \approx 1$. This derivation demonstra
     <article class="question-card subject-lcs" id="lcs-q2" data-marks="3" data-title="explain force-voltage and force-current analogies for translational mechanical systems. formulate the governing differential equations and provide the comprehensive analogy conversion table.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lcs-q2" data-duration="300" data-qid="lcs-q2" data-label="LCS • Q2 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4531,9 +4666,9 @@ When the open-loop gain is large, $|S^T_H| \approx 1$. This derivation demonstra
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Force-Voltage and Force-Current analogies for translational mechanical systems. Formulate the governing differential equations and provide the comprehensive analogy conversion table.</span>
-            <span class="lang-view lang-manglish">Explain Force-Voltage and Force-Current analogies for translational mechanical systems. Formulate the governing differential equations and provide the comprehensive analogy conversion table.</span>
-            <span class="lang-view lang-ml">Explain Force-Voltage and Force-Current analogies for translational mechanical systems. Formulate the governing differential equations and provide the comprehensive analogy conversion table.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Explain Force-Voltage and Force-Current analogies for translational mechanical systems. Formulate the governing differential equations and provide the comprehensive analogy conversion table.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Explain Force-Voltage and Force-Current analogies for translational mechanical systems. Formulate the governing differential equations and provide the comprehensive analogy conversion table.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> Explain Force-Voltage and Force-Current analogies for translational mechanical systems. Formulate the governing differential equations and provide the comprehensive analogy conversion table.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4557,6 +4692,21 @@ When the open-loop gain is large, $|S^T_H| \approx 1$. This derivation demonstra
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4729,6 +4879,7 @@ $$K \longleftrightarrow \frac{1}{L} \quad (\text{Spring Constant } \longleftrigh
     <article class="question-card subject-lcs" id="lcs-q3" data-marks="7" data-title="derive the mathematical model and the transfer functions x1(s)/f(s) and x2(s)/f(s) for a two-mass translational mechanical system with springs, dampers, and an external driving force applied to mass m1.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q3" data-duration="720" data-qid="lcs-q3" data-label="LCS • Q3 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4743,9 +4894,9 @@ $$K \longleftrightarrow \frac{1}{L} \quad (\text{Spring Constant } \longleftrigh
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the mathematical model and the transfer functions X1(s)/F(s) and X2(s)/F(s) for a two-mass translational mechanical system with springs, dampers, and an external driving force applied to mass M1.</span>
-            <span class="lang-view lang-manglish">Derive the mathematical model and the transfer functions X1(s)/F(s) and X2(s)/F(s) for a two-mass translational mechanical system with springs, dampers, and an external driving force applied to mass M1.</span>
-            <span class="lang-view lang-ml">Derive the mathematical model and the transfer functions X1(s)/F(s) and X2(s)/F(s) for a two-mass translational mechanical system with springs, dampers, and an external driving force applied to mass M1.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Derive the mathematical model and the transfer functions X1(s)/F(s) and X2(s)/F(s) for a two-mass translational mechanical system with springs, dampers, and an external driving force applied to mass M1.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Derive the mathematical model and the transfer functions X1(s)/F(s) and X2(s)/F(s) for a two-mass translational mechanical system with springs, dampers, and an external driving force applied to mass M1.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> Derive the mathematical model and the transfer functions X1(s)/F(s) and X2(s)/F(s) for a two-mass translational mechanical system with springs, dampers, and an external driving force applied to mass M1.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4769,6 +4920,21 @@ $$K \longleftrightarrow \frac{1}{L} \quad (\text{Spring Constant } \longleftrigh
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4992,6 +5158,7 @@ These transfer functions clearly reveal that the poles of the system are determi
     <article class="question-card subject-lcs" id="lcs-q4" data-marks="7" data-title="state the fundamental rules of block diagram algebra. step-by-step, reduce a multi-loop control system block diagram with multiple feedback paths to obtain its overall closed-loop transfer function c(s)/r(s).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q4" data-duration="720" data-qid="lcs-q4" data-label="LCS • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5006,9 +5173,9 @@ These transfer functions clearly reveal that the poles of the system are determi
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State the fundamental rules of block diagram algebra. Step-by-step, reduce a multi-loop control system block diagram with multiple feedback paths to obtain its overall closed-loop transfer function C(s)/R(s).</span>
-            <span class="lang-view lang-manglish">State the fundamental rules of block diagram algebra. Step-by-step, reduce a multi-loop control system block diagram with multiple feedback paths to obtain its overall closed-loop transfer function C(s)/R(s).</span>
-            <span class="lang-view lang-ml">State the fundamental rules of block diagram algebra. Step-by-step, reduce a multi-loop control system block diagram with multiple feedback paths to obtain its overall closed-loop transfer function C(s)/R(s).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> State the fundamental rules of block diagram algebra. Step-by-step, reduce a multi-loop control system block diagram with multiple feedback paths to obtain its overall closed-loop transfer function C(s)/R(s).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> State the fundamental rules of block diagram algebra. Step-by-step, reduce a multi-loop control system block diagram with multiple feedback paths to obtain its overall closed-loop transfer function C(s)/R(s).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> State the fundamental rules of block diagram algebra. Step-by-step, reduce a multi-loop control system block diagram with multiple feedback paths to obtain its overall closed-loop transfer function C(s)/R(s).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5032,6 +5199,21 @@ These transfer functions clearly reveal that the poles of the system are determi
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5261,6 +5443,7 @@ This explicit final expression gives the closed-loop transfer function of the co
     <article class="question-card subject-lcs" id="lcs-q5" data-marks="7" data-title="define the terms related to signal flow graphs and state mason&#x27;s gain formula. using mason&#x27;s formula, determine the overall transfer function c(s)/r(s) of a given multi-loop control system.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q5" data-duration="720" data-qid="lcs-q5" data-label="LCS • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5275,9 +5458,9 @@ This explicit final expression gives the closed-loop transfer function of the co
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define the terms related to Signal Flow Graphs and state Mason's Gain Formula. Using Mason's formula, determine the overall transfer function C(s)/R(s) of a given multi-loop control system.</span>
-            <span class="lang-view lang-manglish">Define the terms related to Signal Flow Graphs and state Mason's Gain Formula. Using Mason's formula, determine the overall transfer function C(s)/R(s) of a given multi-loop control system.</span>
-            <span class="lang-view lang-ml">Define the terms related to Signal Flow Graphs and state Mason's Gain Formula. Using Mason's formula, determine the overall transfer function C(s)/R(s) of a given multi-loop control system.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Define the terms related to Signal Flow Graphs and state Mason's Gain Formula. Using Mason's formula, determine the overall transfer function C(s)/R(s) of a given multi-loop control system.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Define the terms related to Signal Flow Graphs and state Mason's Gain Formula. Using Mason's formula, determine the overall transfer function C(s)/R(s) of a given multi-loop control system.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> Define the terms related to Signal Flow Graphs and state Mason's Gain Formula. Using Mason's formula, determine the overall transfer function C(s)/R(s) of a given multi-loop control system.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5301,6 +5484,21 @@ This explicit final expression gives the closed-loop transfer function of the co
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5640,6 +5838,7 @@ This shows how Mason's Gain formula evaluates the transfer function of complex f
     <article class="question-card subject-lcs" id="lcs-q6" data-marks="3" data-title="define standard test signals used in control system analysis with their mathematical expressions. derive the response of a first-order system to a unit step input and explain the significance of time constant.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lcs-q6" data-duration="300" data-qid="lcs-q6" data-label="LCS • Q6 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5654,9 +5853,9 @@ This shows how Mason's Gain formula evaluates the transfer function of complex f
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define standard test signals used in control system analysis with their mathematical expressions. Derive the response of a first-order system to a unit step input and explain the significance of time constant.</span>
-            <span class="lang-view lang-manglish">Define standard test signals used in control system analysis with their mathematical expressions. Derive the response of a first-order system to a unit step input and explain the significance of time constant.</span>
-            <span class="lang-view lang-ml">Define standard test signals used in control system analysis with their mathematical expressions. Derive the response of a first-order system to a unit step input and explain the significance of time constant.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Define standard test signals used in control system analysis with their mathematical expressions. Derive the response of a first-order system to a unit step input and explain the significance of time constant.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Define standard test signals used in control system analysis with their mathematical expressions. Derive the response of a first-order system to a unit step input and explain the significance of time constant.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> Define standard test signals used in control system analysis with their mathematical expressions. Derive the response of a first-order system to a unit step input and explain the significance of time constant.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5680,6 +5879,21 @@ This shows how Mason's Gain formula evaluates the transfer function of complex f
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 3</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5864,6 +6078,7 @@ This geometric property proves that if the system were to maintain its initial r
     <article class="question-card subject-lcs" id="lcs-q7" data-marks="7" data-title="derive the mathematical expression for the unit step response of an underdamped second-order control system in the time domain.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q7" data-duration="720" data-qid="lcs-q7" data-label="LCS • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5878,9 +6093,9 @@ This geometric property proves that if the system were to maintain its initial r
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the mathematical expression for the unit step response of an underdamped second-order control system in the time domain.</span>
-            <span class="lang-view lang-manglish">Derive the mathematical expression for the unit step response of an underdamped second-order control system in the time domain.</span>
-            <span class="lang-view lang-ml">Derive the mathematical expression for the unit step response of an underdamped second-order control system in the time domain.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Derive the mathematical expression for the unit step response of an underdamped second-order control system in the time domain.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Derive the mathematical expression for the unit step response of an underdamped second-order control system in the time domain.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Derive the mathematical expression for the unit step response of an underdamped second-order control system in the time domain.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5904,6 +6119,21 @@ This geometric property proves that if the system were to maintain its initial r
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6118,6 +6348,7 @@ This fundamental result reveals that the transient response consists of a consta
     <article class="question-card subject-lcs" id="lcs-q8" data-marks="7" data-title="derive the mathematical formulas for time domain specifications of a second-order underdamped system: delay time (td), rise time (tr), peak time (tp), maximum percent overshoot (mp), and settling time (ts).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q8" data-duration="720" data-qid="lcs-q8" data-label="LCS • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6132,9 +6363,9 @@ This fundamental result reveals that the transient response consists of a consta
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the mathematical formulas for time domain specifications of a second-order underdamped system: delay time (td), rise time (tr), peak time (tp), maximum percent overshoot (Mp), and settling time (ts).</span>
-            <span class="lang-view lang-manglish">Derive the mathematical formulas for time domain specifications of a second-order underdamped system: delay time (td), rise time (tr), peak time (tp), maximum percent overshoot (Mp), and settling time (ts).</span>
-            <span class="lang-view lang-ml">Derive the mathematical formulas for time domain specifications of a second-order underdamped system: delay time (td), rise time (tr), peak time (tp), maximum percent overshoot (Mp), and settling time (ts).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Derive the mathematical formulas for time domain specifications of a second-order underdamped system: delay time (td), rise time (tr), peak time (tp), maximum percent overshoot (Mp), and settling time (ts).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Derive the mathematical formulas for time domain specifications of a second-order underdamped system: delay time (td), rise time (tr), peak time (tp), maximum percent overshoot (Mp), and settling time (ts).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Derive the mathematical formulas for time domain specifications of a second-order underdamped system: delay time (td), rise time (tr), peak time (tp), maximum percent overshoot (Mp), and settling time (ts).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6158,6 +6389,21 @@ This fundamental result reveals that the transient response consists of a consta
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6396,6 +6642,7 @@ where $\tau = \frac{1}{\zeta \omega_n}$ is the effective transient time constant
     <article class="question-card subject-lcs" id="lcs-q9" data-marks="3" data-title="define steady-state error and derive its expression using the final value theorem. define static error constants (kp, kv, ka) and tabulate steady-state errors for type 0, type 1, and type 2 systems.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lcs-q9" data-duration="300" data-qid="lcs-q9" data-label="LCS • Q9 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6410,9 +6657,9 @@ where $\tau = \frac{1}{\zeta \omega_n}$ is the effective transient time constant
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define steady-state error and derive its expression using the final value theorem. Define static error constants (Kp, Kv, Ka) and tabulate steady-state errors for Type 0, Type 1, and Type 2 systems.</span>
-            <span class="lang-view lang-manglish">Define steady-state error and derive its expression using the final value theorem. Define static error constants (Kp, Kv, Ka) and tabulate steady-state errors for Type 0, Type 1, and Type 2 systems.</span>
-            <span class="lang-view lang-ml">Define steady-state error and derive its expression using the final value theorem. Define static error constants (Kp, Kv, Ka) and tabulate steady-state errors for Type 0, Type 1, and Type 2 systems.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Define steady-state error and derive its expression using the final value theorem. Define static error constants (Kp, Kv, Ka) and tabulate steady-state errors for Type 0, Type 1, and Type 2 systems.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Define steady-state error and derive its expression using the final value theorem. Define static error constants (Kp, Kv, Ka) and tabulate steady-state errors for Type 0, Type 1, and Type 2 systems.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Define steady-state error and derive its expression using the final value theorem. Define static error constants (Kp, Kv, Ka) and tabulate steady-state errors for Type 0, Type 1, and Type 2 systems.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6436,6 +6683,21 @@ where $\tau = \frac{1}{\zeta \omega_n}$ is the effective transient time constant
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 4</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6638,6 +6900,7 @@ $$G(s)H(s) = \frac{K (1 + sT_a)(1 + sT_b)\dots}{s^N (1 + sT_1)(1 + sT_2)\dots}$$
     <article class="question-card subject-lcs" id="lcs-q10" data-marks="7" data-title="explain the characteristics and operating principles of p, pi, pd, and pid controllers. discuss their effects on steady-state error, damping, stability, and transient response.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q10" data-duration="720" data-qid="lcs-q10" data-label="LCS • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6652,9 +6915,9 @@ $$G(s)H(s) = \frac{K (1 + sT_a)(1 + sT_b)\dots}{s^N (1 + sT_1)(1 + sT_2)\dots}$$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the characteristics and operating principles of P, PI, PD, and PID controllers. Discuss their effects on steady-state error, damping, stability, and transient response.</span>
-            <span class="lang-view lang-manglish">Explain the characteristics and operating principles of P, PI, PD, and PID controllers. Discuss their effects on steady-state error, damping, stability, and transient response.</span>
-            <span class="lang-view lang-ml">Explain the characteristics and operating principles of P, PI, PD, and PID controllers. Discuss their effects on steady-state error, damping, stability, and transient response.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Explain the characteristics and operating principles of P, PI, PD, and PID controllers. Discuss their effects on steady-state error, damping, stability, and transient response.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Explain the characteristics and operating principles of P, PI, PD, and PID controllers. Discuss their effects on steady-state error, damping, stability, and transient response.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> Explain the characteristics and operating principles of P, PI, PD, and PID controllers. Discuss their effects on steady-state error, damping, stability, and transient response.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6678,6 +6941,21 @@ $$G(s)H(s) = \frac{K (1 + sT_a)(1 + sT_b)\dots}{s^N (1 + sT_1)(1 + sT_2)\dots}$$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6873,6 +7151,7 @@ $$G_c(s) = K_p + \frac{K_i}{s} + K_d s = \frac{K_d s^2 + K_p s + K_i}{s} = \frac
     <article class="question-card subject-lcs" id="lcs-q11" data-marks="3" data-title="explain the concept of bibo stability in linear systems. state the necessary and sufficient condition for stability based on impulse response and discuss the relation between s-plane pole locations and stability.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lcs-q11" data-duration="300" data-qid="lcs-q11" data-label="LCS • Q11 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6887,9 +7166,9 @@ $$G_c(s) = K_p + \frac{K_i}{s} + K_d s = \frac{K_d s^2 + K_p s + K_i}{s} = \frac
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the concept of BIBO stability in linear systems. State the necessary and sufficient condition for stability based on impulse response and discuss the relation between s-plane pole locations and stability.</span>
-            <span class="lang-view lang-manglish">Explain the concept of BIBO stability in linear systems. State the necessary and sufficient condition for stability based on impulse response and discuss the relation between s-plane pole locations and stability.</span>
-            <span class="lang-view lang-ml">Explain the concept of BIBO stability in linear systems. State the necessary and sufficient condition for stability based on impulse response and discuss the relation between s-plane pole locations and stability.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Explain the concept of BIBO stability in linear systems. State the necessary and sufficient condition for stability based on impulse response and discuss the relation between s-plane pole locations and stability.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Explain the concept of BIBO stability in linear systems. State the necessary and sufficient condition for stability based on impulse response and discuss the relation between s-plane pole locations and stability.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Explain the concept of BIBO stability in linear systems. State the necessary and sufficient condition for stability based on impulse response and discuss the relation between s-plane pole locations and stability.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6913,6 +7192,21 @@ $$G_c(s) = K_p + \frac{K_i}{s} + K_d s = \frac{K_d s^2 + K_p s + K_i}{s} = \frac
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 5</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7058,6 +7352,7 @@ This condition represents the necessary and sufficient mathematical criterion fo
     <article class="question-card subject-lcs" id="lcs-q12" data-marks="7" data-title="state the routh-hurwitz stability criterion. explain how special case 1 (first element in a row is zero while others are non-zero) is resolved using the epsilon method with a complete worked example.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q12" data-duration="720" data-qid="lcs-q12" data-label="LCS • Q12 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7072,9 +7367,9 @@ This condition represents the necessary and sufficient mathematical criterion fo
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State the Routh-Hurwitz stability criterion. Explain how Special Case 1 (first element in a row is zero while others are non-zero) is resolved using the epsilon method with a complete worked example.</span>
-            <span class="lang-view lang-manglish">State the Routh-Hurwitz stability criterion. Explain how Special Case 1 (first element in a row is zero while others are non-zero) is resolved using the epsilon method with a complete worked example.</span>
-            <span class="lang-view lang-ml">State the Routh-Hurwitz stability criterion. Explain how Special Case 1 (first element in a row is zero while others are non-zero) is resolved using the epsilon method with a complete worked example.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> State the Routh-Hurwitz stability criterion. Explain how Special Case 1 (first element in a row is zero while others are non-zero) is resolved using the epsilon method with a complete worked example.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> State the Routh-Hurwitz stability criterion. Explain how Special Case 1 (first element in a row is zero while others are non-zero) is resolved using the epsilon method with a complete worked example.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> State the Routh-Hurwitz stability criterion. Explain how Special Case 1 (first element in a row is zero while others are non-zero) is resolved using the epsilon method with a complete worked example.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7098,6 +7393,21 @@ This condition represents the necessary and sufficient mathematical criterion fo
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7393,6 +7703,7 @@ Because there are two sign changes in the first column of the Routh array, exact
     <article class="question-card subject-lcs" id="lcs-q13" data-marks="7" data-title="explain special case 2 of the routh array when an entire row becomes zero. describe the construction of the auxiliary polynomial and determine the range of gain k and frequency of sustained oscillations for a fourth-order system.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q13" data-duration="720" data-qid="lcs-q13" data-label="LCS • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7407,9 +7718,9 @@ Because there are two sign changes in the first column of the Routh array, exact
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Special Case 2 of the Routh array when an entire row becomes zero. Describe the construction of the auxiliary polynomial and determine the range of gain K and frequency of sustained oscillations for a fourth-order system.</span>
-            <span class="lang-view lang-manglish">Explain Special Case 2 of the Routh array when an entire row becomes zero. Describe the construction of the auxiliary polynomial and determine the range of gain K and frequency of sustained oscillations for a fourth-order system.</span>
-            <span class="lang-view lang-ml">Explain Special Case 2 of the Routh array when an entire row becomes zero. Describe the construction of the auxiliary polynomial and determine the range of gain K and frequency of sustained oscillations for a fourth-order system.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Explain Special Case 2 of the Routh array when an entire row becomes zero. Describe the construction of the auxiliary polynomial and determine the range of gain K and frequency of sustained oscillations for a fourth-order system.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Explain Special Case 2 of the Routh array when an entire row becomes zero. Describe the construction of the auxiliary polynomial and determine the range of gain K and frequency of sustained oscillations for a fourth-order system.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Explain Special Case 2 of the Routh array when an entire row becomes zero. Describe the construction of the auxiliary polynomial and determine the range of gain K and frequency of sustained oscillations for a fourth-order system.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7433,6 +7744,21 @@ Because there are two sign changes in the first column of the Routh array, exact
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7719,6 +8045,7 @@ This comprehensive calculation demonstrates how Special Case 2 determines exact 
     <article class="question-card subject-lcs" id="lcs-q14" data-marks="7" data-title="explain the angle and magnitude conditions of the root locus technique. state and explain the eight essential procedural rules for the construction of a complete root locus diagram.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q14" data-duration="720" data-qid="lcs-q14" data-label="LCS • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7733,9 +8060,9 @@ This comprehensive calculation demonstrates how Special Case 2 determines exact 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the angle and magnitude conditions of the Root Locus technique. State and explain the eight essential procedural rules for the construction of a complete root locus diagram.</span>
-            <span class="lang-view lang-manglish">Explain the angle and magnitude conditions of the Root Locus technique. State and explain the eight essential procedural rules for the construction of a complete root locus diagram.</span>
-            <span class="lang-view lang-ml">Explain the angle and magnitude conditions of the Root Locus technique. State and explain the eight essential procedural rules for the construction of a complete root locus diagram.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Explain the angle and magnitude conditions of the Root Locus technique. State and explain the eight essential procedural rules for the construction of a complete root locus diagram.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Explain the angle and magnitude conditions of the Root Locus technique. State and explain the eight essential procedural rules for the construction of a complete root locus diagram.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Explain the angle and magnitude conditions of the Root Locus technique. State and explain the eight essential procedural rules for the construction of a complete root locus diagram.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7759,6 +8086,21 @@ This comprehensive calculation demonstrates how Special Case 2 determines exact 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7967,6 +8309,7 @@ The points where the root locus crosses the $j\omega$-axis into the unstable rig
     <article class="question-card subject-lcs" id="lcs-q15" data-marks="7" data-title="sketch the root locus for a unity feedback control system with open loop transfer function g(s) = k / [s(s+2)(s+4)]. calculate centroid, asymptotes, breakaway points, imaginary axis crossings, and range of k for stability.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q15" data-duration="720" data-qid="lcs-q15" data-label="LCS • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7981,9 +8324,9 @@ The points where the root locus crosses the $j\omega$-axis into the unstable rig
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Sketch the root locus for a unity feedback control system with open loop transfer function G(s) = K / [s(s+2)(s+4)]. Calculate centroid, asymptotes, breakaway points, imaginary axis crossings, and range of K for stability.</span>
-            <span class="lang-view lang-manglish">Sketch the root locus for a unity feedback control system with open loop transfer function G(s) = K / [s(s+2)(s+4)]. Calculate centroid, asymptotes, breakaway points, imaginary axis crossings, and range of K for stability.</span>
-            <span class="lang-view lang-ml">Sketch the root locus for a unity feedback control system with open loop transfer function G(s) = K / [s(s+2)(s+4)]. Calculate centroid, asymptotes, breakaway points, imaginary axis crossings, and range of K for stability.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Sketch the root locus for a unity feedback control system with open loop transfer function G(s) = K / [s(s+2)(s+4)]. Calculate centroid, asymptotes, breakaway points, imaginary axis crossings, and range of K for stability.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Sketch the root locus for a unity feedback control system with open loop transfer function G(s) = K / [s(s+2)(s+4)]. Calculate centroid, asymptotes, breakaway points, imaginary axis crossings, and range of K for stability.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Sketch the root locus for a unity feedback control system with open loop transfer function G(s) = K / [s(s+2)(s+4)]. Calculate centroid, asymptotes, breakaway points, imaginary axis crossings, and range of K for stability.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8007,6 +8350,21 @@ The points where the root locus crosses the $j\omega$-axis into the unstable rig
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8304,6 +8662,7 @@ Thus, the root locus crosses the imaginary axis into the right half plane at $s 
     <article class="question-card subject-lcs" id="lcs-q16" data-marks="3" data-title="define the frequency domain specifications: resonant peak (mr), resonant frequency (wr), and bandwidth (wb) for a second-order system. derive their expressions and correlate them with time-domain specifications.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lcs-q16" data-duration="300" data-qid="lcs-q16" data-label="LCS • Q16 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8318,9 +8677,9 @@ Thus, the root locus crosses the imaginary axis into the right half plane at $s 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define the frequency domain specifications: resonant peak (Mr), resonant frequency (wr), and bandwidth (wb) for a second-order system. Derive their expressions and correlate them with time-domain specifications.</span>
-            <span class="lang-view lang-manglish">Define the frequency domain specifications: resonant peak (Mr), resonant frequency (wr), and bandwidth (wb) for a second-order system. Derive their expressions and correlate them with time-domain specifications.</span>
-            <span class="lang-view lang-ml">Define the frequency domain specifications: resonant peak (Mr), resonant frequency (wr), and bandwidth (wb) for a second-order system. Derive their expressions and correlate them with time-domain specifications.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Define the frequency domain specifications: resonant peak (Mr), resonant frequency (wr), and bandwidth (wb) for a second-order system. Derive their expressions and correlate them with time-domain specifications.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Define the frequency domain specifications: resonant peak (Mr), resonant frequency (wr), and bandwidth (wb) for a second-order system. Derive their expressions and correlate them with time-domain specifications.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> Define the frequency domain specifications: resonant peak (Mr), resonant frequency (wr), and bandwidth (wb) for a second-order system. Derive their expressions and correlate them with time-domain specifications.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8344,6 +8703,21 @@ Thus, the root locus crosses the imaginary axis into the right half plane at $s 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 7</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8543,6 +8917,7 @@ $$\omega_b = \omega_n \left[ (1 - 2\zeta^2) + \sqrt{4\zeta^4 - 4\zeta^2 + 2} \ri
     <article class="question-card subject-lcs" id="lcs-q17" data-marks="7" data-title="explain the construction of bode magnitude and phase plots. describe the asymptotic magnitude slopes and corner frequency characteristics for standard transfer function factors.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q17" data-duration="720" data-qid="lcs-q17" data-label="LCS • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8557,9 +8932,9 @@ $$\omega_b = \omega_n \left[ (1 - 2\zeta^2) + \sqrt{4\zeta^4 - 4\zeta^2 + 2} \ri
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the construction of Bode magnitude and phase plots. Describe the asymptotic magnitude slopes and corner frequency characteristics for standard transfer function factors.</span>
-            <span class="lang-view lang-manglish">Explain the construction of Bode magnitude and phase plots. Describe the asymptotic magnitude slopes and corner frequency characteristics for standard transfer function factors.</span>
-            <span class="lang-view lang-ml">Explain the construction of Bode magnitude and phase plots. Describe the asymptotic magnitude slopes and corner frequency characteristics for standard transfer function factors.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Explain the construction of Bode magnitude and phase plots. Describe the asymptotic magnitude slopes and corner frequency characteristics for standard transfer function factors.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Explain the construction of Bode magnitude and phase plots. Describe the asymptotic magnitude slopes and corner frequency characteristics for standard transfer function factors.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Explain the construction of Bode magnitude and phase plots. Describe the asymptotic magnitude slopes and corner frequency characteristics for standard transfer function factors.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8583,6 +8958,21 @@ $$\omega_b = \omega_n \left[ (1 - 2\zeta^2) + \sqrt{4\zeta^4 - 4\zeta^2 + 2} \ri
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8791,6 +9181,7 @@ Step 5: Tabulate phase angles $\phi(\omega) = -N(90^\circ) + \tan^{-1}(\omega T_
     <article class="question-card subject-lcs" id="lcs-q18" data-marks="7" data-title="define gain crossover frequency, phase crossover frequency, gain margin, and phase margin from bode plots. state the criteria for closed-loop stability and solve a complete numerical problem.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q18" data-duration="720" data-qid="lcs-q18" data-label="LCS • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8805,9 +9196,9 @@ Step 5: Tabulate phase angles $\phi(\omega) = -N(90^\circ) + \tan^{-1}(\omega T_
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define Gain Crossover Frequency, Phase Crossover Frequency, Gain Margin, and Phase Margin from Bode plots. State the criteria for closed-loop stability and solve a complete numerical problem.</span>
-            <span class="lang-view lang-manglish">Define Gain Crossover Frequency, Phase Crossover Frequency, Gain Margin, and Phase Margin from Bode plots. State the criteria for closed-loop stability and solve a complete numerical problem.</span>
-            <span class="lang-view lang-ml">Define Gain Crossover Frequency, Phase Crossover Frequency, Gain Margin, and Phase Margin from Bode plots. State the criteria for closed-loop stability and solve a complete numerical problem.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Define Gain Crossover Frequency, Phase Crossover Frequency, Gain Margin, and Phase Margin from Bode plots. State the criteria for closed-loop stability and solve a complete numerical problem.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Define Gain Crossover Frequency, Phase Crossover Frequency, Gain Margin, and Phase Margin from Bode plots. State the criteria for closed-loop stability and solve a complete numerical problem.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> Define Gain Crossover Frequency, Phase Crossover Frequency, Gain Margin, and Phase Margin from Bode plots. State the criteria for closed-loop stability and solve a complete numerical problem.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8831,6 +9222,21 @@ Step 5: Tabulate phase angles $\phi(\omega) = -N(90^\circ) + \tan^{-1}(\omega T_
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9102,6 +9508,7 @@ Because $\omega_{gc} (7.4) < \omega_{pc} (14.14)$, $GM = +9.54 \text{ dB} > 0$, 
     <article class="question-card subject-lcs" id="lcs-q19" data-marks="3" data-title="explain the construction of polar plots for type 0, type 1, and type 2 systems. discuss how the addition of open-loop poles and zeros affects the shape and stability of the polar plot locus.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lcs-q19" data-duration="300" data-qid="lcs-q19" data-label="LCS • Q19 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9116,9 +9523,9 @@ Because $\omega_{gc} (7.4) < \omega_{pc} (14.14)$, $GM = +9.54 \text{ dB} > 0$, 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the construction of polar plots for Type 0, Type 1, and Type 2 systems. Discuss how the addition of open-loop poles and zeros affects the shape and stability of the polar plot locus.</span>
-            <span class="lang-view lang-manglish">Explain the construction of polar plots for Type 0, Type 1, and Type 2 systems. Discuss how the addition of open-loop poles and zeros affects the shape and stability of the polar plot locus.</span>
-            <span class="lang-view lang-ml">Explain the construction of polar plots for Type 0, Type 1, and Type 2 systems. Discuss how the addition of open-loop poles and zeros affects the shape and stability of the polar plot locus.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Explain the construction of polar plots for Type 0, Type 1, and Type 2 systems. Discuss how the addition of open-loop poles and zeros affects the shape and stability of the polar plot locus.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Explain the construction of polar plots for Type 0, Type 1, and Type 2 systems. Discuss how the addition of open-loop poles and zeros affects the shape and stability of the polar plot locus.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> Explain the construction of polar plots for Type 0, Type 1, and Type 2 systems. Discuss how the addition of open-loop poles and zeros affects the shape and stability of the polar plot locus.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9142,6 +9549,21 @@ Because $\omega_{gc} (7.4) < \omega_{pc} (14.14)$, $GM = +9.54 \text{ dB} > 0$, 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 8</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9290,6 +9712,7 @@ Because $\omega_{gc} (7.4) < \omega_{pc} (14.14)$, $GM = +9.54 \text{ dB} > 0$, 
     <article class="question-card subject-lcs" id="lcs-q20" data-marks="7" data-title="state and prove the nyquist stability criterion using cauchy&#x27;s principle of the argument. explain the mapping of the nyquist contour and analyze the closed-loop stability of an open-loop unstable system.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q20" data-duration="720" data-qid="lcs-q20" data-label="LCS • Q20 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9304,9 +9727,9 @@ Because $\omega_{gc} (7.4) < \omega_{pc} (14.14)$, $GM = +9.54 \text{ dB} > 0$, 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and prove the Nyquist stability criterion using Cauchy's principle of the argument. Explain the mapping of the Nyquist contour and analyze the closed-loop stability of an open-loop unstable system.</span>
-            <span class="lang-view lang-manglish">State and prove the Nyquist stability criterion using Cauchy's principle of the argument. Explain the mapping of the Nyquist contour and analyze the closed-loop stability of an open-loop unstable system.</span>
-            <span class="lang-view lang-ml">State and prove the Nyquist stability criterion using Cauchy's principle of the argument. Explain the mapping of the Nyquist contour and analyze the closed-loop stability of an open-loop unstable system.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> State and prove the Nyquist stability criterion using Cauchy's principle of the argument. Explain the mapping of the Nyquist contour and analyze the closed-loop stability of an open-loop unstable system.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> State and prove the Nyquist stability criterion using Cauchy's principle of the argument. Explain the mapping of the Nyquist contour and analyze the closed-loop stability of an open-loop unstable system.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> State and prove the Nyquist stability criterion using Cauchy's principle of the argument. Explain the mapping of the Nyquist contour and analyze the closed-loop stability of an open-loop unstable system.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9330,6 +9753,21 @@ Because $\omega_{gc} (7.4) < \omega_{pc} (14.14)$, $GM = +9.54 \text{ dB} > 0$, 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9579,6 +10017,7 @@ Thus, for $K > 2$, the closed-loop system is completely stable! If $K < 2$, the 
     <article class="question-card subject-lcs" id="lcs-q21" data-marks="3" data-title="explain the circuits, transfer functions, and pole-zero patterns of phase lead, phase lag, and lead-lag compensator networks. derive the maximum phase lead angle phi_m and frequency omega_m for a lead network.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lcs-q21" data-duration="300" data-qid="lcs-q21" data-label="LCS • Q21 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9593,9 +10032,9 @@ Thus, for $K > 2$, the closed-loop system is completely stable! If $K < 2$, the 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the circuits, transfer functions, and pole-zero patterns of phase lead, phase lag, and lead-lag compensator networks. Derive the maximum phase lead angle phi_m and frequency omega_m for a lead network.</span>
-            <span class="lang-view lang-manglish">Explain the circuits, transfer functions, and pole-zero patterns of phase lead, phase lag, and lead-lag compensator networks. Derive the maximum phase lead angle phi_m and frequency omega_m for a lead network.</span>
-            <span class="lang-view lang-ml">Explain the circuits, transfer functions, and pole-zero patterns of phase lead, phase lag, and lead-lag compensator networks. Derive the maximum phase lead angle phi_m and frequency omega_m for a lead network.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Explain the circuits, transfer functions, and pole-zero patterns of phase lead, phase lag, and lead-lag compensator networks. Derive the maximum phase lead angle phi_m and frequency omega_m for a lead network.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Explain the circuits, transfer functions, and pole-zero patterns of phase lead, phase lag, and lead-lag compensator networks. Derive the maximum phase lead angle phi_m and frequency omega_m for a lead network.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Explain the circuits, transfer functions, and pole-zero patterns of phase lead, phase lag, and lead-lag compensator networks. Derive the maximum phase lead angle phi_m and frequency omega_m for a lead network.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9619,6 +10058,21 @@ Thus, for $K > 2$, the closed-loop system is completely stable! If $K < 2$, the 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 9</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9815,6 +10269,7 @@ In a lag compensator, the pole at $s = -1/(\beta T)$ is located much closer to t
     <article class="question-card subject-lcs" id="lcs-q22" data-marks="7" data-title="explain the step-by-step design procedure of a phase lead compensator using frequency response (bode plot) to satisfy specified phase margin and velocity error constant specifications.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q22" data-duration="720" data-qid="lcs-q22" data-label="LCS • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9829,9 +10284,9 @@ In a lag compensator, the pole at $s = -1/(\beta T)$ is located much closer to t
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the step-by-step design procedure of a Phase Lead Compensator using frequency response (Bode plot) to satisfy specified phase margin and velocity error constant specifications.</span>
-            <span class="lang-view lang-manglish">Explain the step-by-step design procedure of a Phase Lead Compensator using frequency response (Bode plot) to satisfy specified phase margin and velocity error constant specifications.</span>
-            <span class="lang-view lang-ml">Explain the step-by-step design procedure of a Phase Lead Compensator using frequency response (Bode plot) to satisfy specified phase margin and velocity error constant specifications.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Explain the step-by-step design procedure of a Phase Lead Compensator using frequency response (Bode plot) to satisfy specified phase margin and velocity error constant specifications.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Explain the step-by-step design procedure of a Phase Lead Compensator using frequency response (Bode plot) to satisfy specified phase margin and velocity error constant specifications.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Explain the step-by-step design procedure of a Phase Lead Compensator using frequency response (Bode plot) to satisfy specified phase margin and velocity error constant specifications.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9855,6 +10310,21 @@ In a lag compensator, the pole at $s = -1/(\beta T)$ is located much closer to t
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10069,6 +10539,7 @@ If $\gamma_{final} \ge \gamma_{spec}$, the design is complete. If the achieved p
     <article class="question-card subject-lcs" id="lcs-q23" data-marks="7" data-title="explain the step-by-step design procedure of a phase lag compensator using bode plots to improve steady-state error performance without degrading existing phase margin.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q23" data-duration="720" data-qid="lcs-q23" data-label="LCS • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10083,9 +10554,9 @@ If $\gamma_{final} \ge \gamma_{spec}$, the design is complete. If the achieved p
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the step-by-step design procedure of a Phase Lag Compensator using Bode plots to improve steady-state error performance without degrading existing phase margin.</span>
-            <span class="lang-view lang-manglish">Explain the step-by-step design procedure of a Phase Lag Compensator using Bode plots to improve steady-state error performance without degrading existing phase margin.</span>
-            <span class="lang-view lang-ml">Explain the step-by-step design procedure of a Phase Lag Compensator using Bode plots to improve steady-state error performance without degrading existing phase margin.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Explain the step-by-step design procedure of a Phase Lag Compensator using Bode plots to improve steady-state error performance without degrading existing phase margin.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Explain the step-by-step design procedure of a Phase Lag Compensator using Bode plots to improve steady-state error performance without degrading existing phase margin.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Explain the step-by-step design procedure of a Phase Lag Compensator using Bode plots to improve steady-state error performance without degrading existing phase margin.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10109,6 +10580,21 @@ If $\gamma_{final} \ge \gamma_{spec}$, the design is complete. If the achieved p
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10308,6 +10794,7 @@ Re-plot the compensated Bode magnitude and phase curves and verify that the actu
     <article class="question-card subject-lcs" id="lcs-q24" data-marks="3" data-title="explain the state-space representation of continuous-time lti systems. define state, state variables, state vector, and state equations, and state the major advantages of state space analysis over transfer functions.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lcs-q24" data-duration="300" data-qid="lcs-q24" data-label="LCS • Q24 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10322,9 +10809,9 @@ Re-plot the compensated Bode magnitude and phase curves and verify that the actu
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the state-space representation of continuous-time LTI systems. Define state, state variables, state vector, and state equations, and state the major advantages of state space analysis over transfer functions.</span>
-            <span class="lang-view lang-manglish">Explain the state-space representation of continuous-time LTI systems. Define state, state variables, state vector, and state equations, and state the major advantages of state space analysis over transfer functions.</span>
-            <span class="lang-view lang-ml">Explain the state-space representation of continuous-time LTI systems. Define state, state variables, state vector, and state equations, and state the major advantages of state space analysis over transfer functions.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Explain the state-space representation of continuous-time LTI systems. Define state, state variables, state vector, and state equations, and state the major advantages of state space analysis over transfer functions.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Explain the state-space representation of continuous-time LTI systems. Define state, state variables, state vector, and state equations, and state the major advantages of state space analysis over transfer functions.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Explain the state-space representation of continuous-time LTI systems. Define state, state variables, state vector, and state equations, and state the major advantages of state space analysis over transfer functions.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10348,6 +10835,21 @@ Re-plot the compensated Bode magnitude and phase curves and verify that the actu
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 10</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10517,6 +11019,7 @@ where:
     <article class="question-card subject-lcs" id="lcs-q25" data-marks="7" data-title="derive the closed-loop transfer function matrix g(s) = c(si - a)^{-1}b + d from state space equations. prove that the poles of g(s) are the eigenvalues of state matrix a and solve a numerical problem.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q25" data-duration="720" data-qid="lcs-q25" data-label="LCS • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10531,9 +11034,9 @@ where:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the closed-loop transfer function matrix G(s) = C(sI - A)^{-1}B + D from state space equations. Prove that the poles of G(s) are the eigenvalues of state matrix A and solve a numerical problem.</span>
-            <span class="lang-view lang-manglish">Derive the closed-loop transfer function matrix G(s) = C(sI - A)^{-1}B + D from state space equations. Prove that the poles of G(s) are the eigenvalues of state matrix A and solve a numerical problem.</span>
-            <span class="lang-view lang-ml">Derive the closed-loop transfer function matrix G(s) = C(sI - A)^{-1}B + D from state space equations. Prove that the poles of G(s) are the eigenvalues of state matrix A and solve a numerical problem.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Derive the closed-loop transfer function matrix G(s) = C(sI - A)^{-1}B + D from state space equations. Prove that the poles of G(s) are the eigenvalues of state matrix A and solve a numerical problem.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Derive the closed-loop transfer function matrix G(s) = C(sI - A)^{-1}B + D from state space equations. Prove that the poles of G(s) are the eigenvalues of state matrix A and solve a numerical problem.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Derive the closed-loop transfer function matrix G(s) = C(sI - A)^{-1}B + D from state space equations. Prove that the poles of G(s) are the eigenvalues of state matrix A and solve a numerical problem.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10557,6 +11060,21 @@ where:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10801,6 +11319,7 @@ The transfer function has poles at $s = -1$ and $s = -2$, confirming complete eq
     <article class="question-card subject-lcs" id="lcs-q26" data-marks="7" data-title="define the state transition matrix phi(t) = e^{at}. state and prove four important properties of the state transition matrix and calculate e^{at} for a given 2x2 system matrix using the laplace transform method.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lcs-q26" data-duration="720" data-qid="lcs-q26" data-label="LCS • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lcs-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10815,9 +11334,9 @@ The transfer function has poles at $s = -1$ and $s = -2$, confirming complete eq
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define the state transition matrix Phi(t) = e^{At}. State and prove four important properties of the state transition matrix and calculate e^{At} for a given 2x2 system matrix using the Laplace transform method.</span>
-            <span class="lang-view lang-manglish">Define the state transition matrix Phi(t) = e^{At}. State and prove four important properties of the state transition matrix and calculate e^{At} for a given 2x2 system matrix using the Laplace transform method.</span>
-            <span class="lang-view lang-ml">Define the state transition matrix Phi(t) = e^{At}. State and prove four important properties of the state transition matrix and calculate e^{At} for a given 2x2 system matrix using the Laplace transform method.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Define the state transition matrix Phi(t) = e^{At}. State and prove four important properties of the state transition matrix and calculate e^{At} for a given 2x2 system matrix using the Laplace transform method.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Define the state transition matrix Phi(t) = e^{At}. State and prove four important properties of the state transition matrix and calculate e^{At} for a given 2x2 system matrix using the Laplace transform method.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Define the state transition matrix Phi(t) = e^{At}. State and prove four important properties of the state transition matrix and calculate e^{At} for a given 2x2 system matrix using the Laplace transform method.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10841,6 +11360,21 @@ The transfer function has poles at $s = -1$ and $s = -2$, confirming complete eq
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET302)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lcs/EET302_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

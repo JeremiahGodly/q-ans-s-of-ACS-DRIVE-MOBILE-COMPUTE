@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4332,6 +4450,7 @@ pre, code {
     <article class="question-card subject-cprog" id="cprog-q1" data-marks="7" data-title="explain the fundamental structure of a c program. describe the multi-stage compilation and execution process from source code to executable binary.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q1" data-duration="720" data-qid="cprog-q1" data-label="CPROG • Q1 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4346,9 +4465,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the fundamental structure of a C program. Describe the multi-stage compilation and execution process from source code to executable binary.</span>
-            <span class="lang-view lang-manglish">Explain the fundamental structure of a C program. Describe the multi-stage compilation and execution process from source code to executable binary.</span>
-            <span class="lang-view lang-ml">Explain the fundamental structure of a C program. Describe the multi-stage compilation and execution process from source code to executable binary.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Explain the fundamental structure of a C program. Describe the multi-stage compilation and execution process from source code to executable binary.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> Explain the fundamental structure of a C program. Describe the multi-stage compilation and execution process from source code to executable binary.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> Explain the fundamental structure of a C program. Describe the multi-stage compilation and execution process from source code to executable binary.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4372,6 +4491,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4658,6 +4792,7 @@ A Token is the smallest individual grammatical unit in a C program recognized by
     <article class="question-card subject-cprog" id="cprog-q2" data-marks="7" data-title="explain the primitive data types in c with size, range, and format specifiers. discuss type modifiers, type qualifiers, and implicit vs explicit type conversion.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q2" data-duration="720" data-qid="cprog-q2" data-label="CPROG • Q2 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4672,9 +4807,9 @@ A Token is the smallest individual grammatical unit in a C program recognized by
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the primitive data types in C with size, range, and format specifiers. Discuss type modifiers, type qualifiers, and implicit vs explicit type conversion.</span>
-            <span class="lang-view lang-manglish">Explain the primitive data types in C with size, range, and format specifiers. Discuss type modifiers, type qualifiers, and implicit vs explicit type conversion.</span>
-            <span class="lang-view lang-ml">Explain the primitive data types in C with size, range, and format specifiers. Discuss type modifiers, type qualifiers, and implicit vs explicit type conversion.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Explain the primitive data types in C with size, range, and format specifiers. Discuss type modifiers, type qualifiers, and implicit vs explicit type conversion.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Explain the primitive data types in C with size, range, and format specifiers. Discuss type modifiers, type qualifiers, and implicit vs explicit type conversion.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> Explain the primitive data types in C with size, range, and format specifiers. Discuss type modifiers, type qualifiers, and implicit vs explicit type conversion.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4698,6 +4833,21 @@ A Token is the smallest individual grammatical unit in a C program recognized by
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4921,6 +5071,7 @@ float average = (float)total_marks / subjects; /* 475.0 / 5 = 95.0 */
     <article class="question-card subject-cprog" id="cprog-q3" data-marks="7" data-title="classify operators in c. explain arithmetic, relational, logical, and bitwise operators with operator precedence and associativity rules.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q3" data-duration="720" data-qid="cprog-q3" data-label="CPROG • Q3 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4935,9 +5086,9 @@ float average = (float)total_marks / subjects; /* 475.0 / 5 = 95.0 */
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Classify operators in C. Explain arithmetic, relational, logical, and bitwise operators with operator precedence and associativity rules.</span>
-            <span class="lang-view lang-manglish">Classify operators in C. Explain arithmetic, relational, logical, and bitwise operators with operator precedence and associativity rules.</span>
-            <span class="lang-view lang-ml">Classify operators in C. Explain arithmetic, relational, logical, and bitwise operators with operator precedence and associativity rules.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Classify operators in C. Explain arithmetic, relational, logical, and bitwise operators with operator precedence and associativity rules.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Classify operators in C. Explain arithmetic, relational, logical, and bitwise operators with operator precedence and associativity rules.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> Classify operators in C. Explain arithmetic, relational, logical, and bitwise operators with operator precedence and associativity rules.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4961,6 +5112,21 @@ float average = (float)total_marks / subjects; /* 475.0 / 5 = 95.0 */
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5220,6 +5386,7 @@ Final evaluated result: $\mathbf{x = 1}$.</p>
     <article class="question-card subject-cprog" id="cprog-q4" data-marks="7" data-title="explain formatted input and output functions printf() and scanf() with format specifiers, field width, precision, and escape sequences.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q4" data-duration="720" data-qid="cprog-q4" data-label="CPROG • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5234,9 +5401,9 @@ Final evaluated result: $\mathbf{x = 1}$.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain formatted input and output functions printf() and scanf() with format specifiers, field width, precision, and escape sequences.</span>
-            <span class="lang-view lang-manglish">Explain formatted input and output functions printf() and scanf() with format specifiers, field width, precision, and escape sequences.</span>
-            <span class="lang-view lang-ml">Explain formatted input and output functions printf() and scanf() with format specifiers, field width, precision, and escape sequences.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Explain formatted input and output functions printf() and scanf() with format specifiers, field width, precision, and escape sequences.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Explain formatted input and output functions printf() and scanf() with format specifiers, field width, precision, and escape sequences.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> Explain formatted input and output functions printf() and scanf() with format specifiers, field width, precision, and escape sequences.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5260,6 +5427,21 @@ Final evaluated result: $\mathbf{x = 1}$.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5510,6 +5692,7 @@ When reading characters with `%c` immediately following numeric inputs (`%d`), t
     <article class="question-card subject-cprog" id="cprog-q5" data-marks="7" data-title="discuss decision-making and looping structures in c. compare while and do-while loops, and write a menu-driven program for prime number checking and factorial calculation.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q5" data-duration="720" data-qid="cprog-q5" data-label="CPROG • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5524,9 +5707,9 @@ When reading characters with `%c` immediately following numeric inputs (`%d`), t
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Discuss decision-making and looping structures in C. Compare while and do-while loops, and write a menu-driven program for prime number checking and factorial calculation.</span>
-            <span class="lang-view lang-manglish">Discuss decision-making and looping structures in C. Compare while and do-while loops, and write a menu-driven program for prime number checking and factorial calculation.</span>
-            <span class="lang-view lang-ml">Discuss decision-making and looping structures in C. Compare while and do-while loops, and write a menu-driven program for prime number checking and factorial calculation.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Discuss decision-making and looping structures in C. Compare while and do-while loops, and write a menu-driven program for prime number checking and factorial calculation.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Discuss decision-making and looping structures in C. Compare while and do-while loops, and write a menu-driven program for prime number checking and factorial calculation.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> Discuss decision-making and looping structures in C. Compare while and do-while loops, and write a menu-driven program for prime number checking and factorial calculation.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5550,6 +5733,21 @@ When reading characters with `%c` immediately following numeric inputs (`%d`), t
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6018,6 +6216,7 @@ PRODUCTION-GRADE C PROGRAM: MENU-DRIVEN PRIME AND FACTORIAL CALCULATOR
     <article class="question-card subject-cprog" id="cprog-q6" data-marks="7" data-title="explain one-dimensional arrays and memory address allocation. implement and compare linear search and binary search algorithms with step-by-step traces.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q6" data-duration="720" data-qid="cprog-q6" data-label="CPROG • Q6 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6032,9 +6231,9 @@ PRODUCTION-GRADE C PROGRAM: MENU-DRIVEN PRIME AND FACTORIAL CALCULATOR
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain one-dimensional arrays and memory address allocation. Implement and compare linear search and binary search algorithms with step-by-step traces.</span>
-            <span class="lang-view lang-manglish">Explain one-dimensional arrays and memory address allocation. Implement and compare linear search and binary search algorithms with step-by-step traces.</span>
-            <span class="lang-view lang-ml">Explain one-dimensional arrays and memory address allocation. Implement and compare linear search and binary search algorithms with step-by-step traces.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Explain one-dimensional arrays and memory address allocation. Implement and compare linear search and binary search algorithms with step-by-step traces.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Explain one-dimensional arrays and memory address allocation. Implement and compare linear search and binary search algorithms with step-by-step traces.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> Explain one-dimensional arrays and memory address allocation. Implement and compare linear search and binary search algorithms with step-by-step traces.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6058,6 +6257,21 @@ PRODUCTION-GRADE C PROGRAM: MENU-DRIVEN PRIME AND FACTORIAL CALCULATOR
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6335,6 +6549,7 @@ PRODUCTION-GRADE C PROGRAM: BINARY SEARCH IMPLEMENTATION
     <article class="question-card subject-cprog" id="cprog-q7" data-marks="7" data-title="derive the row-major memory address formula for a two-dimensional array. write a complete c program to perform matrix multiplication with dimensional verification.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q7" data-duration="720" data-qid="cprog-q7" data-label="CPROG • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6349,9 +6564,9 @@ PRODUCTION-GRADE C PROGRAM: BINARY SEARCH IMPLEMENTATION
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the row-major memory address formula for a two-dimensional array. Write a complete C program to perform matrix multiplication with dimensional verification.</span>
-            <span class="lang-view lang-manglish">Derive the row-major memory address formula for a two-dimensional array. Write a complete C program to perform matrix multiplication with dimensional verification.</span>
-            <span class="lang-view lang-ml">Derive the row-major memory address formula for a two-dimensional array. Write a complete C program to perform matrix multiplication with dimensional verification.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Derive the row-major memory address formula for a two-dimensional array. Write a complete C program to perform matrix multiplication with dimensional verification.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Derive the row-major memory address formula for a two-dimensional array. Write a complete C program to perform matrix multiplication with dimensional verification.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Derive the row-major memory address formula for a two-dimensional array. Write a complete C program to perform matrix multiplication with dimensional verification.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6375,6 +6590,21 @@ PRODUCTION-GRADE C PROGRAM: BINARY SEARCH IMPLEMENTATION
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6691,6 +6921,7 @@ PRODUCTION-GRADE C PROGRAM: MATRIX MULTIPLICATION
     <article class="question-card subject-cprog" id="cprog-q8" data-marks="7" data-title="explain how strings are represented in c. differentiate between character arrays and string literals, and discuss string i/o using scanf, gets, and fgets.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q8" data-duration="720" data-qid="cprog-q8" data-label="CPROG • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6705,9 +6936,9 @@ PRODUCTION-GRADE C PROGRAM: MATRIX MULTIPLICATION
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain how strings are represented in C. Differentiate between character arrays and string literals, and discuss string I/O using scanf, gets, and fgets.</span>
-            <span class="lang-view lang-manglish">Explain how strings are represented in C. Differentiate between character arrays and string literals, and discuss string I/O using scanf, gets, and fgets.</span>
-            <span class="lang-view lang-ml">Explain how strings are represented in C. Differentiate between character arrays and string literals, and discuss string I/O using scanf, gets, and fgets.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Explain how strings are represented in C. Differentiate between character arrays and string literals, and discuss string I/O using scanf, gets, and fgets.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Explain how strings are represented in C. Differentiate between character arrays and string literals, and discuss string I/O using scanf, gets, and fgets.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Explain how strings are represented in C. Differentiate between character arrays and string literals, and discuss string I/O using scanf, gets, and fgets.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6731,6 +6962,21 @@ PRODUCTION-GRADE C PROGRAM: MATRIX MULTIPLICATION
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6918,6 +7164,7 @@ if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
     <article class="question-card subject-cprog" id="cprog-q9" data-marks="7" data-title="explain standard library string manipulation functions in &lt;string.h&gt;. provide manual c implementations of strlen, strcpy, strcat, and strcmp without library routines.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q9" data-duration="720" data-qid="cprog-q9" data-label="CPROG • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6932,9 +7179,9 @@ if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain standard library string manipulation functions in <string.h>. Provide manual C implementations of strlen, strcpy, strcat, and strcmp without library routines.</span>
-            <span class="lang-view lang-manglish">Explain standard library string manipulation functions in <string.h>. Provide manual C implementations of strlen, strcpy, strcat, and strcmp without library routines.</span>
-            <span class="lang-view lang-ml">Explain standard library string manipulation functions in <string.h>. Provide manual C implementations of strlen, strcpy, strcat, and strcmp without library routines.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Explain standard library string manipulation functions in <string.h>. Provide manual C implementations of strlen, strcpy, strcat, and strcmp without library routines.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Explain standard library string manipulation functions in <string.h>. Provide manual C implementations of strlen, strcpy, strcat, and strcmp without library routines.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Explain standard library string manipulation functions in <string.h>. Provide manual C implementations of strlen, strcpy, strcat, and strcmp without library routines.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6958,6 +7205,21 @@ if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7271,6 +7533,7 @@ int my_strcmp(const char *s1, const char *s2) {
     <article class="question-card subject-cprog" id="cprog-q10" data-marks="7" data-title="explain two-dimensional character arrays (array of strings). write a complete c program to sort a list of student names alphabetically using bubble sort.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q10" data-duration="720" data-qid="cprog-q10" data-label="CPROG • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7285,9 +7548,9 @@ int my_strcmp(const char *s1, const char *s2) {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain two-dimensional character arrays (array of strings). Write a complete C program to sort a list of student names alphabetically using bubble sort.</span>
-            <span class="lang-view lang-manglish">Explain two-dimensional character arrays (array of strings). Write a complete C program to sort a list of student names alphabetically using bubble sort.</span>
-            <span class="lang-view lang-ml">Explain two-dimensional character arrays (array of strings). Write a complete C program to sort a list of student names alphabetically using bubble sort.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Explain two-dimensional character arrays (array of strings). Write a complete C program to sort a list of student names alphabetically using bubble sort.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Explain two-dimensional character arrays (array of strings). Write a complete C program to sort a list of student names alphabetically using bubble sort.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> Explain two-dimensional character arrays (array of strings). Write a complete C program to sort a list of student names alphabetically using bubble sort.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7311,6 +7574,21 @@ int my_strcmp(const char *s1, const char *s2) {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7572,6 +7850,7 @@ PRODUCTION-GRADE C PROGRAM: SORTING STRINGS ALPHABETICALLY
     <article class="question-card subject-cprog" id="cprog-q11" data-marks="7" data-title="explain modular programming in c. differentiate between call by value and call by reference parameter passing with memory stack diagrams and swapping examples.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q11" data-duration="720" data-qid="cprog-q11" data-label="CPROG • Q11 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7586,9 +7865,9 @@ PRODUCTION-GRADE C PROGRAM: SORTING STRINGS ALPHABETICALLY
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain modular programming in C. Differentiate between Call by Value and Call by Reference parameter passing with memory stack diagrams and swapping examples.</span>
-            <span class="lang-view lang-manglish">Explain modular programming in C. Differentiate between Call by Value and Call by Reference parameter passing with memory stack diagrams and swapping examples.</span>
-            <span class="lang-view lang-ml">Explain modular programming in C. Differentiate between Call by Value and Call by Reference parameter passing with memory stack diagrams and swapping examples.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Explain modular programming in C. Differentiate between Call by Value and Call by Reference parameter passing with memory stack diagrams and swapping examples.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Explain modular programming in C. Differentiate between Call by Value and Call by Reference parameter passing with memory stack diagrams and swapping examples.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Explain modular programming in C. Differentiate between Call by Value and Call by Reference parameter passing with memory stack diagrams and swapping examples.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7612,6 +7891,21 @@ PRODUCTION-GRADE C PROGRAM: SORTING STRINGS ALPHABETICALLY
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7841,6 +8135,7 @@ void swap_by_reference(int *a, int *b) {
     <article class="question-card subject-cprog" id="cprog-q12" data-marks="7" data-title="explain recursion in c. detail the role of base conditions and call stack frames. provide a recursive solution and call tree for the tower of hanoi problem.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q12" data-duration="720" data-qid="cprog-q12" data-label="CPROG • Q12 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7855,9 +8150,9 @@ void swap_by_reference(int *a, int *b) {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain recursion in C. Detail the role of base conditions and call stack frames. Provide a recursive solution and call tree for the Tower of Hanoi problem.</span>
-            <span class="lang-view lang-manglish">Explain recursion in C. Detail the role of base conditions and call stack frames. Provide a recursive solution and call tree for the Tower of Hanoi problem.</span>
-            <span class="lang-view lang-ml">Explain recursion in C. Detail the role of base conditions and call stack frames. Provide a recursive solution and call tree for the Tower of Hanoi problem.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Explain recursion in C. Detail the role of base conditions and call stack frames. Provide a recursive solution and call tree for the Tower of Hanoi problem.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Explain recursion in C. Detail the role of base conditions and call stack frames. Provide a recursive solution and call tree for the Tower of Hanoi problem.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> Explain recursion in C. Detail the role of base conditions and call stack frames. Provide a recursive solution and call tree for the Tower of Hanoi problem.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7881,6 +8176,21 @@ void swap_by_reference(int *a, int *b) {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8122,6 +8432,7 @@ PRODUCTION-GRADE C PROGRAM: TOWER OF HANOI RECURSIVE SOLUTION
     <article class="question-card subject-cprog" id="cprog-q13" data-marks="7" data-title="explain storage classes in c: auto, register, static, and extern. compare them in terms of storage area, default initial value, scope, and lifetime.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q13" data-duration="720" data-qid="cprog-q13" data-label="CPROG • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8136,9 +8447,9 @@ PRODUCTION-GRADE C PROGRAM: TOWER OF HANOI RECURSIVE SOLUTION
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain storage classes in C: auto, register, static, and extern. Compare them in terms of storage area, default initial value, scope, and lifetime.</span>
-            <span class="lang-view lang-manglish">Explain storage classes in C: auto, register, static, and extern. Compare them in terms of storage area, default initial value, scope, and lifetime.</span>
-            <span class="lang-view lang-ml">Explain storage classes in C: auto, register, static, and extern. Compare them in terms of storage area, default initial value, scope, and lifetime.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Explain storage classes in C: auto, register, static, and extern. Compare them in terms of storage area, default initial value, scope, and lifetime.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Explain storage classes in C: auto, register, static, and extern. Compare them in terms of storage area, default initial value, scope, and lifetime.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Explain storage classes in C: auto, register, static, and extern. Compare them in terms of storage area, default initial value, scope, and lifetime.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8162,6 +8473,21 @@ PRODUCTION-GRADE C PROGRAM: TOWER OF HANOI RECURSIVE SOLUTION
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8397,6 +8723,7 @@ Call 3: auto_var = 1 | static_var = 3
     <article class="question-card subject-cprog" id="cprog-q14" data-marks="7" data-title="explain the concept of pointers in c. discuss pointer arithmetic, array-pointer equivalence, void pointers, and dangling pointers with illustrative examples.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q14" data-duration="720" data-qid="cprog-q14" data-label="CPROG • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8411,9 +8738,9 @@ Call 3: auto_var = 1 | static_var = 3
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the concept of pointers in C. Discuss pointer arithmetic, array-pointer equivalence, void pointers, and dangling pointers with illustrative examples.</span>
-            <span class="lang-view lang-manglish">Explain the concept of pointers in C. Discuss pointer arithmetic, array-pointer equivalence, void pointers, and dangling pointers with illustrative examples.</span>
-            <span class="lang-view lang-ml">Explain the concept of pointers in C. Discuss pointer arithmetic, array-pointer equivalence, void pointers, and dangling pointers with illustrative examples.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Explain the concept of pointers in C. Discuss pointer arithmetic, array-pointer equivalence, void pointers, and dangling pointers with illustrative examples.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Explain the concept of pointers in C. Discuss pointer arithmetic, array-pointer equivalence, void pointers, and dangling pointers with illustrative examples.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Explain the concept of pointers in C. Discuss pointer arithmetic, array-pointer equivalence, void pointers, and dangling pointers with illustrative examples.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8437,6 +8764,21 @@ Call 3: auto_var = 1 | static_var = 3
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8675,6 +9017,7 @@ PRODUCTION-GRADE C PROGRAM: POINTER ARITHMETIC AND ARRAY TRAVERSAL
     <article class="question-card subject-cprog" id="cprog-q15" data-marks="7" data-title="explain dynamic memory allocation in c. differentiate between malloc, calloc, realloc, and free, and write a program demonstrating dynamic array creation and resizing.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q15" data-duration="720" data-qid="cprog-q15" data-label="CPROG • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8689,9 +9032,9 @@ PRODUCTION-GRADE C PROGRAM: POINTER ARITHMETIC AND ARRAY TRAVERSAL
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain dynamic memory allocation in C. Differentiate between malloc, calloc, realloc, and free, and write a program demonstrating dynamic array creation and resizing.</span>
-            <span class="lang-view lang-manglish">Explain dynamic memory allocation in C. Differentiate between malloc, calloc, realloc, and free, and write a program demonstrating dynamic array creation and resizing.</span>
-            <span class="lang-view lang-ml">Explain dynamic memory allocation in C. Differentiate between malloc, calloc, realloc, and free, and write a program demonstrating dynamic array creation and resizing.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Explain dynamic memory allocation in C. Differentiate between malloc, calloc, realloc, and free, and write a program demonstrating dynamic array creation and resizing.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Explain dynamic memory allocation in C. Differentiate between malloc, calloc, realloc, and free, and write a program demonstrating dynamic array creation and resizing.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Explain dynamic memory allocation in C. Differentiate between malloc, calloc, realloc, and free, and write a program demonstrating dynamic array creation and resizing.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8715,6 +9058,21 @@ PRODUCTION-GRADE C PROGRAM: POINTER ARITHMETIC AND ARRAY TRAVERSAL
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9045,6 +9403,7 @@ PRODUCTION-GRADE C PROGRAM: DYNAMIC ARRAY CREATION, RESIZING, AND CLEANUP
     <article class="question-card subject-cprog" id="cprog-q16" data-marks="7" data-title="define structures in c. explain memory allocation for structures and mathematically derive structure padding and word alignment on 32-bit and 64-bit architectures.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q16" data-duration="720" data-qid="cprog-q16" data-label="CPROG • Q16 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9059,9 +9418,9 @@ PRODUCTION-GRADE C PROGRAM: DYNAMIC ARRAY CREATION, RESIZING, AND CLEANUP
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define structures in C. Explain memory allocation for structures and mathematically derive structure padding and word alignment on 32-bit and 64-bit architectures.</span>
-            <span class="lang-view lang-manglish">Define structures in C. Explain memory allocation for structures and mathematically derive structure padding and word alignment on 32-bit and 64-bit architectures.</span>
-            <span class="lang-view lang-ml">Define structures in C. Explain memory allocation for structures and mathematically derive structure padding and word alignment on 32-bit and 64-bit architectures.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Define structures in C. Explain memory allocation for structures and mathematically derive structure padding and word alignment on 32-bit and 64-bit architectures.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Define structures in C. Explain memory allocation for structures and mathematically derive structure padding and word alignment on 32-bit and 64-bit architectures.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> Define structures in C. Explain memory allocation for structures and mathematically derive structure padding and word alignment on 32-bit and 64-bit architectures.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9085,6 +9444,21 @@ PRODUCTION-GRADE C PROGRAM: DYNAMIC ARRAY CREATION, RESIZING, AND CLEANUP
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9347,6 +9721,7 @@ To eliminate padding entirely in embedded systems, use `#pragma pack(1)` or `__a
     <article class="question-card subject-cprog" id="cprog-q17" data-marks="7" data-title="explain arrays of structures and nested structures. discuss passing structure pointers to functions and the use of the arrow operator (-&gt;).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q17" data-duration="720" data-qid="cprog-q17" data-label="CPROG • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9361,9 +9736,9 @@ To eliminate padding entirely in embedded systems, use `#pragma pack(1)` or `__a
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain arrays of structures and nested structures. Discuss passing structure pointers to functions and the use of the arrow operator (->).</span>
-            <span class="lang-view lang-manglish">Explain arrays of structures and nested structures. Discuss passing structure pointers to functions and the use of the arrow operator (->).</span>
-            <span class="lang-view lang-ml">Explain arrays of structures and nested structures. Discuss passing structure pointers to functions and the use of the arrow operator (->).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Explain arrays of structures and nested structures. Discuss passing structure pointers to functions and the use of the arrow operator (->).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Explain arrays of structures and nested structures. Discuss passing structure pointers to functions and the use of the arrow operator (->).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Explain arrays of structures and nested structures. Discuss passing structure pointers to functions and the use of the arrow operator (->).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9387,6 +9762,21 @@ To eliminate padding entirely in embedded systems, use `#pragma pack(1)` or `__a
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9676,6 +10066,7 @@ void calculate_total(struct Student *s) {
     <article class="question-card subject-cprog" id="cprog-q18" data-marks="7" data-title="what is a self-referential structure? explain how self-referential structures are utilized in linked lists, and write a program to insert and traverse nodes.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q18" data-duration="720" data-qid="cprog-q18" data-label="CPROG • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9690,9 +10081,9 @@ void calculate_total(struct Student *s) {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">What is a self-referential structure? Explain how self-referential structures are utilized in linked lists, and write a program to insert and traverse nodes.</span>
-            <span class="lang-view lang-manglish">What is a self-referential structure? Explain how self-referential structures are utilized in linked lists, and write a program to insert and traverse nodes.</span>
-            <span class="lang-view lang-ml">What is a self-referential structure? Explain how self-referential structures are utilized in linked lists, and write a program to insert and traverse nodes.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> What is a self-referential structure? Explain how self-referential structures are utilized in linked lists, and write a program to insert and traverse nodes.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> What is a self-referential structure? Explain how self-referential structures are utilized in linked lists, and write a program to insert and traverse nodes.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> What is a self-referential structure? Explain how self-referential structures are utilized in linked lists, and write a program to insert and traverse nodes.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9716,6 +10107,21 @@ void calculate_total(struct Student *s) {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10020,6 +10426,7 @@ void free_list(struct Node *head) {
     <article class="question-card subject-cprog" id="cprog-q19" data-marks="7" data-title="compare structures and unions in terms of memory allocation and size calculation. explain the concept of bit-fields in structures for compact memory packing.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q19" data-duration="720" data-qid="cprog-q19" data-label="CPROG • Q19 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10034,9 +10441,9 @@ void free_list(struct Node *head) {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare structures and unions in terms of memory allocation and size calculation. Explain the concept of bit-fields in structures for compact memory packing.</span>
-            <span class="lang-view lang-manglish">Compare structures and unions in terms of memory allocation and size calculation. Explain the concept of bit-fields in structures for compact memory packing.</span>
-            <span class="lang-view lang-ml">Compare structures and unions in terms of memory allocation and size calculation. Explain the concept of bit-fields in structures for compact memory packing.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Compare structures and unions in terms of memory allocation and size calculation. Explain the concept of bit-fields in structures for compact memory packing.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Compare structures and unions in terms of memory allocation and size calculation. Explain the concept of bit-fields in structures for compact memory packing.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> Compare structures and unions in terms of memory allocation and size calculation. Explain the concept of bit-fields in structures for compact memory packing.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10060,6 +10467,21 @@ void free_list(struct Node *head) {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10313,6 +10735,7 @@ PRODUCTION-GRADE C PROGRAM: UNION MEMORY SHARING DEMONSTRATION
     <article class="question-card subject-cprog" id="cprog-q20" data-marks="7" data-title="explain typedef and enumerations (enum). describe c preprocessor directives including #define macros, file inclusion, and conditional compilation with header guards.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q20" data-duration="720" data-qid="cprog-q20" data-label="CPROG • Q20 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10327,9 +10750,9 @@ PRODUCTION-GRADE C PROGRAM: UNION MEMORY SHARING DEMONSTRATION
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain typedef and enumerations (enum). Describe C preprocessor directives including #define macros, file inclusion, and conditional compilation with header guards.</span>
-            <span class="lang-view lang-manglish">Explain typedef and enumerations (enum). Describe C preprocessor directives including #define macros, file inclusion, and conditional compilation with header guards.</span>
-            <span class="lang-view lang-ml">Explain typedef and enumerations (enum). Describe C preprocessor directives including #define macros, file inclusion, and conditional compilation with header guards.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Explain typedef and enumerations (enum). Describe C preprocessor directives including #define macros, file inclusion, and conditional compilation with header guards.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Explain typedef and enumerations (enum). Describe C preprocessor directives including #define macros, file inclusion, and conditional compilation with header guards.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Explain typedef and enumerations (enum). Describe C preprocessor directives including #define macros, file inclusion, and conditional compilation with header guards.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10353,6 +10776,21 @@ PRODUCTION-GRADE C PROGRAM: UNION MEMORY SHARING DEMONSTRATION
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10587,6 +11025,7 @@ Header Guards: Essential pattern placed inside custom header files to prevent de
     <article class="question-card subject-cprog" id="cprog-q21" data-marks="7" data-title="explain file handling basics in c. discuss the file pointer, fopen(), fclose(), standard file access modes (r, w, a, r+, w+, a+), and text vs binary files.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q21" data-duration="720" data-qid="cprog-q21" data-label="CPROG • Q21 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10601,9 +11040,9 @@ Header Guards: Essential pattern placed inside custom header files to prevent de
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain file handling basics in C. Discuss the FILE pointer, fopen(), fclose(), standard file access modes (r, w, a, r+, w+, a+), and text vs binary files.</span>
-            <span class="lang-view lang-manglish">Explain file handling basics in C. Discuss the FILE pointer, fopen(), fclose(), standard file access modes (r, w, a, r+, w+, a+), and text vs binary files.</span>
-            <span class="lang-view lang-ml">Explain file handling basics in C. Discuss the FILE pointer, fopen(), fclose(), standard file access modes (r, w, a, r+, w+, a+), and text vs binary files.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Explain file handling basics in C. Discuss the FILE pointer, fopen(), fclose(), standard file access modes (r, w, a, r+, w+, a+), and text vs binary files.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Explain file handling basics in C. Discuss the FILE pointer, fopen(), fclose(), standard file access modes (r, w, a, r+, w+, a+), and text vs binary files.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Explain file handling basics in C. Discuss the FILE pointer, fopen(), fclose(), standard file access modes (r, w, a, r+, w+, a+), and text vs binary files.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10627,6 +11066,21 @@ Header Guards: Essential pattern placed inside custom header files to prevent de
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10829,6 +11283,7 @@ Data is stored as raw binary image bytes exactly as represented in physical RAM 
     <article class="question-card subject-cprog" id="cprog-q22" data-marks="7" data-title="explain character, line, and formatted file i/o functions. write a complete c program to copy a text file and count the total characters, words, and lines.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q22" data-duration="720" data-qid="cprog-q22" data-label="CPROG • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10843,9 +11298,9 @@ Data is stored as raw binary image bytes exactly as represented in physical RAM 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain character, line, and formatted file I/O functions. Write a complete C program to copy a text file and count the total characters, words, and lines.</span>
-            <span class="lang-view lang-manglish">Explain character, line, and formatted file I/O functions. Write a complete C program to copy a text file and count the total characters, words, and lines.</span>
-            <span class="lang-view lang-ml">Explain character, line, and formatted file I/O functions. Write a complete C program to copy a text file and count the total characters, words, and lines.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Explain character, line, and formatted file I/O functions. Write a complete C program to copy a text file and count the total characters, words, and lines.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Explain character, line, and formatted file I/O functions. Write a complete C program to copy a text file and count the total characters, words, and lines.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Explain character, line, and formatted file I/O functions. Write a complete C program to copy a text file and count the total characters, words, and lines.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10869,6 +11324,21 @@ Data is stored as raw binary image bytes exactly as represented in physical RAM 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11152,6 +11622,7 @@ PRODUCTION-GRADE C PROGRAM: FILE COPY WITH CHARACTER, WORD, AND LINE COUNTING
     <article class="question-card subject-cprog" id="cprog-q23" data-marks="7" data-title="explain block-level binary file i/o using fread() and fwrite(). write a c program to store and read an array of employee structure records to/from a binary disk file.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q23" data-duration="720" data-qid="cprog-q23" data-label="CPROG • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11166,9 +11637,9 @@ PRODUCTION-GRADE C PROGRAM: FILE COPY WITH CHARACTER, WORD, AND LINE COUNTING
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain block-level binary file I/O using fread() and fwrite(). Write a C program to store and read an array of employee structure records to/from a binary disk file.</span>
-            <span class="lang-view lang-manglish">Explain block-level binary file I/O using fread() and fwrite(). Write a C program to store and read an array of employee structure records to/from a binary disk file.</span>
-            <span class="lang-view lang-ml">Explain block-level binary file I/O using fread() and fwrite(). Write a C program to store and read an array of employee structure records to/from a binary disk file.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Explain block-level binary file I/O using fread() and fwrite(). Write a C program to store and read an array of employee structure records to/from a binary disk file.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Explain block-level binary file I/O using fread() and fwrite(). Write a C program to store and read an array of employee structure records to/from a binary disk file.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Explain block-level binary file I/O using fread() and fwrite(). Write a C program to store and read an array of employee structure records to/from a binary disk file.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11192,6 +11663,21 @@ PRODUCTION-GRADE C PROGRAM: FILE COPY WITH CHARACTER, WORD, AND LINE COUNTING
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11451,6 +11937,7 @@ PRODUCTION-GRADE C PROGRAM: EMPLOYEE DATABASE STORAGE USING FWRITE AND FREAD
     <article class="question-card subject-cprog" id="cprog-q24" data-marks="7" data-title="explain random access in files using fseek(), ftell(), and rewind(). discuss seek_set, seek_cur, and seek_end, and show how to determine file size.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q24" data-duration="720" data-qid="cprog-q24" data-label="CPROG • Q24 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11465,9 +11952,9 @@ PRODUCTION-GRADE C PROGRAM: EMPLOYEE DATABASE STORAGE USING FWRITE AND FREAD
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain random access in files using fseek(), ftell(), and rewind(). Discuss SEEK_SET, SEEK_CUR, and SEEK_END, and show how to determine file size.</span>
-            <span class="lang-view lang-manglish">Explain random access in files using fseek(), ftell(), and rewind(). Discuss SEEK_SET, SEEK_CUR, and SEEK_END, and show how to determine file size.</span>
-            <span class="lang-view lang-ml">Explain random access in files using fseek(), ftell(), and rewind(). Discuss SEEK_SET, SEEK_CUR, and SEEK_END, and show how to determine file size.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Explain random access in files using fseek(), ftell(), and rewind(). Discuss SEEK_SET, SEEK_CUR, and SEEK_END, and show how to determine file size.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Explain random access in files using fseek(), ftell(), and rewind(). Discuss SEEK_SET, SEEK_CUR, and SEEK_END, and show how to determine file size.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Explain random access in files using fseek(), ftell(), and rewind(). Discuss SEEK_SET, SEEK_CUR, and SEEK_END, and show how to determine file size.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11491,6 +11978,21 @@ PRODUCTION-GRADE C PROGRAM: EMPLOYEE DATABASE STORAGE USING FWRITE AND FREAD
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11768,6 +12270,7 @@ PRODUCTION-GRADE C PROGRAM: RANDOM ACCESS RECORD MODIFICATION
     <article class="question-card subject-cprog" id="cprog-q25" data-marks="7" data-title="explain error handling in file operations in c. discuss feof(), ferror(), clearerr(), perror(), and strerror() with a diagnostic code example.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q25" data-duration="720" data-qid="cprog-q25" data-label="CPROG • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11782,9 +12285,9 @@ PRODUCTION-GRADE C PROGRAM: RANDOM ACCESS RECORD MODIFICATION
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain error handling in file operations in C. Discuss feof(), ferror(), clearerr(), perror(), and strerror() with a diagnostic code example.</span>
-            <span class="lang-view lang-manglish">Explain error handling in file operations in C. Discuss feof(), ferror(), clearerr(), perror(), and strerror() with a diagnostic code example.</span>
-            <span class="lang-view lang-ml">Explain error handling in file operations in C. Discuss feof(), ferror(), clearerr(), perror(), and strerror() with a diagnostic code example.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Explain error handling in file operations in C. Discuss feof(), ferror(), clearerr(), perror(), and strerror() with a diagnostic code example.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Explain error handling in file operations in C. Discuss feof(), ferror(), clearerr(), perror(), and strerror() with a diagnostic code example.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Explain error handling in file operations in C. Discuss feof(), ferror(), clearerr(), perror(), and strerror() with a diagnostic code example.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11808,6 +12311,21 @@ PRODUCTION-GRADE C PROGRAM: RANDOM ACCESS RECORD MODIFICATION
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12058,6 +12576,7 @@ PRODUCTION-GRADE C PROGRAM: ROBUST FILE ERROR DIAGNOSTICS
     <article class="question-card subject-cprog" id="cprog-q26" data-marks="7" data-title="explain command line arguments in c with argc and argv. write a complete c program implementing a command-line file copy utility.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-cprog-q26" data-duration="720" data-qid="cprog-q26" data-label="CPROG • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('cprog-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12072,9 +12591,9 @@ PRODUCTION-GRADE C PROGRAM: ROBUST FILE ERROR DIAGNOSTICS
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain command line arguments in C with argc and argv. Write a complete C program implementing a command-line file copy utility.</span>
-            <span class="lang-view lang-manglish">Explain command line arguments in C with argc and argv. Write a complete C program implementing a command-line file copy utility.</span>
-            <span class="lang-view lang-ml">Explain command line arguments in C with argc and argv. Write a complete C program implementing a command-line file copy utility.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Explain command line arguments in C with argc and argv. Write a complete C program implementing a command-line file copy utility.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Explain command line arguments in C with argc and argv. Write a complete C program implementing a command-line file copy utility.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Explain command line arguments in C with argc and argv. Write a complete C program implementing a command-line file copy utility.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12098,6 +12617,21 @@ PRODUCTION-GRADE C PROGRAM: ROBUST FILE ERROR DIAGNOSTICS
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EST102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/cprog/EST102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

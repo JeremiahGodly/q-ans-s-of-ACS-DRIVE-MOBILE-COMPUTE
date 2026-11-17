@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4366,6 +4484,7 @@ pre, code {
     <article class="question-card subject-lac" id="lac-q1" data-marks="3" data-title="state the conditions for consistency of a non-homogeneous system of linear equations ax = b in terms of ranks of the coefficient matrix and the augmented matrix using the rouché-capelli theorem. explain when the system has a unique solution, infinitely many solutions, and no solution.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lac-q1" data-duration="300" data-qid="lac-q1" data-label="LAC • Q1 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4380,9 +4499,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State the conditions for consistency of a non-homogeneous system of linear equations AX = B in terms of ranks of the coefficient matrix and the augmented matrix using the Rouché-Capelli theorem. Explain when the system has a unique solution, infinitely many solutions, and no solution.</span>
-            <span class="lang-view lang-manglish">State the conditions for consistency of a non-homogeneous system of linear equations AX = B in terms of ranks of the coefficient matrix and the augmented matrix using the Rouché-Capelli theorem. Explain when the system has a unique solution, infinitely many solutions, and no solution.</span>
-            <span class="lang-view lang-ml">State the conditions for consistency of a non-homogeneous system of linear equations AX = B in terms of ranks of the coefficient matrix and the augmented matrix using the Rouché-Capelli theorem. Explain when the system has a unique solution, infinitely many solutions, and no solution.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> State the conditions for consistency of a non-homogeneous system of linear equations AX = B in terms of ranks of the coefficient matrix and the augmented matrix using the Rouché-Capelli theorem. Explain when the system has a unique solution, infinitely many solutions, and no solution.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> State the conditions for consistency of a non-homogeneous system of linear equations AX = B in terms of ranks of the coefficient matrix and the augmented matrix using the Rouché-Capelli theorem. Explain when the system has a unique solution, infinitely many solutions, and no solution.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> State the conditions for consistency of a non-homogeneous system of linear equations AX = B in terms of ranks of the coefficient matrix and the augmented matrix using the Rouché-Capelli theorem. Explain when the system has a unique solution, infinitely many solutions, and no solution.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4406,6 +4525,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 1</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4525,6 +4659,7 @@ $$\operatorname{rank}(A) = \operatorname{rank}([A | B]) = r$$</p>
     <article class="question-card subject-lac" id="lac-q2" data-marks="3" data-title="define row echelon form of a matrix. reduce the matrix a = [[1, 2, -1, 3], [2, 4, 1, -2], [3, 6, 3, -7]] to row echelon form and determine its rank.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lac-q2" data-duration="300" data-qid="lac-q2" data-label="LAC • Q2 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4539,9 +4674,9 @@ $$\operatorname{rank}(A) = \operatorname{rank}([A | B]) = r$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define row echelon form of a matrix. Reduce the matrix A = [[1, 2, -1, 3], [2, 4, 1, -2], [3, 6, 3, -7]] to row echelon form and determine its rank.</span>
-            <span class="lang-view lang-manglish">Define row echelon form of a matrix. Reduce the matrix A = [[1, 2, -1, 3], [2, 4, 1, -2], [3, 6, 3, -7]] to row echelon form and determine its rank.</span>
-            <span class="lang-view lang-ml">Define row echelon form of a matrix. Reduce the matrix A = [[1, 2, -1, 3], [2, 4, 1, -2], [3, 6, 3, -7]] to row echelon form and determine its rank.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Define row echelon form of a matrix. Reduce the matrix A = [[1, 2, -1, 3], [2, 4, 1, -2], [3, 6, 3, -7]] to row echelon form and determine its rank.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Define row echelon form of a matrix. Reduce the matrix A = [[1, 2, -1, 3], [2, 4, 1, -2], [3, 6, 3, -7]] to row echelon form and determine its rank.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> Define row echelon form of a matrix. Reduce the matrix A = [[1, 2, -1, 3], [2, 4, 1, -2], [3, 6, 3, -7]] to row echelon form and determine its rank.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4565,6 +4700,21 @@ $$\operatorname{rank}(A) = \operatorname{rank}([A | B]) = r$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4720,6 +4870,7 @@ $$\text{Number of non-zero rows} = 2 \implies \operatorname{rank}(A) = 2$$</p>
     <article class="question-card subject-lac" id="lac-q3" data-marks="7" data-title="investigate for what values of lambda and mu the system of equations x + y + z = 6, x + 2y + 3z = 10, x + 2y + lambda*z = mu has: (i) no solution, (ii) a unique solution, and (iii) infinitely many solutions. also find the solutions when lambda = 4, mu = 13 and when lambda = 3, mu = 10.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q3" data-duration="720" data-qid="lac-q3" data-label="LAC • Q3 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4734,9 +4885,9 @@ $$\text{Number of non-zero rows} = 2 \implies \operatorname{rank}(A) = 2$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Investigate for what values of lambda and mu the system of equations x + y + z = 6, x + 2y + 3z = 10, x + 2y + lambda*z = mu has: (i) no solution, (ii) a unique solution, and (iii) infinitely many solutions. Also find the solutions when lambda = 4, mu = 13 and when lambda = 3, mu = 10.</span>
-            <span class="lang-view lang-manglish">Investigate for what values of lambda and mu the system of equations x + y + z = 6, x + 2y + 3z = 10, x + 2y + lambda*z = mu has: (i) no solution, (ii) a unique solution, and (iii) infinitely many solutions. Also find the solutions when lambda = 4, mu = 13 and when lambda = 3, mu = 10.</span>
-            <span class="lang-view lang-ml">Investigate for what values of lambda and mu the system of equations x + y + z = 6, x + 2y + 3z = 10, x + 2y + lambda*z = mu has: (i) no solution, (ii) a unique solution, and (iii) infinitely many solutions. Also find the solutions when lambda = 4, mu = 13 and when lambda = 3, mu = 10.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Investigate for what values of lambda and mu the system of equations x + y + z = 6, x + 2y + 3z = 10, x + 2y + lambda*z = mu has: (i) no solution, (ii) a unique solution, and (iii) infinitely many solutions. Also find the solutions when lambda = 4, mu = 13 and when lambda = 3, mu = 10.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Investigate for what values of lambda and mu the system of equations x + y + z = 6, x + 2y + 3z = 10, x + 2y + lambda*z = mu has: (i) no solution, (ii) a unique solution, and (iii) infinitely many solutions. Also find the solutions when lambda = 4, mu = 13 and when lambda = 3, mu = 10.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> Investigate for what values of lambda and mu the system of equations x + y + z = 6, x + 2y + 3z = 10, x + 2y + lambda*z = mu has: (i) no solution, (ii) a unique solution, and (iii) infinitely many solutions. Also find the solutions when lambda = 4, mu = 13 and when lambda = 3, mu = 10.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4760,6 +4911,21 @@ $$\text{Number of non-zero rows} = 2 \implies \operatorname{rank}(A) = 2$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5005,6 +5171,7 @@ $$\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 2 + k \\ 4 - 2k \\
     <article class="question-card subject-lac" id="lac-q4" data-marks="7" data-title="test for consistency and solve the system of linear equations using gauss elimination: x1 - 2x2 + x3 - 4x4 = 1, x1 + 3x2 + 7x3 + 2x4 = 2, x1 - 12x2 - 11x3 - 16x4 = -1.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q4" data-duration="720" data-qid="lac-q4" data-label="LAC • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5019,9 +5186,9 @@ $$\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 2 + k \\ 4 - 2k \\
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Test for consistency and solve the system of linear equations using Gauss elimination: x1 - 2x2 + x3 - 4x4 = 1, x1 + 3x2 + 7x3 + 2x4 = 2, x1 - 12x2 - 11x3 - 16x4 = -1.</span>
-            <span class="lang-view lang-manglish">Test for consistency and solve the system of linear equations using Gauss elimination: x1 - 2x2 + x3 - 4x4 = 1, x1 + 3x2 + 7x3 + 2x4 = 2, x1 - 12x2 - 11x3 - 16x4 = -1.</span>
-            <span class="lang-view lang-ml">Test for consistency and solve the system of linear equations using Gauss elimination: x1 - 2x2 + x3 - 4x4 = 1, x1 + 3x2 + 7x3 + 2x4 = 2, x1 - 12x2 - 11x3 - 16x4 = -1.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Test for consistency and solve the system of linear equations using Gauss elimination: x1 - 2x2 + x3 - 4x4 = 1, x1 + 3x2 + 7x3 + 2x4 = 2, x1 - 12x2 - 11x3 - 16x4 = -1.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Test for consistency and solve the system of linear equations using Gauss elimination: x1 - 2x2 + x3 - 4x4 = 1, x1 + 3x2 + 7x3 + 2x4 = 2, x1 - 12x2 - 11x3 - 16x4 = -1.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> Test for consistency and solve the system of linear equations using Gauss elimination: x1 - 2x2 + x3 - 4x4 = 1, x1 + 3x2 + 7x3 + 2x4 = 2, x1 - 12x2 - 11x3 - 16x4 = -1.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5045,6 +5212,21 @@ $$\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 2 + k \\ 4 - 2k \\
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5251,6 +5433,7 @@ $$\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 7/5 \
     <article class="question-card subject-lac" id="lac-q5" data-marks="7" data-title="find the non-trivial solutions of the homogeneous system of equations: x + 2y + 3z = 0, 3x + 4y + 4z = 0, 7x + 10y + 12z = 0. determine the basis and dimension (nullity) of the solution space.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q5" data-duration="720" data-qid="lac-q5" data-label="LAC • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5265,9 +5448,9 @@ $$\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 7/5 \
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the non-trivial solutions of the homogeneous system of equations: x + 2y + 3z = 0, 3x + 4y + 4z = 0, 7x + 10y + 12z = 0. Determine the basis and dimension (nullity) of the solution space.</span>
-            <span class="lang-view lang-manglish">Find the non-trivial solutions of the homogeneous system of equations: x + 2y + 3z = 0, 3x + 4y + 4z = 0, 7x + 10y + 12z = 0. Determine the basis and dimension (nullity) of the solution space.</span>
-            <span class="lang-view lang-ml">Find the non-trivial solutions of the homogeneous system of equations: x + 2y + 3z = 0, 3x + 4y + 4z = 0, 7x + 10y + 12z = 0. Determine the basis and dimension (nullity) of the solution space.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Find the non-trivial solutions of the homogeneous system of equations: x + 2y + 3z = 0, 3x + 4y + 4z = 0, 7x + 10y + 12z = 0. Determine the basis and dimension (nullity) of the solution space.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Find the non-trivial solutions of the homogeneous system of equations: x + 2y + 3z = 0, 3x + 4y + 4z = 0, 7x + 10y + 12z = 0. Determine the basis and dimension (nullity) of the solution space.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> Find the non-trivial solutions of the homogeneous system of equations: x + 2y + 3z = 0, 3x + 4y + 4z = 0, 7x + 10y + 12z = 0. Determine the basis and dimension (nullity) of the solution space.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5291,6 +5474,21 @@ $$\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 7/5 \
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2021_Solved_Scheme.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5505,6 +5703,7 @@ By standard mathematical definition in linear vector spaces, the zero vector sub
     <article class="question-card subject-lac" id="lac-q6" data-marks="3" data-title="state cayley-hamilton theorem. use it to find a^(-1) and a^3 for the matrix a = [[1, 2], [3, 4]].">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lac-q6" data-duration="300" data-qid="lac-q6" data-label="LAC • Q6 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5519,9 +5718,9 @@ By standard mathematical definition in linear vector spaces, the zero vector sub
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State Cayley-Hamilton theorem. Use it to find A^(-1) and A^3 for the matrix A = [[1, 2], [3, 4]].</span>
-            <span class="lang-view lang-manglish">State Cayley-Hamilton theorem. Use it to find A^(-1) and A^3 for the matrix A = [[1, 2], [3, 4]].</span>
-            <span class="lang-view lang-ml">State Cayley-Hamilton theorem. Use it to find A^(-1) and A^3 for the matrix A = [[1, 2], [3, 4]].</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> State Cayley-Hamilton theorem. Use it to find A^(-1) and A^3 for the matrix A = [[1, 2], [3, 4]].</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> State Cayley-Hamilton theorem. Use it to find A^(-1) and A^3 for the matrix A = [[1, 2], [3, 4]].</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> State Cayley-Hamilton theorem. Use it to find A^(-1) and A^3 for the matrix A = [[1, 2], [3, 4]].</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5545,6 +5744,21 @@ By standard mathematical definition in linear vector spaces, the zero vector sub
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 3</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5736,6 +5950,7 @@ $$A^3 = \begin{bmatrix} 27 + 10 & 54 + 0 \\ 81 + 0 & 108 + 10 \end{bmatrix} = \b
     <article class="question-card subject-lac" id="lac-q7" data-marks="3" data-title="find the eigenvalues and eigenvectors of the matrix a = [[3, 1], [1, 3]] and verify that the eigenvectors corresponding to distinct eigenvalues are mutually orthogonal.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lac-q7" data-duration="300" data-qid="lac-q7" data-label="LAC • Q7 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5750,9 +5965,9 @@ $$A^3 = \begin{bmatrix} 27 + 10 & 54 + 0 \\ 81 + 0 & 108 + 10 \end{bmatrix} = \b
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the eigenvalues and eigenvectors of the matrix A = [[3, 1], [1, 3]] and verify that the eigenvectors corresponding to distinct eigenvalues are mutually orthogonal.</span>
-            <span class="lang-view lang-manglish">Find the eigenvalues and eigenvectors of the matrix A = [[3, 1], [1, 3]] and verify that the eigenvectors corresponding to distinct eigenvalues are mutually orthogonal.</span>
-            <span class="lang-view lang-ml">Find the eigenvalues and eigenvectors of the matrix A = [[3, 1], [1, 3]] and verify that the eigenvectors corresponding to distinct eigenvalues are mutually orthogonal.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Find the eigenvalues and eigenvectors of the matrix A = [[3, 1], [1, 3]] and verify that the eigenvectors corresponding to distinct eigenvalues are mutually orthogonal.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Find the eigenvalues and eigenvectors of the matrix A = [[3, 1], [1, 3]] and verify that the eigenvectors corresponding to distinct eigenvalues are mutually orthogonal.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Find the eigenvalues and eigenvectors of the matrix A = [[3, 1], [1, 3]] and verify that the eigenvectors corresponding to distinct eigenvalues are mutually orthogonal.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5776,6 +5991,21 @@ $$A^3 = \begin{bmatrix} 27 + 10 & 54 + 0 \\ 81 + 0 & 108 + 10 \end{bmatrix} = \b
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 4</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5952,6 +6182,7 @@ Since $X_1^T X_2 = 0$, the eigenvectors $X_1$ and $X_2$ corresponding to the dis
     <article class="question-card subject-lac" id="lac-q8" data-marks="7" data-title="find the eigenvalues and eigenvectors of the 3x3 matrix a = [[2, 2, 1], [1, 3, 1], [1, 2, 2]]. verify that the sum of the eigenvalues equals the trace of a and the product of the eigenvalues equals the determinant of a.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q8" data-duration="720" data-qid="lac-q8" data-label="LAC • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5966,9 +6197,9 @@ Since $X_1^T X_2 = 0$, the eigenvectors $X_1$ and $X_2$ corresponding to the dis
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the eigenvalues and eigenvectors of the 3x3 matrix A = [[2, 2, 1], [1, 3, 1], [1, 2, 2]]. Verify that the sum of the eigenvalues equals the trace of A and the product of the eigenvalues equals the determinant of A.</span>
-            <span class="lang-view lang-manglish">Find the eigenvalues and eigenvectors of the 3x3 matrix A = [[2, 2, 1], [1, 3, 1], [1, 2, 2]]. Verify that the sum of the eigenvalues equals the trace of A and the product of the eigenvalues equals the determinant of A.</span>
-            <span class="lang-view lang-ml">Find the eigenvalues and eigenvectors of the 3x3 matrix A = [[2, 2, 1], [1, 3, 1], [1, 2, 2]]. Verify that the sum of the eigenvalues equals the trace of A and the product of the eigenvalues equals the determinant of A.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Find the eigenvalues and eigenvectors of the 3x3 matrix A = [[2, 2, 1], [1, 3, 1], [1, 2, 2]]. Verify that the sum of the eigenvalues equals the trace of A and the product of the eigenvalues equals the determinant of A.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Find the eigenvalues and eigenvectors of the 3x3 matrix A = [[2, 2, 1], [1, 3, 1], [1, 2, 2]]. Verify that the sum of the eigenvalues equals the trace of A and the product of the eigenvalues equals the determinant of A.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Find the eigenvalues and eigenvectors of the 3x3 matrix A = [[2, 2, 1], [1, 3, 1], [1, 2, 2]]. Verify that the sum of the eigenvalues equals the trace of A and the product of the eigenvalues equals the determinant of A.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5992,6 +6223,21 @@ Since $X_1^T X_2 = 0$, the eigenvectors $X_1$ and $X_2$ corresponding to the dis
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6246,6 +6492,7 @@ This guarantees the existence of two linearly independent eigenvectors.</p>
     <article class="question-card subject-lac" id="lac-q9" data-marks="7" data-title="verify cayley-hamilton theorem for the matrix a = [[1, 0, 3], [2, 1, -1], [1, -1, 1]] and hence compute a^(-1) and a^4.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q9" data-duration="720" data-qid="lac-q9" data-label="LAC • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6260,9 +6507,9 @@ This guarantees the existence of two linearly independent eigenvectors.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Verify Cayley-Hamilton theorem for the matrix A = [[1, 0, 3], [2, 1, -1], [1, -1, 1]] and hence compute A^(-1) and A^4.</span>
-            <span class="lang-view lang-manglish">Verify Cayley-Hamilton theorem for the matrix A = [[1, 0, 3], [2, 1, -1], [1, -1, 1]] and hence compute A^(-1) and A^4.</span>
-            <span class="lang-view lang-ml">Verify Cayley-Hamilton theorem for the matrix A = [[1, 0, 3], [2, 1, -1], [1, -1, 1]] and hence compute A^(-1) and A^4.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Verify Cayley-Hamilton theorem for the matrix A = [[1, 0, 3], [2, 1, -1], [1, -1, 1]] and hence compute A^(-1) and A^4.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Verify Cayley-Hamilton theorem for the matrix A = [[1, 0, 3], [2, 1, -1], [1, -1, 1]] and hence compute A^(-1) and A^4.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Verify Cayley-Hamilton theorem for the matrix A = [[1, 0, 3], [2, 1, -1], [1, -1, 1]] and hence compute A^(-1) and A^4.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6286,6 +6533,21 @@ This guarantees the existence of two linearly independent eigenvectors.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6552,6 +6814,7 @@ $$A^4 = \begin{bmatrix} 40 - 6 - 27 & -30 + 0 + 0 & 60 - 18 + 0 \\ 30 - 12 + 0 &
     <article class="question-card subject-lac" id="lac-q10" data-marks="7" data-title="orthogonally diagonalise the symmetric matrix a = [[6, -2, 2], [-2, 3, -1], [2, -1, 3]]. hence reduce the quadratic form q = 6x^2 + 3y^2 + 3z^2 - 4xy + 4xz - 2yz into canonical form and determine its rank, index, signature, and nature.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q10" data-duration="720" data-qid="lac-q10" data-label="LAC • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6566,9 +6829,9 @@ $$A^4 = \begin{bmatrix} 40 - 6 - 27 & -30 + 0 + 0 & 60 - 18 + 0 \\ 30 - 12 + 0 &
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Orthogonally diagonalise the symmetric matrix A = [[6, -2, 2], [-2, 3, -1], [2, -1, 3]]. Hence reduce the quadratic form Q = 6x^2 + 3y^2 + 3z^2 - 4xy + 4xz - 2yz into canonical form and determine its rank, index, signature, and nature.</span>
-            <span class="lang-view lang-manglish">Orthogonally diagonalise the symmetric matrix A = [[6, -2, 2], [-2, 3, -1], [2, -1, 3]]. Hence reduce the quadratic form Q = 6x^2 + 3y^2 + 3z^2 - 4xy + 4xz - 2yz into canonical form and determine its rank, index, signature, and nature.</span>
-            <span class="lang-view lang-ml">Orthogonally diagonalise the symmetric matrix A = [[6, -2, 2], [-2, 3, -1], [2, -1, 3]]. Hence reduce the quadratic form Q = 6x^2 + 3y^2 + 3z^2 - 4xy + 4xz - 2yz into canonical form and determine its rank, index, signature, and nature.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Orthogonally diagonalise the symmetric matrix A = [[6, -2, 2], [-2, 3, -1], [2, -1, 3]]. Hence reduce the quadratic form Q = 6x^2 + 3y^2 + 3z^2 - 4xy + 4xz - 2yz into canonical form and determine its rank, index, signature, and nature.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Orthogonally diagonalise the symmetric matrix A = [[6, -2, 2], [-2, 3, -1], [2, -1, 3]]. Hence reduce the quadratic form Q = 6x^2 + 3y^2 + 3z^2 - 4xy + 4xz - 2yz into canonical form and determine its rank, index, signature, and nature.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> Orthogonally diagonalise the symmetric matrix A = [[6, -2, 2], [-2, 3, -1], [2, -1, 3]]. Hence reduce the quadratic form Q = 6x^2 + 3y^2 + 3z^2 - 4xy + 4xz - 2yz into canonical form and determine its rank, index, signature, and nature.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6592,6 +6855,21 @@ $$A^4 = \begin{bmatrix} 40 - 6 - 27 & -30 + 0 + 0 & 60 - 18 + 0 \\ 30 - 12 + 0 &
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2021_Solved_Scheme.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6884,6 +7162,7 @@ $$Q = 8y_1^2 + 2y_2^2 + 2y_3^2$$</p>
     <article class="question-card subject-lac" id="lac-q11" data-marks="3" data-title="evaluate the limit lim_{x-&gt;0} (x - sin x) / x^3 using l&#x27;hopital&#x27;s rule, and verify the result using maclaurin series expansion.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lac-q11" data-duration="300" data-qid="lac-q11" data-label="LAC • Q11 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6898,9 +7177,9 @@ $$Q = 8y_1^2 + 2y_2^2 + 2y_3^2$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Evaluate the limit lim_{x->0} (x - sin x) / x^3 using L'Hopital's rule, and verify the result using Maclaurin series expansion.</span>
-            <span class="lang-view lang-manglish">Evaluate the limit lim_{x->0} (x - sin x) / x^3 using L'Hopital's rule, and verify the result using Maclaurin series expansion.</span>
-            <span class="lang-view lang-ml">Evaluate the limit lim_{x->0} (x - sin x) / x^3 using L'Hopital's rule, and verify the result using Maclaurin series expansion.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Evaluate the limit lim_{x->0} (x - sin x) / x^3 using L'Hopital's rule, and verify the result using Maclaurin series expansion.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Evaluate the limit lim_{x->0} (x - sin x) / x^3 using L'Hopital's rule, and verify the result using Maclaurin series expansion.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Evaluate the limit lim_{x->0} (x - sin x) / x^3 using L'Hopital's rule, and verify the result using Maclaurin series expansion.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6924,6 +7203,21 @@ $$Q = 8y_1^2 + 2y_2^2 + 2y_3^2$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 5</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7094,6 +7388,7 @@ Both analytical methods yield the identical result $\frac{1}{6}$.</p>
     <article class="question-card subject-lac" id="lac-q12" data-marks="3" data-title="determine the intervals of concavity, convexity, and points of inflection for the function f(x) = x^4 - 4x^3 + 10.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lac-q12" data-duration="300" data-qid="lac-q12" data-label="LAC • Q12 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7108,9 +7403,9 @@ Both analytical methods yield the identical result $\frac{1}{6}$.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Determine the intervals of concavity, convexity, and points of inflection for the function f(x) = x^4 - 4x^3 + 10.</span>
-            <span class="lang-view lang-manglish">Determine the intervals of concavity, convexity, and points of inflection for the function f(x) = x^4 - 4x^3 + 10.</span>
-            <span class="lang-view lang-ml">Determine the intervals of concavity, convexity, and points of inflection for the function f(x) = x^4 - 4x^3 + 10.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Determine the intervals of concavity, convexity, and points of inflection for the function f(x) = x^4 - 4x^3 + 10.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Determine the intervals of concavity, convexity, and points of inflection for the function f(x) = x^4 - 4x^3 + 10.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> Determine the intervals of concavity, convexity, and points of inflection for the function f(x) = x^4 - 4x^3 + 10.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7134,6 +7429,21 @@ Both analytical methods yield the identical result $\frac{1}{6}$.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 6</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7319,6 +7629,7 @@ Because $f''(x)$ undergoes a strict sign change across both $x = 0$ (from positi
     <article class="question-card subject-lac" id="lac-q13" data-marks="7" data-title="evaluate the indeterminate forms: (i) lim_{x-&gt;0+} (cot x)^(sin x) (form infinity^0), and (ii) lim_{x-&gt;0} (1/x^2 - cot x / x) (form infinity - infinity).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q13" data-duration="720" data-qid="lac-q13" data-label="LAC • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7333,9 +7644,9 @@ Because $f''(x)$ undergoes a strict sign change across both $x = 0$ (from positi
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Evaluate the indeterminate forms: (i) lim_{x->0+} (cot x)^(sin x) (form infinity^0), and (ii) lim_{x->0} (1/x^2 - cot x / x) (form infinity - infinity).</span>
-            <span class="lang-view lang-manglish">Evaluate the indeterminate forms: (i) lim_{x->0+} (cot x)^(sin x) (form infinity^0), and (ii) lim_{x->0} (1/x^2 - cot x / x) (form infinity - infinity).</span>
-            <span class="lang-view lang-ml">Evaluate the indeterminate forms: (i) lim_{x->0+} (cot x)^(sin x) (form infinity^0), and (ii) lim_{x->0} (1/x^2 - cot x / x) (form infinity - infinity).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Evaluate the indeterminate forms: (i) lim_{x->0+} (cot x)^(sin x) (form infinity^0), and (ii) lim_{x->0} (1/x^2 - cot x / x) (form infinity - infinity).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Evaluate the indeterminate forms: (i) lim_{x->0+} (cot x)^(sin x) (form infinity^0), and (ii) lim_{x->0} (1/x^2 - cot x / x) (form infinity - infinity).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Evaluate the indeterminate forms: (i) lim_{x->0+} (cot x)^(sin x) (form infinity^0), and (ii) lim_{x->0} (1/x^2 - cot x / x) (form infinity - infinity).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7359,6 +7670,21 @@ Because $f''(x)$ undergoes a strict sign change across both $x = 0$ (from positi
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7571,6 +7897,7 @@ $$L_2 = \frac{1}{3} \lim_{x \to 0} \frac{\sin x}{x} = \frac{1}{3}(1) = \frac{1}{
     <article class="question-card subject-lac" id="lac-q14" data-marks="7" data-title="find the taylor series expansion of f(x) = ln(cos x) about x = 0 up to the term containing x^4 and deduce an approximation for ln(cos 0.1).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q14" data-duration="720" data-qid="lac-q14" data-label="LAC • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7585,9 +7912,9 @@ $$L_2 = \frac{1}{3} \lim_{x \to 0} \frac{\sin x}{x} = \frac{1}{3}(1) = \frac{1}{
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the Taylor series expansion of f(x) = ln(cos x) about x = 0 up to the term containing x^4 and deduce an approximation for ln(cos 0.1).</span>
-            <span class="lang-view lang-manglish">Find the Taylor series expansion of f(x) = ln(cos x) about x = 0 up to the term containing x^4 and deduce an approximation for ln(cos 0.1).</span>
-            <span class="lang-view lang-ml">Find the Taylor series expansion of f(x) = ln(cos x) about x = 0 up to the term containing x^4 and deduce an approximation for ln(cos 0.1).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Find the Taylor series expansion of f(x) = ln(cos x) about x = 0 up to the term containing x^4 and deduce an approximation for ln(cos 0.1).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Find the Taylor series expansion of f(x) = ln(cos x) about x = 0 up to the term containing x^4 and deduce an approximation for ln(cos 0.1).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Find the Taylor series expansion of f(x) = ln(cos x) about x = 0 up to the term containing x^4 and deduce an approximation for ln(cos 0.1).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7611,6 +7938,21 @@ $$L_2 = \frac{1}{3} \lim_{x \to 0} \frac{\sin x}{x} = \frac{1}{3}(1) = \frac{1}{
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7814,6 +8156,7 @@ $$\ln(\cos 0.1) \approx -0.005 - 0.000008333 = -0.005008333$$</p>
     <article class="question-card subject-lac" id="lac-q15" data-marks="7" data-title="find the maclaurin series expansion of f(x) = e^x cos x up to the term in x^4. hence determine f^(4)(0) and calculate an approximate value for e^(0.1) cos(0.1).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q15" data-duration="720" data-qid="lac-q15" data-label="LAC • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7828,9 +8171,9 @@ $$\ln(\cos 0.1) \approx -0.005 - 0.000008333 = -0.005008333$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the Maclaurin series expansion of f(x) = e^x cos x up to the term in x^4. Hence determine f^(4)(0) and calculate an approximate value for e^(0.1) cos(0.1).</span>
-            <span class="lang-view lang-manglish">Find the Maclaurin series expansion of f(x) = e^x cos x up to the term in x^4. Hence determine f^(4)(0) and calculate an approximate value for e^(0.1) cos(0.1).</span>
-            <span class="lang-view lang-ml">Find the Maclaurin series expansion of f(x) = e^x cos x up to the term in x^4. Hence determine f^(4)(0) and calculate an approximate value for e^(0.1) cos(0.1).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Find the Maclaurin series expansion of f(x) = e^x cos x up to the term in x^4. Hence determine f^(4)(0) and calculate an approximate value for e^(0.1) cos(0.1).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Find the Maclaurin series expansion of f(x) = e^x cos x up to the term in x^4. Hence determine f^(4)(0) and calculate an approximate value for e^(0.1) cos(0.1).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Find the Maclaurin series expansion of f(x) = e^x cos x up to the term in x^4. Hence determine f^(4)(0) and calculate an approximate value for e^(0.1) cos(0.1).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7854,6 +8197,21 @@ $$\ln(\cos 0.1) \approx -0.005 - 0.000008333 = -0.005008333$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2021_Solved_Scheme.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8068,6 +8426,7 @@ $$= 1.1 - 0.00035000 = 1.09965$$</p>
     <article class="question-card subject-lac" id="lac-q16" data-marks="3" data-title="state euler&#x27;s theorem on homogeneous functions. if u = sin^(-1)((x^2 + y^2)/(x + y)), prove that x du/dx + y du/dy = tan u.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lac-q16" data-duration="300" data-qid="lac-q16" data-label="LAC • Q16 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8082,9 +8441,9 @@ $$= 1.1 - 0.00035000 = 1.09965$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State Euler's theorem on homogeneous functions. If u = sin^(-1)((x^2 + y^2)/(x + y)), prove that x du/dx + y du/dy = tan u.</span>
-            <span class="lang-view lang-manglish">State Euler's theorem on homogeneous functions. If u = sin^(-1)((x^2 + y^2)/(x + y)), prove that x du/dx + y du/dy = tan u.</span>
-            <span class="lang-view lang-ml">State Euler's theorem on homogeneous functions. If u = sin^(-1)((x^2 + y^2)/(x + y)), prove that x du/dx + y du/dy = tan u.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> State Euler's theorem on homogeneous functions. If u = sin^(-1)((x^2 + y^2)/(x + y)), prove that x du/dx + y du/dy = tan u.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> State Euler's theorem on homogeneous functions. If u = sin^(-1)((x^2 + y^2)/(x + y)), prove that x du/dx + y du/dy = tan u.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> State Euler's theorem on homogeneous functions. If u = sin^(-1)((x^2 + y^2)/(x + y)), prove that x du/dx + y du/dy = tan u.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8108,6 +8467,21 @@ $$= 1.1 - 0.00035000 = 1.09965$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 7</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8296,6 +8670,7 @@ This completes the formal proof.</p>
     <article class="question-card subject-lac" id="lac-q17" data-marks="3" data-title="if z = f(x, y) where x = r cos theta and y = r sin theta, show that (dz/dx)^2 + (dz/dy)^2 = (dz/dr)^2 + (1/r^2)(dz/d theta)^2.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lac-q17" data-duration="300" data-qid="lac-q17" data-label="LAC • Q17 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8310,9 +8685,9 @@ This completes the formal proof.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">If z = f(x, y) where x = r cos theta and y = r sin theta, show that (dz/dx)^2 + (dz/dy)^2 = (dz/dr)^2 + (1/r^2)(dz/d theta)^2.</span>
-            <span class="lang-view lang-manglish">If z = f(x, y) where x = r cos theta and y = r sin theta, show that (dz/dx)^2 + (dz/dy)^2 = (dz/dr)^2 + (1/r^2)(dz/d theta)^2.</span>
-            <span class="lang-view lang-ml">If z = f(x, y) where x = r cos theta and y = r sin theta, show that (dz/dx)^2 + (dz/dy)^2 = (dz/dr)^2 + (1/r^2)(dz/d theta)^2.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> If z = f(x, y) where x = r cos theta and y = r sin theta, show that (dz/dx)^2 + (dz/dy)^2 = (dz/dr)^2 + (1/r^2)(dz/d theta)^2.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> If z = f(x, y) where x = r cos theta and y = r sin theta, show that (dz/dx)^2 + (dz/dy)^2 = (dz/dr)^2 + (1/r^2)(dz/d theta)^2.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> If z = f(x, y) where x = r cos theta and y = r sin theta, show that (dz/dx)^2 + (dz/dy)^2 = (dz/dr)^2 + (1/r^2)(dz/d theta)^2.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8336,6 +8711,21 @@ This completes the formal proof.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 8</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8512,6 +8902,7 @@ Hence proved. Geometrically, this confirms that the squared Euclidean norm of th
     <article class="question-card subject-lac" id="lac-q18" data-marks="7" data-title="if u = tan^(-1)((x^3 + y^3)/(x - y)), prove that: (i) x du/dx + y du/dy = sin 2u, and (ii) x^2 d^2u/dx^2 + 2xy d^2u/dxdy + y^2 d^2u/dy^2 = 2 cos 3u sin u.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q18" data-duration="720" data-qid="lac-q18" data-label="LAC • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8526,9 +8917,9 @@ Hence proved. Geometrically, this confirms that the squared Euclidean norm of th
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">If u = tan^(-1)((x^3 + y^3)/(x - y)), prove that: (i) x du/dx + y du/dy = sin 2u, and (ii) x^2 d^2u/dx^2 + 2xy d^2u/dxdy + y^2 d^2u/dy^2 = 2 cos 3u sin u.</span>
-            <span class="lang-view lang-manglish">If u = tan^(-1)((x^3 + y^3)/(x - y)), prove that: (i) x du/dx + y du/dy = sin 2u, and (ii) x^2 d^2u/dx^2 + 2xy d^2u/dxdy + y^2 d^2u/dy^2 = 2 cos 3u sin u.</span>
-            <span class="lang-view lang-ml">If u = tan^(-1)((x^3 + y^3)/(x - y)), prove that: (i) x du/dx + y du/dy = sin 2u, and (ii) x^2 d^2u/dx^2 + 2xy d^2u/dxdy + y^2 d^2u/dy^2 = 2 cos 3u sin u.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> If u = tan^(-1)((x^3 + y^3)/(x - y)), prove that: (i) x du/dx + y du/dy = sin 2u, and (ii) x^2 d^2u/dx^2 + 2xy d^2u/dxdy + y^2 d^2u/dy^2 = 2 cos 3u sin u.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> If u = tan^(-1)((x^3 + y^3)/(x - y)), prove that: (i) x du/dx + y du/dy = sin 2u, and (ii) x^2 d^2u/dx^2 + 2xy d^2u/dxdy + y^2 d^2u/dy^2 = 2 cos 3u sin u.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> If u = tan^(-1)((x^3 + y^3)/(x - y)), prove that: (i) x du/dx + y du/dy = sin 2u, and (ii) x^2 d^2u/dx^2 + 2xy d^2u/dxdy + y^2 d^2u/dy^2 = 2 cos 3u sin u.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8552,6 +8943,21 @@ Hence proved. Geometrically, this confirms that the squared Euclidean norm of th
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8806,6 +9212,7 @@ This completes the rigorous proof.</p>
     <article class="question-card subject-lac" id="lac-q19" data-marks="7" data-title="find all local maxima, local minima, and saddle points of the multivariable function f(x, y) = x^3 + 3xy^2 - 15x^2 - 15y^2 + 72x.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q19" data-duration="720" data-qid="lac-q19" data-label="LAC • Q19 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8820,9 +9227,9 @@ This completes the rigorous proof.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find all local maxima, local minima, and saddle points of the multivariable function f(x, y) = x^3 + 3xy^2 - 15x^2 - 15y^2 + 72x.</span>
-            <span class="lang-view lang-manglish">Find all local maxima, local minima, and saddle points of the multivariable function f(x, y) = x^3 + 3xy^2 - 15x^2 - 15y^2 + 72x.</span>
-            <span class="lang-view lang-ml">Find all local maxima, local minima, and saddle points of the multivariable function f(x, y) = x^3 + 3xy^2 - 15x^2 - 15y^2 + 72x.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Find all local maxima, local minima, and saddle points of the multivariable function f(x, y) = x^3 + 3xy^2 - 15x^2 - 15y^2 + 72x.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Find all local maxima, local minima, and saddle points of the multivariable function f(x, y) = x^3 + 3xy^2 - 15x^2 - 15y^2 + 72x.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> Find all local maxima, local minima, and saddle points of the multivariable function f(x, y) = x^3 + 3xy^2 - 15x^2 - 15y^2 + 72x.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8846,6 +9253,21 @@ This completes the rigorous proof.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9124,6 +9546,7 @@ $$D = rt - s^2 = [6(x - 5)][6(x - 5)] - (6y)^2 = 36(x - 5)^2 - 36y^2 = 36[(x - 5
     <article class="question-card subject-lac" id="lac-q20" data-marks="7" data-title="find the maximum volume of a rectangular parallelepiped inscribed in the ellipsoid x^2/a^2 + y^2/b^2 + z^2/c^2 = 1 using lagrange&#x27;s method of undetermined multipliers.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q20" data-duration="720" data-qid="lac-q20" data-label="LAC • Q20 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9138,9 +9561,9 @@ $$D = rt - s^2 = [6(x - 5)][6(x - 5)] - (6y)^2 = 36(x - 5)^2 - 36y^2 = 36[(x - 5
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the maximum volume of a rectangular parallelepiped inscribed in the ellipsoid x^2/a^2 + y^2/b^2 + z^2/c^2 = 1 using Lagrange's method of undetermined multipliers.</span>
-            <span class="lang-view lang-manglish">Find the maximum volume of a rectangular parallelepiped inscribed in the ellipsoid x^2/a^2 + y^2/b^2 + z^2/c^2 = 1 using Lagrange's method of undetermined multipliers.</span>
-            <span class="lang-view lang-ml">Find the maximum volume of a rectangular parallelepiped inscribed in the ellipsoid x^2/a^2 + y^2/b^2 + z^2/c^2 = 1 using Lagrange's method of undetermined multipliers.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Find the maximum volume of a rectangular parallelepiped inscribed in the ellipsoid x^2/a^2 + y^2/b^2 + z^2/c^2 = 1 using Lagrange's method of undetermined multipliers.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Find the maximum volume of a rectangular parallelepiped inscribed in the ellipsoid x^2/a^2 + y^2/b^2 + z^2/c^2 = 1 using Lagrange's method of undetermined multipliers.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Find the maximum volume of a rectangular parallelepiped inscribed in the ellipsoid x^2/a^2 + y^2/b^2 + z^2/c^2 = 1 using Lagrange's method of undetermined multipliers.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9164,6 +9587,21 @@ $$D = rt - s^2 = [6(x - 5)][6(x - 5)] - (6y)^2 = 36(x - 5)^2 - 36y^2 = 36[(x - 5
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2021_Solved_Scheme.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9381,6 +9819,7 @@ $$V_{\max} = 8xyz = 8 \left(\frac{a}{\sqrt{3}}\right) \left(\frac{b}{\sqrt{3}}\r
     <article class="question-card subject-lac" id="lac-q21" data-marks="3" data-title="evaluate the double integral int_0^1 int_0^(sqrt(1-x^2)) (x^2 + y^2) dy dx by transforming into polar coordinates.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lac-q21" data-duration="300" data-qid="lac-q21" data-label="LAC • Q21 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9395,9 +9834,9 @@ $$V_{\max} = 8xyz = 8 \left(\frac{a}{\sqrt{3}}\right) \left(\frac{b}{\sqrt{3}}\r
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Evaluate the double integral int_0^1 int_0^(sqrt(1-x^2)) (x^2 + y^2) dy dx by transforming into polar coordinates.</span>
-            <span class="lang-view lang-manglish">Evaluate the double integral int_0^1 int_0^(sqrt(1-x^2)) (x^2 + y^2) dy dx by transforming into polar coordinates.</span>
-            <span class="lang-view lang-ml">Evaluate the double integral int_0^1 int_0^(sqrt(1-x^2)) (x^2 + y^2) dy dx by transforming into polar coordinates.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Evaluate the double integral int_0^1 int_0^(sqrt(1-x^2)) (x^2 + y^2) dy dx by transforming into polar coordinates.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Evaluate the double integral int_0^1 int_0^(sqrt(1-x^2)) (x^2 + y^2) dy dx by transforming into polar coordinates.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Evaluate the double integral int_0^1 int_0^(sqrt(1-x^2)) (x^2 + y^2) dy dx by transforming into polar coordinates.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9421,6 +9860,21 @@ $$V_{\max} = 8xyz = 8 \left(\frac{a}{\sqrt{3}}\right) \left(\frac{b}{\sqrt{3}}\r
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 9</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9600,6 +10054,7 @@ $$I = \left(\frac{\pi}{2}\right) \left(\frac{1}{4}\right) = \frac{\pi}{8}$$</p>
     <article class="question-card subject-lac" id="lac-q22" data-marks="3" data-title="change the order of integration in int_0^1 int_x^(sqrt(x)) f(x, y) dy dx.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-lac-q22" data-duration="300" data-qid="lac-q22" data-label="LAC • Q22 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9614,9 +10069,9 @@ $$I = \left(\frac{\pi}{2}\right) \left(\frac{1}{4}\right) = \frac{\pi}{8}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Change the order of integration in int_0^1 int_x^(sqrt(x)) f(x, y) dy dx.</span>
-            <span class="lang-view lang-manglish">Change the order of integration in int_0^1 int_x^(sqrt(x)) f(x, y) dy dx.</span>
-            <span class="lang-view lang-ml">Change the order of integration in int_0^1 int_x^(sqrt(x)) f(x, y) dy dx.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Change the order of integration in int_0^1 int_x^(sqrt(x)) f(x, y) dy dx.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Change the order of integration in int_0^1 int_x^(sqrt(x)) f(x, y) dy dx.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Change the order of integration in int_0^1 int_x^(sqrt(x)) f(x, y) dy dx.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9640,6 +10095,21 @@ $$I = \left(\frac{\pi}{2}\right) \left(\frac{1}{4}\right) = \frac{\pi}{8}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 10</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9807,6 +10277,7 @@ $$I = \int_{y=0}^1 \int_{x=y^2}^y f(x, y) \, dx \, dy$$</p>
     <article class="question-card subject-lac" id="lac-q23" data-marks="7" data-title="evaluate the improper double integral int_0^infinity int_0^infinity e^(-(x^2 + y^2)) dx dy by transforming into polar coordinates, and hence deduce the value of the gaussian integral int_0^infinity e^(-x^2) dx = sqrt(pi)/2.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q23" data-duration="720" data-qid="lac-q23" data-label="LAC • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9821,9 +10292,9 @@ $$I = \int_{y=0}^1 \int_{x=y^2}^y f(x, y) \, dx \, dy$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Evaluate the improper double integral int_0^infinity int_0^infinity e^(-(x^2 + y^2)) dx dy by transforming into polar coordinates, and hence deduce the value of the Gaussian integral int_0^infinity e^(-x^2) dx = sqrt(pi)/2.</span>
-            <span class="lang-view lang-manglish">Evaluate the improper double integral int_0^infinity int_0^infinity e^(-(x^2 + y^2)) dx dy by transforming into polar coordinates, and hence deduce the value of the Gaussian integral int_0^infinity e^(-x^2) dx = sqrt(pi)/2.</span>
-            <span class="lang-view lang-ml">Evaluate the improper double integral int_0^infinity int_0^infinity e^(-(x^2 + y^2)) dx dy by transforming into polar coordinates, and hence deduce the value of the Gaussian integral int_0^infinity e^(-x^2) dx = sqrt(pi)/2.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Evaluate the improper double integral int_0^infinity int_0^infinity e^(-(x^2 + y^2)) dx dy by transforming into polar coordinates, and hence deduce the value of the Gaussian integral int_0^infinity e^(-x^2) dx = sqrt(pi)/2.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Evaluate the improper double integral int_0^infinity int_0^infinity e^(-(x^2 + y^2)) dx dy by transforming into polar coordinates, and hence deduce the value of the Gaussian integral int_0^infinity e^(-x^2) dx = sqrt(pi)/2.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Evaluate the improper double integral int_0^infinity int_0^infinity e^(-(x^2 + y^2)) dx dy by transforming into polar coordinates, and hence deduce the value of the Gaussian integral int_0^infinity e^(-x^2) dx = sqrt(pi)/2.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9847,6 +10318,21 @@ $$I = \int_{y=0}^1 \int_{x=y^2}^y f(x, y) \, dx \, dy$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10059,6 +10545,7 @@ $$J = \int_0^\infty e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}$$</p>
     <article class="question-card subject-lac" id="lac-q24" data-marks="7" data-title="change the order of integration and evaluate: int_0^a int_y^a x / (x^2 + y^2) dx dy.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q24" data-duration="720" data-qid="lac-q24" data-label="LAC • Q24 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10073,9 +10560,9 @@ $$J = \int_0^\infty e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Change the order of integration and evaluate: int_0^a int_y^a x / (x^2 + y^2) dx dy.</span>
-            <span class="lang-view lang-manglish">Change the order of integration and evaluate: int_0^a int_y^a x / (x^2 + y^2) dx dy.</span>
-            <span class="lang-view lang-ml">Change the order of integration and evaluate: int_0^a int_y^a x / (x^2 + y^2) dx dy.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Change the order of integration and evaluate: int_0^a int_y^a x / (x^2 + y^2) dx dy.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Change the order of integration and evaluate: int_0^a int_y^a x / (x^2 + y^2) dx dy.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Change the order of integration and evaluate: int_0^a int_y^a x / (x^2 + y^2) dx dy.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10099,6 +10586,21 @@ $$J = \int_0^\infty e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10290,6 +10792,7 @@ $$I = \int_{x=0}^a \frac{\pi}{4} \, dx = \frac{\pi}{4} [x]_0^a = \frac{\pi}{4} (
     <article class="question-card subject-lac" id="lac-q25" data-marks="7" data-title="find the area bounded by the parabolas y^2 = 4ax and x^2 = 4ay using double integration.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q25" data-duration="720" data-qid="lac-q25" data-label="LAC • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10304,9 +10807,9 @@ $$I = \int_{x=0}^a \frac{\pi}{4} \, dx = \frac{\pi}{4} [x]_0^a = \frac{\pi}{4} (
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the area bounded by the parabolas y^2 = 4ax and x^2 = 4ay using double integration.</span>
-            <span class="lang-view lang-manglish">Find the area bounded by the parabolas y^2 = 4ax and x^2 = 4ay using double integration.</span>
-            <span class="lang-view lang-ml">Find the area bounded by the parabolas y^2 = 4ax and x^2 = 4ay using double integration.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Find the area bounded by the parabolas y^2 = 4ax and x^2 = 4ay using double integration.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Find the area bounded by the parabolas y^2 = 4ax and x^2 = 4ay using double integration.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Find the area bounded by the parabolas y^2 = 4ax and x^2 = 4ay using double integration.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10330,6 +10833,21 @@ $$I = \int_{x=0}^a \frac{\pi}{4} \, dx = \frac{\pi}{4} [x]_0^a = \frac{\pi}{4} (
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2021_Solved_Scheme.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10530,6 +11048,7 @@ Thus, the enclosed area is $\frac{16a^2}{3}$ square units.</p>
     <article class="question-card subject-lac" id="lac-q26" data-marks="7" data-title="find the volume of the solid bounded by the cylinder x^2 + y^2 = 4 and the planes y + z = 4 and z = 0 using triple integration.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-lac-q26" data-duration="720" data-qid="lac-q26" data-label="LAC • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('lac-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10544,9 +11063,9 @@ Thus, the enclosed area is $\frac{16a^2}{3}$ square units.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the volume of the solid bounded by the cylinder x^2 + y^2 = 4 and the planes y + z = 4 and z = 0 using triple integration.</span>
-            <span class="lang-view lang-manglish">Find the volume of the solid bounded by the cylinder x^2 + y^2 = 4 and the planes y + z = 4 and z = 0 using triple integration.</span>
-            <span class="lang-view lang-ml">Find the volume of the solid bounded by the cylinder x^2 + y^2 = 4 and the planes y + z = 4 and z = 0 using triple integration.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Find the volume of the solid bounded by the cylinder x^2 + y^2 = 4 and the planes y + z = 4 and z = 0 using triple integration.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Find the volume of the solid bounded by the cylinder x^2 + y^2 = 4 and the planes y + z = 4 and z = 0 using triple integration.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Find the volume of the solid bounded by the cylinder x^2 + y^2 = 4 and the planes y + z = 4 and z = 0 using triple integration.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10570,6 +11089,21 @@ Thus, the enclosed area is $\frac{16a^2}{3}$ square units.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (MAT101)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/lac/MAT101_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

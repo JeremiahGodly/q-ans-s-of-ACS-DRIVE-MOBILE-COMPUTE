@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4332,6 +4450,7 @@ pre, code {
     <article class="question-card subject-vcdet" id="vcdet-q1" data-marks="3" data-title="solve bernoulli&#x27;s differential equation dy/dx + y = y^2 (cos x - sin x).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q1" data-duration="300" data-qid="vcdet-q1" data-label="VCDET • Q1 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4346,9 +4465,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Solve Bernoulli's differential equation dy/dx + y = y^2 (cos x - sin x).</span>
-            <span class="lang-view lang-manglish">Solve Bernoulli's differential equation dy/dx + y = y^2 (cos x - sin x).</span>
-            <span class="lang-view lang-ml">Solve Bernoulli's differential equation dy/dx + y = y^2 (cos x - sin x).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Solve Bernoulli's differential equation dy/dx + y = y^2 (cos x - sin x).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> Solve Bernoulli's differential equation dy/dx + y = y^2 (cos x - sin x).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> Solve Bernoulli's differential equation dy/dx + y = y^2 (cos x - sin x).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4372,6 +4491,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 1</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4581,6 +4715,7 @@ where $C$ is an arbitrary constant of integration.</p>
     <article class="question-card subject-vcdet" id="vcdet-q2" data-marks="3" data-title="solve the second order differential equation (d^2 - 4d + 4)y = 8e^(2x) + sin 2x.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q2" data-duration="300" data-qid="vcdet-q2" data-label="VCDET • Q2 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4595,9 +4730,9 @@ where $C$ is an arbitrary constant of integration.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Solve the second order differential equation (D^2 - 4D + 4)y = 8e^(2x) + sin 2x.</span>
-            <span class="lang-view lang-manglish">Solve the second order differential equation (D^2 - 4D + 4)y = 8e^(2x) + sin 2x.</span>
-            <span class="lang-view lang-ml">Solve the second order differential equation (D^2 - 4D + 4)y = 8e^(2x) + sin 2x.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Solve the second order differential equation (D^2 - 4D + 4)y = 8e^(2x) + sin 2x.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Solve the second order differential equation (D^2 - 4D + 4)y = 8e^(2x) + sin 2x.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> Solve the second order differential equation (D^2 - 4D + 4)y = 8e^(2x) + sin 2x.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4621,6 +4756,21 @@ where $C$ is an arbitrary constant of integration.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 2</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4785,6 +4935,7 @@ $$y(x) = y_c + y_{p1} + y_{p2} = (C_1 + C_2 x) e^{2x} + 4x^2 e^{2x} + \frac{1}{8
     <article class="question-card subject-vcdet" id="vcdet-q3" data-marks="7" data-title="solve the differential equation d^2y/dx^2 + y = sec x tan x using the method of variation of parameters.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q3" data-duration="720" data-qid="vcdet-q3" data-label="VCDET • Q3 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4799,9 +4950,9 @@ $$y(x) = y_c + y_{p1} + y_{p2} = (C_1 + C_2 x) e^{2x} + 4x^2 e^{2x} + \frac{1}{8
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Solve the differential equation d^2y/dx^2 + y = sec x tan x using the method of variation of parameters.</span>
-            <span class="lang-view lang-manglish">Solve the differential equation d^2y/dx^2 + y = sec x tan x using the method of variation of parameters.</span>
-            <span class="lang-view lang-ml">Solve the differential equation d^2y/dx^2 + y = sec x tan x using the method of variation of parameters.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Solve the differential equation d^2y/dx^2 + y = sec x tan x using the method of variation of parameters.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Solve the differential equation d^2y/dx^2 + y = sec x tan x using the method of variation of parameters.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> Solve the differential equation d^2y/dx^2 + y = sec x tan x using the method of variation of parameters.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4825,6 +4976,21 @@ $$y(x) = y_c + y_{p1} + y_{p2} = (C_1 + C_2 x) e^{2x} + 4x^2 e^{2x} + \frac{1}{8
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5025,6 +5191,7 @@ where $C_1$ and $C_2$ are arbitrary constants.</p>
     <article class="question-card subject-vcdet" id="vcdet-q4" data-marks="7" data-title="solve the cauchy-euler differential equation: x^2 d^2y/dx^2 - 3x dy/dx + 4y = 2x^2 using the transformation x = e^z.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q4" data-duration="720" data-qid="vcdet-q4" data-label="VCDET • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5039,9 +5206,9 @@ where $C_1$ and $C_2$ are arbitrary constants.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Solve the Cauchy-Euler differential equation: x^2 d^2y/dx^2 - 3x dy/dx + 4y = 2x^2 using the transformation x = e^z.</span>
-            <span class="lang-view lang-manglish">Solve the Cauchy-Euler differential equation: x^2 d^2y/dx^2 - 3x dy/dx + 4y = 2x^2 using the transformation x = e^z.</span>
-            <span class="lang-view lang-ml">Solve the Cauchy-Euler differential equation: x^2 d^2y/dx^2 - 3x dy/dx + 4y = 2x^2 using the transformation x = e^z.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Solve the Cauchy-Euler differential equation: x^2 d^2y/dx^2 - 3x dy/dx + 4y = 2x^2 using the transformation x = e^z.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Solve the Cauchy-Euler differential equation: x^2 d^2y/dx^2 - 3x dy/dx + 4y = 2x^2 using the transformation x = e^z.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> Solve the Cauchy-Euler differential equation: x^2 d^2y/dx^2 - 3x dy/dx + 4y = 2x^2 using the transformation x = e^z.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5065,6 +5232,21 @@ where $C_1$ and $C_2$ are arbitrary constants.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5262,6 +5444,7 @@ where $C_1$ and $C_2$ are arbitrary constants.</p>
     <article class="question-card subject-vcdet" id="vcdet-q5" data-marks="7" data-title="solve the non-homogeneous higher order linear differential equation: (d^2 - 2d + 1)y = x e^x sin x using the exponential shift operator.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q5" data-duration="720" data-qid="vcdet-q5" data-label="VCDET • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5276,9 +5459,9 @@ where $C_1$ and $C_2$ are arbitrary constants.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Solve the non-homogeneous higher order linear differential equation: (D^2 - 2D + 1)y = x e^x sin x using the exponential shift operator.</span>
-            <span class="lang-view lang-manglish">Solve the non-homogeneous higher order linear differential equation: (D^2 - 2D + 1)y = x e^x sin x using the exponential shift operator.</span>
-            <span class="lang-view lang-ml">Solve the non-homogeneous higher order linear differential equation: (D^2 - 2D + 1)y = x e^x sin x using the exponential shift operator.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Solve the non-homogeneous higher order linear differential equation: (D^2 - 2D + 1)y = x e^x sin x using the exponential shift operator.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Solve the non-homogeneous higher order linear differential equation: (D^2 - 2D + 1)y = x e^x sin x using the exponential shift operator.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> Solve the non-homogeneous higher order linear differential equation: (D^2 - 2D + 1)y = x e^x sin x using the exponential shift operator.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5302,6 +5485,21 @@ where $C_1$ and $C_2$ are arbitrary constants.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5507,6 +5705,7 @@ $$y(x) = y_c + y_p = (C_1 + C_2 x)e^x - e^x (x \sin x + 2\cos x)$$</p>
     <article class="question-card subject-vcdet" id="vcdet-q6" data-marks="3" data-title="find the directional derivative of phi(x, y, z) = x^2 y z + 4 x z^2 at the point (1, -2, -1) in the direction of the vector a = 2i - j - 2k.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q6" data-duration="300" data-qid="vcdet-q6" data-label="VCDET • Q6 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5521,9 +5720,9 @@ $$y(x) = y_c + y_p = (C_1 + C_2 x)e^x - e^x (x \sin x + 2\cos x)$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the directional derivative of phi(x, y, z) = x^2 y z + 4 x z^2 at the point (1, -2, -1) in the direction of the vector a = 2i - j - 2k.</span>
-            <span class="lang-view lang-manglish">Find the directional derivative of phi(x, y, z) = x^2 y z + 4 x z^2 at the point (1, -2, -1) in the direction of the vector a = 2i - j - 2k.</span>
-            <span class="lang-view lang-ml">Find the directional derivative of phi(x, y, z) = x^2 y z + 4 x z^2 at the point (1, -2, -1) in the direction of the vector a = 2i - j - 2k.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Find the directional derivative of phi(x, y, z) = x^2 y z + 4 x z^2 at the point (1, -2, -1) in the direction of the vector a = 2i - j - 2k.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Find the directional derivative of phi(x, y, z) = x^2 y z + 4 x z^2 at the point (1, -2, -1) in the direction of the vector a = 2i - j - 2k.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> Find the directional derivative of phi(x, y, z) = x^2 y z + 4 x z^2 at the point (1, -2, -1) in the direction of the vector a = 2i - j - 2k.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5547,6 +5746,21 @@ $$y(x) = y_c + y_p = (C_1 + C_2 x)e^x - e^x (x \sin x + 2\cos x)$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 3</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5720,6 +5934,7 @@ The rate of increase of $\phi$ in the given direction is $\frac{37}{3}$ units pe
     <article class="question-card subject-vcdet" id="vcdet-q7" data-marks="3" data-title="find the unit normal vector to the surface x^2 + y^2 + 2z^2 = 4 at the point (1, 1, 1), and find the equation of the tangent plane.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q7" data-duration="300" data-qid="vcdet-q7" data-label="VCDET • Q7 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5734,9 +5949,9 @@ The rate of increase of $\phi$ in the given direction is $\frac{37}{3}$ units pe
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the unit normal vector to the surface x^2 + y^2 + 2z^2 = 4 at the point (1, 1, 1), and find the equation of the tangent plane.</span>
-            <span class="lang-view lang-manglish">Find the unit normal vector to the surface x^2 + y^2 + 2z^2 = 4 at the point (1, 1, 1), and find the equation of the tangent plane.</span>
-            <span class="lang-view lang-ml">Find the unit normal vector to the surface x^2 + y^2 + 2z^2 = 4 at the point (1, 1, 1), and find the equation of the tangent plane.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Find the unit normal vector to the surface x^2 + y^2 + 2z^2 = 4 at the point (1, 1, 1), and find the equation of the tangent plane.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Find the unit normal vector to the surface x^2 + y^2 + 2z^2 = 4 at the point (1, 1, 1), and find the equation of the tangent plane.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Find the unit normal vector to the surface x^2 + y^2 + 2z^2 = 4 at the point (1, 1, 1), and find the equation of the tangent plane.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5760,6 +5975,21 @@ The rate of increase of $\phi$ in the given direction is $\frac{37}{3}$ units pe
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 4</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5930,6 +6160,7 @@ $$x + y + 2z = 4$$</p>
     <article class="question-card subject-vcdet" id="vcdet-q8" data-marks="7" data-title="show that the vector field f = (2xy + z^3)i + x^2 j + 3xz^2 k is conservative and irrotational. find its scalar potential phi(x, y, z) such that f = grad phi. hence evaluate the work done in moving a particle from (1, -2, 1) to (3, 1, 4).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q8" data-duration="720" data-qid="vcdet-q8" data-label="VCDET • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5944,9 +6175,9 @@ $$x + y + 2z = 4$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Show that the vector field F = (2xy + z^3)i + x^2 j + 3xz^2 k is conservative and irrotational. Find its scalar potential phi(x, y, z) such that F = grad phi. Hence evaluate the work done in moving a particle from (1, -2, 1) to (3, 1, 4).</span>
-            <span class="lang-view lang-manglish">Show that the vector field F = (2xy + z^3)i + x^2 j + 3xz^2 k is conservative and irrotational. Find its scalar potential phi(x, y, z) such that F = grad phi. Hence evaluate the work done in moving a particle from (1, -2, 1) to (3, 1, 4).</span>
-            <span class="lang-view lang-ml">Show that the vector field F = (2xy + z^3)i + x^2 j + 3xz^2 k is conservative and irrotational. Find its scalar potential phi(x, y, z) such that F = grad phi. Hence evaluate the work done in moving a particle from (1, -2, 1) to (3, 1, 4).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Show that the vector field F = (2xy + z^3)i + x^2 j + 3xz^2 k is conservative and irrotational. Find its scalar potential phi(x, y, z) such that F = grad phi. Hence evaluate the work done in moving a particle from (1, -2, 1) to (3, 1, 4).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Show that the vector field F = (2xy + z^3)i + x^2 j + 3xz^2 k is conservative and irrotational. Find its scalar potential phi(x, y, z) such that F = grad phi. Hence evaluate the work done in moving a particle from (1, -2, 1) to (3, 1, 4).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Show that the vector field F = (2xy + z^3)i + x^2 j + 3xz^2 k is conservative and irrotational. Find its scalar potential phi(x, y, z) such that F = grad phi. Hence evaluate the work done in moving a particle from (1, -2, 1) to (3, 1, 4).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5970,6 +6201,21 @@ $$x + y + 2z = 4$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6215,6 +6461,7 @@ $$W = \phi(B) - \phi(A) = 201 - (-1) = 201 + 1 = 202 \text{ units}$$</p>
     <article class="question-card subject-vcdet" id="vcdet-q9" data-marks="7" data-title="find constants a, b, c such that the vector field f = (x + 2y + az)i + (bx - 3y - z)j + (4x + cy + 2z)k is irrotational. also show that f is solenoidal for all values of a, b, c.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q9" data-duration="720" data-qid="vcdet-q9" data-label="VCDET • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6229,9 +6476,9 @@ $$W = \phi(B) - \phi(A) = 201 - (-1) = 201 + 1 = 202 \text{ units}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find constants a, b, c such that the vector field F = (x + 2y + az)i + (bx - 3y - z)j + (4x + cy + 2z)k is irrotational. Also show that F is solenoidal for all values of a, b, c.</span>
-            <span class="lang-view lang-manglish">Find constants a, b, c such that the vector field F = (x + 2y + az)i + (bx - 3y - z)j + (4x + cy + 2z)k is irrotational. Also show that F is solenoidal for all values of a, b, c.</span>
-            <span class="lang-view lang-ml">Find constants a, b, c such that the vector field F = (x + 2y + az)i + (bx - 3y - z)j + (4x + cy + 2z)k is irrotational. Also show that F is solenoidal for all values of a, b, c.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Find constants a, b, c such that the vector field F = (x + 2y + az)i + (bx - 3y - z)j + (4x + cy + 2z)k is irrotational. Also show that F is solenoidal for all values of a, b, c.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Find constants a, b, c such that the vector field F = (x + 2y + az)i + (bx - 3y - z)j + (4x + cy + 2z)k is irrotational. Also show that F is solenoidal for all values of a, b, c.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Find constants a, b, c such that the vector field F = (x + 2y + az)i + (bx - 3y - z)j + (4x + cy + 2z)k is irrotational. Also show that F is solenoidal for all values of a, b, c.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6255,6 +6502,21 @@ $$W = \phi(B) - \phi(A) = 201 - (-1) = 201 + 1 = 202 \text{ units}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6467,6 +6729,7 @@ $$\nabla \cdot \vec{F} = 1 + (-3) + 2 = 1 - 3 + 2 = 0$$</p>
     <article class="question-card subject-vcdet" id="vcdet-q10" data-marks="7" data-title="if r = x i + y j + z k and r = |r|, prove that: (i) grad(r^n) = n r^(n-2) r, (ii) div(r^n r) = (n+3)r^n, and (iii) laplacian(r^n) = n(n+1)r^(n-2). hence show that 1/r is harmonic for r != 0.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q10" data-duration="720" data-qid="vcdet-q10" data-label="VCDET • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6481,9 +6744,9 @@ $$\nabla \cdot \vec{F} = 1 + (-3) + 2 = 1 - 3 + 2 = 0$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">If r = x i + y j + z k and r = |r|, prove that: (i) grad(r^n) = n r^(n-2) r, (ii) div(r^n r) = (n+3)r^n, and (iii) Laplacian(r^n) = n(n+1)r^(n-2). Hence show that 1/r is harmonic for r != 0.</span>
-            <span class="lang-view lang-manglish">If r = x i + y j + z k and r = |r|, prove that: (i) grad(r^n) = n r^(n-2) r, (ii) div(r^n r) = (n+3)r^n, and (iii) Laplacian(r^n) = n(n+1)r^(n-2). Hence show that 1/r is harmonic for r != 0.</span>
-            <span class="lang-view lang-ml">If r = x i + y j + z k and r = |r|, prove that: (i) grad(r^n) = n r^(n-2) r, (ii) div(r^n r) = (n+3)r^n, and (iii) Laplacian(r^n) = n(n+1)r^(n-2). Hence show that 1/r is harmonic for r != 0.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> If r = x i + y j + z k and r = |r|, prove that: (i) grad(r^n) = n r^(n-2) r, (ii) div(r^n r) = (n+3)r^n, and (iii) Laplacian(r^n) = n(n+1)r^(n-2). Hence show that 1/r is harmonic for r != 0.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> If r = x i + y j + z k and r = |r|, prove that: (i) grad(r^n) = n r^(n-2) r, (ii) div(r^n r) = (n+3)r^n, and (iii) Laplacian(r^n) = n(n+1)r^(n-2). Hence show that 1/r is harmonic for r != 0.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> If r = x i + y j + z k and r = |r|, prove that: (i) grad(r^n) = n r^(n-2) r, (ii) div(r^n r) = (n+3)r^n, and (iii) Laplacian(r^n) = n(n+1)r^(n-2). Hence show that 1/r is harmonic for r != 0.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6507,6 +6770,21 @@ $$\nabla \cdot \vec{F} = 1 + (-3) + 2 = 1 - 3 + 2 = 0$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6757,6 +7035,7 @@ Since $\nabla^2(1/r) = 0$, the inverse distance field $1/r$ is strictly harmonic
     <article class="question-card subject-vcdet" id="vcdet-q11" data-marks="3" data-title="using green&#x27;s theorem, evaluate the line integral oint_c [(x - y) dx + (x + y) dy] where c is the closed curve bounded by y = x^2 and y^2 = x traversed counter-clockwise.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q11" data-duration="300" data-qid="vcdet-q11" data-label="VCDET • Q11 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6771,9 +7050,9 @@ Since $\nabla^2(1/r) = 0$, the inverse distance field $1/r$ is strictly harmonic
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Using Green's theorem, evaluate the line integral oint_C [(x - y) dx + (x + y) dy] where C is the closed curve bounded by y = x^2 and y^2 = x traversed counter-clockwise.</span>
-            <span class="lang-view lang-manglish">Using Green's theorem, evaluate the line integral oint_C [(x - y) dx + (x + y) dy] where C is the closed curve bounded by y = x^2 and y^2 = x traversed counter-clockwise.</span>
-            <span class="lang-view lang-ml">Using Green's theorem, evaluate the line integral oint_C [(x - y) dx + (x + y) dy] where C is the closed curve bounded by y = x^2 and y^2 = x traversed counter-clockwise.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Using Green's theorem, evaluate the line integral oint_C [(x - y) dx + (x + y) dy] where C is the closed curve bounded by y = x^2 and y^2 = x traversed counter-clockwise.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Using Green's theorem, evaluate the line integral oint_C [(x - y) dx + (x + y) dy] where C is the closed curve bounded by y = x^2 and y^2 = x traversed counter-clockwise.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Using Green's theorem, evaluate the line integral oint_C [(x - y) dx + (x + y) dy] where C is the closed curve bounded by y = x^2 and y^2 = x traversed counter-clockwise.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6797,6 +7076,21 @@ Since $\nabla^2(1/r) = 0$, the inverse distance field $1/r$ is strictly harmonic
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 5</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6973,6 +7267,7 @@ $$I = 2 \left( \frac{1}{3} \right) = \frac{2}{3}$$</p>
     <article class="question-card subject-vcdet" id="vcdet-q12" data-marks="3" data-title="state gauss divergence theorem and explain its physical significance in electrostatics and fluid mechanics.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q12" data-duration="300" data-qid="vcdet-q12" data-label="VCDET • Q12 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6987,9 +7282,9 @@ $$I = 2 \left( \frac{1}{3} \right) = \frac{2}{3}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State Gauss divergence theorem and explain its physical significance in electrostatics and fluid mechanics.</span>
-            <span class="lang-view lang-manglish">State Gauss divergence theorem and explain its physical significance in electrostatics and fluid mechanics.</span>
-            <span class="lang-view lang-ml">State Gauss divergence theorem and explain its physical significance in electrostatics and fluid mechanics.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> State Gauss divergence theorem and explain its physical significance in electrostatics and fluid mechanics.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> State Gauss divergence theorem and explain its physical significance in electrostatics and fluid mechanics.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> State Gauss divergence theorem and explain its physical significance in electrostatics and fluid mechanics.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7013,6 +7308,21 @@ $$I = 2 \left( \frac{1}{3} \right) = \frac{2}{3}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 6</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7144,6 +7454,7 @@ where $\hat{n}$ is the outward-pointing unit normal vector to the surface elemen
     <article class="question-card subject-vcdet" id="vcdet-q13" data-marks="7" data-title="verify green&#x27;s theorem in the plane for oint_c [(xy + y^2) dx + x^2 dy] where c is the closed curve bounded by y = x and y = x^2.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q13" data-duration="720" data-qid="vcdet-q13" data-label="VCDET • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7158,9 +7469,9 @@ where $\hat{n}$ is the outward-pointing unit normal vector to the surface elemen
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Verify Green's theorem in the plane for oint_C [(xy + y^2) dx + x^2 dy] where C is the closed curve bounded by y = x and y = x^2.</span>
-            <span class="lang-view lang-manglish">Verify Green's theorem in the plane for oint_C [(xy + y^2) dx + x^2 dy] where C is the closed curve bounded by y = x and y = x^2.</span>
-            <span class="lang-view lang-ml">Verify Green's theorem in the plane for oint_C [(xy + y^2) dx + x^2 dy] where C is the closed curve bounded by y = x and y = x^2.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Verify Green's theorem in the plane for oint_C [(xy + y^2) dx + x^2 dy] where C is the closed curve bounded by y = x and y = x^2.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Verify Green's theorem in the plane for oint_C [(xy + y^2) dx + x^2 dy] where C is the closed curve bounded by y = x and y = x^2.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Verify Green's theorem in the plane for oint_C [(xy + y^2) dx + x^2 dy] where C is the closed curve bounded by y = x and y = x^2.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7184,6 +7495,21 @@ where $\hat{n}$ is the outward-pointing unit normal vector to the surface elemen
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7393,6 +7719,7 @@ $$\text{LHS} = -\frac{1}{20}$$</p>
     <article class="question-card subject-vcdet" id="vcdet-q14" data-marks="7" data-title="verify gauss divergence theorem for f = 4xz i - y^2 j + yz k over the cube bounded by x = 0, x = 1, y = 0, y = 1, z = 0, z = 1.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q14" data-duration="720" data-qid="vcdet-q14" data-label="VCDET • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7407,9 +7734,9 @@ $$\text{LHS} = -\frac{1}{20}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Verify Gauss divergence theorem for F = 4xz i - y^2 j + yz k over the cube bounded by x = 0, x = 1, y = 0, y = 1, z = 0, z = 1.</span>
-            <span class="lang-view lang-manglish">Verify Gauss divergence theorem for F = 4xz i - y^2 j + yz k over the cube bounded by x = 0, x = 1, y = 0, y = 1, z = 0, z = 1.</span>
-            <span class="lang-view lang-ml">Verify Gauss divergence theorem for F = 4xz i - y^2 j + yz k over the cube bounded by x = 0, x = 1, y = 0, y = 1, z = 0, z = 1.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Verify Gauss divergence theorem for F = 4xz i - y^2 j + yz k over the cube bounded by x = 0, x = 1, y = 0, y = 1, z = 0, z = 1.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Verify Gauss divergence theorem for F = 4xz i - y^2 j + yz k over the cube bounded by x = 0, x = 1, y = 0, y = 1, z = 0, z = 1.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Verify Gauss divergence theorem for F = 4xz i - y^2 j + yz k over the cube bounded by x = 0, x = 1, y = 0, y = 1, z = 0, z = 1.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7433,6 +7760,21 @@ $$\text{LHS} = -\frac{1}{20}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7657,6 +7999,7 @@ $$\text{LHS} = \frac{3}{2}$$</p>
     <article class="question-card subject-vcdet" id="vcdet-q15" data-marks="7" data-title="verify stokes&#x27; theorem for f = (2x - y)i - yz^2 j - y^2 z k over the upper hemisphere s: x^2 + y^2 + z^2 = 1, z &gt;= 0 bounded by the circle c: x^2 + y^2 = 1 in the xy-plane.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q15" data-duration="720" data-qid="vcdet-q15" data-label="VCDET • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7671,9 +8014,9 @@ $$\text{LHS} = \frac{3}{2}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Verify Stokes' theorem for F = (2x - y)i - yz^2 j - y^2 z k over the upper hemisphere S: x^2 + y^2 + z^2 = 1, z >= 0 bounded by the circle C: x^2 + y^2 = 1 in the xy-plane.</span>
-            <span class="lang-view lang-manglish">Verify Stokes' theorem for F = (2x - y)i - yz^2 j - y^2 z k over the upper hemisphere S: x^2 + y^2 + z^2 = 1, z >= 0 bounded by the circle C: x^2 + y^2 = 1 in the xy-plane.</span>
-            <span class="lang-view lang-ml">Verify Stokes' theorem for F = (2x - y)i - yz^2 j - y^2 z k over the upper hemisphere S: x^2 + y^2 + z^2 = 1, z >= 0 bounded by the circle C: x^2 + y^2 = 1 in the xy-plane.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Verify Stokes' theorem for F = (2x - y)i - yz^2 j - y^2 z k over the upper hemisphere S: x^2 + y^2 + z^2 = 1, z >= 0 bounded by the circle C: x^2 + y^2 = 1 in the xy-plane.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Verify Stokes' theorem for F = (2x - y)i - yz^2 j - y^2 z k over the upper hemisphere S: x^2 + y^2 + z^2 = 1, z >= 0 bounded by the circle C: x^2 + y^2 = 1 in the xy-plane.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Verify Stokes' theorem for F = (2x - y)i - yz^2 j - y^2 z k over the upper hemisphere S: x^2 + y^2 + z^2 = 1, z >= 0 bounded by the circle C: x^2 + y^2 = 1 in the xy-plane.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7697,6 +8040,21 @@ $$\text{LHS} = \frac{3}{2}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7941,6 +8299,7 @@ $$\text{RHS} = \pi$$</p>
     <article class="question-card subject-vcdet" id="vcdet-q16" data-marks="3" data-title="state dirichlet&#x27;s conditions for the existence of fourier series of a function f(x) in an interval (c, c + 2l). what does the fourier series converge to at a point of finite discontinuity?">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q16" data-duration="300" data-qid="vcdet-q16" data-label="VCDET • Q16 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7955,9 +8314,9 @@ $$\text{RHS} = \pi$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State Dirichlet's conditions for the existence of Fourier series of a function f(x) in an interval (c, c + 2L). What does the Fourier series converge to at a point of finite discontinuity?</span>
-            <span class="lang-view lang-manglish">State Dirichlet's conditions for the existence of Fourier series of a function f(x) in an interval (c, c + 2L). What does the Fourier series converge to at a point of finite discontinuity?</span>
-            <span class="lang-view lang-ml">State Dirichlet's conditions for the existence of Fourier series of a function f(x) in an interval (c, c + 2L). What does the Fourier series converge to at a point of finite discontinuity?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> State Dirichlet's conditions for the existence of Fourier series of a function f(x) in an interval (c, c + 2L). What does the Fourier series converge to at a point of finite discontinuity?</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> State Dirichlet's conditions for the existence of Fourier series of a function f(x) in an interval (c, c + 2L). What does the Fourier series converge to at a point of finite discontinuity?</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> State Dirichlet's conditions for the existence of Fourier series of a function f(x) in an interval (c, c + 2L). What does the Fourier series converge to at a point of finite discontinuity?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7981,6 +8340,21 @@ $$\text{RHS} = \pi$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 7</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8118,6 +8492,7 @@ Let $S(x)$ denote the sum of the Fourier series of $f(x)$ at any point $x$:
     <article class="question-card subject-vcdet" id="vcdet-q17" data-marks="3" data-title="find the half-range fourier sine series expansion for f(x) = k (constant) in the interval 0 &lt; x &lt; pi.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q17" data-duration="300" data-qid="vcdet-q17" data-label="VCDET • Q17 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8132,9 +8507,9 @@ Let $S(x)$ denote the sum of the Fourier series of $f(x)$ at any point $x$:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the half-range Fourier sine series expansion for f(x) = k (constant) in the interval 0 < x < pi.</span>
-            <span class="lang-view lang-manglish">Find the half-range Fourier sine series expansion for f(x) = k (constant) in the interval 0 < x < pi.</span>
-            <span class="lang-view lang-ml">Find the half-range Fourier sine series expansion for f(x) = k (constant) in the interval 0 < x < pi.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Find the half-range Fourier sine series expansion for f(x) = k (constant) in the interval 0 < x < pi.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Find the half-range Fourier sine series expansion for f(x) = k (constant) in the interval 0 < x < pi.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Find the half-range Fourier sine series expansion for f(x) = k (constant) in the interval 0 < x < pi.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8158,6 +8533,21 @@ Let $S(x)$ denote the sum of the Fourier series of $f(x)$ at any point $x$:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 8</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8322,6 +8712,7 @@ $$f(x) = \frac{4k}{\pi} \sum_{m=1}^\infty \frac{\sin(2m - 1)x}{2m - 1} = \frac{4
     <article class="question-card subject-vcdet" id="vcdet-q18" data-marks="7" data-title="find the fourier series of f(x) = x^2 in the interval -pi &lt;= x &lt;= pi. hence deduce that: (i) sum_{n=1}^infinity (-1)^(n-1)/n^2 = pi^2/12, and (ii) sum_{n=1}^infinity 1/n^2 = pi^2/6.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q18" data-duration="720" data-qid="vcdet-q18" data-label="VCDET • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8336,9 +8727,9 @@ $$f(x) = \frac{4k}{\pi} \sum_{m=1}^\infty \frac{\sin(2m - 1)x}{2m - 1} = \frac{4
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the Fourier series of f(x) = x^2 in the interval -pi <= x <= pi. Hence deduce that: (i) sum_{n=1}^infinity (-1)^(n-1)/n^2 = pi^2/12, and (ii) sum_{n=1}^infinity 1/n^2 = pi^2/6.</span>
-            <span class="lang-view lang-manglish">Find the Fourier series of f(x) = x^2 in the interval -pi <= x <= pi. Hence deduce that: (i) sum_{n=1}^infinity (-1)^(n-1)/n^2 = pi^2/12, and (ii) sum_{n=1}^infinity 1/n^2 = pi^2/6.</span>
-            <span class="lang-view lang-ml">Find the Fourier series of f(x) = x^2 in the interval -pi <= x <= pi. Hence deduce that: (i) sum_{n=1}^infinity (-1)^(n-1)/n^2 = pi^2/12, and (ii) sum_{n=1}^infinity 1/n^2 = pi^2/6.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Find the Fourier series of f(x) = x^2 in the interval -pi <= x <= pi. Hence deduce that: (i) sum_{n=1}^infinity (-1)^(n-1)/n^2 = pi^2/12, and (ii) sum_{n=1}^infinity 1/n^2 = pi^2/6.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Find the Fourier series of f(x) = x^2 in the interval -pi <= x <= pi. Hence deduce that: (i) sum_{n=1}^infinity (-1)^(n-1)/n^2 = pi^2/12, and (ii) sum_{n=1}^infinity 1/n^2 = pi^2/6.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> Find the Fourier series of f(x) = x^2 in the interval -pi <= x <= pi. Hence deduce that: (i) sum_{n=1}^infinity (-1)^(n-1)/n^2 = pi^2/12, and (ii) sum_{n=1}^infinity 1/n^2 = pi^2/6.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8362,6 +8753,21 @@ $$f(x) = \frac{4k}{\pi} \sum_{m=1}^\infty \frac{\sin(2m - 1)x}{2m - 1} = \frac{4
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8592,6 +8998,7 @@ $$\sum_{n=1}^\infty \frac{1}{n^2} = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16}
     <article class="question-card subject-vcdet" id="vcdet-q19" data-marks="7" data-title="find the fourier series of the periodic square wave: f(x) = -k for -pi &lt; x &lt; 0 and k for 0 &lt; x &lt; pi with period 2pi. hence deduce the gregory-leibniz series for pi: 1 - 1/3 + 1/5 - 1/7 + ... = pi/4.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q19" data-duration="720" data-qid="vcdet-q19" data-label="VCDET • Q19 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8606,9 +9013,9 @@ $$\sum_{n=1}^\infty \frac{1}{n^2} = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16}
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the Fourier series of the periodic square wave: f(x) = -k for -pi < x < 0 and k for 0 < x < pi with period 2pi. Hence deduce the Gregory-Leibniz series for pi: 1 - 1/3 + 1/5 - 1/7 + ... = pi/4.</span>
-            <span class="lang-view lang-manglish">Find the Fourier series of the periodic square wave: f(x) = -k for -pi < x < 0 and k for 0 < x < pi with period 2pi. Hence deduce the Gregory-Leibniz series for pi: 1 - 1/3 + 1/5 - 1/7 + ... = pi/4.</span>
-            <span class="lang-view lang-ml">Find the Fourier series of the periodic square wave: f(x) = -k for -pi < x < 0 and k for 0 < x < pi with period 2pi. Hence deduce the Gregory-Leibniz series for pi: 1 - 1/3 + 1/5 - 1/7 + ... = pi/4.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Find the Fourier series of the periodic square wave: f(x) = -k for -pi < x < 0 and k for 0 < x < pi with period 2pi. Hence deduce the Gregory-Leibniz series for pi: 1 - 1/3 + 1/5 - 1/7 + ... = pi/4.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Find the Fourier series of the periodic square wave: f(x) = -k for -pi < x < 0 and k for 0 < x < pi with period 2pi. Hence deduce the Gregory-Leibniz series for pi: 1 - 1/3 + 1/5 - 1/7 + ... = pi/4.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> Find the Fourier series of the periodic square wave: f(x) = -k for -pi < x < 0 and k for 0 < x < pi with period 2pi. Hence deduce the Gregory-Leibniz series for pi: 1 - 1/3 + 1/5 - 1/7 + ... = pi/4.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8632,6 +9039,21 @@ $$\sum_{n=1}^\infty \frac{1}{n^2} = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16}
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8841,6 +9263,7 @@ This proves the celebrated Gregory-Leibniz formula.</p>
     <article class="question-card subject-vcdet" id="vcdet-q20" data-marks="7" data-title="find the fourier cosine and sine transforms of f(x) = e^(-ax) (a &gt; 0). hence evaluate the integral int_0^infinity cos(omega*x) / (a^2 + omega^2) d(omega).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q20" data-duration="720" data-qid="vcdet-q20" data-label="VCDET • Q20 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8855,9 +9278,9 @@ This proves the celebrated Gregory-Leibniz formula.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the Fourier cosine and sine transforms of f(x) = e^(-ax) (a > 0). Hence evaluate the integral int_0^infinity cos(omega*x) / (a^2 + omega^2) d(omega).</span>
-            <span class="lang-view lang-manglish">Find the Fourier cosine and sine transforms of f(x) = e^(-ax) (a > 0). Hence evaluate the integral int_0^infinity cos(omega*x) / (a^2 + omega^2) d(omega).</span>
-            <span class="lang-view lang-ml">Find the Fourier cosine and sine transforms of f(x) = e^(-ax) (a > 0). Hence evaluate the integral int_0^infinity cos(omega*x) / (a^2 + omega^2) d(omega).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Find the Fourier cosine and sine transforms of f(x) = e^(-ax) (a > 0). Hence evaluate the integral int_0^infinity cos(omega*x) / (a^2 + omega^2) d(omega).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Find the Fourier cosine and sine transforms of f(x) = e^(-ax) (a > 0). Hence evaluate the integral int_0^infinity cos(omega*x) / (a^2 + omega^2) d(omega).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Find the Fourier cosine and sine transforms of f(x) = e^(-ax) (a > 0). Hence evaluate the integral int_0^infinity cos(omega*x) / (a^2 + omega^2) d(omega).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8881,6 +9304,21 @@ This proves the celebrated Gregory-Leibniz formula.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9086,6 +9524,7 @@ This formally evaluates Laplace's famous contour integral using Fourier transfor
     <article class="question-card subject-vcdet" id="vcdet-q21" data-marks="3" data-title="find the laplace transform of f(t) = t^2 e^(-3t) sin 2t.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q21" data-duration="300" data-qid="vcdet-q21" data-label="VCDET • Q21 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9100,9 +9539,9 @@ This formally evaluates Laplace's famous contour integral using Fourier transfor
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Find the Laplace transform of f(t) = t^2 e^(-3t) sin 2t.</span>
-            <span class="lang-view lang-manglish">Find the Laplace transform of f(t) = t^2 e^(-3t) sin 2t.</span>
-            <span class="lang-view lang-ml">Find the Laplace transform of f(t) = t^2 e^(-3t) sin 2t.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Find the Laplace transform of f(t) = t^2 e^(-3t) sin 2t.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Find the Laplace transform of f(t) = t^2 e^(-3t) sin 2t.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Find the Laplace transform of f(t) = t^2 e^(-3t) sin 2t.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9126,6 +9565,21 @@ This formally evaluates Laplace's famous contour integral using Fourier transfor
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 9</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9305,6 +9759,7 @@ $$\mathcal{L}\{t^2 e^{-3t} \sin 2t\} = \frac{12s^2 + 72s + 92}{(s^2 + 6s + 13)^3
     <article class="question-card subject-vcdet" id="vcdet-q22" data-marks="3" data-title="state the convolution theorem for laplace transforms. use it to find l^(-1){1 / (s(s^2 + 1))}.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-3m">3 Marks (Short Answer)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q22" data-duration="300" data-qid="vcdet-q22" data-label="VCDET • Q22 (3M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9319,9 +9774,9 @@ $$\mathcal{L}\{t^2 e^{-3t} \sin 2t\} = \frac{12s^2 + 72s + 92}{(s^2 + 6s + 13)^3
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State the Convolution Theorem for Laplace transforms. Use it to find L^(-1){1 / (s(s^2 + 1))}.</span>
-            <span class="lang-view lang-manglish">State the Convolution Theorem for Laplace transforms. Use it to find L^(-1){1 / (s(s^2 + 1))}.</span>
-            <span class="lang-view lang-ml">State the Convolution Theorem for Laplace transforms. Use it to find L^(-1){1 / (s(s^2 + 1))}.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> State the Convolution Theorem for Laplace transforms. Use it to find L^(-1){1 / (s(s^2 + 1))}.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> State the Convolution Theorem for Laplace transforms. Use it to find L^(-1){1 / (s(s^2 + 1))}.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> State the Convolution Theorem for Laplace transforms. Use it to find L^(-1){1 / (s(s^2 + 1))}.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9345,6 +9800,21 @@ $$\mathcal{L}\{t^2 e^{-3t} \sin 2t\} = \frac{12s^2 + 72s + 92}{(s^2 + 6s + 13)^3
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part A &bull; Question 10</strong> (3 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9500,6 +9970,7 @@ $$\mathcal{L}^{-1}\left\{ \frac{1}{s(s^2 + 1)} \right\} = 1 - \cos t$$</p>
     <article class="question-card subject-vcdet" id="vcdet-q23" data-marks="7" data-title="evaluate l{(cos at - cos bt) / t} and hence compute the improper integral int_0^infinity (cos t - cos 2t) / t dt.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q23" data-duration="720" data-qid="vcdet-q23" data-label="VCDET • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9514,9 +9985,9 @@ $$\mathcal{L}^{-1}\left\{ \frac{1}{s(s^2 + 1)} \right\} = 1 - \cos t$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Evaluate L{(cos at - cos bt) / t} and hence compute the improper integral int_0^infinity (cos t - cos 2t) / t dt.</span>
-            <span class="lang-view lang-manglish">Evaluate L{(cos at - cos bt) / t} and hence compute the improper integral int_0^infinity (cos t - cos 2t) / t dt.</span>
-            <span class="lang-view lang-ml">Evaluate L{(cos at - cos bt) / t} and hence compute the improper integral int_0^infinity (cos t - cos 2t) / t dt.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Evaluate L{(cos at - cos bt) / t} and hence compute the improper integral int_0^infinity (cos t - cos 2t) / t dt.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Evaluate L{(cos at - cos bt) / t} and hence compute the improper integral int_0^infinity (cos t - cos 2t) / t dt.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Evaluate L{(cos at - cos bt) / t} and hence compute the improper integral int_0^infinity (cos t - cos 2t) / t dt.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9540,6 +10011,21 @@ $$\mathcal{L}^{-1}\left\{ \frac{1}{s(s^2 + 1)} \right\} = 1 - \cos t$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9749,6 +10235,7 @@ $$\int_0^\infty \frac{\cos t - \cos 2t}{t} \, dt = \ln\left(\frac{2}{1}\right) =
     <article class="question-card subject-vcdet" id="vcdet-q24" data-marks="7" data-title="using the convolution theorem, find the inverse laplace transform of f(s) = 1 / (s^2 + a^2)^2.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q24" data-duration="720" data-qid="vcdet-q24" data-label="VCDET • Q24 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9763,9 +10250,9 @@ $$\int_0^\infty \frac{\cos t - \cos 2t}{t} \, dt = \ln\left(\frac{2}{1}\right) =
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Using the Convolution Theorem, find the inverse Laplace transform of F(s) = 1 / (s^2 + a^2)^2.</span>
-            <span class="lang-view lang-manglish">Using the Convolution Theorem, find the inverse Laplace transform of F(s) = 1 / (s^2 + a^2)^2.</span>
-            <span class="lang-view lang-ml">Using the Convolution Theorem, find the inverse Laplace transform of F(s) = 1 / (s^2 + a^2)^2.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Using the Convolution Theorem, find the inverse Laplace transform of F(s) = 1 / (s^2 + a^2)^2.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Using the Convolution Theorem, find the inverse Laplace transform of F(s) = 1 / (s^2 + a^2)^2.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Using the Convolution Theorem, find the inverse Laplace transform of F(s) = 1 / (s^2 + a^2)^2.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9789,6 +10276,21 @@ $$\int_0^\infty \frac{\cos t - \cos 2t}{t} \, dt = \ln\left(\frac{2}{1}\right) =
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10001,6 +10503,7 @@ $$\mathcal{L}^{-1}\left\{ \frac{1}{(s^2 + a^2)^2} \right\} = \frac{\sin at - at 
     <article class="question-card subject-vcdet" id="vcdet-q25" data-marks="7" data-title="solve the initial value problem using laplace transform: d^2y/dt^2 + 4 dy/dt + 4y = 6 e^(-2t) subject to y(0) = -2 and y&#x27;(0) = 8.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q25" data-duration="720" data-qid="vcdet-q25" data-label="VCDET • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10015,9 +10518,9 @@ $$\mathcal{L}^{-1}\left\{ \frac{1}{(s^2 + a^2)^2} \right\} = \frac{\sin at - at 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Solve the initial value problem using Laplace transform: d^2y/dt^2 + 4 dy/dt + 4y = 6 e^(-2t) subject to y(0) = -2 and y'(0) = 8.</span>
-            <span class="lang-view lang-manglish">Solve the initial value problem using Laplace transform: d^2y/dt^2 + 4 dy/dt + 4y = 6 e^(-2t) subject to y(0) = -2 and y'(0) = 8.</span>
-            <span class="lang-view lang-ml">Solve the initial value problem using Laplace transform: d^2y/dt^2 + 4 dy/dt + 4y = 6 e^(-2t) subject to y(0) = -2 and y'(0) = 8.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Solve the initial value problem using Laplace transform: d^2y/dt^2 + 4 dy/dt + 4y = 6 e^(-2t) subject to y(0) = -2 and y'(0) = 8.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Solve the initial value problem using Laplace transform: d^2y/dt^2 + 4 dy/dt + 4y = 6 e^(-2t) subject to y(0) = -2 and y'(0) = 8.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Solve the initial value problem using Laplace transform: d^2y/dt^2 + 4 dy/dt + 4y = 6 e^(-2t) subject to y(0) = -2 and y'(0) = 8.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10041,6 +10544,21 @@ $$\mathcal{L}^{-1}\left\{ \frac{1}{(s^2 + a^2)^2} \right\} = \frac{\sin at - at 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10268,6 +10786,7 @@ $$y(t) = -2e^{-2t} + 4t e^{-2t} + 3t^2 e^{-2t} = (3t^2 + 4t - 2)e^{-2t}$$</p>
     <article class="question-card subject-vcdet" id="vcdet-q26" data-marks="7" data-title="solve the system of simultaneous ordinary differential equations using laplace transform: dx/dt + y = sin t, dy/dt + x = cos t subject to x(0) = 1 and y(0) = 0.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-vcdet-q26" data-duration="720" data-qid="vcdet-q26" data-label="VCDET • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('vcdet-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10282,9 +10801,9 @@ $$y(t) = -2e^{-2t} + 4t e^{-2t} + 3t^2 e^{-2t} = (3t^2 + 4t - 2)e^{-2t}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Solve the system of simultaneous ordinary differential equations using Laplace transform: dx/dt + y = sin t, dy/dt + x = cos t subject to x(0) = 1 and y(0) = 0.</span>
-            <span class="lang-view lang-manglish">Solve the system of simultaneous ordinary differential equations using Laplace transform: dx/dt + y = sin t, dy/dt + x = cos t subject to x(0) = 1 and y(0) = 0.</span>
-            <span class="lang-view lang-ml">Solve the system of simultaneous ordinary differential equations using Laplace transform: dx/dt + y = sin t, dy/dt + x = cos t subject to x(0) = 1 and y(0) = 0.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Solve the system of simultaneous ordinary differential equations using Laplace transform: dx/dt + y = sin t, dy/dt + x = cos t subject to x(0) = 1 and y(0) = 0.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Solve the system of simultaneous ordinary differential equations using Laplace transform: dx/dt + y = sin t, dy/dt + x = cos t subject to x(0) = 1 and y(0) = 0.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Solve the system of simultaneous ordinary differential equations using Laplace transform: dx/dt + y = sin t, dy/dt + x = cos t subject to x(0) = 1 and y(0) = 0.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10308,6 +10827,21 @@ $$y(t) = -2e^{-2t} + 4t e^{-2t} + 3t^2 e^{-2t} = (3t^2 + 4t - 2)e^{-2t}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (MAT102)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/vcdet/MAT102_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4366,6 +4484,7 @@ pre, code {
     <article class="question-card subject-mechanics" id="mech-q1" data-marks="7" data-title="state the parallelogram law of forces and the principle of transmissibility of forces. explain the analytical method of resolving a system of coplanar concurrent forces to find the resultant and state the conditions of static equilibrium.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q1" data-duration="720" data-qid="mech-q1" data-label="MECH • Q1 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4380,9 +4499,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State the Parallelogram Law of Forces and the Principle of Transmissibility of Forces. Explain the analytical method of resolving a system of coplanar concurrent forces to find the resultant and state the conditions of static equilibrium.</span>
-            <span class="lang-view lang-manglish">State the Parallelogram Law of Forces and the Principle of Transmissibility of Forces. Explain the analytical method of resolving a system of coplanar concurrent forces to find the resultant and state the conditions of static equilibrium.</span>
-            <span class="lang-view lang-ml">State the Parallelogram Law of Forces and the Principle of Transmissibility of Forces. Explain the analytical method of resolving a system of coplanar concurrent forces to find the resultant and state the conditions of static equilibrium.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> State the Parallelogram Law of Forces and the Principle of Transmissibility of Forces. Explain the analytical method of resolving a system of coplanar concurrent forces to find the resultant and state the conditions of static equilibrium.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> State the Parallelogram Law of Forces and the Principle of Transmissibility of Forces. Explain the analytical method of resolving a system of coplanar concurrent forces to find the resultant and state the conditions of static equilibrium.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> State the Parallelogram Law of Forces and the Principle of Transmissibility of Forces. Explain the analytical method of resolving a system of coplanar concurrent forces to find the resultant and state the conditions of static equilibrium.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4406,6 +4525,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4617,6 +4751,7 @@ $$\Sigma F_x = 0 \quad \text{and} \quad \Sigma F_y = 0$$</p>
     <article class="question-card subject-mechanics" id="mech-q2" data-marks="7" data-title="state and prove lami&#x27;s theorem using the sine rule on a force triangle. apply lami&#x27;s theorem to find the cord tension and wall reaction for a smooth sphere of weight w suspended against a vertical wall.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q2" data-duration="720" data-qid="mech-q2" data-label="MECH • Q2 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4631,9 +4766,9 @@ $$\Sigma F_x = 0 \quad \text{and} \quad \Sigma F_y = 0$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and prove Lami's Theorem using the sine rule on a force triangle. Apply Lami's theorem to find the cord tension and wall reaction for a smooth sphere of weight W suspended against a vertical wall.</span>
-            <span class="lang-view lang-manglish">State and prove Lami's Theorem using the sine rule on a force triangle. Apply Lami's theorem to find the cord tension and wall reaction for a smooth sphere of weight W suspended against a vertical wall.</span>
-            <span class="lang-view lang-ml">State and prove Lami's Theorem using the sine rule on a force triangle. Apply Lami's theorem to find the cord tension and wall reaction for a smooth sphere of weight W suspended against a vertical wall.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> State and prove Lami's Theorem using the sine rule on a force triangle. Apply Lami's theorem to find the cord tension and wall reaction for a smooth sphere of weight W suspended against a vertical wall.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> State and prove Lami's Theorem using the sine rule on a force triangle. Apply Lami's theorem to find the cord tension and wall reaction for a smooth sphere of weight W suspended against a vertical wall.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> State and prove Lami's Theorem using the sine rule on a force triangle. Apply Lami's theorem to find the cord tension and wall reaction for a smooth sphere of weight W suspended against a vertical wall.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4657,6 +4792,21 @@ $$\Sigma F_x = 0 \quad \text{and} \quad \Sigma F_y = 0$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2021_Answers.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4904,6 +5054,7 @@ These simple closed-form expressions highlight the power of Lami's theorem in st
     <article class="question-card subject-mechanics" id="mech-q3" data-marks="7" data-title="what is a free body diagram (fbd)? explain the steps to construct an fbd. two smooth identical cylinders of weight w and radius r rest in a rectangular channel of width l. determine all contact reactions.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q3" data-duration="720" data-qid="mech-q3" data-label="MECH • Q3 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4918,9 +5069,9 @@ These simple closed-form expressions highlight the power of Lami's theorem in st
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">What is a Free Body Diagram (FBD)? Explain the steps to construct an FBD. Two smooth identical cylinders of weight W and radius R rest in a rectangular channel of width L. Determine all contact reactions.</span>
-            <span class="lang-view lang-manglish">What is a Free Body Diagram (FBD)? Explain the steps to construct an FBD. Two smooth identical cylinders of weight W and radius R rest in a rectangular channel of width L. Determine all contact reactions.</span>
-            <span class="lang-view lang-ml">What is a Free Body Diagram (FBD)? Explain the steps to construct an FBD. Two smooth identical cylinders of weight W and radius R rest in a rectangular channel of width L. Determine all contact reactions.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> What is a Free Body Diagram (FBD)? Explain the steps to construct an FBD. Two smooth identical cylinders of weight W and radius R rest in a rectangular channel of width L. Determine all contact reactions.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> What is a Free Body Diagram (FBD)? Explain the steps to construct an FBD. Two smooth identical cylinders of weight W and radius R rest in a rectangular channel of width L. Determine all contact reactions.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> What is a Free Body Diagram (FBD)? Explain the steps to construct an FBD. Two smooth identical cylinders of weight W and radius R rest in a rectangular channel of width L. Determine all contact reactions.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4944,6 +5095,21 @@ These simple closed-form expressions highlight the power of Lami's theorem in st
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5200,6 +5366,7 @@ $$R_{A,floor} = 1000 + 1250 \times (0.8) = 1000 + 1000 = 2000\text{ N}$$</p>
     <article class="question-card subject-mechanics" id="mech-q4" data-marks="7" data-title="state and prove varignon&#x27;s theorem of moments for a system of coplanar concurrent forces. define a couple, list its characteristics, and explain how a force can be replaced by an equivalent force-couple system.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q4" data-duration="720" data-qid="mech-q4" data-label="MECH • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5214,9 +5381,9 @@ $$R_{A,floor} = 1000 + 1250 \times (0.8) = 1000 + 1000 = 2000\text{ N}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and prove Varignon's Theorem of Moments for a system of coplanar concurrent forces. Define a couple, list its characteristics, and explain how a force can be replaced by an equivalent force-couple system.</span>
-            <span class="lang-view lang-manglish">State and prove Varignon's Theorem of Moments for a system of coplanar concurrent forces. Define a couple, list its characteristics, and explain how a force can be replaced by an equivalent force-couple system.</span>
-            <span class="lang-view lang-ml">State and prove Varignon's Theorem of Moments for a system of coplanar concurrent forces. Define a couple, list its characteristics, and explain how a force can be replaced by an equivalent force-couple system.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> State and prove Varignon's Theorem of Moments for a system of coplanar concurrent forces. Define a couple, list its characteristics, and explain how a force can be replaced by an equivalent force-couple system.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> State and prove Varignon's Theorem of Moments for a system of coplanar concurrent forces. Define a couple, list its characteristics, and explain how a force can be replaced by an equivalent force-couple system.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> State and prove Varignon's Theorem of Moments for a system of coplanar concurrent forces. Define a couple, list its characteristics, and explain how a force can be replaced by an equivalent force-couple system.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5240,6 +5407,21 @@ $$R_{A,floor} = 1000 + 1250 \times (0.8) = 1000 + 1000 = 2000\text{ N}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5451,6 +5633,7 @@ Therefore, any force $\mathbf{F}$ acting on a rigid body can be replaced at an a
     <article class="question-card subject-mechanics" id="mech-q5" data-marks="7" data-title="state the equations of static equilibrium of a rigid body in two dimensions. classify common structural supports and determine the support reactions for a simply supported beam carrying a udl, inclined point load, and concentrated couple.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q5" data-duration="720" data-qid="mech-q5" data-label="MECH • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5465,9 +5648,9 @@ Therefore, any force $\mathbf{F}$ acting on a rigid body can be replaced at an a
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State the equations of static equilibrium of a rigid body in two dimensions. Classify common structural supports and determine the support reactions for a simply supported beam carrying a UDL, inclined point load, and concentrated couple.</span>
-            <span class="lang-view lang-manglish">State the equations of static equilibrium of a rigid body in two dimensions. Classify common structural supports and determine the support reactions for a simply supported beam carrying a UDL, inclined point load, and concentrated couple.</span>
-            <span class="lang-view lang-ml">State the equations of static equilibrium of a rigid body in two dimensions. Classify common structural supports and determine the support reactions for a simply supported beam carrying a UDL, inclined point load, and concentrated couple.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> State the equations of static equilibrium of a rigid body in two dimensions. Classify common structural supports and determine the support reactions for a simply supported beam carrying a UDL, inclined point load, and concentrated couple.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> State the equations of static equilibrium of a rigid body in two dimensions. Classify common structural supports and determine the support reactions for a simply supported beam carrying a UDL, inclined point load, and concentrated couple.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> State the equations of static equilibrium of a rigid body in two dimensions. Classify common structural supports and determine the support reactions for a simply supported beam carrying a UDL, inclined point load, and concentrated couple.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5491,6 +5674,21 @@ Therefore, any force $\mathbf{F}$ acting on a rigid body can be replaced at an a
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2021_Answers.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5764,6 +5962,7 @@ Final Support Reactions:
     <article class="question-card subject-mechanics" id="mech-q6" data-marks="7" data-title="state coulomb&#x27;s laws of dry friction. define the terms: static friction, limiting friction, kinetic friction, angle of friction, angle of repose, and cone of friction. prove that the angle of repose is equal to the angle of friction.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q6" data-duration="720" data-qid="mech-q6" data-label="MECH • Q6 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5778,9 +5977,9 @@ Final Support Reactions:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State Coulomb's laws of dry friction. Define the terms: static friction, limiting friction, kinetic friction, angle of friction, angle of repose, and cone of friction. Prove that the angle of repose is equal to the angle of friction.</span>
-            <span class="lang-view lang-manglish">State Coulomb's laws of dry friction. Define the terms: static friction, limiting friction, kinetic friction, angle of friction, angle of repose, and cone of friction. Prove that the angle of repose is equal to the angle of friction.</span>
-            <span class="lang-view lang-ml">State Coulomb's laws of dry friction. Define the terms: static friction, limiting friction, kinetic friction, angle of friction, angle of repose, and cone of friction. Prove that the angle of repose is equal to the angle of friction.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> State Coulomb's laws of dry friction. Define the terms: static friction, limiting friction, kinetic friction, angle of friction, angle of repose, and cone of friction. Prove that the angle of repose is equal to the angle of friction.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> State Coulomb's laws of dry friction. Define the terms: static friction, limiting friction, kinetic friction, angle of friction, angle of repose, and cone of friction. Prove that the angle of repose is equal to the angle of friction.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> State Coulomb's laws of dry friction. Define the terms: static friction, limiting friction, kinetic friction, angle of friction, angle of repose, and cone of friction. Prove that the angle of repose is equal to the angle of friction.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5804,6 +6003,21 @@ Final Support Reactions:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6042,6 +6256,7 @@ Significance: If the resultant applied force falls inside the cone of friction, 
     <article class="question-card subject-mechanics" id="mech-q7" data-marks="7" data-title="a uniform ladder of length l and weight w rests against a rough vertical wall and a rough horizontal floor. formulate the equilibrium equations, derive the expression for the minimum inclination angle to prevent slipping, and determine the maximum distance a person can climb.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q7" data-duration="720" data-qid="mech-q7" data-label="MECH • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6056,9 +6271,9 @@ Significance: If the resultant applied force falls inside the cone of friction, 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">A uniform ladder of length L and weight W rests against a rough vertical wall and a rough horizontal floor. Formulate the equilibrium equations, derive the expression for the minimum inclination angle to prevent slipping, and determine the maximum distance a person can climb.</span>
-            <span class="lang-view lang-manglish">A uniform ladder of length L and weight W rests against a rough vertical wall and a rough horizontal floor. Formulate the equilibrium equations, derive the expression for the minimum inclination angle to prevent slipping, and determine the maximum distance a person can climb.</span>
-            <span class="lang-view lang-ml">A uniform ladder of length L and weight W rests against a rough vertical wall and a rough horizontal floor. Formulate the equilibrium equations, derive the expression for the minimum inclination angle to prevent slipping, and determine the maximum distance a person can climb.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> A uniform ladder of length L and weight W rests against a rough vertical wall and a rough horizontal floor. Formulate the equilibrium equations, derive the expression for the minimum inclination angle to prevent slipping, and determine the maximum distance a person can climb.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> A uniform ladder of length L and weight W rests against a rough vertical wall and a rough horizontal floor. Formulate the equilibrium equations, derive the expression for the minimum inclination angle to prevent slipping, and determine the maximum distance a person can climb.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> A uniform ladder of length L and weight W rests against a rough vertical wall and a rough horizontal floor. Formulate the equilibrium equations, derive the expression for the minimum inclination angle to prevent slipping, and determine the maximum distance a person can climb.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6082,6 +6297,21 @@ Significance: If the resultant applied force falls inside the cone of friction, 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2021_Answers.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6359,6 +6589,7 @@ If $x_{max} \ge L$, the person can climb to the top of the ladder safely without
     <article class="question-card subject-mechanics" id="mech-q8" data-marks="7" data-title="explain the working principle of a wedge for raising heavy loads. draw the free body diagrams of the block and wedge system and derive the formula for the minimum horizontal driving force p required to raise the load.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q8" data-duration="720" data-qid="mech-q8" data-label="MECH • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6373,9 +6604,9 @@ If $x_{max} \ge L$, the person can climb to the top of the ladder safely without
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the working principle of a wedge for raising heavy loads. Draw the free body diagrams of the block and wedge system and derive the formula for the minimum horizontal driving force P required to raise the load.</span>
-            <span class="lang-view lang-manglish">Explain the working principle of a wedge for raising heavy loads. Draw the free body diagrams of the block and wedge system and derive the formula for the minimum horizontal driving force P required to raise the load.</span>
-            <span class="lang-view lang-ml">Explain the working principle of a wedge for raising heavy loads. Draw the free body diagrams of the block and wedge system and derive the formula for the minimum horizontal driving force P required to raise the load.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Explain the working principle of a wedge for raising heavy loads. Draw the free body diagrams of the block and wedge system and derive the formula for the minimum horizontal driving force P required to raise the load.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Explain the working principle of a wedge for raising heavy loads. Draw the free body diagrams of the block and wedge system and derive the formula for the minimum horizontal driving force P required to raise the load.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Explain the working principle of a wedge for raising heavy loads. Draw the free body diagrams of the block and wedge system and derive the formula for the minimum horizontal driving force P required to raise the load.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6399,6 +6630,21 @@ If $x_{max} \ge L$, the person can climb to the top of the ladder safely without
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6670,6 +6916,7 @@ If the wedge angle $\alpha$ is smaller than the sum of friction angles, the wedg
     <article class="question-card subject-mechanics" id="mech-q9" data-marks="7" data-title="derive the formula for the ratio of belt tensions t1/t2 = e^(mu*theta) for a flat belt passing over a fixed cylindrical pulley. obtain the expression for the power transmitted by the belt and discuss the effect of centrifugal tension.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q9" data-duration="720" data-qid="mech-q9" data-label="MECH • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6684,9 +6931,9 @@ If the wedge angle $\alpha$ is smaller than the sum of friction angles, the wedg
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the formula for the ratio of belt tensions T1/T2 = e^(mu*theta) for a flat belt passing over a fixed cylindrical pulley. Obtain the expression for the power transmitted by the belt and discuss the effect of centrifugal tension.</span>
-            <span class="lang-view lang-manglish">Derive the formula for the ratio of belt tensions T1/T2 = e^(mu*theta) for a flat belt passing over a fixed cylindrical pulley. Obtain the expression for the power transmitted by the belt and discuss the effect of centrifugal tension.</span>
-            <span class="lang-view lang-ml">Derive the formula for the ratio of belt tensions T1/T2 = e^(mu*theta) for a flat belt passing over a fixed cylindrical pulley. Obtain the expression for the power transmitted by the belt and discuss the effect of centrifugal tension.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Derive the formula for the ratio of belt tensions T1/T2 = e^(mu*theta) for a flat belt passing over a fixed cylindrical pulley. Obtain the expression for the power transmitted by the belt and discuss the effect of centrifugal tension.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Derive the formula for the ratio of belt tensions T1/T2 = e^(mu*theta) for a flat belt passing over a fixed cylindrical pulley. Obtain the expression for the power transmitted by the belt and discuss the effect of centrifugal tension.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Derive the formula for the ratio of belt tensions T1/T2 = e^(mu*theta) for a flat belt passing over a fixed cylindrical pulley. Obtain the expression for the power transmitted by the belt and discuss the effect of centrifugal tension.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6710,6 +6957,21 @@ If the wedge angle $\alpha$ is smaller than the sum of friction angles, the wedg
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6981,6 +7243,7 @@ The maximum power transmission occurs at an optimum velocity $v = \sqrt{\frac{T_
     <article class="question-card subject-mechanics" id="mech-q10" data-marks="7" data-title="state the assumptions in the analysis of pin-jointed trusses. state the conditions for a truss to be perfect, deficient, or redundant. state the rules for identifying zero-force members by inspection and explain the method of joints and method of sections.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q10" data-duration="720" data-qid="mech-q10" data-label="MECH • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6995,9 +7258,9 @@ The maximum power transmission occurs at an optimum velocity $v = \sqrt{\frac{T_
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State the assumptions in the analysis of pin-jointed trusses. State the conditions for a truss to be perfect, deficient, or redundant. State the rules for identifying zero-force members by inspection and explain the Method of Joints and Method of Sections.</span>
-            <span class="lang-view lang-manglish">State the assumptions in the analysis of pin-jointed trusses. State the conditions for a truss to be perfect, deficient, or redundant. State the rules for identifying zero-force members by inspection and explain the Method of Joints and Method of Sections.</span>
-            <span class="lang-view lang-ml">State the assumptions in the analysis of pin-jointed trusses. State the conditions for a truss to be perfect, deficient, or redundant. State the rules for identifying zero-force members by inspection and explain the Method of Joints and Method of Sections.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> State the assumptions in the analysis of pin-jointed trusses. State the conditions for a truss to be perfect, deficient, or redundant. State the rules for identifying zero-force members by inspection and explain the Method of Joints and Method of Sections.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> State the assumptions in the analysis of pin-jointed trusses. State the conditions for a truss to be perfect, deficient, or redundant. State the rules for identifying zero-force members by inspection and explain the Method of Joints and Method of Sections.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> State the assumptions in the analysis of pin-jointed trusses. State the conditions for a truss to be perfect, deficient, or redundant. State the rules for identifying zero-force members by inspection and explain the Method of Joints and Method of Sections.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7021,6 +7284,21 @@ The maximum power transmission occurs at an optimum velocity $v = \sqrt{\frac{T_
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2021_Answers.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7246,6 +7524,7 @@ Choosing the moment center $O$ at the intersection of two unknown forces elimina
     <article class="question-card subject-mechanics" id="mech-q11" data-marks="7" data-title="define the first moment of area and centroid of a composite plane area. derive the centroid formulas and determine the centroid coordinates of an unsymmetrical t-section.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q11" data-duration="720" data-qid="mech-q11" data-label="MECH • Q11 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7260,9 +7539,9 @@ Choosing the moment center $O$ at the intersection of two unknown forces elimina
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define the first moment of area and centroid of a composite plane area. Derive the centroid formulas and determine the centroid coordinates of an unsymmetrical T-section.</span>
-            <span class="lang-view lang-manglish">Define the first moment of area and centroid of a composite plane area. Derive the centroid formulas and determine the centroid coordinates of an unsymmetrical T-section.</span>
-            <span class="lang-view lang-ml">Define the first moment of area and centroid of a composite plane area. Derive the centroid formulas and determine the centroid coordinates of an unsymmetrical T-section.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Define the first moment of area and centroid of a composite plane area. Derive the centroid formulas and determine the centroid coordinates of an unsymmetrical T-section.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Define the first moment of area and centroid of a composite plane area. Derive the centroid formulas and determine the centroid coordinates of an unsymmetrical T-section.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Define the first moment of area and centroid of a composite plane area. Derive the centroid formulas and determine the centroid coordinates of an unsymmetrical T-section.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7286,6 +7565,21 @@ Choosing the moment center $O$ at the intersection of two unknown forces elimina
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7515,6 +7809,7 @@ The centroid of the T-section is located on the vertical line of symmetry at a d
     <article class="question-card subject-mechanics" id="mech-q12" data-marks="7" data-title="state and prove pappus-guldinus theorem 1 (surface area of revolution) and theorem 2 (volume of revolution). use these theorems to calculate the surface area and volume of a sphere and a right circular cone.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q12" data-duration="720" data-qid="mech-q12" data-label="MECH • Q12 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7529,9 +7824,9 @@ The centroid of the T-section is located on the vertical line of symmetry at a d
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and prove Pappus-Guldinus Theorem 1 (Surface Area of Revolution) and Theorem 2 (Volume of Revolution). Use these theorems to calculate the surface area and volume of a sphere and a right circular cone.</span>
-            <span class="lang-view lang-manglish">State and prove Pappus-Guldinus Theorem 1 (Surface Area of Revolution) and Theorem 2 (Volume of Revolution). Use these theorems to calculate the surface area and volume of a sphere and a right circular cone.</span>
-            <span class="lang-view lang-ml">State and prove Pappus-Guldinus Theorem 1 (Surface Area of Revolution) and Theorem 2 (Volume of Revolution). Use these theorems to calculate the surface area and volume of a sphere and a right circular cone.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> State and prove Pappus-Guldinus Theorem 1 (Surface Area of Revolution) and Theorem 2 (Volume of Revolution). Use these theorems to calculate the surface area and volume of a sphere and a right circular cone.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> State and prove Pappus-Guldinus Theorem 1 (Surface Area of Revolution) and Theorem 2 (Volume of Revolution). Use these theorems to calculate the surface area and volume of a sphere and a right circular cone.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> State and prove Pappus-Guldinus Theorem 1 (Surface Area of Revolution) and Theorem 2 (Volume of Revolution). Use these theorems to calculate the surface area and volume of a sphere and a right circular cone.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7555,6 +7850,21 @@ The centroid of the T-section is located on the vertical line of symmetry at a d
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2021_Answers.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7820,6 +8130,7 @@ This completes the proof.</p>
     <article class="question-card subject-mechanics" id="mech-q13" data-marks="7" data-title="define area moment of inertia, polar moment of inertia, and radius of gyration. state and prove the parallel axis theorem (steiner&#x27;s theorem) and the perpendicular axis theorem for area moment of inertia.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q13" data-duration="720" data-qid="mech-q13" data-label="MECH • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7834,9 +8145,9 @@ This completes the proof.</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define area moment of inertia, polar moment of inertia, and radius of gyration. State and prove the Parallel Axis Theorem (Steiner's Theorem) and the Perpendicular Axis Theorem for area moment of inertia.</span>
-            <span class="lang-view lang-manglish">Define area moment of inertia, polar moment of inertia, and radius of gyration. State and prove the Parallel Axis Theorem (Steiner's Theorem) and the Perpendicular Axis Theorem for area moment of inertia.</span>
-            <span class="lang-view lang-ml">Define area moment of inertia, polar moment of inertia, and radius of gyration. State and prove the Parallel Axis Theorem (Steiner's Theorem) and the Perpendicular Axis Theorem for area moment of inertia.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Define area moment of inertia, polar moment of inertia, and radius of gyration. State and prove the Parallel Axis Theorem (Steiner's Theorem) and the Perpendicular Axis Theorem for area moment of inertia.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Define area moment of inertia, polar moment of inertia, and radius of gyration. State and prove the Parallel Axis Theorem (Steiner's Theorem) and the Perpendicular Axis Theorem for area moment of inertia.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Define area moment of inertia, polar moment of inertia, and radius of gyration. State and prove the Parallel Axis Theorem (Steiner's Theorem) and the Perpendicular Axis Theorem for area moment of inertia.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7860,6 +8171,21 @@ This completes the proof.</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8119,6 +8445,7 @@ This proves the Perpendicular Axis Theorem. (Crucial limitation: The theorem app
     <article class="question-card subject-mechanics" id="mech-q14" data-marks="7" data-title="determine the centroidal moments of inertia ixx and iyy and the radii of gyration kxx and kyy for an unsymmetrical i-section with given flange and web dimensions.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q14" data-duration="720" data-qid="mech-q14" data-label="MECH • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8133,9 +8460,9 @@ This proves the Perpendicular Axis Theorem. (Crucial limitation: The theorem app
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Determine the centroidal moments of inertia Ixx and Iyy and the radii of gyration kxx and kyy for an unsymmetrical I-section with given flange and web dimensions.</span>
-            <span class="lang-view lang-manglish">Determine the centroidal moments of inertia Ixx and Iyy and the radii of gyration kxx and kyy for an unsymmetrical I-section with given flange and web dimensions.</span>
-            <span class="lang-view lang-ml">Determine the centroidal moments of inertia Ixx and Iyy and the radii of gyration kxx and kyy for an unsymmetrical I-section with given flange and web dimensions.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Determine the centroidal moments of inertia Ixx and Iyy and the radii of gyration kxx and kyy for an unsymmetrical I-section with given flange and web dimensions.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Determine the centroidal moments of inertia Ixx and Iyy and the radii of gyration kxx and kyy for an unsymmetrical I-section with given flange and web dimensions.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Determine the centroidal moments of inertia Ixx and Iyy and the radii of gyration kxx and kyy for an unsymmetrical I-section with given flange and web dimensions.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8159,6 +8486,21 @@ This proves the Perpendicular Axis Theorem. (Crucial limitation: The theorem app
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8436,6 +8778,7 @@ $$k_{yy} = \sqrt{\frac{I_{yy}}{A}} = \sqrt{\frac{16.26 \times 10^6}{8800}} = \sq
     <article class="question-card subject-mechanics" id="mech-q15" data-marks="7" data-title="define mass moment of inertia and radius of gyration. derive the mass moment of inertia of a uniform slender rod of mass m and length l about its centroidal transverse axis and one end, and of a thin circular disc about its polar and diameter axes.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q15" data-duration="720" data-qid="mech-q15" data-label="MECH • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8450,9 +8793,9 @@ $$k_{yy} = \sqrt{\frac{I_{yy}}{A}} = \sqrt{\frac{16.26 \times 10^6}{8800}} = \sq
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define mass moment of inertia and radius of gyration. Derive the mass moment of inertia of a uniform slender rod of mass m and length L about its centroidal transverse axis and one end, and of a thin circular disc about its polar and diameter axes.</span>
-            <span class="lang-view lang-manglish">Define mass moment of inertia and radius of gyration. Derive the mass moment of inertia of a uniform slender rod of mass m and length L about its centroidal transverse axis and one end, and of a thin circular disc about its polar and diameter axes.</span>
-            <span class="lang-view lang-ml">Define mass moment of inertia and radius of gyration. Derive the mass moment of inertia of a uniform slender rod of mass m and length L about its centroidal transverse axis and one end, and of a thin circular disc about its polar and diameter axes.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Define mass moment of inertia and radius of gyration. Derive the mass moment of inertia of a uniform slender rod of mass m and length L about its centroidal transverse axis and one end, and of a thin circular disc about its polar and diameter axes.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Define mass moment of inertia and radius of gyration. Derive the mass moment of inertia of a uniform slender rod of mass m and length L about its centroidal transverse axis and one end, and of a thin circular disc about its polar and diameter axes.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Define mass moment of inertia and radius of gyration. Derive the mass moment of inertia of a uniform slender rod of mass m and length L about its centroidal transverse axis and one end, and of a thin circular disc about its polar and diameter axes.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8476,6 +8819,21 @@ $$k_{yy} = \sqrt{\frac{I_{yy}}{A}} = \sqrt{\frac{16.26 \times 10^6}{8800}} = \sq
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2021_Answers.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8737,6 +9095,7 @@ This gives the mass moment of inertia of a circular disc about any diameter in i
     <article class="question-card subject-mechanics" id="mech-q16" data-marks="7" data-title="formulate the kinematic equations for rectilinear motion with variable acceleration. solve the equation of motion for a particle subjected to a resisting drag force proportional to velocity (a = -kv) and determine the velocity, displacement, and total distance traveled.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q16" data-duration="720" data-qid="mech-q16" data-label="MECH • Q16 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8751,9 +9110,9 @@ This gives the mass moment of inertia of a circular disc about any diameter in i
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Formulate the kinematic equations for rectilinear motion with variable acceleration. Solve the equation of motion for a particle subjected to a resisting drag force proportional to velocity (a = -kv) and determine the velocity, displacement, and total distance traveled.</span>
-            <span class="lang-view lang-manglish">Formulate the kinematic equations for rectilinear motion with variable acceleration. Solve the equation of motion for a particle subjected to a resisting drag force proportional to velocity (a = -kv) and determine the velocity, displacement, and total distance traveled.</span>
-            <span class="lang-view lang-ml">Formulate the kinematic equations for rectilinear motion with variable acceleration. Solve the equation of motion for a particle subjected to a resisting drag force proportional to velocity (a = -kv) and determine the velocity, displacement, and total distance traveled.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Formulate the kinematic equations for rectilinear motion with variable acceleration. Solve the equation of motion for a particle subjected to a resisting drag force proportional to velocity (a = -kv) and determine the velocity, displacement, and total distance traveled.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Formulate the kinematic equations for rectilinear motion with variable acceleration. Solve the equation of motion for a particle subjected to a resisting drag force proportional to velocity (a = -kv) and determine the velocity, displacement, and total distance traveled.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> Formulate the kinematic equations for rectilinear motion with variable acceleration. Solve the equation of motion for a particle subjected to a resisting drag force proportional to velocity (a = -kv) and determine the velocity, displacement, and total distance traveled.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8777,6 +9136,21 @@ This gives the mass moment of inertia of a circular disc about any diameter in i
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9000,6 +9374,7 @@ Alternatively, using $a = v \frac{dv}{ds} = -kv \implies dv = -k \, ds$. Integra
     <article class="question-card subject-mechanics" id="mech-q17" data-marks="7" data-title="derive the parabolic trajectory equation for an unresisted projectile launched with initial velocity u at angle theta. derive expressions for the time of flight, maximum vertical height, and horizontal range, and obtain the condition for maximum range.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q17" data-duration="720" data-qid="mech-q17" data-label="MECH • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9014,9 +9389,9 @@ Alternatively, using $a = v \frac{dv}{ds} = -kv \implies dv = -k \, ds$. Integra
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the parabolic trajectory equation for an unresisted projectile launched with initial velocity u at angle theta. Derive expressions for the time of flight, maximum vertical height, and horizontal range, and obtain the condition for maximum range.</span>
-            <span class="lang-view lang-manglish">Derive the parabolic trajectory equation for an unresisted projectile launched with initial velocity u at angle theta. Derive expressions for the time of flight, maximum vertical height, and horizontal range, and obtain the condition for maximum range.</span>
-            <span class="lang-view lang-ml">Derive the parabolic trajectory equation for an unresisted projectile launched with initial velocity u at angle theta. Derive expressions for the time of flight, maximum vertical height, and horizontal range, and obtain the condition for maximum range.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Derive the parabolic trajectory equation for an unresisted projectile launched with initial velocity u at angle theta. Derive expressions for the time of flight, maximum vertical height, and horizontal range, and obtain the condition for maximum range.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Derive the parabolic trajectory equation for an unresisted projectile launched with initial velocity u at angle theta. Derive expressions for the time of flight, maximum vertical height, and horizontal range, and obtain the condition for maximum range.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Derive the parabolic trajectory equation for an unresisted projectile launched with initial velocity u at angle theta. Derive expressions for the time of flight, maximum vertical height, and horizontal range, and obtain the condition for maximum range.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9040,6 +9415,21 @@ Alternatively, using $a = v \frac{dv}{ds} = -kv \implies dv = -k \, ds$. Integra
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2021_Answers.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9284,6 +9674,7 @@ For any range $R < R_{max}$, two complementary launch angles ($\theta$ and $90^\
     <article class="question-card subject-mechanics" id="mech-q18" data-marks="7" data-title="derive the expressions for the normal and tangential components of acceleration for a particle executing curvilinear planar motion. explain the physical significance of each component.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q18" data-duration="720" data-qid="mech-q18" data-label="MECH • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9298,9 +9689,9 @@ For any range $R < R_{max}$, two complementary launch angles ($\theta$ and $90^\
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the expressions for the normal and tangential components of acceleration for a particle executing curvilinear planar motion. Explain the physical significance of each component.</span>
-            <span class="lang-view lang-manglish">Derive the expressions for the normal and tangential components of acceleration for a particle executing curvilinear planar motion. Explain the physical significance of each component.</span>
-            <span class="lang-view lang-ml">Derive the expressions for the normal and tangential components of acceleration for a particle executing curvilinear planar motion. Explain the physical significance of each component.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Derive the expressions for the normal and tangential components of acceleration for a particle executing curvilinear planar motion. Explain the physical significance of each component.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Derive the expressions for the normal and tangential components of acceleration for a particle executing curvilinear planar motion. Explain the physical significance of each component.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> Derive the expressions for the normal and tangential components of acceleration for a particle executing curvilinear planar motion. Explain the physical significance of each component.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9324,6 +9715,21 @@ For any range $R < R_{max}$, two complementary launch angles ($\theta$ and $90^\
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9568,6 +9974,7 @@ $$\tan\phi = \frac{a_n}{a_t} = \frac{v^2 / \rho}{dv / dt} \implies \phi = \tan^{
     <article class="question-card subject-mechanics" id="mech-q19" data-marks="7" data-title="state newton&#x27;s second law of motion and d&#x27;alembert&#x27;s principle of dynamic equilibrium. apply d&#x27;alembert&#x27;s principle to analyze the apparent weight in an accelerating elevator and determine the acceleration and cord tension in an atwood machine.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q19" data-duration="720" data-qid="mech-q19" data-label="MECH • Q19 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9582,9 +9989,9 @@ $$\tan\phi = \frac{a_n}{a_t} = \frac{v^2 / \rho}{dv / dt} \implies \phi = \tan^{
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State Newton's Second Law of Motion and D'Alembert's Principle of dynamic equilibrium. Apply D'Alembert's principle to analyze the apparent weight in an accelerating elevator and determine the acceleration and cord tension in an Atwood machine.</span>
-            <span class="lang-view lang-manglish">State Newton's Second Law of Motion and D'Alembert's Principle of dynamic equilibrium. Apply D'Alembert's principle to analyze the apparent weight in an accelerating elevator and determine the acceleration and cord tension in an Atwood machine.</span>
-            <span class="lang-view lang-ml">State Newton's Second Law of Motion and D'Alembert's Principle of dynamic equilibrium. Apply D'Alembert's principle to analyze the apparent weight in an accelerating elevator and determine the acceleration and cord tension in an Atwood machine.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> State Newton's Second Law of Motion and D'Alembert's Principle of dynamic equilibrium. Apply D'Alembert's principle to analyze the apparent weight in an accelerating elevator and determine the acceleration and cord tension in an Atwood machine.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> State Newton's Second Law of Motion and D'Alembert's Principle of dynamic equilibrium. Apply D'Alembert's principle to analyze the apparent weight in an accelerating elevator and determine the acceleration and cord tension in an Atwood machine.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> State Newton's Second Law of Motion and D'Alembert's Principle of dynamic equilibrium. Apply D'Alembert's principle to analyze the apparent weight in an accelerating elevator and determine the acceleration and cord tension in an Atwood machine.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9608,6 +10015,21 @@ $$\tan\phi = \frac{a_n}{a_t} = \frac{v^2 / \rho}{dv / dt} \implies \phi = \tan^{
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9879,6 +10301,7 @@ This demonstrates how D'Alembert's principle transforms dynamic systems into str
     <article class="question-card subject-mechanics" id="mech-q20" data-marks="7" data-title="formulate the equations of dynamic motion for two connected bodies where one body moves along a rough inclined plane and is connected by a cord over a pulley to a hanging body. derive expressions for the common acceleration and cord tension.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q20" data-duration="720" data-qid="mech-q20" data-label="MECH • Q20 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9893,9 +10316,9 @@ This demonstrates how D'Alembert's principle transforms dynamic systems into str
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Formulate the equations of dynamic motion for two connected bodies where one body moves along a rough inclined plane and is connected by a cord over a pulley to a hanging body. Derive expressions for the common acceleration and cord tension.</span>
-            <span class="lang-view lang-manglish">Formulate the equations of dynamic motion for two connected bodies where one body moves along a rough inclined plane and is connected by a cord over a pulley to a hanging body. Derive expressions for the common acceleration and cord tension.</span>
-            <span class="lang-view lang-ml">Formulate the equations of dynamic motion for two connected bodies where one body moves along a rough inclined plane and is connected by a cord over a pulley to a hanging body. Derive expressions for the common acceleration and cord tension.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Formulate the equations of dynamic motion for two connected bodies where one body moves along a rough inclined plane and is connected by a cord over a pulley to a hanging body. Derive expressions for the common acceleration and cord tension.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Formulate the equations of dynamic motion for two connected bodies where one body moves along a rough inclined plane and is connected by a cord over a pulley to a hanging body. Derive expressions for the common acceleration and cord tension.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Formulate the equations of dynamic motion for two connected bodies where one body moves along a rough inclined plane and is connected by a cord over a pulley to a hanging body. Derive expressions for the common acceleration and cord tension.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9919,6 +10342,21 @@ This demonstrates how D'Alembert's principle transforms dynamic systems into str
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2021_Answers.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10192,6 +10630,7 @@ This closed-form solution yields both the motion acceleration and internal cable
     <article class="question-card subject-mechanics" id="mech-q21" data-marks="7" data-title="define work done by a force and derive expressions for work done by gravity and spring forces. derive the work-energy theorem for a particle moving under a variable force.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q21" data-duration="720" data-qid="mech-q21" data-label="MECH • Q21 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10206,9 +10645,9 @@ This closed-form solution yields both the motion acceleration and internal cable
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define work done by a force and derive expressions for work done by gravity and spring forces. Derive the Work-Energy Theorem for a particle moving under a variable force.</span>
-            <span class="lang-view lang-manglish">Define work done by a force and derive expressions for work done by gravity and spring forces. Derive the Work-Energy Theorem for a particle moving under a variable force.</span>
-            <span class="lang-view lang-ml">Define work done by a force and derive expressions for work done by gravity and spring forces. Derive the Work-Energy Theorem for a particle moving under a variable force.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Define work done by a force and derive expressions for work done by gravity and spring forces. Derive the Work-Energy Theorem for a particle moving under a variable force.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Define work done by a force and derive expressions for work done by gravity and spring forces. Derive the Work-Energy Theorem for a particle moving under a variable force.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Define work done by a force and derive expressions for work done by gravity and spring forces. Derive the Work-Energy Theorem for a particle moving under a variable force.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10232,6 +10671,21 @@ This closed-form solution yields both the motion acceleration and internal cable
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10449,6 +10903,7 @@ The total work done by all external forces (conservative and non-conservative) a
     <article class="question-card subject-mechanics" id="mech-q22" data-marks="7" data-title="define a conservative force and state its criteria. define potential energy and prove the law of conservation of mechanical energy. apply it to find the velocity of an oscillating simple pendulum.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q22" data-duration="720" data-qid="mech-q22" data-label="MECH • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10463,9 +10918,9 @@ The total work done by all external forces (conservative and non-conservative) a
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define a conservative force and state its criteria. Define potential energy and prove the Law of Conservation of Mechanical Energy. Apply it to find the velocity of an oscillating simple pendulum.</span>
-            <span class="lang-view lang-manglish">Define a conservative force and state its criteria. Define potential energy and prove the Law of Conservation of Mechanical Energy. Apply it to find the velocity of an oscillating simple pendulum.</span>
-            <span class="lang-view lang-ml">Define a conservative force and state its criteria. Define potential energy and prove the Law of Conservation of Mechanical Energy. Apply it to find the velocity of an oscillating simple pendulum.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Define a conservative force and state its criteria. Define potential energy and prove the Law of Conservation of Mechanical Energy. Apply it to find the velocity of an oscillating simple pendulum.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Define a conservative force and state its criteria. Define potential energy and prove the Law of Conservation of Mechanical Energy. Apply it to find the velocity of an oscillating simple pendulum.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Define a conservative force and state its criteria. Define potential energy and prove the Law of Conservation of Mechanical Energy. Apply it to find the velocity of an oscillating simple pendulum.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10489,6 +10944,21 @@ The total work done by all external forces (conservative and non-conservative) a
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2021_Answers.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10760,6 +11230,7 @@ Notice that cord tension does zero work because it is always perpendicular to ve
     <article class="question-card subject-mechanics" id="mech-q23" data-marks="7" data-title="state and derive the linear impulse-momentum principle from newton&#x27;s second law. explain impulsive forces and derive the dynamic force exerted by a high-velocity fluid jet striking a curved vane.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q23" data-duration="720" data-qid="mech-q23" data-label="MECH • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10774,9 +11245,9 @@ Notice that cord tension does zero work because it is always perpendicular to ve
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and derive the Linear Impulse-Momentum Principle from Newton's second law. Explain impulsive forces and derive the dynamic force exerted by a high-velocity fluid jet striking a curved vane.</span>
-            <span class="lang-view lang-manglish">State and derive the Linear Impulse-Momentum Principle from Newton's second law. Explain impulsive forces and derive the dynamic force exerted by a high-velocity fluid jet striking a curved vane.</span>
-            <span class="lang-view lang-ml">State and derive the Linear Impulse-Momentum Principle from Newton's second law. Explain impulsive forces and derive the dynamic force exerted by a high-velocity fluid jet striking a curved vane.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> State and derive the Linear Impulse-Momentum Principle from Newton's second law. Explain impulsive forces and derive the dynamic force exerted by a high-velocity fluid jet striking a curved vane.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> State and derive the Linear Impulse-Momentum Principle from Newton's second law. Explain impulsive forces and derive the dynamic force exerted by a high-velocity fluid jet striking a curved vane.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> State and derive the Linear Impulse-Momentum Principle from Newton's second law. Explain impulsive forces and derive the dynamic force exerted by a high-velocity fluid jet striking a curved vane.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10800,6 +11271,21 @@ Notice that cord tension does zero work because it is always perpendicular to ve
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11065,6 +11551,7 @@ The horizontal force on a $180^\circ$ reversing cup vane is twice that on a flat
     <article class="question-card subject-mechanics" id="mech-q24" data-marks="7" data-title="state and prove the principle of conservation of linear momentum for a system of interacting particles. apply the principle to determine the recoil velocity of an artillery gun firing a shell.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q24" data-duration="720" data-qid="mech-q24" data-label="MECH • Q24 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11079,9 +11566,9 @@ The horizontal force on a $180^\circ$ reversing cup vane is twice that on a flat
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and prove the Principle of Conservation of Linear Momentum for a system of interacting particles. Apply the principle to determine the recoil velocity of an artillery gun firing a shell.</span>
-            <span class="lang-view lang-manglish">State and prove the Principle of Conservation of Linear Momentum for a system of interacting particles. Apply the principle to determine the recoil velocity of an artillery gun firing a shell.</span>
-            <span class="lang-view lang-ml">State and prove the Principle of Conservation of Linear Momentum for a system of interacting particles. Apply the principle to determine the recoil velocity of an artillery gun firing a shell.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> State and prove the Principle of Conservation of Linear Momentum for a system of interacting particles. Apply the principle to determine the recoil velocity of an artillery gun firing a shell.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> State and prove the Principle of Conservation of Linear Momentum for a system of interacting particles. Apply the principle to determine the recoil velocity of an artillery gun firing a shell.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> State and prove the Principle of Conservation of Linear Momentum for a system of interacting particles. Apply the principle to determine the recoil velocity of an artillery gun firing a shell.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11105,6 +11592,21 @@ The horizontal force on a $180^\circ$ reversing cup vane is twice that on a flat
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> January 2021 Improvement Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Jan2021_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic January 2021 Improvement Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11352,6 +11854,7 @@ Because the mass of the cannon is much larger than the mass of the shell ($M \gg
     <article class="question-card subject-mechanics" id="mech-q25" data-marks="7" data-title="define direct central impact and coefficient of restitution. derive expressions for the post-collision velocities v1 and v2 of two colliding bodies in terms of their masses, initial velocities, and coefficient of restitution.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q25" data-duration="720" data-qid="mech-q25" data-label="MECH • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11366,9 +11869,9 @@ Because the mass of the cannon is much larger than the mass of the shell ($M \gg
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define direct central impact and coefficient of restitution. Derive expressions for the post-collision velocities v1 and v2 of two colliding bodies in terms of their masses, initial velocities, and coefficient of restitution.</span>
-            <span class="lang-view lang-manglish">Define direct central impact and coefficient of restitution. Derive expressions for the post-collision velocities v1 and v2 of two colliding bodies in terms of their masses, initial velocities, and coefficient of restitution.</span>
-            <span class="lang-view lang-ml">Define direct central impact and coefficient of restitution. Derive expressions for the post-collision velocities v1 and v2 of two colliding bodies in terms of their masses, initial velocities, and coefficient of restitution.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Define direct central impact and coefficient of restitution. Derive expressions for the post-collision velocities v1 and v2 of two colliding bodies in terms of their masses, initial velocities, and coefficient of restitution.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Define direct central impact and coefficient of restitution. Derive expressions for the post-collision velocities v1 and v2 of two colliding bodies in terms of their masses, initial velocities, and coefficient of restitution.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Define direct central impact and coefficient of restitution. Derive expressions for the post-collision velocities v1 and v2 of two colliding bodies in terms of their masses, initial velocities, and coefficient of restitution.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11392,6 +11895,21 @@ Because the mass of the cannon is much larger than the mass of the shell ($M \gg
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2021 Evaluation Scheme (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2021_Answers.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2021 Evaluation Scheme question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11654,6 +12172,7 @@ Both bodies coalesce and travel together at the common system center-of-mass vel
     <article class="question-card subject-mechanics" id="mech-q26" data-marks="7" data-title="derive the complete mathematical expression for the loss of kinetic energy during direct central inelastic impact of two bodies: delta e = (m1*m2)/(2*(m1+m2)) * (1 - e^2) * (u1 - u2)^2. discuss perfectly elastic, inelastic, and plastic collisions.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mech-q26" data-duration="720" data-qid="mech-q26" data-label="MECH • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mech-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11668,9 +12187,9 @@ Both bodies coalesce and travel together at the common system center-of-mass vel
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the complete mathematical expression for the loss of kinetic energy during direct central inelastic impact of two bodies: Delta E = (m1*m2)/(2*(m1+m2)) * (1 - e^2) * (u1 - u2)^2. Discuss perfectly elastic, inelastic, and plastic collisions.</span>
-            <span class="lang-view lang-manglish">Derive the complete mathematical expression for the loss of kinetic energy during direct central inelastic impact of two bodies: Delta E = (m1*m2)/(2*(m1+m2)) * (1 - e^2) * (u1 - u2)^2. Discuss perfectly elastic, inelastic, and plastic collisions.</span>
-            <span class="lang-view lang-ml">Derive the complete mathematical expression for the loss of kinetic energy during direct central inelastic impact of two bodies: Delta E = (m1*m2)/(2*(m1+m2)) * (1 - e^2) * (u1 - u2)^2. Discuss perfectly elastic, inelastic, and plastic collisions.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Derive the complete mathematical expression for the loss of kinetic energy during direct central inelastic impact of two bodies: Delta E = (m1*m2)/(2*(m1+m2)) * (1 - e^2) * (u1 - u2)^2. Discuss perfectly elastic, inelastic, and plastic collisions.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Derive the complete mathematical expression for the loss of kinetic energy during direct central inelastic impact of two bodies: Delta E = (m1*m2)/(2*(m1+m2)) * (1 - e^2) * (u1 - u2)^2. Discuss perfectly elastic, inelastic, and plastic collisions.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Derive the complete mathematical expression for the loss of kinetic energy during direct central inelastic impact of two bodies: Delta E = (m1*m2)/(2*(m1+m2)) * (1 - e^2) * (u1 - u2)^2. Discuss perfectly elastic, inelastic, and plastic collisions.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11694,6 +12213,21 @@ Both bodies coalesce and travel together at the common system center-of-mass vel
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2019 University Exam (EST100)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mechanics/EST100_Dec2019_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2019 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

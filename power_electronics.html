@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4332,6 +4450,7 @@ pre, code {
     <article class="question-card subject-pe" id="pe-q1" data-marks="10" data-title="explain the physical construction and static v-i characteristics of a silicon controlled rectifier (scr). derive the mathematical expression for anode current using the two-transistor analogy.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q1" data-duration="720" data-qid="pe-q1" data-label="PE • Q1 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4346,9 +4465,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the physical construction and static V-I characteristics of a Silicon Controlled Rectifier (SCR). Derive the mathematical expression for anode current using the two-transistor analogy.</span>
-            <span class="lang-view lang-manglish">Explain the physical construction and static V-I characteristics of a Silicon Controlled Rectifier (SCR). Derive the mathematical expression for anode current using the two-transistor analogy.</span>
-            <span class="lang-view lang-ml">Explain the physical construction and static V-I characteristics of a Silicon Controlled Rectifier (SCR). Derive the mathematical expression for anode current using the two-transistor analogy.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Explain the physical construction and static V-I characteristics of a Silicon Controlled Rectifier (SCR). Derive the mathematical expression for anode current using the two-transistor analogy.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> Explain the physical construction and static V-I characteristics of a Silicon Controlled Rectifier (SCR). Derive the mathematical expression for anode current using the two-transistor analogy.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> Explain the physical construction and static V-I characteristics of a Silicon Controlled Rectifier (SCR). Derive the mathematical expression for anode current using the two-transistor analogy.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4372,6 +4491,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4718,6 +4852,7 @@ $$\alpha_1 + \alpha_2 \to 1$$
     <article class="question-card subject-pe" id="pe-q2" data-marks="7" data-title="describe the various turn-on methods for an scr. explain the gate characteristics, safe triggering area, and design of pulse transformer isolation gate drive circuits.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q2" data-duration="720" data-qid="pe-q2" data-label="PE • Q2 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4732,9 +4867,9 @@ $$\alpha_1 + \alpha_2 \to 1$$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Describe the various turn-on methods for an SCR. Explain the gate characteristics, safe triggering area, and design of pulse transformer isolation gate drive circuits.</span>
-            <span class="lang-view lang-manglish">Describe the various turn-on methods for an SCR. Explain the gate characteristics, safe triggering area, and design of pulse transformer isolation gate drive circuits.</span>
-            <span class="lang-view lang-ml">Describe the various turn-on methods for an SCR. Explain the gate characteristics, safe triggering area, and design of pulse transformer isolation gate drive circuits.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Describe the various turn-on methods for an SCR. Explain the gate characteristics, safe triggering area, and design of pulse transformer isolation gate drive circuits.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Describe the various turn-on methods for an SCR. Explain the gate characteristics, safe triggering area, and design of pulse transformer isolation gate drive circuits.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> Describe the various turn-on methods for an SCR. Explain the gate characteristics, safe triggering area, and design of pulse transformer isolation gate drive circuits.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4758,6 +4893,21 @@ $$\alpha_1 + \alpha_2 \to 1$$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4987,6 +5137,7 @@ Using continuous DC gate signals causes excessive average gate power loss ($P_{g
     <article class="question-card subject-pe" id="pe-q3" data-marks="10" data-title="explain the dynamic switching characteristics of an scr during turn-on and turn-off processes. define reverse recovery time, gate recovery time, and circuit turn-off time with neat waveforms.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q3" data-duration="720" data-qid="pe-q3" data-label="PE • Q3 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5001,9 +5152,9 @@ Using continuous DC gate signals causes excessive average gate power loss ($P_{g
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the dynamic switching characteristics of an SCR during turn-on and turn-off processes. Define reverse recovery time, gate recovery time, and circuit turn-off time with neat waveforms.</span>
-            <span class="lang-view lang-manglish">Explain the dynamic switching characteristics of an SCR during turn-on and turn-off processes. Define reverse recovery time, gate recovery time, and circuit turn-off time with neat waveforms.</span>
-            <span class="lang-view lang-ml">Explain the dynamic switching characteristics of an SCR during turn-on and turn-off processes. Define reverse recovery time, gate recovery time, and circuit turn-off time with neat waveforms.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Explain the dynamic switching characteristics of an SCR during turn-on and turn-off processes. Define reverse recovery time, gate recovery time, and circuit turn-off time with neat waveforms.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Explain the dynamic switching characteristics of an SCR during turn-on and turn-off processes. Define reverse recovery time, gate recovery time, and circuit turn-off time with neat waveforms.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> Explain the dynamic switching characteristics of an SCR during turn-on and turn-off processes. Define reverse recovery time, gate recovery time, and circuit turn-off time with neat waveforms.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5027,6 +5178,21 @@ Using continuous DC gate signals causes excessive average gate power loss ($P_{g
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5319,6 +5485,7 @@ Typically, a safety design factor of $1.5 \text{ to } 2$ is enforced ($t_c \ge 1
     <article class="question-card subject-pe" id="pe-q4" data-marks="10" data-title="explain the need for di/dt and dv/dt protection for an scr. derive the design equations for a series inductor and an rc snubber circuit with a step-by-step numerical example.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q4" data-duration="720" data-qid="pe-q4" data-label="PE • Q4 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5333,9 +5500,9 @@ Typically, a safety design factor of $1.5 \text{ to } 2$ is enforced ($t_c \ge 1
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the need for di/dt and dv/dt protection for an SCR. Derive the design equations for a series inductor and an RC snubber circuit with a step-by-step numerical example.</span>
-            <span class="lang-view lang-manglish">Explain the need for di/dt and dv/dt protection for an SCR. Derive the design equations for a series inductor and an RC snubber circuit with a step-by-step numerical example.</span>
-            <span class="lang-view lang-ml">Explain the need for di/dt and dv/dt protection for an SCR. Derive the design equations for a series inductor and an RC snubber circuit with a step-by-step numerical example.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Explain the need for di/dt and dv/dt protection for an SCR. Derive the design equations for a series inductor and an RC snubber circuit with a step-by-step numerical example.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Explain the need for di/dt and dv/dt protection for an SCR. Derive the design equations for a series inductor and an RC snubber circuit with a step-by-step numerical example.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> Explain the need for di/dt and dv/dt protection for an SCR. Derive the design equations for a series inductor and an RC snubber circuit with a step-by-step numerical example.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5359,6 +5526,21 @@ Typically, a safety design factor of $1.5 \text{ to } 2$ is enforced ($t_c \ge 1
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5660,6 +5842,7 @@ To raise $\zeta$ toward optimal $0.65$, $R_s$ is selected as $R_s = 6.5\ \Omega$
     <article class="question-card subject-pe" id="pe-q5" data-marks="10" data-title="compare the operating principles, switching speeds, conduction losses, and safe operating areas (soa) of triac, gto, power mosfet, and igbt.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q5" data-duration="720" data-qid="pe-q5" data-label="PE • Q5 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5674,9 +5857,9 @@ To raise $\zeta$ toward optimal $0.65$, $R_s$ is selected as $R_s = 6.5\ \Omega$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare the operating principles, switching speeds, conduction losses, and Safe Operating Areas (SOA) of TRIAC, GTO, Power MOSFET, and IGBT.</span>
-            <span class="lang-view lang-manglish">Compare the operating principles, switching speeds, conduction losses, and Safe Operating Areas (SOA) of TRIAC, GTO, Power MOSFET, and IGBT.</span>
-            <span class="lang-view lang-ml">Compare the operating principles, switching speeds, conduction losses, and Safe Operating Areas (SOA) of TRIAC, GTO, Power MOSFET, and IGBT.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Compare the operating principles, switching speeds, conduction losses, and Safe Operating Areas (SOA) of TRIAC, GTO, Power MOSFET, and IGBT.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Compare the operating principles, switching speeds, conduction losses, and Safe Operating Areas (SOA) of TRIAC, GTO, Power MOSFET, and IGBT.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> Compare the operating principles, switching speeds, conduction losses, and Safe Operating Areas (SOA) of TRIAC, GTO, Power MOSFET, and IGBT.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5700,6 +5883,21 @@ To raise $\zeta$ toward optimal $0.65$, $R_s$ is selected as $R_s = 6.5\ \Omega$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5991,6 +6189,7 @@ Because $\beta_{off}$ is very low, turning off an anode current of $1000\text{ A
     <article class="question-card subject-pe" id="pe-q6" data-marks="10" data-title="explain the operation of a single-phase half-wave controlled rectifier with r and rl loads. derive expressions for average and rms output voltages, and explain the effect of a freewheeling diode.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q6" data-duration="720" data-qid="pe-q6" data-label="PE • Q6 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6005,9 +6204,9 @@ Because $\beta_{off}$ is very low, turning off an anode current of $1000\text{ A
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation of a single-phase half-wave controlled rectifier with R and RL loads. Derive expressions for average and RMS output voltages, and explain the effect of a freewheeling diode.</span>
-            <span class="lang-view lang-manglish">Explain the operation of a single-phase half-wave controlled rectifier with R and RL loads. Derive expressions for average and RMS output voltages, and explain the effect of a freewheeling diode.</span>
-            <span class="lang-view lang-ml">Explain the operation of a single-phase half-wave controlled rectifier with R and RL loads. Derive expressions for average and RMS output voltages, and explain the effect of a freewheeling diode.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Explain the operation of a single-phase half-wave controlled rectifier with R and RL loads. Derive expressions for average and RMS output voltages, and explain the effect of a freewheeling diode.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Explain the operation of a single-phase half-wave controlled rectifier with R and RL loads. Derive expressions for average and RMS output voltages, and explain the effect of a freewheeling diode.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> Explain the operation of a single-phase half-wave controlled rectifier with R and RL loads. Derive expressions for average and RMS output voltages, and explain the effect of a freewheeling diode.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6031,6 +6230,21 @@ Because $\beta_{off}$ is very low, turning off an anode current of $1000\text{ A
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6317,6 +6531,7 @@ $$V_{dc} = \frac{1}{2\pi} \int_\alpha^\pi V_m \sin\omega t\,d(\omega t) = \frac{
     <article class="question-card subject-pe" id="pe-q7" data-marks="10" data-title="derive the expression for average and rms output voltages of a single-phase fully controlled bridge rectifier feeding an rle load. distinguish between continuous and discontinuous conduction modes.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q7" data-duration="720" data-qid="pe-q7" data-label="PE • Q7 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6331,9 +6546,9 @@ $$V_{dc} = \frac{1}{2\pi} \int_\alpha^\pi V_m \sin\omega t\,d(\omega t) = \frac{
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the expression for average and RMS output voltages of a single-phase fully controlled bridge rectifier feeding an RLE load. Distinguish between continuous and discontinuous conduction modes.</span>
-            <span class="lang-view lang-manglish">Derive the expression for average and RMS output voltages of a single-phase fully controlled bridge rectifier feeding an RLE load. Distinguish between continuous and discontinuous conduction modes.</span>
-            <span class="lang-view lang-ml">Derive the expression for average and RMS output voltages of a single-phase fully controlled bridge rectifier feeding an RLE load. Distinguish between continuous and discontinuous conduction modes.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Derive the expression for average and RMS output voltages of a single-phase fully controlled bridge rectifier feeding an RLE load. Distinguish between continuous and discontinuous conduction modes.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Derive the expression for average and RMS output voltages of a single-phase fully controlled bridge rectifier feeding an RLE load. Distinguish between continuous and discontinuous conduction modes.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Derive the expression for average and RMS output voltages of a single-phase fully controlled bridge rectifier feeding an RLE load. Distinguish between continuous and discontinuous conduction modes.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6357,6 +6572,21 @@ $$V_{dc} = \frac{1}{2\pi} \int_\alpha^\pi V_m \sin\omega t\,d(\omega t) = \frac{
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(b)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6673,6 +6903,7 @@ $$\alpha_{\min} = \sin^{-1}\left(\frac{E}{V_m}\right)$$</p>
     <article class="question-card subject-pe" id="pe-q8" data-marks="10" data-title="define and derive the performance parameters of phase-controlled converters: displacement factor (df), harmonic factor (hf/thd), and input power factor (pf). compare semi-converter and full converter.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q8" data-duration="720" data-qid="pe-q8" data-label="PE • Q8 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6687,9 +6918,9 @@ $$\alpha_{\min} = \sin^{-1}\left(\frac{E}{V_m}\right)$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define and derive the performance parameters of phase-controlled converters: Displacement Factor (DF), Harmonic Factor (HF/THD), and Input Power Factor (PF). Compare semi-converter and full converter.</span>
-            <span class="lang-view lang-manglish">Define and derive the performance parameters of phase-controlled converters: Displacement Factor (DF), Harmonic Factor (HF/THD), and Input Power Factor (PF). Compare semi-converter and full converter.</span>
-            <span class="lang-view lang-ml">Define and derive the performance parameters of phase-controlled converters: Displacement Factor (DF), Harmonic Factor (HF/THD), and Input Power Factor (PF). Compare semi-converter and full converter.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Define and derive the performance parameters of phase-controlled converters: Displacement Factor (DF), Harmonic Factor (HF/THD), and Input Power Factor (PF). Compare semi-converter and full converter.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Define and derive the performance parameters of phase-controlled converters: Displacement Factor (DF), Harmonic Factor (HF/THD), and Input Power Factor (PF). Compare semi-converter and full converter.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Define and derive the performance parameters of phase-controlled converters: Displacement Factor (DF), Harmonic Factor (HF/THD), and Input Power Factor (PF). Compare semi-converter and full converter.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6713,6 +6944,21 @@ $$\alpha_{\min} = \sin^{-1}\left(\frac{E}{V_m}\right)$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6948,6 +7194,7 @@ $$\text{RF} = \frac{V_{ac}}{V_{dc}} = \frac{\sqrt{V_{rms}^2 - V_{dc}^2}}{V_{dc}}
     <article class="question-card subject-pe" id="pe-q9" data-marks="10" data-title="describe the working of a three-phase fully controlled bridge converter (6-pulse) with rl load. derive the expression for average dc output voltage and plot the line-to-line output waveforms.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q9" data-duration="720" data-qid="pe-q9" data-label="PE • Q9 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6962,9 +7209,9 @@ $$\text{RF} = \frac{V_{ac}}{V_{dc}} = \frac{\sqrt{V_{rms}^2 - V_{dc}^2}}{V_{dc}}
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Describe the working of a three-phase fully controlled bridge converter (6-pulse) with RL load. Derive the expression for average DC output voltage and plot the line-to-line output waveforms.</span>
-            <span class="lang-view lang-manglish">Describe the working of a three-phase fully controlled bridge converter (6-pulse) with RL load. Derive the expression for average DC output voltage and plot the line-to-line output waveforms.</span>
-            <span class="lang-view lang-ml">Describe the working of a three-phase fully controlled bridge converter (6-pulse) with RL load. Derive the expression for average DC output voltage and plot the line-to-line output waveforms.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Describe the working of a three-phase fully controlled bridge converter (6-pulse) with RL load. Derive the expression for average DC output voltage and plot the line-to-line output waveforms.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Describe the working of a three-phase fully controlled bridge converter (6-pulse) with RL load. Derive the expression for average DC output voltage and plot the line-to-line output waveforms.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Describe the working of a three-phase fully controlled bridge converter (6-pulse) with RL load. Derive the expression for average DC output voltage and plot the line-to-line output waveforms.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6988,6 +7235,21 @@ $$\text{RF} = \frac{V_{ac}}{V_{dc}} = \frac{\sqrt{V_{rms}^2 - V_{dc}^2}}{V_{dc}}
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7259,6 +7521,7 @@ $$V_{rms} = V_{ml} \sqrt{\frac{1}{2} + \frac{3\sqrt{3}}{4\pi}} = \sqrt{2} V_L \t
     <article class="question-card subject-pe" id="pe-q10" data-marks="10" data-title="explain the effect of ac source inductance on the performance of single-phase and three-phase full converters. derive expressions for overlap angle (mu) and average voltage drop.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q10" data-duration="720" data-qid="pe-q10" data-label="PE • Q10 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7273,9 +7536,9 @@ $$V_{rms} = V_{ml} \sqrt{\frac{1}{2} + \frac{3\sqrt{3}}{4\pi}} = \sqrt{2} V_L \t
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the effect of AC source inductance on the performance of single-phase and three-phase full converters. Derive expressions for overlap angle (mu) and average voltage drop.</span>
-            <span class="lang-view lang-manglish">Explain the effect of AC source inductance on the performance of single-phase and three-phase full converters. Derive expressions for overlap angle (mu) and average voltage drop.</span>
-            <span class="lang-view lang-ml">Explain the effect of AC source inductance on the performance of single-phase and three-phase full converters. Derive expressions for overlap angle (mu) and average voltage drop.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Explain the effect of AC source inductance on the performance of single-phase and three-phase full converters. Derive expressions for overlap angle (mu) and average voltage drop.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Explain the effect of AC source inductance on the performance of single-phase and three-phase full converters. Derive expressions for overlap angle (mu) and average voltage drop.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> Explain the effect of AC source inductance on the performance of single-phase and three-phase full converters. Derive expressions for overlap angle (mu) and average voltage drop.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7299,6 +7562,21 @@ $$V_{rms} = V_{ml} \sqrt{\frac{1}{2} + \frac{3\sqrt{3}}{4\pi}} = \sqrt{2} V_L \t
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7557,6 +7835,7 @@ If load current $I_{dc}$ increases or line voltage dips, overlap angle $\mu$ inc
     <article class="question-card subject-pe" id="pe-q11" data-marks="10" data-title="analyze the step-down (buck) converter in continuous conduction mode. derive the voltage transfer ratio, peak-to-peak inductor ripple current, output ripple voltage, and critical inductance.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q11" data-duration="720" data-qid="pe-q11" data-label="PE • Q11 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7571,9 +7850,9 @@ If load current $I_{dc}$ increases or line voltage dips, overlap angle $\mu$ inc
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Analyze the step-down (Buck) converter in continuous conduction mode. Derive the voltage transfer ratio, peak-to-peak inductor ripple current, output ripple voltage, and critical inductance.</span>
-            <span class="lang-view lang-manglish">Analyze the step-down (Buck) converter in continuous conduction mode. Derive the voltage transfer ratio, peak-to-peak inductor ripple current, output ripple voltage, and critical inductance.</span>
-            <span class="lang-view lang-ml">Analyze the step-down (Buck) converter in continuous conduction mode. Derive the voltage transfer ratio, peak-to-peak inductor ripple current, output ripple voltage, and critical inductance.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Analyze the step-down (Buck) converter in continuous conduction mode. Derive the voltage transfer ratio, peak-to-peak inductor ripple current, output ripple voltage, and critical inductance.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Analyze the step-down (Buck) converter in continuous conduction mode. Derive the voltage transfer ratio, peak-to-peak inductor ripple current, output ripple voltage, and critical inductance.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Analyze the step-down (Buck) converter in continuous conduction mode. Derive the voltage transfer ratio, peak-to-peak inductor ripple current, output ripple voltage, and critical inductance.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7597,6 +7876,21 @@ If load current $I_{dc}$ increases or line voltage dips, overlap angle $\mu$ inc
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7871,6 +8165,7 @@ $$C_c = \frac{1 - D}{8 f_s^2 L \left(\frac{\Delta V_o}{V_o}\right)}$$</p>
     <article class="question-card subject-pe" id="pe-q12" data-marks="10" data-title="explain the operation of a step-up (boost) converter in continuous conduction mode. derive the voltage gain using inductor volt-second balance, and calculate the critical inductance for ccm.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q12" data-duration="720" data-qid="pe-q12" data-label="PE • Q12 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7885,9 +8180,9 @@ $$C_c = \frac{1 - D}{8 f_s^2 L \left(\frac{\Delta V_o}{V_o}\right)}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation of a step-up (Boost) converter in continuous conduction mode. Derive the voltage gain using inductor volt-second balance, and calculate the critical inductance for CCM.</span>
-            <span class="lang-view lang-manglish">Explain the operation of a step-up (Boost) converter in continuous conduction mode. Derive the voltage gain using inductor volt-second balance, and calculate the critical inductance for CCM.</span>
-            <span class="lang-view lang-ml">Explain the operation of a step-up (Boost) converter in continuous conduction mode. Derive the voltage gain using inductor volt-second balance, and calculate the critical inductance for CCM.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Explain the operation of a step-up (Boost) converter in continuous conduction mode. Derive the voltage gain using inductor volt-second balance, and calculate the critical inductance for CCM.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Explain the operation of a step-up (Boost) converter in continuous conduction mode. Derive the voltage gain using inductor volt-second balance, and calculate the critical inductance for CCM.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> Explain the operation of a step-up (Boost) converter in continuous conduction mode. Derive the voltage gain using inductor volt-second balance, and calculate the critical inductance for CCM.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7911,6 +8206,21 @@ $$C_c = \frac{1 - D}{8 f_s^2 L \left(\frac{\Delta V_o}{V_o}\right)}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(b)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8197,6 +8507,7 @@ As $D \to 1$, the term $\frac{r_L}{R(1 - D)^2}$ grows astronomically, causing th
     <article class="question-card subject-pe" id="pe-q13" data-marks="10" data-title="derive the voltage transfer ratio of an inverting buck-boost converter in continuous conduction mode. derive expressions for inductor ripple current and critical boundary inductance.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q13" data-duration="720" data-qid="pe-q13" data-label="PE • Q13 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8211,9 +8522,9 @@ As $D \to 1$, the term $\frac{r_L}{R(1 - D)^2}$ grows astronomically, causing th
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the voltage transfer ratio of an inverting Buck-Boost converter in continuous conduction mode. Derive expressions for inductor ripple current and critical boundary inductance.</span>
-            <span class="lang-view lang-manglish">Derive the voltage transfer ratio of an inverting Buck-Boost converter in continuous conduction mode. Derive expressions for inductor ripple current and critical boundary inductance.</span>
-            <span class="lang-view lang-ml">Derive the voltage transfer ratio of an inverting Buck-Boost converter in continuous conduction mode. Derive expressions for inductor ripple current and critical boundary inductance.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Derive the voltage transfer ratio of an inverting Buck-Boost converter in continuous conduction mode. Derive expressions for inductor ripple current and critical boundary inductance.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Derive the voltage transfer ratio of an inverting Buck-Boost converter in continuous conduction mode. Derive expressions for inductor ripple current and critical boundary inductance.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Derive the voltage transfer ratio of an inverting Buck-Boost converter in continuous conduction mode. Derive expressions for inductor ripple current and critical boundary inductance.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8237,6 +8548,21 @@ As $D \to 1$, the term $\frac{r_L}{R(1 - D)^2}$ grows astronomically, causing th
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8523,6 +8849,7 @@ $$L \ge L_{c,\max} = \frac{R_{\max}}{2 f_s}$$</p>
     <article class="question-card subject-pe" id="pe-q14" data-marks="10" data-title="explain the circuit topology and working principle of a cuk converter. derive the voltage ratio and explain why both input and output currents are continuous.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q14" data-duration="720" data-qid="pe-q14" data-label="PE • Q14 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8537,9 +8864,9 @@ $$L \ge L_{c,\max} = \frac{R_{\max}}{2 f_s}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the circuit topology and working principle of a Cuk converter. Derive the voltage ratio and explain why both input and output currents are continuous.</span>
-            <span class="lang-view lang-manglish">Explain the circuit topology and working principle of a Cuk converter. Derive the voltage ratio and explain why both input and output currents are continuous.</span>
-            <span class="lang-view lang-ml">Explain the circuit topology and working principle of a Cuk converter. Derive the voltage ratio and explain why both input and output currents are continuous.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Explain the circuit topology and working principle of a Cuk converter. Derive the voltage ratio and explain why both input and output currents are continuous.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Explain the circuit topology and working principle of a Cuk converter. Derive the voltage ratio and explain why both input and output currents are continuous.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Explain the circuit topology and working principle of a Cuk converter. Derive the voltage ratio and explain why both input and output currents are continuous.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8563,6 +8890,21 @@ $$L \ge L_{c,\max} = \frac{R_{\max}}{2 f_s}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8822,6 +9164,7 @@ $$V_o = -D \left(\frac{V_s}{1 - D}\right) = -\frac{D}{1 - D} V_s$$</p>
     <article class="question-card subject-pe" id="pe-q15" data-marks="10" data-title="classify dc choppers into class a, b, c, d, and e based on their quadrant of operation. draw the circuit diagram and explain the four-quadrant operation of a full h-bridge chopper.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q15" data-duration="720" data-qid="pe-q15" data-label="PE • Q15 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8836,9 +9179,9 @@ $$V_o = -D \left(\frac{V_s}{1 - D}\right) = -\frac{D}{1 - D} V_s$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Classify DC choppers into Class A, B, C, D, and E based on their quadrant of operation. Draw the circuit diagram and explain the four-quadrant operation of a full H-bridge chopper.</span>
-            <span class="lang-view lang-manglish">Classify DC choppers into Class A, B, C, D, and E based on their quadrant of operation. Draw the circuit diagram and explain the four-quadrant operation of a full H-bridge chopper.</span>
-            <span class="lang-view lang-ml">Classify DC choppers into Class A, B, C, D, and E based on their quadrant of operation. Draw the circuit diagram and explain the four-quadrant operation of a full H-bridge chopper.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Classify DC choppers into Class A, B, C, D, and E based on their quadrant of operation. Draw the circuit diagram and explain the four-quadrant operation of a full H-bridge chopper.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Classify DC choppers into Class A, B, C, D, and E based on their quadrant of operation. Draw the circuit diagram and explain the four-quadrant operation of a full H-bridge chopper.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Classify DC choppers into Class A, B, C, D, and E based on their quadrant of operation. Draw the circuit diagram and explain the four-quadrant operation of a full H-bridge chopper.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8862,6 +9205,21 @@ $$V_o = -D \left(\frac{V_s}{1 - D}\right) = -\frac{D}{1 - D} V_s$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9228,6 +9586,7 @@ $$V_o = -D \left(\frac{V_s}{1 - D}\right) = -\frac{D}{1 - D} V_s$$</p>
     <article class="question-card subject-pe" id="pe-q16" data-marks="10" data-title="explain the operation of single-phase half-bridge and full-bridge voltage source inverters (vsi) with r and rl loads. derive the fourier series expression for output voltage and discuss feedback diodes.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q16" data-duration="720" data-qid="pe-q16" data-label="PE • Q16 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9242,9 +9601,9 @@ $$V_o = -D \left(\frac{V_s}{1 - D}\right) = -\frac{D}{1 - D} V_s$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation of single-phase half-bridge and full-bridge Voltage Source Inverters (VSI) with R and RL loads. Derive the Fourier series expression for output voltage and discuss feedback diodes.</span>
-            <span class="lang-view lang-manglish">Explain the operation of single-phase half-bridge and full-bridge Voltage Source Inverters (VSI) with R and RL loads. Derive the Fourier series expression for output voltage and discuss feedback diodes.</span>
-            <span class="lang-view lang-ml">Explain the operation of single-phase half-bridge and full-bridge Voltage Source Inverters (VSI) with R and RL loads. Derive the Fourier series expression for output voltage and discuss feedback diodes.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Explain the operation of single-phase half-bridge and full-bridge Voltage Source Inverters (VSI) with R and RL loads. Derive the Fourier series expression for output voltage and discuss feedback diodes.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Explain the operation of single-phase half-bridge and full-bridge Voltage Source Inverters (VSI) with R and RL loads. Derive the Fourier series expression for output voltage and discuss feedback diodes.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> Explain the operation of single-phase half-bridge and full-bridge Voltage Source Inverters (VSI) with R and RL loads. Derive the Fourier series expression for output voltage and discuss feedback diodes.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9268,6 +9627,21 @@ $$V_o = -D \left(\frac{V_s}{1 - D}\right) = -\frac{D}{1 - D} V_s$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9602,6 +9976,7 @@ By modulating pulse half-width $d$, the fundamental voltage magnitude can be reg
     <article class="question-card subject-pe" id="pe-q17" data-marks="10" data-title="explain the 180-degree conduction mode of a three-phase voltage source inverter with a star-connected balanced load. derive expressions for line and phase voltages and show fourier harmonic elimination.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q17" data-duration="720" data-qid="pe-q17" data-label="PE • Q17 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9616,9 +9991,9 @@ By modulating pulse half-width $d$, the fundamental voltage magnitude can be reg
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the 180-degree conduction mode of a three-phase Voltage Source Inverter with a star-connected balanced load. Derive expressions for line and phase voltages and show Fourier harmonic elimination.</span>
-            <span class="lang-view lang-manglish">Explain the 180-degree conduction mode of a three-phase Voltage Source Inverter with a star-connected balanced load. Derive expressions for line and phase voltages and show Fourier harmonic elimination.</span>
-            <span class="lang-view lang-ml">Explain the 180-degree conduction mode of a three-phase Voltage Source Inverter with a star-connected balanced load. Derive expressions for line and phase voltages and show Fourier harmonic elimination.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Explain the 180-degree conduction mode of a three-phase Voltage Source Inverter with a star-connected balanced load. Derive expressions for line and phase voltages and show Fourier harmonic elimination.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Explain the 180-degree conduction mode of a three-phase Voltage Source Inverter with a star-connected balanced load. Derive expressions for line and phase voltages and show Fourier harmonic elimination.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Explain the 180-degree conduction mode of a three-phase Voltage Source Inverter with a star-connected balanced load. Derive expressions for line and phase voltages and show Fourier harmonic elimination.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9642,6 +10017,21 @@ By modulating pulse half-width $d$, the fundamental voltage magnitude can be reg
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(b)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9952,6 +10342,7 @@ $$V_{L1,rms} = \frac{V_{L1\max}}{\sqrt{2}} = \frac{\sqrt{6}}{\pi} V_{dc} \approx
     <article class="question-card subject-pe" id="pe-q18" data-marks="10" data-title="analyze the 120-degree conduction mode of a three-phase voltage source inverter. derive expressions for rms line and phase voltages and compare performance with the 180-degree conduction mode.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q18" data-duration="720" data-qid="pe-q18" data-label="PE • Q18 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9966,9 +10357,9 @@ $$V_{L1,rms} = \frac{V_{L1\max}}{\sqrt{2}} = \frac{\sqrt{6}}{\pi} V_{dc} \approx
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Analyze the 120-degree conduction mode of a three-phase Voltage Source Inverter. Derive expressions for RMS line and phase voltages and compare performance with the 180-degree conduction mode.</span>
-            <span class="lang-view lang-manglish">Analyze the 120-degree conduction mode of a three-phase Voltage Source Inverter. Derive expressions for RMS line and phase voltages and compare performance with the 180-degree conduction mode.</span>
-            <span class="lang-view lang-ml">Analyze the 120-degree conduction mode of a three-phase Voltage Source Inverter. Derive expressions for RMS line and phase voltages and compare performance with the 180-degree conduction mode.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Analyze the 120-degree conduction mode of a three-phase Voltage Source Inverter. Derive expressions for RMS line and phase voltages and compare performance with the 180-degree conduction mode.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Analyze the 120-degree conduction mode of a three-phase Voltage Source Inverter. Derive expressions for RMS line and phase voltages and compare performance with the 180-degree conduction mode.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> Analyze the 120-degree conduction mode of a three-phase Voltage Source Inverter. Derive expressions for RMS line and phase voltages and compare performance with the 180-degree conduction mode.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9992,6 +10383,21 @@ $$V_{L1,rms} = \frac{V_{L1\max}}{\sqrt{2}} = \frac{\sqrt{6}}{\pi} V_{dc} \approx
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10236,6 +10642,7 @@ $$V_{L,rms} = \sqrt{\frac{V_{dc}^2}{\pi}\left[ \frac{\pi}{12} + \frac{\pi}{3} + 
     <article class="question-card subject-pe" id="pe-q19" data-marks="10" data-title="explain pulse width modulation (pwm) techniques used in inverters: single-pulse, multi-pulse, and sinusoidal pwm (spwm). define modulation index (ma) and frequency ratio (mf) with harmonic spectra.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q19" data-duration="720" data-qid="pe-q19" data-label="PE • Q19 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10250,9 +10657,9 @@ $$V_{L,rms} = \sqrt{\frac{V_{dc}^2}{\pi}\left[ \frac{\pi}{12} + \frac{\pi}{3} + 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Pulse Width Modulation (PWM) techniques used in inverters: Single-Pulse, Multi-Pulse, and Sinusoidal PWM (SPWM). Define modulation index (ma) and frequency ratio (mf) with harmonic spectra.</span>
-            <span class="lang-view lang-manglish">Explain Pulse Width Modulation (PWM) techniques used in inverters: Single-Pulse, Multi-Pulse, and Sinusoidal PWM (SPWM). Define modulation index (ma) and frequency ratio (mf) with harmonic spectra.</span>
-            <span class="lang-view lang-ml">Explain Pulse Width Modulation (PWM) techniques used in inverters: Single-Pulse, Multi-Pulse, and Sinusoidal PWM (SPWM). Define modulation index (ma) and frequency ratio (mf) with harmonic spectra.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Explain Pulse Width Modulation (PWM) techniques used in inverters: Single-Pulse, Multi-Pulse, and Sinusoidal PWM (SPWM). Define modulation index (ma) and frequency ratio (mf) with harmonic spectra.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Explain Pulse Width Modulation (PWM) techniques used in inverters: Single-Pulse, Multi-Pulse, and Sinusoidal PWM (SPWM). Define modulation index (ma) and frequency ratio (mf) with harmonic spectra.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> Explain Pulse Width Modulation (PWM) techniques used in inverters: Single-Pulse, Multi-Pulse, and Sinusoidal PWM (SPWM). Define modulation index (ma) and frequency ratio (mf) with harmonic spectra.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10276,6 +10683,21 @@ $$V_{L,rms} = \sqrt{\frac{V_{dc}^2}{\pi}\left[ \frac{\pi}{12} + \frac{\pi}{3} + 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10556,6 +10978,7 @@ Since industrial converters operate with high carrier frequencies ($f_c \approx 
     <article class="question-card subject-pe" id="pe-q20" data-marks="10" data-title="compare the operating principles, circuit topologies, and performance of voltage source inverters (vsi) and current source inverters (csi). explain the asci commutation mechanism.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q20" data-duration="720" data-qid="pe-q20" data-label="PE • Q20 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10570,9 +10993,9 @@ Since industrial converters operate with high carrier frequencies ($f_c \approx 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare the operating principles, circuit topologies, and performance of Voltage Source Inverters (VSI) and Current Source Inverters (CSI). Explain the ASCI commutation mechanism.</span>
-            <span class="lang-view lang-manglish">Compare the operating principles, circuit topologies, and performance of Voltage Source Inverters (VSI) and Current Source Inverters (CSI). Explain the ASCI commutation mechanism.</span>
-            <span class="lang-view lang-ml">Compare the operating principles, circuit topologies, and performance of Voltage Source Inverters (VSI) and Current Source Inverters (CSI). Explain the ASCI commutation mechanism.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Compare the operating principles, circuit topologies, and performance of Voltage Source Inverters (VSI) and Current Source Inverters (CSI). Explain the ASCI commutation mechanism.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Compare the operating principles, circuit topologies, and performance of Voltage Source Inverters (VSI) and Current Source Inverters (CSI). Explain the ASCI commutation mechanism.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Compare the operating principles, circuit topologies, and performance of Voltage Source Inverters (VSI) and Current Source Inverters (CSI). Explain the ASCI commutation mechanism.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10596,6 +11019,21 @@ Since industrial converters operate with high carrier frequencies ($f_c \approx 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10890,6 +11328,7 @@ The Auto-Sequential Commutated Inverter is the standard thyristor-based CSI topo
     <article class="question-card subject-pe" id="pe-q21" data-marks="10" data-title="explain the operation of a single-phase ac voltage controller with resistive load using integral cycle control and phase angle control. derive expressions for rms output voltage and power factor.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q21" data-duration="720" data-qid="pe-q21" data-label="PE • Q21 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10904,9 +11343,9 @@ The Auto-Sequential Commutated Inverter is the standard thyristor-based CSI topo
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation of a single-phase AC voltage controller with resistive load using Integral Cycle Control and Phase Angle Control. Derive expressions for RMS output voltage and power factor.</span>
-            <span class="lang-view lang-manglish">Explain the operation of a single-phase AC voltage controller with resistive load using Integral Cycle Control and Phase Angle Control. Derive expressions for RMS output voltage and power factor.</span>
-            <span class="lang-view lang-ml">Explain the operation of a single-phase AC voltage controller with resistive load using Integral Cycle Control and Phase Angle Control. Derive expressions for RMS output voltage and power factor.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Explain the operation of a single-phase AC voltage controller with resistive load using Integral Cycle Control and Phase Angle Control. Derive expressions for RMS output voltage and power factor.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Explain the operation of a single-phase AC voltage controller with resistive load using Integral Cycle Control and Phase Angle Control. Derive expressions for RMS output voltage and power factor.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Explain the operation of a single-phase AC voltage controller with resistive load using Integral Cycle Control and Phase Angle Control. Derive expressions for RMS output voltage and power factor.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10930,6 +11369,21 @@ The Auto-Sequential Commutated Inverter is the standard thyristor-based CSI topo
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11174,6 +11628,7 @@ $$\text{PF} = \frac{P}{S} = \frac{V_{o,rms}}{V_s} = \sqrt{\frac{1}{\pi}\left[ (\
     <article class="question-card subject-pe" id="pe-q22" data-marks="10" data-title="analyze the single-phase ac voltage controller with an inductive (rl) load. discuss the three operating cases based on firing angle alpha and load angle phi, and derive the rms output voltage.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q22" data-duration="720" data-qid="pe-q22" data-label="PE • Q22 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11188,9 +11643,9 @@ $$\text{PF} = \frac{P}{S} = \frac{V_{o,rms}}{V_s} = \sqrt{\frac{1}{\pi}\left[ (\
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Analyze the single-phase AC voltage controller with an inductive (RL) load. Discuss the three operating cases based on firing angle alpha and load angle phi, and derive the RMS output voltage.</span>
-            <span class="lang-view lang-manglish">Analyze the single-phase AC voltage controller with an inductive (RL) load. Discuss the three operating cases based on firing angle alpha and load angle phi, and derive the RMS output voltage.</span>
-            <span class="lang-view lang-ml">Analyze the single-phase AC voltage controller with an inductive (RL) load. Discuss the three operating cases based on firing angle alpha and load angle phi, and derive the RMS output voltage.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Analyze the single-phase AC voltage controller with an inductive (RL) load. Discuss the three operating cases based on firing angle alpha and load angle phi, and derive the RMS output voltage.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Analyze the single-phase AC voltage controller with an inductive (RL) load. Discuss the three operating cases based on firing angle alpha and load angle phi, and derive the RMS output voltage.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Analyze the single-phase AC voltage controller with an inductive (RL) load. Discuss the three operating cases based on firing angle alpha and load angle phi, and derive the RMS output voltage.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11214,6 +11669,21 @@ $$\text{PF} = \frac{P}{S} = \frac{V_{o,rms}}{V_s} = \sqrt{\frac{1}{\pi}\left[ (\
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(b)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11458,6 +11928,7 @@ To overcome this:
     <article class="question-card subject-pe" id="pe-q23" data-marks="10" data-title="explain the working principle of single-phase to single-phase cycloconverters in mid-point and bridge configurations. compare circulating and non-circulating current modes.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q23" data-duration="720" data-qid="pe-q23" data-label="PE • Q23 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11472,9 +11943,9 @@ To overcome this:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the working principle of single-phase to single-phase cycloconverters in mid-point and bridge configurations. Compare circulating and non-circulating current modes.</span>
-            <span class="lang-view lang-manglish">Explain the working principle of single-phase to single-phase cycloconverters in mid-point and bridge configurations. Compare circulating and non-circulating current modes.</span>
-            <span class="lang-view lang-ml">Explain the working principle of single-phase to single-phase cycloconverters in mid-point and bridge configurations. Compare circulating and non-circulating current modes.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Explain the working principle of single-phase to single-phase cycloconverters in mid-point and bridge configurations. Compare circulating and non-circulating current modes.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Explain the working principle of single-phase to single-phase cycloconverters in mid-point and bridge configurations. Compare circulating and non-circulating current modes.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Explain the working principle of single-phase to single-phase cycloconverters in mid-point and bridge configurations. Compare circulating and non-circulating current modes.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11498,6 +11969,21 @@ To overcome this:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11742,6 +12228,7 @@ $$\alpha_P + \alpha_N = 180^\circ \implies \cos\alpha_N = -\cos\alpha_P$$
     <article class="question-card subject-pe" id="pe-q24" data-marks="10" data-title="explain the limitations of hard switching in high-frequency converters. describe the principles and circuit topologies of zero-current switching (zcs) and zero-voltage switching (zvs) resonant converters.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q24" data-duration="720" data-qid="pe-q24" data-label="PE • Q24 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11756,9 +12243,9 @@ $$\alpha_P + \alpha_N = 180^\circ \implies \cos\alpha_N = -\cos\alpha_P$$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the limitations of hard switching in high-frequency converters. Describe the principles and circuit topologies of Zero-Current Switching (ZCS) and Zero-Voltage Switching (ZVS) resonant converters.</span>
-            <span class="lang-view lang-manglish">Explain the limitations of hard switching in high-frequency converters. Describe the principles and circuit topologies of Zero-Current Switching (ZCS) and Zero-Voltage Switching (ZVS) resonant converters.</span>
-            <span class="lang-view lang-ml">Explain the limitations of hard switching in high-frequency converters. Describe the principles and circuit topologies of Zero-Current Switching (ZCS) and Zero-Voltage Switching (ZVS) resonant converters.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Explain the limitations of hard switching in high-frequency converters. Describe the principles and circuit topologies of Zero-Current Switching (ZCS) and Zero-Voltage Switching (ZVS) resonant converters.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Explain the limitations of hard switching in high-frequency converters. Describe the principles and circuit topologies of Zero-Current Switching (ZCS) and Zero-Voltage Switching (ZVS) resonant converters.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Explain the limitations of hard switching in high-frequency converters. Describe the principles and circuit topologies of Zero-Current Switching (ZCS) and Zero-Voltage Switching (ZVS) resonant converters.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11782,6 +12269,21 @@ $$\alpha_P + \alpha_N = 180^\circ \implies \cos\alpha_N = -\cos\alpha_P$$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12035,6 +12537,7 @@ Soft-switching converters incorporate an auxiliary $L_r-C_r$ resonant tank that 
     <article class="question-card subject-pe" id="pe-q25" data-marks="10" data-title="describe the circuit operation of isolated switched-mode power supply (smps) topologies: flyback, forward, push-pull, half-bridge, and full-bridge converters with comparative evaluation.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q25" data-duration="720" data-qid="pe-q25" data-label="PE • Q25 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12049,9 +12552,9 @@ Soft-switching converters incorporate an auxiliary $L_r-C_r$ resonant tank that 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Describe the circuit operation of isolated Switched-Mode Power Supply (SMPS) topologies: Flyback, Forward, Push-Pull, Half-bridge, and Full-bridge converters with comparative evaluation.</span>
-            <span class="lang-view lang-manglish">Describe the circuit operation of isolated Switched-Mode Power Supply (SMPS) topologies: Flyback, Forward, Push-Pull, Half-bridge, and Full-bridge converters with comparative evaluation.</span>
-            <span class="lang-view lang-ml">Describe the circuit operation of isolated Switched-Mode Power Supply (SMPS) topologies: Flyback, Forward, Push-Pull, Half-bridge, and Full-bridge converters with comparative evaluation.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Describe the circuit operation of isolated Switched-Mode Power Supply (SMPS) topologies: Flyback, Forward, Push-Pull, Half-bridge, and Full-bridge converters with comparative evaluation.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Describe the circuit operation of isolated Switched-Mode Power Supply (SMPS) topologies: Flyback, Forward, Push-Pull, Half-bridge, and Full-bridge converters with comparative evaluation.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Describe the circuit operation of isolated Switched-Mode Power Supply (SMPS) topologies: Flyback, Forward, Push-Pull, Half-bridge, and Full-bridge converters with comparative evaluation.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12075,6 +12578,21 @@ Soft-switching converters incorporate an auxiliary $L_r-C_r$ resonant tank that 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12376,6 +12894,7 @@ Derived from the buck converter, the Forward converter transfers energy directly
     <article class="question-card subject-pe" id="pe-q26" data-marks="10" data-title="explain the architectures of uninterruptible power supplies (ups): offline, line-interactive, and online double-conversion. discuss the role of the static bypass switch and compare performance metrics.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-pe-q26" data-duration="720" data-qid="pe-q26" data-label="PE • Q26 (10M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('pe-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12390,9 +12909,9 @@ Derived from the buck converter, the Forward converter transfers energy directly
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the architectures of Uninterruptible Power Supplies (UPS): Offline, Line-Interactive, and Online Double-Conversion. Discuss the role of the static bypass switch and compare performance metrics.</span>
-            <span class="lang-view lang-manglish">Explain the architectures of Uninterruptible Power Supplies (UPS): Offline, Line-Interactive, and Online Double-Conversion. Discuss the role of the static bypass switch and compare performance metrics.</span>
-            <span class="lang-view lang-ml">Explain the architectures of Uninterruptible Power Supplies (UPS): Offline, Line-Interactive, and Online Double-Conversion. Discuss the role of the static bypass switch and compare performance metrics.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Explain the architectures of Uninterruptible Power Supplies (UPS): Offline, Line-Interactive, and Online Double-Conversion. Discuss the role of the static bypass switch and compare performance metrics.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Explain the architectures of Uninterruptible Power Supplies (UPS): Offline, Line-Interactive, and Online Double-Conversion. Discuss the role of the static bypass switch and compare performance metrics.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Explain the architectures of Uninterruptible Power Supplies (UPS): Offline, Line-Interactive, and Online Double-Conversion. Discuss the role of the static bypass switch and compare performance metrics.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12416,6 +12935,21 @@ Derived from the buck converter, the Forward converter transfers energy directly
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET306)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (10 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/pe/EET306_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

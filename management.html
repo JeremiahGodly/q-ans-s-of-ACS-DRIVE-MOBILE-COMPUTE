@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4349,6 +4467,7 @@ pre, code {
     <article class="question-card subject-mgt" id="mgt-q1" data-marks="7" data-title="explain the principles and techniques of scientific management propounded by f.w. taylor. what is meant by mental revolution?">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q1" data-duration="720" data-qid="mgt-q1" data-label="MGT • Q1 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4363,9 +4482,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the principles and techniques of Scientific Management propounded by F.W. Taylor. What is meant by mental revolution?</span>
-            <span class="lang-view lang-manglish">Explain the principles and techniques of Scientific Management propounded by F.W. Taylor. What is meant by mental revolution?</span>
-            <span class="lang-view lang-ml">Explain the principles and techniques of Scientific Management propounded by F.W. Taylor. What is meant by mental revolution?</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> Explain the principles and techniques of Scientific Management propounded by F.W. Taylor. What is meant by mental revolution?</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> Explain the principles and techniques of Scientific Management propounded by F.W. Taylor. What is meant by mental revolution?</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> Explain the principles and techniques of Scientific Management propounded by F.W. Taylor. What is meant by mental revolution?</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4389,6 +4508,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4540,6 +4674,7 @@ Taylor emphasized that the techniques of scientific management are worthless wit
     <article class="question-card subject-mgt" id="mgt-q2" data-marks="7" data-title="state and explain henri fayol&#x27;s 14 principles of administrative management. explain the concept of the scalar chain and gangplank.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q2" data-duration="720" data-qid="mgt-q2" data-label="MGT • Q2 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4554,9 +4689,9 @@ Taylor emphasized that the techniques of scientific management are worthless wit
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and explain Henri Fayol's 14 principles of administrative management. Explain the concept of the Scalar Chain and Gangplank.</span>
-            <span class="lang-view lang-manglish">State and explain Henri Fayol's 14 principles of administrative management. Explain the concept of the Scalar Chain and Gangplank.</span>
-            <span class="lang-view lang-ml">State and explain Henri Fayol's 14 principles of administrative management. Explain the concept of the Scalar Chain and Gangplank.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> State and explain Henri Fayol's 14 principles of administrative management. Explain the concept of the Scalar Chain and Gangplank.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> State and explain Henri Fayol's 14 principles of administrative management. Explain the concept of the Scalar Chain and Gangplank.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> State and explain Henri Fayol's 14 principles of administrative management. Explain the concept of the Scalar Chain and Gangplank.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4580,6 +4715,21 @@ Taylor emphasized that the techniques of scientific management are worthless wit
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4725,6 +4875,7 @@ Taylor emphasized that the techniques of scientific management are worthless wit
     <article class="question-card subject-mgt" id="mgt-q3" data-marks="7" data-title="explain the universal functions of management (posdcorb). describe the steps involved in a rational managerial decision-making process under certainty, risk, and uncertainty.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q3" data-duration="720" data-qid="mgt-q3" data-label="MGT • Q3 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4739,9 +4890,9 @@ Taylor emphasized that the techniques of scientific management are worthless wit
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the universal functions of management (POSDCORB). Describe the steps involved in a rational managerial decision-making process under certainty, risk, and uncertainty.</span>
-            <span class="lang-view lang-manglish">Explain the universal functions of management (POSDCORB). Describe the steps involved in a rational managerial decision-making process under certainty, risk, and uncertainty.</span>
-            <span class="lang-view lang-ml">Explain the universal functions of management (POSDCORB). Describe the steps involved in a rational managerial decision-making process under certainty, risk, and uncertainty.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Explain the universal functions of management (POSDCORB). Describe the steps involved in a rational managerial decision-making process under certainty, risk, and uncertainty.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Explain the universal functions of management (POSDCORB). Describe the steps involved in a rational managerial decision-making process under certainty, risk, and uncertainty.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> Explain the universal functions of management (POSDCORB). Describe the steps involved in a rational managerial decision-making process under certainty, risk, and uncertainty.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4765,6 +4916,21 @@ Taylor emphasized that the techniques of scientific management are worthless wit
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4934,6 +5100,7 @@ Decision-making is the conscious cognitive process of selecting a single course 
     <article class="question-card subject-mgt" id="mgt-q4" data-marks="7" data-title="compare line, functional, line &amp; staff, and matrix organizational structures with neat organizational charts, highlighting advantages and limitations.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q4" data-duration="720" data-qid="mgt-q4" data-label="MGT • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4948,9 +5115,9 @@ Decision-making is the conscious cognitive process of selecting a single course 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare Line, Functional, Line & Staff, and Matrix organizational structures with neat organizational charts, highlighting advantages and limitations.</span>
-            <span class="lang-view lang-manglish">Compare Line, Functional, Line & Staff, and Matrix organizational structures with neat organizational charts, highlighting advantages and limitations.</span>
-            <span class="lang-view lang-ml">Compare Line, Functional, Line & Staff, and Matrix organizational structures with neat organizational charts, highlighting advantages and limitations.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Compare Line, Functional, Line & Staff, and Matrix organizational structures with neat organizational charts, highlighting advantages and limitations.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Compare Line, Functional, Line & Staff, and Matrix organizational structures with neat organizational charts, highlighting advantages and limitations.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> Compare Line, Functional, Line & Staff, and Matrix organizational structures with neat organizational charts, highlighting advantages and limitations.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4974,6 +5141,21 @@ Decision-making is the conscious cognitive process of selecting a single course 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5143,6 +5325,7 @@ Decision-making is the conscious cognitive process of selecting a single course 
     <article class="question-card subject-mgt" id="mgt-q5" data-marks="7" data-title="explain corporate social responsibility (csr) with reference to archie carroll&#x27;s pyramid of csr. discuss core engineering ethics principles and whistleblowing.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q5" data-duration="720" data-qid="mgt-q5" data-label="MGT • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5157,9 +5340,9 @@ Decision-making is the conscious cognitive process of selecting a single course 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Corporate Social Responsibility (CSR) with reference to Archie Carroll's pyramid of CSR. Discuss core engineering ethics principles and whistleblowing.</span>
-            <span class="lang-view lang-manglish">Explain Corporate Social Responsibility (CSR) with reference to Archie Carroll's pyramid of CSR. Discuss core engineering ethics principles and whistleblowing.</span>
-            <span class="lang-view lang-ml">Explain Corporate Social Responsibility (CSR) with reference to Archie Carroll's pyramid of CSR. Discuss core engineering ethics principles and whistleblowing.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> Explain Corporate Social Responsibility (CSR) with reference to Archie Carroll's pyramid of CSR. Discuss core engineering ethics principles and whistleblowing.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> Explain Corporate Social Responsibility (CSR) with reference to Archie Carroll's pyramid of CSR. Discuss core engineering ethics principles and whistleblowing.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> Explain Corporate Social Responsibility (CSR) with reference to Archie Carroll's pyramid of CSR. Discuss core engineering ethics principles and whistleblowing.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5183,6 +5366,21 @@ Decision-making is the conscious cognitive process of selecting a single course 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5360,6 +5558,7 @@ Engineering ethics is the field of applied philosophy and system of moral princi
     <article class="question-card subject-mgt" id="mgt-q6" data-marks="7" data-title="discuss the primary and secondary factors influencing plant location decisions. explain the factor rating method and weber&#x27;s industrial location theory.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q6" data-duration="720" data-qid="mgt-q6" data-label="MGT • Q6 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5374,9 +5573,9 @@ Engineering ethics is the field of applied philosophy and system of moral princi
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Discuss the primary and secondary factors influencing plant location decisions. Explain the Factor Rating method and Weber's Industrial Location Theory.</span>
-            <span class="lang-view lang-manglish">Discuss the primary and secondary factors influencing plant location decisions. Explain the Factor Rating method and Weber's Industrial Location Theory.</span>
-            <span class="lang-view lang-ml">Discuss the primary and secondary factors influencing plant location decisions. Explain the Factor Rating method and Weber's Industrial Location Theory.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Discuss the primary and secondary factors influencing plant location decisions. Explain the Factor Rating method and Weber's Industrial Location Theory.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Discuss the primary and secondary factors influencing plant location decisions. Explain the Factor Rating method and Weber's Industrial Location Theory.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> Discuss the primary and secondary factors influencing plant location decisions. Explain the Factor Rating method and Weber's Industrial Location Theory.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5400,6 +5599,21 @@ Engineering ethics is the field of applied philosophy and system of moral princi
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5599,6 +5813,7 @@ $$MI = \frac{\text{Weight of Localized Raw Materials Consumed}}{\text{Weight of 
     <article class="question-card subject-mgt" id="mgt-q7" data-marks="7" data-title="classify plant layouts into product, process, fixed-position, and cellular layouts. compare their characteristics, material handling requirements, and suitability.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q7" data-duration="720" data-qid="mgt-q7" data-label="MGT • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5613,9 +5828,9 @@ $$MI = \frac{\text{Weight of Localized Raw Materials Consumed}}{\text{Weight of 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Classify plant layouts into Product, Process, Fixed-Position, and Cellular layouts. Compare their characteristics, material handling requirements, and suitability.</span>
-            <span class="lang-view lang-manglish">Classify plant layouts into Product, Process, Fixed-Position, and Cellular layouts. Compare their characteristics, material handling requirements, and suitability.</span>
-            <span class="lang-view lang-ml">Classify plant layouts into Product, Process, Fixed-Position, and Cellular layouts. Compare their characteristics, material handling requirements, and suitability.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Classify plant layouts into Product, Process, Fixed-Position, and Cellular layouts. Compare their characteristics, material handling requirements, and suitability.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Classify plant layouts into Product, Process, Fixed-Position, and Cellular layouts. Compare their characteristics, material handling requirements, and suitability.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Classify plant layouts into Product, Process, Fixed-Position, and Cellular layouts. Compare their characteristics, material handling requirements, and suitability.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5639,6 +5854,21 @@ $$MI = \frac{\text{Weight of Localized Raw Materials Consumed}}{\text{Weight of 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5799,6 +6029,7 @@ $$MI = \frac{\text{Weight of Localized Raw Materials Consumed}}{\text{Weight of 
     <article class="question-card subject-mgt" id="mgt-q8" data-marks="7" data-title="define work study. explain the relationship between method study and work measurement, and detail the systematic steps in conducting a method study.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q8" data-duration="720" data-qid="mgt-q8" data-label="MGT • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5813,9 +6044,9 @@ $$MI = \frac{\text{Weight of Localized Raw Materials Consumed}}{\text{Weight of 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define Work Study. Explain the relationship between Method Study and Work Measurement, and detail the systematic steps in conducting a method study.</span>
-            <span class="lang-view lang-manglish">Define Work Study. Explain the relationship between Method Study and Work Measurement, and detail the systematic steps in conducting a method study.</span>
-            <span class="lang-view lang-ml">Define Work Study. Explain the relationship between Method Study and Work Measurement, and detail the systematic steps in conducting a method study.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Define Work Study. Explain the relationship between Method Study and Work Measurement, and detail the systematic steps in conducting a method study.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Define Work Study. Explain the relationship between Method Study and Work Measurement, and detail the systematic steps in conducting a method study.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Define Work Study. Explain the relationship between Method Study and Work Measurement, and detail the systematic steps in conducting a method study.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5839,6 +6070,21 @@ $$MI = \frac{\text{Weight of Localized Raw Materials Consumed}}{\text{Weight of 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6014,6 +6260,7 @@ The execution of a standard method study project follows a disciplined seven-ste
     <article class="question-card subject-mgt" id="mgt-q9" data-marks="7" data-title="describe the recording techniques used in method study: operation process chart, flow process chart, string diagram, multiple activity chart, and simo chart with therbligs.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q9" data-duration="720" data-qid="mgt-q9" data-label="MGT • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6028,9 +6275,9 @@ The execution of a standard method study project follows a disciplined seven-ste
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Describe the recording techniques used in method study: Operation Process Chart, Flow Process Chart, String Diagram, Multiple Activity Chart, and SIMO Chart with Therbligs.</span>
-            <span class="lang-view lang-manglish">Describe the recording techniques used in method study: Operation Process Chart, Flow Process Chart, String Diagram, Multiple Activity Chart, and SIMO Chart with Therbligs.</span>
-            <span class="lang-view lang-ml">Describe the recording techniques used in method study: Operation Process Chart, Flow Process Chart, String Diagram, Multiple Activity Chart, and SIMO Chart with Therbligs.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Describe the recording techniques used in method study: Operation Process Chart, Flow Process Chart, String Diagram, Multiple Activity Chart, and SIMO Chart with Therbligs.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Describe the recording techniques used in method study: Operation Process Chart, Flow Process Chart, String Diagram, Multiple Activity Chart, and SIMO Chart with Therbligs.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Describe the recording techniques used in method study: Operation Process Chart, Flow Process Chart, String Diagram, Multiple Activity Chart, and SIMO Chart with Therbligs.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6054,6 +6301,21 @@ The execution of a standard method study project follows a disciplined seven-ste
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6244,6 +6506,7 @@ The execution of a standard method study project follows a disciplined seven-ste
     <article class="question-card subject-mgt" id="mgt-q10" data-marks="7" data-title="explain the procedure of stopwatch time study. derive the relationship between observed time, normal time, allowances, and standard time with a numerical example.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q10" data-duration="720" data-qid="mgt-q10" data-label="MGT • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6258,9 +6521,9 @@ The execution of a standard method study project follows a disciplined seven-ste
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the procedure of stopwatch time study. Derive the relationship between Observed Time, Normal Time, Allowances, and Standard Time with a numerical example.</span>
-            <span class="lang-view lang-manglish">Explain the procedure of stopwatch time study. Derive the relationship between Observed Time, Normal Time, Allowances, and Standard Time with a numerical example.</span>
-            <span class="lang-view lang-ml">Explain the procedure of stopwatch time study. Derive the relationship between Observed Time, Normal Time, Allowances, and Standard Time with a numerical example.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Explain the procedure of stopwatch time study. Derive the relationship between Observed Time, Normal Time, Allowances, and Standard Time with a numerical example.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Explain the procedure of stopwatch time study. Derive the relationship between Observed Time, Normal Time, Allowances, and Standard Time with a numerical example.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> Explain the procedure of stopwatch time study. Derive the relationship between Observed Time, Normal Time, Allowances, and Standard Time with a numerical example.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6284,6 +6547,21 @@ The execution of a standard method study project follows a disciplined seven-ste
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6596,6 +6874,7 @@ $$\mathbf{NT_{total} = 2.545\text{ min}}, \quad \mathbf{ST = 2.952\text{ min}}, 
     <article class="question-card subject-mgt" id="mgt-q11" data-marks="7" data-title="define economic order quantity (eoq). mathematically derive wilson&#x27;s lot size formula from the total annual inventory cost equation and sketch the cost curves.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q11" data-duration="720" data-qid="mgt-q11" data-label="MGT • Q11 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6610,9 +6889,9 @@ $$\mathbf{NT_{total} = 2.545\text{ min}}, \quad \mathbf{ST = 2.952\text{ min}}, 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define Economic Order Quantity (EOQ). Mathematically derive Wilson's lot size formula from the total annual inventory cost equation and sketch the cost curves.</span>
-            <span class="lang-view lang-manglish">Define Economic Order Quantity (EOQ). Mathematically derive Wilson's lot size formula from the total annual inventory cost equation and sketch the cost curves.</span>
-            <span class="lang-view lang-ml">Define Economic Order Quantity (EOQ). Mathematically derive Wilson's lot size formula from the total annual inventory cost equation and sketch the cost curves.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Define Economic Order Quantity (EOQ). Mathematically derive Wilson's lot size formula from the total annual inventory cost equation and sketch the cost curves.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Define Economic Order Quantity (EOQ). Mathematically derive Wilson's lot size formula from the total annual inventory cost equation and sketch the cost curves.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Define Economic Order Quantity (EOQ). Mathematically derive Wilson's lot size formula from the total annual inventory cost equation and sketch the cost curves.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6636,6 +6915,21 @@ $$\mathbf{NT_{total} = 2.545\text{ min}}, \quad \mathbf{ST = 2.952\text{ min}}, 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6901,6 +7195,7 @@ $$TC_{total} = (D \cdot C) + \sqrt{2 D S H}$$</p>
     <article class="question-card subject-mgt" id="mgt-q12" data-marks="7" data-title="explain selective inventory control techniques: abc analysis based on pareto&#x27;s 80/20 rule, ved analysis, fsn analysis, and sde analysis.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q12" data-duration="720" data-qid="mgt-q12" data-label="MGT • Q12 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6915,9 +7210,9 @@ $$TC_{total} = (D \cdot C) + \sqrt{2 D S H}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain selective inventory control techniques: ABC analysis based on Pareto's 80/20 rule, VED analysis, FSN analysis, and SDE analysis.</span>
-            <span class="lang-view lang-manglish">Explain selective inventory control techniques: ABC analysis based on Pareto's 80/20 rule, VED analysis, FSN analysis, and SDE analysis.</span>
-            <span class="lang-view lang-ml">Explain selective inventory control techniques: ABC analysis based on Pareto's 80/20 rule, VED analysis, FSN analysis, and SDE analysis.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Explain selective inventory control techniques: ABC analysis based on Pareto's 80/20 rule, VED analysis, FSN analysis, and SDE analysis.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Explain selective inventory control techniques: ABC analysis based on Pareto's 80/20 rule, VED analysis, FSN analysis, and SDE analysis.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> Explain selective inventory control techniques: ABC analysis based on Pareto's 80/20 rule, VED analysis, FSN analysis, and SDE analysis.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6941,6 +7236,21 @@ $$TC_{total} = (D \cdot C) + \sqrt{2 D S H}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7146,6 +7456,7 @@ $$ACV_i = \text{Annual Demand } (D_i) \times \text{Unit Cost } (C_i)$$
     <article class="question-card subject-mgt" id="mgt-q13" data-marks="7" data-title="explain the just-in-time (jit) manufacturing philosophy, taiichi ohno&#x27;s seven wastes (muda), the dual-card kanban pull mechanism, and compare jit with traditional mrp.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q13" data-duration="720" data-qid="mgt-q13" data-label="MGT • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7160,9 +7471,9 @@ $$ACV_i = \text{Annual Demand } (D_i) \times \text{Unit Cost } (C_i)$$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the Just-In-Time (JIT) manufacturing philosophy, Taiichi Ohno's seven wastes (Muda), the dual-card Kanban pull mechanism, and compare JIT with traditional MRP.</span>
-            <span class="lang-view lang-manglish">Explain the Just-In-Time (JIT) manufacturing philosophy, Taiichi Ohno's seven wastes (Muda), the dual-card Kanban pull mechanism, and compare JIT with traditional MRP.</span>
-            <span class="lang-view lang-ml">Explain the Just-In-Time (JIT) manufacturing philosophy, Taiichi Ohno's seven wastes (Muda), the dual-card Kanban pull mechanism, and compare JIT with traditional MRP.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Explain the Just-In-Time (JIT) manufacturing philosophy, Taiichi Ohno's seven wastes (Muda), the dual-card Kanban pull mechanism, and compare JIT with traditional MRP.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Explain the Just-In-Time (JIT) manufacturing philosophy, Taiichi Ohno's seven wastes (Muda), the dual-card Kanban pull mechanism, and compare JIT with traditional MRP.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Explain the Just-In-Time (JIT) manufacturing philosophy, Taiichi Ohno's seven wastes (Muda), the dual-card Kanban pull mechanism, and compare JIT with traditional MRP.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7186,6 +7497,21 @@ $$ACV_i = \text{Annual Demand } (D_i) \times \text{Unit Cost } (C_i)$$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7382,6 +7708,7 @@ where $D$ is consumption rate, $L$ is lead time, $\alpha$ is safety factor, and 
     <article class="question-card subject-mgt" id="mgt-q14" data-marks="7" data-title="explain total quality management (tqm), deming&#x27;s 14 points, and the pdca cycle. describe the six sigma dmaic methodology and iso 9001 standards.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q14" data-duration="720" data-qid="mgt-q14" data-label="MGT • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7396,9 +7723,9 @@ where $D$ is consumption rate, $L$ is lead time, $\alpha$ is safety factor, and 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Total Quality Management (TQM), Deming's 14 points, and the PDCA cycle. Describe the Six Sigma DMAIC methodology and ISO 9001 standards.</span>
-            <span class="lang-view lang-manglish">Explain Total Quality Management (TQM), Deming's 14 points, and the PDCA cycle. Describe the Six Sigma DMAIC methodology and ISO 9001 standards.</span>
-            <span class="lang-view lang-ml">Explain Total Quality Management (TQM), Deming's 14 points, and the PDCA cycle. Describe the Six Sigma DMAIC methodology and ISO 9001 standards.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Explain Total Quality Management (TQM), Deming's 14 points, and the PDCA cycle. Describe the Six Sigma DMAIC methodology and ISO 9001 standards.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Explain Total Quality Management (TQM), Deming's 14 points, and the PDCA cycle. Describe the Six Sigma DMAIC methodology and ISO 9001 standards.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Explain Total Quality Management (TQM), Deming's 14 points, and the PDCA cycle. Describe the Six Sigma DMAIC methodology and ISO 9001 standards.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7422,6 +7749,21 @@ where $D$ is consumption rate, $L$ is lead time, $\alpha$ is safety factor, and 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7633,6 +7975,7 @@ ISO 9001, published by the International Organization for Standardization, is th
     <article class="question-card subject-mgt" id="mgt-q15" data-marks="7" data-title="explain statistical quality control (sqc). distinguish between variable control charts (x-bar &amp; r) and attribute control charts (p &amp; c). derive process capability indices cp and cpk.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q15" data-duration="720" data-qid="mgt-q15" data-label="MGT • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7647,9 +7990,9 @@ ISO 9001, published by the International Organization for Standardization, is th
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain Statistical Quality Control (SQC). Distinguish between variable control charts (X-bar & R) and attribute control charts (p & c). Derive Process Capability indices Cp and Cpk.</span>
-            <span class="lang-view lang-manglish">Explain Statistical Quality Control (SQC). Distinguish between variable control charts (X-bar & R) and attribute control charts (p & c). Derive Process Capability indices Cp and Cpk.</span>
-            <span class="lang-view lang-ml">Explain Statistical Quality Control (SQC). Distinguish between variable control charts (X-bar & R) and attribute control charts (p & c). Derive Process Capability indices Cp and Cpk.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Explain Statistical Quality Control (SQC). Distinguish between variable control charts (X-bar & R) and attribute control charts (p & c). Derive Process Capability indices Cp and Cpk.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Explain Statistical Quality Control (SQC). Distinguish between variable control charts (X-bar & R) and attribute control charts (p & c). Derive Process Capability indices Cp and Cpk.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Explain Statistical Quality Control (SQC). Distinguish between variable control charts (X-bar & R) and attribute control charts (p & c). Derive Process Capability indices Cp and Cpk.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7673,6 +8016,21 @@ ISO 9001, published by the International Organization for Standardization, is th
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7913,6 +8271,7 @@ A process is truly capable only if $C_{pk} \ge 1.33$. If a process is centered, 
     <article class="question-card subject-mgt" id="mgt-q16" data-marks="7" data-title="explain the core concepts of marketing management, the 4 ps and 7 ps marketing mix, and the stp (segmentation, targeting, positioning) strategic framework.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q16" data-duration="720" data-qid="mgt-q16" data-label="MGT • Q16 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7927,9 +8286,9 @@ A process is truly capable only if $C_{pk} \ge 1.33$. If a process is centered, 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the core concepts of marketing management, the 4 Ps and 7 Ps marketing mix, and the STP (Segmentation, Targeting, Positioning) strategic framework.</span>
-            <span class="lang-view lang-manglish">Explain the core concepts of marketing management, the 4 Ps and 7 Ps marketing mix, and the STP (Segmentation, Targeting, Positioning) strategic framework.</span>
-            <span class="lang-view lang-ml">Explain the core concepts of marketing management, the 4 Ps and 7 Ps marketing mix, and the STP (Segmentation, Targeting, Positioning) strategic framework.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Explain the core concepts of marketing management, the 4 Ps and 7 Ps marketing mix, and the STP (Segmentation, Targeting, Positioning) strategic framework.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Explain the core concepts of marketing management, the 4 Ps and 7 Ps marketing mix, and the STP (Segmentation, Targeting, Positioning) strategic framework.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> Explain the core concepts of marketing management, the 4 Ps and 7 Ps marketing mix, and the STP (Segmentation, Targeting, Positioning) strategic framework.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7953,6 +8312,21 @@ A process is truly capable only if $C_{pk} \ge 1.33$. If a process is centered, 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8125,6 +8499,7 @@ The STP framework constitutes the cornerstone of modern strategic marketing:
     <article class="question-card subject-mgt" id="mgt-q17" data-marks="7" data-title="explain the product life cycle (plc) concept. describe the sales, profit, competition, and marketing strategy characteristics across all four stages.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q17" data-duration="720" data-qid="mgt-q17" data-label="MGT • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8139,9 +8514,9 @@ The STP framework constitutes the cornerstone of modern strategic marketing:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the Product Life Cycle (PLC) concept. Describe the sales, profit, competition, and marketing strategy characteristics across all four stages.</span>
-            <span class="lang-view lang-manglish">Explain the Product Life Cycle (PLC) concept. Describe the sales, profit, competition, and marketing strategy characteristics across all four stages.</span>
-            <span class="lang-view lang-ml">Explain the Product Life Cycle (PLC) concept. Describe the sales, profit, competition, and marketing strategy characteristics across all four stages.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Explain the Product Life Cycle (PLC) concept. Describe the sales, profit, competition, and marketing strategy characteristics across all four stages.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Explain the Product Life Cycle (PLC) concept. Describe the sales, profit, competition, and marketing strategy characteristics across all four stages.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Explain the Product Life Cycle (PLC) concept. Describe the sales, profit, competition, and marketing strategy characteristics across all four stages.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8165,6 +8540,21 @@ The STP framework constitutes the cornerstone of modern strategic marketing:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8361,6 +8751,7 @@ A typical PLC trajectory exhibits an S-shaped sales revenue curve paired with an
     <article class="question-card subject-mgt" id="mgt-q18" data-marks="7" data-title="explain the functions of human resource management (hrm): human resource planning, internal vs external recruitment, scientific selection funnel, and training methods.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q18" data-duration="720" data-qid="mgt-q18" data-label="MGT • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8375,9 +8766,9 @@ A typical PLC trajectory exhibits an S-shaped sales revenue curve paired with an
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the functions of Human Resource Management (HRM): Human resource planning, internal vs external recruitment, scientific selection funnel, and training methods.</span>
-            <span class="lang-view lang-manglish">Explain the functions of Human Resource Management (HRM): Human resource planning, internal vs external recruitment, scientific selection funnel, and training methods.</span>
-            <span class="lang-view lang-ml">Explain the functions of Human Resource Management (HRM): Human resource planning, internal vs external recruitment, scientific selection funnel, and training methods.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Explain the functions of Human Resource Management (HRM): Human resource planning, internal vs external recruitment, scientific selection funnel, and training methods.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Explain the functions of Human Resource Management (HRM): Human resource planning, internal vs external recruitment, scientific selection funnel, and training methods.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> Explain the functions of Human Resource Management (HRM): Human resource planning, internal vs external recruitment, scientific selection funnel, and training methods.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8401,6 +8792,21 @@ A typical PLC trajectory exhibits an S-shaped sales revenue curve paired with an
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8600,6 +9006,7 @@ Unlike recruitment (which is a positive, inclusive process), selection is a nega
     <article class="question-card subject-mgt" id="mgt-q19" data-marks="7" data-title="distinguish between job description and job specification. explain contemporary performance appraisal methods: 360-degree feedback and management by objectives (mbo).">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q19" data-duration="720" data-qid="mgt-q19" data-label="MGT • Q19 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8614,9 +9021,9 @@ Unlike recruitment (which is a positive, inclusive process), selection is a nega
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Distinguish between Job Description and Job Specification. Explain contemporary performance appraisal methods: 360-Degree Feedback and Management by Objectives (MBO).</span>
-            <span class="lang-view lang-manglish">Distinguish between Job Description and Job Specification. Explain contemporary performance appraisal methods: 360-Degree Feedback and Management by Objectives (MBO).</span>
-            <span class="lang-view lang-ml">Distinguish between Job Description and Job Specification. Explain contemporary performance appraisal methods: 360-Degree Feedback and Management by Objectives (MBO).</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> Distinguish between Job Description and Job Specification. Explain contemporary performance appraisal methods: 360-Degree Feedback and Management by Objectives (MBO).</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> Distinguish between Job Description and Job Specification. Explain contemporary performance appraisal methods: 360-Degree Feedback and Management by Objectives (MBO).</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> Distinguish between Job Description and Job Specification. Explain contemporary performance appraisal methods: 360-Degree Feedback and Management by Objectives (MBO).</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8640,6 +9047,21 @@ Unlike recruitment (which is a positive, inclusive process), selection is a nega
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8842,6 +9264,7 @@ Combines quantitative rating scales with specific critical incident narrative ex
     <article class="question-card subject-mgt" id="mgt-q20" data-marks="7" data-title="compare the motivation theories in engineering management: maslow&#x27;s hierarchy of needs, herzberg&#x27;s two-factor theory, and mcgregor&#x27;s theory x and theory y.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q20" data-duration="720" data-qid="mgt-q20" data-label="MGT • Q20 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8856,9 +9279,9 @@ Combines quantitative rating scales with specific critical incident narrative ex
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Compare the motivation theories in engineering management: Maslow's Hierarchy of Needs, Herzberg's Two-Factor Theory, and McGregor's Theory X and Theory Y.</span>
-            <span class="lang-view lang-manglish">Compare the motivation theories in engineering management: Maslow's Hierarchy of Needs, Herzberg's Two-Factor Theory, and McGregor's Theory X and Theory Y.</span>
-            <span class="lang-view lang-ml">Compare the motivation theories in engineering management: Maslow's Hierarchy of Needs, Herzberg's Two-Factor Theory, and McGregor's Theory X and Theory Y.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Compare the motivation theories in engineering management: Maslow's Hierarchy of Needs, Herzberg's Two-Factor Theory, and McGregor's Theory X and Theory Y.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Compare the motivation theories in engineering management: Maslow's Hierarchy of Needs, Herzberg's Two-Factor Theory, and McGregor's Theory X and Theory Y.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Compare the motivation theories in engineering management: Maslow's Hierarchy of Needs, Herzberg's Two-Factor Theory, and McGregor's Theory X and Theory Y.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8882,6 +9305,21 @@ Combines quantitative rating scales with specific critical incident narrative ex
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9080,6 +9518,7 @@ In *The Human Side of Enterprise* (1960), Douglas McGregor argued that manageria
     <article class="question-card subject-mgt" id="mgt-q21" data-marks="7" data-title="explain the scope of financial management. compare profit maximization and wealth maximization. describe sources of long-term and short-term capital and financial statements.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q21" data-duration="720" data-qid="mgt-q21" data-label="MGT • Q21 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9094,9 +9533,9 @@ In *The Human Side of Enterprise* (1960), Douglas McGregor argued that manageria
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the scope of financial management. Compare profit maximization and wealth maximization. Describe sources of long-term and short-term capital and financial statements.</span>
-            <span class="lang-view lang-manglish">Explain the scope of financial management. Compare profit maximization and wealth maximization. Describe sources of long-term and short-term capital and financial statements.</span>
-            <span class="lang-view lang-ml">Explain the scope of financial management. Compare profit maximization and wealth maximization. Describe sources of long-term and short-term capital and financial statements.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> Explain the scope of financial management. Compare profit maximization and wealth maximization. Describe sources of long-term and short-term capital and financial statements.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> Explain the scope of financial management. Compare profit maximization and wealth maximization. Describe sources of long-term and short-term capital and financial statements.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> Explain the scope of financial management. Compare profit maximization and wealth maximization. Describe sources of long-term and short-term capital and financial statements.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9120,6 +9559,21 @@ In *The Human Side of Enterprise* (1960), Douglas McGregor argued that manageria
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9319,6 +9773,7 @@ $$\text{EBT} - \text{Corporate Taxes} = \text{EAT (Net Profit After Tax)}$$</p>
     <article class="question-card subject-mgt" id="mgt-q22" data-marks="7" data-title="derive the mathematical expressions for break-even point (bep in units and revenue), p/v ratio, and margin of safety. illustrate with a break-even chart and numerical example.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q22" data-duration="720" data-qid="mgt-q22" data-label="MGT • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9333,9 +9788,9 @@ $$\text{EBT} - \text{Corporate Taxes} = \text{EAT (Net Profit After Tax)}$$</p>
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the mathematical expressions for Break-Even Point (BEP in units and revenue), P/V Ratio, and Margin of Safety. Illustrate with a break-even chart and numerical example.</span>
-            <span class="lang-view lang-manglish">Derive the mathematical expressions for Break-Even Point (BEP in units and revenue), P/V Ratio, and Margin of Safety. Illustrate with a break-even chart and numerical example.</span>
-            <span class="lang-view lang-ml">Derive the mathematical expressions for Break-Even Point (BEP in units and revenue), P/V Ratio, and Margin of Safety. Illustrate with a break-even chart and numerical example.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Derive the mathematical expressions for Break-Even Point (BEP in units and revenue), P/V Ratio, and Margin of Safety. Illustrate with a break-even chart and numerical example.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Derive the mathematical expressions for Break-Even Point (BEP in units and revenue), P/V Ratio, and Margin of Safety. Illustrate with a break-even chart and numerical example.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Derive the mathematical expressions for Break-Even Point (BEP in units and revenue), P/V Ratio, and Margin of Safety. Illustrate with a break-even chart and numerical example.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9359,6 +9814,21 @@ $$\text{EBT} - \text{Corporate Taxes} = \text{EAT (Net Profit After Tax)}$$</p>
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9654,6 +10124,7 @@ $$\mathbf{Q_{BEP} = 22,500\text{ units}}, \quad \mathbf{S_{BEP} = \text{INR } 36
     <article class="question-card subject-mgt" id="mgt-q23" data-marks="7" data-title="explain capital budgeting evaluation techniques: payback period, arr, npv, irr, and profitability index. compare two mutually exclusive projects using a step-by-step numerical.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q23" data-duration="720" data-qid="mgt-q23" data-label="MGT • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9668,9 +10139,9 @@ $$\mathbf{Q_{BEP} = 22,500\text{ units}}, \quad \mathbf{S_{BEP} = \text{INR } 36
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain capital budgeting evaluation techniques: Payback Period, ARR, NPV, IRR, and Profitability Index. Compare two mutually exclusive projects using a step-by-step numerical.</span>
-            <span class="lang-view lang-manglish">Explain capital budgeting evaluation techniques: Payback Period, ARR, NPV, IRR, and Profitability Index. Compare two mutually exclusive projects using a step-by-step numerical.</span>
-            <span class="lang-view lang-ml">Explain capital budgeting evaluation techniques: Payback Period, ARR, NPV, IRR, and Profitability Index. Compare two mutually exclusive projects using a step-by-step numerical.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Explain capital budgeting evaluation techniques: Payback Period, ARR, NPV, IRR, and Profitability Index. Compare two mutually exclusive projects using a step-by-step numerical.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Explain capital budgeting evaluation techniques: Payback Period, ARR, NPV, IRR, and Profitability Index. Compare two mutually exclusive projects using a step-by-step numerical.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Explain capital budgeting evaluation techniques: Payback Period, ARR, NPV, IRR, and Profitability Index. Compare two mutually exclusive projects using a step-by-step numerical.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9694,6 +10165,21 @@ $$\mathbf{Q_{BEP} = 22,500\text{ units}}, \quad \mathbf{S_{BEP} = \text{INR } 36
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10004,6 +10490,7 @@ Under modern discounted cash flow principles, **Project B must be selected** bec
     <article class="question-card subject-mgt" id="mgt-q24" data-marks="7" data-title="explain project network construction rules in cpm. detail the forward pass, backward pass, float calculations (total, free, independent), and identification of the critical path.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q24" data-duration="720" data-qid="mgt-q24" data-label="MGT • Q24 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10018,9 +10505,9 @@ Under modern discounted cash flow principles, **Project B must be selected** bec
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain project network construction rules in CPM. Detail the forward pass, backward pass, float calculations (total, free, independent), and identification of the critical path.</span>
-            <span class="lang-view lang-manglish">Explain project network construction rules in CPM. Detail the forward pass, backward pass, float calculations (total, free, independent), and identification of the critical path.</span>
-            <span class="lang-view lang-ml">Explain project network construction rules in CPM. Detail the forward pass, backward pass, float calculations (total, free, independent), and identification of the critical path.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Explain project network construction rules in CPM. Detail the forward pass, backward pass, float calculations (total, free, independent), and identification of the critical path.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Explain project network construction rules in CPM. Detail the forward pass, backward pass, float calculations (total, free, independent), and identification of the critical path.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Explain project network construction rules in CPM. Detail the forward pass, backward pass, float calculations (total, free, independent), and identification of the critical path.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10044,6 +10531,21 @@ Under modern discounted cash flow principles, **Project B must be selected** bec
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10258,6 +10760,7 @@ The Critical Path represents the longest path in terms of total duration through
     <article class="question-card subject-mgt" id="mgt-q25" data-marks="7" data-title="explain the pert technique. derive the expected activity duration and variance using the beta distribution, and determine the probability of project completion within target date.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q25" data-duration="720" data-qid="mgt-q25" data-label="MGT • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10272,9 +10775,9 @@ The Critical Path represents the longest path in terms of total duration through
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the PERT technique. Derive the expected activity duration and variance using the Beta distribution, and determine the probability of project completion within target date.</span>
-            <span class="lang-view lang-manglish">Explain the PERT technique. Derive the expected activity duration and variance using the Beta distribution, and determine the probability of project completion within target date.</span>
-            <span class="lang-view lang-ml">Explain the PERT technique. Derive the expected activity duration and variance using the Beta distribution, and determine the probability of project completion within target date.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Explain the PERT technique. Derive the expected activity duration and variance using the Beta distribution, and determine the probability of project completion within target date.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Explain the PERT technique. Derive the expected activity duration and variance using the Beta distribution, and determine the probability of project completion within target date.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Explain the PERT technique. Derive the expected activity duration and variance using the Beta distribution, and determine the probability of project completion within target date.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10298,6 +10801,21 @@ The Critical Path represents the longest path in terms of total duration through
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> December 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_Dec2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic December 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10506,6 +11024,7 @@ From standard normal probability tables:
     <article class="question-card subject-mgt" id="mgt-q26" data-marks="7" data-title="explain the concept of project crashing and time-cost trade-offs. derive the cost slope formula and outline the step-by-step algorithm to optimize total project cost.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-mgt-q26" data-duration="720" data-qid="mgt-q26" data-label="MGT • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('mgt-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10520,9 +11039,9 @@ From standard normal probability tables:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the concept of project crashing and time-cost trade-offs. Derive the cost slope formula and outline the step-by-step algorithm to optimize total project cost.</span>
-            <span class="lang-view lang-manglish">Explain the concept of project crashing and time-cost trade-offs. Derive the cost slope formula and outline the step-by-step algorithm to optimize total project cost.</span>
-            <span class="lang-view lang-ml">Explain the concept of project crashing and time-cost trade-offs. Derive the cost slope formula and outline the step-by-step algorithm to optimize total project cost.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Explain the concept of project crashing and time-cost trade-offs. Derive the cost slope formula and outline the step-by-step algorithm to optimize total project cost.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Explain the concept of project crashing and time-cost trade-offs. Derive the cost slope formula and outline the step-by-step algorithm to optimize total project cost.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Explain the concept of project crashing and time-cost trade-offs. Derive the cost slope formula and outline the step-by-step algorithm to optimize total project cost.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10546,6 +11065,21 @@ From standard normal probability tables:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (HUT300)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/mgt/HUT310_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             

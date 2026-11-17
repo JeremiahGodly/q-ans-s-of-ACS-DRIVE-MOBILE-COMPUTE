@@ -3244,6 +3244,124 @@ pre, code {
 }
 
 /* =========================================================================
+   QUESTION NUMBER BADGES & ORIGINAL UNIVERSITY EXAM SOURCE VERIFICATION BAR
+   ========================================================================= */
+.badge-qnum {
+    background: #6366f1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.qnum-prefix {
+    color: #38bdf8;
+    font-weight: 800;
+    margin-right: 0.4rem;
+}
+
+.card-qp-source-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.85rem 0 0.45rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.qp-source-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.qp-source-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.qp-source-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.qp-source-paper {
+    font-weight: 500;
+}
+
+.qp-source-paper strong {
+    color: var(--text-main);
+}
+
+.qp-source-location {
+    color: var(--text-muted);
+}
+
+.qp-source-highlight strong {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+}
+
+.btn-card-qp-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 0.42rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-card-qp-view:hover {
+    background: rgba(56, 189, 248, 0.28);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-card-qp-view .btn-qp-icon {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .card-qp-source-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .btn-card-qp-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
    SEMESTER DROPDOWN NAVIGATION & QP VAULT STYLES (ULTRA-LIGHTWEIGHT)
    ========================================================================= */
 .semester-nav-container {
@@ -4332,6 +4450,7 @@ pre, code {
     <article class="question-card subject-comp" id="comp-q1" data-marks="7" data-title="state and prove thévenin&#x27;s, norton&#x27;s, and the maximum power transfer theorems for dc and ac circuits. derive the complex load condition for maximum active power transfer.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 1</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q1" data-duration="720" data-qid="comp-q1" data-label="COMP • Q1 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q1')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4346,9 +4465,9 @@ pre, code {
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and prove Thévenin's, Norton's, and the Maximum Power Transfer theorems for DC and AC circuits. Derive the complex load condition for maximum active power transfer.</span>
-            <span class="lang-view lang-manglish">State and prove Thévenin's, Norton's, and the Maximum Power Transfer theorems for DC and AC circuits. Derive the complex load condition for maximum active power transfer.</span>
-            <span class="lang-view lang-ml">State and prove Thévenin's, Norton's, and the Maximum Power Transfer theorems for DC and AC circuits. Derive the complex load condition for maximum active power transfer.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q1.</span> State and prove Thévenin's, Norton's, and the Maximum Power Transfer theorems for DC and AC circuits. Derive the complex load condition for maximum active power transfer.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q1.</span> State and prove Thévenin's, Norton's, and the Maximum Power Transfer theorems for DC and AC circuits. Derive the complex load condition for maximum active power transfer.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q1.</span> State and prove Thévenin's, Norton's, and the Maximum Power Transfer theorems for DC and AC circuits. Derive the complex load condition for maximum active power transfer.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4372,6 +4491,21 @@ pre, code {
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4640,6 +4774,7 @@ The load impedance magnitude must equal the magnitude of the Thévenin impedance
     <article class="question-card subject-comp" id="comp-q2" data-marks="7" data-title="derive the transient current and voltage responses for series rl, rc, and series rlc circuits excited by a dc step input. discuss overdamped, critically damped, and underdamped conditions.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 2</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q2" data-duration="720" data-qid="comp-q2" data-label="COMP • Q2 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q2')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -4654,9 +4789,9 @@ The load impedance magnitude must equal the magnitude of the Thévenin impedance
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the transient current and voltage responses for series RL, RC, and series RLC circuits excited by a DC step input. Discuss overdamped, critically damped, and underdamped conditions.</span>
-            <span class="lang-view lang-manglish">Derive the transient current and voltage responses for series RL, RC, and series RLC circuits excited by a DC step input. Discuss overdamped, critically damped, and underdamped conditions.</span>
-            <span class="lang-view lang-ml">Derive the transient current and voltage responses for series RL, RC, and series RLC circuits excited by a DC step input. Discuss overdamped, critically damped, and underdamped conditions.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q2.</span> Derive the transient current and voltage responses for series RL, RC, and series RLC circuits excited by a DC step input. Discuss overdamped, critically damped, and underdamped conditions.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q2.</span> Derive the transient current and voltage responses for series RL, RC, and series RLC circuits excited by a DC step input. Discuss overdamped, critically damped, and underdamped conditions.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q2.</span> Derive the transient current and voltage responses for series RL, RC, and series RLC circuits excited by a DC step input. Discuss overdamped, critically damped, and underdamped conditions.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -4680,6 +4815,21 @@ The load impedance magnitude must equal the magnitude of the Thévenin impedance
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 11(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -4993,6 +5143,7 @@ where $\theta = \tan^{-1}\left(\frac{\omega_d}{\alpha}\right) = \cos^{-1}\zeta$.
     <article class="question-card subject-comp" id="comp-q3" data-marks="7" data-title="derive the resonant frequency, half-power bandwidth, and quality factor for a series rlc circuit. explain parallel resonance in a practical tank circuit and derive its dynamic impedance.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 3</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q3" data-duration="720" data-qid="comp-q3" data-label="COMP • Q3 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q3')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5007,9 +5158,9 @@ where $\theta = \tan^{-1}\left(\frac{\omega_d}{\alpha}\right) = \cos^{-1}\zeta$.
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the resonant frequency, half-power bandwidth, and Quality factor for a series RLC circuit. Explain parallel resonance in a practical tank circuit and derive its dynamic impedance.</span>
-            <span class="lang-view lang-manglish">Derive the resonant frequency, half-power bandwidth, and Quality factor for a series RLC circuit. Explain parallel resonance in a practical tank circuit and derive its dynamic impedance.</span>
-            <span class="lang-view lang-ml">Derive the resonant frequency, half-power bandwidth, and Quality factor for a series RLC circuit. Explain parallel resonance in a practical tank circuit and derive its dynamic impedance.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q3.</span> Derive the resonant frequency, half-power bandwidth, and Quality factor for a series RLC circuit. Explain parallel resonance in a practical tank circuit and derive its dynamic impedance.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q3.</span> Derive the resonant frequency, half-power bandwidth, and Quality factor for a series RLC circuit. Explain parallel resonance in a practical tank circuit and derive its dynamic impedance.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q3.</span> Derive the resonant frequency, half-power bandwidth, and Quality factor for a series RLC circuit. Explain parallel resonance in a practical tank circuit and derive its dynamic impedance.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5033,6 +5184,21 @@ where $\theta = \tan^{-1}\left(\frac{\omega_d}{\alpha}\right) = \cos^{-1}\zeta$.
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5301,6 +5467,7 @@ Since $R_L$ is generally small, $Z_d$ is extremely large (anti-resonance). Thus:
     <article class="question-card subject-comp" id="comp-q4" data-marks="7" data-title="derive the relationships between line and phase voltages and currents in balanced star and delta ac systems. explain the two-wattmeter method of 3-phase power measurement and derive the power factor formula.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 4</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q4" data-duration="720" data-qid="comp-q4" data-label="COMP • Q4 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q4')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5315,9 +5482,9 @@ Since $R_L$ is generally small, $Z_d$ is extremely large (anti-resonance). Thus:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the relationships between line and phase voltages and currents in balanced Star and Delta AC systems. Explain the two-wattmeter method of 3-phase power measurement and derive the power factor formula.</span>
-            <span class="lang-view lang-manglish">Derive the relationships between line and phase voltages and currents in balanced Star and Delta AC systems. Explain the two-wattmeter method of 3-phase power measurement and derive the power factor formula.</span>
-            <span class="lang-view lang-ml">Derive the relationships between line and phase voltages and currents in balanced Star and Delta AC systems. Explain the two-wattmeter method of 3-phase power measurement and derive the power factor formula.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q4.</span> Derive the relationships between line and phase voltages and currents in balanced Star and Delta AC systems. Explain the two-wattmeter method of 3-phase power measurement and derive the power factor formula.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q4.</span> Derive the relationships between line and phase voltages and currents in balanced Star and Delta AC systems. Explain the two-wattmeter method of 3-phase power measurement and derive the power factor formula.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q4.</span> Derive the relationships between line and phase voltages and currents in balanced Star and Delta AC systems. Explain the two-wattmeter method of 3-phase power measurement and derive the power factor formula.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5341,6 +5508,21 @@ Since $R_L$ is generally small, $Z_d$ is extremely large (anti-resonance). Thus:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -5672,6 +5854,7 @@ $$\text{Power Factor } = \cos\phi = \cos\left( \tan^{-1}\left( \sqrt{3} \frac{W_
     <article class="question-card subject-comp" id="comp-q5" data-marks="7" data-title="state and explain maxwell&#x27;s four equations in differential and integral forms. derive the electromagnetic wave equation in a lossless medium and state poynting&#x27;s theorem.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 5</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q5" data-duration="720" data-qid="comp-q5" data-label="COMP • Q5 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q5')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -5686,9 +5869,9 @@ $$\text{Power Factor } = \cos\phi = \cos\left( \tan^{-1}\left( \sqrt{3} \frac{W_
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State and explain Maxwell's four equations in differential and integral forms. Derive the electromagnetic wave equation in a lossless medium and state Poynting's theorem.</span>
-            <span class="lang-view lang-manglish">State and explain Maxwell's four equations in differential and integral forms. Derive the electromagnetic wave equation in a lossless medium and state Poynting's theorem.</span>
-            <span class="lang-view lang-ml">State and explain Maxwell's four equations in differential and integral forms. Derive the electromagnetic wave equation in a lossless medium and state Poynting's theorem.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q5.</span> State and explain Maxwell's four equations in differential and integral forms. Derive the electromagnetic wave equation in a lossless medium and state Poynting's theorem.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q5.</span> State and explain Maxwell's four equations in differential and integral forms. Derive the electromagnetic wave equation in a lossless medium and state Poynting's theorem.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q5.</span> State and explain Maxwell's four equations in differential and integral forms. Derive the electromagnetic wave equation in a lossless medium and state Poynting's theorem.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -5712,6 +5895,21 @@ $$\text{Power Factor } = \cos\phi = \cos\left( \tan^{-1}\left( \sqrt{3} \frac{W_
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 12(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6024,6 +6222,7 @@ $$\mathbf{S}_{avg} = \frac{1}{2}\text{Re}\left[ \mathbf{E} \times \mathbf{H}^* \
     <article class="question-card subject-comp" id="comp-q6" data-marks="7" data-title="derive the generated emf and torque equations of a dc machine. explain armature reaction, commutation, methods of improving commutation, and speed control techniques for dc motors.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 6</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q6" data-duration="720" data-qid="comp-q6" data-label="COMP • Q6 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q6')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6038,9 +6237,9 @@ $$\mathbf{S}_{avg} = \frac{1}{2}\text{Re}\left[ \mathbf{E} \times \mathbf{H}^* \
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the generated EMF and torque equations of a DC machine. Explain armature reaction, commutation, methods of improving commutation, and speed control techniques for DC motors.</span>
-            <span class="lang-view lang-manglish">Derive the generated EMF and torque equations of a DC machine. Explain armature reaction, commutation, methods of improving commutation, and speed control techniques for DC motors.</span>
-            <span class="lang-view lang-ml">Derive the generated EMF and torque equations of a DC machine. Explain armature reaction, commutation, methods of improving commutation, and speed control techniques for DC motors.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q6.</span> Derive the generated EMF and torque equations of a DC machine. Explain armature reaction, commutation, methods of improving commutation, and speed control techniques for DC motors.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q6.</span> Derive the generated EMF and torque equations of a DC machine. Explain armature reaction, commutation, methods of improving commutation, and speed control techniques for DC motors.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q6.</span> Derive the generated EMF and torque equations of a DC machine. Explain armature reaction, commutation, methods of improving commutation, and speed control techniques for DC motors.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6064,6 +6263,21 @@ $$\mathbf{S}_{avg} = \frac{1}{2}\text{Re}\left[ \mathbf{E} \times \mathbf{H}^* \
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6326,6 +6540,7 @@ $$N = \frac{V - I_a R_a}{K' \Phi}$$
     <article class="question-card subject-comp" id="comp-q7" data-marks="7" data-title="explain the testing of dc machines using swinburne&#x27;s test and hopkinson&#x27;s regenerative test. derive the equations for predetermining motor and generator efficiency.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 7</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q7" data-duration="720" data-qid="comp-q7" data-label="COMP • Q7 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q7')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6340,9 +6555,9 @@ $$N = \frac{V - I_a R_a}{K' \Phi}$$
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the testing of DC machines using Swinburne's test and Hopkinson's regenerative test. Derive the equations for predetermining motor and generator efficiency.</span>
-            <span class="lang-view lang-manglish">Explain the testing of DC machines using Swinburne's test and Hopkinson's regenerative test. Derive the equations for predetermining motor and generator efficiency.</span>
-            <span class="lang-view lang-ml">Explain the testing of DC machines using Swinburne's test and Hopkinson's regenerative test. Derive the equations for predetermining motor and generator efficiency.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q7.</span> Explain the testing of DC machines using Swinburne's test and Hopkinson's regenerative test. Derive the equations for predetermining motor and generator efficiency.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q7.</span> Explain the testing of DC machines using Swinburne's test and Hopkinson's regenerative test. Derive the equations for predetermining motor and generator efficiency.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q7.</span> Explain the testing of DC machines using Swinburne's test and Hopkinson's regenerative test. Derive the equations for predetermining motor and generator efficiency.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6366,6 +6581,21 @@ $$N = \frac{V - I_a R_a}{K' \Phi}$$
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 13(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -6691,6 +6921,7 @@ $$\eta_m = \frac{P_{in,m} - W_{loss,m}}{P_{in,m}} \times 100\% = 1 - \frac{(I_1 
     <article class="question-card subject-comp" id="comp-q8" data-marks="7" data-title="draw the exact and approximate equivalent circuits of a single-phase transformer. derive the voltage regulation expression and explain oc/sc tests and autotransformer copper saving.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 8</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q8" data-duration="720" data-qid="comp-q8" data-label="COMP • Q8 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q8')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -6705,9 +6936,9 @@ $$\eta_m = \frac{P_{in,m} - W_{loss,m}}{P_{in,m}} \times 100\% = 1 - \frac{(I_1 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw the exact and approximate equivalent circuits of a single-phase transformer. Derive the voltage regulation expression and explain OC/SC tests and autotransformer copper saving.</span>
-            <span class="lang-view lang-manglish">Draw the exact and approximate equivalent circuits of a single-phase transformer. Derive the voltage regulation expression and explain OC/SC tests and autotransformer copper saving.</span>
-            <span class="lang-view lang-ml">Draw the exact and approximate equivalent circuits of a single-phase transformer. Derive the voltage regulation expression and explain OC/SC tests and autotransformer copper saving.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q8.</span> Draw the exact and approximate equivalent circuits of a single-phase transformer. Derive the voltage regulation expression and explain OC/SC tests and autotransformer copper saving.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q8.</span> Draw the exact and approximate equivalent circuits of a single-phase transformer. Derive the voltage regulation expression and explain OC/SC tests and autotransformer copper saving.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q8.</span> Draw the exact and approximate equivalent circuits of a single-phase transformer. Derive the voltage regulation expression and explain OC/SC tests and autotransformer copper saving.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -6731,6 +6962,21 @@ $$\eta_m = \frac{P_{in,m} - W_{loss,m}}{P_{in,m}} \times 100\% = 1 - \frac{(I_1 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7041,6 +7287,7 @@ When $k \approx 1$ (e.g., $k = 0.9$ for a 220V/200V autotransformer), $90\%$ of 
     <article class="question-card subject-comp" id="comp-q9" data-marks="7" data-title="prove mathematically that a balanced 3-phase stator winding produces a rotating magnetic field of constant magnitude. derive the torque-slip equation and discuss starting methods of induction motors.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 9</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q9" data-duration="720" data-qid="comp-q9" data-label="COMP • Q9 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q9')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7055,9 +7302,9 @@ When $k \approx 1$ (e.g., $k = 0.9$ for a 220V/200V autotransformer), $90\%$ of 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Prove mathematically that a balanced 3-phase stator winding produces a rotating magnetic field of constant magnitude. Derive the torque-slip equation and discuss starting methods of induction motors.</span>
-            <span class="lang-view lang-manglish">Prove mathematically that a balanced 3-phase stator winding produces a rotating magnetic field of constant magnitude. Derive the torque-slip equation and discuss starting methods of induction motors.</span>
-            <span class="lang-view lang-ml">Prove mathematically that a balanced 3-phase stator winding produces a rotating magnetic field of constant magnitude. Derive the torque-slip equation and discuss starting methods of induction motors.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q9.</span> Prove mathematically that a balanced 3-phase stator winding produces a rotating magnetic field of constant magnitude. Derive the torque-slip equation and discuss starting methods of induction motors.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q9.</span> Prove mathematically that a balanced 3-phase stator winding produces a rotating magnetic field of constant magnitude. Derive the torque-slip equation and discuss starting methods of induction motors.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q9.</span> Prove mathematically that a balanced 3-phase stator winding produces a rotating magnetic field of constant magnitude. Derive the torque-slip equation and discuss starting methods of induction motors.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7081,6 +7328,21 @@ When $k \approx 1$ (e.g., $k = 0.9$ for a 220V/200V autotransformer), $90\%$ of 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7430,6 +7692,7 @@ Direct-On-Line (DOL) starting draws $5-7$ times rated full-load current ($I_{st}
     <article class="question-card subject-comp" id="comp-q10" data-marks="7" data-title="explain the determination of voltage regulation of an alternator by emf and mmf methods. describe blondel&#x27;s two-reaction theory for salient-pole synchronous machines and derive the power-angle equation.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 10</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q10" data-duration="720" data-qid="comp-q10" data-label="COMP • Q10 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q10')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7444,9 +7707,9 @@ Direct-On-Line (DOL) starting draws $5-7$ times rated full-load current ($I_{st}
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the determination of voltage regulation of an alternator by EMF and MMF methods. Describe Blondel's two-reaction theory for salient-pole synchronous machines and derive the power-angle equation.</span>
-            <span class="lang-view lang-manglish">Explain the determination of voltage regulation of an alternator by EMF and MMF methods. Describe Blondel's two-reaction theory for salient-pole synchronous machines and derive the power-angle equation.</span>
-            <span class="lang-view lang-ml">Explain the determination of voltage regulation of an alternator by EMF and MMF methods. Describe Blondel's two-reaction theory for salient-pole synchronous machines and derive the power-angle equation.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q10.</span> Explain the determination of voltage regulation of an alternator by EMF and MMF methods. Describe Blondel's two-reaction theory for salient-pole synchronous machines and derive the power-angle equation.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q10.</span> Explain the determination of voltage regulation of an alternator by EMF and MMF methods. Describe Blondel's two-reaction theory for salient-pole synchronous machines and derive the power-angle equation.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q10.</span> Explain the determination of voltage regulation of an alternator by EMF and MMF methods. Describe Blondel's two-reaction theory for salient-pole synchronous machines and derive the power-angle equation.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7470,6 +7733,21 @@ Direct-On-Line (DOL) starting draws $5-7$ times rated full-load current ($I_{st}
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -7756,6 +8034,7 @@ Physical Interpretation:
     <article class="question-card subject-comp" id="comp-q11" data-marks="7" data-title="explain transmission line abcd parameters and per-unit representation. analyze symmetrical and unsymmetrical faults using symmetrical components, and derive the swing equation and equal area criterion.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 11</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q11" data-duration="720" data-qid="comp-q11" data-label="COMP • Q11 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q11')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -7770,9 +8049,9 @@ Physical Interpretation:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain transmission line ABCD parameters and per-unit representation. Analyze symmetrical and unsymmetrical faults using symmetrical components, and derive the swing equation and equal area criterion.</span>
-            <span class="lang-view lang-manglish">Explain transmission line ABCD parameters and per-unit representation. Analyze symmetrical and unsymmetrical faults using symmetrical components, and derive the swing equation and equal area criterion.</span>
-            <span class="lang-view lang-ml">Explain transmission line ABCD parameters and per-unit representation. Analyze symmetrical and unsymmetrical faults using symmetrical components, and derive the swing equation and equal area criterion.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q11.</span> Explain transmission line ABCD parameters and per-unit representation. Analyze symmetrical and unsymmetrical faults using symmetrical components, and derive the swing equation and equal area criterion.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q11.</span> Explain transmission line ABCD parameters and per-unit representation. Analyze symmetrical and unsymmetrical faults using symmetrical components, and derive the swing equation and equal area criterion.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q11.</span> Explain transmission line ABCD parameters and per-unit representation. Analyze symmetrical and unsymmetrical faults using symmetrical components, and derive the swing equation and equal area criterion.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -7796,6 +8075,21 @@ Physical Interpretation:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 14(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8132,6 +8426,7 @@ where $\delta_{max} = \pi - \delta_0$. If the fault is cleared before $\delta$ r
     <article class="question-card subject-comp" id="comp-q12" data-marks="7" data-title="define transfer function and explain mechanical-electrical analogies. state the block diagram reduction rules and mason&#x27;s gain formula with an illustrative signal flow graph example.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 12</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q12" data-duration="720" data-qid="comp-q12" data-label="COMP • Q12 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q12')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8146,9 +8441,9 @@ where $\delta_{max} = \pi - \delta_0$. If the fault is cleared before $\delta$ r
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Define transfer function and explain mechanical-electrical analogies. State the block diagram reduction rules and Mason's gain formula with an illustrative signal flow graph example.</span>
-            <span class="lang-view lang-manglish">Define transfer function and explain mechanical-electrical analogies. State the block diagram reduction rules and Mason's gain formula with an illustrative signal flow graph example.</span>
-            <span class="lang-view lang-ml">Define transfer function and explain mechanical-electrical analogies. State the block diagram reduction rules and Mason's gain formula with an illustrative signal flow graph example.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q12.</span> Define transfer function and explain mechanical-electrical analogies. State the block diagram reduction rules and Mason's gain formula with an illustrative signal flow graph example.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q12.</span> Define transfer function and explain mechanical-electrical analogies. State the block diagram reduction rules and Mason's gain formula with an illustrative signal flow graph example.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q12.</span> Define transfer function and explain mechanical-electrical analogies. State the block diagram reduction rules and Mason's gain formula with an illustrative signal flow graph example.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8172,6 +8467,21 @@ where $\delta_{max} = \pi - \delta_0$. If the fault is cleared before $\delta$ r
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8449,6 +8759,7 @@ Mason's formula computes the overall transfer function directly from inspection 
     <article class="question-card subject-comp" id="comp-q13" data-marks="7" data-title="derive the step response of an underdamped second-order control system and formulate the time-domain specifications: rise time, peak time, peak overshoot, and settling time. discuss steady-state error.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 13</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q13" data-duration="720" data-qid="comp-q13" data-label="COMP • Q13 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q13')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8463,9 +8774,9 @@ Mason's formula computes the overall transfer function directly from inspection 
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the step response of an underdamped second-order control system and formulate the time-domain specifications: rise time, peak time, peak overshoot, and settling time. Discuss steady-state error.</span>
-            <span class="lang-view lang-manglish">Derive the step response of an underdamped second-order control system and formulate the time-domain specifications: rise time, peak time, peak overshoot, and settling time. Discuss steady-state error.</span>
-            <span class="lang-view lang-ml">Derive the step response of an underdamped second-order control system and formulate the time-domain specifications: rise time, peak time, peak overshoot, and settling time. Discuss steady-state error.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q13.</span> Derive the step response of an underdamped second-order control system and formulate the time-domain specifications: rise time, peak time, peak overshoot, and settling time. Discuss steady-state error.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q13.</span> Derive the step response of an underdamped second-order control system and formulate the time-domain specifications: rise time, peak time, peak overshoot, and settling time. Discuss steady-state error.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q13.</span> Derive the step response of an underdamped second-order control system and formulate the time-domain specifications: rise time, peak time, peak overshoot, and settling time. Discuss steady-state error.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8489,6 +8800,21 @@ Mason's formula computes the overall transfer function directly from inspection 
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 15(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -8781,6 +9107,7 @@ Open-loop transfer function in pole-zero form: $G(s) = \frac{K (s + z_1)\dots}{s
     <article class="question-card subject-comp" id="comp-q14" data-marks="7" data-title="explain the routh-hurwitz stability criterion including its special cases. formulate the comprehensive construction rules for the root locus technique.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 14</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q14" data-duration="720" data-qid="comp-q14" data-label="COMP • Q14 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q14')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -8795,9 +9122,9 @@ Open-loop transfer function in pole-zero form: $G(s) = \frac{K (s + z_1)\dots}{s
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the Routh-Hurwitz stability criterion including its special cases. Formulate the comprehensive construction rules for the Root Locus technique.</span>
-            <span class="lang-view lang-manglish">Explain the Routh-Hurwitz stability criterion including its special cases. Formulate the comprehensive construction rules for the Root Locus technique.</span>
-            <span class="lang-view lang-ml">Explain the Routh-Hurwitz stability criterion including its special cases. Formulate the comprehensive construction rules for the Root Locus technique.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q14.</span> Explain the Routh-Hurwitz stability criterion including its special cases. Formulate the comprehensive construction rules for the Root Locus technique.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q14.</span> Explain the Routh-Hurwitz stability criterion including its special cases. Formulate the comprehensive construction rules for the Root Locus technique.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q14.</span> Explain the Routh-Hurwitz stability criterion including its special cases. Formulate the comprehensive construction rules for the Root Locus technique.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -8821,6 +9148,21 @@ Open-loop transfer function in pole-zero form: $G(s) = \frac{K (s + z_1)\dots}{s
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9074,6 +9416,7 @@ The characteristic equation is $1 + G(s)H(s) = 0 \implies G(s)H(s) = -1 = 1 \ang
     <article class="question-card subject-comp" id="comp-q15" data-marks="7" data-title="explain the construction of bode plots and the determination of gain margin and phase margin. explain the nyquist stability criterion using cauchy&#x27;s principle of the argument.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 15</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q15" data-duration="720" data-qid="comp-q15" data-label="COMP • Q15 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q15')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9088,9 +9431,9 @@ The characteristic equation is $1 + G(s)H(s) = 0 \implies G(s)H(s) = -1 = 1 \ang
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the construction of Bode plots and the determination of gain margin and phase margin. Explain the Nyquist stability criterion using Cauchy's principle of the argument.</span>
-            <span class="lang-view lang-manglish">Explain the construction of Bode plots and the determination of gain margin and phase margin. Explain the Nyquist stability criterion using Cauchy's principle of the argument.</span>
-            <span class="lang-view lang-ml">Explain the construction of Bode plots and the determination of gain margin and phase margin. Explain the Nyquist stability criterion using Cauchy's principle of the argument.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q15.</span> Explain the construction of Bode plots and the determination of gain margin and phase margin. Explain the Nyquist stability criterion using Cauchy's principle of the argument.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q15.</span> Explain the construction of Bode plots and the determination of gain margin and phase margin. Explain the Nyquist stability criterion using Cauchy's principle of the argument.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q15.</span> Explain the construction of Bode plots and the determination of gain margin and phase margin. Explain the Nyquist stability criterion using Cauchy's principle of the argument.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9114,6 +9457,21 @@ The characteristic equation is $1 + G(s)H(s) = 0 \implies G(s)H(s) = -1 = 1 \ang
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9394,6 +9752,7 @@ Conclusion: A feedback control system is closed-loop stable if and only if the N
     <article class="question-card subject-comp" id="comp-q16" data-marks="7" data-title="explain state-space representation, state transition matrix, and kalman&#x27;s criteria for controllability and observability. describe ac bridges (maxwell-wien, schering) and instrument transformers.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 16</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q16" data-duration="720" data-qid="comp-q16" data-label="COMP • Q16 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q16')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9408,9 +9767,9 @@ Conclusion: A feedback control system is closed-loop stable if and only if the N
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain state-space representation, state transition matrix, and Kalman's criteria for controllability and observability. Describe AC bridges (Maxwell-Wien, Schering) and instrument transformers.</span>
-            <span class="lang-view lang-manglish">Explain state-space representation, state transition matrix, and Kalman's criteria for controllability and observability. Describe AC bridges (Maxwell-Wien, Schering) and instrument transformers.</span>
-            <span class="lang-view lang-ml">Explain state-space representation, state transition matrix, and Kalman's criteria for controllability and observability. Describe AC bridges (Maxwell-Wien, Schering) and instrument transformers.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q16.</span> Explain state-space representation, state transition matrix, and Kalman's criteria for controllability and observability. Describe AC bridges (Maxwell-Wien, Schering) and instrument transformers.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q16.</span> Explain state-space representation, state transition matrix, and Kalman's criteria for controllability and observability. Describe AC bridges (Maxwell-Wien, Schering) and instrument transformers.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q16.</span> Explain state-space representation, state transition matrix, and Kalman's criteria for controllability and observability. Describe AC bridges (Maxwell-Wien, Schering) and instrument transformers.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9434,6 +9793,21 @@ Conclusion: A feedback control system is closed-loop stable if and only if the N
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 16(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -9755,6 +10129,7 @@ Instrument transformers scale high transmission voltages and currents down to st
     <article class="question-card subject-comp" id="comp-q17" data-marks="7" data-title="explain the operation and performance metrics (ripple factor, efficiency, piv) of half-wave and full-wave rectifiers with capacitor filters. describe the design of a zener diode voltage regulator.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 17</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q17" data-duration="720" data-qid="comp-q17" data-label="COMP • Q17 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q17')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -9769,9 +10144,9 @@ Instrument transformers scale high transmission voltages and currents down to st
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the operation and performance metrics (ripple factor, efficiency, PIV) of half-wave and full-wave rectifiers with capacitor filters. Describe the design of a Zener diode voltage regulator.</span>
-            <span class="lang-view lang-manglish">Explain the operation and performance metrics (ripple factor, efficiency, PIV) of half-wave and full-wave rectifiers with capacitor filters. Describe the design of a Zener diode voltage regulator.</span>
-            <span class="lang-view lang-ml">Explain the operation and performance metrics (ripple factor, efficiency, PIV) of half-wave and full-wave rectifiers with capacitor filters. Describe the design of a Zener diode voltage regulator.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q17.</span> Explain the operation and performance metrics (ripple factor, efficiency, PIV) of half-wave and full-wave rectifiers with capacitor filters. Describe the design of a Zener diode voltage regulator.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q17.</span> Explain the operation and performance metrics (ripple factor, efficiency, PIV) of half-wave and full-wave rectifiers with capacitor filters. Describe the design of a Zener diode voltage regulator.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q17.</span> Explain the operation and performance metrics (ripple factor, efficiency, PIV) of half-wave and full-wave rectifiers with capacitor filters. Describe the design of a Zener diode voltage regulator.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -9795,6 +10170,21 @@ Instrument transformers scale high transmission voltages and currents down to st
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10087,6 +10477,7 @@ Selecting $R_s$ within $[R_{s,\min}, R_{s,\max}]$ guarantees precise voltage sta
     <article class="question-card subject-comp" id="comp-q18" data-marks="7" data-title="explain bjt input and output characteristics in ce configuration. derive the stability factor for a voltage divider bias circuit and conduct small-signal low-frequency amplifier analysis.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 18</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q18" data-duration="720" data-qid="comp-q18" data-label="COMP • Q18 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q18')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10101,9 +10492,9 @@ Selecting $R_s$ within $[R_{s,\min}, R_{s,\max}]$ guarantees precise voltage sta
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain BJT input and output characteristics in CE configuration. Derive the stability factor for a voltage divider bias circuit and conduct small-signal low-frequency amplifier analysis.</span>
-            <span class="lang-view lang-manglish">Explain BJT input and output characteristics in CE configuration. Derive the stability factor for a voltage divider bias circuit and conduct small-signal low-frequency amplifier analysis.</span>
-            <span class="lang-view lang-ml">Explain BJT input and output characteristics in CE configuration. Derive the stability factor for a voltage divider bias circuit and conduct small-signal low-frequency amplifier analysis.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q18.</span> Explain BJT input and output characteristics in CE configuration. Derive the stability factor for a voltage divider bias circuit and conduct small-signal low-frequency amplifier analysis.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q18.</span> Explain BJT input and output characteristics in CE configuration. Derive the stability factor for a voltage divider bias circuit and conduct small-signal low-frequency amplifier analysis.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q18.</span> Explain BJT input and output characteristics in CE configuration. Derive the stability factor for a voltage divider bias circuit and conduct small-signal low-frequency amplifier analysis.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10127,6 +10518,21 @@ Selecting $R_s$ within $[R_{s,\min}, R_{s,\max}]$ guarantees precise voltage sta
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 17(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10407,6 +10813,7 @@ The Gain-Bandwidth Product (GBW) remains constant: $GBW = |A_{v,mid}| \cdot BW =
     <article class="question-card subject-comp" id="comp-q19" data-marks="7" data-title="list the ideal characteristics of an op-amp. derive the voltage gain for inverting, non-inverting, practical integrator, and three-op-amp instrumentation amplifier circuits.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 19</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q19" data-duration="720" data-qid="comp-q19" data-label="COMP • Q19 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q19')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10421,9 +10828,9 @@ The Gain-Bandwidth Product (GBW) remains constant: $GBW = |A_{v,mid}| \cdot BW =
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">List the ideal characteristics of an Op-Amp. Derive the voltage gain for inverting, non-inverting, practical integrator, and three-Op-Amp instrumentation amplifier circuits.</span>
-            <span class="lang-view lang-manglish">List the ideal characteristics of an Op-Amp. Derive the voltage gain for inverting, non-inverting, practical integrator, and three-Op-Amp instrumentation amplifier circuits.</span>
-            <span class="lang-view lang-ml">List the ideal characteristics of an Op-Amp. Derive the voltage gain for inverting, non-inverting, practical integrator, and three-Op-Amp instrumentation amplifier circuits.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q19.</span> List the ideal characteristics of an Op-Amp. Derive the voltage gain for inverting, non-inverting, practical integrator, and three-Op-Amp instrumentation amplifier circuits.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q19.</span> List the ideal characteristics of an Op-Amp. Derive the voltage gain for inverting, non-inverting, practical integrator, and three-Op-Amp instrumentation amplifier circuits.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q19.</span> List the ideal characteristics of an Op-Amp. Derive the voltage gain for inverting, non-inverting, practical integrator, and three-Op-Amp instrumentation amplifier circuits.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10447,6 +10854,21 @@ The Gain-Bandwidth Product (GBW) remains constant: $GBW = |A_{v,mid}| \cdot BW =
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -10736,6 +11158,7 @@ Advantages of Instrumentation Amplifier:
     <article class="question-card subject-comp" id="comp-q20" data-marks="7" data-title="draw the internal block diagram of ic 555 timer. explain its operation as an astable and monostable multivibrator, deriving the formulas for frequency, duty cycle, and pulse duration.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 20</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q20" data-duration="720" data-qid="comp-q20" data-label="COMP • Q20 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q20')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -10750,9 +11173,9 @@ Advantages of Instrumentation Amplifier:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Draw the internal block diagram of IC 555 timer. Explain its operation as an astable and monostable multivibrator, deriving the formulas for frequency, duty cycle, and pulse duration.</span>
-            <span class="lang-view lang-manglish">Draw the internal block diagram of IC 555 timer. Explain its operation as an astable and monostable multivibrator, deriving the formulas for frequency, duty cycle, and pulse duration.</span>
-            <span class="lang-view lang-ml">Draw the internal block diagram of IC 555 timer. Explain its operation as an astable and monostable multivibrator, deriving the formulas for frequency, duty cycle, and pulse duration.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q20.</span> Draw the internal block diagram of IC 555 timer. Explain its operation as an astable and monostable multivibrator, deriving the formulas for frequency, duty cycle, and pulse duration.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q20.</span> Draw the internal block diagram of IC 555 timer. Explain its operation as an astable and monostable multivibrator, deriving the formulas for frequency, duty cycle, and pulse duration.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q20.</span> Draw the internal block diagram of IC 555 timer. Explain its operation as an astable and monostable multivibrator, deriving the formulas for frequency, duty cycle, and pulse duration.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -10776,6 +11199,21 @@ Advantages of Instrumentation Amplifier:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11023,6 +11461,7 @@ The circuit returns to its stable LOW state until another trigger pulse arrives.
     <article class="question-card subject-comp" id="comp-q21" data-marks="7" data-title="state de morgan&#x27;s laws and k-map minimization rules. design a full adder and explain multiplexers. explain the race-around condition in jk flip-flops and design a 3-bit synchronous binary counter.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 21</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q21" data-duration="720" data-qid="comp-q21" data-label="COMP • Q21 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q21')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11037,9 +11476,9 @@ The circuit returns to its stable LOW state until another trigger pulse arrives.
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">State De Morgan's laws and K-map minimization rules. Design a Full Adder and explain multiplexers. Explain the race-around condition in JK flip-flops and design a 3-bit synchronous binary counter.</span>
-            <span class="lang-view lang-manglish">State De Morgan's laws and K-map minimization rules. Design a Full Adder and explain multiplexers. Explain the race-around condition in JK flip-flops and design a 3-bit synchronous binary counter.</span>
-            <span class="lang-view lang-ml">State De Morgan's laws and K-map minimization rules. Design a Full Adder and explain multiplexers. Explain the race-around condition in JK flip-flops and design a 3-bit synchronous binary counter.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q21.</span> State De Morgan's laws and K-map minimization rules. Design a Full Adder and explain multiplexers. Explain the race-around condition in JK flip-flops and design a 3-bit synchronous binary counter.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q21.</span> State De Morgan's laws and K-map minimization rules. Design a Full Adder and explain multiplexers. Explain the race-around condition in JK flip-flops and design a 3-bit synchronous binary counter.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q21.</span> State De Morgan's laws and K-map minimization rules. Design a Full Adder and explain multiplexers. Explain the race-around condition in JK flip-flops and design a 3-bit synchronous binary counter.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11063,6 +11502,21 @@ The circuit returns to its stable LOW state until another trigger pulse arrives.
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 18(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11411,6 +11865,7 @@ This achieves synchronous high-speed counting up to the maximum toggle frequency
     <article class="question-card subject-comp" id="comp-q22" data-marks="7" data-title="explain the static v-i characteristics and two-transistor analogy of an scr. compare the structure, characteristics, and switching performance of scr, power mosfet, and igbt.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 22</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q22" data-duration="720" data-qid="comp-q22" data-label="COMP • Q22 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q22')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11425,9 +11880,9 @@ This achieves synchronous high-speed counting up to the maximum toggle frequency
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the static V-I characteristics and two-transistor analogy of an SCR. Compare the structure, characteristics, and switching performance of SCR, Power MOSFET, and IGBT.</span>
-            <span class="lang-view lang-manglish">Explain the static V-I characteristics and two-transistor analogy of an SCR. Compare the structure, characteristics, and switching performance of SCR, Power MOSFET, and IGBT.</span>
-            <span class="lang-view lang-ml">Explain the static V-I characteristics and two-transistor analogy of an SCR. Compare the structure, characteristics, and switching performance of SCR, Power MOSFET, and IGBT.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q22.</span> Explain the static V-I characteristics and two-transistor analogy of an SCR. Compare the structure, characteristics, and switching performance of SCR, Power MOSFET, and IGBT.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q22.</span> Explain the static V-I characteristics and two-transistor analogy of an SCR. Compare the structure, characteristics, and switching performance of SCR, Power MOSFET, and IGBT.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q22.</span> Explain the static V-I characteristics and two-transistor analogy of an SCR. Compare the structure, characteristics, and switching performance of SCR, Power MOSFET, and IGBT.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11451,6 +11906,21 @@ This achieves synchronous high-speed counting up to the maximum toggle frequency
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -11719,6 +12189,7 @@ As $(\alpha_1 + \alpha_2) \to 1$, the denominator $[1 - (\alpha_1 + \alpha_2)] \
     <article class="question-card subject-comp" id="comp-q23" data-marks="7" data-title="derive the average dc output voltage and rms voltage for single-phase and three-phase fully-controlled bridge rectifiers with r and rl loads. explain inversion mode and freewheeling diode action.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 23</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q23" data-duration="720" data-qid="comp-q23" data-label="COMP • Q23 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q23')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -11733,9 +12204,9 @@ As $(\alpha_1 + \alpha_2) \to 1$, the denominator $[1 - (\alpha_1 + \alpha_2)] \
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Derive the average DC output voltage and RMS voltage for single-phase and three-phase fully-controlled bridge rectifiers with R and RL loads. Explain inversion mode and freewheeling diode action.</span>
-            <span class="lang-view lang-manglish">Derive the average DC output voltage and RMS voltage for single-phase and three-phase fully-controlled bridge rectifiers with R and RL loads. Explain inversion mode and freewheeling diode action.</span>
-            <span class="lang-view lang-ml">Derive the average DC output voltage and RMS voltage for single-phase and three-phase fully-controlled bridge rectifiers with R and RL loads. Explain inversion mode and freewheeling diode action.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q23.</span> Derive the average DC output voltage and RMS voltage for single-phase and three-phase fully-controlled bridge rectifiers with R and RL loads. Explain inversion mode and freewheeling diode action.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q23.</span> Derive the average DC output voltage and RMS voltage for single-phase and three-phase fully-controlled bridge rectifiers with R and RL loads. Explain inversion mode and freewheeling diode action.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q23.</span> Derive the average DC output voltage and RMS voltage for single-phase and three-phase fully-controlled bridge rectifiers with R and RL loads. Explain inversion mode and freewheeling diode action.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -11759,6 +12230,21 @@ As $(\alpha_1 + \alpha_2) \to 1$, the denominator $[1 - (\alpha_1 + \alpha_2)] \
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 19(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12033,6 +12519,7 @@ Characteristics:
     <article class="question-card subject-comp" id="comp-q24" data-marks="7" data-title="explain the continuous conduction mode (ccm) operation of buck, boost, and buck-boost dc-dc converters using inductor volt-second and capacitor charge balance, deriving voltage conversion ratios.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 24</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q24" data-duration="720" data-qid="comp-q24" data-label="COMP • Q24 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q24')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12047,9 +12534,9 @@ Characteristics:
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain the continuous conduction mode (CCM) operation of Buck, Boost, and Buck-Boost DC-DC converters using inductor volt-second and capacitor charge balance, deriving voltage conversion ratios.</span>
-            <span class="lang-view lang-manglish">Explain the continuous conduction mode (CCM) operation of Buck, Boost, and Buck-Boost DC-DC converters using inductor volt-second and capacitor charge balance, deriving voltage conversion ratios.</span>
-            <span class="lang-view lang-ml">Explain the continuous conduction mode (CCM) operation of Buck, Boost, and Buck-Boost DC-DC converters using inductor volt-second and capacitor charge balance, deriving voltage conversion ratios.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q24.</span> Explain the continuous conduction mode (CCM) operation of Buck, Boost, and Buck-Boost DC-DC converters using inductor volt-second and capacitor charge balance, deriving voltage conversion ratios.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q24.</span> Explain the continuous conduction mode (CCM) operation of Buck, Boost, and Buck-Boost DC-DC converters using inductor volt-second and capacitor charge balance, deriving voltage conversion ratios.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q24.</span> Explain the continuous conduction mode (CCM) operation of Buck, Boost, and Buck-Boost DC-DC converters using inductor volt-second and capacitor charge balance, deriving voltage conversion ratios.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12073,6 +12560,21 @@ Characteristics:
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12374,6 +12876,7 @@ For all converters, CCM requires minimum inductor current to remain positive: $I
     <article class="question-card subject-comp" id="comp-q25" data-marks="7" data-title="describe single-phase and three-phase voltage source inverters operating in 180° and 120° conduction modes with phase and line waveforms. explain sinusoidal pwm and its harmonic benefits.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 25</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q25" data-duration="720" data-qid="comp-q25" data-label="COMP • Q25 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q25')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12388,9 +12891,9 @@ For all converters, CCM requires minimum inductor current to remain positive: $I
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Describe single-phase and three-phase voltage source inverters operating in 180° and 120° conduction modes with phase and line waveforms. Explain Sinusoidal PWM and its harmonic benefits.</span>
-            <span class="lang-view lang-manglish">Describe single-phase and three-phase voltage source inverters operating in 180° and 120° conduction modes with phase and line waveforms. Explain Sinusoidal PWM and its harmonic benefits.</span>
-            <span class="lang-view lang-ml">Describe single-phase and three-phase voltage source inverters operating in 180° and 120° conduction modes with phase and line waveforms. Explain Sinusoidal PWM and its harmonic benefits.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q25.</span> Describe single-phase and three-phase voltage source inverters operating in 180° and 120° conduction modes with phase and line waveforms. Explain Sinusoidal PWM and its harmonic benefits.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q25.</span> Describe single-phase and three-phase voltage source inverters operating in 180° and 120° conduction modes with phase and line waveforms. Explain Sinusoidal PWM and its harmonic benefits.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q25.</span> Describe single-phase and three-phase voltage source inverters operating in 180° and 120° conduction modes with phase and line waveforms. Explain Sinusoidal PWM and its harmonic benefits.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12414,6 +12917,21 @@ For all converters, CCM requires minimum inductor current to remain positive: $I
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(b)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
@@ -12727,6 +13245,7 @@ A low-frequency sinusoidal modulating reference signal $v_m(t) = V_m \sin\omega_
     <article class="question-card subject-comp" id="comp-q26" data-marks="7" data-title="explain four-quadrant operation of electric drives. describe converter speed control of dc motors, constant v/f speed control of induction motors, and electrical braking methods.">
         <header class="card-header">
             <div class="card-badges">
+                <span class="badge badge-qnum">Question 26</span>
                 <span class="badge badge-7m">7/14 Marks (Long Essay / Derivation)</span>
                 <div class="card-timer-widget" id="timer-comp-q26" data-duration="720" data-qid="comp-q26" data-label="COMP • Q26 (7M)">
                 <button class="timer-btn timer-toggle-btn" onclick="toggleCardTimer('comp-q26')" title="Start exam practice countdown with rhythmic pendulum tick sound">
@@ -12741,9 +13260,9 @@ A low-frequency sinusoidal modulating reference signal $v_m(t) = V_m \sin\omega_
             </div>
             
         <h3 class="card-title">
-            <span class="lang-view lang-en">Explain four-quadrant operation of electric drives. Describe converter speed control of DC motors, constant V/f speed control of induction motors, and electrical braking methods.</span>
-            <span class="lang-view lang-manglish">Explain four-quadrant operation of electric drives. Describe converter speed control of DC motors, constant V/f speed control of induction motors, and electrical braking methods.</span>
-            <span class="lang-view lang-ml">Explain four-quadrant operation of electric drives. Describe converter speed control of DC motors, constant V/f speed control of induction motors, and electrical braking methods.</span>
+            <span class="lang-view lang-en"><span class="qnum-prefix">Q26.</span> Explain four-quadrant operation of electric drives. Describe converter speed control of DC motors, constant V/f speed control of induction motors, and electrical braking methods.</span>
+            <span class="lang-view lang-manglish"><span class="qnum-prefix">Q26.</span> Explain four-quadrant operation of electric drives. Describe converter speed control of DC motors, constant V/f speed control of induction motors, and electrical braking methods.</span>
+            <span class="lang-view lang-ml"><span class="qnum-prefix">Q26.</span> Explain four-quadrant operation of electric drives. Describe converter speed control of DC motors, constant V/f speed control of induction motors, and electrical braking methods.</span>
         </h3>
         
             <div class="card-action-bar">
@@ -12767,6 +13286,21 @@ A low-frequency sinusoidal modulating reference signal $v_m(t) = V_m \sin\omega_
                     <span class="toggle-text">Hide Answer</span>
                 </button>
             </div>
+            
+        <div class="card-qp-source-bar">
+            <div class="qp-source-info">
+                <span class="qp-source-icon">🏛️</span>
+                <div class="qp-source-details">
+                    <span class="qp-source-paper"><strong>KTU Exam Source:</strong> June 2023 University Exam (EET308)</span>
+                    <span class="qp-source-location">&bull; Original Paper Location: <span class="qp-source-highlight"><strong>Part B &bull; Question 20(a)</strong> (7 Marks)</span></span>
+                </div>
+            </div>
+            <a href="question_papers/comp/EET308_June2023_QP.pdf" target="_blank" rel="noopener noreferrer" class="btn-card-qp-view" title="Open authentic June 2023 University Exam question paper in a new tab">
+                <span class="btn-qp-icon">👁️</span>
+                <span>View Question Paper</span>
+            </a>
+        </div>
+        
         </header>
         <div class="card-body">
             
